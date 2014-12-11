@@ -15,11 +15,11 @@
                  <div class="col-md-12" style="padding-left: 0">
                      <div class="form-group">
                          <label for="help_block">Switch help panel </label>
+                         <input type="hidden" value="<?php print($user[0]['id']); ?>" name="user_id" id="user_id_help">
                          <input type="checkbox" name="help_block" id="help_block" <?php if($user[0]["helpblock"]==1):?> value="0" checked="checked" <?php else: ?>value="1"<?php endif?> />
                      </div>
                  </div>
-                 <button type="button" class="btn btn-success" id="save_helpblock">Save</button>
-                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                 <a href="#" class="btn btn-primary btn-update-ttp"  id="save_helpblock">apply</a>
              </div>
              </fieldset>
          </div>

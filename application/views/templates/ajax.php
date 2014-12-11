@@ -351,5 +351,22 @@ console.log(localStorage);
               }
           });
       });
+
+      $("#save_helpblock").click(function(event) {
+          var form_data = {
+              help_block :$('#help_block').val(),
+              user_id :$('#user_id_help').val()
+          };
+          $.ajax({
+              url: "<?php echo site_url('ajax/switchHelp'); ?>",
+              type: 'POST',
+              data: form_data,
+              dataType: 'json',
+              success: function (msg) {
+                  console.log(msg);
+
+              }
+          });
+      });
   });
 </script>

@@ -17,9 +17,16 @@
 }
 
 .panel-heading span {
-    margin-top: -23px;
-    font-size: 15px;
-    margin-right: -9px;
+    margin-top: 2px;
+    font-size: 11px;
+    margin-right: -2px;
+}
+
+
+.panel-heading .clickable {
+    margin-top: -24px;
+    font-size: 11px;
+    margin-right: -2px;
 }
 
 a.clickable {

@@ -5,7 +5,6 @@
 class Ajax extends CI_Controller {
 
 
-
   /**
    * Check client on input blur
    */
@@ -500,6 +499,19 @@ class Ajax extends CI_Controller {
                 $result['result'] = false;
             }
         }
+        echo json_encode($result);
+    }
+
+
+    /**
+     * switch help block
+     */
+
+    function  switchHelp() {
+        $result['id'] = $this->input->post('user_id');
+        $result['help'] = $this->input->post('help_block');
+        $this->load->model('dashboard_model');
+        $this->dashboard_model->settings_help($result['id'], $result['help']);
         echo json_encode($result);
     }
 }
