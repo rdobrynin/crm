@@ -156,6 +156,7 @@
   <!-- /.modal-dialog -->
 </div>
 <?php include('add_role_view.php');?>
+<?php include('right_float_view.php'); ?>
 <?php include('footer_view.php');?>
 <script>
   $('#admin-users-tab a').click(function (e) {

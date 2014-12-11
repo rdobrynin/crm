@@ -205,4 +205,5 @@
 <!--logs-->
 <!--test-->
 <?php include('logs_view.php'); ?>
+<?php include('right_float_view.php'); ?>
 

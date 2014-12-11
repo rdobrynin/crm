@@ -4,6 +4,7 @@ function toTimestamp(strDate){
 }
 
 $(function() {
+//localStorage.clear();
 
     $(document).on('click', '.panel-heading span.clickable', function (e) {
         var $this = $(this);
@@ -153,6 +154,7 @@ $('.closebox').click(function(e){
     $("#float-users").click(function () {
         var posVar = 0;
         $(".right-float-sidebar").animate({right: posVar + 'px'});
+        localStorage.setItem("sidebar", true);
 
     });
 
@@ -160,12 +162,21 @@ $('.closebox').click(function(e){
         var posVar = -300;
         $(".right-float-sidebar").animate({right: posVar + 'px'});
         $("#float-users").removeClass('active');
+        localStorage.setItem("sidebar", false);
+
+
+
 
     });
 
-
-
-
+// remember sidebar position
+    var current_sidebar = localStorage.getItem("sidebar");
+    if (current_sidebar == 'true') {
+        $(".right-float-sidebar").css('right', '0');
+    }
+    else {
+        $(".right-float-sidebar").css('right', '-300px');
+    }
 
 
 });

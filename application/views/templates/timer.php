@@ -21,6 +21,9 @@
         if (typeof(Storage) !== "undefined") {
             localStorage.ctime= $('#task-timer').text();
         }
+        else {
+            localStorage.ctime= '00:00';
+        }
     }
 
     function plz(digit) {
@@ -33,6 +36,13 @@
 
 
     $(function () {
+
+        var findTime = localStorage.getItem('ctime');
+
+
+//                if (typeof(Storage) === "undefined") {
+//                    localStorage.ctime= '00:00';
+//        }
 //        if (typeof(Storage) === "undefined") {
 //            localStorage.ctime[0] =0;
 //            localStorage.ctime[1] =0;
@@ -61,12 +71,13 @@
 //            }
 //        }
 
-
         if (typeof(Storage) !== "undefined") {
-//            localStorage.ctime[0] =0;
-//            localStorage.ctime[1] =0;
-//            localStorage.ctime[3] =0;
-//            localStorage.ctime[4] =0;
+            var find_Time = localStorage.getItem('ctime');
+            if(find_Time === null || findTime === undefined  ) {
+                localStorage.ctime='00:00';
+            }
+
+//            localStorage.ctime='00:00';
             if(localStorage.ctime[0] !==0 && localStorage.ctime[1] !==0 && localStorage.ctime[3] !== 0 && localStorage.ctime[4] !== 0) {
                 $("#task-timer").text(localStorage.ctime[0] + localStorage.ctime[1] + ":" + localStorage.ctime[3] + localStorage.ctime[4]);
             }

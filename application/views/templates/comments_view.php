@@ -10,4 +10,5 @@
   </div>
 </div>
 </div>
+<?php include('right_float_view.php'); ?>
 <?php include('footer_view.php');?>

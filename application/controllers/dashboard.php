@@ -100,7 +100,7 @@ class Dashboard extends CI_Controller {
         $this->load->view('templates/sidebar_view', $data);
 
         $this->load->view('templates/dashboard_view', $data);
-        $this->load->view('templates/right_float_view', $data);
+
         $this->load->view('templates/footer_view');
         $this->load->view('templates/settings_view', $data);
     }
@@ -407,6 +407,7 @@ class Dashboard extends CI_Controller {
         }
         $this->load->view('templates/navtop_view', $data);
         $this->load->view('templates/sidebar_view', $data);
+        $this->load->view('templates/right_float_view', $data);
         $this->load->view('templates/charts_view', $data);
     }
 

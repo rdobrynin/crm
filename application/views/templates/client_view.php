@@ -61,6 +61,7 @@
 <!--logs-->
 
 <?php include('logs_view.php'); ?>
+<?php include('right_float_view.php'); ?>
 
 </div>
 <?php include('footer_view.php');?>
