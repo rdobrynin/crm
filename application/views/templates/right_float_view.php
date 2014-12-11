@@ -5,7 +5,7 @@ position: relative;"></i></a></div>
         <div class="avatar-activity">
             <span class="avatar-img"><a href="http://localhost/prm/profile"><img src="<?php print base_url() . 'uploads/avatar/bg_man@2x.jpg'; ?>" height="45"></a></span>
         </div>
-        <div class="sidebar-fullname">Roman Dobrynin</div>
+        <div class="sidebar-fullname">Roman Dobrynin&nbsp;<a href="#"><i class="fa fa-comment comment-sidebar"></i></a></div>
         <div class="user-details-count-wrapper">
             <div class="status-icon green"></div>
         </div>
@@ -18,10 +18,12 @@ position: relative;"></i></a></div>
         <div class="avatar-activity">
             <span class="avatar-img"><a href="http://localhost/prm/profile"><img src="<?php print base_url() . 'uploads/avatar/TaskEasy-Logo.png'; ?>" height="45"></a></span>
         </div>
-        <div class="sidebar-fullname">jevgeni Striganov</div>
+        <div class="sidebar-fullname">jevgeni Striganov&nbsp;<a href="#"><i class="fa fa-comment comment-sidebar"></i></a></div>
         <div class="user-details-count-wrapper">
             <div class="status-icon grey"></div>
         </div>
         <div class="sidebar-position">Curator</div>
+        <div class="sidebar-position"><a href="mailto:jevgeni.striganov@gmail.com">jevgeni.striganov@gmail.com</a></div>
+        <div class="sidebar-position phone">+37251238122</div>
     </div>
 </div>

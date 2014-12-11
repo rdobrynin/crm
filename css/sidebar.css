@@ -453,6 +453,14 @@ i.fa-clock-o {
     height: 27px;
 }
 
+.comment-sidebar {
+    font-size: 11px !important;
+    position: relative;
+    top: 0px;
+    padding-left: 8px;
+    color: #C7C7C7;
+}
+
 
 
 
