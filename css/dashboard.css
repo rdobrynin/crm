@@ -1,0 +1,173 @@
+.clickable {
+    cursor: pointer;
+}
+
+.panel-heading {
+    padding: 5px 5px;
+}
+
+.clickable .glyphicon {
+    display: inline-block;
+    padding: 3px 3px;
+    margin-top: 6px;
+}
+
+.panel-title {
+    font-size: 13px;
+}
+
+.panel-heading span {
+    margin-top: -23px;
+    font-size: 15px;
+    margin-right: -9px;
+}
+
+a.clickable {
+    color: inherit;
+}
+
+a.clickable:hover {
+    text-decoration: none;
+}
+
+.clickable i.glyphicon {
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.avatar-activity {
+    width: 45px;
+    height: 45px;
+    -moz-border-radius: 45px;
+    -webkit-border-radius: 45px;
+    display: block;
+    top: 17px;
+    left: 19px;
+    overflow: hidden;
+    border-radius: 25px;
+    float: left;
+    margin-right: 10px;
+}
+
+.activity-item-summary span.resolved-link {
+    text-decoration: line-through;
+}
+
+.activity-item-summary {
+    font-size: 13px;
+}
+
+i.clock-activity {
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+.sub-activity {
+    padding-bottom: 30px;
+}
+
+.activity-item-comment-form {
+    display: none;
+}
+
+.show-more-activity {
+    padding: 10px;
+}
+
+/*DASHBOARD PROGRESS BLOCKS*/
+
+.tiles.green {
+    background-color: #0aa699;
+}
+
+.tiles .tiles-body {
+    padding: 11px 12px 9px 12px;
+}
+
+.tiles {
+    background-color: #bcbcbc;
+    color: #ffffff;
+    position: relative;
+}
+
+.tiles .tiles-title {
+    font-size: 10.5px;
+
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.widget-stats .item-count {
+    font-size: 14px;
+    color: #ffffff;
+    display: block;
+    font-weight: bold;
+}
+
+.tiles .blend {
+    color: rgba(0, 0, 0, 0.42);
+}
+
+.text-black {
+    color: #1b1e24!important;
+}
+
+.widget-stats {
+    padding-left: 0;
+    display: inline-block;
+}
+
+.widget-stats .wrapper.transparent {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+.widget-stats .wrapper {
+    margin: 2px 0 2px 0;
+    border-right: 1px solid #363a41;
+    margin-right: 5px;
+    padding-right: 5px;
+}
+
+.progress.progress-small {
+    height: 4px;
+}
+.progress.transparent {
+    background-color: rgba(0, 0, 0, 0.28);
+}
+.progress.no-radius {
+    border-radius: 0px;
+}
+
+.widget-stats .wrapper.last {
+    border: 0;
+}
+
+.tiles.blue {
+    background-color: #0090d9;
+}
+
+.tiles.purple {
+    background-color: #735f87;
+}
+
+.progress.no-radius .progress-bar {
+    border-radius: 0px;
+}
+.progress-bar-white {
+    background-color: #ffffff;
+    background-image: none;
+}
+
+.tiles .controller a {
+    position: relative;
+    background: url('../img/icon/portlet-tray.png') no-repeat;
+    transition: all 0.1s linear 0s;
+    display: inline-block;
+}
+/*END DASHBOARD BLOCKS*/
+
+.tiles .controller {
+    position: relative;
+    display: inline-block;
+    float: right;
+}

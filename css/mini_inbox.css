@@ -1,0 +1,49 @@
+div.alert.inbox {
+    border: 1px solid #303030;
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 17px;
+    margin-top: 17px;
+    color: #ddd;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+radial-gradient(black 15 %, transparent 16 %) 0 0,
+radial-gradient(black 15 %, transparent 16 %) 8 px 8 px,
+radial-gradient(rgba(255, 255, 255, .1) 15 %, transparent 20 %) 0 1 px,
+radial-gradient(rgba(255, 255, 255, .1) 15 %, transparent 20 %) 8 px 9 px;
+    background-color: #282828;
+    background-size: 16px 16px;
+
+}
+
+span.message-mini {
+    display: block;
+    padding-top: 13px;
+    font-weight: 400;
+    text-shadow: 1px 1px #000;
+}
+
+div.alert.inbox a:hover, div.alert.inbox  {
+    text-shadow: 1px 1px #000;
+    background:rgba(24, 24, 24, 0.5);
+
+}
+
+
+@media (max-width: 767px) {
+
+    .mini-inbox {
+        display: none;
+    }
+}
+
+button.close {
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    top: 3px;
+    margin-top: -9px;
+    margin-right: -2px;
+}

@@ -1,0 +1,50 @@
+table.table.table-task {
+    width: 96%;
+    margin: 0 auto;
+    padding: 15px !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.15);
+    -moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.15);
+    box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.15);
+}
+
+.td-task {
+    background-color: #F3F3F3;
+    display: none;
+}
+
+tbody.tbody-task {
+    border: 1px solid #ddd;
+}
+
+.project-task-main {
+    background-color: #ddd;
+    color: #0085B9;
+    font-weight: bold;
+}
+
+.current-tasks-table {
+    background-color: #428bca;
+    color:#fff;
+}
+
+.label-cur-pr {
+    top: 13px;
+    position: relative ;
+}
+
+.panel-primary {
+    border-color: #CFCFCF;
+    background-color: #E7E7E7;
+}
+
+#status-id{
+background-color: #FFDBDD;
+}
+
+.panel-primary > .panel-heading {
+    color: #fff;
+    background-color: #9E9E9E;
+    border-color: #CFCFCF;
+}

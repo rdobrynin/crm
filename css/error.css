@@ -1,0 +1,19 @@
+.container {
+    position: relative;
+    width: 960px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.page-404 {
+    padding: 140px 0 4px 0;
+    text-align: center;
+}
+
+textarea {
+    resize: none;
+}
+
+.btn, .btn:hover, button, button:hover {
+    outline: none !important;
+}

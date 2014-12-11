@@ -1,0 +1,103 @@
+.help-block {
+    width: 100%;
+    height: 20px;
+    background-color: #000;
+    z-index: 9999;
+    position: fixed;
+    top: -17px;
+}
+
+.help-block .glyphicon {
+    color:#ddd;
+}
+
+div.help-button {
+    margin: 0 auto;
+    width: 140px;
+    position: static;
+    top: 4px;
+    padding-top: 7px;
+    background-color: #000;
+    text-align: center;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-top: 4px;
+    font-size: 11px;
+    color: #dddddd;
+    cursor: pointer;
+    padding-bottom: 4px;
+}
+
+div.help-block-open-btn {
+    margin: 0 auto;
+    width: 140px;
+    top: 110px;
+    position: relative;
+    top: 405px;
+    padding-top: 0px;
+    background-color: #000;
+    text-align: center;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-top: 9px;
+    font-size: 13px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.90);
+    padding-bottom: 3px;
+}
+
+.help-block-open {
+background-color: rgba(0, 0, 0, 0.90);
+    height: 414px;
+}
+
+.help-content {
+    position: fixed;
+    display: none;
+    color: #fff;
+    top: 24px;
+    left: 20px;
+    width: 96%;
+}
+
+.help-content-open {
+    background: transparent;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+    color: #fff;
+    position: fixed;
+    display: block;
+}
+
+.glyphicon-lg{
+    font-size:1.7em;
+}
+
+.blockquote-box {
+    border-right: 1px solid #E6E6E6;
+    margin-bottom: 25px;
+    padding-right: 10px;
+}
+
+.blockquote-box .square {
+    width: 50px;
+    height: 50px;
+    margin-right: 22px;
+    text-align: center!important;
+    background-color: #E6E6E6;
+    /* padding: 20px 0; */
+    padding-bottom: 10px;
+    padding-top: 13px;
+    margin-top: 14px;
+    margin-bottom: 60px;
+}
+
+.blockquote-box.blockquote-info {
+    border-color: #303030;
+}
+.blockquote-box.blockquote-info .square {
+    background-color: #3D3D3D;
+    color: #FFF;
+    border-radius: 50px;
+}
