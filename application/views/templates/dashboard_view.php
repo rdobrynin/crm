@@ -73,6 +73,7 @@
                                             <th width="5%" class="text-left">#ID</th>
                                             <th width="15%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
                                             <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
+                                            <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
                                             <th width="15%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
                                             <th width="20%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
                                             <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
@@ -87,6 +88,7 @@
                                                 <td><?php print($tv['id']); ?></td>
                                                 <td><span class="muted"><?php print($tv['date_created']); ?></span></td>
                                                 <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
+                                                <td><a href="mailto:<?php print($user_name[$tv['implementor']]); ?>"><?php print($user_name[$tv['implementor']]); ?></a></td>
                                                 <td><?php print($tv['title']); ?></td>
                                                 <td><span class="muted"><?php print($tv['desc']); ?></span></td>
                                                 <td>

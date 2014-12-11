@@ -86,6 +86,7 @@ class Dashboard extends CI_Controller {
         $data['current_language'] = $this->session->userdata('site_lang');
         $data['client'] = $this->admin_model->get_own_client($_SESSION['username']);
         $data['users'] = $this->admin_model->get_users();
+        $data['user_name'] = $this->admin_model->get_users_names();
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
         $this->load->view('templates/head_view',$data);
         if ($data['user'][0]['helpblock'] == 1) {

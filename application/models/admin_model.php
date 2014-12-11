@@ -541,16 +541,40 @@ class Admin_model extends CI_Model {
     return $query->result_array();
   }
 
-  /**
+
+
+    /**
+     * get users names();
+     * @return mixed
+     */
+
+    public function get_users_names() {
+        $return = array();
+        $query = $this
+            ->db
+            ->get('users');
+        $result = $query->result_array();
+        if(!empty($result)){
+            foreach($result as $users){
+                $return[$users["id"]] = $users["first_name"].' '.$users["last_name"];
+            }
+        }
+        return $return;
+    }
+
+
+    /**
    * get roles();
    * @return mixed
    */
 
   public function get_roles() {
+      $return = array();
     $query = $this
       ->db
       ->get('roles');
     return $query->result_array();
+
   }
 
     /**

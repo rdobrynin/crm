@@ -82,6 +82,21 @@ if (!function_exists('lastname_letter')) {
     }
 }
 
+
+/**
+ * short name with trim
+ */
+
+if (!function_exists('short_name')) {
+    function short_name($str) {
+        $trimmed_text = substr($str,0,10).'...';
+
+
+        return $trimmed_text;
+
+    }
+}
+
 /**
  * Task statuses
  */
