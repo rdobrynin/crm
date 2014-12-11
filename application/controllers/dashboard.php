@@ -51,6 +51,17 @@ class Dashboard extends CI_Controller {
         }
 
 
+
+        $tasks = $this->task_model->getTasks();
+        if($tasks) {
+            $data['tasks']= $tasks;
+        }
+        else {
+            $data['tasks']=false;
+        }
+
+
+
         $imps = $this->task_model->get_imps();
 
         if($imps) {

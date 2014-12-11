@@ -70,7 +70,7 @@
         <b class="caret"></b></a>
       <ul class="dropdown-menu dropdown-user">
         <li><a href="<?php print(base_url());?>profile"><i class="fa fa-user"></i><?php print(lang('menu_profile'))?></a></li>
-        <li><a href="#"><i class="fa fa-envelope"></i><?php print(lang('mess_inbox'))?><span class="badge badge-resp">7</span></a></li>
+        <li><a href="#"><i class="fa fa-comment"></i><?php print(lang('mess_inbox'))?><span class="badge badge-resp">7</span></a></li>
         <li><a data-toggle="modal" href="#settings"><i class="fa fa-gear"></i><?php print(lang('menu_settings'))?></a></li>
 <!--        --><?php //if($user[0]['role']==5):?>
 <!--          <li><a href="--><?php //print(base_url());?><!--users"><i class="fa fa-users"></i>--><?php //print(lang('menu_admin_users'))?><!--</a></li>-->

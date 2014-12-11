@@ -89,24 +89,51 @@ if (!function_exists('lastname_letter')) {
 if (!function_exists('task_status')) {
   function task_status($status) {
     $result=0;
-    if($status == 4) {
-      $result = 'complete';
+    if($status == 5) {
+      $result = 'froze';
+    }
+    else if($status == 4) {
+      $result = 'pause';
     }
     else if($status == 3) {
-      $result = 'approve';
+      $result = 'complete';
     }
     else if($status == 2) {
       $result = 'process';
     }
-    else if($status == 5) {
-      $result = 'overdue';
-    }
-    else if($status == 1) {
-      $result = 'pause';
+    else if($status == 0) {
+      $result = 'approve';
     }
     return $result;
   }
 }
+
+/**
+ * Task label
+ */
+
+if (!function_exists('task_label')) {
+    function task_label($status) {
+        $result=0;
+        if($status == 5) {
+            $result = 'label-primary';
+        }
+        else if($status == 4) {
+            $result = 'label-default';
+        }
+        else if($status == 3) {
+            $result = 'label-primary';
+        }
+        else if($status == 1) {
+            $result = 'label-success';
+        }
+        else if($status == 0) {
+            $result = 'label-warning';
+        }
+        return $result;
+    }
+}
+
 
 /**
  * project statuses

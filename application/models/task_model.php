@@ -131,7 +131,6 @@ class Task_model extends CI_Model {
      */
 
     public function createEvent($uid,$event,$text,$name,$title) {
-
         $data = array (
             'uid' => $uid,
             'event' => $event,
@@ -144,6 +143,21 @@ class Task_model extends CI_Model {
         return $insert;
     }
 
+
+    /**
+     * Get tasks
+     * @return mixed
+     */
+
+    public function getTasks() {
+        $query = $this->db->get('task');
+        if ($query->num_rows > 0) {
+            return $query->result_array();
+        }
+        else {
+            return FALSE;
+        }
+    }
 
 
 }
