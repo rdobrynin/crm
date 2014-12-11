@@ -150,6 +150,22 @@ $('.closebox').click(function(e){
         }
     });
 
+    $("#float-users").click(function () {
+        var posVar = 0;
+        $(".right-float-sidebar").animate({right: posVar + 'px'});
+
+    });
+
+    $(".close-right-sidebar").click(function () {
+        var posVar = -300;
+        $(".right-float-sidebar").animate({right: posVar + 'px'});
+        $("#float-users").removeClass('active');
+
+    });
+
+
+
+
 
 
 });

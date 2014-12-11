@@ -28,6 +28,7 @@
   <div class="show-info-error"><div class="show-info-content"></div><div class="expandable-nagative-image"></div></div>
   <div class="show-info-online"><div class="show-info-content-online"></div></div>
   <ul class="nav navbar-nav navbar-right navbar-user">
+      <li id="float-users"> <a href="#"><i class="fa fa-users"></i></a></li>
       <li class="dropdown user-dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle"></i><b class="caret"></b></a>
           <ul class="dropdown-menu dropdown-user">

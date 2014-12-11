@@ -361,7 +361,104 @@ i.fa-clock-o {
 }
 
 
+.right-float-sidebar{
+    margin-left: 0;
+    right: -300px;
+    width: 246px;
+    position: fixed;
+    height: 100%;
+    background-position: 0 -30px;
+    float: right;
+    background-color: #222222;
+    top: 50px;
+    padding-top: 29px;
+    padding-left: 0;
+}
 
+
+
+
+.user-float-block {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+    background-color: #2c2c2c;
+    padding: 10px;
+    margin-bottom: 21px;
+    border-bottom: 1px dashed #494949;
+}
+
+.user-float-block:hover {
+    background-color: #202020;
+    cursor: pointer;
+
+}
+
+.sidebar-fullname, .sidebar-position {
+    color: #ffffff;
+}
+
+.sidebar-position {
+    font-size: 10px;
+}
+
+.sidebar-position a, .sidebar-position.phone {
+   color: #c7c7c7;
+}
+
+.sidebar-position a:hover {
+    color: #ababab;
+    text-decoration: none;
+}
+
+.status-icon.green {
+    background: url('../img/icon/status.png') no-repeat;
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    top: -17px;
+    width: 17px;
+    height: 17px;
+    float: right;
+}
+
+.status-icon.grey {
+    background: url('../img/icon/status.png') no-repeat;
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    top: -17px;
+    width: 17px;
+    height: 17px;
+    float: right;
+    background-position: -63px 0px;
+}
+
+.chat-window-wrapper .user-details-count-wrapper {
+    display: inline-block;
+    float: left;
+    margin-top: 8px;
+}
+
+.close-right-sidebar {
+    position: absolute;
+    top: 2px;
+    left: -29px;
+    background-color: #222222;
+    padding-left: 8px;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    width: 30px;
+    height: 27px;
+}
+
+
+
+
+.close-right-sidebar a {
+   color:#fff;
+}
 
 
 

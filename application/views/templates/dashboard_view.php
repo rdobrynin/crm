@@ -81,6 +81,7 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+                                      <?php $tasks = array_reverse($tasks);?>
                                         <?php foreach (array_slice($tasks, 1, 8) as $tk => $tv): ?>
                                             <tr>
                                                 <td><?php print($tv['id']); ?></td>
