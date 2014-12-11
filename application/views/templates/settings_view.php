@@ -19,7 +19,7 @@
                          <input type="checkbox" name="help_block" id="help_block" <?php if($user[0]["helpblock"]==1):?> value="0" checked="checked" <?php else: ?>value="1"<?php endif?> />
                      </div>
                  </div>
-                 <a href="#" class="btn btn-primary btn-update-ttp"  id="save_helpblock">apply</a>
+                 <a href="#" class="btn btn-primary btn-update-ttp"  id="save_helpblock"><?php if($user[0]["helpblock"]==1):?>Hide panel<?php else: ?>Show panel<?php endif?></a>
              </div>
              </fieldset>
          </div>

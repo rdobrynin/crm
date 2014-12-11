@@ -353,8 +353,18 @@ console.log(localStorage);
       });
 
       $("#save_helpblock").click(function(event) {
+          var check =false;
+          if ($('#help_block').is(":checked")){
+              check = 1;
+              $(this).html('Hide panel');
+          }
+          else {
+              check = 0;
+              $(this).html('Show panel');
+          }
+          console.log(check);
           var form_data = {
-              help_block :$('#help_block').val(),
+              help_block :check,
               user_id :$('#user_id_help').val()
           };
           $.ajax({
