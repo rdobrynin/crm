@@ -165,6 +165,68 @@ class Dashboard extends CI_Controller {
     }
 
     /**
+     * TASK PAGE
+     */
+
+    function tasks() {
+        $roles_array = $this->admin_model->get_roles();
+        $roles = array();
+        foreach ($roles_array as $rk => $rv) {
+            $roles[] = $rv;
+        }
+
+        $task_types = $this->task_model->getTaskTypes();
+        if($task_types) {
+            $data['task_types']= $task_types;
+        }
+        else {
+            $data['task_types']=false;
+        }
+
+        $project_array = $this->project_model->get_projects();
+        if($project_array) {
+            $data['projects']= $project_array;
+        }
+        else {
+            $data['projects']=false;
+        }
+
+        $task_array = $this->task_model->countTasks();
+        if($task_array) {
+            $data['tasks']= $task_array;
+        }
+        else {
+            $data['tasks']=false;
+        }
+
+        $imps = $this->task_model->get_imps();
+
+        if($imps) {
+            $data['imps']= $imps;
+        }
+        else {
+            $data['imps']=false;
+        }
+
+        $data['roles'] = $roles;
+        $data['current_language'] = $this->session->userdata('site_lang');
+        $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
+        $data['client'] = $this->admin_model->get_own_client($_SESSION['username']);
+        $data['users'] = $this->admin_model->get_users();
+        $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
+        $this->load->view('templates/head_view',$data);
+        if ($data['user'][0]['helpblock'] == 1) {
+            $this->load->view('templates/help_block_view');
+        }
+        $this->load->view('templates/navtop_view', $data);
+        $this->load->view('templates/sidebar_view', $data);
+        $this->load->view('templates/tasks_view', $data);
+        $this->load->view('templates/settings_view', $data);
+    }
+
+
+
+    /**
      * USERS ADMINISTRATION
      */
 
@@ -292,16 +354,6 @@ class Dashboard extends CI_Controller {
         $this->load->view('templates/comments_view', $data);
     }
 
-    /**
-     * Test temporary
-     */
-
-    function test() {
-        $data['current_language'] = $this->session->userdata('site_lang');
-        $this->load->view('templates/head_view',$data);
-        $this->load->view('templates/test_view', $data);
-        $this->load->view('templates/footer_view');
-    }
 
     function charts() {
         $roles_array = $this->admin_model->get_roles();

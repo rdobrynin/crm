@@ -12,7 +12,7 @@
       <li class="<? $url_arg=='projects' ? print('active') : print('') ?>"><a href="<?php print(base_url());?>projects"><i class="fa fa-cube"></i>&nbsp;<span class="left-resp-menu"><?php print(lang('menu_projects')); ?></span></a>
             <?php if ($projects != false): ?><span class="badge badge-resp" id="badge-count-projects"><?php print(count($projects));?></span> <?php else:?><span class="badge badge-resp" id="badge-count-projects">0</span> <?php endif ?>
       </li>
-      <li class="<? $url_arg=='tasks' ? print('active') : print('') ?>"><a href="#"><i class="fa fa-tasks"></i>&nbsp;<span class="left-resp-menu"><?php print(lang('menu_tasks')); ?></span></a>
+      <li class="<? $url_arg=='tasks' ? print('active') : print('') ?>"><a href="<?php print(base_url());?>tasks"><i class="fa fa-tasks"></i>&nbsp;<span class="left-resp-menu"><?php print(lang('menu_tasks')); ?></span></a>
           <?php if ($tasks != false): ?><span class="badge badge-resp" id="badge-count-tasks"><?php print(count($tasks));?></span> <?php else:?><span class="badge badge-resp" id="badge-count-tasks">0</span> <?php endif ?>
       </li>
         <?php if ($user[0]['role']==5 OR $user[0]['role']==4): ?>

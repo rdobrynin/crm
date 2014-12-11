@@ -60,7 +60,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <?php if ($tasks != FALSE): ?>
                     <div class="row-fluid" style="padding-top: 20px;">
@@ -113,7 +112,6 @@
                         <span class="pull-right clickable panel-collapsed"><i class="glyphicon glyphicon-minus"></i></span>
                     </div>
                     <div class="panel-body">
-
                         <div class="sub-activity">
                             <div class="avatar-activity">
                                 <span class="avatar-img">
@@ -134,7 +132,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="sub-activity">
                             <div class="avatar-activity">
                                 <span class="avatar-img">
@@ -154,7 +151,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="sub-activity">
                             <div class="avatar-activity">
                                 <span class="avatar-img">
@@ -166,7 +162,6 @@
                                 &nbsp;<span class="label label-warning label-xs">approve</span>&nbsp;
                                 <a href="#" target="_parent"><span class="resolved-link">ECL-217</span> - LESS implemetation</a>
                                 <div class="activity-item-description">
-
                                     <div class="activity-item-info">
                                         <i class="fa fa-clock-o clock-activity"></i>
                                         <span class="timestamp">3 hours ago</span>&nbsp;
@@ -179,9 +174,7 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-
                         <div class="sub-activity">
                             <div class="avatar-activity">
                                 <span class="avatar-img">
@@ -200,7 +193,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <div class="show-more-activity"> <button class="btn btn-default btn-xs" style="width: 100%">Show more</button></div>
                 </div>
@@ -209,9 +201,7 @@
         <!-- ./row-->
     </div>
 </div>
-
 <!--logs-->
-
 <!--test-->
 <?php include('logs_view.php'); ?>
 
