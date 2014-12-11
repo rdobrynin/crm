@@ -3,7 +3,7 @@
     <div class="page-content inset">
         <div class="row">
             <div class="col-md-8">
-                <h3 class="h_title">Current activity</h3>
+                <h3 class="h_title">Current activity1</h3>
                 <div class="row">
                     <div class="col-md-6 col-vlg-3 col-sm-6">
                         <div class="tiles green m-b-10">
