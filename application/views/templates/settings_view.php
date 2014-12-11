@@ -33,13 +33,13 @@
                   <div class="row-fluid">
                       <div class="col-md-8" style="padding-left: 0">
                           <div class="form-group">
-                              <input type="text" class="form-control btn-special" id="ttp_<?php print($tv['id']) ?>_input" value="<?php print($tv['title']) ?>"/>
+                              <input type="text" class="form-control btn-special" id="ttp_<?php print($tk) ?>_input" value="<?php print($tv) ?>"/>
                           </div>
-                          <div style="display: none; margin-bottom: 10px;" id="check_empty_ttp_<?php print($tv['id']) ?>_input" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;Fields must be not empty</div>
+                          <div style="display: none; margin-bottom: 10px;" id="check_empty_ttp_<?php print($tk) ?>_input" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;Fields must be not empty</div>
                       </div>
                       <div class="col-md-2" style="padding-left: 0">
                           <div class="form-group">
-                           <a href="#" class="btn btn-primary btn-update-ttp"  id="ttp_<?php print($tv['id']) ?>">apply</a>
+                           <a href="#" class="btn btn-primary btn-update-ttp"  id="ttp_<?php print($tk) ?>">apply</a>
                           </div>
                       </div>
                       <?php endforeach ?>

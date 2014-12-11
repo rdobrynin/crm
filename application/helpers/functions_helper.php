@@ -112,8 +112,8 @@ if (!function_exists('task_status')) {
  * Task label
  */
 
-if (!function_exists('task_label')) {
-    function task_label($status) {
+if (!function_exists('task_status_label')) {
+    function task_status_label($status) {
         $result=0;
         if($status == 5) {
             $result = 'label-primary';
@@ -133,6 +133,38 @@ if (!function_exists('task_label')) {
         return $result;
     }
 }
+
+if (!function_exists('task_type_label')) {
+    function task_type_label($status) {
+        $result=0;
+        if($status == 1) {
+            $result = 'label-danger';
+        }
+        else if($status == 2) {
+            $result = 'label-success';
+        }
+        else if($status == 3) {
+            $result = 'label-warning';
+        }
+        else if($status == 4) {
+            $result = 'label-primary';
+        }
+        else if($status == 5) {
+            $result = 'label-info';
+        }
+        else if($status == 6) {
+            $result = 'label-primary';
+        }
+        else if($status == 7) {
+            $result = 'label-danger';
+        }
+        else if($status == 8) {
+            $result = 'label-info';
+        }
+        return $result;
+    }
+}
+
 
 
 /**
