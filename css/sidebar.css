@@ -373,6 +373,9 @@ i.fa-clock-o {
     top: 50px;
     padding-top: 29px;
     padding-left: 0;
+    -webkit-box-shadow: 2px 4px 26px 3px black;
+    -moz-box-shadow: 2px 4px 26px 3px black;
+    box-shadow: 2px 4px 26px 3px black;
 }
 
 
@@ -444,7 +447,7 @@ i.fa-clock-o {
 .close-right-sidebar {
     position: absolute;
     top: 2px;
-    left: -29px;
+    left: -27px;
     background-color: #222222;
     padding-left: 8px;
     padding-top: 5px;

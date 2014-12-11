@@ -59,6 +59,17 @@ class Files_model extends CI_Model {
             ->get('avatars');
         return $query->result_array();
     }
+
+
+    public function update_avatar_user($filename, $user_id) {
+        $data = array (
+            'avatar' => $filename,
+            'id'=>$user_id
+        );
+        $this->db->where('id', $user_id);
+        $result = $this->db->update('users', $data);
+        return $result;
+    }
 }
 
 

@@ -203,11 +203,13 @@ class Ajax extends CI_Controller {
                         $del= 'no';
                     }
                     $file_id = $this->files_model->update_avatar($data['file_name'], $_POST['user_id']);
+                    $this->files_model->update_avatar_user($data['file_name'], $_POST['user_id']);
                     $search_new = $this->files_model->search_avatar($_POST['user_id']);
                     $new_avatar = $search_new[0]['filename'];
                 }
                 else {
                     $file_id = $this->files_model->insert_avatar($data['file_name'], $_POST['user_id']);
+                    $this->files_model->update_avatar_user($data['file_name'], $_POST['user_id']);
                     $search_new = $this->files_model->search_avatar($_POST['user_id']);
                     $new_avatar = $search_new[0]['filename'];
                 }

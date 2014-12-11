@@ -119,5 +119,9 @@ legend {
     padding-bottom: 10px;
     padding-left: 1px;
     font-size: 21px;
+}
 
+.table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > th, .table > caption + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > td, .table > thead:first-child > tr:first-child > td {
+    border-top: 0;
+    border-bottom: 0;
 }

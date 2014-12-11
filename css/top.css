@@ -74,3 +74,19 @@ ul.navbar.navbar-left {
     top: 50px;
     z-index: 1000;
 }
+
+#float-users.active a {
+    color: #25B1FF !important;
+    background-color: #292929 !important;
+    box-shadow: inset -2px 1px 7px #000000;
+}
+
+#float-users.active {
+    border: 1px solid rgb(48, 48, 48);
+    border-bottom: 0;
+    border-top: 0;
+    border-right: 0;
+    box-shadow: -1px 0 #000000;
+}
+
+

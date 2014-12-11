@@ -170,9 +170,15 @@ $('.closebox').click(function(e){
     if (current_sidebar == 'true') {
         var posVar = 0;
         $(".right-float-sidebar").animate({right: posVar + 'px'});
+        $('#float-users').addClass('active');
     }
     else {
         $(".right-float-sidebar").css('right', '-300px');
+        $('#float-users').removeClass('active');
     }
+
+    $('.comment-sidebar').click(function () {
+        $('#comment_modal').modal('show');
+    });
 
 });

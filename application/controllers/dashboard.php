@@ -50,8 +50,6 @@ class Dashboard extends CI_Controller {
             $data['task_types']=false;
         }
 
-
-
         $tasks = $this->task_model->getTasks();
         if($tasks) {
             $data['tasks']= $tasks;
@@ -59,9 +57,6 @@ class Dashboard extends CI_Controller {
         else {
             $data['tasks']=false;
         }
-
-
-
 
         $imps = $this->task_model->get_imps();
 
@@ -345,6 +340,7 @@ class Dashboard extends CI_Controller {
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
         $data['client'] = $this->admin_model->get_own_client($_SESSION['username']);
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
+        $data['users'] = $this->admin_model->get_users();
         $this->load->view('templates/head_view',$data);
         if ($data['user'][0]['helpblock'] == 1) {
             $this->load->view('templates/help_block_view');

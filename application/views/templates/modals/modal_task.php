@@ -11,13 +11,16 @@
                 </h4>
             </div>
             <div class="modal-body">
+                <?php if ($tasks != FALSE): ?>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="task_log_title">Choose task</label>
                             <select class="form-control selectpicker" id="task_log_title" name="category">
-                                <option>ECL_113</option>
-                                <option>ECL_115</option>
+
+                                <?php foreach ($tasks as $tk => $tv): ?>
+                                    <option value="<?php print($tv['id']); ?>"><?php print($tv['title']); ?></option>
+                                <?php endforeach ?>
                             </select>
                         </div>
                     </div>
@@ -36,6 +39,10 @@
                         </div>
                     </div>
                 </div>
+                <?php else:?>
+                    <div style="display: block; margin-bottom: 10px;" id="no_tasks_modal" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;No one tasks found.</div>
+                <?php endif ?>
+
                </div>
             <div class="modal-footer" style="padding-top: 10px;">
                 <div class="form-group">

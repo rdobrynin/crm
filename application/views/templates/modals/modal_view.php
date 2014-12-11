@@ -203,6 +203,43 @@
         <?php form_close( );?>
     </div>
 </div> <!-- #/addtask_pr_modal -->
+
+<!--Add comment modal-->
+
+<!--Create project modal window-->
+<div class="modal fade" id="comment_modal" tabindex="-1" role="dialog" aria-labelledby="addproject_formLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <?php $attributes = array('class' => 'form-signin', 'id' => 'comment_form', 'autocomplete' => 'on'); ?>
+        <?php echo form_open('#', $attributes); ?>
+        <div class="modal-content modal-content-inverse">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">
+                    <small>Add comment</small>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="project_desc">Comment</label>
+                            <textarea name="comment_modal_text" id="comment_modal_text" class="form-control btn-special" rows="3" placeholder="Comment"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: none; margin-bottom: 10px;" id="save_comment_modal" class="label label-primary label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;You have successfully added comment</div>
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" name="user_added_id" id="user_added_id" value="<?php print($user[0]['id'])?>">
+                <div style="display: none; margin-bottom: 10px;" id="check_empty_project" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;Fields must be not empty</div>
+                <button type="button" class="btn btn-success" id="add_comment_modal_btn">Comment it</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <?php form_close( );?>
+    </div>
+</div> <!-- #/addproject_moda -->
+
 <script type="text/javascript">
     $(function () {
         $('#dueto_modal').datetimepicker({theme:'dark',minDate: 0,minTime:0});

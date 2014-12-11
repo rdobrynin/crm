@@ -70,7 +70,7 @@
                                     <table class="table table-condensed">
                                         <thead>
                                         <tr>
-                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">#ID</th>
+                                            <th width="5%" class="text-left">#ID</th>
                                             <th width="15%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
                                             <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
                                             <th width="15%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
@@ -116,11 +116,11 @@
                         <div class="sub-activity">
                             <div class="avatar-activity">
                                 <span class="avatar-img">
-                                    <a href="http://localhost/prm/profile"><img src="http://localhost/prm/uploads/avatar/bg_man@2x.jpg" height="45"></a>
+                                    <a href="#"><img src="http://localhost/prm/uploads/avatar/bg_man@2x.jpg" height="45"></a>
                                 </span>
                             </div>
                             <div class="activity-item-summary">
-                                <a href="/secure/ViewProfile.jspa?name=romdo" class="activity-item-user activity-item-author" target="_parent">Roman D...</a>
+                                <a href="#" class="activity-item-user activity-item-author" target="_parent">Roman D...</a>
                                 &nbsp;<span class="label label-warning label-xs">approve</span>&nbsp;
                                 <a href="#" target="_parent"><span class="resolved-link">ECL-217</span> - LESS implemetation</a>
                                 <div class="activity-item-description">
@@ -136,11 +136,11 @@
                         <div class="sub-activity">
                             <div class="avatar-activity">
                                 <span class="avatar-img">
-                                    <a href="http://localhost/prm/profile"><img src="http://localhost/prm/uploads/avatar/TaskEasy-Logo.png" height="45"></a>
+                                    <a href="#"><img src="http://localhost/prm/uploads/avatar/TaskEasy-Logo.png" height="45"></a>
                                 </span>
                             </div>
                             <div class="activity-item-summary">
-                                <a href="/secure/ViewProfile.jspa?name=romdo" class="activity-item-user activity-item-author" target="_parent">Jevgeni S...</a>&nbsp;<span class="label label-default label-xs">closed</span>&nbsp;
+                                <a href="#" class="activity-item-user activity-item-author" target="_parent">Jevgeni S...</a>&nbsp;<span class="label label-default label-xs">closed</span>&nbsp;
                                 <a href="#" target="_parent"><span class="resolved-link">ECL-217</span> - LESS implemetation  for implementation </a>
                                 <div class="activity-item-description">
 
@@ -155,11 +155,11 @@
                         <div class="sub-activity">
                             <div class="avatar-activity">
                                 <span class="avatar-img">
-                                    <a href="http://localhost/prm/profile"><img src="http://localhost/prm/uploads/avatar/bg_man@2x.jpg" height="45"></a>
+                                    <a href="#"><img src="http://localhost/prm/uploads/avatar/bg_man@2x.jpg" height="45"></a>
                                 </span>
                             </div>
                             <div class="activity-item-summary">
-                                <a href="/secure/ViewProfile.jspa?name=romdo" class="activity-item-user activity-item-author" target="_parent">Roman D...</a>
+                                <a href="#" class="activity-item-user activity-item-author" target="_parent">Roman D...</a>
                                 &nbsp;<span class="label label-warning label-xs">approve</span>&nbsp;
                                 <a href="#" target="_parent"><span class="resolved-link">ECL-217</span> - LESS implemetation</a>
                                 <div class="activity-item-description">
@@ -179,11 +179,11 @@
                         <div class="sub-activity">
                             <div class="avatar-activity">
                                 <span class="avatar-img">
-                                    <a href="http://localhost/prm/profile"><img src="http://localhost/prm/uploads/avatar/TaskEasy-Logo.png" height="45"></a>
+                                    <a href="#"><img src="http://localhost/prm/uploads/avatar/TaskEasy-Logo.png" height="45"></a>
                                 </span>
                             </div>
                             <div class="activity-item-summary">
-                                <a href="/secure/ViewProfile.jspa?name=romdo" class="activity-item-user activity-item-author" target="_parent">Jevgeni S...</a>&nbsp;<span class="label label-default label-xs">closed</span>&nbsp;
+                                <a href="#" class="activity-item-user activity-item-author" target="_parent">Jevgeni S...</a>&nbsp;<span class="label label-default label-xs">closed</span>&nbsp;
                                 <a href="#" target="_parent"><span class="resolved-link">ECL-217</span> - LESS implemetation for implementation </a>
                                 <div class="activity-item-description">
                                     <div class="activity-item-info">
