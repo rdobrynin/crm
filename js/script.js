@@ -163,20 +163,16 @@ $('.closebox').click(function(e){
         $(".right-float-sidebar").animate({right: posVar + 'px'});
         $("#float-users").removeClass('active');
         localStorage.setItem("sidebar", false);
-
-
-
-
     });
 
 // remember sidebar position
     var current_sidebar = localStorage.getItem("sidebar");
     if (current_sidebar == 'true') {
-        $(".right-float-sidebar").css('right', '0');
+        var posVar = 0;
+        $(".right-float-sidebar").animate({right: posVar + 'px'});
     }
     else {
         $(".right-float-sidebar").css('right', '-300px');
     }
-
 
 });
