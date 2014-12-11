@@ -155,7 +155,7 @@
                             <label for="task_type_choose">Label</label>
                             <select class="form-control selectpicker" id="task_type_choose" name="task_type_choose">
                                 <?php foreach ($task_types as $tk=>$tv): ?>
-                                        <option value="<?php print($tv['id']); ?>" ><?php print(ucfirst($tv['title'])); ?></option>
+                                        <option value="<?php print($tk); ?>" ><?php print(ucfirst($tv)); ?></option>
                                 <?php endforeach ?>
                             </select>
                         </div>
