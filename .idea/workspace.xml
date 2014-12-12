@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8ede6c0-9a43-4a54-ac19-d55c4b9604aa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/templates/quick_message.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/body.css" afterPath="$PROJECT_DIR$/css/body.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/dashboard_view.php" afterPath="$PROJECT_DIR$/application/views/templates/dashboard_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/elements.css" afterPath="$PROJECT_DIR$/css/elements.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/footer_view.php" afterPath="$PROJECT_DIR$/application/views/templates/footer_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/modals/modal_view.php" afterPath="$PROJECT_DIR$/application/views/templates/modals/modal_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/right_float_view.php" afterPath="$PROJECT_DIR$/application/views/templates/right_float_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/script.js" afterPath="$PROJECT_DIR$/js/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sidebar.css" afterPath="$PROJECT_DIR$/css/sidebar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/tasks_view.php" afterPath="$PROJECT_DIR$/application/views/templates/tasks_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/quick_message.php" afterPath="$PROJECT_DIR$/application/views/templates/quick_message.php" />
     </list>
     <ignored path="crm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +26,7 @@
     <favorites_list name="crm" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.13807982">
+    <splitter split-orientation="horizontal" split-proportion="0.5140237">
       <split-first>
         <leaf>
           <file leaf-file-name="script.js" pinned="false" current="false" current-in-tab="false">
@@ -73,20 +65,24 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="footer_view.php" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="footer_view.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/views/templates/footer_view.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="16" column="35" selection-start="875" selection-end="875" vertical-scroll-proportion="1.5551895" vertical-offset="136" max-vertical-offset="3127">
+                <state line="7" column="42" selection-start="515" selection-end="515" vertical-scroll-proportion="-2.290909" vertical-offset="0" max-vertical-offset="1573">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="quick_message.php" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="quick_message.php" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/application/views/templates/quick_message.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="5" column="0" selection-start="194" selection-end="194" vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="881">
-                  <folding />
+                <state line="26" column="30" selection-start="1317" selection-end="1317" vertical-scroll-proportion="0.645241" vertical-offset="0" max-vertical-offset="1367">
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -164,10 +160,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="modal_view.php" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="modal_view.php" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/application/views/templates/modals/modal_view.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="213" column="0" selection-start="13800" selection-end="13800" vertical-scroll-proportion="0.36778846" vertical-offset="3546" max-vertical-offset="4666">
+                <state line="100" column="0" selection-start="6664" selection-end="6664" vertical-scroll-proportion="0.82587063" vertical-offset="1568" max-vertical-offset="5484">
                   <folding />
                 </state>
               </provider>
@@ -185,7 +181,7 @@
           <file leaf-file-name="body.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/body.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="237" column="18" selection-start="5676" selection-end="5676" vertical-scroll-proportion="0.0" vertical-offset="3718" max-vertical-offset="5318">
+                <state line="237" column="0" selection-start="5678" selection-end="5678" vertical-scroll-proportion="0.0" vertical-offset="4001" max-vertical-offset="5593">
                   <folding />
                 </state>
               </provider>
@@ -234,13 +230,13 @@
         <option value="$PROJECT_DIR$/css/sidebar.css" />
         <option value="$PROJECT_DIR$/application/views/templates/right_float_view.php" />
         <option value="$PROJECT_DIR$/css/elements.css" />
-        <option value="$PROJECT_DIR$/css/body.css" />
         <option value="$PROJECT_DIR$/js/script.js" />
         <option value="$PROJECT_DIR$/application/views/templates/dashboard_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/tasks_view.php" />
-        <option value="$PROJECT_DIR$/application/views/templates/quick_message.php" />
-        <option value="$PROJECT_DIR$/application/views/templates/footer_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/modals/modal_view.php" />
+        <option value="$PROJECT_DIR$/application/views/templates/footer_view.php" />
+        <option value="$PROJECT_DIR$/css/body.css" />
+        <option value="$PROJECT_DIR$/application/views/templates/quick_message.php" />
       </list>
     </option>
   </component>
@@ -640,8 +636,8 @@
     <layout>
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32955405" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32955405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955405" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11757576" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -967,13 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/body.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="237" column="18" selection-start="5676" selection-end="5676" vertical-scroll-proportion="0.0" vertical-offset="3718" max-vertical-offset="5318">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="286" column="0" selection-start="8966" selection-end="8966" vertical-scroll-proportion="0.0" vertical-offset="4834" max-vertical-offset="6632">
@@ -998,20 +987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/quick_message.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="194" selection-end="194" vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="881">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/footer_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="35" selection-start="875" selection-end="875" vertical-scroll-proportion="1.5551895" vertical-offset="136" max-vertical-offset="3127">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/modals/modal_task.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="30" selection-start="1749" selection-end="1749" vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="1979">
@@ -1019,10 +994,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/templates/footer_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="42" selection-start="515" selection-end="515" vertical-scroll-proportion="-2.290909" vertical-offset="0" max-vertical-offset="1573">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/body.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="237" column="0" selection-start="5678" selection-end="5678" vertical-scroll-proportion="0.0" vertical-offset="4001" max-vertical-offset="5593">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/modals/modal_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="213" column="0" selection-start="13800" selection-end="13800" vertical-scroll-proportion="0.36778846" vertical-offset="3546" max-vertical-offset="4666">
+        <state line="100" column="0" selection-start="6664" selection-end="6664" vertical-scroll-proportion="0.82587063" vertical-offset="1568" max-vertical-offset="5484">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/templates/quick_message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="30" selection-start="1317" selection-end="1317" vertical-scroll-proportion="0.645241" vertical-offset="0" max-vertical-offset="1367">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
