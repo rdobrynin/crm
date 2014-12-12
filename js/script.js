@@ -281,8 +281,8 @@ $('.closebox').click(function(e){
         $('#float-users').removeClass('active');
     }
 
-    $('.comment-sidebar').click(function () {
-        $('#comment_modal').modal('show');
+    $('.comment-sidebar, .hover-td-name').click(function () {
+        $('.qm-body').css('display','block');
     });
 
     $('#approve_tasks_table').pageMe({pagerSelector:'#pager_approve_tasks',showPrevNext:true,hidePageNumbers:false,perPage:10});
@@ -303,6 +303,9 @@ $('#calc-all-tasks').html(count_all_tasks);
             $(this).removeClass('highlight');
         });
 
+    $('.close-qm').click(function () {
+        $('.qm-body').css('display', 'none');
+    });
 
 
 

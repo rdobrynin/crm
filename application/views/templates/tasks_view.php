@@ -31,8 +31,8 @@
                                       <td><?php print($tv['id']); ?></td>
                                       <td><span class="muted"><?php print($tv['date_created']); ?></span></td>
                                       <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
-                                      <td><a href="mailto:<?php print($user_name[$tv['implementor']]); ?>" class="hover-td-name"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
-                                      <td><a href="mailto:<?php print($user_name[$tv['uid']]); ?>" class="hover-td-name"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
+                                      <td><a href="#" class="hover-td-name"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
+                                      <td><a href="#" class="hover-td-name"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
                                       <td><?php print($tv['title']); ?></td>
                                       <td><?php print($project_title[$tv['pid']]); ?></td>
                                       <td><span class="muted"><?php print($tv['desc']); ?></span></td>

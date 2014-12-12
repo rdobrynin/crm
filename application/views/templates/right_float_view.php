@@ -11,7 +11,7 @@
             </div>
             <div class="sidebar-position"><?php print(show_role($uv['role'])); ?></div>
             <div class="sidebar-position"><a href="mailto:<?php print($uv['email']); ?>"><?php print($uv['email']); ?></a></div>
-            <div class="sidebar-position phone"><?php print($uv['phone']); ?></div>
+            <div class="sidebar-position phone"><?php print($uv['phone']); ?>&nbsp;<span class="label label-xs label-primary sms">sms</span></div>
         </div>
         <div class="close-right-sidebar"><a href="#"><i class="fa fa-times"></i></a></div>
     <?php endforeach ?>
