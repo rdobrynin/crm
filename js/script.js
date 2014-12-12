@@ -296,6 +296,14 @@ $('#calc-appr-tasks').html(count_approve_tasks);
 $('#calc-all-tasks').html(count_all_tasks);
 
 
+        //add class "highlight" when hover over the row
+        $('#approve_tasks_table tr, #all_task_table tr').hover(function() {
+            $(this).addClass('highlight');
+        }, function() {
+            $(this).removeClass('highlight');
+        });
+
+
 
 
 //

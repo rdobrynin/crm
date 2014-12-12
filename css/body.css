@@ -172,3 +172,7 @@ legend {
     -moz-border-radius: 3px;
     border-radius: 3px;
 }
+
+tr.highlight {
+    background-color: #f9f9f9;
+}

@@ -131,7 +131,7 @@ class Dashboard extends CI_Controller {
         }
 
         $project_title_array = $this->project_model->get_project_title();
-        if($project_array) {
+        if($project_title_array) {
             $data['project_title']= $project_title_array;
         }
         else {
@@ -168,6 +168,7 @@ class Dashboard extends CI_Controller {
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
         $data['client'] = $this->admin_model->get_own_client($_SESSION['username']);
         $data['users'] = $this->admin_model->get_users();
+        $data['user_name'] = $this->admin_model->get_users_names();
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
         $this->load->view('templates/head_view',$data);
         if ($data['user'][0]['helpblock'] == 1) {
@@ -236,6 +237,7 @@ class Dashboard extends CI_Controller {
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
         $data['client'] = $this->admin_model->get_own_client($_SESSION['username']);
         $data['users'] = $this->admin_model->get_users();
+        $data['user_name'] = $this->admin_model->get_users_names();
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
         $this->load->view('templates/head_view',$data);
         if ($data['user'][0]['helpblock'] == 1) {
@@ -287,7 +289,7 @@ class Dashboard extends CI_Controller {
         }
 
         $project_title_array = $this->project_model->get_project_title();
-        if($project_array) {
+        if($project_title_array) {
             $data['project_title']= $project_title_array;
         }
         else {

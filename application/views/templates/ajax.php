@@ -313,15 +313,13 @@ console.log(localStorage);
               data: form_data,
               dataType: 'json',
               success: function (msg) {
-                  console.log(msg);
                   if (msg.empty == true) {
                       $('#check_empty_task_pr').fadeIn('slow').css('display', 'block');
                   }
                   else {
                       $('#check_empty_task_pr').fadeIn('slow').css('display', 'none');
                   }
-                  if(msg.result == true && msg.repeat == false) {
-                      $('#check_repeat_task_pr').fadeIn('slow').css('display', 'none');
+                  if(msg.result == true) {
                       $('#save_task_pr_modal').fadeIn('slow').css('display', 'block');
                       setTimeout(function() {
                           $('#save_task_pr_modal,#save_error_task_pr_modal').css('display', 'none');
@@ -340,9 +338,6 @@ console.log(localStorage);
                       }, 3000);
 
 
-                  }
-                  else if(msg.repeat != false) {
-                      $('#check_repeat_task_pr').fadeIn('slow').css('display', 'block');
                   }
                   else {
                       $('#save_task_pr_modal').css('display', 'none');

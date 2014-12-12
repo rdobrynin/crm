@@ -81,3 +81,9 @@ fieldset[disabled] .btn-primary.active {
     color: #428bca;
     background-color: #fff;
 }
+
+.btn, .dropdown-mwnu.open  {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+}

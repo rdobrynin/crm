@@ -11,15 +11,17 @@
                           <table class="table table-condensed">
                               <thead>
                               <tr>
-                                  <th width="5%" class="text-left">#ID</th>
-                                  <th width="15%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
+                                  <th width="3%" class="text-left">#ID</th>
+                                  <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
                                   <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
-                                  <th width="15%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
+                                  <th width="8%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
+                                  <th width="8%" class="text-" style="border-left: 1px solid #ddd;">Creator</th>
+                                  <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
                                   <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Assigned project</th>
-                                  <th width="20%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
-                                  <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
-                                  <th width="15%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
-                                  <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
+                                  <th width="18%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
+                                  <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
+                                  <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
+                                  <th width="3%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
                               </tr>
                               </thead>
                               <tbody id="all_task_table">
@@ -29,6 +31,8 @@
                                       <td><?php print($tv['id']); ?></td>
                                       <td><span class="muted"><?php print($tv['date_created']); ?></span></td>
                                       <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
+                                      <td><a href="mailto:<?php print($user_name[$tv['implementor']]); ?>" class="hover-td-name"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
+                                      <td><a href="mailto:<?php print($user_name[$tv['uid']]); ?>" class="hover-td-name"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
                                       <td><?php print($tv['title']); ?></td>
                                       <td><?php print($project_title[$tv['pid']]); ?></td>
                                       <td><span class="muted"><?php print($tv['desc']); ?></span></td>

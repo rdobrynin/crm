@@ -7,7 +7,6 @@
         <div class="row">
             <!--FORM-->
             <div class="col-md-8">
-                <h2><?php print(lang('menu_profile'))?></h2>
                 <form role="form" class="form-horizontal" action="<?php print(base_url()); ?>update_profile" method="POST" autocomplete="on">
                     <div class="row">
                         <div class="address-wrapper" style="height: 100%;">
@@ -133,7 +132,6 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <h2><?php print(lang('profile_picture'))?></h2>
                 <div class="address-wrapper" style="height: 100%;">
                     <div class="row">
                         <div class="col-md-12">

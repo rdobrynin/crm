@@ -479,12 +479,12 @@ class Ajax extends CI_Controller {
         $result['empty'] = false;
         $name_array =  $this->admin_model->get_user_id($result['owner']);
         $full_name = $name_array[0]['first_name'].' '.$name_array[0]['last_name'];
-        $result['repeat'] = $this->task_model->checkTask($this->input->post('title'));
+
         if ($_POST['title'] == '' OR $_POST['desc'] == '' OR $_POST['project'] == '' OR $_POST['label'] == '' OR $_POST['dueto'] == '' OR $_POST['priority'] == '' OR $_POST['implementor'] == '') {
             $result['empty'] = true;
         }
         else {
-            if($result['repeat'] == false) {
+
                 $result['empty'] = false;
                 $text = 'added task';
                 $this->project_model->createEvent($result['owner'], $result['desc'],  $text, $full_name, $result['title'], 1);
@@ -494,10 +494,6 @@ class Ajax extends CI_Controller {
                 else {
                     $result['result'] = false;
                 }
-            }
-            else {
-                $result['result'] = false;
-            }
         }
         echo json_encode($result);
     }

@@ -118,7 +118,6 @@
                             <label for="task_pr_title">Task name</label>
                             <input type="text" name="task_pr_title" id="task_pr_title" class="form-control btn-special" placeholder="Task name title">
                         </div>
-                        <div style="display: none; margin-bottom: 10px;" id="check_repeat_task_pr" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;This title already exists</div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">

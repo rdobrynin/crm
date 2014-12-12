@@ -100,6 +100,9 @@ background: transparent;
 
 .selectpicker, .open {
    background-color: #575757 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
 }
 
 .selectpicker  > li > a:hover, .selectpicker  > li > a:focus{
