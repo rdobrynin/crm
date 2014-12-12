@@ -55,6 +55,27 @@ class Project_model extends CI_Model {
         return $query->result_array();
     }
 
+
+    /**
+     * Get projects
+     * @return mixed
+     */
+
+    public function get_project_title() {
+        $return = array();
+        $query = $this
+            ->db
+            ->get('project');
+        $result = $query->result_array();
+        if(!empty($result)){
+            foreach($result as $projects){
+                $return[$projects["pid"]] = $projects["title"];
+            }
+        }
+        return $return;
+    }
+
+
     /**
      * Get projects
      * @return mixed

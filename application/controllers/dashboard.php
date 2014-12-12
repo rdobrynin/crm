@@ -42,6 +42,16 @@ class Dashboard extends CI_Controller {
             $data['projects']=false;
         }
 
+
+        $project_title_array = $this->project_model->get_project_title();
+        if($project_array) {
+            $data['project_title']= $project_title_array;
+        }
+        else {
+            $data['project_title']=false;
+        }
+
+
         $task_types = $this->task_model->getTaskTypes();
         if($task_types) {
             $data['task_types']= $task_types;
@@ -118,6 +128,14 @@ class Dashboard extends CI_Controller {
         }
         else {
             $data['task_types']=false;
+        }
+
+        $project_title_array = $this->project_model->get_project_title();
+        if($project_array) {
+            $data['project_title']= $project_title_array;
+        }
+        else {
+            $data['project_title']=false;
         }
 
         $project_array = $this->project_model->get_projects();
@@ -205,6 +223,14 @@ class Dashboard extends CI_Controller {
             $data['imps']=false;
         }
 
+        $project_title_array = $this->project_model->get_project_title();
+        if($project_array) {
+            $data['project_title']= $project_title_array;
+        }
+        else {
+            $data['project_title']=false;
+        }
+
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
@@ -258,6 +284,14 @@ class Dashboard extends CI_Controller {
         }
         else {
             $data['imps']=false;
+        }
+
+        $project_title_array = $this->project_model->get_project_title();
+        if($project_array) {
+            $data['project_title']= $project_title_array;
+        }
+        else {
+            $data['project_title']=false;
         }
 
         $project_array = $this->project_model->get_projects();
@@ -336,6 +370,15 @@ class Dashboard extends CI_Controller {
             $data['task_types']=false;
         }
 
+
+        $project_title_array = $this->project_model->get_project_title();
+        if($project_array) {
+            $data['project_title']= $project_title_array;
+        }
+        else {
+            $data['project_title']=false;
+        }
+
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
@@ -391,6 +434,14 @@ class Dashboard extends CI_Controller {
         }
         else {
             $data['projects']=false;
+        }
+
+        $project_title_array = $this->project_model->get_project_title();
+        if($project_array) {
+            $data['project_title']= $project_title_array;
+        }
+        else {
+            $data['project_title']=false;
         }
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
@@ -452,6 +503,14 @@ class Dashboard extends CI_Controller {
             $data['task_types']=false;
         }
 
+        $project_title_array = $this->project_model->get_project_title();
+        if($project_array) {
+            $data['project_title']= $project_title_array;
+        }
+        else {
+            $data['project_title']=false;
+        }
+
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
@@ -510,6 +569,14 @@ class Dashboard extends CI_Controller {
         }
         else {
             $data['task_types']=false;
+        }
+
+        $project_title_array = $this->project_model->get_project_title();
+        if($project_array) {
+            $data['project_title']= $project_title_array;
+        }
+        else {
+            $data['project_title']=false;
         }
 
         $data['roles'] = $roles;
@@ -609,6 +676,14 @@ class Dashboard extends CI_Controller {
             $data['tasks']=false;
         }
 
+        $project_title_array = $this->project_model->get_project_title();
+        if($project_array) {
+            $data['project_title']= $project_title_array;
+        }
+        else {
+            $data['project_title']=false;
+        }
+
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
         $this->load->library('form_validation');
@@ -706,6 +781,14 @@ class Dashboard extends CI_Controller {
             $data['task_types']=false;
         }
 
+        $project_title_array = $this->project_model->get_project_title();
+        if($project_array) {
+            $data['project_title']= $project_title_array;
+        }
+        else {
+            $data['project_title']=false;
+        }
+
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
@@ -783,6 +866,14 @@ class Dashboard extends CI_Controller {
             $data['task_types']=false;
         }
 
+        $project_title_array = $this->project_model->get_project_title();
+        if($project_array) {
+            $data['project_title']= $project_title_array;
+        }
+        else {
+            $data['project_title']=false;
+        }
+
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
         $data['client'] = $this->admin_model->get_own_client($_SESSION['username']);
@@ -848,6 +939,14 @@ class Dashboard extends CI_Controller {
         }
         else {
             $data['task_types']=false;
+        }
+
+        $project_title_array = $this->project_model->get_project_title();
+        if($project_array) {
+            $data['project_title']= $project_title_array;
+        }
+        else {
+            $data['project_title']=false;
         }
 
         $data['roles'] = $roles;

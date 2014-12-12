@@ -2,7 +2,7 @@
 <div class="page-content-wrapper">
     <div class="page-content inset">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <h3 class="h_title">Current activity</h3>
                 <div class="row">
                     <div class="col-md-6 col-vlg-3 col-sm-6">
@@ -63,36 +63,37 @@
                 </div>
                 <?php if ($tasks != FALSE): ?>
                     <div class="row-fluid" style="padding-top: 20px;">
-                        <h3 class="h_title">Last 8 tasks</h3>
+                        <h3 class="h_title">Tasks for approve&nbsp;(<span id="calc-appr-tasks" ></span>)</h3>
                         <div class="panel panel-default">
                             <div class="panel-body-table">
                                 <div class="table-responsive">
                                     <table class="table table-condensed">
                                         <thead>
                                         <tr>
-                                            <th width="3%" class="text-left">#ID</th>
                                             <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
                                             <th width="4%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
                                             <th width="8%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
                                             <th width="8%" class="text-" style="border-left: 1px solid #ddd;">Creator</th>
                                             <th width="13%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
+                                            <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Assigned project</th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
                                             <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
                                             <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
                                             <th width="3%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
                                         </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="approve_tasks_table">
                                       <?php $tasks = array_reverse($tasks);?>
-                                        <?php foreach (array_slice($tasks, 1, 8) as $tk => $tv): ?>
-                                            <tr>
-                                                <td><?php print($tv['id']); ?></td>
+                                        <?php foreach ($tasks as $tk => $tv): ?>
+                                            <?php if ($tv['status'] == 0): ?>
 
+                                            <tr class="<?php if ($tv['status'] == 6): ?>danger<?php endif ?>">
                                                 <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"Y/m/d H:i")); ?></span></td>
                                                 <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
-                                                <td><a href="mailto:<?php print($user_name[$tv['implementor']]); ?>"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
-                                                <td><a href="mailto:<?php print($user_name[$tv['uid']]); ?>"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
+                                                <td><a href="mailto:<?php print($user_name[$tv['implementor']]); ?>" class="hover-td-name"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
+                                                <td><a href="mailto:<?php print($user_name[$tv['uid']]); ?>" class="hover-td-name"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
                                                 <td><?php print($tv['title']); ?></td>
+                                                <td><?php print($project_title[$tv['pid']]); ?></td>
                                                 <td><span class="muted"><?php print(short_name($tv['desc'])); ?></span></td>
                                                 <td>
                                                     <span class="label <?php print(task_status_label($tv['status'])); ?> label-xs"><?php print(task_status($tv['status'])); ?></span>
@@ -101,17 +102,22 @@
                                                 <td class="text-center"><a href="#"><i class="fa fa-pencil"></i></a>
                                                 </td>
                                             </tr>
+                                            <?php endif ?>
                                         <?php endforeach ?>
+
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
+                        <div class="text-center">
+                            <ul class="pagination pagination-lg pager" id="pager_approve_tasks"></ul>
+                        </div>
                     </div>
                 <?php endif ?>
 <!--                end last tasks-->
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="panel panel-primary">
                     <div class="panel-heading clickable">
                         <h3 class="panel-title">Activity Stream</h3>
@@ -211,4 +217,7 @@
 <!--test-->
 <?php include('logs_view.php'); ?>
 <?php include('right_float_view.php'); ?>
+<script>
+
+</script>
 

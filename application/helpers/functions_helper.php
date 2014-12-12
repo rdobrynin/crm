@@ -104,8 +104,11 @@ if (!function_exists('short_name')) {
 if (!function_exists('task_status')) {
   function task_status($status) {
     $result=0;
+      if($status == 6) {
+          $result = 'overdue';
+      }
     if($status == 5) {
-      $result = 'froze';
+      $result = 'ready';
     }
     else if($status == 4) {
       $result = 'pause';
@@ -115,6 +118,9 @@ if (!function_exists('task_status')) {
     }
     else if($status == 2) {
       $result = 'process';
+    }
+    else if($status == 1) {
+        $result = 'unwanted';
     }
     else if($status == 0) {
       $result = 'approve';
@@ -130,6 +136,9 @@ if (!function_exists('task_status')) {
 if (!function_exists('task_status_label')) {
     function task_status_label($status) {
         $result=0;
+        if($status == 6) {
+            $result = 'label-danger';
+        }
         if($status == 5) {
             $result = 'label-primary';
         }
@@ -137,9 +146,12 @@ if (!function_exists('task_status_label')) {
             $result = 'label-default';
         }
         else if($status == 3) {
-            $result = 'label-primary';
+            $result = 'label-info';
         }
         else if($status == 1) {
+            $result = 'label-default';
+        }
+        else if($status == 2) {
             $result = 'label-success';
         }
         else if($status == 0) {
