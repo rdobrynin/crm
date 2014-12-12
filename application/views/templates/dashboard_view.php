@@ -121,7 +121,7 @@
                         <div class="sub-activity">
                             <div class="avatar-activity">
                                 <span class="avatar-img">
-                                    <a href="#"><img src="http://localhost/prm/uploads/avatar/bg_man@2x.jpg" height="45"></a>
+                                    <a href="#"><img src="<?php print(base_url());?>uploads/avatar/admin_avatar.jpg" height="45"></a>
                                 </span>
                             </div>
                             <div class="activity-item-summary">
@@ -141,7 +141,7 @@
                         <div class="sub-activity">
                             <div class="avatar-activity">
                                 <span class="avatar-img">
-                                    <a href="#"><img src="http://localhost/prm/uploads/avatar/TaskEasy-Logo.png" height="45"></a>
+                                    <a href="#"><img src="<?php print(base_url());?>uploads/avatar/TaskEasy-Logo.png" height="45"></a>
                                 </span>
                             </div>
                             <div class="activity-item-summary">
@@ -160,7 +160,7 @@
                         <div class="sub-activity">
                             <div class="avatar-activity">
                                 <span class="avatar-img">
-                                    <a href="#"><img src="http://localhost/prm/uploads/avatar/bg_man@2x.jpg" height="45"></a>
+                                    <a href="#"><img src="<?php print(base_url());?>uploads/avatar/admin_avatar.jpg" height="45"></a>
                                 </span>
                             </div>
                             <div class="activity-item-summary">
@@ -184,7 +184,7 @@
                         <div class="sub-activity">
                             <div class="avatar-activity">
                                 <span class="avatar-img">
-                                    <a href="#"><img src="http://localhost/prm/uploads/avatar/TaskEasy-Logo.png" height="45"></a>
+                                    <a href="#"><img src="<?php print(base_url());?>uploads/avatar/TaskEasy-Logo.png" height="45"></a>
                                 </span>
                             </div>
                             <div class="activity-item-summary">
