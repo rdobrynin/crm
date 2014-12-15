@@ -20,6 +20,7 @@
                                   <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Assigned project</th>
                                   <th width="18%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
                                   <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
+                                  <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
                                   <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
                                   <th width="3%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
                               </tr>
@@ -39,6 +40,7 @@
                                       <td>
                                           <span class="label <?php print(task_status_label($tv['status'])); ?> label-xs"><?php print(task_status($tv['status'])); ?></span>
                                       </td>
+                                      <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
                                       <td class="text-left"><?php print($tv['due_time']); ?></td>
                                       <td class="text-center"><a href="#"><i class="fa fa-pencil"></i></a>
                                       </td>

@@ -434,12 +434,14 @@
           $uid = $user;
           $subject = $('#qm-subject-field').val();
           $text = $('#qm-text').val();
+          $search =false;
 
           var form_data_ = {
               uid: $uid,
               subject: $subject,
               text: $text,
-              to: $to
+              to: $to,
+              search:$search
           };
           $.ajax({
               url: "<?php echo site_url('ajax/sendComment'); ?>",
@@ -447,6 +449,7 @@
               data: form_data_,
               dataType: 'json',
               success: function (msg) {
+                  console.log(msg);
                  if(msg.empty == true) {
                   $('#qm-empty-error').fadeIn('slow').css('display','block');
                      setTimeout(function () {
@@ -480,6 +483,7 @@
           data: form_data,
           dataType: 'json',
           success: function (msg) {
+              console.log(msg);
               $first_name = msg.user[0]['first_name'];
               $last_name = msg.user[0]['last_name'];
               $currentID = msg.user[0]['id'];
@@ -496,6 +500,8 @@
        */
 
       $('#qm-send-btn').click(function () {
+          $search =true;
+          $fullname = $('#qm-autocomplete').val();
           $to = $('#user_qm_id').val();
           $uid = $user;
           $subject = $('#qm-subject-field').val();
@@ -505,7 +511,9 @@
               uid: $uid,
               subject: $subject,
               text: $text,
-              to: $to
+              to: $to,
+              fullname: $fullname,
+              search: $search
           };
           $.ajax({
               url: "<?php echo site_url('ajax/sendComment'); ?>",
@@ -513,6 +521,7 @@
               data: form_data_,
               dataType: 'json',
               success: function (msg) {
+                  console.log(msg);
                   if(msg.empty == true) {
                       $('#qm-empty-error').fadeIn('slow').css('display','block');
                       setTimeout(function () {

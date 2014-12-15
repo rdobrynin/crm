@@ -278,3 +278,10 @@ span.label.label-xs.label-primary.sms:hover {
 tr.disabled {
     color: #bebebe;
 }
+
+.circle-priority {
+    font-size: 8px !important;
+    position: relative;
+    top: -1px;
+    margin-right: 5px !important;
+}

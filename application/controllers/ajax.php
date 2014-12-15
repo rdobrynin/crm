@@ -533,15 +533,32 @@ class Ajax extends CI_Controller {
         $result['text'] =  $this->input->post('text');
         $result['result'] =  false;
         $result['empty'] =  false;
+        $result['fullname'] =  $this->input->post('fullname');
 
-        if($this->input->post('text') !='' AND $this->input->post('subject') !='') {
-            if($query = $this->message_model->sendComment()) {
-                $result['result'] =  true;
+
+        if($this->input->post('search') == 'false') {
+
+            if($this->input->post('text') !='' AND $this->input->post('subject') !='') {
+                if($query = $this->message_model->sendComment()) {
+                    $result['result'] =  true;
+                }
+            }
+            else {
+                $result['empty'] =  true;
             }
         }
         else {
-            $result['empty'] =  true;
+            if($this->input->post('text') !='' OR $this->input->post('subject') !='') {
+                if($query = $this->message_model->sendComment()) {
+                    $result['result'] =  true;
+                }
+            }
+            else {
+                $result['empty'] =  true;
+            }
         }
+
+
         echo json_encode($result);
     }
 
