@@ -90,8 +90,8 @@
                                             <tr class="<?php if ($tv['status'] == 6): ?>danger<?php endif ?>">
                                                 <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"Y/m/d H:i")); ?></span></td>
                                                 <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
-                                                <td><a href="#" class="hover-td-name"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
-                                                <td><a href="#" class="hover-td-name"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
+                                                <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
+                                                <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
                                                 <td><?php print($tv['title']); ?></td>
                                                 <td><?php print($project_title[$tv['pid']]); ?></td>
                                                 <td><span class="muted"><?php print(short_name($tv['desc'])); ?></span></td>

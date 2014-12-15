@@ -255,3 +255,21 @@ span.label.label-xs.label-primary.sms:hover {
 .form-group.qm {
     margin-bottom: 0;
 }
+
+#qm-autocomplete {
+    font-size: 14px;
+    color: #5f5f5f;
+}
+
+.bottom-panel-qm {
+    width: 100%;
+    position: relative;
+    bottom: 20px;
+}
+
+#qm-link-file-btn {
+    float: right;
+    padding-top: 10px;
+    position: relative;
+    color: #666666;
+}

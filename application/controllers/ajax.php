@@ -510,6 +510,16 @@ class Ajax extends CI_Controller {
         $this->dashboard_model->settings_help($result['id'], $result['help']);
         echo json_encode($result);
     }
+
+    /**
+     * switch help block
+     */
+    function getUserbyId() {
+        $this->load->model('admin_model');
+        $user =  $this->input->post('id');
+        $result['user']= $this->admin_model->get_user_id($user);
+        echo json_encode($result);
+    }
 }
 
 

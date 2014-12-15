@@ -58,7 +58,6 @@
       });
 
 
-console.log(localStorage);
       /**
        * Add project
        *
@@ -357,7 +356,6 @@ console.log(localStorage);
               check = 0;
               $(this).html('Show panel');
           }
-          console.log(check);
           var form_data = {
               help_block :check,
               user_id :$('#user_id_help').val()
@@ -373,5 +371,47 @@ console.log(localStorage);
               }
           });
       });
+
+      $('#qm-link-file-btn').click(function () {
+          alert('upload file functionality in development  phase');
+      });
+
+      $('#qm-clear-form-btn').click(function () {
+          $("#qm-text, #qm-subject-field").val("");
+      });
+
   });
+
+  /**
+   *  Quick comment add function()
+   */
+
+  function qmSendComment($data){
+      $('.qm-body').hide();
+      $('.qm-body').show();
+      $user = '<?php print($user[0]['id'])?>';
+      var form_data = {
+          id: $data
+      };
+      $.ajax({
+          url: "<?php echo site_url('ajax/getUserbyId'); ?>",
+          type: 'POST',
+          data: form_data,
+          dataType: 'json',
+          success: function (msg) {
+              $first_name = msg.user[0]['first_name'];
+              $last_name = msg.user[0]['last_name'];
+              $currentID = msg.user[0]['id'];
+              $email  = msg.user[0]['email'];
+              $avatar  = msg.user[0]['avatar'];
+              console.log($user);
+              $('#qm-autocomplete').val($first_name+ ' '+$last_name);
+              $('#user_qm_id').val($currentID);
+          }
+      });
+
+      $('#qm-send-btn').click(function () {
+          alert($user);
+      });
+  }
 </script>

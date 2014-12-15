@@ -3,6 +3,8 @@ function toTimestamp(strDate){
     return datum/1000;
 }
 
+
+
 //Pager
 
 $.fn.pageMe = function(opts){
@@ -281,9 +283,6 @@ $('.closebox').click(function(e){
         $('#float-users').removeClass('active');
     }
 
-    $('.comment-sidebar, .hover-td-name').click(function () {
-        $('.qm-body').css('display','block');
-    });
 
     $('#approve_tasks_table').pageMe({pagerSelector:'#pager_approve_tasks',showPrevNext:true,hidePageNumbers:false,perPage:10});
     $('#logs-tbody').pageMe({pagerSelector:'#pager_all_logs',showPrevNext:true,hidePageNumbers:false,perPage:10});
@@ -318,5 +317,21 @@ $('#calc-all-tasks').html(count_all_tasks);
 //            $(this).css("background","");
 //        }
 //    );
+
+    var countries = [
+        { value: 'Andorra', data: 'AD' },
+        { value: 'A3ndorra', data: 'AD' },
+        { value: 'A2ndorra', data: 'AD' },
+        { value: 'An1dorra', data: 'AD' },
+        // ...
+        { value: 'Zimbabwe', data: 'ZZ' }
+    ];
+
+    $('#qm-autocomplete').autocomplete({
+        lookup: countries,
+        onSelect: function (suggestion) {
+            alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
+        }
+    });
 
 });
