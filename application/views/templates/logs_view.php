@@ -9,7 +9,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-body-table">
                                     <div class="table-responsive">
-                                        <table class="table table-condensed">
+                                        <table class="table table-condensed" id="log-table">
                                             <thead>
                                             <tr>
                                                 <td><strong>#ID</strong></td>

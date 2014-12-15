@@ -535,7 +535,7 @@ class Ajax extends CI_Controller {
         $result['empty'] =  false;
 
         if($this->input->post('text') !='' AND $this->input->post('subject') !='') {
-            if($this->message_model->sendComment()) {
+            if($query = $this->message_model->sendComment()) {
                 $result['result'] =  true;
             }
         }

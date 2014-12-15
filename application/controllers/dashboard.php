@@ -84,7 +84,6 @@ class Dashboard extends CI_Controller {
         else {
             $data['tasks']=false;
         }
-
         $this->session->set_userdata('user_id', $this->admin_model->get_user_id($_SESSION['username']));
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
         $roles_array = $this->admin_model->get_roles();
@@ -380,6 +379,17 @@ class Dashboard extends CI_Controller {
         else {
             $data['project_title']=false;
         }
+
+
+        $this->load->model('message_model');
+        $comments = $this->message_model->getComments();
+        if($comments) {
+            $data['comments']= $comments;
+        }
+        else {
+            $data['comments']=false;
+        }
+        $data['user_name'] = $this->admin_model->get_users_names();
 
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');

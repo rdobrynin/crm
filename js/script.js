@@ -290,13 +290,15 @@ $('.closebox').click(function(e){
 
     var count_approve_tasks = $('#approve_tasks_table').children().length;
     var count_all_tasks = $('#all_task_table').children().length;
+    var count_all_comments = $('#all_comments_table').children().length;
 
 $('#calc-appr-tasks').html(count_approve_tasks);
 $('#calc-all-tasks').html(count_all_tasks);
+$('#calc-all-comments').html(count_all_comments);
 
 
         //add class "highlight" when hover over the row
-        $('#approve_tasks_table tr, #all_task_table tr').hover(function() {
+        $('#approve_tasks_table tr, #all_task_table tr, #all_comments_table tr, #log-table tr').hover(function() {
             $(this).addClass('highlight');
         }, function() {
             $(this).removeClass('highlight');
@@ -318,20 +320,18 @@ $('#calc-all-tasks').html(count_all_tasks);
 //        }
 //    );
 
-    var countries = [
-        { value: 'Andorra', data: 'AD' },
-        { value: 'A3ndorra', data: 'AD' },
-        { value: 'A2ndorra', data: 'AD' },
-        { value: 'An1dorra', data: 'AD' },
-        // ...
-        { value: 'Zimbabwe', data: 'ZZ' }
-    ];
 
-    $('#qm-autocomplete').autocomplete({
-        lookup: countries,
-        onSelect: function (suggestion) {
-            alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
-        }
+    $('.sms-send-alert').click(function () {
+        alert('sms notification functionality in development  phase');
+    });
+
+    $('#qm-link-file-btn').click(function () {
+        alert('upload file functionality in development  phase');
+    });
+
+    $('#qm-close-point-name').click(function () {
+        $('#qm-autocomplete').show();
+        $('.point-name-tag').hide();
     });
 
 });

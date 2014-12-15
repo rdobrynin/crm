@@ -372,10 +372,6 @@
           });
       });
 
-      $('#qm-link-file-btn').click(function () {
-          alert('upload file functionality in development  phase');
-      });
-
       $('#qm-clear-form-btn').click(function () {
           $("#qm-text, #qm-subject-field").val("");
       });
@@ -389,6 +385,7 @@
   function qmSendComment($data){
       $('.qm-body').hide();
       $('.qm-body').show();
+      $('.point-name-tag').show();
       $user = '<?php print($user[0]['id'])?>';
       var form_data = {
           id: $data
@@ -404,10 +401,15 @@
               $currentID = msg.user[0]['id'];
               $email  = msg.user[0]['email'];
               $avatar  = msg.user[0]['avatar'];
-              $('#qm-autocomplete').val($first_name+ ' '+$last_name);
+              $('#qm-autocomplete').hide();
+              $('#qm-point-name').html($first_name+ ' '+$last_name);
               $('#user_qm_id').val($currentID);
           }
       });
+
+      /**
+       * Send quick comment
+       */
 
       $('#qm-send-btn').click(function () {
           $to = $('#user_qm_id').val();
@@ -427,7 +429,6 @@
               data: form_data_,
               dataType: 'json',
               success: function (msg) {
-                  console.log(msg.empty);
                  if(msg.empty == true) {
                   $('#qm-empty-error').fadeIn('slow').css('display','block');
                      setTimeout(function () {

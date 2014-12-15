@@ -33,6 +33,26 @@ class Message_model extends CI_Model {
         return $insert;
     }
 
+
+    /**
+     * Send Comment
+     * @return mixed
+     */
+
+    public function getComments() {
+        $query = $this
+            ->db
+            ->get('comment');
+        $insert = $query->result_array();
+        if(!empty($insert)){
+            return $insert;
+        }
+        else {
+            return false;
+        }
+
+    }
+
 }
 
 

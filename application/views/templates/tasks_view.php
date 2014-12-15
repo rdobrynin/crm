@@ -2,7 +2,7 @@
 <div class="page-content-wrapper">
   <!-- Keep all page content within the page-content inset div! -->
   <div class="page-content inset">
-    <h3>Tasks&nbsp;(<span id="calc-all-tasks" ></span>)</h3>
+    <h3 class="h_title">Tasks&nbsp;(<span id="calc-all-tasks" ></span>)</h3>
       <?php if ($tasks != FALSE): ?>
           <div class="row-fluid">
               <div class="panel panel-default">
