@@ -592,6 +592,28 @@ class Admin_model extends CI_Model {
             ->get('sessions');
         return $query->result_array();
     }
+
+
+
+    /**
+     * get username
+     * @param $id
+     * @return mixed
+     */
+
+
+    public function getUsername($id) {
+        $query = $this->db->where('id', $id)->get('users');
+        if ($query->num_rows > 0) {
+            foreach ($query->result() as $row) {
+                return $row->first_name. ' '.$row->last_name;
+            }
+        }
+        else {
+            return FALSE;
+        }
+        return TRUE;
+    }
 }
 
 

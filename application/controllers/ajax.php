@@ -527,6 +527,8 @@ class Ajax extends CI_Controller {
      */
     function sendComment() {
         $this->load->model('message_model');
+        $this->load->model('project_model');
+        $this->load->model('admin_model');
         $result['to'] =  $this->input->post('to');
         $result['owner'] =  $this->input->post('uid');
         $result['subject'] =  $this->input->post('subject');
@@ -534,11 +536,13 @@ class Ajax extends CI_Controller {
         $result['result'] =  false;
         $result['empty'] =  false;
         $result['fullname'] =  $this->input->post('fullname');
-
+       $fn =  $this->admin_model->getUsername($result['owner']);
 
         if($this->input->post('search') == 'false') {
 
             if($this->input->post('text') !='' AND $this->input->post('subject') !='') {
+                $text = 'added comment';
+                $this->project_model->createEvent($result['owner'], $result['text'],  $text, $fn, $result['subject'], 2);
                 if($query = $this->message_model->sendComment()) {
                     $result['result'] =  true;
                 }
@@ -549,6 +553,10 @@ class Ajax extends CI_Controller {
         }
         else {
             if($this->input->post('text') !='' OR $this->input->post('subject') !='') {
+
+                $text = 'added comment';
+                $this->project_model->createEvent($result['owner'], $result['text'],  $text, $fn, $result['subject'], 2);
+
                 if($query = $this->message_model->sendComment()) {
                     $result['result'] =  true;
                 }

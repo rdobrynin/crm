@@ -294,7 +294,8 @@ span.badge-resp {
         padding-top: 3px;
         display: block !important;
         margin-top: -20px;
-        width: 24px;
+        min-width: 24px;
+        width: auto;
         /* padding-right: 7px; */
         text-align: center;
     }

@@ -13,7 +13,7 @@
                 var name = data.name.slice(0,-5);
                 name = name+'...';
                 var new_time_int = parseInt(new_time);
-                if(new_time_int-3 < data_time) {
+                if(new_time_int-4 < data_time) {
                     // here we build html markup
 //                    for projects
                     if (data['type'] == 0) {
@@ -29,6 +29,14 @@
                             '<div class="alert inbox"><button type="button" class="close" data-dismiss="alert">×' +
                                 '</button><a href="javascript:void(0)"><i class="fa fa-bell"></i>From: ' + name + '</a>' +
                                 '<span class="message-mini">' + data.title + ' Task has been added</span></div>'
+                        ).fadeIn('3000');
+                    }
+//for comments
+                    else if (data['type'] == 2) {
+                        $('.mini-inbox').append(
+                            '<div class="alert inbox"><button type="button" class="close" data-dismiss="alert">×' +
+                                '</button><a href="javascript:void(0)"><i class="fa fa-comment"></i>From: ' + name + '</a>' +
+                                '<span class="message-mini">' + data.title + ' comment has been added</span></div>'
                         ).fadeIn('3000');
                     }
 
