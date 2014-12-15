@@ -411,7 +411,28 @@
       });
 
       $('#qm-send-btn').click(function () {
-          alert($user);
+
+          $to = $('#user_qm_id').val();
+          $uid = $user;
+          $subject = $('#qm-subject-field').val();
+          $text = $('#qm-text').val();
+
+          var form_data_ = {
+              uid: $uid,
+              subject: $subject,
+              text: $text,
+              to: $to
+          };
+          $.ajax({
+              url: "<?php echo site_url('ajax/sendComment'); ?>",
+              type: 'POST',
+              data: form_data_,
+              dataType: 'json',
+              success: function (msg) {
+                  console.log(msg);
+              }
+          });
+
       });
   }
 </script>

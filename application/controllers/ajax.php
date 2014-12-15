@@ -512,12 +512,40 @@ class Ajax extends CI_Controller {
     }
 
     /**
-     * switch help block
+     * Get user id
      */
     function getUserbyId() {
         $this->load->model('admin_model');
         $user =  $this->input->post('id');
         $result['user']= $this->admin_model->get_user_id($user);
+        echo json_encode($result);
+    }
+
+
+    /**
+     * Send Comment
+     */
+    function sendComment() {
+        $this->load->model('message_model');
+        $result['to'] =  $this->input->post('to');
+        $result['owner'] =  $this->input->post('uid');
+        $result['subject'] =  $this->input->post('subject');
+        $result['text'] =  $this->input->post('text');
+        $result['result'] =  false;
+        $result['empty'] =  false;
+
+        if($this->input->post('text') !='' AND $this->input->post('subject') !='') {
+            if($this->message_model->sendComment()) {
+                $result['result'] =  true;
+            }
+        }
+        else {
+            $result['empty'] =  true;
+        }
+
+
+
+
         echo json_encode($result);
     }
 }
