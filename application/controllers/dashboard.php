@@ -104,6 +104,14 @@ class Dashboard extends CI_Controller {
         foreach ($roles_array as $rk => $rv) {
             $roles[] = $rv;
         }
+
+        $events_array = $this->project_model->readAllEvents();
+        if($events_array) {
+            $data['all_events']= $events_array;
+        }
+        else {
+            $data['all_events']=false;
+        }
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
         $data['client'] = $this->admin_model->get_own_client($_SESSION['username']);
@@ -181,6 +189,14 @@ class Dashboard extends CI_Controller {
         }
         else {
             $data['comments']=false;
+        }
+
+        $events_array = $this->project_model->readAllEvents();
+        if($events_array) {
+            $data['all_events']= $events_array;
+        }
+        else {
+            $data['all_events']=false;
         }
 
         $data['users_names']= $this->admin_model->get_users_names();
@@ -262,8 +278,17 @@ class Dashboard extends CI_Controller {
             $data['comments']=false;
         }
 
-        $data['users_names']= $this->admin_model->get_users_names();
+        $events_array = $this->project_model->readAllEvents();
+        if($events_array) {
+            $data['all_events']= $events_array;
+        }
+        else {
+            $data['all_events']=false;
+        }
 
+
+
+        $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
@@ -344,8 +369,15 @@ class Dashboard extends CI_Controller {
             $data['comments']=false;
         }
 
+        $events_array = $this->project_model->readAllEvents();
+        if($events_array) {
+            $data['all_events']= $events_array;
+        }
+        else {
+            $data['all_events']=false;
+        }
+        $data['user_name'] = $this->admin_model->get_users_names();
         $data['users_names']= $this->admin_model->get_users_names();
-
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
@@ -432,6 +464,15 @@ class Dashboard extends CI_Controller {
         else {
             $data['comments']=false;
         }
+
+        $events_array = $this->project_model->readAllEvents();
+        if($events_array) {
+            $data['all_events']= $events_array;
+        }
+        else {
+            $data['all_events']=false;
+        }
+
         $data['user_name'] = $this->admin_model->get_users_names();
         $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
@@ -505,6 +546,14 @@ class Dashboard extends CI_Controller {
         }
         else {
             $data['comments']=false;
+        }
+
+        $events_array = $this->project_model->readAllEvents();
+        if($events_array) {
+            $data['all_events']= $events_array;
+        }
+        else {
+            $data['all_events']=false;
         }
         $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
@@ -582,6 +631,14 @@ class Dashboard extends CI_Controller {
         else {
             $data['comments']=false;
         }
+
+        $events_array = $this->project_model->readAllEvents();
+        if($events_array) {
+            $data['all_events']= $events_array;
+        }
+        else {
+            $data['all_events']=false;
+        }
         $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
@@ -657,6 +714,14 @@ class Dashboard extends CI_Controller {
         }
         else {
             $data['comments']=false;
+        }
+
+        $events_array = $this->project_model->readAllEvents();
+        if($events_array) {
+            $data['all_events']= $events_array;
+        }
+        else {
+            $data['all_events']=false;
         }
         $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
@@ -772,6 +837,14 @@ class Dashboard extends CI_Controller {
             $data['project_title']=false;
         }
 
+        $events_array = $this->project_model->readAllEvents();
+        if($events_array) {
+            $data['all_events']= $events_array;
+        }
+        else {
+            $data['all_events']=false;
+        }
+
         $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
@@ -884,6 +957,14 @@ class Dashboard extends CI_Controller {
         }
         else {
             $data['project_title']=false;
+        }
+
+        $events_array = $this->project_model->readAllEvents();
+        if($events_array) {
+            $data['all_events']= $events_array;
+        }
+        else {
+            $data['all_events']=false;
         }
 
         $data['users_names']= $this->admin_model->get_users_names();
