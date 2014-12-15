@@ -57,3 +57,6 @@ $lang['role_implementor'] ='Implementor';
 $lang['role_customer'] ='Customer';
 $lang['role_guest'] ='Guest';
 $lang['role_manager'] ='Manager';
+
+$lang['add_comment'] ='Add comment';
+

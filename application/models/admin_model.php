@@ -494,6 +494,10 @@ class Admin_model extends CI_Model {
 
 
 
+
+
+
+
     /**
    * get own client ();
    * @param $username

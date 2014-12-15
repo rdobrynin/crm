@@ -53,6 +53,7 @@
                   <?php endif ?>
               <?php if ($projects != false): ?><li class="add-client"><a href="#" data-toggle="modal" data-target="#addtask_pr_modal" title="create task"><i class="fa fa-plus"></i><?php print(lang('menu_add_task')); ?></a></li><?php endif ?>
               <?php endif ?>
+              <li> <a href="#" onClick="SendComment(<?php print($user[0]['id'])?>)" ><i class="fa fa-plus"></i><?php print(lang('add_comment')); ?></a></li>
           </ul>
       </li>
 
@@ -71,7 +72,8 @@
         <b class="caret"></b></a>
       <ul class="dropdown-menu dropdown-user">
         <li><a href="<?php print(base_url());?>profile"><i class="fa fa-user"></i><?php print(lang('menu_profile'))?></a></li>
-        <li><a href="#"><i class="fa fa-comment"></i><?php print(lang('mess_inbox'))?><span class="badge badge-resp">7</span></a></li>
+        <li><a href="<?php print(base_url());?>comments"><i class="fa fa-comment"></i><?php print(lang('mess_inbox'))?> <?php if ($comments != false): ?><span class="badge badge-resp" id="badge-count-comments-top"><?php print(count($comments));?></span> <?php else:?><span class="badge badge-resp" id="badge-count-tasks">0</span> <?php endif ?></a></li>
+
         <li><a data-toggle="modal" href="#settings"><i class="fa fa-gear"></i><?php print(lang('menu_settings'))?></a></li>
 <!--        --><?php //if($user[0]['role']==5):?>
 <!--          <li><a href="--><?php //print(base_url());?><!--users"><i class="fa fa-users"></i>--><?php //print(lang('menu_admin_users'))?><!--</a></li>-->

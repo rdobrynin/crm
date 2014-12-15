@@ -28,7 +28,7 @@
 <script src="assets/js/bootstrap-confirmation.js"></script>
 <script src="assets/js/jquery.validate.min.js"></script>
 <script src="assets/js/jquery.datetimepicker.js"></script>
-<script src="assets/js/jquery.autocomplete.min.js"></script>
+<script src="assets/js/jquery.autocomplete.js"></script>
 <?php include('modals/modal_view.php');?>
 <?php include('modals/modal_task.php');?>
 <?php include('timer.php');?>

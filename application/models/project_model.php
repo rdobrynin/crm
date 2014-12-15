@@ -139,6 +139,18 @@ class Project_model extends CI_Model {
         return $query->last_row();
     }
 
+    /**
+     * read all events
+     * @return mixed
+     */
+
+    public function readAllEvents() {
+        $query = $this
+            ->db
+            ->get('events');
+        return $query->result_array();
+    }
+
 }
 
 

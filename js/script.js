@@ -295,6 +295,9 @@ $('.closebox').click(function(e){
 $('#calc-appr-tasks').html(count_approve_tasks);
 $('#calc-all-tasks').html(count_all_tasks);
 $('#calc-all-comments').html(count_all_comments);
+$('#badge-count-comments-top').html(count_all_comments);
+
+
 
 
         //add class "highlight" when hover over the row

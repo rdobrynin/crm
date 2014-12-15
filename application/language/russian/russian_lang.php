@@ -55,3 +55,5 @@ $lang['role_implementor'] ='Исполнитель';
 $lang['role_customer'] ='Заказчик';
 $lang['role_guest'] ='Гость';
 $lang['role_manager'] ='Менеджер';
+
+$lang['add_comment'] ='Добавить комментарий';

@@ -6,7 +6,7 @@
         <div class="form-group qm" style="border-bottom:1px solid #ddd;height: 38px;">
             <label for="qm-autocomplete" class="col-md-2 control-label">To</label>
             <div class="col-md-10">
-                <input type="text" class="form-control qm" id="qm-autocomplete">
+                <input type="text" class="form-control qm" placeholder="Search..." id="qm-autocomplete">
 <!--                <span class="label label-default label-xs" id="qm-point-name">Roman Dobrynin</span>-->
                 <span class="label label-default label-tag point-name-tag" style="position: absolute;
 top: 4px;"><span class="get_old_mail" id="qm-point-name">roman.dobrynin@gmail.com</span>&nbsp;&nbsp;&nbsp;<i class="fa fa-times" id="qm-close-point-name"></i></span>

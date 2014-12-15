@@ -143,5 +143,9 @@ class Admin extends CI_Controller {
           $this->load->view('login/footer_view');
       }
   }
+
+    /**
+     * Get users names
+     */
 }
 

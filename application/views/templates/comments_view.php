@@ -3,7 +3,8 @@
 
   <!-- Keep all page content within the page-content inset div! -->
   <div class="page-content inset">
-      <h3 class="h_title">Comments&nbsp;(<span id="calc-all-comments" ></span>)</h3>
+      <h3 class="h_title">Comments&nbsp;(<span id="calc-all-comments" ></span>)  <a href="#" onClick="SendComment(<?php print($user[0]['id'])?>)" class="btn btn-primary pull-right add-comment"><?php print(lang('add_comment')); ?></a></h3>
+
     <div class="row-fluid">
         <?php if ($comments != FALSE): ?>
             <div class="row-fluid">
@@ -26,7 +27,7 @@
                                 <tbody id="all_comments_table">
                                 <?php $comments = array_reverse($comments);?>
                                 <?php foreach ($comments as $ck => $cv): ?>
-                                    <tr>
+                                    <tr class="<?php if ($cv['public'] == 1): ?>disabled<?php endif ?> ">
                                         <td><?php print($cv['id']); ?></td>
                                         <td><span class="muted"><?php print($cv['date_created']); ?></span></td>
                                         <td><?php print($cv['subject']); ?></td>

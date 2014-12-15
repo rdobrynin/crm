@@ -274,3 +274,7 @@ span.label.label-xs.label-primary.sms:hover {
     position: relative;
     color: #666666;
 }
+
+tr.disabled {
+    color: #bebebe;
+}

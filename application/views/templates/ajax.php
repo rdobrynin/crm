@@ -376,6 +376,24 @@
           $("#qm-text, #qm-subject-field").val("");
       });
 
+
+//      Autocomplete names
+      names = <?php print json_encode($users_names);?>;
+      var full_names = [];
+      var full_names_id = [];
+      $.each( names, function( index, value ){
+          full_names.push( value );
+          full_names_id.push( index );
+
+      });
+
+
+      $('#qm-autocomplete').autocomplete(full_names,{
+          autoFill: true,
+          selectFirst: true,
+          width: '240px'
+      });
+
   });
 
   /**
@@ -443,6 +461,72 @@
                      },2000);
                      $("#qm-text, #qm-subject-field").val("");
                  }
+              }
+          });
+      });
+  }
+
+
+  function SendComment($data){
+      $('.qm-body').hide();
+      $('.qm-body').show();
+      $user = '<?php print($user[0]['id'])?>';
+      var form_data = {
+          id: $data
+      };
+      $.ajax({
+          url: "<?php echo site_url('ajax/getUserbyId'); ?>",
+          type: 'POST',
+          data: form_data,
+          dataType: 'json',
+          success: function (msg) {
+              $first_name = msg.user[0]['first_name'];
+              $last_name = msg.user[0]['last_name'];
+              $currentID = msg.user[0]['id'];
+              $email  = msg.user[0]['email'];
+              $avatar  = msg.user[0]['avatar'];
+
+              $('.point-name-tag').css('display','none');
+              $('#user_qm_id').val($currentID);
+          }
+      });
+
+      /**
+       * Send quick comment
+       */
+
+      $('#qm-send-btn').click(function () {
+          $to = $('#user_qm_id').val();
+          $uid = $user;
+          $subject = $('#qm-subject-field').val();
+          $text = $('#qm-text').val();
+
+          var form_data_ = {
+              uid: $uid,
+              subject: $subject,
+              text: $text,
+              to: $to
+          };
+          $.ajax({
+              url: "<?php echo site_url('ajax/sendComment'); ?>",
+              type: 'POST',
+              data: form_data_,
+              dataType: 'json',
+              success: function (msg) {
+                  if(msg.empty == true) {
+                      $('#qm-empty-error').fadeIn('slow').css('display','block');
+                      setTimeout(function () {
+                          $('#qm-empty-error').fadeOut('slow').css('display','none');
+                      },3000);
+                  }
+                  else {
+                      $('#qm-result-info').fadeIn('slow').css('display','block');
+                      setTimeout(function () {
+                          $('#qm-result-info').fadeOut('slow').css('display','none');
+                          $('.qm-body').css('display','none');
+                      },2000);
+                      $("#qm-text, #qm-subject-field").val("");
+                  }
               }
           });
       });

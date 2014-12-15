@@ -13,6 +13,7 @@ class Dashboard extends CI_Controller {
         $this->load->model('project_model');
         $this->load->model('task_model');
         $this->load->model('files_model');
+        $this->load->model('message_model');
         if ($this->session->userdata('site_lang') == 'russian') {
             $this->lang->load('russian', 'russian');
         }
@@ -84,6 +85,18 @@ class Dashboard extends CI_Controller {
         else {
             $data['tasks']=false;
         }
+
+        $comments = $this->message_model->getComments();
+        if($comments) {
+            $data['comments']= $comments;
+        }
+        else {
+            $data['comments']=false;
+        }
+
+        $data['users_names']= $this->admin_model->get_users_names();
+
+
         $this->session->set_userdata('user_id', $this->admin_model->get_user_id($_SESSION['username']));
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
         $roles_array = $this->admin_model->get_roles();
@@ -106,7 +119,7 @@ class Dashboard extends CI_Controller {
 
         $this->load->view('templates/dashboard_view', $data);
 
-        $this->load->view('templates/footer_view');
+        $this->load->view('templates/footer_view',$data);
         $this->load->view('templates/settings_view', $data);
     }
 
@@ -161,6 +174,16 @@ class Dashboard extends CI_Controller {
         else {
             $data['imps']=false;
         }
+
+        $comments = $this->message_model->getComments();
+        if($comments) {
+            $data['comments']= $comments;
+        }
+        else {
+            $data['comments']=false;
+        }
+
+        $data['users_names']= $this->admin_model->get_users_names();
 
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
@@ -230,6 +253,16 @@ class Dashboard extends CI_Controller {
         else {
             $data['project_title']=false;
         }
+
+        $comments = $this->message_model->getComments();
+        if($comments) {
+            $data['comments']= $comments;
+        }
+        else {
+            $data['comments']=false;
+        }
+
+        $data['users_names']= $this->admin_model->get_users_names();
 
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
@@ -302,6 +335,17 @@ class Dashboard extends CI_Controller {
         else {
             $data['projects']=false;
         }
+
+        $comments = $this->message_model->getComments();
+        if($comments) {
+            $data['comments']= $comments;
+        }
+        else {
+            $data['comments']=false;
+        }
+
+        $data['users_names']= $this->admin_model->get_users_names();
+
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
@@ -381,7 +425,6 @@ class Dashboard extends CI_Controller {
         }
 
 
-        $this->load->model('message_model');
         $comments = $this->message_model->getComments();
         if($comments) {
             $data['comments']= $comments;
@@ -390,7 +433,7 @@ class Dashboard extends CI_Controller {
             $data['comments']=false;
         }
         $data['user_name'] = $this->admin_model->get_users_names();
-
+        $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
@@ -455,6 +498,15 @@ class Dashboard extends CI_Controller {
         else {
             $data['project_title']=false;
         }
+
+        $comments = $this->message_model->getComments();
+        if($comments) {
+            $data['comments']= $comments;
+        }
+        else {
+            $data['comments']=false;
+        }
+        $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
@@ -523,6 +575,14 @@ class Dashboard extends CI_Controller {
             $data['project_title']=false;
         }
 
+        $comments = $this->message_model->getComments();
+        if($comments) {
+            $data['comments']= $comments;
+        }
+        else {
+            $data['comments']=false;
+        }
+        $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
@@ -591,6 +651,14 @@ class Dashboard extends CI_Controller {
             $data['project_title']=false;
         }
 
+        $comments = $this->message_model->getComments();
+        if($comments) {
+            $data['comments']= $comments;
+        }
+        else {
+            $data['comments']=false;
+        }
+        $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
         $client = $this->admin_model->get_own_client($_SESSION['username']);
@@ -688,6 +756,14 @@ class Dashboard extends CI_Controller {
             $data['tasks']=false;
         }
 
+        $comments = $this->message_model->getComments();
+        if($comments) {
+            $data['comments']= $comments;
+        }
+        else {
+            $data['comments']=false;
+        }
+
         $project_title_array = $this->project_model->get_project_title();
         if($project_array) {
             $data['project_title']= $project_title_array;
@@ -696,6 +772,7 @@ class Dashboard extends CI_Controller {
             $data['project_title']=false;
         }
 
+        $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
         $this->load->library('form_validation');
@@ -785,6 +862,14 @@ class Dashboard extends CI_Controller {
             $data['tasks']=false;
         }
 
+        $comments = $this->message_model->getComments();
+        if($comments) {
+            $data['comments']= $comments;
+        }
+        else {
+            $data['comments']=false;
+        }
+
         $task_types = $this->task_model->getTaskTypes();
         if($task_types) {
             $data['task_types']= $task_types;
@@ -801,6 +886,7 @@ class Dashboard extends CI_Controller {
             $data['project_title']=false;
         }
 
+        $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
@@ -878,6 +964,14 @@ class Dashboard extends CI_Controller {
             $data['task_types']=false;
         }
 
+        $comments = $this->message_model->getComments();
+        if($comments) {
+            $data['comments']= $comments;
+        }
+        else {
+            $data['comments']=false;
+        }
+
         $project_title_array = $this->project_model->get_project_title();
         if($project_array) {
             $data['project_title']= $project_title_array;
@@ -885,7 +979,7 @@ class Dashboard extends CI_Controller {
         else {
             $data['project_title']=false;
         }
-
+        $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
         $data['client'] = $this->admin_model->get_own_client($_SESSION['username']);
@@ -961,6 +1055,14 @@ class Dashboard extends CI_Controller {
             $data['project_title']=false;
         }
 
+        $comments = $this->message_model->getComments();
+        if($comments) {
+            $data['comments']= $comments;
+        }
+        else {
+            $data['comments']=false;
+        }
+        $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
         $data['password'] =  $this->admin_model->get_password($_SESSION['username']);
         $data['current_language'] = $this->session->userdata('site_lang');
