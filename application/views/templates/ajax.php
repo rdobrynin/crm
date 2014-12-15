@@ -404,14 +404,12 @@
               $currentID = msg.user[0]['id'];
               $email  = msg.user[0]['email'];
               $avatar  = msg.user[0]['avatar'];
-              console.log($user);
               $('#qm-autocomplete').val($first_name+ ' '+$last_name);
               $('#user_qm_id').val($currentID);
           }
       });
 
       $('#qm-send-btn').click(function () {
-
           $to = $('#user_qm_id').val();
           $uid = $user;
           $subject = $('#qm-subject-field').val();
@@ -429,10 +427,23 @@
               data: form_data_,
               dataType: 'json',
               success: function (msg) {
-                  console.log(msg);
+                  console.log(msg.empty);
+                 if(msg.empty == true) {
+                  $('#qm-empty-error').fadeIn('slow').css('display','block');
+                     setTimeout(function () {
+                         $('#qm-empty-error').fadeOut('slow').css('display','none');
+                     },3000);
+                 }
+                  else {
+                     $('#qm-result-info').fadeIn('slow').css('display','block');
+                     setTimeout(function () {
+                         $('#qm-result-info').fadeOut('slow').css('display','none');
+                         $('.qm-body').css('display','none');
+                     },2000);
+                     $("#qm-text, #qm-subject-field").val("");
+                 }
               }
           });
-
       });
   }
 </script>

@@ -263,8 +263,9 @@ span.label.label-xs.label-primary.sms:hover {
 
 .bottom-panel-qm {
     width: 100%;
-    position: relative;
-    bottom: 20px;
+    position: absolute;
+    bottom: 14px;
+    padding-right: 15px;
 }
 
 #qm-link-file-btn {

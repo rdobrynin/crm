@@ -15,6 +15,8 @@
                 <input type="text" class="form-control qm" id="qm-subject-field">
             </div>
         </div>
+        <div style="display: none; margin-top: 20px;" id="qm-empty-error" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;Subject and message field must be filled</div>
+        <div style="display: none; margin-top: 20px;" id="qm-result-info" class="label label-primary label-signin"><i class="fa fa-comment"></i>&nbsp;You have successfully added comment</div>
         <div class="form-group">
             <div class="col-md-12">
                 <div class="form-group">
