@@ -58,7 +58,7 @@
                                                 </th>
                                             </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody id="tbody-current-users">
                                             <?php foreach ($users as $uk => $uv): ?>
                                                 <tr>
                                                     <td><?php print($uv['id']); ?></td>
@@ -72,7 +72,7 @@
                                                         <a href="#" data-title="Edit" data-toggle="modal" data-target="#edit_user"><i class="fa fa-pencil"></i></a>
                                                     </td>
                                                     <td>
-                                                        <a href="#" data-title="Delete" data-toggle="modal" data-target="#delete_user">remove</a>
+                                                        <a href="#"   class="delete-user">remove</a>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>
@@ -86,7 +86,6 @@
                 </div>
                 <div class="tab-pane fade" id="new-users">
                     <?php if ($new_users != false): ?>
-
                         <!--                  new users-->
                         <div class="filterable panel-tabs">
                             <div class="panel-heading">
@@ -129,7 +128,7 @@
                                                             <a href="mailto:<?php print($uv['email']); ?>"><?php print($uv['email']); ?></a>
                                                         </td>
                                                         <td>
-                                                            <a href="#" id="activate-user" data-user="<?php print($uv['id']); ?>">Activate</a>
+                                                            <a href="#" data-toggle="confirmation"  data-user="<?php print($uv['id']); ?>">Activate</a>
                                                         </td>
                                                         <td>
                                                             <a href="#" data-title="Delete" data-toggle="modal" data-target="#delete_user">Remove</a>
@@ -146,12 +145,7 @@
 
                     <?php else: ?>
                         <div class="clearfix"></div>
-                        <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one
-                                of new users found
-                            </div></div>
-
-
-
+                        <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of new users found</div></div>
                     <?php endif ?>
                 </div>
                 <div class="clearfix"></div>
@@ -226,12 +220,13 @@
         e.preventDefault()
         $(this).tab('show')
     });
-    $('#activate-user').confirmation(
+    $('[data-toggle=confirmation]').confirmation(
         {
             placement: 'left',
             toggle: true,
+            singleton: true,
             onConfirm: function () {
-                var currentUser = $('#activate-user').data("user");
+                var currentUser = $('[data-toggle=confirmation]').data("user");
                 var form_data = {
                     user: currentUser
                 };
@@ -241,24 +236,37 @@
                     data: form_data,
                     dataType: 'json',
                     success: function (msg) {
-
                         $('#tr_new_user_'+currentUser).remove();
-                        $('#new-users').remove();
-                        $('#activate-user').confirmation('hide');
+
+                        $('[data-toggle=confirmation]').confirmation('hide');
                         var rowCount = $('#tbody-new-users tr').length;
                         if(rowCount <1) {
+                            $('#new-users').remove();
                             $('#table-new-users').hide();
                             $('#info-new-users').html('<div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No oneof new users found</div>')
                             $('#calc-new-users').css('display','none');
-                            $('#new_users').tab('hide');
-                            $('#current_users').tab('show');
                         }
                         $('#calc-new-users').html(rowCount);
                     }
                 });
             },
             onCancel: function () {
-                $('#activate-user').confirmation('hide');
+                $('[data-toggle=confirmation]').confirmation('hide');
+            }
+        }
+    );
+
+    $('.delete-user').confirmation(
+        {
+            placement: 'left',
+            toggle: true,
+            onConfirm: function () {
+             alert('test');
+
+
+            },
+            onCancel: function () {
+                $('.delete-user').confirmation('hide');
             }
         }
     );

@@ -301,7 +301,7 @@ $('#badge-count-comments-top').html(count_all_comments);
 
 
         //add class "highlight" when hover over the row
-        $('#approve_tasks_table tr, #all_task_table tr, #all_comments_table tr, #log-table tr').hover(function() {
+        $('#approve_tasks_table tr, #all_task_table tr, #all_comments_table tr, #log-table tr, #tbody-new-users tr, #tbody-current-users tr').hover(function() {
             $(this).addClass('highlight');
         }, function() {
             $(this).removeClass('highlight');
@@ -311,7 +311,6 @@ $('#badge-count-comments-top').html(count_all_comments);
         $('.qm-body').css('display', 'none');
         $('#li-comments').removeClass('active');
     });
-
 
 
 //
