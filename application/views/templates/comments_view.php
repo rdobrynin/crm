@@ -34,7 +34,7 @@
                                         <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($cv['uid']); ?>)"><?php print(short_name($user_name[$cv['uid']])); ?></a></td>
                                         <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($cv['to']); ?>)"><?php print(short_name($user_name[$cv['to']])); ?></a></td>
                                         <td><span class="muted"><?php print($cv['text']); ?></span></td>
-                                        <td class="center"><span class="muted"><input type="checkbox" data-off="enable" data-on="disable" class="onoff" <?php if ($cv['public'] == 0): ?> checked  <?php endif ?> data-size="small" data-onstyle="success" data-offstyle="danger"></span></td>
+                                        <td class="center toggle-comment" data-comment="<?php print($cv['id']); ?>"><span class="muted"><input type="checkbox" data-off="enable" data-on="disable" class="onoff " <?php if ($cv['public'] == 0): ?> checked  <?php endif ?> data-size="small" data-onstyle="success" data-offstyle="danger"></span></td>
                                         <td class="text-center"><a href="#"><i class="fa fa-pencil"></i></a>
                                         </td>
                                     </tr>
@@ -65,6 +65,10 @@
             size:'mini'
         });
         $('#all_comments_table').pageMe({pagerSelector:'#pager_all_comments',showPrevNext:true,hidePageNumbers:false,perPage:20});
+
+        $('.toggle-comment').click(function () {
+            console.log(this);
+        });
 
     });
 
