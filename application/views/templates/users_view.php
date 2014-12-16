@@ -63,6 +63,9 @@
 
           </div>
             <div class="tab-pane fade" id="new-users">
+
+                <?php if ($new_users != false): ?>
+
                 <!--                  new users-->
                 <div class="filterable panel-tabs">
                     <div class="panel-heading">
@@ -80,7 +83,8 @@
                         <thead>
                         <tr class="filters">
                             <th><input type="text" class="form-control filter" placeholder="#" disabled></th>
-                            <th style="border-left: 1px solid #ddd;"><input type="text" class="form-control filter" placeholder="Name" disabled></th>
+                            <th style="border-left: 1px solid #ddd;"><input type="text" class="form-control filter" placeholder="First name" disabled></th>
+                            <th style="border-left: 1px solid #ddd;"><input type="text" class="form-control filter" placeholder="Last name" disabled></th>
                             <th style="border-left: 1px solid #ddd;"><input type="text" class="form-control filter" placeholder="Email" disabled></th>
                             <th></th>
                             <th></th>
@@ -90,10 +94,11 @@
                         <?php foreach ($new_users as $uk => $uv): ?>
                             <tr>
                                 <td><?php print($uv['id']); ?></td>
-                                <td><?php print($uv['first_name'] . ' ' . $uv['last_name']); ?></td>
+                                <td><?php print($uv['first_name']); ?></td>
+                                <td><?php print($uv['last_name']); ?></td>
                                 <td><a href="mailto:<?php print($uv['email']); ?>"><?php print($uv['email']); ?></a></td>
                                 <td>
-                                    <a href="#" data-title="Edit" data-toggle="modal" data-target="#edit_user">Activate</a>
+                                    <a href="#" id="activate-user" data-user="<?php print($uv['id']); ?>">Activate</a>
                                 </td>
                                 <td><a href="#" data-title="Delete" data-toggle="modal" data-target="#delete_user">Remove</a>
                                 </td>
@@ -106,6 +111,13 @@
                             </div>
                         </div>
                 </div>
+
+                <?php else: ?>
+                    <div class="clearfix"></div>
+<div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of new users found</div>
+
+                <?php endif ?>
+
             </div>
           <div class="clearfix"></div>
         </div>
@@ -180,5 +192,45 @@
   $('#admin-users-tab a').click(function (e) {
     e.preventDefault()
     $(this).tab('show')
-  })
+  });
+  $('#activate-user').confirmation(
+      {
+          placement: 'left',
+          toggle:true,
+          onConfirm: function() {
+              var currentUser = $('#activate-user').data("user");
+
+
+
+              var form_data = {
+                  user :currentUser
+              };
+              $.ajax({
+                  url: "<?php echo site_url('ajax/activateUser'); ?>",
+                  type: 'POST',
+                  data: form_data,
+                  dataType: 'json',
+                  success: function (msg) {
+                      console.log(msg);
+
+                  }
+              });
+
+
+
+
+
+
+
+          },
+          onCancel: function() {
+              $('#activate-user').confirmation('hide');
+          }
+      }
+  );
+
+
+
+
+
 </script>

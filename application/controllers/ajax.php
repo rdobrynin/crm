@@ -570,6 +570,25 @@ class Ajax extends CI_Controller {
         echo json_encode($result);
     }
 
+
+    /**
+     * Get user id
+     */
+    function activateUser() {
+        $this->load->model('admin_model');
+        $id =  $this->input->post('user');
+
+        if(!empty($id)) {
+            $result['user']= $this->admin_model->activateNewUser($id);
+        }
+        else {
+            $result['user'] = false;
+        }
+
+        echo json_encode($result);
+    }
+
+
 }
 
 

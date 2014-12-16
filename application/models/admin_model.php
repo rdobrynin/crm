@@ -490,12 +490,8 @@ class Admin_model extends CI_Model {
             ->db
             ->get('new_users');
         return $query->result_array();
+
     }
-
-
-
-
-
 
 
     /**
@@ -614,6 +610,45 @@ class Admin_model extends CI_Model {
         }
         return TRUE;
     }
+
+
+
+    /**
+     * activate new joined user();
+     * @param $username
+     * @return mixed
+     */
+
+    public function activateNewUser($id) {
+        $query = $this
+            ->db
+            ->where('id', $id)
+            ->limit('1')
+            ->get('new_users');
+        if ($query->num_rows > 0) {
+            $result=$query->result_array();
+
+            $data = array (
+                'first_name' => $result[0]['first_name'],
+                'last_name' =>  $result[0]['last_name'],
+                'role' => 1,
+                'email' => $result[0]['last_name'],
+                'password' => $result[0]['password'],
+                'avatar' =>'placeholder_user.jpg'
+            );
+            $insert = $this->db->insert('users', $data);
+                $this
+                ->db
+                ->where('id', $id)
+                ->delete('new_users');
+            return $insert;
+        }
+        else {
+            return FALSE;
+        }
+    }
+
+
 }
 
 
