@@ -27,7 +27,9 @@
 <div class="show-info"><div class="show-info-content"></div><div class="expandable-image"></div></div>
   <div class="show-info-error"><div class="show-info-content"></div><div class="expandable-nagative-image"></div></div>
   <div class="show-info-online"><div class="show-info-content-online"></div></div>
+
   <ul class="nav navbar-nav navbar-right navbar-user">
+      <li id="li-comments"> <a href="#" onClick="SendComment(<?php print($user[0]['id'])?>)" ><i class="fa fa-comment"></i></a></li>
       <li id="float-users"> <a href="#"><i class="fa fa-users"></i></a></li>
       <li class="dropdown user-dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle"></i><b class="caret"></b></a>
@@ -53,7 +55,6 @@
                   <?php endif ?>
               <?php if ($projects != false): ?><li class="add-client"><a href="#" data-toggle="modal" data-target="#addtask_pr_modal" title="create task"><i class="fa fa-plus"></i><?php print(lang('menu_add_task')); ?></a></li><?php endif ?>
               <?php endif ?>
-              <li> <a href="#" onClick="SendComment(<?php print($user[0]['id'])?>)" ><i class="fa fa-plus"></i><?php print(lang('add_comment')); ?></a></li>
           </ul>
       </li>
 

@@ -529,6 +529,7 @@
                       },3000);
                   }
                   else {
+                      $('#li-comments').removeClass('active');
                       $('#qm-result-info').fadeIn('slow').css('display','block');
                       setTimeout(function () {
                           $('#qm-result-info').fadeOut('slow').css('display','none');

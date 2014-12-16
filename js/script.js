@@ -309,6 +309,7 @@ $('#badge-count-comments-top').html(count_all_comments);
 
     $('.close-qm').click(function () {
         $('.qm-body').css('display', 'none');
+        $('#li-comments').removeClass('active');
     });
 
 
