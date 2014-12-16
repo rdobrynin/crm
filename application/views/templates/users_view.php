@@ -72,7 +72,9 @@
                                                         <a href="#" data-title="Edit" data-toggle="modal" data-target="#edit_user"><i class="fa fa-pencil"></i></a>
                                                     </td>
                                                     <td>
-                                                        <a href="#"   class="delete-user">remove</a>
+                                                        <?php if ($uv['role'] !=5): ?>
+                                                            <a href="#"   class="delete-user">remove</a>
+                                                        <?php endif ?>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>
@@ -128,7 +130,7 @@
                                                             <a href="mailto:<?php print($uv['email']); ?>"><?php print($uv['email']); ?></a>
                                                         </td>
                                                         <td>
-                                                            <a href="#" data-toggle="confirmation"  data-user="<?php print($uv['id']); ?>">Activate</a>
+                                                            <a href="#" data-toggle="confirmation" data-singleton="true"  data-user="<?php print($uv['id']); ?>">Activate</a>
                                                         </td>
                                                         <td>
                                                             <a href="#" data-title="Delete" data-toggle="modal" data-target="#delete_user">Remove</a>
@@ -223,8 +225,10 @@
     $('[data-toggle=confirmation]').confirmation(
         {
             placement: 'left',
-            toggle: true,
-            singleton: true,
+            btnOkClass:'btn-xs',
+            btnCancelClass:'btn-xs',
+            btnCancelLabel:'<i class="fa fa-times-circle" style="margin-right: 0;"></i> No',
+            btnOkLabel:'<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
             onConfirm: function () {
                 var currentUser = $('[data-toggle=confirmation]').data("user");
                 var form_data = {
@@ -252,21 +256,6 @@
             },
             onCancel: function () {
                 $('[data-toggle=confirmation]').confirmation('hide');
-            }
-        }
-    );
-
-    $('.delete-user').confirmation(
-        {
-            placement: 'left',
-            toggle: true,
-            onConfirm: function () {
-             alert('test');
-
-
-            },
-            onCancel: function () {
-                $('.delete-user').confirmation('hide');
             }
         }
     );
