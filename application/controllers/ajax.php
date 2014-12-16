@@ -589,6 +589,43 @@ class Ajax extends CI_Controller {
     }
 
 
+
+    /**
+     * Remove new user by ID
+     */
+    function deleteNewUser() {
+        $this->load->model('admin_model');
+        $id =  $this->input->post('user');
+
+        if(!empty($id)) {
+            $result['user']= $this->admin_model->deleteNewUser($id);
+        }
+        else {
+            $result['user'] = false;
+        }
+
+        echo json_encode($result);
+    }
+
+
+    /**
+     * Remove current user by ID
+     */
+    function deleteCurrentUser() {
+        $this->load->model('admin_model');
+        $id =  $this->input->post('user');
+
+        if(!empty($id)) {
+            $result['user']= $this->admin_model->deleteCurrentUser($id);
+        }
+        else {
+            $result['user'] = false;
+        }
+
+        echo json_encode($result);
+    }
+
+
 }
 
 

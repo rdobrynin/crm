@@ -648,11 +648,44 @@ class Admin_model extends CI_Model {
         }
     }
 
+    /**
+     * Delete new user
+     * @param $id
+     * @return mixed
+     */
 
-    public function removeUser($id) {
-
+    public function deleteNewUser($id) {
+        $query = $this
+            ->db
+            ->where('id', $id)
+            ->delete('new_users');
+        return $query;
     }
 
+
+    /**
+     * Delete current
+     * @param $id
+     * @return mixed
+     */
+
+    public function deleteCurrentUser($id) {
+        $table_phone = array('users_phones');
+        $this->db->where('pid', $id);
+        $this->db->delete($table_phone);
+
+        $avatar = array('avatars');
+        $this->db->where('fid', $id);
+        $this->db->delete($avatar);
+
+        $comment = array('comment','events','task');
+        $this->db->where('uid', $id);
+        $this->db->delete($comment);
+
+        $table = array('users');
+        $this->db->where('id', $id);
+        $this->db->delete($table);
+    }
 
 }
 

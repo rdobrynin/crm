@@ -32,7 +32,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-body-table">
                                     <div class="table-responsive">
-                                        <table class="table table-condensed">
+                                        <table class="table table-condensed" id="table-current-users">
                                             <thead>
                                             <tr class="filters">
                                                 <th>
@@ -60,7 +60,7 @@
                                             </thead>
                                             <tbody id="tbody-current-users">
                                             <?php foreach ($users as $uk => $uv): ?>
-                                                <tr>
+                                                <tr id="tr_current_user_<?php print($uv['id']); ?>">
                                                     <td><?php print($uv['id']); ?></td>
                                                     <td><?php print(short_name($user_name[$uv['id']])); ?></td>
                                                     <td>
@@ -73,7 +73,7 @@
                                                     </td>
                                                     <td>
                                                         <?php if ($uv['role'] !=5): ?>
-                                                            <a href="#"   class="delete-user">remove</a>
+                                                            <a href="#" data-toggle="confirmation-delete-current-user" data-singleton="true" data-user="<?php print($uv['id']); ?>">Remove</a>
                                                         <?php endif ?>
                                                     </td>
                                                 </tr>
@@ -133,7 +133,7 @@
                                                             <a href="#" data-toggle="confirmation-activate-user" data-singleton="true"  data-user="<?php print($uv['id']); ?>">Activate</a>
                                                         </td>
                                                         <td>
-                                                            <a href="#" data-toggle="confirmation-delete-new-user" data-singleton="true">Remove</a>
+                                                            <a href="#" data-toggle="confirmation-delete-new-user" data-singleton="true" data-user="<?php print($uv['id']); ?>">Remove</a>
                                                         </td>
                                                     </tr>
                                                 <?php endforeach; ?>
@@ -270,11 +270,74 @@
             btnCancelLabel:'<i class="fa fa-times-circle" style="margin-right: 0;"></i> No',
             btnOkLabel:'<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
             onConfirm: function () {
-               alert('test');
+                var currentUser = $('[data-toggle=confirmation-delete-new-user]').data("user");
+                var form_data = {
+                    user: currentUser
+                };
+                $.ajax({
+                    url: "<?php echo site_url('ajax/deleteNewUser'); ?>",
+                    type: 'POST',
+                    data: form_data,
+                    dataType: 'json',
+                    success: function (msg) {
+                        $('#tr_new_user_'+currentUser).remove();
+
+                        $('[data-toggle=confirmation-delete-new-user]').confirmation('hide');
+                        var rowCount = $('#tbody-new-users tr').length;
+                        if(rowCount <1) {
+                            $('#new-users').remove();
+                            $('#table-new-users').hide();
+                            $('#info-new-users').html('<div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of new users found</div>')
+                            $('#calc-new-users').css('display','none');
+                        }
+                        $('#calc-new-users').html(rowCount);
+                    }
+                });
             },
             onCancel: function () {
                 $('[data-toggle=confirmation-delete-new-user]').confirmation('hide');
             }
         }
     );
+
+    $('[data-toggle=confirmation-delete-current-user]').confirmation(
+        {
+            placement: 'left',
+            animation: false,
+            btnOkClass:'btn-xs',
+            btnCancelClass:'btn-xs',
+            btnCancelLabel:'<i class="fa fa-times-circle" style="margin-right: 0;"></i> No',
+            btnOkLabel:'<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
+            onConfirm: function () {
+//                todo
+                var currentUser = $('[data-toggle=confirmation-delete-current-user]').data("user");
+
+                console.log(this);
+                var form_data = {
+                    user: currentUser
+                };
+                $.ajax({
+                    url: "<?php echo site_url('ajax/deleteCurrentUser'); ?>",
+                    type: 'POST',
+                    data: form_data,
+                    dataType: 'json',
+                    success: function (msg) {
+                        $('#tr_current_user_'+currentUser).remove();
+
+                        $('[data-toggle=confirmation-delete-current-user]').confirmation('hide');
+                        var rowCount = $('#tbody-current-users tr').length;
+                        if(rowCount <1) {
+                            $('#current-users').remove();
+                            $('#table-current-users').hide();
+                        }
+                    }
+                });
+            },
+            onCancel: function () {
+                $('[data-toggle=confirmation-delete-current-user]').confirmation('hide');
+            }
+        }
+    );
+
+
 </script>
