@@ -649,6 +649,11 @@ class Admin_model extends CI_Model {
     }
 
 
+    public function removeUser($id) {
+
+    }
+
+
 }
 
 
