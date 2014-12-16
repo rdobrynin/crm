@@ -4,91 +4,109 @@
 <div class="page-content-wrapper">
   <!-- Keep all page content within the page-content inset div! -->
   <div class="page-content inset">
-      <div class="row">
+      <div class="row-fluid">
+          <h3 class="h_title">Administer users</h3>
         <!--      tabs-->
-        <ul class="nav nav-tabs" id="admin-users-tab">
-          <li class="active"><a href="#current-users" data-toggle="tab" title="Current users"><button class="btn btn-info">Current users</button></a></li>
-          <li><a href="#new-users" data-toggle="tab" title="New users"><button class="btn btn-info">New users
-
-                      <?php if ($count_new_users>0): ?>
-                          <span class="badge badge-tab"><?php print($count_new_users); ?></span>
-                      <?php endif ?>
-                  </button></a></li>
+        <ul class="nav nav-tabs filter" id="admin-users-tab">
+          <li class="active"><a href="#current-users" class="tabs-filter" data-toggle="tab" title="Current users"><button class="btn btn-default">Current users</button></a></li>
+          <li><a href="#new-users" class="tabs-filter"  data-toggle="tab" title="New users"><button class="btn btn-default">New users<?php if ($count_new_users>0): ?><span class="badge badge-tab"><?php print($count_new_users); ?></span><?php endif ?></button></a></li>
         </ul>
 
         <div class="tab-content">
           <div class="tab-pane fade in active" id="current-users">
-            <!--                  current_users-->
-            <div class="panel panel-primary filterable panel-tabs">
-              <div class="panel-heading">
 
-                <h3 class="panel-title">Administer current users</h3>
+
+
+            <!--                  current_users-->
+            <div class="filterable panel-tabs">
+              <div class="panel-heading">
                 <div class="pull-right">
                   <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
                 </div>
               </div>
-              <table class="table">
+                <div class="row-fluid">
+                    <div class="panel panel-default">
+                        <div class="panel-body-table">
+                            <div class="table-responsive">
+              <table class="table table-condensed">
                 <thead>
                 <tr class="filters">
-                  <th><input type="text" class="form-control" placeholder="#" disabled></th>
-                  <th><input type="text" class="form-control" placeholder="Name" disabled></th>
-                  <th><input type="text" class="form-control" placeholder="Email" disabled></th>
-                  <th><input type="text" class="form-control" placeholder="Role" disabled></th>
-                  <th><input type="text" class="form-control" placeholder="Created" disabled></th>
-                  <th><input type="hidden" class="form-control" placeholder="Edit" disabled></th>
-                  <th><input type="hidden" class="form-control" placeholder="Delete" disabled></th>
+                  <th><input type="text" class="form-control filter" placeholder="#" disabled></th>
+                  <th style="border-left: 1px solid #ddd;"><input type="text" class="form-control filter" placeholder="Name" disabled></th>
+                  <th style="border-left: 1px solid #ddd;"><input type="text" class="form-control filter" placeholder="Email" disabled></th>
+                  <th style="border-left: 1px solid #ddd;"><input type="text" class="form-control filter" placeholder="Role" disabled></th>
+                  <th style="border-left: 1px solid #ddd;"><input type="text" class="form-control filter" placeholder="Created" disabled></th>
+                  <th><input type="hidden" class="form-control filter" placeholder="Edit" disabled></th>
+                  <th><input type="hidden" class="form-control filter" placeholder="Delete" disabled></th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php foreach ($users as $uk => $uv):?>
                   <tr>
                     <td><?php print($uv['id']);?></td>
-                    <td><?php print($uv['first_name'].' '.$uv['last_name']);?></td>
-                    <td><?php print($uv['email']);?></td>
+                    <td><?php print(short_name($user_name[$uv['id']])); ?></td>
+                      <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($uv['id']); ?>)"><?php print($uv['email']); ?></a></td>
                     <td><?php print(show_role($uv['role']));?></td>
                     <td><?php print($uv['date_created']);?></td>
-                    <td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit_user" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                    <td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete_user" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                    <td><a href="#"  data-title="Edit" data-toggle="modal" data-target="#edit_user" ><i class="fa fa-pencil"></i></a> </td>
+                    <td><a href="#"  data-title="Delete" data-toggle="modal" data-target="#delete_user">remove</a></td>
                   </tr>
                 <?php endforeach; ?>
                 </tbody>
               </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="tab-pane fade" id="new-users">
-            <!--                  new users-->
-              <div class="panel panel-primary filterable panel-tabs">
-                  <div class="panel-heading">
 
-                      <h3 class="panel-title">Joined users</h3>
-                      <div class="pull-right">
-                          <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
-                      </div>
-                  </div>
-                  <table class="table">
-                      <thead>
-                      <tr class="filters">
-                          <th><input type="text" class="form-control" placeholder="#" disabled></th>
-                          <th><input type="text" class="form-control" placeholder="Name" disabled></th>
-                          <th><input type="text" class="form-control" placeholder="Email" disabled></th>
-                          <th><input type="hidden" class="form-control" placeholder="Edit" disabled></th>
-                          <th><input type="hidden" class="form-control" placeholder="Delete" disabled></th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      <?php foreach ($new_users as $uk => $uv):?>
-                          <tr>
-                              <td><?php print($uv['id']);?></td>
-                              <td><?php print($uv['first_name'].' '.$uv['last_name']);?></td>
-                              <td><?php print($uv['email']);?></td>
-                              <td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit_user" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                              <td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete_user" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                          </tr>
-                      <?php endforeach; ?>
-                      </tbody>
-                  </table>
-              </div>
+
           </div>
+            <div class="tab-pane fade" id="new-users">
+                <!--                  new users-->
+                <div class="filterable panel-tabs">
+                    <div class="panel-heading">
+                        <div class="pull-right">
+                            <button class="btn btn-default btn-xs btn-filter">
+                                <span class="glyphicon glyphicon-filter"></span> Filter
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="panel panel-default">
+                            <div class="panel-body-table">
+                                <div class="table-responsive">
+                    <table class="table table-condensed">
+                        <thead>
+                        <tr class="filters">
+                            <th><input type="text" class="form-control filter" placeholder="#" disabled></th>
+                            <th style="border-left: 1px solid #ddd;"><input type="text" class="form-control filter" placeholder="Name" disabled></th>
+                            <th style="border-left: 1px solid #ddd;"><input type="text" class="form-control filter" placeholder="Email" disabled></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach ($new_users as $uk => $uv): ?>
+                            <tr>
+                                <td><?php print($uv['id']); ?></td>
+                                <td><?php print($uv['first_name'] . ' ' . $uv['last_name']); ?></td>
+                                <td><a href="mailto:<?php print($uv['email']); ?>"><?php print($uv['email']); ?></a></td>
+                                <td>
+                                    <a href="#" data-title="Edit" data-toggle="modal" data-target="#edit_user">Activate</a>
+                                </td>
+                                <td><a href="#" data-title="Delete" data-toggle="modal" data-target="#delete_user">Remove</a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
           <div class="clearfix"></div>
         </div>
         <!--      tabs-->
