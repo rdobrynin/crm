@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8ede6c0-9a43-4a54-ac19-d55c4b9604aa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/bootstrap-confirmation.js" afterPath="$PROJECT_DIR$/assets/js/bootstrap-confirmation.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/users_view.php" afterPath="$PROJECT_DIR$/application/views/templates/users_view.php" />
     </list>
     <ignored path="crm.iws" />
@@ -40,7 +39,7 @@
           <file leaf-file-name="users_view.php" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/application/views/templates/users_view.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="68" column="76" selection-start="4803" selection-end="4803" vertical-scroll-proportion="0.57816374" vertical-offset="758" max-vertical-offset="5486">
+                <state line="183" column="39" selection-start="11879" selection-end="11879" vertical-scroll-proportion="-0.6923077" vertical-offset="3852" max-vertical-offset="5810">
                   <folding>
                     <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -50,8 +49,10 @@
                     <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                    <marker date="1418733365213" expanded="true" signature="13752:13768" placeholder="..." />
-                    <marker date="1418733365213" expanded="true" signature="13843:13859" placeholder="..." />
+                    <marker date="1418734504217" expanded="true" signature="13808:13824" placeholder="..." />
+                    <marker date="1418734504217" expanded="true" signature="13899:13915" placeholder="..." />
+                    <marker date="1418734504217" expanded="true" signature="15602:15618" placeholder="..." />
+                    <marker date="1418734504217" expanded="true" signature="15693:15709" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -147,7 +148,7 @@
           <file leaf-file-name="users_view.php" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/application/views/templates/users_view.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="96" column="45" selection-start="6576" selection-end="6576" vertical-scroll-proportion="10.164161" vertical-offset="4219" max-vertical-offset="29922">
+                <state line="96" column="45" selection-start="6576" selection-end="6576" vertical-scroll-proportion="10.164161" vertical-offset="4219" max-vertical-offset="31434">
                   <folding>
                     <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -157,13 +158,10 @@
                     <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                    <marker date="1418733365213" expanded="true" signature="13584:15223" placeholder="{&quot;placement&quot;: 'left'...}" />
-                    <marker date="1418733365213" expanded="true" signature="13906:15092" placeholder="{...}" />
-                    <marker date="1418733365213" expanded="true" signature="14020:14077" placeholder="{...}" />
-                    <marker date="1418733365213" expanded="true" signature="14102:15076" placeholder="{&quot;url&quot;: &quot;&lt;?php echo site_url('ajax/activateUser'); ?&gt;&quot;...}" />
-                    <marker date="1418733365213" expanded="true" signature="14330:15058" placeholder="{...}" />
-                    <marker date="1418733365213" expanded="true" signature="14588:14975" placeholder="{...}" />
-                    <marker date="1418733365213" expanded="true" signature="15128:15213" placeholder="{...}" />
+                    <marker date="1418734504217" expanded="true" signature="13473:13535" placeholder="{...}" />
+                    <marker date="1418734504217" expanded="true" signature="13610:15321" placeholder="{&quot;placement&quot;: 'left'...}" />
+                    <marker date="1418734504217" expanded="true" signature="13962:15176" placeholder="{...}" />
+                    <marker date="1418734504217" expanded="true" signature="15212:15311" placeholder="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -1034,7 +1032,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/users_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="76" selection-start="4803" selection-end="4803" vertical-scroll-proportion="0.57816374" vertical-offset="758" max-vertical-offset="5486">
+        <state line="183" column="39" selection-start="11879" selection-end="11879" vertical-scroll-proportion="-0.6923077" vertical-offset="3852" max-vertical-offset="5810">
           <folding>
             <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1044,8 +1042,10 @@
             <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <marker date="1418733365213" expanded="true" signature="13752:13768" placeholder="..." />
-            <marker date="1418733365213" expanded="true" signature="13843:13859" placeholder="..." />
+            <marker date="1418734504217" expanded="true" signature="13808:13824" placeholder="..." />
+            <marker date="1418734504217" expanded="true" signature="13899:13915" placeholder="..." />
+            <marker date="1418734504217" expanded="true" signature="15602:15618" placeholder="..." />
+            <marker date="1418734504217" expanded="true" signature="15693:15709" placeholder="..." />
           </folding>
         </state>
       </provider>

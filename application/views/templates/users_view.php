@@ -130,10 +130,10 @@
                                                             <a href="mailto:<?php print($uv['email']); ?>"><?php print($uv['email']); ?></a>
                                                         </td>
                                                         <td>
-                                                            <a href="#" data-toggle="confirmation" data-singleton="true"  data-user="<?php print($uv['id']); ?>">Activate</a>
+                                                            <a href="#" data-toggle="confirmation-activate-user" data-singleton="true"  data-user="<?php print($uv['id']); ?>">Activate</a>
                                                         </td>
                                                         <td>
-                                                            <a href="#" data-title="Delete" data-toggle="modal" data-target="#delete_user">Remove</a>
+                                                            <a href="#" data-toggle="confirmation-delete-new-user" data-singleton="true">Remove</a>
                                                         </td>
                                                     </tr>
                                                 <?php endforeach; ?>
@@ -222,15 +222,16 @@
         e.preventDefault()
         $(this).tab('show')
     });
-    $('[data-toggle=confirmation]').confirmation(
+    $('[data-toggle=confirmation-activate-user]').confirmation(
         {
             placement: 'left',
+            animation: false,
             btnOkClass:'btn-xs',
             btnCancelClass:'btn-xs',
             btnCancelLabel:'<i class="fa fa-times-circle" style="margin-right: 0;"></i> No',
             btnOkLabel:'<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
             onConfirm: function () {
-                var currentUser = $('[data-toggle=confirmation]').data("user");
+                var currentUser = $('[data-toggle=confirmation-activate-user]').data("user");
                 var form_data = {
                     user: currentUser
                 };
@@ -242,7 +243,7 @@
                     success: function (msg) {
                         $('#tr_new_user_'+currentUser).remove();
 
-                        $('[data-toggle=confirmation]').confirmation('hide');
+                        $('[data-toggle=confirmation-activate-user]').confirmation('hide');
                         var rowCount = $('#tbody-new-users tr').length;
                         if(rowCount <1) {
                             $('#new-users').remove();
@@ -255,7 +256,24 @@
                 });
             },
             onCancel: function () {
-                $('[data-toggle=confirmation]').confirmation('hide');
+                $('[data-toggle=confirmation-activate-user]').confirmation('hide');
+            }
+        }
+    );
+
+    $('[data-toggle=confirmation-delete-new-user]').confirmation(
+        {
+            placement: 'left',
+            animation: false,
+            btnOkClass:'btn-xs',
+            btnCancelClass:'btn-xs',
+            btnCancelLabel:'<i class="fa fa-times-circle" style="margin-right: 0;"></i> No',
+            btnOkLabel:'<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
+            onConfirm: function () {
+               alert('test');
+            },
+            onCancel: function () {
+                $('[data-toggle=confirmation-delete-new-user]').confirmation('hide');
             }
         }
     );
