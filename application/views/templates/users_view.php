@@ -73,7 +73,7 @@
                                                     </td>
                                                     <td>
                                                         <?php if ($uv['role'] !=5): ?>
-                                                            <a href="#" data-toggle="confirmation-delete-current-user" data-singleton="true" data-user="<?php print($uv['id']); ?>">Remove</a>
+                                                            <a href="#" data-toggle="confirmation-delete-current-user" data-singleton="true" data-target="<?php print($uv['id']); ?>">Remove</a>
                                                         <?php endif ?>
                                                     </td>
                                                 </tr>
@@ -130,10 +130,10 @@
                                                             <a href="mailto:<?php print($uv['email']); ?>"><?php print($uv['email']); ?></a>
                                                         </td>
                                                         <td>
-                                                            <a href="#" data-toggle="confirmation-activate-user" data-singleton="true"  data-user="<?php print($uv['id']); ?>">Activate</a>
+                                                            <a href="#" data-toggle="confirmation-activate-user" data-singleton="true"  data-target="<?php print($uv['id']); ?>">Activate</a>
                                                         </td>
                                                         <td>
-                                                            <a href="#" data-toggle="confirmation-delete-new-user" data-singleton="true" data-user="<?php print($uv['id']); ?>">Remove</a>
+                                                            <a href="#" data-toggle="confirmation-delete-new-user" data-singleton="true" data-target="<?php print($uv['id']); ?>">Remove</a>
                                                         </td>
                                                     </tr>
                                                 <?php endforeach; ?>
@@ -231,7 +231,7 @@
             btnCancelLabel:'<i class="fa fa-times-circle" style="margin-right: 0;"></i> No',
             btnOkLabel:'<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
             onConfirm: function () {
-                var currentUser = $('[data-toggle=confirmation-activate-user]').data("user");
+                var currentUser = $(this).attr('target');
                 var form_data = {
                     user: currentUser
                 };
@@ -248,7 +248,7 @@
                         if(rowCount <1) {
                             $('#new-users').remove();
                             $('#table-new-users').hide();
-                            $('#info-new-users').html('<div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No oneof new users found</div>')
+                            $('#info-new-users').html('<div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of new users found</div>')
                             $('#calc-new-users').css('display','none');
                         }
                         $('#calc-new-users').html(rowCount);
@@ -270,7 +270,7 @@
             btnCancelLabel:'<i class="fa fa-times-circle" style="margin-right: 0;"></i> No',
             btnOkLabel:'<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
             onConfirm: function () {
-                var currentUser = $('[data-toggle=confirmation-delete-new-user]').data("user");
+                var currentUser = $(this).attr('target');
                 var form_data = {
                     user: currentUser
                 };
@@ -310,9 +310,7 @@
             btnOkLabel:'<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
             onConfirm: function () {
 //                todo
-                var currentUser = $('[data-toggle=confirmation-delete-current-user]').data("user");
-
-                console.log(this);
+                var currentUser = $(this).attr('target');
                 var form_data = {
                     user: currentUser
                 };
