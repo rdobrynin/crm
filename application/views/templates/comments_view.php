@@ -3,7 +3,7 @@
 
   <!-- Keep all page content within the page-content inset div! -->
   <div class="page-content inset">
-      <h3 class="h_title">Comments&nbsp;(<span id="calc-all-comments" ></span>)  <a href="#" onClick="SendComment(<?php print($user[0]['id'])?>)" class="btn btn-primary pull-right add-comment"><?php print(lang('add_comment')); ?></a></h3>
+      <h3 class="h_title">Comments&nbsp;(<span id="calc-all-comments" ></span>) </h3>
 
     <div class="row-fluid">
         <?php if ($comments != FALSE): ?>
@@ -34,7 +34,7 @@
                                         <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($cv['uid']); ?>)"><?php print(short_name($user_name[$cv['uid']])); ?></a></td>
                                         <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($cv['to']); ?>)"><?php print(short_name($user_name[$cv['to']])); ?></a></td>
                                         <td><span class="muted"><?php print($cv['text']); ?></span></td>
-                                        <td><span class="muted"> <?php if ($cv['public'] == 0): ?>published<?php else: ?>inactive<?php endif ?> </span></td>
+                                        <td class="center"><span class="muted"><input type="checkbox" data-off="enable" data-on="disable" class="onoff" <?php if ($cv['public'] == 0): ?> checked  <?php endif ?> data-size="small" data-onstyle="success" data-offstyle="danger"></span></td>
                                         <td class="text-center"><a href="#"><i class="fa fa-pencil"></i></a>
                                         </td>
                                     </tr>
@@ -61,7 +61,14 @@
 <?php include('footer_view.php');?>
 <script>
     $(function () {
+        $('.onoff').bootstrapToggle({
+            size:'mini'
+        });
         $('#all_comments_table').pageMe({pagerSelector:'#pager_all_comments',showPrevNext:true,hidePageNumbers:false,perPage:20});
+
     });
+
+
+
 </script>
 

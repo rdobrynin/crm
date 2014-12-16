@@ -324,3 +324,6 @@ tr.disabled {
     background: none !important;
     border: none !important;
 }
+
+.toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 6px; }
+.toggle.ios .toggle-handle { border-radius: 6px; }
