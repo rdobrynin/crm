@@ -103,6 +103,17 @@ class Dashboard extends CI_Controller {
             $data['over_tasks']=false;
         }
 
+
+        $comptasks = $this->task_model->getCompTasks();
+
+        if($comptasks) {
+            $data['comp_tasks']= $comptasks;
+        }
+        else {
+            $data['comp_tasks']=false;
+        }
+
+
         $processtasks = $this->task_model->getprocessTasks();
 
         if($processtasks) {
@@ -145,9 +156,10 @@ class Dashboard extends CI_Controller {
         $this->load->view('templates/sidebar_view', $data);
 
         $this->load->view('templates/dashboard_view', $data);
-
+        $this->load->view('templates/dashboard_js',$data);
         $this->load->view('templates/footer_view',$data);
         $this->load->view('templates/settings_view', $data);
+
     }
 
     /**

@@ -23,13 +23,13 @@
                                 </div>
                                 <div class="widget-stats ">
                                     <div class="wrapper last">
-                                        <span class="item-title">Overall hours</span> <span class="item-count animate-number semi-bold" data-value="1547" data-animation-duration="700">143</span>
+                                        <span class="item-title">Overall workflow</span> <span class="item-count animate-number semi-bold" data-value="1547" data-animation-duration="700">143 h</span>
                                     </div>
                                 </div>
                                 <div class="progress transparent progress-small no-radius m-t-20" style="width:90%">
-                                    <div class="progress-bar progress-bar-white animate-progress-bar" data-percentage="43%" style="width: 64.8%;"></div>
+                                    <div class="progress-bar progress-bar-white animate-progress-bar"  data-percentage="43%" style="width: 64.8%;"></div>
                                 </div>
-                                <div class="description"> <span class="text-white mini-description ">43% sll projects <span class="blend">completed</span></span></div>
+                                <div class="description"> <span class="text-white mini-description ">43% all projects <span class="blend">completed</span></span></div>
                             </div>
                         </div>
                     </div>
@@ -54,9 +54,9 @@
                                     </div>
                                 </div>
                                 <div class="progress transparent progress-small no-radius m-t-20" style="width:90%">
-                                    <div class="progress-bar progress-bar-white animate-progress-bar" data-percentage="25%" style="width: 54%;"></div>
+                                    <div class="progress-bar progress-bar-white animate-progress-bar" id="progress-tasks" data-percentage="25%" style="width: 54%;"></div>
                                 </div>
-                                <div class="description"> <span class="text-white mini-description ">25% all tasks <span class="blend">completed</span></span></div>
+                                <div class="description"> <span class="text-white mini-description "><span id="percent-completed-tasks">25%</span> all tasks <span class="blend">completed</span></span></div>
                             </div>
                         </div>
                     </div>
@@ -129,11 +129,10 @@
             </div>
             <div class="col-md-3">
                 <div class="panel panel-primary">
-                    <div class="panel-heading clickable">
+                    <div class="panel-heading">
                         <h3 class="panel-title">Activity Stream</h3>
-                        <span class="pull-right clickable panel-collapsed"><i class="glyphicon glyphicon-minus"></i></span>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body comment">
                         <div class="sub-activity">
                             <div class="avatar-activity">
                                 <span class="avatar-img">
@@ -225,9 +224,7 @@
 </div>
 <!--logs-->
 <!--test-->
+
 <?php include('logs_view.php'); ?>
 <?php include('right_float_view.php'); ?>
-<script>
-
-</script>
 

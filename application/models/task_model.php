@@ -206,6 +206,25 @@ class Task_model extends CI_Model {
     }
 
 
+    /**
+     * Get process tasks
+     * @return mixed
+     */
+
+    public function getCompTasks() {
+        $query = $this
+            ->db
+            ->where('status', '3')
+            ->get('task');
+        if ($query->num_rows > 0) {
+            return $query->result_array();
+        }
+        else {
+            return FALSE;
+        }
+    }
+
+
 
 
     /**

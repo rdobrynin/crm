@@ -399,6 +399,8 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
           width: '240px'
       });
 
+
+
   });
 
   /**
@@ -614,4 +616,5 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
       $('.task-view-wrapper').css('display','none');
       $('.tasks-view').css('display','none');
   }
+
 </script>

@@ -32,6 +32,20 @@
     <link href="<?php print(base_url()); ?>css/btn.css" rel="stylesheet">
     <link href="<?php print(base_url()); ?>css/logs.css" rel="stylesheet">
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap-switch.min.js"></script>
+    <script src="assets/js/jquery.bootstrap.wizard.min.js"></script>
+    <script src="assets/js/bootstrap-select.js"></script>
+    <script src="assets/js/ajaxfileupload.js"></script>
+    <script src="js/script.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-confirmation.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/jquery.datetimepicker.js"></script>
+    <script src="assets/js/jquery.autocomplete.js"></script>
+    <script src="assets/js/bootstrap-toggle.js"></script>
+
     <!-- Bootstrap core CSS -->
 <!--    <link rel="stylesheet/less" type="text/css" href="--><?php //print(base_url()); ?><!--less/style.less">-->
     <script src="<?php print(base_url()); ?>assets/js/less.min.js" type="text/javascript"></script>
