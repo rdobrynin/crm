@@ -20,8 +20,9 @@
                                     <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">From</th>
                                     <th width="10%" class="text-" style="border-left: 1px solid #ddd;">To</th>
                                     <th width="45%" class="text-left" style="border-left: 1px solid #ddd;">Message</th>
-                                    <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
-                                    <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
+                                    <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
+                                        <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
+                                    <? endif?>
                                 </tr>
                                 </thead>
                                 <tbody id="all_comments_table">
@@ -34,9 +35,9 @@
                                         <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($cv['uid']); ?>)"><?php print(short_name($user_name[$cv['uid']])); ?></a></td>
                                         <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($cv['to']); ?>)"><?php print(short_name($user_name[$cv['to']])); ?></a></td>
                                         <td><span class="muted"><?php print($cv['text']); ?></span></td>
-                                        <td class="center toggle-comment" data-comment="<?php print($cv['id']); ?>"><span class="muted"><input type="checkbox" data-off="enable" data-on="disable" class="onoff " <?php if ($cv['public'] == 0): ?> checked  <?php endif ?> data-size="small" data-onstyle="success" data-offstyle="danger"></span></td>
-                                        <td class="text-center"><a href="#"><i class="fa fa-pencil"></i></a>
-                                        </td>
+                                        <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
+                                            <td class="center toggle-comment" data-comment="<?php print($cv['id']); ?>"><span class="muted"><input type="checkbox" data-off="disable" data-on="enable" class="onoff " <?php if ($cv['public'] == 0): ?> checked  <?php endif ?> data-size="small" data-onstyle="success" data-offstyle="danger"></span></td>
+                                        <? endif?>
                                     </tr>
                                 <?php endforeach ?>
 

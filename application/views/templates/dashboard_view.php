@@ -80,7 +80,9 @@
                                             <th width="3%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
                                             <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
+                                            <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
                                             <th width="3%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
+                                            <?php endif ?>
                                         </tr>
                                         </thead>
                                         <tbody id="approve_tasks_table">
@@ -101,8 +103,9 @@
                                                 </td>
                                                 <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
                                                 <td class="text-left"><?php print(date_format(date_create($tv['due_time']),"Y/m/d H:i")); ?></td>
-                                                <td class="text-center"><a href="#"><i class="fa fa-pencil"></i></a>
-                                                </td>
+                                                <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
+                                                <td class="text-center"><a href="#"><i class="fa fa-pencil"></i></a></td>
+                                            <?php endif ?>
                                             </tr>
                                             <?php endif ?>
                                         <?php endforeach ?>

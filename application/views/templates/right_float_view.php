@@ -7,7 +7,7 @@
             </div>
             <div class="sidebar-fullname"><?php print($uv['first_name']. ' '.$uv['last_name']); ?>&nbsp;<a href="#"  onClick="qmSendComment(<?php print($uv['id']); ?>)"><i class="fa fa-comment comment-sidebar" id="comm-<?php print($uv['id']); ?>"></i></a></div>
             <div class="user-details-count-wrapper">
-                <div class="status-icon  <?php if ($uv['status']==1): ?>green <?php else: ?>grey<?php endif ?>"></div>
+                <div class="status-icon  <?php if ($uv['status']==1): ?>green <?php else: ?>grey<?php endif ?>" id="status-online-<?php print($uv['id']); ?>"></div>
             </div>
             <div class="sidebar-position"><?php print(show_role($uv['role'])); ?></div>
             <div class="sidebar-position"><a href="mailto:<?php print($uv['email']); ?>"><?php print($uv['email']); ?></a></div>

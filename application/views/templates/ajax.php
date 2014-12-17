@@ -242,6 +242,10 @@
 //                  }
             $('.show-info-online').show();
             $('.show-info-online').children( ".show-info-content-online").html('<span class="label label-xs label-success label-round"></span>'+name+' is online');
+
+$('#status-online-'+id).removeClass('grey').addClass('green');
+
+
             $('.show-info-online').delay(2500).fadeOut();
                 }
                 else if(entry['status']=='0') {
@@ -257,6 +261,7 @@
 //                  }
                   $('.show-info-online').show();
                   $('.show-info-online').children( ".show-info-content-online").html('<span class="label label-xs label-primary label-round"></span>'+name+' is offline');
+                    $('#status-online-'+id).removeClass('green').addClass('grey');
                   $('.show-info-online').delay(2500).fadeOut();
                 }
               }

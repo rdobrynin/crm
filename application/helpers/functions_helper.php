@@ -89,10 +89,13 @@ if (!function_exists('lastname_letter')) {
 
 if (!function_exists('short_name')) {
     function short_name($str) {
-        $trimmed_text = substr($str,0,10).'...';
+        $arr = explode(' ',trim($str));
+       $fname = $arr[0];
+        $lname = $arr[1];
 
+        $full_name =$fname.' '.(substr($lname, 0, 1).'...');
 
-        return $trimmed_text;
+        return $full_name;
 
     }
 }
