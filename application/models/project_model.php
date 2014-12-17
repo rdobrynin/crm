@@ -151,6 +151,20 @@ class Project_model extends CI_Model {
         return $query->result_array();
     }
 
+
+    /**
+     * Get project
+     * @return mixed
+     */
+
+    public function getProject($pid) {
+        $query = $this
+            ->db
+            ->where('pid', $pid)
+            ->get('project');
+        return $query->result_array();
+    }
+
 }
 
 

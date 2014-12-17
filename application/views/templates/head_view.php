@@ -45,6 +45,20 @@
 <div class="task-view-wrapper">
 <div class="tasks-view">
 <div class="task-view-header"></div>
+    <div class="task-view-body">
+        <div class="row">
+            <!--/col-->
+            <div class="col-xs-12 task-view-content">
+                <p><strong>Created: </strong> Web Designer / UI Expert. </p>
+                <p><strong>Due to: </strong> Web Designer / UI Expert. </p>
+                <p><strong>Implementor: </strong> Web Designer / UI Expert. </p>
+                <p><strong>Description: </strong> Web Designer / UI Expert. </p>
+                    <span class="label label-warning tags">approve</span>
+            </div>
+
+
+        </div>
+    </div>
 </div>
 </div>
 

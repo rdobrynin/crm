@@ -577,12 +577,12 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
           dataType: 'json',
           success: function (msg) {
               if(msg != 'false') {
-                  console.log(msg);
+                  console.log(msg['project']);
                   colorPriority = 'color:#f89406;';
-                  if (msg.priority == '0') {
+                  if (msg['task'].priority == '0') {
                       colorPriority = 'color:#428bca;';
                   }
-                  else if (msg.priority == '1') {
+                  else if (msg['task'].priority == '1') {
                       colorPriority = 'color:#f89406;';
 
                   }
@@ -592,7 +592,13 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                   $('.task-view-wrapper').css('display','block');
                   $('.tasks-view').css('display','block');
 
-                  $('.task-view-header').html('<span class="pull-left"><i class="fa fa-gavel"></i>&nbsp;'+msg.title+'</span><span class="pull-right"><i class="fa fa-circle circle-priority-view" style="'+colorPriority+'"></i></span>');
+                  $('.task-view-header').html('<span class="pull-left">'+msg['task'].title+' ('+msg['project'][0]['title']+')'+'</span><span class="pull-right"><i class="fa fa-circle circle-priority-view" style="'+colorPriority+'"></i></span>');
+
+                  $('.task-view-content').html('<p><strong>Created: </strong>'+msg['task'].date_created+'</p>'+
+                      '<p><strong>Due to: </strong><span style="color:red;">'+msg['task'].due_time+'</span></p>'+
+                      '<p><strong>Implementor: </strong>'+msg['implementor']+' | <strong>Curator: </strong>'+msg['curator']+'</p>'+
+                      '<p><strong>Description: </strong>'+msg['task'].desc+'</p>'+
+                      '<span class="label <?php print(task_status_label('+msg["task"].status+')); ?> label-xs tags pull-right"><?php print(task_status('+msg["task"].status+')); ?></span>');
               }
 
               }
@@ -601,7 +607,7 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
   }
 
   function taskToHide(){
-      $('.task-view-wrapper').css('display','none');
-      $('.tasks-view').css('display','none');
+//      $('.task-view-wrapper').css('display','none');
+//      $('.tasks-view').css('display','none');
   }
 </script>

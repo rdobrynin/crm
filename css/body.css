@@ -352,12 +352,13 @@ i.fa.fa-times {
     top: 0;
     margin: 0 auto;
     display: none;
+    pointer-events: none;
 }
 
 .tasks-view {
     position: relative;
-    width: 400px;
-    height: 100px;
+    width: 500px;
+    height: auto;
     background-color: #fff;
     z-index: 999999999999;
     margin: 0 auto;
@@ -380,3 +381,10 @@ i.fa.fa-times {
     padding-right: 10px;
     text-transform: capitalize;
 }
+
+.task-view-body {
+    padding: 10px;
+    width: 100%;
+
+}
+

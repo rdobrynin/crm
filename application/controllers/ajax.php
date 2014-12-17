@@ -626,14 +626,23 @@ class Ajax extends CI_Controller {
     }
 
 
+    /**
+     * Quick search task
+     */
+
     function getTask() {
         $id =  $this->input->post('tid');
         $this->load->model('task_model');
-        $result = $this->task_model->getTask($id);
+        $this->load->model('admin_model');
+        $this->load->model('project_model');
+        $array = $this->task_model->getTask($id);
+        $result['task'] = $array;
+        $result['curator'] = $this->admin_model->getUsername($array->uid);
+        $result['implementor'] = $this->admin_model->getUsername($array->implementor);
+        $result['project'] = $this->project_model->getProject($array->pid);
+
         echo json_encode ($result);
     }
-
-
 
 }
 
