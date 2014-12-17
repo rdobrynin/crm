@@ -49,11 +49,7 @@
         <div class="row">
             <!--/col-->
             <div class="col-xs-12 task-view-content">
-                <p><strong>Created: </strong> Web Designer / UI Expert. </p>
-                <p><strong>Due to: </strong> Web Designer / UI Expert. </p>
-                <p><strong>Implementor: </strong> Web Designer / UI Expert. </p>
-                <p><strong>Description: </strong> Web Designer / UI Expert. </p>
-                    <span class="label label-warning tags">approve</span>
+
             </div>
 
 

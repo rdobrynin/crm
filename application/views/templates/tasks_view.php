@@ -22,7 +22,7 @@
                                   <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
                                   <th width="2%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
                                   <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
-                                  <th width="2%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
+                                  <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
                               </tr>
                               </thead>
                               <tbody id="all_task_table">
@@ -42,8 +42,14 @@
                                       </td>
                                       <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
                                       <td class="text-left"><?php print(date_format(date_create($tv['due_time']),"F d H:i")); ?></td>
-                                      <td class="text-center"><a href="#"><i class="fa fa-pencil"></i></a>
-                                      </td>
+                                      <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
+                                          <td>
+                                              <a href="#" onClick="processToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
+                                              <a href="#" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
+                                              <a href="#" onMouseOver="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
+                                              <a href="#" style="text-decoration: none;"><i class="fa fa-times"></i></a>
+                                          </td>
+                                      <?php endif ?>
                                   </tr>
                               <?php endforeach ?>
                               </tbody>

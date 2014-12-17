@@ -577,7 +577,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
           dataType: 'json',
           success: function (msg) {
               if(msg != 'false') {
-                  console.log(msg['project']);
                   colorPriority = 'color:#f89406;';
                   if (msg['task'].priority == '0') {
                       colorPriority = 'color:#428bca;';
@@ -597,8 +596,7 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                   $('.task-view-content').html('<p><strong>Created: </strong>'+msg['task'].date_created+'</p>'+
                       '<p><strong>Due to: </strong><span style="color:red;">'+msg['task'].due_time+'</span></p>'+
                       '<p><strong>Implementor: </strong>'+msg['implementor']+' | <strong>Curator: </strong>'+msg['curator']+'</p>'+
-                      '<p><strong>Description: </strong>'+msg['task'].desc+'</p>'+
-                      '<span class="label <?php print(task_status_label('+msg["task"].status+')); ?> label-xs tags pull-right"><?php print(task_status('+msg["task"].status+')); ?></span>');
+                      '<p><strong>Description: </strong>'+msg['task'].desc+'</p>');
               }
 
               }
@@ -607,7 +605,7 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
   }
 
   function taskToHide(){
-//      $('.task-view-wrapper').css('display','none');
-//      $('.tasks-view').css('display','none');
+      $('.task-view-wrapper').css('display','none');
+      $('.tasks-view').css('display','none');
   }
 </script>
