@@ -74,8 +74,8 @@
                                             <th width="4%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
                                             <th width="4%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
                                             <th width="4%" class="text-" style="border-left: 1px solid #ddd;">Creator</th>
-                                            <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
-                                            <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Assigned project</th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
+                                            <th width="6%" class="text-left" style="border-left: 1px solid #ddd;">Assigned project</th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
                                             <th width="3%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
                                             <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
