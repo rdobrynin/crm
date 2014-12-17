@@ -564,6 +564,8 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
    */
 
   function taskToView($data){
+//todo
+
 
       var form_data_ = {
           tid: $data
@@ -576,10 +578,20 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
           success: function (msg) {
               if(msg != 'false') {
                   console.log(msg);
+
+                  $('.task-view-wrapper').css('display','block');
+                  $('.tasks-view').css('display','block');
               }
 
               }
 
       });
+  }
+
+  function taskToHide(){
+//todo
+
+      $('.task-view-wrapper').css('display','none');
+      $('.tasks-view').css('display','none');
   }
 </script>

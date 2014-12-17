@@ -41,5 +41,12 @@
 <!--    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>-->
 </head>
 <body>
+
+<div class="task-view-wrapper">
+<div class="tasks-view">
+<div class="task-view-header"></div>
+</div>
+</div>
+
 <div class="right-sidebar">
 </div>

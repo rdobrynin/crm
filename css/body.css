@@ -335,3 +335,34 @@ i.fa.fa-play {
 i.fa.fa-times {
     color: rgb(184, 184, 184);
 }
+
+
+.task-view-wrapper {
+    width: 100%;
+    position: absolute;
+    z-index: 9999999999;
+    top: 0;
+    margin: 0 auto;
+    display: none;
+}
+
+.tasks-view {
+    position: relative;
+    width: 400px;
+    height: 100px;
+    background-color: #fff;
+    z-index: 999999999999;
+    margin: 0 auto;
+    margin-top: 30px;
+    display:none;
+}
+
+.task-view-header {
+    background-color: #404040;
+    /* position: relative; */
+    bottom: 400px;
+    width: 100%;
+    right: 30px;
+    padding: 12px;
+    color: #fff;
+}
