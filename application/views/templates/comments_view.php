@@ -15,13 +15,13 @@
                                 <thead>
                                 <tr>
                                     <th width="5%" class="text-left">#ID</th>
-                                    <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
+                                    <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
                                     <th width="10%" class="text-" style="border-left: 1px solid #ddd;">Subject</th>
                                     <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">From</th>
                                     <th width="10%" class="text-" style="border-left: 1px solid #ddd;">To</th>
                                     <th width="45%" class="text-left" style="border-left: 1px solid #ddd;">Message</th>
                                     <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
-                                        <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
+                                        <th width="3%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
                                     <? endif?>
                                 </tr>
                                 </thead>
@@ -30,7 +30,7 @@
                                 <?php foreach ($comments as $ck => $cv): ?>
                                     <tr class="<?php if ($cv['public'] == 1): ?>disabled<?php endif ?> ">
                                         <td><?php print($cv['id']); ?></td>
-                                        <td><span class="muted"><?php print($cv['date_created']); ?></span></td>
+                                        <td><span class="muted"><?php print(date_format(date_create($cv['date_created']),"F d H:i")); ?></span></td>
                                         <td><?php print($cv['subject']); ?></td>
                                         <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($cv['uid']); ?>)"><?php print(short_name($user_name[$cv['uid']])); ?></a></td>
                                         <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($cv['to']); ?>)"><?php print(short_name($user_name[$cv['to']])); ?></a></td>

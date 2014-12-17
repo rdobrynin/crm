@@ -28,7 +28,7 @@
                                                 <?php if ($ev['type'] != 2): ?>
                                                 <tr>
                                                 <td><?php print($ev['id']); ?></td>
-                                                <td class="text-left"><?php print($ev['time']); ?></td>
+                                                <td class="text-left"><?php print(date_format(date_create($ev['time']),"F d H:i")); ?></td>
                                                 <td class="text-left"><a href="#" onClick="qmSendComment(<?php print($ev['uid']); ?>)"><?php print(short_name($user_name[$ev['uid']])); ?></a></td>
                                                 <td class="text-left"> <?php if ($ev['type'] == 0): ?><i class="fa fa-cube"></i>&nbsp;project<?php endif ?>  <?php if ($ev['type'] == 1): ?><i class="fa fa-gavel"></i>&nbsp;task<?php endif ?></td>
                                                 <td class="text-left"><?php print($ev['title']); ?></td>

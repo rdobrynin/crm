@@ -14,15 +14,15 @@
                                   <th width="3%" class="text-left">#ID</th>
                                   <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
                                   <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
-                                  <th width="8%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
-                                  <th width="8%" class="text-" style="border-left: 1px solid #ddd;">Creator</th>
+                                  <th width="4%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
+                                  <th width="4%" class="text-" style="border-left: 1px solid #ddd;">Creator</th>
                                   <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
                                   <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Assigned project</th>
                                   <th width="18%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
                                   <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
-                                  <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
-                                  <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
-                                  <th width="3%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
+                                  <th width="2%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
+                                  <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
+                                  <th width="2%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
                               </tr>
                               </thead>
                               <tbody id="all_task_table">
@@ -30,7 +30,7 @@
                               <?php foreach ($tasks as $tk => $tv): ?>
                                   <tr class="<?php if ($tv['status'] == 6): ?>danger<?php endif ?>">
                                       <td><?php print($tv['id']); ?></td>
-                                      <td><span class="muted"><?php print($tv['date_created']); ?></span></td>
+                                      <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                       <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
                                       <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
                                       <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
@@ -41,7 +41,7 @@
                                           <span class="label <?php print(task_status_label($tv['status'])); ?> label-xs"><?php print(task_status($tv['status'])); ?></span>
                                       </td>
                                       <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
-                                      <td class="text-left"><?php print($tv['due_time']); ?></td>
+                                      <td class="text-left"><?php print(date_format(date_create($tv['due_time']),"F d H:i")); ?></td>
                                       <td class="text-center"><a href="#"><i class="fa fa-pencil"></i></a>
                                       </td>
                                   </tr>
