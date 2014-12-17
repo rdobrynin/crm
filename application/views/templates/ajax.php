@@ -545,5 +545,41 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               }
           });
       });
+
+
+  }
+
+  /**
+   * Ajax approve to ready
+   * @param $data
+   */
+
+  function processToReady($data){
+
+  }
+
+  /**
+   * Ajax approve view task
+   * @param $data
+   */
+
+  function taskToView($data){
+
+      var form_data_ = {
+          tid: $data
+      };
+      $.ajax({
+          url: "<?php echo site_url('ajax/getTask'); ?>",
+          type: 'POST',
+          data: form_data_,
+          dataType: 'json',
+          success: function (msg) {
+              if(msg != 'false') {
+                  console.log(msg);
+              }
+
+              }
+
+      });
   }
 </script>

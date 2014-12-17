@@ -1,4 +1,4 @@
-<div class="modal fade" id="invite" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal" id="invite" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <?php $attributes = array('class' => 'form-signin', 'id' => 'invite-form', 'autocomplete' => 'off'); ?>
         <?php echo form_open('#', $attributes); ?>
@@ -58,7 +58,7 @@
 </div> <!-- #/myModal -->
 
 <!--Create project modal window-->
-<div class="modal fade" id="addproject_modal" tabindex="-1" role="dialog" aria-labelledby="addproject_formLabel" aria-hidden="true">
+<div class="modal" id="addproject_modal" tabindex="-1" role="dialog" aria-labelledby="addproject_formLabel" aria-hidden="true">
     <div class="modal-dialog">
         <?php $attributes = array('class' => 'form-signin', 'id' => 'addproject_form', 'autocomplete' => 'on'); ?>
         <?php echo form_open('#', $attributes); ?>
@@ -100,7 +100,7 @@
 </div> <!-- #/addproject_moda -->
 
 <!--Create task for project modal window-->
-<div class="modal fade" id="addtask_pr_modal" tabindex="-1" role="dialog" aria-labelledby="addtask_pr_formLabel" aria-hidden="true">
+<div class="modal" id="addtask_pr_modal" tabindex="-1" role="dialog" aria-labelledby="addtask_pr_formLabel" aria-hidden="true">
     <div class="modal-dialog">
         <?php $attributes = array('class' => 'form-signin', 'id' => 'addtask_pr_form', 'autocomplete' => 'on'); ?>
         <?php echo form_open('#', $attributes); ?>

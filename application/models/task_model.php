@@ -167,6 +167,27 @@ class Task_model extends CI_Model {
     }
 
 
+    /**
+     * verify task
+     * @param $id
+     * @return bool
+     */
+
+    public function getTask($id) {
+        $query = $this
+            ->db
+            ->where('id', $id)
+            ->limit('1')
+            ->get('task');
+        if ($query->num_rows > 0) {
+            return $query->row();
+        }
+        else {
+            return FALSE;
+        }
+    }
+
+
 }
 
 

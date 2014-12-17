@@ -12,14 +12,12 @@
 
 /* custom animation */
 .modal.fade {
-    /*left: -50%;*/
-    -webkit-transition: opacity 0s linear, top 0s ease-out;
-    -moz-transition: opacity 0s linear, top 0s ease-out;
-    -ms-transition: opacity 0s linear, top 0s ease-out;
-    -o-transition: opacity 0s linear, top 0s ease-out;
-    transition: opacity 0s linear, top 0s ease-out;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
 }
-
 
 
 .modal-footer {

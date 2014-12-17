@@ -327,3 +327,11 @@ tr.disabled {
 
 .toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 6px; }
 .toggle.ios .toggle-handle { border-radius: 6px; }
+
+i.fa.fa-play {
+    color: rgb(10, 166, 153);
+}
+
+i.fa.fa-times {
+    color: rgb(184, 184, 184);
+}
