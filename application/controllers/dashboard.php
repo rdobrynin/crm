@@ -94,6 +94,25 @@ class Dashboard extends CI_Controller {
             $data['comments']=false;
         }
 
+        $overtasks = $this->task_model->getOverdueTasks();
+
+        if($overtasks) {
+            $data['over_tasks']= $overtasks;
+        }
+        else {
+            $data['over_tasks']=false;
+        }
+
+        $processtasks = $this->task_model->getprocessTasks();
+
+        if($processtasks) {
+            $data['process_tasks']= $processtasks;
+        }
+        else {
+            $data['process_tasks']=false;
+        }
+
+
         $data['users_names']= $this->admin_model->get_users_names();
 
 

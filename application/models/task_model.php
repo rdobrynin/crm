@@ -157,7 +157,9 @@ class Task_model extends CI_Model {
      */
 
     public function getTasks() {
-        $query = $this->db->get('task');
+        $query = $this
+            ->db
+            ->get('task');
         if ($query->num_rows > 0) {
             return $query->result_array();
         }
@@ -165,6 +167,45 @@ class Task_model extends CI_Model {
             return FALSE;
         }
     }
+
+    /**
+     * Get overdue tasks
+     * @return mixed
+     */
+
+    public function getOverdueTasks() {
+        $query = $this
+            ->db
+            ->where('status', '6')
+            ->get('task');
+        if ($query->num_rows > 0) {
+            return $query->result_array();
+        }
+        else {
+            return FALSE;
+        }
+    }
+
+
+    /**
+     * Get process tasks
+     * @return mixed
+     */
+
+    public function getProcessTasks() {
+        $query = $this
+            ->db
+            ->where('status', '2')
+            ->get('task');
+        if ($query->num_rows > 0) {
+            return $query->result_array();
+        }
+        else {
+            return FALSE;
+        }
+    }
+
+
 
 
     /**

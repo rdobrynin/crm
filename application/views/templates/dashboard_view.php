@@ -17,7 +17,7 @@
                                 </div>
                                 <div class="widget-stats">
                                     <div class="wrapper transparent">
-                                        <span class="item-title">Current Team</span> <span class="item-count animate-number semi-bold" data-value="751" data-animation-duration="700">2</span>
+                                        <span class="item-title">Current Team</span> <span class="item-count animate-number semi-bold" data-value="751" data-animation-duration="700"><?php if ($users != false): ?><?php print(count($users));?><?php else:?>0<?php endif ?></span>
 
                                     </div>
                                 </div>
@@ -29,7 +29,7 @@
                                 <div class="progress transparent progress-small no-radius m-t-20" style="width:90%">
                                     <div class="progress-bar progress-bar-white animate-progress-bar" data-percentage="43%" style="width: 64.8%;"></div>
                                 </div>
-                                <div class="description"> <span class="text-white mini-description ">43% project <span class="blend">completed</span></span></div>
+                                <div class="description"> <span class="text-white mini-description ">43% sll projects <span class="blend">completed</span></span></div>
                             </div>
                         </div>
                     </div>
@@ -45,18 +45,18 @@
                                 </div>
                                 <div class="widget-stats">
                                     <div class="wrapper transparent">
-                                        <span class="item-title">Process Tasks</span> <span class="item-count animate-number semi-bold" data-value="551" data-animation-duration="700">1</span>
+                                        <span class="item-title">Process Tasks</span> <span class="item-count animate-number semi-bold" data-value="551" data-animation-duration="700"><?php if ($process_tasks != false): ?><?php print(count($process_tasks)); ?><?php else:?>0<?php endif ?></span>
                                     </div>
                                 </div>
                                 <div class="widget-stats ">
                                     <div class="wrapper last">
-                                        <span class="item-title">Overdue Tasks</span> <span class="item-count animate-number semi-bold" data-value="1450" data-animation-duration="700">1</span>
+                                        <span class="item-title">Overdue Tasks</span> <span class="item-count animate-number semi-bold" data-value="1450" data-animation-duration="700"><?php if ($over_tasks != false): ?><?php print(count($over_tasks)); ?><?php else:?>0<?php endif ?></span>
                                     </div>
                                 </div>
                                 <div class="progress transparent progress-small no-radius m-t-20" style="width:90%">
                                     <div class="progress-bar progress-bar-white animate-progress-bar" data-percentage="25%" style="width: 54%;"></div>
                                 </div>
-                                <div class="description"> <span class="text-white mini-description ">25% tasks <span class="blend">completed</span></span></div>
+                                <div class="description"> <span class="text-white mini-description ">25% all tasks <span class="blend">completed</span></span></div>
                             </div>
                         </div>
                     </div>
