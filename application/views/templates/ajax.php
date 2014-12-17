@@ -593,6 +593,12 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
 
                   $('.task-view-header').html('<span class="pull-left">'+msg['task'].title+' ('+msg['project'][0]['title']+')'+'</span><span class="pull-right"><i class="fa fa-circle circle-priority-view" style="'+colorPriority+'"></i></span>');
 
+
+                  if(msg['task'].status == '6') {
+                      $('.task-view-header').html('<span class="pull-left">'+msg['task'].title+' ('+msg['project'][0]['title']+')'+'</<span>&nbsp;&nbsp;<span class="label label-danger label-xs">Overdue</span></span><span class="pull-right"><i class="fa fa-circle circle-priority-view" style="'+colorPriority+'"></i></span>');
+                  }
+
+
                   $('.task-view-content').html('<p><strong>Created: </strong>'+msg['task'].date_created+'</p>'+
                       '<p><strong>Due to: </strong><span style="color:red;">'+msg['task'].due_time+'</span></p>'+
                       '<p><strong>Implementor: </strong>'+msg['implementor']+' | <strong>Curator: </strong>'+msg['curator']+'</p>'+

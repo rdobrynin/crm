@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a8ede6c0-9a43-4a54-ac19-d55c4b9604aa" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/ajax.php" afterPath="$PROJECT_DIR$/application/views/templates/ajax.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/body.css" afterPath="$PROJECT_DIR$/css/body.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/head_view.php" afterPath="$PROJECT_DIR$/application/views/templates/head_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/tasks_view.php" afterPath="$PROJECT_DIR$/application/views/templates/tasks_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,12 +28,12 @@
     <splitter split-orientation="horizontal" split-proportion="0.5439387">
       <split-first>
         <leaf>
-          <file leaf-file-name="ajax.php" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="ajax.php" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/application/views/templates/ajax.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="591" column="58" selection-start="20423" selection-end="20423" vertical-scroll-proportion="-16.346153" vertical-offset="9622" max-vertical-offset="11268">
+                <state line="591" column="58" selection-start="20423" selection-end="20423" vertical-scroll-proportion="0.6273063" vertical-offset="9605" max-vertical-offset="11404">
                   <folding>
-                    <marker date="1418820031649" expanded="true" signature="20848:20858" placeholder="..." />
+                    <marker date="1418820475065" expanded="true" signature="21247:21257" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -62,7 +60,7 @@
           <file leaf-file-name="functions_helper.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/helpers/functions_helper.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="121" column="27" selection-start="2287" selection-end="2287" vertical-scroll-proportion="-16.0" vertical-offset="1746" max-vertical-offset="9745">
+                <state line="101" column="3" selection-start="1870" selection-end="1870" vertical-scroll-proportion="-12.666667" vertical-offset="1476" max-vertical-offset="9722">
                   <folding />
                 </state>
               </provider>
@@ -106,10 +104,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="body.css" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="body.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/body.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="365" column="17" selection-start="8155" selection-end="8155" vertical-scroll-proportion="0.5351609" vertical-offset="6211" max-vertical-offset="7949">
+                <state line="351" column="11" selection-start="7898" selection-end="7898" vertical-scroll-proportion="0.0" vertical-offset="6211" max-vertical-offset="7949">
                   <folding />
                 </state>
               </provider>
@@ -255,7 +253,7 @@
           <file leaf-file-name="head_view.php" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/application/views/templates/head_view.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="50" column="53" selection-start="3117" selection-end="3117" vertical-scroll-proportion="0.7329341" vertical-offset="306" max-vertical-offset="1933">
+                <state line="54" column="0" selection-start="3139" selection-end="3139" vertical-scroll-proportion="0.81916165" vertical-offset="306" max-vertical-offset="1933">
                   <folding />
                 </state>
               </provider>
@@ -331,8 +329,8 @@
         <option value="$PROJECT_DIR$/application/controllers/ajax.php" />
         <option value="$PROJECT_DIR$/application/views/templates/tasks_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/head_view.php" />
-        <option value="$PROJECT_DIR$/application/views/templates/ajax.php" />
         <option value="$PROJECT_DIR$/css/body.css" />
+        <option value="$PROJECT_DIR$/application/views/templates/ajax.php" />
       </list>
     </option>
   </component>
@@ -954,13 +952,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/helpers/functions_helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="27" selection-start="2287" selection-end="2287" vertical-scroll-proportion="-16.0" vertical-offset="1746" max-vertical-offset="9745">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="304" column="42" selection-start="9777" selection-end="9777" vertical-scroll-proportion="0.0" vertical-offset="5112" max-vertical-offset="6946">
@@ -1135,26 +1126,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/ajax.php">
+    <entry file="file://$PROJECT_DIR$/css/body.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="591" column="58" selection-start="20423" selection-end="20423" vertical-scroll-proportion="-16.346153" vertical-offset="9622" max-vertical-offset="11268">
-          <folding>
-            <marker date="1418820031649" expanded="true" signature="20848:20858" placeholder="..." />
-          </folding>
+        <state line="351" column="11" selection-start="7898" selection-end="7898" vertical-scroll-proportion="0.0" vertical-offset="6211" max-vertical-offset="7949">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/helpers/functions_helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="3" selection-start="1870" selection-end="1870" vertical-scroll-proportion="-12.666667" vertical-offset="1476" max-vertical-offset="9722">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/head_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="53" selection-start="3117" selection-end="3117" vertical-scroll-proportion="0.7329341" vertical-offset="306" max-vertical-offset="1933">
+        <state line="54" column="0" selection-start="3139" selection-end="3139" vertical-scroll-proportion="0.81916165" vertical-offset="306" max-vertical-offset="1933">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/body.css">
+    <entry file="file://$PROJECT_DIR$/application/views/templates/ajax.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="365" column="17" selection-start="8155" selection-end="8155" vertical-scroll-proportion="0.5351609" vertical-offset="6211" max-vertical-offset="7949">
-          <folding />
+        <state line="591" column="58" selection-start="20423" selection-end="20423" vertical-scroll-proportion="0.6273063" vertical-offset="9605" max-vertical-offset="11404">
+          <folding>
+            <marker date="1418820475065" expanded="true" signature="21247:21257" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
