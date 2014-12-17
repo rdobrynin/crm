@@ -97,7 +97,7 @@
                                                 <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
                                                 <td><?php print($tv['title']); ?></td>
                                                 <td><?php print($project_title[$tv['pid']]); ?></td>
-                                                <td><span class="muted"><?php print(short_name($tv['desc'])); ?></span></td>
+                                                <td><span class="muted"><?php print($tv['desc']); ?></span></td>
                                                 <td>
                                                     <span class="label <?php print(task_status_label($tv['title'])); ?> label-xs"><?php print(task_status($tv['status'])); ?></span>
                                                 </td>

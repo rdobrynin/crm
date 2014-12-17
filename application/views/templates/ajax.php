@@ -335,8 +335,9 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                       setInterval(function(){
                           $.get( "<?php echo site_url('ajax/countTasks'); ?>", function( data ) {
                               if(data.length >0) {
-                                  console.log(data);
                                   $('#badge-count-tasks').html(data.length);
+
+
                               }
                           }, "json" );
                       }, 3000);
@@ -638,7 +639,14 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                   success: function (msg) {
                       console.log(msg);
                       $('#tr-dashboard-task-'+currentTask).remove();
+                      var rowCount = $('#approve_tasks_table tr').length;
+                      if(rowCount <1) {
+                          $('#table-new-users').hide();
 
+                          $('#calc-appr-tasks').css('display','none');
+                      }
+                      $('#calc-appr-tasks').html(rowCount);
+//
                       $('[data-toggle=confirmation-delete-current-task]').confirmation('hide');
 
                   }
