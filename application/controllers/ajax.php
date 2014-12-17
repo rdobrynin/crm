@@ -644,6 +644,21 @@ class Ajax extends CI_Controller {
         echo json_encode ($result);
     }
 
+
+
+    /**
+     * Quick delete task
+     */
+
+    function deleteTask() {
+        $id =  $this->input->post('id');
+        $this->load->model('task_model');
+        $result = $id;
+            $this->task_model->deleteTask($id);
+        echo json_encode ($result);
+    }
+
+
 }
 
 

@@ -73,7 +73,7 @@
                                                     </td>
                                                     <td>
                                                         <?php if ($uv['role'] !=5): ?>
-                                                            <a href="#" data-toggle="confirmation-delete-current-user" data-singleton="true" data-target="<?php print($uv['id']); ?>">Remove</a>
+                                                            <a href="#" style="cursor: pointer;" data-toggle="confirmation-delete-current-user" data-singleton="true" data-target="<?php print($uv['id']); ?>">Remove</a>
                                                         <?php endif ?>
                                                     </td>
                                                 </tr>

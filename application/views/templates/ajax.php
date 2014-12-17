@@ -566,9 +566,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
    */
 
   function taskToView($data){
-//todo
-
-
       var form_data_ = {
           tid: $data
       };
@@ -616,5 +613,45 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
       $('.task-view-wrapper').css('display','none');
       $('.tasks-view').css('display','none');
   }
+
+
+
+  $('[data-toggle=confirmation-delete-current-task]').confirmation(
+      {
+          placement: 'left',
+          animation: false,
+          btnOkClass:'btn-xs',
+          btnCancelClass:'btn-xs',
+          btnCancelLabel:'<i class="fa fa-times-circle" style="margin-right: 0;"></i> No',
+          btnOkLabel:'<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
+          onConfirm: function () {
+//                todo
+              var currentTask = $(this).attr('target');
+              var form_data = {
+                  id: currentTask
+              };
+              $.ajax({
+                  url: "<?php echo site_url('ajax/deleteTask'); ?>",
+                  type: 'POST',
+                  data: form_data,
+                  dataType: 'json',
+                  success: function (msg) {
+                      console.log(msg);
+                      $('#tr-dashboard-task-'+currentTask).remove();
+
+                      $('[data-toggle=confirmation-delete-current-task]').confirmation('hide');
+
+                  }
+              });
+
+              return false;
+          },
+          onCancel: function () {
+              $('[data-toggle=confirmation-delete-current-task]').confirmation('hide');
+              return false;
+          }
+      }
+  );
+
 
 </script>

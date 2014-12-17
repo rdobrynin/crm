@@ -225,8 +225,6 @@ class Task_model extends CI_Model {
     }
 
 
-
-
     /**
      * verify task
      * @param $id
@@ -245,6 +243,22 @@ class Task_model extends CI_Model {
         else {
             return FALSE;
         }
+    }
+
+
+    /**
+     * remove task
+     * @param $id
+     * @return bool
+     */
+
+    public function deleteTask($id) {
+        $query = $this
+            ->db
+            ->where('id', $id)
+            ->limit('1')
+            ->delete('task');
+        return $query;
     }
 
 
