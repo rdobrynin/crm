@@ -578,9 +578,21 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
           success: function (msg) {
               if(msg != 'false') {
                   console.log(msg);
+                  colorPriority = 'color:#f89406;';
+                  if (msg.priority == '0') {
+                      colorPriority = 'color:#428bca;';
+                  }
+                  else if (msg.priority == '1') {
+                      colorPriority = 'color:#f89406;';
 
+                  }
+                  else {
+                      colorPriority = 'color:#d9534f;';
+                  }
                   $('.task-view-wrapper').css('display','block');
                   $('.tasks-view').css('display','block');
+
+                  $('.task-view-header').html('<span class="pull-left"><i class="fa fa-gavel"></i>&nbsp;'+msg.title+'</span><span class="pull-right"><i class="fa fa-circle circle-priority-view" style="'+colorPriority+'"></i></span>');
               }
 
               }
@@ -589,8 +601,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
   }
 
   function taskToHide(){
-//todo
-
       $('.task-view-wrapper').css('display','none');
       $('.tasks-view').css('display','none');
   }

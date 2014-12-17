@@ -4,8 +4,6 @@
     <list default="true" id="a8ede6c0-9a43-4a54-ac19-d55c4b9604aa" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/ajax.php" afterPath="$PROJECT_DIR$/application/views/templates/ajax.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/body.css" afterPath="$PROJECT_DIR$/css/body.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/dashboard_view.php" afterPath="$PROJECT_DIR$/application/views/templates/dashboard_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/head_view.php" afterPath="$PROJECT_DIR$/application/views/templates/head_view.php" />
     </list>
     <ignored path="crm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,22 +25,13 @@
     <favorites_list name="crm" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7387262">
+    <splitter split-orientation="horizontal" split-proportion="0.9">
       <split-first>
         <leaf>
           <file leaf-file-name="ajax.php" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/application/views/templates/ajax.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="592" column="0" selection-start="20125" selection-end="20125" vertical-scroll-proportion="0.3748503" vertical-offset="10361" max-vertical-offset="11581">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="head_view.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/views/templates/head_view.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="45" column="12" selection-start="2931" selection-end="2941" vertical-scroll-proportion="-23.333334" vertical-offset="180" max-vertical-offset="1735">
+                <state line="594" column="234" selection-start="20679" selection-end="20679" vertical-scroll-proportion="0.68712395" vertical-offset="12519" max-vertical-offset="14185">
                   <folding />
                 </state>
               </provider>
@@ -102,7 +91,7 @@
           <file leaf-file-name="body.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/body.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="354" column="19" selection-start="7957" selection-end="7957" vertical-scroll-proportion="0.0" vertical-offset="5839" max-vertical-offset="7499">
+                <state line="381" column="1" selection-start="8452" selection-end="8452" vertical-scroll-proportion="0.0" vertical-offset="6427" max-vertical-offset="7738">
                   <folding />
                 </state>
               </provider>
@@ -148,10 +137,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ajax.php" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="ajax.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/controllers/ajax.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="640" column="0" selection-start="20178" selection-end="20178" vertical-scroll-proportion="0.7315271" vertical-offset="12510" max-vertical-offset="13898">
+                <state line="632" column="34" selection-start="20163" selection-end="20163" vertical-scroll-proportion="-0.0" vertical-offset="11376" max-vertical-offset="12769">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="head_view.php" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/application/views/templates/head_view.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="46" column="12" selection-start="2956" selection-end="2972" vertical-scroll-proportion="2.7465754" vertical-offset="2081" max-vertical-offset="4942">
                   <folding />
                 </state>
               </provider>
@@ -226,8 +224,8 @@
         <option value="$PROJECT_DIR$/css/modal.css" />
         <option value="$PROJECT_DIR$/application/views/templates/modals/modal_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/head_view.php" />
-        <option value="$PROJECT_DIR$/css/body.css" />
         <option value="$PROJECT_DIR$/application/views/templates/dashboard_view.php" />
+        <option value="$PROJECT_DIR$/css/body.css" />
         <option value="$PROJECT_DIR$/application/views/templates/ajax.php" />
       </list>
     </option>
@@ -602,7 +600,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955405" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969697" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Jenkins" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13090909" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.034747474" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -881,13 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/tasks_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="69" selection-start="2161" selection-end="2161" vertical-scroll-proportion="-12.666667" vertical-offset="162" max-vertical-offset="2149">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="304" column="42" selection-start="9777" selection-end="9777" vertical-scroll-proportion="0.0" vertical-offset="5112" max-vertical-offset="6946">
@@ -916,30 +907,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/ajax.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="640" column="0" selection-start="20178" selection-end="20178" vertical-scroll-proportion="0.7315271" vertical-offset="12510" max-vertical-offset="13898">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/modal.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="1" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="2117">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/body.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="354" column="19" selection-start="7957" selection-end="7957" vertical-scroll-proportion="0.0" vertical-offset="5839" max-vertical-offset="7499">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/head_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="12" selection-start="2931" selection-end="2941" vertical-scroll-proportion="-23.333334" vertical-offset="180" max-vertical-offset="1735">
           <folding />
         </state>
       </provider>
@@ -957,9 +927,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/ajax.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="632" column="34" selection-start="20163" selection-end="20163" vertical-scroll-proportion="-0.0" vertical-offset="11376" max-vertical-offset="12769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/templates/head_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="12" selection-start="2956" selection-end="2972" vertical-scroll-proportion="2.7465754" vertical-offset="2081" max-vertical-offset="4942">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/templates/tasks_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="69" selection-start="2161" selection-end="2161" vertical-scroll-proportion="-12.666667" vertical-offset="162" max-vertical-offset="2149">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/body.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="381" column="1" selection-start="8452" selection-end="8452" vertical-scroll-proportion="0.0" vertical-offset="6427" max-vertical-offset="7738">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/ajax.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="592" column="0" selection-start="20125" selection-end="20125" vertical-scroll-proportion="0.3748503" vertical-offset="10361" max-vertical-offset="11581">
+        <state line="594" column="234" selection-start="20679" selection-end="20679" vertical-scroll-proportion="0.68712395" vertical-offset="12519" max-vertical-offset="14185">
           <folding />
         </state>
       </provider>

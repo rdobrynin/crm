@@ -286,6 +286,14 @@ tr.disabled {
     margin-right: 5px !important;
 }
 
+
+.circle-priority-view {
+    font-size: 13px !important;
+    position: relative;
+    top: -1px;
+    margin-right: 5px !important;
+}
+
 .form-control.filter {
     display: block;
     font-size: 12px;
@@ -365,4 +373,10 @@ i.fa.fa-times {
     right: 30px;
     padding: 12px;
     color: #fff;
+    height: 38px;
+    padding-left: 10px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    text-transform: capitalize;
 }
