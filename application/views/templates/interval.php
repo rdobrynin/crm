@@ -39,6 +39,15 @@
                                 '<span class="message-mini">' + data.title + ' comment has been added</span></div>'
                         ).fadeIn('3000');
                     }
+// delete task
+                    else if (data['type'] == 3) {
+                        $('.mini-inbox').append(
+                            '<div class="alert inbox"><button type="button" class="close" data-dismiss="alert">×' +
+                                '</button><a href="javascript:void(0)"><i class="fa fa-gavel"></i>From: ' + name + '</a>' +
+                                '<span class="message-mini">' + data.title + ' task has been deleted</span></div>'
+                        ).fadeIn('3000');
+                    }
+
 
                 }
 

@@ -12,13 +12,13 @@
                                         <table class="table table-condensed" id="log-table">
                                             <thead>
                                             <tr>
-                                                <td><strong>#ID</strong></td>
-                                                <td class="text-left" style="border-left: 1px solid #ddd;"><strong>Date</strong></td>
-                                                <td class="text-left" style="border-left: 1px solid #ddd;"><strong>User</strong></td>
-                                                <td class="text-left" style="border-left: 1px solid #ddd;"><strong>item</strong></td>
-                                                <td class="text-left" style="border-left: 1px solid #ddd;"><strong>Action</strong></td>
-                                                <td class="text-left" style="border-left: 1px solid #ddd;"><strong>Title</strong></td>
-                                                <td class="text-left" style="border-left: 1px solid #ddd;"><strong>Description</strong></td>
+                                                <td style="width: 5%;"><strong>#ID</strong></td>
+                                                <td class="text-left" style="width:13%;border-left: 1px solid #ddd;"><strong>Date</strong></td>
+                                                <td class="text-left" style="width:10%;border-left: 1px solid #ddd;"><strong>User</strong></td>
+                                                <td class="text-left" style="width:10%;border-left: 1px solid #ddd;"><strong>item</strong></td>
+                                                <td class="text-left" style="width:2%;border-left: 1px solid #ddd;"><strong>Act</strong></td>
+                                                <td class="text-left" style="width:10%;border-left: 1px solid #ddd;"><strong>Title</strong></td>
+                                                <td class="text-left" style="width:50%;border-left: 1px solid #ddd;"><strong>Description</strong></td>
                                             </tr>
                                             </thead>
                                             <tbody id="logs-tbody">
@@ -30,9 +30,9 @@
                                                 <td><?php print($ev['id']); ?></td>
                                                 <td class="text-left"><?php print(date_format(date_create($ev['time']),"F d H:i")); ?></td>
                                                 <td class="text-left"><a href="#" onClick="qmSendComment(<?php print($ev['uid']); ?>)"><?php print(short_name($user_name[$ev['uid']])); ?></a></td>
-                                                <td class="text-left"> <?php if ($ev['type'] == 0): ?><i class="fa fa-cube"></i>&nbsp;project<?php endif ?>  <?php if ($ev['type'] == 1): ?><i class="fa fa-gavel"></i>&nbsp;task<?php endif ?></td>
+                                                <td class="text-left"> <?php if ($ev['type'] == 0): ?><i class="fa fa-cube"></i>&nbsp;project<?php endif ?>  <?php if ($ev['type'] == 1 OR $ev['type'] == 3): ?><i class="fa fa-gavel"></i>&nbsp;task<?php endif ?></td>
+                                                <td class="text-left"><?php if ($ev['type'] == 1 OR $ev['type'] == 0): ?><i class="fa fa-plus-circle" style="color:#5cb85c;"></i><?php endif ?><?php if ($ev['type'] == 3): ?><i class="fa fa-times-circle" style="color:#d9534f;"></i><?php endif ?></td>
                                                 <td class="text-left"><?php print($ev['title']); ?></td>
-                                                <td class="text-left"><?php print($ev['text']); ?></td>
                                                 <td class="text-left"><?php print($ev['event']); ?></td>
                                             </tr>
                                                 <?php endif ?>

@@ -651,10 +651,24 @@ class Ajax extends CI_Controller {
      */
 
     function deleteTask() {
+        $uid =  $this->input->post('uid');
         $id =  $this->input->post('id');
+        $this->load->model('admin_model');
         $this->load->model('task_model');
-        $result = $id;
-            $this->task_model->deleteTask($id);
+        $this->load->model('project_model');
+        $name_array =  $this->admin_model->get_user_id($uid);
+        $full_name = $name_array[0]['first_name'].' '.$name_array[0]['last_name'];
+        $array = $this->task_model->getTask($id);
+        $text ='delete task';
+
+        if($querty = $this->task_model->deleteTask($id)) {
+            $this->project_model->createEvent($array->uid, $array->desc, $text, $full_name, $array->title, 3);
+            $result = $id;
+        }
+        else {
+            $result = false;
+        }
+
         echo json_encode ($result);
     }
 

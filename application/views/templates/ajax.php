@@ -634,8 +634,10 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
           onConfirm: function () {
 //                todo
               var currentTask = $(this).attr('target');
+              var uid = '<?php print($user[0]['id'])?>';
               var form_data = {
-                  id: currentTask
+                  id: currentTask,
+                   uid: uid
               };
               $.ajax({
                   url: "<?php echo site_url('ajax/deleteTask'); ?>",
