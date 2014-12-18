@@ -284,8 +284,8 @@ $('.closebox').click(function(e){
     }
 
 
-    $('#approve_tasks_table').pageMe({pagerSelector:'#pager_approve_tasks',showPrevNext:true,hidePageNumbers:false,perPage:10});
-    $('#logs-tbody').pageMe({pagerSelector:'#pager_all_logs',showPrevNext:true,hidePageNumbers:false,perPage:10});
+    $('#approve_tasks_table').pageMe({pagerSelector:'#pager_approve_tasks',showPrevNext:true,hidePageNumbers:true,perPage:35});
+    $('#logs-tbody').pageMe({pagerSelector:'#pager_all_logs',showPrevNext:true,hidePageNumbers:true,perPage:25});
 
 
     var count_approve_tasks = $('#approve_tasks_table').children().length;
