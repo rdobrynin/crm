@@ -26,7 +26,7 @@
                                             <!-- foreach ($order->lineItems as $line) or some such thing here -->
                                             <?php foreach ($all_events as $ek => $ev): ?>
                                                 <?php if ($ev['type'] != 2): ?>
-                                                <tr>
+                                                <tr id="current-tr-<?php print($ev['id']); ?>">
                                                 <td><?php print($ev['id']); ?></td>
                                                 <td class="text-left"><?php print(date_format(date_create($ev['time']),"F d H:i")); ?></td>
                                                 <td class="text-left"><a href="#" onClick="qmSendComment(<?php print($ev['uid']); ?>)"><?php print(short_name($user_name[$ev['uid']])); ?></a></td>

@@ -15,7 +15,7 @@
                 var new_time_int = parseInt(new_time);
                 if(new_time_int-4 < data_time) {
                     // here we build html markup
-//                    for projects
+//  for projects
                     if (data['type'] == 0) {
                         $('.mini-inbox').append(
                             '<div class="alert inbox"><button type="button" class="close" data-dismiss="alert">×' +
@@ -23,7 +23,7 @@
                                 '<span class="message-mini">' + data.title + ' Project has been created</span></div>'
                         ).fadeIn('3000');
                     }
-//                    for tasks
+// for tasks
                     else if (data['type'] == 1) {
                         $('.mini-inbox').append(
                             '<div class="alert inbox"><button type="button" class="close" data-dismiss="alert">×' +
@@ -41,6 +41,18 @@
                     }
 // delete task
                     else if (data['type'] == 3) {
+//                        todo
+//                      insert to log table
+var idtr =  'current-tr-'+data["id"];
+                        $("#log-table").find('tbody:first')
+                            .prepend("<tr id='"+idtr+"'><td class='text-left'>"+data['id']+"</td><td class='text-left'>"+data['time']+"</td>+" +
+                                "<td class='text-left'>"+data['uid']+"</td><td class='text-left'><i class='fa fa-gavel'></i> task</td>" +
+                                "<td class='text-left'><i class='fa fa-times-circle' style='color:#d9534f;'></i></td>" +
+                                "<td class='text-left'>"+data['title']+"</td>+" +
+                                "<td class='text-left'>"+data['event']+"</td></tr>");
+
+
+
                         $('.mini-inbox').append(
                             '<div class="alert inbox"><button type="button" class="close" data-dismiss="alert">×' +
                                 '</button><a href="javascript:void(0)"><i class="fa fa-gavel"></i>From: ' + name + '</a>' +
