@@ -28,6 +28,10 @@ class Dashboard extends CI_Controller {
         if (!isset($_SESSION['username'])) {
             redirect('admin');
         }
+
+
+
+
     }
 
     /**

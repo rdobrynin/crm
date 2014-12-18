@@ -80,9 +80,61 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
     border-bottom: 5px solid #aaaaaa;
 }
 
-#demo_modal {
+#demo_modal, #introduce_modal {
     top: 20%;
 }
+
+
+#introduce_modal .modal-dialog {
+    width: 960px;
+    overflow: auto;
+    background-color: #fff !important;
+    border: 1px solid rgb(199, 199, 199);
+
+}
+
+#introduce_modal .modal-dialog .modal-content {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border: 0;
+}
+
+
+#introduce_modal .modal-dialog .modal-content .modal-header{
+padding: 15px;
+border-bottom: 1px solid #CACACA;
+    padding-left: 20px;
+background-color: #ddd;
+padding-bottom: 18px;
+    color: #000;
+}
+
+#introduce_modal .modal-dialog .modal-content .modal-footer{
+    background-color: #ddd;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+
+#dont-show-whats-new {
+    top: 2px;
+    /* margin-bottom: 5px; */
+    position: relative;
+
+}
+
+
+.b-overlay {
+    display: none;
+    width: 3000px;
+    height: 9000px;
+    position: fixed;
+    z-index:1035;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
 
 
 

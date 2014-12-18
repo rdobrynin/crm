@@ -37,7 +37,7 @@
     <link href="<?php print(base_url()); ?>css/btn.css" rel="stylesheet">
     <link href="<?php print(base_url()); ?>css/logs.css" rel="stylesheet">
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/bootstrap-switch.min.js"></script>
     <script src="assets/js/jquery.bootstrap.wizard.min.js"></script>
@@ -60,7 +60,7 @@
 <!--    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>-->
 </head>
 <body>
-
+<div class="b-overlay"></div>
 <div class="task-view-wrapper">
 <div class="tasks-view">
 <div class="task-view-header"></div>

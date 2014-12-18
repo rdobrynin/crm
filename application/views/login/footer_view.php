@@ -1,6 +1,6 @@
 
 <!-- JavaScript -->
-<script src="<?php print(base_url());?>assets/js/jquery-1.10.2.js"></script>
+<script src="<?php print(base_url());?>assets/js/jquery-1.11.1.min.js"></script>
 <script src="<?php print(base_url());?>assets/js/bootstrap.min.js"></script>
 <script src="<?php print(base_url());?>assets/js/bootstrap-select.js"></script>
 <script src="<?php print(base_url());?>js/script.js"></script>
