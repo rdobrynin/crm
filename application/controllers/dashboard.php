@@ -123,6 +123,16 @@ class Dashboard extends CI_Controller {
             $data['process_tasks']=false;
         }
 
+        $approvetasks = $this->task_model->getApproveTasks();
+
+        if($approvetasks) {
+            $data['approve_tasks']= $processtasks;
+        }
+        else {
+            $data['approve_tasks']=false;
+        }
+
+
 
         $data['users_names']= $this->admin_model->get_users_names();
 

@@ -44,9 +44,9 @@
             <td><?php print($cv['created']);?></td>
             <td> <form action="<?php print(base_url());?>delete_client" method="POST">
                 <input type="hidden" name="cid" value="<?php print($cv['cid']);?>">
-                <span class="pull-left"><input type="submit" value="delete" class="btn btn-xs btn-danger"></span>
+                <span class="pull-left"><input type="submit" id="btn-del-company" value="delete" class="btn btn-xs btn-danger"></span>
               </form>
-              <span class="pull-right"><button class="btn btn-xs btn-success">edit</button></span></td>
+              <span class="pull-right"><button id="btn-edit-company" class="btn btn-xs btn-success">edit</button></span></td>
           </tr>
           </tbody>
           <?php endforeach ?>
@@ -67,6 +67,10 @@
 <?php include('footer_view.php');?>
 <script>
   $(function () {
+      $('#btn-del-company, #btn-edit-company').click(function () {
 
+          $('#demo_modal').modal('show');
+          return false;
+      });
   });
 </script>

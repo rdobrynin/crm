@@ -64,6 +64,9 @@
       **/
 
       $("#addproject_btn").click(function () {
+          $('#addproject_modal').modal('hide');
+          $('#demo_modal').modal('show');
+          return false;
           var form_data = {
               project_title: $('#project_title').val(),
               project_desc: $('#project_desc').val(),
@@ -119,6 +122,9 @@
        **/
 
       $("#addproject_addtask_btn").click(function () {
+          $('#addproject_modal').modal('hide');
+          $('#demo_modal').modal('show');
+          return false;
           var form_data = {
               project_title: $('#project_title').val(),
               project_desc: $('#project_desc').val(),

@@ -61,9 +61,10 @@
                         </div>
                     </div>
                 </div>
+<!--                overdue tasks-->
                 <?php if ($tasks != FALSE): ?>
                     <div class="row-fluid" style="padding-top: 20px;">
-                        <h3 class="h_title">Tasks for approve&nbsp;(<span id="calc-appr-tasks" ></span>)</h3>
+                        <h3 class="h_title">Overdue tasks&nbsp;(<span id="calc-over-tasks" ><?php if ($over_tasks != false): ?><?php print(count($over_tasks)); ?><?php else:?>0<?php endif ?></span>)</h3>
                         <div class="panel panel-default">
                             <div class="panel-body-table">
                                 <div class="table-responsive">
@@ -77,7 +78,68 @@
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
                                             <th width="6%" class="text-left" style="border-left: 1px solid #ddd;">Project to</th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
-                                            <th width="3%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
+                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
+                                            <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
+                                                <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
+                                            <?php endif ?>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="over_tasks_table">
+                                        <?php $tasks = array_reverse($tasks);?>
+                                        <?php foreach ($tasks as $tk => $tv): ?>
+                                            <?php if ($tv['status'] == 6): ?>
+
+                                                <tr id="tr-dashboard-task-<?php print($tv['id']); ?>">
+                                                    <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
+                                                    <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
+                                                    <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
+                                                    <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
+                                                    <td><?php print($tv['title']); ?></td>
+                                                    <td><?php print($project_title[$tv['pid']]); ?></td>
+                                                    <td><span class="muted"><?php print($tv['desc']); ?></span></td>
+                                                    <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
+                                                    <td class="text-left"><?php print(date_format(date_create($tv['due_time']),"F d H:i")); ?></td>
+                                                    <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
+                                                        <td>
+                                                            <a href="#" onClick="processToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
+                                                            <a href="#" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
+                                                            <a href="#" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
+                                                            <a href="#" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv['id']); ?>" style="text-decoration: none;cursor: pointer;"><i class="fa fa-times"></i></a>
+                                                        </td>
+                                                    <?php endif ?>
+                                                </tr>
+                                            <?php endif ?>
+                                        <?php endforeach ?>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <ul class="pagination pagination-lg pager" id="pager_over_tasks"></ul>
+                        </div>
+                    </div>
+                <?php endif ?>
+<!--                end overdue-->
+
+                <?php if ($tasks != FALSE): ?>
+                    <div class="row-fluid" style="padding-top: 20px;">
+                        <h3 class="h_title">Tasks for approve&nbsp;(<span id="calc-appr-tasks" ><?php if ($approve_tasks != false): ?><?php print(count($approve_tasks)); ?><?php else:?>0<?php endif ?></span>)</h3>
+                        <div class="panel panel-default">
+                            <div class="panel-body-table">
+                                <div class="table-responsive">
+                                    <table class="table table-condensed">
+                                        <thead>
+                                        <tr>
+                                            <th width="8%" class="text-left">Created</th>
+                                            <th width="4%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
+                                            <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
+                                            <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Creator</th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
+                                            <th width="6%" class="text-left" style="border-left: 1px solid #ddd;">Project to</th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
                                             <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
                                             <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
@@ -98,9 +160,6 @@
                                                 <td><?php print($tv['title']); ?></td>
                                                 <td><?php print($project_title[$tv['pid']]); ?></td>
                                                 <td><span class="muted"><?php print($tv['desc']); ?></span></td>
-                                                <td>
-                                                    <span class="label <?php print(task_status_label($tv['title'])); ?> label-xs"><?php print(task_status($tv['status'])); ?></span>
-                                                </td>
                                                 <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
                                                 <td class="text-left"><?php print(date_format(date_create($tv['due_time']),"F d H:i")); ?></td>
                                                 <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>

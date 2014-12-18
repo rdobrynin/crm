@@ -188,6 +188,26 @@ class Task_model extends CI_Model {
 
 
     /**
+     * Get overdue tasks
+     * @return mixed
+     */
+
+    public function getApproveTasks() {
+        $query = $this
+            ->db
+            ->where('status', '0')
+            ->get('task');
+        if ($query->num_rows > 0) {
+            return $query->result_array();
+        }
+        else {
+            return FALSE;
+        }
+    }
+
+
+
+    /**
      * Get process tasks
      * @return mixed
      */

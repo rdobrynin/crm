@@ -202,6 +202,29 @@
         <?php form_close( );?>
     </div>
 </div> <!-- #/addtask_pr_modal -->
+
+
+
+<!--Create project modal window-->
+<div class="modal" id="demo_modal" tabindex="-1" role="dialog" aria-labelledby="demo_modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <?php $attributes = array('class' => 'form-signin', 'id' => 'addproject_form', 'autocomplete' => 'on'); ?>
+        <?php echo form_open('#', $attributes); ?>
+        <div class="modal-content">
+            <div class="modal-body">
+                <p style="text-align: center; font-size: 18px; padding-top: 20px;">You have a <b>DEMO</b> account.</br> Some options are disabled.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <?php form_close( );?>
+    </div>
+</div> <!-- #/addproject_moda -->
+
+
+
+
 <script type="text/javascript">
     $(function () {
         $('#dueto_modal').datetimepicker({theme:'dark',minDate: 0,minTime:0});
