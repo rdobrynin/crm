@@ -283,6 +283,9 @@
 </div>
 <!--logs-->
 <!--test-->
+<?php if ($introduce == 0): ?>
+    <?php include('introduce.php'); ?>
+<?php endif ?>
 
 <?php include('logs_view.php'); ?>
 <?php include('right_float_view.php'); ?>

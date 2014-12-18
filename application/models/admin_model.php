@@ -687,6 +687,46 @@ class Admin_model extends CI_Model {
         $this->db->delete($table);
     }
 
+
+
+    /**
+     * Update start modal
+     * @param $id
+     * @param $password
+     */
+
+    public function updateIntroduce($id,$intro) {
+        $data = array(
+            'introduce' => $intro
+        );
+        $this->db->where('id', $id);
+        $query=$this->db->update('users', $data);
+        return $query;
+    }
+
+
+
+    /**
+     * Update start modal
+     * @param $id
+     * @param $password
+     */
+
+    public function getIntroduce($id) {
+        $query = $this->db->where('id', $id)->get('users');
+        if ($query->num_rows > 0) {
+            foreach ($query->result() as $row) {
+                return $row->introduce;
+            }
+        }
+        else {
+            return FALSE;
+        }
+        return TRUE;
+    }
+
+
+
 }
 
 

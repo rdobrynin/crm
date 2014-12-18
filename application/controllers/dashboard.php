@@ -143,6 +143,7 @@ class Dashboard extends CI_Controller {
 
         $this->session->set_userdata('user_id', $this->admin_model->get_user_id($_SESSION['username']));
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
+        $data['introduce'] = $this->admin_model->getIntroduce($_SESSION['username']);
         $roles_array = $this->admin_model->get_roles();
         $roles = array();
         foreach ($roles_array as $rk => $rv) {

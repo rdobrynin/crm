@@ -673,6 +673,33 @@ class Ajax extends CI_Controller {
     }
 
 
+
+    /**
+     * Quick delete task
+     */
+
+    function updateIntroduce() {
+        $check =  $this->input->post('check');
+        $id =  $this->input->post('id');
+        $this->load->model('admin_model');
+        if($check == 'true') {
+            $onoff = 1;
+        }
+        else {
+            $onoff = 0;
+        }
+
+        if($querty = $this->admin_model->updateIntroduce($id,$onoff)) {
+            $result = true;
+        }
+        else {
+            $result = false;
+        }
+
+        echo json_encode ($result);
+    }
+
+
 }
 
 
