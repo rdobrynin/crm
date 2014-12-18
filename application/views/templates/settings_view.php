@@ -19,11 +19,28 @@
                          <input type="checkbox" name="help_block" id="help_block" <?php if($user[0]["helpblock"]==1):?> value="0" checked="checked" <?php else: ?>value="1"<?php endif?> />
                      </div>
                  </div>
-                 <a href="#" class="btn btn-primary btn-update-ttp"  id="save_helpblock"><?php if($user[0]["helpblock"]==1):?>Hide panel<?php else: ?>Show panel<?php endif?></a>
+                 <a href="#" class="btn btn-primary btn-update-ttp"  id="save_helpblock"><?php if($user[0]["helpblock"]==1):?>Show panel<?php else: ?>Hide panel<?php endif?></a>
              </div>
              </fieldset>
          </div>
          </form>
+          <form role="form" id="settings_form_introduce">
+              <div class="well">
+                  <fieldset class="scheduler-border">
+                      <legend class="scheduler-border">Intro modal</legend>
+                      <div class="row-fluid">
+                          <div class="col-md-12" style="padding-left: 0">
+                              <div class="form-group">
+                                  <label for="help_block">Switch intro modal </label>
+                                  <input type="hidden" value="<?php print($user[0]['id']); ?>" name="user_id" id="user_id_introduce">
+                                  <input type="checkbox" name="introduce_block" id="introduce_block" <?php if($user[0]["introduce"]==1):?> value="0" checked="checked" <?php else: ?>value="1"<?php endif?> />
+                              </div>
+                          </div>
+                          <a href="#" class="btn btn-primary btn-update-ttp"  id="save_helpblock"><?php if($user[0]["introduce"]==1):?>Hide modal<?php else: ?>Show modal<?php endif?></a>
+                      </div>
+                  </fieldset>
+              </div>
+          </form>
           <?php if ($task_types != false AND $user[0]['role'] ==5 OR $user[0]['role']==4): ?>
           <form role="form" id="settings_form_ttp">
               <div class="well">
