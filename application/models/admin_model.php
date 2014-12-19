@@ -727,6 +727,21 @@ class Admin_model extends CI_Model {
 
 
 
+    /**
+     * Update member
+     * @param $id
+     * @return mixed
+     */
+
+    public function updateTimer($id) {
+        $data = array (
+            'timer' => $this->input->post('time')
+        );
+        $this->db->where('id', $id);
+        $update = $this->db->update('users', $data);
+        return $update;
+    }
+
 }
 
 

@@ -700,6 +700,26 @@ class Ajax extends CI_Controller {
     }
 
 
+    /**
+     * Update timer
+     */
+
+    function updateTimer() {
+        $time =  $this->input->post('time');
+        $id =  $this->input->post('id');
+        $this->load->model('admin_model');
+        if($querty = $this->admin_model->updateTimer($id)) {
+            $result = true;
+        }
+        else {
+            $result = false;
+        }
+
+        echo json_encode ($time);
+    }
+
+
+
 }
 
 

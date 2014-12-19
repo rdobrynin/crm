@@ -36,42 +36,16 @@
 
 
     $(function () {
+
+
+        unical_id = <?php print json_encode($user[0]['id']);?>;
+
+
 //        localStorage.clear();
 
 
         var findTime = localStorage.getItem('ctime');
 
-
-//                if (typeof(Storage) === "undefined") {
-//                    localStorage.ctime= '00:00';
-//        }
-//        if (typeof(Storage) === "undefined") {
-//            localStorage.ctime[0] =0;
-//            localStorage.ctime[1] =0;
-//            localStorage.ctime[3] =0;
-//            localStorage.ctime[4] =0;
-//            if(localStorage.ctime[0] !==0 && localStorage.ctime[1] !==0 && localStorage.ctime[3] !== 0 && localStorage.ctime[4] !== 0) {
-//                $("#task-timer").text(localStorage.ctime[0] + localStorage.ctime[1] + ":" + localStorage.ctime[3] + localStorage.ctime[4]);
-//            }
-//            if(localStorage.play ==='ok') {
-//                startCount();
-//            }
-//            if(localStorage.pause ==='ok') {
-//                timer=0;
-//                clearInterval(timer);
-//                $('#play-timer').removeClass('active-time');
-//                $('#play-timer').prop("disabled", false);
-//                $('#task-timer, #task-timer-pause, #task-timer-stop').show();
-//            }
-//            else if(localStorage.play ==='ok') {
-//                $('#play-timer').attr("disabled", "disabled");
-//            }
-//            else if(localStorage.stop ==='ok') {
-//                $('#play-timer').removeClass('active-time');
-//                $('#play-timer').prop("disabled", false);
-//                $('#task-timer, #task-timer-pause, #task-timer-stop').hide();
-//            }
-//        }
 
         if (typeof(Storage) !== "undefined") {
             var find_Time = localStorage.getItem('ctime');
@@ -104,17 +78,9 @@
         }
 
 
-        $.ajax({
-            url: "<?php echo site_url('ajax/getUserId'); ?>",
-            type: 'GET',
-            dataType: 'json',
-            success: function (msg) {
-                //    localstorage
-                if (typeof(Storage) !== "undefined") {
-//                    localStorage.id = msg.id;
-                }
-            }
-        });
+
+
+
         if (typeof(Storage) !== "undefined") {
             if (localStorage.play === 'ok') {
                 $('#play-timer').addClass('active-time');
@@ -196,5 +162,25 @@
             }
             $('#play-timer').prop("disabled", false);
         });
+
+
+
+
+
+        window.onbeforeunload = function () {
+          var form_data_ = {
+           id: '14',
+          time: '000'
+     };
+            $.ajax({
+                url: "<?php echo site_url('ajax/updateTimer'); ?>",
+                type: 'POST',
+                data: form_data_,
+                dataType: 'json',
+                success: function (msg) {
+
+                }
+            });
+        }
     });
 </script>
