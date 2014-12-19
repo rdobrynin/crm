@@ -36,6 +36,8 @@
 
 
     $(function () {
+//        localStorage.clear();
+
 
         var findTime = localStorage.getItem('ctime');
 
@@ -109,7 +111,7 @@
             success: function (msg) {
                 //    localstorage
                 if (typeof(Storage) !== "undefined") {
-                    localStorage.id = msg.id;
+//                    localStorage.id = msg.id;
                 }
             }
         });
