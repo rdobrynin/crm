@@ -80,10 +80,6 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
     border-bottom: 5px solid #aaaaaa;
 }
 
-#demo_modal, #introduce_modal {
-    top: 20%;
-}
-
 
 #introduce_modal .modal-dialog {
     width: 960px;
@@ -134,7 +130,6 @@ padding-bottom: 18px;
     top: 0;
     background: rgba(0, 0, 0, 0.7);
 }
-
 
 
 

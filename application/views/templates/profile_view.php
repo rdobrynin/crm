@@ -88,21 +88,8 @@
                                 <div id="items_remove_email"></div>
                                 <span id="check_email_profile"></span>
                             </div>
-                            <?php if ($user[0]['role'] != 1):; ?>
-                                <div class="form-group">
-                                    <div class="col-md-6">
-                                        <label for="role-select"><?php print(lang('role'))?></label>
-                                        <select class="form-control selectpicker" name="role" id="role-select">
-                                            <option selected="selected" value="<?php print($user_role); ?>"><?php print(show_role($user_role)); ?></option>
-                                                <?php foreach ($roles as $rk => $rv): ?>
-                                                    <?php if ($user_role !=$rk): ?>
-                                                    <option value="<?php print($rk); ?>"><?php print(show_role($rk)); ?></option>
-                                                    <?php endif ?>
-                                                <?php endforeach ?>
-                                        </select>
-                                    </div>
-                                </div>
-                            <?php endif ?>
+
+                            <input type="hidden" value="<?php print($user[0]['role']); ?>" name="role-select" id="role-select">
                         </div>
 <!--ADD INFO-->
                         <div class="address-wrapper" style="height: 100%;">

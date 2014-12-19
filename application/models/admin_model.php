@@ -234,7 +234,7 @@ class Admin_model extends CI_Model {
     $data = array (
       'first_name' => $this->input->post('first_name'),
       'last_name' => $this->input->post('last_name'),
-      'role' => $this->input->post('role'),
+      'role' => $this->input->post('role-select'),
       'phone' => $this->input->post('phone'),
       'skype_address' => $this->input->post('skype_address'),
       'facebook_address' => $this->input->post('facebook_address'),

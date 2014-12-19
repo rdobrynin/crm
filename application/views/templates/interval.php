@@ -14,8 +14,20 @@
                 var new_time_int = parseInt(new_time);
                 if(new_time_int-3.5 < data_time) {
                     // build html markup
-//  for projects
+//  for project add
                     if (data['type'] == 0) {
+
+                        //                    insert to log table
+                        var idtr =  'current-tr-'+data["id"];
+
+                        $("#log-table").find('tbody:first')
+                            .prepend("<tr id='"+idtr+"'><td class='text-left'>"+data['id']+"</td><td class='text-left'>"+data['time']+"</td>+" +
+                                "<td class='text-left'><a href='#' onclick='qmSendComment("+data['uid']+")'>"+data['name']+"</a></td><td class='text-left'><i class='fa fa-cube'></i>&nbsp;project</td>" +
+                                "<td class='text-left'><i class='fa fa-plus-circle' style='color:#5cb85c;'></i></td>" +
+                                "<td class='text-left'>"+data['title']+"</td>+" +
+                                "<td class='text-left'>"+data['event']+"</td></tr>");
+
+
                         $('.mini-inbox').append(
                             '<div class="alert inbox"><button type="button" class="close" data-dismiss="alert">×' +
                                 '</button><a href="javascript:void(0)"><i class="fa fa-bell"></i>From: ' + name + '</a>' +
@@ -28,10 +40,13 @@
                         var idtr =  'current-tr-'+data["id"];
                         $("#log-table").find('tbody:first')
                             .prepend("<tr id='"+idtr+"'><td class='text-left'>"+data['id']+"</td><td class='text-left'>"+data['time']+"</td>+" +
-                                "<td class='text-left'><a href='#' onclick='qmSendComment("+data['uid']+")'>"+data['name']+"</a></td><td class='text-left'><i class='fa fa-gavel'></i> task</td>" +
+                                "<td class='text-left'><a href='#' onclick='qmSendComment("+data['uid']+")'>"+data['name']+"</a></td><td class='text-left'><i class='fa fa-gavel'></i>&nbsp;task</td>" +
                                 "<td class='text-left'><i class='fa fa-plus-circle' style='color:#5cb85c;'></i></td>" +
                                 "<td class='text-left'>"+data['title']+"</td>+" +
                                 "<td class='text-left'>"+data['event']+"</td></tr>");
+
+
+
 
                         $('.mini-inbox').append(
                             '<div class="alert inbox"><button type="button" class="close" data-dismiss="alert">×' +
@@ -54,7 +69,7 @@
 
                         $("#log-table").find('tbody:first')
                             .prepend("<tr id='"+idtr+"'><td class='text-left'>"+data['id']+"</td><td class='text-left'>"+data['time']+"</td>+" +
-                                "<td class='text-left'><a href='#' onclick='qmSendComment("+data['uid']+")'>"+data['name']+"</a></td><td class='text-left'><i class='fa fa-gavel'></i> task</td>" +
+                                "<td class='text-left'><a href='#' onclick='qmSendComment("+data['uid']+")'>"+data['name']+"</a></td><td class='text-left'><i class='fa fa-gavel'></i>&nbsp;task</td>" +
                                 "<td class='text-left'><i class='fa fa-times-circle' style='color:#d9534f;'></i></td>" +
                                 "<td class='text-left'>"+data['title']+"</td>+" +
                                 "<td class='text-left'>"+data['event']+"</td></tr>");

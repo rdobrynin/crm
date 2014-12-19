@@ -389,3 +389,17 @@ i.fa.fa-times {
 
 }
 
+label.col-md-2.control-label {
+    padding-top: 9px;
+}
+
+hr.qm {
+    margin-top: 37px;
+    margin-bottom: 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+    float: left;
+    position: fixed;
+    width: 478px;
+
+}

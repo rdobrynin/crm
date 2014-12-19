@@ -67,10 +67,6 @@
         <?php form_close( );?>
     </div>
 </div> <!-- #/addproject_moda -->
-
-
-
-
 <script type="text/javascript">
     $(function () {
         introduce = <?php print json_encode($introduce);?>;
@@ -107,7 +103,6 @@
         });
 
         var check = localStorage.getItem('dialog');
-        console.log(check);
         if ( $( "#introduce_modal" ).is( ".show" ) && check !== '1' ) {
             $('.b-overlay').css('display','block');
 

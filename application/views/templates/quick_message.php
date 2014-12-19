@@ -12,12 +12,13 @@
 top: 4px;"><span class="get_old_mail" id="qm-point-name">roman.dobrynin@gmail.com</span>&nbsp;&nbsp;&nbsp;<i class="fa fa-times" id="qm-close-point-name"></i></span>
             </div>
         </div>
-        <div class="form-group qm" style="border-bottom:1px solid #ddd;">
+        <div class="form-group qm">
             <label for="qm-subject-field" class="col-md-2 control-label">Subject</label>
             <div class="col-md-10">
                 <input type="text" class="form-control qm" id="qm-subject-field">
             </div>
         </div>
+        <hr class="qm">
         <div style="display: none; margin-top: 20px;" id="qm-empty-error" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;Subject and message field must be filled</div>
         <div style="display: none; margin-top: 20px;" id="qm-result-info" class="label label-primary label-signin"><i class="fa fa-comment"></i>&nbsp;You have successfully added comment</div>
         <div class="form-group">

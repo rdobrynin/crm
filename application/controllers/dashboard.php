@@ -1212,6 +1212,7 @@ class Dashboard extends CI_Controller {
 
         $first = $this->input->post('first_name');
         $last = $this->input->post('last_name');
+//        $role = $this->input->post('role-select');
         if ($first == FALSE && $last == FALSE) {
             $this->error();
         }

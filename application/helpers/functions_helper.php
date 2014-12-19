@@ -16,13 +16,10 @@ if (!function_exists('show_role')) {
       $result = lang('role_curator');
     }
     else if($role == 3) {
-        $result = lang('role_manager');
+        $result = lang('role_customer');
     }
     else if($role == 2) {
         $result = lang('role_implementor');
-    }
-    else if($role == 1) {
-      $result = lang('role_customer');
     }
     else if($role == 0) {
         $result = lang('role_guest');

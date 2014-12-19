@@ -130,9 +130,10 @@
                         <div class="panel panel-default">
                             <div class="panel-body-table">
                                 <div class="table-responsive">
-                                    <table class="table table-condensed">
+                                    <table class="table table-condensed" id="approve-task-table">
                                         <thead>
                                         <tr>
+                                            <th width="2%" class="text-left">id</th>
                                             <th width="8%" class="text-left">Created</th>
                                             <th width="4%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
                                             <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
@@ -148,11 +149,12 @@
                                         </tr>
                                         </thead>
                                         <tbody id="approve_tasks_table">
-                                      <?php $tasks = array_reverse($tasks);?>
+<!--                                      --><?php //$tasks = array_reverse($tasks);?>
                                         <?php foreach ($tasks as $tk => $tv): ?>
                                             <?php if ($tv['status'] == 0): ?>
 
                                             <tr class="<?php if ($tv['status'] == 6): ?>danger<?php endif ?>" id="tr-dashboard-task-<?php print($tv['id']); ?>">
+                                                <td>#<?php print($tv['id']); ?></td>
                                                 <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                                 <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
                                                 <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>

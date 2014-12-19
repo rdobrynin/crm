@@ -325,11 +325,11 @@ $('#badge-count-comments-top').html(count_all_comments);
 
 
     $('.sms-send-alert').click(function () {
-        alert('sms notification functionality in development  phase');
+        $('#demo_modal').modal('show');
     });
 
     $('#qm-link-file-btn').click(function () {
-        alert('upload file functionality in development  phase');
+        $('#demo_modal').modal('show');
     });
 
     $('#qm-close-point-name').click(function () {
