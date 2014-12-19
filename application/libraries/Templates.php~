@@ -1,0 +1,15 @@
+<?php
+require_once('smarty/Smarty.class.php');
+class Templates extends Smarty{             
+    function Templates() 
+    {      
+        parent::Smarty();
+        $this->left_delimiter = '{';
+        $this->right_delimiter = '}';            
+        $this->template_dir = 'system/application/views';
+        $this->compile_dir = 'system/templates_c/';
+        $this->config_dir = 'system/configs/';
+        $this->cache_dir = 'system/application/cache/';   
+    }      
+}
+?>

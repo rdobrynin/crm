@@ -340,5 +340,7 @@ $('#badge-count-comments-top').html(count_all_comments);
 //    calculate percent of completed tasks
 
 
-
+    $('#logout').click(function () {
+        localStorage.setItem("dialog", "0");
+    });
 });

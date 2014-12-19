@@ -16,40 +16,40 @@
 
         <div class="col-md-3 col-sm-6 hero-feature">
             <div class="thumbnail">
-                <img src="http://placehold.it/800x500" alt="">
+                <img src="<?php echo base_url(); ?>/img/time.jpg" alt="">
                 <div class="caption">
                     <h4>Time tracker</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>Time Tracking feature enables users to record the time they spend working on tasks</p>
                 </div>
             </div>
         </div>
 
         <div class="col-md-3 col-sm-6 hero-feature">
             <div class="thumbnail">
-                <img src="http://placehold.it/800x500" alt="">
+                <img src="<?php echo base_url(); ?>/img/task.jpg" alt="">
                 <div class="caption">
                     <h4>Adjust task labels</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>Labeling allows you to categorize an task(s) in a more informal way than assigning it to</p>
                 </div>
             </div>
         </div>
 
         <div class="col-md-3 col-sm-6 hero-feature">
             <div class="thumbnail">
-                <img src="http://placehold.it/800x500" alt="">
+                <img src="<?php echo base_url(); ?>/img/event_2.jpg" alt="">
                 <div class="caption">
                     <h4>Invitation system</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>An invitation is a request sent to email address to participate one or more of an account's groups</p>
                 </div>
             </div>
         </div>
 
         <div class="col-md-3 col-sm-6 hero-feature">
             <div class="thumbnail">
-                <img src="http://placehold.it/800x500" alt="">
+                <img src="<?php echo base_url(); ?>/img/event.jpg" alt="">
                 <div class="caption">
                     <h4>Event system</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>Event types allow you to view your events, making them easier to view and manage</p>
                 </div>
             </div>
         </div>
@@ -71,9 +71,19 @@
 
 
 
-
 <script type="text/javascript">
     $(function () {
+        introduce = <?php print json_encode($introduce);?>;
+        var check = localStorage.getItem('dialog');
+        if(check == 1 && introduce != 1) {
+            $('#introduce_modal').removeClass('show');
+        }
+
+        if(introduce == 1) {
+            localStorage.setItem("dialog", "0");
+        }
+
+
         $('#close-introduce').click(function () {
            var check = $('#dont-show-whats-new').prop('checked');
             var user = $('#user_introduce_id').val();
@@ -87,7 +97,6 @@
                 data: form_data_,
                 dataType: 'json',
                 success: function (msg) {
-                    console.log(msg);
            if(msg == true) {
                  $('#introduce_modal').removeClass('show');
                  $('#introduce_modal').modal('hide');
@@ -97,9 +106,15 @@
             });
         });
 
-
-        if ( $( "#introduce_modal" ).is( ".show" ) ) {
+        var check = localStorage.getItem('dialog');
+        console.log(check);
+        if ( $( "#introduce_modal" ).is( ".show" ) && check !== '1' ) {
             $('.b-overlay').css('display','block');
+
+//  todo
+            if(typeof(Storage) !== "undefined") {
+                localStorage.setItem("dialog", "1");
+            }
 
         }
     });
