@@ -182,9 +182,6 @@
 
                                             </tr>
                                             <?php endif ?>
-
-
-
                                             <?php if ($tv['status'] == 1 && $user[0]['role']==2): ?>
 
                                                 <tr class="<?php if ($tv['status'] == 6): ?>danger<?php endif ?>" id="tr-dashboard-task-<?php print($tv['id']); ?>">
@@ -206,11 +203,6 @@
                                                         </td>
                                                 </tr>
                                             <?php endif ?>
-
-
-
-
-
                                         <?php endforeach ?>
 
                                         </tbody>

@@ -500,10 +500,9 @@ class Admin_model extends CI_Model {
    * @return mixed
    */
 
-  public function get_own_client($id) {
+  public function get_own_client() {
     $query = $this
       ->db
-      ->where('creator', $id)
       ->get('client');
       if ($query->num_rows > 0) {
           return $query->result_array();

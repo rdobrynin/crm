@@ -12,7 +12,7 @@
   <!-- Keep all page content within the page-content inset div! -->
   <div class="page-content inset">
     <div class="row">
-      <?php if(!empty($client)):?>
+<!--      --><?php //if(!empty($client)):?>
         <table class="table">
         <thead>
         <tr>
@@ -51,10 +51,10 @@
           </tbody>
           <?php endforeach ?>
           </table>
-
-      <?php else: ?>
-        <p class="lead">You do not have any clients for a while</p>
-      <?php endif?>
+<!---->
+<!--      --><?php //else: ?>
+<!--        <p class="lead">You do not have any clients for a while</p>-->
+<!--      --><?php //endif?>
     </div>
   </div>
 </div>
