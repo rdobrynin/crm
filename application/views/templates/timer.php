@@ -163,21 +163,35 @@
             $('#play-timer').prop("disabled", false);
         });
 
-
-       // Calculate total time in seconds
-        current_uid = <?php print json_encode($user[0]['id']);?>;
-        currentTimeRecord = localStorage.getItem("ctime");
+        // Calculate total time in seconds
         var new0 = currentTimeRecord[0];
         var new1 = currentTimeRecord[1];
         var new3 = currentTimeRecord[3];
         var new4 = currentTimeRecord[4];
         currentTimeRecord_min =  parseFloat(currentTimeRecord[0]+currentTimeRecord[1]);
         currentTimeRecord_sec =  parseFloat(currentTimeRecord[3]+currentTimeRecord[4]);
-        currentTimeRecord = (currentTimeRecord_min*60)+currentTimeRecord_sec;
+        currentTimeRecord = currentTimeRecord_min;
+        var form_data_ = {
+            id: <?php print json_encode($user[0]['id']);?>
+        };
+        $.ajax({
+            url: "<?php echo site_url('ajax/getTimer'); ?>",
+            type: 'POST',
+            data: form_data_,
+            dataType: 'json',
+            success: function (msg) {
+                var getMin = parseInt(msg);
+                console.log(msg);
+            }
+
+        });
+
+
+
 
         window.onbeforeunload = function () {
           var form_data_ = {
-           id: current_uid,
+           id: <?php print json_encode($user[0]['id']);?>,
            time: currentTimeRecord
           };
             $.ajax({

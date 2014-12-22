@@ -719,6 +719,24 @@ class Ajax extends CI_Controller {
     }
 
 
+    /**
+     * Get timer
+     */
+
+    function getTimer() {
+        $id =  $this->input->post('id');
+        $this->load->model('admin_model');
+        if($querty = $this->admin_model->getTimer($id)) {
+            $result = $querty;
+        }
+        else {
+            $result = false;
+        }
+
+        echo json_encode ($result);
+    }
+
+
 
 }
 

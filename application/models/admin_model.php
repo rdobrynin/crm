@@ -728,7 +728,7 @@ class Admin_model extends CI_Model {
 
 
     /**
-     * Update member
+     * Update timer
      * @param $id
      * @return mixed
      */
@@ -740,6 +740,26 @@ class Admin_model extends CI_Model {
         $this->db->where('id', $id);
         $update = $this->db->update('users', $data);
         return $update;
+    }
+
+
+    /**
+     * Get timer
+     * @param $id
+     * @return mixed
+     */
+
+    public function getTimer($id) {
+        $query = $this->db->where('id', $id)->get('users');
+        if ($query->num_rows > 0) {
+            foreach ($query->result() as $row) {
+                return $row->timer;
+            }
+        }
+        else {
+            return FALSE;
+        }
+        return TRUE;
     }
 
 }
