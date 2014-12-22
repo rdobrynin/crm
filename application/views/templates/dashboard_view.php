@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="widget-stats">
                                     <div class="wrapper transparent">
-                                        <span class="item-title">Process Tasks</span> <span class="item-count animate-number semi-bold" data-value="551" data-animation-duration="700"><?php if ($process_tasks != false): ?><?php print(count($process_tasks)); ?><?php else:?>0<?php endif ?></span>
+                                        <span class="item-title">Process Tasks</span> <span class="item-count animate-number semi-bold" id="dash-process-task" data-value="551" data-animation-duration="700"><?php if ($process_tasks != false): ?><?php print(count($process_tasks)); ?><?php else:?>0<?php endif ?></span>
                                     </div>
                                 </div>
                                 <div class="widget-stats ">
@@ -71,6 +71,7 @@
                                     <table class="table table-condensed">
                                         <thead>
                                         <tr>
+                                            <th width="2%" class="text-left">id</th>
                                             <th width="8%" class="text-left">Created</th>
                                             <th width="4%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
                                             <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
@@ -91,6 +92,7 @@
                                             <?php if ($tv['status'] == 6): ?>
 
                                                 <tr id="tr-dashboard-task-<?php print($tv['id']); ?>">
+                                                    <td>#<?php print($tv['id']); ?></td>
                                                     <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                                     <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
                                                     <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
@@ -151,6 +153,7 @@
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
                                             <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
+                                            <th width="3%" class="text-left" style="border-left: 1px solid #ddd;border-right: 1px solid #ddd;">View</th>
                                             <?php if($user[0]['role']!=3):?>
                                             <th width="15%" class="text-left"></th>
                                             <?php endif ?>
@@ -195,6 +198,7 @@
                                                     <td><span class="muted"><?php print($tv['desc']); ?></span></td>
                                                     <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
                                                     <td class="text-left"><?php print(date_format(date_create($tv['due_time']),"F d H:i")); ?></td>
+                                                    <td class="text-center"><a href="#" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a></td>
                                                         <td class="text-center">
                                                             <a href="#" style="color:#5cb85c;" class="btn btn-xs imp-adjust-btn"  onClick="impControl(<?php print($tv['id']); ?>,2)"  data-toggle="tooltip" data-placement="top" title="process"><i class="fa fa-play-circle"></i></a>
                                                             <a href="#"  onClick="impControl(<?php print($tv['id']); ?>,3)" class="btn btn-xs imp-adjust-btn" data-toggle="tooltip" data-placement="top" title="complete"><i class="fa fa-check-circle"></i></a>

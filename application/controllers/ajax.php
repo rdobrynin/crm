@@ -756,6 +756,95 @@ class Ajax extends CI_Controller {
     }
 
 
+    /**
+     * count process Tasks
+     */
+
+    function countProcessTasks() {
+        $this->load->model('task_model');
+        if($querty = $this->task_model->getProcessTasks()) {
+            $result = count($querty);
+        }
+        else {
+            $result = 0;
+        }
+
+        echo json_encode ($result);
+    }
+
+
+    /**
+     * count overdue Tasks
+     */
+
+    function countOverdueTasks() {
+        $this->load->model('task_model');
+        if($querty = $this->task_model->getOverdueTasks()) {
+            $result = count($querty);
+        }
+        else {
+            $result = 0;
+        }
+
+        echo json_encode ($result);
+    }
+
+
+    /**
+     * count Approve Tasks
+     */
+
+    function countApproveTasks() {
+        $this->load->model('task_model');
+        if($querty = $this->task_model->getApproveTasks()) {
+            $result = count($querty);
+        }
+        else {
+            $result = 0;
+        }
+
+        echo json_encode ($result);
+    }
+
+
+    /**
+     * count Comp Tasks
+     */
+
+    function countCompTasks() {
+        $this->load->model('task_model');
+        if($querty = $this->task_model->getCompTasks()) {
+            $result = count($querty);
+        }
+        else {
+            $result = 0;
+        }
+
+        echo json_encode ($result);
+    }
+
+
+    /**
+     * count Comp Tasks
+     */
+
+    function countReadyTasks() {
+        $this->load->model('task_model');
+        if($querty = $this->task_model->getReadyTasks()) {
+            $result = count($querty);
+        }
+        else {
+            $result = 0;
+        }
+
+        echo json_encode ($result);
+    }
+
+
+
+
+
+
 
 
 }
