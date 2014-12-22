@@ -33,7 +33,7 @@
                         <td><?php print($pv['pid']); ?></td>
                         <td class="current-title-project"><?php print($pv['title']); ?></td>
                         <td><?php print($pv['description']); ?></td>
-                        <td><a href="#"><span class="badge badge-task" id="route-task"><?php if ($tasks != false): ?><?php print(count($tasks));?><?php else:?>0<?php endif ?></span></a></td>
+                        <td><a href="#"><span class="badge badge-task" id="route-task"><?php if ($tasks != false): ?><?php print(count($tasks));?><?php else:?>0<?php endif ?></span></a>&nbsp;&nbsp;<i class="fa fa-hand-o-left"></i></td>
                         <td><a href="#" onClick="qmSendComment(<?php print($pv['owner']); ?>)"><?php print(short_name($user_name[$pv['owner']])); ?></a></td>
                         <td><p><a href="#" id="edit-project-table"><i class="fa fa-pencil"></i></a></p></td>
                         <td><p><a href="#" id="delete-project-table"><i class="fa fa-times"></i></a></td>
