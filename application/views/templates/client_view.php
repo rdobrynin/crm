@@ -26,7 +26,9 @@
           <th style="width: 5%;">City</th>
           <th style="width: 5%;">Country</th>
           <th style="width: 8%;">Created</th>
+            <?php if ($user[0]['role']==5 OR $user[0]['role']==4): ?>
           <th style="width: 7%;">Action</th>
+           <?php endif?>
         </tr>
         </thead>
         <tbody>
@@ -42,11 +44,14 @@
             <td><?php print($cv['city']);?></td>
             <td><?php print($cv['country']);?></td>
             <td><?php print($cv['created']);?></td>
+              <?php if ($user[0]['role']==5 OR $user[0]['role']==4): ?>
             <td> <form action="<?php print(base_url());?>delete_client" method="POST">
                 <input type="hidden" name="cid" value="<?php print($cv['cid']);?>">
                 <span class="pull-left"><input type="submit" id="btn-del-company" value="delete" class="btn btn-xs btn-danger"></span>
               </form>
-              <span class="pull-right"><button id="btn-edit-company" class="btn btn-xs btn-success">edit</button></span></td>
+              <span class="pull-right"><button id="btn-edit-company" class="btn btn-xs btn-success">edit</button></span>
+            </td>
+                    <?php endif?>
           </tr>
           </tbody>
           <?php endforeach ?>

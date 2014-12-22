@@ -159,7 +159,7 @@
                                         <tbody id="approve_tasks_table">
 <!--                                      --><?php //$tasks = array_reverse($tasks);?>
                                         <?php foreach ($tasks as $tk => $tv): ?>
-                                            <?php if ($tv['status'] == 0 && $user[0]['role']==5 OR $user[0]['role']==4 OR $user[0]['role']==3): ?>
+                                            <?php if ($tv['status'] == 0 && $user[0]['role']==5 OR $tv['status'] == 0 && $user[0]['role']==4 OR $tv['status'] == 0 &&  $user[0]['role']==3): ?>
 
                                             <tr class="<?php if ($tv['status'] == 6): ?>danger<?php endif ?>" id="tr-dashboard-task-<?php print($tv['id']); ?>">
                                                 <td>#<?php print($tv['id']); ?></td>
@@ -172,14 +172,14 @@
                                                 <td><span class="muted"><?php print($tv['desc']); ?></span></td>
                                                 <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
                                                 <td class="text-left"><?php print(date_format(date_create($tv['due_time']),"F d H:i")); ?></td>
-
+                                                <?php if($user[0]['role']!=3):?>
                                                 <td>
                                                     <a href="#" onClick="processToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
                                                     <a href="#" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
                                                     <a href="#" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                                     <a href="#" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv['id']); ?>" style="text-decoration: none;cursor: pointer;"><i class="fa fa-times"></i></a>
                                                 </td>
-
+                                                <?php endif ?>
                                             </tr>
                                             <?php endif ?>
                                             <?php if ($tv['status'] == 1 && $user[0]['role']==2): ?>
