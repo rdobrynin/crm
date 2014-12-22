@@ -282,6 +282,22 @@ class Task_model extends CI_Model {
     }
 
 
+
+
+
+    /**
+     * Update task
+     * @return mixed
+     */
+    public function updateTask($id, $status) {
+        $data = array (
+            'status' => $status
+        );
+        $this->db->where('id', $id);
+        $update = $this->db->update('task', $data);
+        return $update;
+    }
+
 }
 
 

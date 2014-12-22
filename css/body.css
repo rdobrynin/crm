@@ -403,3 +403,32 @@ hr.qm {
     width: 478px;
 
 }
+
+td .fa-play-circle, td .fa-stop, td .fa-check-circle, td .fa-eye-slash {
+    font-size: 18px !important;
+}
+
+td .fa-play-circle:hover, td .fa-stop:hover, td .fa-check-circle:hover, td .fa-eye-slash:hover {
+   color: #000 !important;
+}
+
+
+.imp-adjust-btn, .imp-adjust-btn:focus {
+    padding-right: 0;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 20px !important;
+    width: 23px;
+    height: 23px;
+    padding-left: 3px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+
+}
+
+.table {
+
+    margin-bottom: 0px !important;
+}

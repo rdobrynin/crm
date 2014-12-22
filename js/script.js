@@ -344,6 +344,10 @@ $('#badge-count-comments-top').html(count_all_comments);
         localStorage.setItem("dialog", "0");
     });
 
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
 
 
 });

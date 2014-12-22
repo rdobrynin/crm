@@ -632,7 +632,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
           btnCancelLabel:'<i class="fa fa-times-circle" style="margin-right: 0;"></i> No',
           btnOkLabel:'<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
           onConfirm: function () {
-//                todo
               var currentTask = $(this).attr('target');
               var uid = '<?php print($user[0]['id'])?>';
               var form_data = {
@@ -668,6 +667,64 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
           }
       }
   );
+
+
+  function impControl($data, $action) {
+
+      if ($action == 0) {
+//          approve
+          console.log('approve');
+      }
+
+
+      else if ($action == 1) {
+//          unwant
+          console.log('unwant');
+      }
+      else if ($action == 2) {
+//          complete
+          console.log('process');
+      }
+
+      else if ($action == 3) {
+//          complete
+          console.log('complete');
+      }
+
+      else if ($action == 4) {
+//          pause
+          console.log('pause');
+      }
+
+      else if ($action == 5) {
+//          ready
+          console.log('ready');
+      }
+
+
+
+
+
+
+//      if($status == 5) {
+//          $result = 'ready';
+//      }
+//      else if($status == 4) {
+//          $result = 'pause';
+//      }
+//      else if($status == 3) {
+//          $result = 'complete';
+//      }
+//      else if($status == 2) {
+//          $result = 'process';
+//      }
+//      else if($status == 1) {
+//          $result = 'unwanted';
+//      }
+//      else if($status == 0) {
+//          $result = 'approve';
+//      }
+  }
 
 
 </script>
