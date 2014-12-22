@@ -708,14 +708,14 @@ class Ajax extends CI_Controller {
         $time =  $this->input->post('time');
         $id =  $this->input->post('id');
         $this->load->model('admin_model');
-        if($querty = $this->admin_model->updateTimer($id)) {
+        if($querty = $this->admin_model->updateTimer($id,$time)) {
             $result = true;
         }
         else {
             $result = false;
         }
 
-        echo json_encode ($time);
+        echo json_encode ($result);
     }
 
 

@@ -733,9 +733,9 @@ class Admin_model extends CI_Model {
      * @return mixed
      */
 
-    public function updateTimer($id) {
+    public function updateTimer($id,$time) {
         $data = array (
-            'timer' => $this->input->post('time')
+            'timer' => $time
         );
         $this->db->where('id', $id);
         $update = $this->db->update('users', $data);
