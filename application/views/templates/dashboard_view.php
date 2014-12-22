@@ -182,9 +182,9 @@
                                                 <?php endif ?>
                                             </tr>
                                             <?php endif ?>
-                                            <?php if ($tv['status'] == 1 && $user[0]['role']==2): ?>
+                                            <?php if ($tv['status'] == 5 && $user[0]['role']==2): ?>
 
-                                                <tr class="<?php if ($tv['status'] == 6): ?>danger<?php endif ?>" id="tr-dashboard-task-<?php print($tv['id']); ?>">
+                                                <tr>
                                                     <td>#<?php print($tv['id']); ?></td>
                                                     <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                                     <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
