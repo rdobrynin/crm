@@ -134,9 +134,12 @@
                         <?php endif ?>
 
                         <?php if ($user[0]['role']==2 ): ?>
-                            <h3 class="h_title">Ready to go&nbsp;(<span id="calc-appr-tasks" ><?php if ($approve_tasks != false): ?><?php print(count($approve_tasks)); ?><?php else:?>0<?php endif ?></span>)</h3>
+                            <h3 class="h_title">Ready to go&nbsp;(<span id="calc-ready-tasks"><?php if ($ready_tasks != false): ?><?php print($ready_tasks); ?><?php else:?>0<?php endif ?></span>)</h3>
                         <?php endif ?>
 
+
+<!--                 START APPROVE  TASK      -->
+                        <?php if ($user[0]['role']!=2): ?>
                         <div class="panel panel-default">
                             <div class="panel-body-table">
                                 <div class="table-responsive">
@@ -153,7 +156,6 @@
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
                                             <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
-                                            <th width="3%" class="text-left" style="border-left: 1px solid #ddd;border-right: 1px solid #ddd;">View</th>
                                             <?php if($user[0]['role']!=3):?>
                                             <th width="15%" class="text-left"></th>
                                             <?php endif ?>
@@ -185,8 +187,45 @@
                                                 <?php endif ?>
                                             </tr>
                                             <?php endif ?>
-                                            <?php if ($tv['status'] == 5 && $user[0]['role']==2): ?>
+                                        <?php endforeach ?>
 
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <ul class="pagination pagination-lg pager" id="pager_approve_tasks"></ul>
+                        </div>
+                        <?php endif ?>
+
+<!--                        END APPROVE-->
+<!--STARTS READY-->
+                        <?php if ($user[0]['role']==2): ?>
+                        <div class="panel panel-default">
+                            <div class="panel-body-table">
+                                <div class="table-responsive">
+                                    <table class="table table-condensed" id="ready-task-table" <?php if ($ready_tasks==0): ?> style="display: none;" <?php endif ?>>
+                                        <thead>
+                                        <tr>
+                                            <th width="2%" class="text-left">id</th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
+                                            <th width="4%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
+                                            <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
+                                            <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Creator</th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
+                                            <th width="6%" class="text-left" style="border-left: 1px solid #ddd;">Project to</th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
+                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
+                                            <th width="3%" class="text-left" style="border-left: 1px solid #ddd;border-right: 1px solid #ddd;">View</th>
+                                            <th width="15%" class="text-left"></th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody id="ready_tasks_table">
+                                        <?php foreach ($tasks as $tk => $tv): ?>
+                                            <?php if ($tv['status'] == 5): ?>
                                                 <tr id="ready-task-<?php print($tv['id']); ?>">
                                                     <td>#<?php print($tv['id']); ?></td>
                                                     <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
@@ -199,12 +238,12 @@
                                                     <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
                                                     <td class="text-left"><?php print(date_format(date_create($tv['due_time']),"F d H:i")); ?></td>
                                                     <td class="text-center"><a href="#" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a></td>
-                                                        <td class="text-center">
-                                                            <a href="#" style="color:#5cb85c;" class="btn btn-xs imp-adjust-btn"  onClick="impControl(<?php print($tv['id']); ?>,2)"  data-toggle="tooltip" data-placement="top" title="process"><i class="fa fa-play-circle"></i></a>
-                                                            <a href="#"  onClick="impControl(<?php print($tv['id']); ?>,3)" class="btn btn-xs imp-adjust-btn" data-toggle="tooltip" data-placement="top" title="complete"><i class="fa fa-check-circle"></i></a>
-                                                            <a href="#" style="color:#d9534f;" class="btn btn-xs imp-adjust-btn" onClick="impControl(<?php print($tv['id']); ?>,1)" data-toggle="tooltip" data-placement="top" title="unwant"><i class="fa fa-eye-slash"></i></a>
+                                                    <td class="text-center">
+                                                        <a href="#" style="color:#5cb85c;" class="btn btn-xs imp-adjust-btn"  onClick="impControl(<?php print($tv['id']); ?>,2)"  data-toggle="tooltip" data-placement="top" title="process"><i class="fa fa-play-circle"></i></a>
+                                                        <a href="#"  onClick="impControl(<?php print($tv['id']); ?>,3)" class="btn btn-xs imp-adjust-btn" data-toggle="tooltip" data-placement="top" title="complete"><i class="fa fa-check-circle"></i></a>
+                                                        <a href="#" style="color:#d9534f;" class="btn btn-xs imp-adjust-btn" onClick="impControl(<?php print($tv['id']); ?>,1)" data-toggle="tooltip" data-placement="top" title="unwant"><i class="fa fa-eye-slash"></i></a>
 
-                                                        </td>
+                                                    </td>
                                                 </tr>
                                             <?php endif ?>
                                         <?php endforeach ?>
@@ -214,9 +253,19 @@
                                 </div>
                             </div>
                         </div>
+                        <?php endif ?>
+
                         <div class="text-center">
-                            <ul class="pagination pagination-lg pager" id="pager_approve_tasks"></ul>
+                            <ul class="pagination pagination-lg pager" id="pager_ready_tasks"></ul>
                         </div>
+
+
+                        <!--                        END READY-->
+
+
+
+
+
                     </div>
                 <?php endif ?>
 <!--                end last tasks-->

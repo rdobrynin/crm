@@ -559,15 +559,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
   }
 
   /**
-   * Ajax approve to ready
-   * @param $data
-   */
-
-  function processToReady($data){
-
-  }
-
-  /**
    * Ajax approve view task
    * @param $data
    */
@@ -667,14 +658,15 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
           }
       }
   );
-
+  unical_id = <?php print json_encode($user[0]['id']);?>;
 
   function impControl($data, $action) {
-console.log($data);
+
 
       var form_data = {
           id: $data,
-          status: $action
+          status: $action,
+          uid: unical_id
       };
       $.ajax({
           url: "<?php echo site_url('ajax/updateTask'); ?>",
@@ -683,13 +675,18 @@ console.log($data);
           dataType: 'json',
           success: function (msg) {
              if(msg==true) {
-                console.log(msg);
                  $('#ready-task-'+$data).remove();
-                 var count_approve_tasks = $('#approve_tasks_table').children().length;
-                 $('#calc-appr-tasks').html(count_approve_tasks);
-                 if(count_approve_tasks == 0) {
-                     $('#approve-task-table').css('display','none');
-                 }
+                     $.ajax({
+                         url: "<?php echo site_url('ajax/countReadyTasks'); ?>",
+                         type: 'GET',
+                         dataType: 'json',
+                         success: function (msg) {
+                             if (msg < 1) {
+                                 $('#ready-task-table').css('display','none');
+                             }
+                         }
+                     });
+
              }
 
 

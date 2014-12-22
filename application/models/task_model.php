@@ -214,7 +214,7 @@ class Task_model extends CI_Model {
     public function getReadyTasks() {
         $query = $this
             ->db
-            ->where('status', '2')
+            ->where('status', '5')
             ->get('task');
         if ($query->num_rows > 0) {
             return $query->result_array();

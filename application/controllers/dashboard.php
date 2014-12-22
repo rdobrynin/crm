@@ -108,6 +108,17 @@ class Dashboard extends CI_Controller {
         }
 
 
+        $readytasks = $this->task_model->getReadyTasks();
+
+        if($readytasks) {
+            $data['ready_tasks']= count($readytasks);
+        }
+        else {
+            $data['ready_tasks']=0;
+        }
+
+
+
         $comptasks = $this->task_model->getCompTasks();
 
         if($comptasks) {
