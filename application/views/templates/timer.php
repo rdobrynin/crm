@@ -164,6 +164,8 @@
         });
 
         // Calculate total time in seconds
+        current_uid = <?php print json_encode($user[0]['id']);?>;
+        currentTimeRecord = localStorage.getItem("ctime");
         var new0 = currentTimeRecord[0];
         var new1 = currentTimeRecord[1];
         var new3 = currentTimeRecord[3];
@@ -180,20 +182,37 @@
             data: form_data_,
             dataType: 'json',
             success: function (msg) {
-                var getMin = parseInt(msg);
-                console.log(msg);
+                if(msg == false) {
+                    var getMin = 0;
+                }
+                else {
+                    var getMin = parseInt(msg);
+                }
             }
-
         });
 
 
-
+        $('#log_task_btn').click(function () {
+            var form_data_ = {
+                id: <?php print json_encode($user[0]['id']);?>,
+                time: '0'
+            };
+            $.ajax({
+                url: "<?php echo site_url('ajax/updateTimer'); ?>",
+                type: 'POST',
+                data: form_data_,
+                dataType: 'json',
+                success: function (msg) {
+$('#task_modal_timer').modal('hide');
+                }
+            });
+        });
 
         window.onbeforeunload = function () {
-          var form_data_ = {
-           id: <?php print json_encode($user[0]['id']);?>,
-           time: currentTimeRecord
-          };
+            var form_data_ = {
+                id: <?php print json_encode($user[0]['id']);?>,
+                time: currentTimeRecord
+            };
             $.ajax({
                 url: "<?php echo site_url('ajax/updateTimer'); ?>",
                 type: 'POST',

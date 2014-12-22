@@ -46,7 +46,7 @@
                </div>
             <div class="modal-footer" style="padding-top: 10px;">
                 <div class="form-group">
-                    <button type="button" class="btn btn-success" id="addtask_pr_btn">Log task</button>
+                    <button type="button" class="btn btn-success" id="log_task_btn">Log task</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
