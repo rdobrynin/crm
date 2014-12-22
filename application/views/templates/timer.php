@@ -51,6 +51,29 @@
             var find_Time = localStorage.getItem('ctime');
             if(find_Time === null || findTime === undefined  ) {
                 localStorage.ctime='00:00';
+
+
+
+                $.ajax({
+                    url: "<?php echo site_url('ajax/getTimer'); ?>",
+                    type: 'POST',
+                    data: form_data_,
+                    dataType: 'json',
+                    success: function (msg) {
+                        if(msg == false) {
+                            localStorage.ctime='00:00';
+                        }
+                        else {
+                            localStorage.ctime=msg+':00';
+                        }
+                    }
+                });
+
+
+
+
+
+
             }
 
 //            localStorage.ctime='00:00';

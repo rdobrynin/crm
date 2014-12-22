@@ -14,82 +14,82 @@
                           <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
                       </div>
                   </div>
+                  <?php if ($projects != false): ?>
                 <table class="table">
                     <thead>
                     <tr class="filters">
                         <th><input type="text" class="form-control filter-input" placeholder="#" disabled></th>
                         <th><input type="text" class="form-control filter-input" placeholder="Project name" disabled></th>
+                        <th><input type="text" class="form-control filter-input" placeholder="Description" disabled></th>
                         <th><input type="text" class="form-control filter-input" placeholder="Tasks" disabled></th>
                         <th><input type="text" class="form-control filter-input" placeholder="Curator" disabled></th>
-                        <th><input type="text" class="form-control filter-input" placeholder="Status" disabled></th>
-                        <th><input type="hidden" class="form-control filter-input" placeholder="Edit" disabled></th>
-                        <th><input type="hidden" class="form-control filter-input" placeholder="Delete" disabled></th>
+                        <th><input type="hidden" placeholder="Edit" disabled></th>
+                        <th><input type="hidden" placeholder="Action" disabled></th>
                     </tr>
                     </thead>
                     <tbody>
+                    <?php foreach ($projects as $pk => $pv): ?>
                     <tr class="12">
-                        <td>1</td>
-                        <td class="current-title-project">Tasker</td>
-                        <td><a href="#"><span class="badge badge-task" id="route-task">3</span></a></td>
-                        <td><a href="#">Roman Dobrynin</a></td>
-                        <td><span class="label label-xs label-success">Process</span></td>
-                        <td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                        <td><?php print($pv['pid']); ?></td>
+                        <td class="current-title-project"><?php print($pv['title']); ?></td>
+                        <td><?php print($pv['description']); ?></td>
+                        <td><a href="#"><span class="badge badge-task" id="route-task"><?php if ($tasks != false): ?><?php print(count($tasks));?><?php else:?>0<?php endif ?></span></a></td>
+                        <td><a href="#" onClick="qmSendComment(<?php print($pv['owner']); ?>)"><?php print(short_name($user_name[$pv['owner']])); ?></a></td>
+                        <td><p><a href="#" id="edit-project-table"><i class="fa fa-pencil"></i></a></p></td>
+                        <td><p><a href="#" id="delete-project-table"><i class="fa fa-times"></i></a></td>
                     </tr>
+
+
+
                     <!--TASK-->
                     <tr>
                         <td colspan="9" class="td-task" id="task-for-project">
                             <table class="table table-task">
-                                <tbody class="tbody-task">
-                                <tr class="current-tasks-table">
-                                    <th>#</th>
-                                    <th>Task name</th>
-                                    <th>Started</th>
-                                    <th>Due to</th>
-                                    <th>CTS</th>
-                                    <th>Curator</th>
-                                    <th>Implementor</th>
-                                    <th>Status</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
-                                </tr>
+                                <thead>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Fix payment module</td>
-                                    <td><?php print(date('F j, Y'));?></td>
-                                    <td><?php print(date('F j, Y'));?></td>
-                                    <td><a href="#"><span class="badge alert-danger" id="route-task">30 min</span></a></td>
-                                    <td><a href="#">Andrei S.</a></td>
-                                    <td><a href="#">Roman D.</a></td>
-                                    <td><span class="label label-xs label-success">Process</span></td>
-                                    <td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                                    <td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                                    <th width="3%" class="text-left">#ID</th>
+                                    <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
+                                    <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
+                                    <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
+                                    <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Creator</th>
+                                    <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
+                                    <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Assigned project</th>
+                                    <th width="18%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
+                                    <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
+                                    <th width="2%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
+                                    <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
+                                    <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Sort table</td>
-                                    <td><?php print(date('F j, Y'));?></td>
-                                    <td><?php print(date('F j, Y'));?></td>
-                                    <td><a href="#"><span class="badge alert-danger" id="route-task">12h</span></a></td>
-                                    <td><a href="#">Andrei S.</a></td>
-                                    <td><a href="#">Roman D.</a></td>
-                                    <td><span class="label label-xs label-success">Process</span></td>
-                                    <td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                                    <td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                                </tr>
-                                <tr id="status-id">
-                                    <td>3</td>
-                                    <td>Reform code</td>
-                                    <td><?php print(date('F j, Y'));?></td>
-                                    <td><?php print(date('F j, Y'));?></td>
-                                    <td><a href="#"><span class="badge alert-danger" id="route-task">23h</span></a></td>
-                                    <td><a href="#">Andrei S.</a></td>
-                                    <td><a href="#">Roman D.</a></td>
-                                    <td><span class="label label-xs label-danger">Overdue</span></td>
-                                    <td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                                    <td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                                </tr>td>
-                                </tr>
+                                </thead>
+                                <tbody id="all_task_table">
+                                <?php $tasks = array_reverse($tasks);?>
+                                <?php foreach ($tasks as $tk => $tv): ?>
+                                    <tr class="<?php if ($tv['status'] == 6): ?>danger<?php endif ?>">
+                                        <td><?php print($tv['id']); ?></td>
+                                        <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
+                                        <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
+                                        <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
+                                        <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
+                                        <td><?php print($tv['title']); ?></td>
+                                        <td><?php print($project_title[$tv['pid']]); ?></td>
+                                        <td><span class="muted"><?php print($tv['desc']); ?></span></td>
+                                        <td>
+                                            <span class="label <?php print(task_status_label($tv['status'])); ?> label-xs"><?php print(task_status($tv['status'])); ?></span>
+                                        </td>
+                                        <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
+                                        <td class="text-left"><?php print(date_format(date_create($tv['due_time']),"F d H:i")); ?></td>
+                                        <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
+                                            <td>
+                                                <a href="#" onClick="processToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
+                                                <a href="#" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
+                                                <a href="#" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
+                                                <a href="#" style="text-decoration: none;"><i class="fa fa-times"></i></a>
+                                            </td>
+                                        <?php endif ?>
+                                    </tr>
+                                <?php endforeach ?>
+                                </tbody>
+                                <?php endforeach ?>
                                 </tbody>
                             </table>
                         </td>
@@ -97,6 +97,8 @@
 
                     </tbody>
                 </table>
+                  <?php endif ?>
+
 
         </div>
           <?php endif ?>

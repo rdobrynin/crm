@@ -328,7 +328,7 @@ $('#badge-count-comments-top').html(count_all_comments);
         $('#demo_modal').modal('show');
     });
 
-    $('#qm-link-file-btn').click(function () {
+    $('#qm-link-file-btn, #edit-project-table, #delete-project-table').click(function () {
         $('#demo_modal').modal('show');
     });
 
