@@ -670,60 +670,37 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
 
 
   function impControl($data, $action) {
+console.log($data);
 
-      if ($action == 0) {
-//          approve
-          console.log('approve');
-      }
+      var form_data = {
+          id: $data,
+          status: $action
+      };
+      $.ajax({
+          url: "<?php echo site_url('ajax/updateTask'); ?>",
+          type: 'POST',
+          data: form_data,
+          dataType: 'json',
+          success: function (msg) {
+             if(msg==true) {
+                console.log(msg);
+                 $('#ready-task-'+$data).remove();
+                 var count_approve_tasks = $('#approve_tasks_table').children().length;
+                 $('#calc-appr-tasks').html(count_approve_tasks);
+                 if(count_approve_tasks == 0) {
+                     $('#approve-task-table').css('display','none');
+                 }
+             }
 
 
-      else if ($action == 1) {
-//          unwant
-          console.log('unwant');
-      }
-      else if ($action == 2) {
-//          complete
-          console.log('process');
-      }
-
-      else if ($action == 3) {
-//          complete
-          console.log('complete');
-      }
-
-      else if ($action == 4) {
-//          pause
-          console.log('pause');
-      }
-
-      else if ($action == 5) {
-//          ready
-          console.log('ready');
-      }
+          }
+      });
 
 
 
 
 
 
-//      if($status == 5) {
-//          $result = 'ready';
-//      }
-//      else if($status == 4) {
-//          $result = 'pause';
-//      }
-//      else if($status == 3) {
-//          $result = 'complete';
-//      }
-//      else if($status == 2) {
-//          $result = 'process';
-//      }
-//      else if($status == 1) {
-//          $result = 'unwanted';
-//      }
-//      else if($status == 0) {
-//          $result = 'approve';
-//      }
   }
 
 

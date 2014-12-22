@@ -737,6 +737,26 @@ class Ajax extends CI_Controller {
     }
 
 
+    /**
+     * Update Task
+     */
+
+    function updateTask() {
+        $id =  $this->input->post('id');
+        $status =  $this->input->post('status');
+        $this->load->model('task_model');
+        if($querty = $this->task_model->updateTask($id,$status)) {
+            $result = true;
+        }
+        else {
+            $result = false;
+        }
+
+        echo json_encode ($result);
+    }
+
+
+
 
 }
 

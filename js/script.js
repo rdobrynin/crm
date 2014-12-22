@@ -293,6 +293,10 @@ $('.closebox').click(function(e){
     var count_all_comments = $('#all_comments_table').children().length;
 
 $('#calc-appr-tasks').html(count_approve_tasks);
+
+
+
+
 $('#calc-all-tasks').html(count_all_tasks);
 $('#calc-all-comments').html(count_all_comments);
 $('#badge-count-comments-top').html(count_all_comments);

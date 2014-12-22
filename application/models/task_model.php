@@ -282,11 +282,10 @@ class Task_model extends CI_Model {
     }
 
 
-
-
-
     /**
-     * Update task
+     * update task by id
+     * @param $id
+     * @param $status
      * @return mixed
      */
     public function updateTask($id, $status) {
