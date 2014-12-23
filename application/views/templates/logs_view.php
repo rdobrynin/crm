@@ -6,7 +6,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="panel panel-default">
+                            <div class="panel">
                                 <div class="panel-body-table">
                                     <div class="table-responsive">
                                         <table class="table table-condensed" id="log-table">

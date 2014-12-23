@@ -109,17 +109,12 @@
 
             }, "json" );
 
-
-
-
-
             $.ajax({
                 url: "<?php echo site_url('ajax/countProcessTasks'); ?>",
                 type: 'GET',
                 dataType: 'json',
                 success: function (msg) {
                     if (msg > 0) {
-                        console.log(msg);
                         $('#dash-process-task').html(msg);
                     }
                     else {
@@ -130,31 +125,20 @@
                 }
             });
 
-
             $.ajax({
                 url: "<?php echo site_url('ajax/countReadyTasks'); ?>",
                 type: 'GET',
                 dataType: 'json',
                 success: function (msg) {
                     if (msg > 0) {
-                        console.log(msg);
                         $('#calc-ready-tasks').html(msg);
                     }
                     else {
                         $('#calc-ready-tasks').html(0);
                         $('#ready-task-table').css('display','none');
                     }
-
-
                 }
             });
-
-
-
-
-
-
-
         }, 3000);
     });
 </script>

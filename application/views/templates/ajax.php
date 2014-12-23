@@ -108,7 +108,6 @@
           setInterval(function(){
               $.get( "<?php echo site_url('ajax/countProjects'); ?>", function( data ) {
                   if(data >0) {
-                      console.log(data);
                       $('#badge-count-projects').html(data);
                   }
               }, "json" );
@@ -167,7 +166,6 @@
           setInterval(function(){
               $.get( "<?php echo site_url('ajax/countProjects'); ?>", function( data ) {
                   if(data >0) {
-                      console.log(data);
                       $('#badge-count-projects').html(data);
                   }
               }, "json" );
@@ -290,7 +288,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               data: form_data,
               dataType: 'json',
               success: function (msg) {
-                  console.log(msg.check['title']);
                   if (msg.empty == true) {
                       $('#check_empty_' + input_id).fadeIn('slow').css('display', 'block');
                   }
@@ -378,7 +375,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               data: form_data,
               dataType: 'json',
               success: function (msg) {
-                  console.log(msg);
 
               }
           });
@@ -463,7 +459,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               data: form_data_,
               dataType: 'json',
               success: function (msg) {
-                  console.log(msg);
                  if(msg.empty == true) {
                   $('#qm-empty-error').fadeIn('slow').css('display','block');
                      setTimeout(function () {
@@ -497,7 +492,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
           data: form_data,
           dataType: 'json',
           success: function (msg) {
-              console.log(msg);
               $first_name = msg.user[0]['first_name'];
               $last_name = msg.user[0]['last_name'];
               $currentID = msg.user[0]['id'];
@@ -535,7 +529,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               data: form_data_,
               dataType: 'json',
               success: function (msg) {
-                  console.log(msg);
                   if(msg.empty == true) {
                       $('#qm-empty-error').fadeIn('slow').css('display','block');
                       setTimeout(function () {
@@ -635,7 +628,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                   data: form_data,
                   dataType: 'json',
                   success: function (msg) {
-                      console.log(msg);
                       $('#tr-dashboard-task-'+currentTask).remove();
                       var rowCount = $('#approve_tasks_table tr').length;
                       if(rowCount <1) {

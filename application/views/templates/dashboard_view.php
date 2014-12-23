@@ -62,10 +62,12 @@
                     </div>
                 </div>
 <!--                overdue tasks-->
-                <?php if ($tasks != FALSE): ?>
+
                     <div class="row-fluid" style="padding-top: 20px;">
+
                         <h3 class="h_title">Overdue tasks&nbsp;(<span id="calc-over-tasks" ><?php if ($over_tasks != false): ?><?php print(count($over_tasks)); ?><?php else:?>0<?php endif ?></span>)</h3>
-                        <div class="panel panel-default">
+                        <?php if ($over_tasks != false): ?>
+                        <div class="panel">
                             <div class="panel-body-table">
                                 <div class="table-responsive">
                                     <table class="table table-condensed">
@@ -122,6 +124,13 @@
                         <div class="text-center">
                             <ul class="pagination pagination-lg pager" id="pager_over_tasks"></ul>
                         </div>
+
+
+
+                    <?php else: ?>
+
+                    <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of overdue tasks found</div></div>
+
                     </div>
                 <?php endif ?>
 <!--                end overdue-->
@@ -140,7 +149,8 @@
 
 <!--                 START APPROVE  TASK      -->
                         <?php if ($user[0]['role']!=2): ?>
-                        <div class="panel panel-default">
+                        <?php if ($approve_tasks != false): ?>
+                        <div class="panel">
                             <div class="panel-body-table">
                                 <div class="table-responsive">
                                     <table class="table table-condensed" id="approve-task-table">
@@ -194,6 +204,12 @@
                                 </div>
                             </div>
                         </div>
+                            <?php else: ?>
+
+                                <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of approve tasks found</div></div>
+                            <?php endif ?>
+
+
                         <div class="text-center">
                             <ul class="pagination pagination-lg pager" id="pager_approve_tasks"></ul>
                         </div>
@@ -202,7 +218,7 @@
 <!--                        END APPROVE-->
 <!--STARTS READY-->
                         <?php if ($user[0]['role']==2): ?>
-                        <div class="panel panel-default">
+                        <div class="panel">
                             <div class="panel-body-table">
                                 <div class="table-responsive">
                                     <table class="table table-condensed" id="ready-task-table" <?php if ($ready_tasks==0): ?> style="display: none;" <?php endif ?>>
@@ -258,14 +274,7 @@
                         <div class="text-center">
                             <ul class="pagination pagination-lg pager" id="pager_ready_tasks"></ul>
                         </div>
-
-
                         <!--                        END READY-->
-
-
-
-
-
                     </div>
                 <?php endif ?>
 <!--                end last tasks-->

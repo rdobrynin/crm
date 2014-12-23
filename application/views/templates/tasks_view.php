@@ -1,15 +1,11 @@
 <!-- Page content -->
 <div class="page-content-wrapper">
   <!-- Keep all page content within the page-content inset div! -->
-
-
-
-
     <div class="page-content inset">
         <h3 class="h_title">Tasks in process</h3>
         <?php if ($tasks != FALSE): ?>
             <div class="row-fluid">
-                <div class="panel panel-default">
+                <div class="panel">
                     <div class="panel-body-table">
                         <div class="table-responsive">
                             <table class="table table-condensed">
@@ -69,18 +65,12 @@
             </div>
         <?php endif ?>
         <!--                end last tasks-->
-
     </div>
-
-
-
-
-
   <div class="page-content inset">
     <h3 class="h_title">Tasks&nbsp;(<span id="calc-all-tasks" ></span>)</h3>
       <?php if ($tasks != FALSE): ?>
           <div class="row-fluid">
-              <div class="panel panel-default">
+              <div class="panel">
                   <div class="panel-body-table">
                       <div class="table-responsive">
                           <table class="table table-condensed">

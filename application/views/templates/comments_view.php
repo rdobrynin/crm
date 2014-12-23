@@ -8,7 +8,7 @@
     <div class="row-fluid">
         <?php if ($comments != FALSE): ?>
             <div class="row-fluid">
-                <div class="panel panel-default">
+                <div class="panel">
                     <div class="panel-body-table">
                         <div class="table-responsive">
                             <table class="table table-condensed">

@@ -15,7 +15,7 @@
                       </div>
                   </div>
                   <?php if ($projects != false): ?>
-                <table class="table">
+                <table class="table" style="border: 0">
                     <thead>
                     <tr class="filters">
                         <th><input type="text" class="form-control filter-input" placeholder="#" disabled></th>

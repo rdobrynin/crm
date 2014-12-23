@@ -29,7 +29,7 @@
                             </div>
                         </div>
                         <div class="row-fluid">
-                            <div class="panel panel-default">
+                            <div class="panel panel">
                                 <div class="panel-body-table">
                                     <div class="table-responsive">
                                         <table class="table table-condensed" id="table-current-users">
@@ -98,7 +98,7 @@
                                 </div>
                             </div>
                             <div class="row-fluid">
-                                <div class="panel panel-default">
+                                <div class="panel">
                                     <div class="panel-body-table">
                                         <div class="table-responsive">
                                             <table class="table table-condensed" id="table-new-users">
