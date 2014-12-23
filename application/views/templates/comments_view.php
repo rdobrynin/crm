@@ -49,7 +49,7 @@
                                             <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($cv['to']); ?>)"><?php print(short_name($user_name[$cv['to']])); ?></a></td>
                                             <td><span class="muted"><?php print($cv['text']); ?></span></td>
                                             <td><i class="fa fa-clock-o clock-activity"></i>&nbsp;<?php print(time_ago($cv['date_created'])); ?></td>
-                                                <td class="center toggle-comment"  data-comment="<?php print($cv['id']); ?>"><span class="muted"><input id="toggle-comment-<?php print($cv['id']); ?>" type="checkbox" data-off="disable" data-on="enable" class="onoff " <?php if ($cv['public'] == 0): ?> checked  <?php endif ?> data-size="small" data-onstyle="success" data-offstyle="danger"></span></td>
+                                                <td class="center toggle-comment" data-comment="<?php print($cv['id']); ?>"><span class="muted"><input id="toggle-comment-<?php print($cv['id']); ?>" type="checkbox" data-off="disable" data-on="enable" class="onoff " <?php if ($cv['public'] == 0): ?> checked  <?php endif ?> data-size="small" data-onstyle="success" data-offstyle="danger"></span></td>
                                         </tr>
                                     <?php endif ?>
                                 <?php endforeach ?>
@@ -84,16 +84,42 @@
         $('#all_comments_table').pageMe({pagerSelector:'#pager_all_comments',showPrevNext:true,hidePageNumbers:false,perPage:20});
 
         $('.toggle-comment').click(function () {
-            var idComment = $(this).attr('data-comment');
+            idComment = $(this).attr('data-comment');
             if ( $('#toggle-comment-'+idComment).is( ":checked" ) ) {
-                console.log('true');
+                $('#adjust-comment-'+idComment).addClass('disabled');
+                var form_data = {
+                    id: idComment,
+                    check: '1'
+                };
+                $.ajax({
+                    url: "<?php echo site_url('ajax/publishComment'); ?>",
+                    type: 'POST',
+                    data: form_data,
+                    dataType: 'json',
+                    success: function (msg) {
+                      console.log(msg);
+
+
+                    }
+                });
             }
             else {
-                console.log('false');
+                $('#adjust-comment-'+idComment).removeClass('disabled');
+                var form_data = {
+                    id: idComment,
+                    check: '0'
+                };
+                $.ajax({
+                    url: "<?php echo site_url('ajax/publishComment'); ?>",
+                    type: 'POST',
+                    data: form_data,
+                    dataType: 'json',
+                    success: function (msg) {
+                        console.log(msg);
+                    }
+                });
+
             }
-
-
-
         });
 
     });

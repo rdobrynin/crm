@@ -850,11 +850,22 @@ class Ajax extends CI_Controller {
     }
 
 
+    /**
+     * Publish or unpublish comment
+     */
 
-
-
-
-
+    function publishComment() {
+        $id =  $this->input->post('id');
+        $check =  $this->input->post('check');
+        $this->load->model('task_model');
+        if($querty = $this->task_model->publishComment($id,$check)) {
+            $result = true;
+        }
+        else {
+            $result = false;
+        }
+        echo json_encode ($result);
+    }
 
 }
 

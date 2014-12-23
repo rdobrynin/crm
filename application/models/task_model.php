@@ -319,6 +319,24 @@ class Task_model extends CI_Model {
         return $update;
     }
 
+
+
+
+
+    /**
+     * Update task
+     * @return mixed
+     */
+
+    public function publishComment($id,$check) {
+        $data = array(
+            'public' =>  $check
+        );
+        $this->db->where('id', $id);
+        $update =$this->db->update('comment', $data);
+        return $update;
+    }
+
 }
 
 
