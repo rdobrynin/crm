@@ -86,7 +86,6 @@
         $('.toggle-comment').click(function () {
             idComment = $(this).attr('data-comment');
             if ( $('#toggle-comment-'+idComment).is( ":checked" ) ) {
-                $('#adjust-comment-'+idComment).addClass('disabled');
                 var form_data = {
                     id: idComment,
                     check: '1'
@@ -97,14 +96,11 @@
                     data: form_data,
                     dataType: 'json',
                     success: function (msg) {
-                      console.log(msg);
-
-
+                        $('#adjust-comment-'+idComment).addClass('disabled');
                     }
                 });
             }
             else {
-                $('#adjust-comment-'+idComment).removeClass('disabled');
                 var form_data = {
                     id: idComment,
                     check: '0'
@@ -115,7 +111,7 @@
                     data: form_data,
                     dataType: 'json',
                     success: function (msg) {
-                        console.log(msg);
+                        $('#adjust-comment-'+idComment).removeClass('disabled');
                     }
                 });
 

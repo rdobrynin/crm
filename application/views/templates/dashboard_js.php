@@ -13,4 +13,6 @@
         $('#progress-tasks').attr('data-percentage',task_percent_ready+'%');
         $('#progress-tasks').attr('style','width:'+task_percent_ready+'%');
     });
+
+
 </script>
