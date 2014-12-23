@@ -19,7 +19,8 @@
                                     <th width="10%" class="text-" style="border-left: 1px solid #ddd;">Subject</th>
                                     <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">From</th>
                                     <th width="10%" class="text-" style="border-left: 1px solid #ddd;">To</th>
-                                    <th width="45%" class="text-left" style="border-left: 1px solid #ddd;">Message</th>
+                                    <th width="35%" class="text-left" style="border-left: 1px solid #ddd;">Message</th>
+                                    <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Time ago</th>
                                     <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
                                         <th width="3%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
                                     <? endif?>
@@ -28,6 +29,7 @@
                                 <tbody id="all_comments_table">
                                 <?php $comments = array_reverse($comments);?>
                                 <?php foreach ($comments as $ck => $cv): ?>
+                                    <?php if ($user[0]['role'] ==2 && $user[0]['id']==$cv['to'] OR $user[0]['role'] ==3 && $user[0]['id']==$cv['to']): ?>
                                     <tr class="<?php if ($cv['public'] == 1): ?>disabled<?php endif ?> ">
                                         <td><?php print($cv['id']); ?></td>
                                         <td><span class="muted"><?php print(date_format(date_create($cv['date_created']),"F d H:i")); ?></span></td>
@@ -35,12 +37,27 @@
                                         <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($cv['uid']); ?>)"><?php print(short_name($user_name[$cv['uid']])); ?></a></td>
                                         <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($cv['to']); ?>)"><?php print(short_name($user_name[$cv['to']])); ?></a></td>
                                         <td><span class="muted"><?php print($cv['text']); ?></span></td>
+                                        <td><i class="fa fa-clock-o clock-activity"></i>&nbsp;<?php print(time_ago($cv['date_created'])); ?></td>
                                         <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
                                             <td class="center toggle-comment" data-comment="<?php print($cv['id']); ?>"><span class="muted"><input type="checkbox" data-off="disable" data-on="enable" class="onoff " <?php if ($cv['public'] == 0): ?> checked  <?php endif ?> data-size="small" data-onstyle="success" data-offstyle="danger"></span></td>
                                         <? endif?>
                                     </tr>
+                                    <?php endif ?>
+                                    <?php if ($user[0]['role'] ==4 OR $user[0]['role'] ==5 ): ?>
+                                        <tr class="<?php if ($cv['public'] == 1): ?>disabled<?php endif ?> ">
+                                            <td><?php print($cv['id']); ?></td>
+                                            <td><span class="muted"><?php print(date_format(date_create($cv['date_created']),"F d H:i")); ?></span></td>
+                                            <td><?php print($cv['subject']); ?></td>
+                                            <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($cv['uid']); ?>)"><?php print(short_name($user_name[$cv['uid']])); ?></a></td>
+                                            <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($cv['to']); ?>)"><?php print(short_name($user_name[$cv['to']])); ?></a></td>
+                                            <td><span class="muted"><?php print($cv['text']); ?></span></td>
+                                            <td><i class="fa fa-clock-o clock-activity"></i>&nbsp;<?php print(time_ago($cv['date_created'])); ?></td>
+                                            <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
+                                                <td class="center toggle-comment" data-comment="<?php print($cv['id']); ?>"><span class="muted"><input type="checkbox" data-off="disable" data-on="enable" class="onoff " <?php if ($cv['public'] == 0): ?> checked  <?php endif ?> data-size="small" data-onstyle="success" data-offstyle="danger"></span></td>
+                                            <? endif?>
+                                        </tr>
+                                    <?php endif ?>
                                 <?php endforeach ?>
-
                                 </tbody>
                             </table>
                         </div>
@@ -51,7 +68,7 @@
                 <ul class="pagination pagination-lg pager" id="pager_all_comments"></ul>
             </div>
         <?php endif ?>
-        <!--                end last tasks-->
+        <!--                end comments-->
     </div>
   </div>
 </div>
