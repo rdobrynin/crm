@@ -507,7 +507,12 @@ class Ajax extends CI_Controller {
         $result['id'] = $this->input->post('user_id');
         $result['help'] = $this->input->post('help_block');
         $this->load->model('dashboard_model');
-        $this->dashboard_model->settings_help($result['id'], $result['help']);
+      if(  $this->dashboard_model->settings_help($result['id'], $result['help'])) {
+          $result = true;
+      }
+        else {
+            $result = false;
+        }
         echo json_encode($result);
     }
 

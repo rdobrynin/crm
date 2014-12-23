@@ -14,12 +14,13 @@
              <div class="row-fluid">
                  <div class="col-md-12" style="padding-left: 0">
                      <div class="form-group">
-                         <label for="help_block">Switch help panel </label>
-                         <input type="hidden" value="<?php print($user[0]['id']); ?>" name="user_id" id="user_id_help">
-                         <input type="checkbox" name="help_block" id="help_block" <?php if($user[0]["helpblock"]==1):?> value="0" checked="checked" <?php else: ?>value="1"<?php endif?> />
-                     </div>
-                 </div>
-                 <a href="#" class="btn btn-primary btn-update-ttp"  id="save_helpblock"><?php if($user[0]["helpblock"]==1):?>Show panel<?php else: ?>Hide panel<?php endif?></a>
+
+                         <input type="hidden" value="<?php print($user[0]['id']); ?>" name="user_id_help" id="user_id_help">
+
+
+                         <div class="toggle-div-help">
+                             <input type="checkbox" id="toggle-help-btn" data-off="OFF" data-on="ON"  class="onoff"  <?php if ($user[0]["helpblock"]==1): ?> checked  <?php endif ?> data-onstyle="success" data-offstyle="danger" data-toggle="toggle">
+                         </div>
              </div>
              </fieldset>
          </div>
@@ -78,4 +79,12 @@
 
   </div>
 </div>
+
+<script>
+    $(function () {
+        $('.onoff').bootstrapToggle({
+            size:'mini'
+        });
+    });
+</script>
 

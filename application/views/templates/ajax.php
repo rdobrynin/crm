@@ -355,15 +355,15 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
           });
       });
 
-      $("#save_helpblock").click(function(event) {
+      $(".toggle-div-help").click(function(event) {
           var check =false;
-          if ($('#help_block').is(":checked")){
-              check = 1;
-              $(this).html('Hide panel');
+          if ($('#toggle-help-btn').is(":checked")){
+              console.log('0');
+              check = 0;
           }
           else {
-              check = 0;
-              $(this).html('Show panel');
+              console.log('1');
+              check = 1;
           }
           var form_data = {
               help_block :check,
@@ -375,7 +375,7 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               data: form_data,
               dataType: 'json',
               success: function (msg) {
-
+console.log(msg);
               }
           });
       });
