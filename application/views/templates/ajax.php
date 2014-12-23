@@ -375,10 +375,36 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               data: form_data,
               dataType: 'json',
               success: function (msg) {
-console.log(msg);
               }
           });
       });
+
+
+      $(".toggle-div-dialog").click(function(event) {
+          var check =false;
+          if ($('#toggle-dialog-btn').is(":checked")){
+              console.log('1');
+              check = 1;
+          }
+          else {
+              console.log('0');
+              check = 0;
+          }
+          var form_data = {
+              introduce :check,
+              user_id :$('#user_id_dialog').val()
+          };
+          $.ajax({
+              url: "<?php echo site_url('ajax/settingsDialog'); ?>",
+              type: 'POST',
+              data: form_data,
+              dataType: 'json',
+              success: function (msg) {
+                  console.log(msg);
+              }
+          });
+      });
+
 
       $('#qm-clear-form-btn').click(function () {
           $("#qm-text, #qm-subject-field").val("");

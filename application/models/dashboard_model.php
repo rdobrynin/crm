@@ -15,7 +15,6 @@ class Dashboard_model extends CI_Model {
    */
   public function settings_help($id, $input) {
     $data = array(
-      'id' => $id,
       'helpblock' =>  $input
     );
 
@@ -23,4 +22,16 @@ class Dashboard_model extends CI_Model {
     $update =$this->db->update('users', $data);
     return $update;
   }
+
+
+
+    public function settingsDialog($id, $input) {
+        $data = array(
+            'introduce' =>  $input
+        );
+
+        $this->db->where('id', $id);
+        $update =$this->db->update('users', $data);
+        return $update;
+    }
 }

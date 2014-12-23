@@ -14,10 +14,7 @@
              <div class="row-fluid">
                  <div class="col-md-12" style="padding-left: 0">
                      <div class="form-group">
-
                          <input type="hidden" value="<?php print($user[0]['id']); ?>" name="user_id_help" id="user_id_help">
-
-
                          <div class="toggle-div-help">
                              <input type="checkbox" id="toggle-help-btn" data-off="OFF" data-on="ON"  class="onoff"  <?php if ($user[0]["helpblock"]==1): ?> checked  <?php endif ?> data-onstyle="success" data-offstyle="danger" data-toggle="toggle">
                          </div>
@@ -32,13 +29,11 @@
                       <div class="row-fluid">
                           <div class="col-md-12" style="padding-left: 0">
                               <div class="form-group">
-                                  <label for="help_block">Switch intro modal </label>
-                                  <input type="hidden" value="<?php print($user[0]['id']); ?>" name="user_id" id="user_id_introduce">
-                                  <input type="checkbox" name="introduce_block" id="introduce_block" <?php if($user[0]["introduce"]==1):?> value="0" checked="checked" <?php else: ?>value="1"<?php endif?> />
+                                  <input type="hidden" value="<?php print($user[0]['id']); ?>" name="user_id_dialog" id="user_id_dialog">
+                                  <div class="toggle-div-dialog">
+                                      <input type="checkbox" id="toggle-dialog-btn" data-off="OFF" data-on="ON"  class="onoff"  <?php if ($user[0]["introduce"]==0): ?> checked  <?php endif ?> data-onstyle="success" data-offstyle="danger" data-toggle="toggle">
+                                  </div>
                               </div>
-                          </div>
-                          <a href="#" class="btn btn-primary btn-update-ttp"  id="save_helpblock"><?php if($user[0]["introduce"]==1):?>Hide modal<?php else: ?>Show modal<?php endif?></a>
-                      </div>
                   </fieldset>
               </div>
           </form>

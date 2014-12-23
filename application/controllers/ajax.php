@@ -516,6 +516,25 @@ class Ajax extends CI_Controller {
         echo json_encode($result);
     }
 
+
+
+    /**
+     * switch Dialog modal
+     */
+
+    function  settingsDialog() {
+        $result['id'] = $this->input->post('user_id');
+        $result['introduce'] = $this->input->post('introduce');
+        $this->load->model('dashboard_model');
+        if(  $this->dashboard_model->settingsDialog($result['id'], $result['introduce'])) {
+            $result = true;
+        }
+        else {
+            $result = false;
+        }
+        echo json_encode($result);
+    }
+
     /**
      * Get user id
      */
