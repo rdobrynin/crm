@@ -38,13 +38,10 @@
                                         <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($cv['to']); ?>)"><?php print(short_name($user_name[$cv['to']])); ?></a></td>
                                         <td><span class="muted"><?php print($cv['text']); ?></span></td>
                                         <td><i class="fa fa-clock-o clock-activity"></i>&nbsp;<?php print(time_ago($cv['date_created'])); ?></td>
-                                        <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
-                                            <td class="center toggle-comment" data-comment="<?php print($cv['id']); ?>"><span class="muted"><input type="checkbox" data-off="disable" data-on="enable" class="onoff " <?php if ($cv['public'] == 0): ?> checked  <?php endif ?> data-size="small" data-onstyle="success" data-offstyle="danger"></span></td>
-                                        <? endif?>
                                     </tr>
                                     <?php endif ?>
                                     <?php if ($user[0]['role'] ==4 OR $user[0]['role'] ==5 ): ?>
-                                        <tr class="<?php if ($cv['public'] == 1): ?>disabled<?php endif ?> ">
+                                        <tr class="<?php if ($cv['public'] == 1): ?>disabled<?php endif ?>" id="adjust-comment-<?php print($cv['id']); ?>">
                                             <td><?php print($cv['id']); ?></td>
                                             <td><span class="muted"><?php print(date_format(date_create($cv['date_created']),"F d H:i")); ?></span></td>
                                             <td><?php print($cv['subject']); ?></td>
@@ -52,9 +49,7 @@
                                             <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($cv['to']); ?>)"><?php print(short_name($user_name[$cv['to']])); ?></a></td>
                                             <td><span class="muted"><?php print($cv['text']); ?></span></td>
                                             <td><i class="fa fa-clock-o clock-activity"></i>&nbsp;<?php print(time_ago($cv['date_created'])); ?></td>
-                                            <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
-                                                <td class="center toggle-comment" data-comment="<?php print($cv['id']); ?>"><span class="muted"><input type="checkbox" data-off="disable" data-on="enable" class="onoff " <?php if ($cv['public'] == 0): ?> checked  <?php endif ?> data-size="small" data-onstyle="success" data-offstyle="danger"></span></td>
-                                            <? endif?>
+                                                <td class="center toggle-comment"  data-comment="<?php print($cv['id']); ?>"><span class="muted"><input id="toggle-comment-<?php print($cv['id']); ?>" type="checkbox" data-off="disable" data-on="enable" class="onoff " <?php if ($cv['public'] == 0): ?> checked  <?php endif ?> data-size="small" data-onstyle="success" data-offstyle="danger"></span></td>
                                         </tr>
                                     <?php endif ?>
                                 <?php endforeach ?>
@@ -78,6 +73,10 @@
 <?php include('right_float_view.php'); ?>
 <?php include('footer_view.php');?>
 <script>
+
+
+
+
     $(function () {
         $('.onoff').bootstrapToggle({
             size:'mini'
@@ -85,7 +84,16 @@
         $('#all_comments_table').pageMe({pagerSelector:'#pager_all_comments',showPrevNext:true,hidePageNumbers:false,perPage:20});
 
         $('.toggle-comment').click(function () {
-            console.log(this);
+            var idComment = $(this).attr('data-comment');
+            if ( $('#toggle-comment-'+idComment).is( ":checked" ) ) {
+                console.log('true');
+            }
+            else {
+                console.log('false');
+            }
+
+
+
         });
 
     });
