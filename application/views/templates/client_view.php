@@ -3,15 +3,17 @@
 
 <!-- Page content -->
 <div class="page-content-wrapper">
-  <div class="content-header">
-    <h1>
+
+
       <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-      PRM Brilliant
-    </h1>
-  </div>
+
+
+
+
   <!-- Keep all page content within the page-content inset div! -->
   <div class="page-content inset">
-    <div class="row">
+    <div class="row-fluid">
+        <h3 class="h_title">   PRM Brilliant</h3>
 <!--      --><?php //if(!empty($client)):?>
         <table class="table">
         <thead>
