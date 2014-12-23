@@ -284,9 +284,10 @@
             </div>
         <?php if ($comments !=false): ?>
             <div class="col-md-3">
+                <h3 class="h_title">Activity Stream</h3>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Activity Stream (last 7 comments)</h3>
+                        <h3 class="panel-title">Last 7 comments</h3>
                     </div>
                     <div class="panel-body comment">
                         <?php $rev_comm = array_reverse($comments);?>
@@ -313,6 +314,7 @@
                                 </div>
                             </div>
                         </div>
+
                             <?php endif ?>
                         <?php endforeach ?>
                     </div>

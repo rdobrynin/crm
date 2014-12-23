@@ -63,7 +63,7 @@ a.clickable:hover {
 
 .activity-item-summary {
     font-size: 13px;
-    border: 1px solid #D3D3D3;
+    border-bottom: 1px dashed #BABABA;
     border-radius: 3px;
     padding: 10px;
 
@@ -75,6 +75,9 @@ i.clock-activity {
 }
 
 .sub-activity {
+    padding-bottom: 10px;
+}
+.sub-activity:hover {
     padding-bottom: 10px;
 }
 
