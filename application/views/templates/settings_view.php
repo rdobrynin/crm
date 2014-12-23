@@ -68,7 +68,7 @@
           <?php endif ?>
       </div>
       <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location = '<?php print(site_url()) ?>';">Save settings</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location = '<?php print(site_url()) ?>';">Apply categories</button>
       </div>
     </div>
 
