@@ -73,11 +73,19 @@ class Admin_model extends CI_Model {
      * @return bool
      */
 
-    public function get_avatars() {
+    public function getAvatars() {
+        $return = array();
         $query = $this->db->get('avatars');
         $result = $query->result_array();
-        return $result;
+        if(!empty($result)){
+            foreach($result as $avatars){
+                $return[$avatars["fid"]] = $avatars["filename"];
+            }
+        }
+        return $return;
     }
+
+
 
 
     /**

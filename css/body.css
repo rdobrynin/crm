@@ -444,3 +444,12 @@ td .fa-play-circle:hover, td .fa-stop:hover, td .fa-check-circle:hover, td .fa-e
     border: 1px solid #ddd;
     background-color: #fff;
 }
+
+.com-last-text {
+    padding-left: 55px;
+    color: #747474;
+}
+
+.activity-item-info {
+    padding-left: 56px;
+}

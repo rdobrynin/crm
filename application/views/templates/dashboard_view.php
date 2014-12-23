@@ -274,108 +274,54 @@
                             </div>
                         </div>
                         <?php endif ?>
-
                         <div class="text-center">
                             <ul class="pagination pagination-lg pager" id="pager_ready_tasks"></ul>
                         </div>
                         <!--                        END READY-->
-
                 <?php endif ?>
                     </div>
 <!--                end last tasks-->
             </div>
+        <?php if ($comments !=false): ?>
             <div class="col-md-3">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Activity Stream (last 10 comments)</h3>
+                        <h3 class="panel-title">Activity Stream (last 7 comments)</h3>
                     </div>
                     <div class="panel-body comment">
+                        <?php $rev_comm = array_reverse($comments);?>
+                        <?php foreach (array_slice($rev_comm, 0, 7) as $ck=>$cv): ?>
+                            <?php if ($cv['public'] == 0 && $user[0]['id'] == $cv['to']): ?>
                         <div class="sub-activity">
-                            <div class="avatar-activity">
-                                <span class="avatar-img">
-                                    <a href="#"><img src="<?php print(base_url());?>uploads/avatar/admin_avatar.jpg" height="45"></a>
-                                </span>
-                            </div>
                             <div class="activity-item-summary">
-                                <a href="#" class="activity-item-user activity-item-author" target="_parent">Roman D...</a>
-                                &nbsp;<span class="label label-warning label-xs">approve</span>&nbsp;
-                                <a href="#" target="_parent"><span class="resolved-link">ECL-217</span> - LESS implemetation</a>
+                                <div class="avatar-activity">
+                                <span class="avatar-img">
+                                    <a href="#"><img src="<?php print(base_url());?>uploads/avatar/<?php if (isset($avatars[$cv['uid']])): ?><?php print($avatars[$cv['uid']]); ?><?php else: ?>placeholder_user.jpg<?php endif ?>" height="45"></a>
+                                </span>
+                                </div>
+                                <a href="#" class="activity-item-user activity-item-author" target="_parent"><?php print(short_name($user_name[$cv['uid']])); ?></a>
+                                &nbsp;<span class="label label-warning label-xs">subject</span>&nbsp;
+                                <a href="#" target="_parent"><span class="resolved-link"><?php print($cv['subject']); ?></span></a>
+                                <div class="com-last-text"><?php print($cv['text']); ?></div>
                                 <div class="activity-item-description">
 
                                     <div class="activity-item-info">
                                         <i class="fa fa-clock-o clock-activity"></i>
-                                        <span class="timestamp">30 min ago</span>&nbsp;
-                                       <span class="activity-item-action"><a href="#" class="activity-item-comment-link">Comment</a></span>
+                                        <span class="timestamp"><?php print(time_ago($cv['date_created'])); ?></span>&nbsp;
+                                       <span class="activity-item-action"><a href="#" class="activity-item-comment-link" onClick="qmSendComment(<?php print($cv['uid']); ?>)">Comment</a></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="sub-activity">
-                            <div class="avatar-activity">
-                                <span class="avatar-img">
-                                    <a href="#"><img src="<?php print(base_url());?>uploads/avatar/TaskEasy-Logo.png" height="45"></a>
-                                </span>
-                            </div>
-                            <div class="activity-item-summary">
-                                <a href="#" class="activity-item-user activity-item-author" target="_parent">Jevgeni S...</a>&nbsp;<span class="label label-default label-xs">closed</span>&nbsp;
-                                <a href="#" target="_parent"><span class="resolved-link">ECL-217</span> - LESS implemetation  for implementation </a>
-                                <div class="activity-item-description">
-
-                                    <div class="activity-item-info">
-                                        <i class="fa fa-clock-o clock-activity"></i>
-                                        <span class="timestamp">2 hours ago</span>&nbsp;
-                                        <span class="activity-item-action"><a href="#" class="activity-item-comment-link">Comment</a></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sub-activity">
-                            <div class="avatar-activity">
-                                <span class="avatar-img">
-                                    <a href="#"><img src="<?php print(base_url());?>uploads/avatar/admin_avatar.jpg" height="45"></a>
-                                </span>
-                            </div>
-                            <div class="activity-item-summary">
-                                <a href="#" class="activity-item-user activity-item-author" target="_parent">Roman D...</a>
-                                &nbsp;<span class="label label-warning label-xs">approve</span>&nbsp;
-                                <a href="#" target="_parent"><span class="resolved-link">ECL-217</span> - LESS implemetation</a>
-                                <div class="activity-item-description">
-                                    <div class="activity-item-info">
-                                        <i class="fa fa-clock-o clock-activity"></i>
-                                        <span class="timestamp">3 hours ago</span>&nbsp;
-                                        <span class="activity-item-action"><a href="#" class="activity-item-comment-link">Comment</a></span>
-                                        <form class="activity-item-comment-form ready" method="post" action="" style="">
-                                            <fieldset><input type="hidden" name="replyTo" value="">
-                                                <input type="hidden" name="xsrfToken" value=""><textarea rows="6" name="comment"></textarea>
-                                            </fieldset><div class="pull-left"><span class="btn btn-danger btn-xs">Add</span>&nbsp;
-                                                <a href="#" class="btn btn-default btn-xs close-activity-form">Cancel</a></div></form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sub-activity">
-                            <div class="avatar-activity">
-                                <span class="avatar-img">
-                                    <a href="#"><img src="<?php print(base_url());?>uploads/avatar/TaskEasy-Logo.png" height="45"></a>
-                                </span>
-                            </div>
-                            <div class="activity-item-summary">
-                                <a href="#" class="activity-item-user activity-item-author" target="_parent">Jevgeni S...</a>&nbsp;<span class="label label-default label-xs">closed</span>&nbsp;
-                                <a href="#" target="_parent"><span class="resolved-link">ECL-217</span> - LESS implemetation for implementation </a>
-                                <div class="activity-item-description">
-                                    <div class="activity-item-info">
-                                        <i class="fa fa-clock-o clock-activity"></i>
-                                        <span class="timestamp">4 hours ago</span>&nbsp;
-                                        <span class="activity-item-action"><a href="#" class="activity-item-comment-link">Comment</a></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <?php endif ?>
+                        <?php endforeach ?>
                     </div>
                     <div class="show-more-activity"> <button class="btn btn-default btn-xs" id="show-more-comment" style="width: 100%">Show more</button></div>
                 </div>
             </div>
-        </div>
+
+        <?php endif ?>
+    </div>
         <!-- ./row-->
     </div>
 </div>

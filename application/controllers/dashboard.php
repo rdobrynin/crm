@@ -148,6 +148,17 @@ class Dashboard extends CI_Controller {
         }
 
 
+        $avatars = $this->admin_model->getAvatars();
+
+        if($avatars) {
+            $data['avatars']= $avatars;
+        }
+        else {
+            $data['avatars']=false;
+        }
+
+
+
 
         $data['users_names']= $this->admin_model->get_users_names();
 
