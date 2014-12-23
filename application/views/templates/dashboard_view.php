@@ -125,18 +125,15 @@
                             <ul class="pagination pagination-lg pager" id="pager_over_tasks"></ul>
                         </div>
 
-
-
+                    </div>
                     <?php else: ?>
-
                     <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of overdue tasks found</div></div>
-
                     </div>
                 <?php endif ?>
 <!--                end overdue-->
-
+                <div class="row-fluid" style="padding-top: 20px;">
                 <?php if ($tasks != FALSE): ?>
-                    <div class="row-fluid" style="padding-top: 20px;">
+
 
                         <?php if ($user[0]['role']==5 OR $user[0]['role']==4 OR $user[0]['role']==3): ?>
                         <h3 class="h_title">Tasks for approve&nbsp;(<span id="calc-appr-tasks" ><?php if ($approve_tasks != false): ?><?php print(count($approve_tasks)); ?><?php else:?>0<?php endif ?></span>)</h3>
@@ -254,11 +251,18 @@
                                                     <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
                                                     <td class="text-left"><?php print(date_format(date_create($tv['due_time']),"F d H:i")); ?></td>
                                                     <td class="text-center"><a href="#" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a></td>
+                                                    <?php if ($user[0]['id'] == $tv['implementor']): ?>
                                                     <td class="text-center">
                                                         <a href="#" style="color:#5cb85c;" class="btn btn-xs imp-adjust-btn"  onClick="impControl(<?php print($tv['id']); ?>,2)"  data-toggle="tooltip" data-placement="top" title="process"><i class="fa fa-play-circle"></i></a>
                                                         <a href="#"  onClick="impControl(<?php print($tv['id']); ?>,3)" class="btn btn-xs imp-adjust-btn" data-toggle="tooltip" data-placement="top" title="complete"><i class="fa fa-check-circle"></i></a>
                                                         <a href="#" style="color:#d9534f;" class="btn btn-xs imp-adjust-btn" onClick="impControl(<?php print($tv['id']); ?>,1)" data-toggle="tooltip" data-placement="top" title="unwant"><i class="fa fa-eye-slash"></i></a>
 
+
+                                                        <?php else: ?>
+<td class="text-center">
+    -
+</td>
+                                                        <?php endif ?>
                                                     </td>
                                                 </tr>
                                             <?php endif ?>
@@ -275,14 +279,15 @@
                             <ul class="pagination pagination-lg pager" id="pager_ready_tasks"></ul>
                         </div>
                         <!--                        END READY-->
-                    </div>
+
                 <?php endif ?>
+                    </div>
 <!--                end last tasks-->
             </div>
             <div class="col-md-3">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Activity Stream</h3>
+                        <h3 class="panel-title">Activity Stream (last 10 comments)</h3>
                     </div>
                     <div class="panel-body comment">
                         <div class="sub-activity">
@@ -367,7 +372,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="show-more-activity"> <button class="btn btn-default btn-xs" style="width: 100%">Show more</button></div>
+                    <div class="show-more-activity"> <button class="btn btn-default btn-xs" id="show-more-comment" style="width: 100%">Show more</button></div>
                 </div>
             </div>
         </div>
