@@ -104,7 +104,7 @@
                                                     <td><?php print($project_title[$tv['pid']]); ?></td>
                                                     <td><span class="muted"><?php print($tv['desc']); ?></span></td>
                                                     <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
-                                                    <td>--</td>
+                                                    <td><?php print(check_cts($tv['cts'])); ?></td>
                                                     <td class="text-left"><?php print(date_format(date_create($tv['due_time']),"F d H:i")); ?></td>
                                                     <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
                                                         <td>
@@ -251,7 +251,7 @@
                                                     <td class="text-center"><a href="#" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a></td>
                                                     <?php if ($user[0]['id'] == $tv['implementor']): ?>
                                                     <td class="text-center">
-                                                        <a href="#" style="color:#5cb85c;" class="btn btn-xs imp-adjust-btn"  onClick="impControl(<?php print($tv['id']); ?>,2)"  data-toggle="tooltip" data-placement="top" title="process"><i class="fa fa-play-circle"></i></a>
+                                                        <a href="#" style="color:#5cb85c;" class="btn btn-xs imp-adjust-btn"  onClick="taskToProcess(<?php print($tv['id']); ?>)"  data-toggle="tooltip" data-placement="top" title="process"><i class="fa fa-play-circle"></i></a>
                                                         <a href="#"  onClick="impControl(<?php print($tv['id']); ?>,3)" class="btn btn-xs imp-adjust-btn" data-toggle="tooltip" data-placement="top" title="complete"><i class="fa fa-check-circle"></i></a>
                                                         <a href="#" style="color:#d9534f;" class="btn btn-xs imp-adjust-btn" onClick="impControl(<?php print($tv['id']); ?>,1)" data-toggle="tooltip" data-placement="top" title="unwant"><i class="fa fa-eye-slash"></i></a>
 

@@ -663,11 +663,10 @@ $('#update-user-modal').modal('show');
       $editor = '<?php print($user[0]['id'])?>';
       var form_data = {
           id: $data,
-          uid:$editor,
-          status: '2'
+          uid:$editor
       };
       $.ajax({
-          url: "<?php echo site_url('ajax/updateTask'); ?>",
+          url: "<?php echo site_url('ajax/updateTaskProcess'); ?>",
           type: 'POST',
           data: form_data,
           dataType: 'json',

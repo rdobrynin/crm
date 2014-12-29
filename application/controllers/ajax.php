@@ -819,6 +819,37 @@ class Ajax extends CI_Controller {
     }
 
 
+
+    /**
+     * Update Task
+     */
+
+    function updateTaskProcess() {
+        $uid =  $this->input->post('uid');
+        $id =  $this->input->post('id');
+        $this->load->model('task_model');
+        $this->load->model('admin_model');
+        $this->load->model('project_model');
+        $array = $this->task_model->getTask($id);
+        $cts = time();
+
+
+        $name_array =  $this->admin_model->get_user_id($uid);
+        $full_name = $name_array[0]['first_name'].' '.$name_array[0]['last_name'];
+        $text ='update task';
+        if($querty = $this->task_model->updateTaskProcess($id,'2',$cts)) {
+            $this->project_model->createEvent($uid, $array->desc, $text, $full_name, $array->title, 4);
+            $result = true;
+        }
+        else {
+            $result = false;
+        }
+
+        echo json_encode ($result);
+    }
+
+
+
     /**
      * count process Tasks
      */
