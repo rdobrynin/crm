@@ -891,6 +891,25 @@ class Ajax extends CI_Controller {
         echo json_encode ($result);
     }
 
+
+    function checkSession() {
+        session_start();
+        $name = $_SESSION["username"];
+        if($name == '')
+        {
+            //session expired
+            $result = 1;
+        } else {
+            $result = 2;
+            //session not expired
+
+        }
+        echo json_encode ($result);
+    }
+
+
+
+
 }
 
 

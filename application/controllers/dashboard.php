@@ -29,9 +29,6 @@ class Dashboard extends CI_Controller {
             redirect('admin');
         }
 
-
-
-
     }
 
     /**
@@ -39,6 +36,7 @@ class Dashboard extends CI_Controller {
      */
 
     public function index() {
+
         $project_array = $this->project_model->get_projects();
         if($project_array) {
             $data['projects']= $project_array;
@@ -90,7 +88,7 @@ class Dashboard extends CI_Controller {
             $data['tasks']=false;
         }
 
-        $comments = $this->message_model->getComments();
+        $comments = $this->message_model->getPublishComments();
         if($comments) {
             $data['comments']= $comments;
         }

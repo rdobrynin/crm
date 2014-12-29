@@ -30,7 +30,7 @@
                                 <?php $tasks = array_reverse($tasks);?>
                                 <?php foreach ($tasks as $tk => $tv): ?>
                                 <?php if ($tv['status'] == 2): ?>
-                                    <tr>
+                                        <tr class="<?php print(check_deadline($tv['due_time'])); ?>">
                                         <td><?php print($tv['id']); ?></td>
                                         <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                         <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
@@ -96,7 +96,7 @@
                               <?php $tasks = array_reverse($tasks);?>
                               <?php foreach ($tasks as $tk => $tv): ?>
                               <?php if ($tv['status'] != 2): ?>
-                                  <tr class="<?php if ($tv['status'] == 6): ?>danger<?php endif ?>">
+                                  <tr class="<?php print(check_deadline($tv['due_time'])); ?>">
                                       <td><?php print($tv['id']); ?></td>
                                       <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                       <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>

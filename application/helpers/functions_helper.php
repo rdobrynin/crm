@@ -522,5 +522,25 @@ if (!function_exists('get_countries')) {
         }
     }
 
+    /**
+     * check deadline status
+     */
+
+
+    if (!function_exists('check_deadline')) {
+        function check_deadline ($date) {
+            $nowtime = time();
+            $tm= strtotime($date);
+            if($tm<=$nowtime) {
+                $result = 'danger';
+            }
+            else {
+                $result = false;
+            }
+            return $result;
+        }
+    }
+
+
 
   }

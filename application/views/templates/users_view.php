@@ -69,7 +69,7 @@
                                                     <td><?php print(show_role($uv['role'])); ?></td>
                                                     <td><?php print($uv['date_created']); ?></td>
                                                     <td>
-                                                        <a href="#" data-title="Edit" data-toggle="modal" data-target="#edit_user"><i class="fa fa-pencil"></i></a>
+                                                        <a href="#" data-title="Edit" data-toggle="modal" data-target="#edit_user" id="edit-btn-user"><i class="fa fa-pencil"></i></a>
                                                     </td>
                                                     <td>
                                                         <?php if ($uv['role'] !=5): ?>
@@ -218,6 +218,16 @@
 <?php include('right_float_view.php'); ?>
 <?php include('footer_view.php'); ?>
 <script>
+    $(function () {
+
+        $('#edit-btn-user').click(function () {
+            $('#demo_modal').modal('show');
+            return false;
+        });
+
+    });
+
+
     $('#admin-users-tab a').click(function (e) {
         e.preventDefault()
         $(this).tab('show')

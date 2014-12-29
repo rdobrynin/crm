@@ -427,9 +427,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
           selectFirst: true,
           width: '240px'
       });
-
-
-
   });
 
   /**
@@ -710,11 +707,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
 
           }
       });
-
-
-
-
-
 
   }
 

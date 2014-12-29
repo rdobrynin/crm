@@ -93,7 +93,7 @@
                                         <?php foreach ($tasks as $tk => $tv): ?>
                                             <?php if ($tv['status'] == 6): ?>
 
-                                                <tr id="tr-dashboard-task-<?php print($tv['id']); ?>">
+                                                <tr id="tr-dashboard-task-<?php print($tv['id']); ?>" class="<?php print(check_deadline($tv['due_time'])); ?>">
                                                     <td>#<?php print($tv['id']); ?></td>
                                                     <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                                     <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
@@ -173,7 +173,7 @@
                                         <?php foreach ($tasks as $tk => $tv): ?>
                                             <?php if ($tv['status'] == 0 && $user[0]['role']==5 OR $tv['status'] == 0 && $user[0]['role']==4 OR $tv['status'] == 0 &&  $user[0]['role']==3): ?>
 
-                                            <tr class="<?php if ($tv['status'] == 6): ?>danger<?php endif ?>" id="tr-dashboard-task-<?php print($tv['id']); ?>">
+                                            <tr class="<?php if ($tv['status'] == 6): ?>danger<?php endif ?> <?php print(check_deadline($tv['due_time'])); ?>" id="tr-dashboard-task-<?php print($tv['id']); ?>">
                                                 <td>#<?php print($tv['id']); ?></td>
                                                 <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                                 <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
@@ -239,7 +239,7 @@
                                         <tbody id="ready_tasks_table">
                                         <?php foreach ($tasks as $tk => $tv): ?>
                                             <?php if ($tv['status'] == 5): ?>
-                                                <tr id="ready-task-<?php print($tv['id']); ?>">
+                                                <tr id="ready-task-<?php print($tv['id']); ?>" class="<?php print(check_deadline($tv['due_time'])); ?>">
                                                     <td>#<?php print($tv['id']); ?></td>
                                                     <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                                     <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
@@ -292,7 +292,7 @@
                     <div class="panel-body comment">
                         <?php $rev_comm = array_reverse($comments);?>
                         <?php foreach (array_slice($rev_comm, 0, 7) as $ck=>$cv): ?>
-                            <?php if ($cv['public'] == 0 && $user[0]['id'] == $cv['to']): ?>
+                            <?php if ($cv['public'] == 0): ?>
                         <div class="sub-activity">
                             <div class="activity-item-summary">
                                 <div class="avatar-activity">
