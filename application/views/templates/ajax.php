@@ -1,5 +1,33 @@
 <script>
   $(function () {
+//      check if task exists and overdue
+      tasks = <?php print json_encode($tasks);?>;
+
+      $.each(tasks, function(index, value){
+         if(value['status'] !=6) {
+             var data_time = toTimestamp(value['due_time']);
+             var dt = new Date().getTime();
+             var n = dt.toString();
+             var new_time = n.slice(0, -3);
+             if (data_time < new_time) {
+                if (value['status'] !== '6'){
+                    var form_data = {
+                        id: value['id'],
+                        uid:value['uid'],
+                        status: '6'
+                    };
+                    $.ajax({
+                        url: "<?php echo site_url('ajax/updateTask'); ?>",
+                        type: 'POST',
+                        data: form_data,
+                        dataType: 'json',
+                        success: function (msg) {
+                        }
+                    });
+                }
+             }
+         }
+      });
 
 /**
  * INVITATION AJAX
