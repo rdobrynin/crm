@@ -9,7 +9,7 @@
                     <h4>Information</h4>
 
                     <p>
-                       <a href="h_info">
+                       <a href="h_info" onClick="$('#demo_modal').modal('show');return false;">
                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
                            ante.
                        </a>
@@ -22,7 +22,7 @@
                     <h4>Create client</h4>
 
                     <p>
-                        <a href="h_clients">
+                        <a href="h_clients" onClick="$('#demo_modal').modal('show');return false;">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
                             ante.
                         </a>
@@ -35,7 +35,7 @@
                     <h4>Manage persons</h4>
 
                     <p>
-                        <a href="h_persons">
+                        <a href="h_persons" onClick="$('#demo_modal').modal('show');return false;">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
                             ante.
                         </a>
@@ -50,7 +50,7 @@
                     <h4>Users and roles</h4>
 
                     <p>
-                        <a href="h_users">
+                        <a href="h_users" onClick="$('#demo_modal').modal('show');return false;">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
                             ante.
                         </a>
@@ -63,7 +63,7 @@
                     <h4>Manage projects</h4>
 
                     <p>
-                        <a href="h_projects">
+                        <a href="h_projects" onClick="$('#demo_modal').modal('show');return false;">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
                             ante.
                         </a>
@@ -76,7 +76,7 @@
                     <h4>Manage tasks</h4>
 
                     <p>
-                        <a href="h_tasks">
+                        <a href="h_tasks" onClick="$('#demo_modal').modal('show');return false;">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
                             ante.
                         </a>
@@ -91,7 +91,7 @@
                     <h4>Comments</h4>
 
                     <p>
-                        <a href="h_comments">
+                        <a href="h_comments" onClick="$('#demo_modal').modal('show');return false;">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
                             ante.
                         </a>
@@ -104,7 +104,7 @@
                     <h4>Reports and charts</h4>
 
                     <p>
-                        <a href="h_charts">
+                        <a href="h_charts" onClick="$('#demo_modal').modal('show');return false;">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
                             ante.
                         </a>
@@ -117,7 +117,7 @@
                     <h4>Team</h4>
 
                     <p>
-                        <a href="h_team">
+                        <a href="h_team" onClick="$('#demo_modal').modal('show');return false;">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
                             ante.
                         </a>
@@ -132,7 +132,7 @@
                     <h4>Notifications</h4>
 
                     <p>
-                        <a href="h_notifications">
+                        <a href="h_notifications" onClick="$('#demo_modal').modal('show');return false;">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
                             ante.
                         </a>
@@ -145,7 +145,7 @@
                     <h4>Profile</h4>
 
                     <p>
-                        <a href="h_profile">
+                        <a href="h_profile" onClick="$('#demo_modal').modal('show');return false;">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
                             ante.
                         </a>
@@ -158,7 +158,7 @@
                     <h4>FAQ</h4>
 
                     <p>
-                        <a href="h_faq">
+                        <a href="h_faq" onClick="$('#demo_modal').modal('show');return false;">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
                             ante.
                         </a>.
