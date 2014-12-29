@@ -821,6 +821,38 @@ class Ajax extends CI_Controller {
 
 
     /**
+     * Complete Task
+     */
+
+    function completeTask() {
+        $uid =  $this->input->post('uid');
+        $id =  $this->input->post('id');
+        $status =  $this->input->post('status');
+        $tts =  $this->input->post('tts');
+        $this->load->model('task_model');
+        $this->load->model('admin_model');
+        $this->load->model('project_model');
+        $array = $this->task_model->getTask($id);
+
+        $name_array =  $this->admin_model->get_user_id($uid);
+        $full_name = $name_array[0]['first_name'].' '.$name_array[0]['last_name'];
+        $text ='complete task';
+        $result['test'] = $tts;
+        if($querty = $this->task_model->completeTask($id,$status,$tts)) {
+            $this->project_model->createEvent($uid, $array->desc, $text, $full_name, $array->title, 4);
+            $result['result'] = true;
+        }
+        else {
+            $result['result'] = false;
+        }
+
+        echo json_encode ($result);
+    }
+
+
+
+
+    /**
      * Update Task
      */
 

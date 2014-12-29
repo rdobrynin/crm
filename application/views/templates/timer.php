@@ -226,7 +226,26 @@
                 data: form_data_,
                 dataType: 'json',
                 success: function (msg) {
-$('#task_modal_timer').modal('hide');
+                 $('#task_modal_timer').modal('hide');
+                    var id_task = $('#task_log_title').val();
+                    var tts = $('#log_timer').val();
+                    var form_data = {
+                        id: id_task,
+                        uid:<?php print json_encode($user[0]['id']);?>,
+                        status: '3',
+                        tts: tts
+                    };
+
+                    $.ajax({
+                        url: "<?php echo site_url('ajax/completeTask'); ?>",
+                        type: 'POST',
+                        data: form_data,
+                        dataType: 'json',
+                        success: function (msg) {
+                         console.log(msg);
+                        }
+                    });
+
                 }
             });
         });

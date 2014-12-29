@@ -3,31 +3,31 @@
 //      check if task exists and overdue
       tasks = <?php print json_encode($tasks);?>;
 
-      $.each(tasks, function(index, value){
-         if(value['status'] !=6) {
-             var data_time = toTimestamp(value['due_time']);
-             var dt = new Date().getTime();
-             var n = dt.toString();
-             var new_time = n.slice(0, -3);
-             if (data_time < new_time) {
-                if (value['status'] !== '6'){
-                    var form_data = {
-                        id: value['id'],
-                        uid:value['uid'],
-                        status: '6'
-                    };
-                    $.ajax({
-                        url: "<?php echo site_url('ajax/updateTask'); ?>",
-                        type: 'POST',
-                        data: form_data,
-                        dataType: 'json',
-                        success: function (msg) {
-                        }
-                    });
-                }
-             }
-         }
-      });
+<!--      $.each(tasks, function(index, value){-->
+<!--         if(value['status'] !='3') {-->
+<!--             var data_time = toTimestamp(value['due_time']);-->
+<!--             var dt = new Date().getTime();-->
+<!--             var n = dt.toString();-->
+<!--             var new_time = n.slice(0, -3);-->
+<!--             if (data_time < new_time) {-->
+<!---->
+<!--                    var form_data = {-->
+<!--                        id: value['id'],-->
+<!--                        uid:value['uid'],-->
+<!--                        status: '6'-->
+<!--                    };-->
+<!--                    $.ajax({-->
+<!--                        url: "--><?php //echo site_url('ajax/updateTask'); ?><!--",-->
+<!--                        type: 'POST',-->
+<!--                        data: form_data,-->
+<!--                        dataType: 'json',-->
+<!--                        success: function (msg) {-->
+<!---->
+<!--                        }-->
+<!--                    });-->
+<!--             }-->
+<!--         }-->
+<!--      });-->
 
 /**
  * INVITATION AJAX
@@ -386,11 +386,9 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
       $(".toggle-div-help").click(function(event) {
           var check =false;
           if ($('#toggle-help-btn').is(":checked")){
-              console.log('0');
               check = 0;
           }
           else {
-              console.log('1');
               check = 1;
           }
           var form_data = {
@@ -411,11 +409,9 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
       $(".toggle-div-dialog").click(function(event) {
           var check =false;
           if ($('#toggle-dialog-btn').is(":checked")){
-              console.log('1');
               check = 1;
           }
           else {
-              console.log('0');
               check = 0;
           }
           var form_data = {
@@ -441,7 +437,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               check = 0;
           }
           else {
-              console.log('0');
               check = 1;
           }
           var form_data = {
@@ -454,7 +449,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               data: form_data,
               dataType: 'json',
               success: function (msg) {
-                  console.log(msg);
               }
           });
       });
@@ -677,7 +671,6 @@ $('#update-user-modal').modal('show');
           data: form_data,
           dataType: 'json',
           success: function (msg) {
-             console.log(msg);
           }
       });
   }

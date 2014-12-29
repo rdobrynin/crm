@@ -7,7 +7,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h4 class="modal-title">
-                    <small>Log task</small>
+                    <small>Log task for complete</small>
                 </h4>
             </div>
             <div class="modal-body">
@@ -17,9 +17,10 @@
                         <div class="form-group">
                             <label for="task_log_title">Choose task</label>
                             <select class="form-control selectpicker" id="task_log_title" name="category">
-
                                 <?php foreach ($tasks as $tk => $tv): ?>
+                                    <?php if ($tv['status'] !=3 AND $tv['status'] !=0): ?>
                                     <option value="<?php print($tv['id']); ?>"><?php print($tv['title']); ?></option>
+                                    <?php endif ?>
                                 <?php endforeach ?>
                             </select>
                         </div>

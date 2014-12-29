@@ -305,7 +305,7 @@ $('#badge-count-comments-top').html(count_all_comments);
 
 
         //add class "highlight" when hover over the row
-        $('#approve_tasks_table tr, #all_task_table tr, #all_comments_table tr, #log-table tr, #tbody-new-users tr, #tbody-current-users tr, #proccess_task_table tr, #ready_tasks_table tr').hover(function() {
+        $('#approve_tasks_table tr, #all_task_table tr, #all_comments_table tr, #log-table tr, #comp_task_table tr, #tbody-new-users tr, #tbody-current-users tr, #proccess_task_table tr, #ready_tasks_table tr').hover(function() {
             $(this).addClass('highlight');
         }, function() {
             $(this).removeClass('highlight');

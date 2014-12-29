@@ -320,6 +320,25 @@ class Task_model extends CI_Model {
     }
 
 
+
+    /**
+     * complete task by id
+     * @param $id
+     * @param $status
+     * @return mixed
+     */
+    public function completeTask($id, $status,$tts) {
+        $data = array (
+            'status' => $status,
+            'tts' => $tts
+        );
+        $this->db->where('id', $id);
+        $update = $this->db->update('task', $data);
+        return $update;
+    }
+
+
+
     /**
      * Update task to Process
      * @param $id
