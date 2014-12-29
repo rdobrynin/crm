@@ -74,6 +74,22 @@ class Message_model extends CI_Model {
 
     }
 
+
+    /**
+     * Message to Email
+     * @return mixed
+     */
+
+    public function messageToEmail($id,$check) {
+        $data = array(
+            'message' =>  $check
+        );
+        $this->db->where('id', $id);
+        $update =$this->db->update('users', $data);
+        return $update;
+    }
+
+
 }
 
 

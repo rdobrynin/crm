@@ -406,6 +406,33 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
       });
 
 
+
+      $(".toggle-div-message").click(function(event) {
+          var check =false;
+          if ($('#toggle-message-btn').is(":checked")){
+              check = 0;
+          }
+          else {
+              console.log('0');
+              check = 1;
+          }
+          var form_data = {
+              check :check,
+              id :$('#user_id_message').val()
+          };
+          $.ajax({
+              url: "<?php echo site_url('ajax/messageToEmail'); ?>",
+              type: 'POST',
+              data: form_data,
+              dataType: 'json',
+              success: function (msg) {
+                  console.log(msg);
+              }
+          });
+      });
+
+
+
       $('#qm-clear-form-btn').click(function () {
           $("#qm-text, #qm-subject-field").val("");
       });

@@ -908,6 +908,24 @@ class Ajax extends CI_Controller {
     }
 
 
+    /**
+     * MessageToEmail
+     */
+
+    function messageToEmail() {
+        $id =  $this->input->post('id');
+        $check =  $this->input->post('check');
+        $this->load->model('message_model');
+        if($querty = $this->message_model->messageToEmail($id,$check)) {
+            $result = true;
+        }
+        else {
+            $result = false;
+        }
+        echo json_encode ($result);
+    }
+
+
 
 
 }
