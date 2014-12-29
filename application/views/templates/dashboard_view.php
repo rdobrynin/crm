@@ -74,10 +74,10 @@
                                         <thead>
                                         <tr>
                                             <th width="2%" class="text-left">id</th>
-                                            <th width="8%" class="text-left">Created</th>
-                                            <th width="4%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
-                                            <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
-                                            <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Creator</th>
+                                            <th width="8%" class="text-left"  style="border-left: 1px solid #ddd;">Created</th>
+                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Label</th>
+                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Implementor</th>
+                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Creator</th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
                                             <th width="6%" class="text-left" style="border-left: 1px solid #ddd;">Project to</th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
@@ -133,8 +133,6 @@
 <!--                end overdue-->
                 <div class="row-fluid" style="padding-top: 20px;">
                 <?php if ($tasks != FALSE): ?>
-
-
                         <?php if ($user[0]['role']==5 OR $user[0]['role']==4 OR $user[0]['role']==3): ?>
                         <h3 class="h_title">Tasks for approve&nbsp;(<span id="calc-appr-tasks" ><?php if ($approve_tasks != false): ?><?php print(count($approve_tasks)); ?><?php else:?>0<?php endif ?></span>)</h3>
                         <?php endif ?>
@@ -142,8 +140,6 @@
                         <?php if ($user[0]['role']==2 ): ?>
                             <h3 class="h_title">Ready to go&nbsp;(<span id="calc-ready-tasks"><?php if ($ready_tasks != false): ?><?php print($ready_tasks); ?><?php else:?>0<?php endif ?></span>)</h3>
                         <?php endif ?>
-
-
 <!--                 START APPROVE  TASK      -->
                         <?php if ($user[0]['role']!=2): ?>
                         <?php if ($approve_tasks != false): ?>

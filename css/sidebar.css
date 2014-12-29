@@ -406,6 +406,7 @@ i.fa-clock-o {
 .sidebar-position {
     font-size: 10px;
     padding-left: 54px;
+    padding-top: 5px;
 }
 
 .sidebar-position a, .sidebar-position.phone {
@@ -459,7 +460,7 @@ i.fa-clock-o {
 }
 
 .comment-sidebar {
-    font-size: 11px !important;
+    font-size: 18px !important;
     position: relative;
     top: 0px;
     padding-left: 8px;
