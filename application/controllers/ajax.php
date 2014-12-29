@@ -546,6 +546,27 @@ class Ajax extends CI_Controller {
     }
 
 
+
+    /**
+     * Update user
+     */
+    function updateUser() {
+        $this->load->model('admin_model');
+        $user =  $this->input->post('id');
+        $role =  $this->input->post('role');
+        $result['user']= $this->admin_model->updateUser($user,$role);
+
+        if($this->admin_model->updateUser($user,$role)) {
+            $result['user'] = true;
+        }
+        else {
+            $result['user'] = false;
+        }
+        echo json_encode($result);
+    }
+
+
+
     /**
      * Send Comment
      */

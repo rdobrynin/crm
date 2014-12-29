@@ -15,7 +15,7 @@ if (!function_exists('show_role')) {
     else if($role == 4) {
       $result = lang('role_curator');
     }
-    else if($role == 3) {
+    else if($role == 1) {
         $result = lang('role_customer');
     }
     else if($role == 2) {

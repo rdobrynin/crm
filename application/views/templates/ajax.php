@@ -602,6 +602,41 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
 
   }
 
+
+
+
+  function updateUser($data){
+
+
+$('#update-user-modal').modal('show');
+
+
+
+      $('#update-user-send-btn').click(function () {
+          $role = $('#update-role-user-select').val();
+          var form_data_ = {
+              id: $data,
+              role: $role
+          };
+          $.ajax({
+              url: "<?php echo site_url('ajax/updateUser'); ?>",
+              type: 'POST',
+              data: form_data_,
+              dataType: 'json',
+              success: function (msg) {
+                if(msg['user'] ==true) {
+                    $('#update-user-notificate').fadeIn('slow').show();
+                    setTimeout(function () {
+                    $('#update-user-modal').modal('hide');
+                        $('#update-user-notificate').hide();
+                    },2000);
+                }
+
+              }
+          });
+      });
+  }
+
   /**
    * Ajax approve view task
    * @param $data

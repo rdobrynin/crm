@@ -769,6 +769,24 @@ class Admin_model extends CI_Model {
         return TRUE;
     }
 
+
+
+    /**
+     * Update user
+     * @param $id
+     * @return mixed
+     */
+
+    public function updateUser($id,$role) {
+        $data = array (
+            'role' => $role
+        );
+        $this->db->where('id', $id);
+        $update = $this->db->update('users', $data);
+        return $update;
+    }
+
+
 }
 
 

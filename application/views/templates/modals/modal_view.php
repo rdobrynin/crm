@@ -223,6 +223,47 @@
 </div> <!-- #/addproject_moda -->
 
 
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="update-user-modal" tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-content-inverse">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="close-time">×</span></button>
+                <h4 class="modal-title">
+                    <small>Update role</small>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <?php $attributes = array('class' => 'form-signin', 'id' => 'update-user-form', 'autocomplete' => 'on'); ?>
+                <?php echo form_open('#', $attributes); ?>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <select class="form-control selectpicker" id="update-role-user-select"  name="category" data-style="btn-info">
+                                <?php foreach ($roles as $rk => $rv): ?>
+                                    <option value="<?php print($rv['rid']); ?>"><?php print(ucfirst($rv['title'])); ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div style="display: none; margin-bottom: 10px;" id="update-user-notificate" class="label label-info label-signin col-md-12"><i class="fa fa-exclamation-circle"></i>&nbsp;You have successfully updated role</div>
+                <button type="button" class="btn btn-success pull-right" id="update-user-send-btn">Update</button>
+            </div>
+        </div>
+    </div>
+</div> <!-- #/myModal -->
+
+
+
+
 <script type="text/javascript">
 
     $(function () {
