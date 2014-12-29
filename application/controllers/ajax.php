@@ -503,7 +503,7 @@ class Ajax extends CI_Controller {
      * switch help block
      */
 
-    function  switchHelp() {
+    function switchHelp() {
         $result['id'] = $this->input->post('user_id');
         $result['help'] = $this->input->post('help_block');
         $this->load->model('dashboard_model');
@@ -522,7 +522,7 @@ class Ajax extends CI_Controller {
      * switch Dialog modal
      */
 
-    function  settingsDialog() {
+    function settingsDialog() {
         $result['id'] = $this->input->post('user_id');
         $result['introduce'] = $this->input->post('introduce');
         $this->load->model('dashboard_model');

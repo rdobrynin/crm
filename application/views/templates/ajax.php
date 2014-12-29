@@ -606,12 +606,7 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
 
 
   function updateUser($data){
-
-
 $('#update-user-modal').modal('show');
-
-
-
       $('#update-user-send-btn').click(function () {
           $role = $('#update-role-user-select').val();
           var form_data_ = {
@@ -636,6 +631,53 @@ $('#update-user-modal').modal('show');
           });
       });
   }
+
+/**
+ * TaskToReady
+ **/
+
+  function taskToReady($data){
+      $editor = '<?php print($user[0]['id'])?>';
+      var form_data = {
+          id: $data,
+          uid:$editor,
+          status: '5'
+      };
+      $.ajax({
+          url: "<?php echo site_url('ajax/updateTask'); ?>",
+          type: 'POST',
+          data: form_data,
+          dataType: 'json',
+          success: function (msg) {
+             console.log(msg);
+          }
+      });
+  }
+
+
+  /**
+   * Task to Process
+   **/
+
+  function taskToProcess($data){
+      $editor = '<?php print($user[0]['id'])?>';
+      var form_data = {
+          id: $data,
+          uid:$editor,
+          status: '2'
+      };
+      $.ajax({
+          url: "<?php echo site_url('ajax/updateTask'); ?>",
+          type: 'POST',
+          data: form_data,
+          dataType: 'json',
+          success: function (msg) {
+              console.log(msg);
+          }
+      });
+  }
+
+
 
   /**
    * Ajax approve view task
