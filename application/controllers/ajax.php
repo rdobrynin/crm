@@ -555,24 +555,33 @@ class Ajax extends CI_Controller {
         $this->load->model('admin_model');
         $result['to'] =  $this->input->post('to');
         $result['owner'] =  $this->input->post('uid');
-        $result['subject'] =  $this->input->post('subject');
+        $result['subject']=  $this->input->post('subject');
         $result['text'] =  $this->input->post('text');
         $result['result'] =  false;
         $result['empty'] =  false;
         $result['fullname'] =  $this->input->post('fullname');
        $fn =  $this->admin_model->getUsername($result['owner']);
 
-        if($this->input->post('search') == 'false') {
-
-            if($this->input->post('text') !='' AND $this->input->post('subject') !='') {
+        if ($this->input->post('search') == 'false') {
+            if ($this->input->post('text') != '' AND $this->input->post('subject') != '') {
                 $text = 'added comment';
-                $this->project_model->createEvent($result['owner'], $result['text'],  $text, $fn, $result['subject'], 2);
-                if($query = $this->message_model->sendComment()) {
-                    $result['result'] =  true;
+                $this->project_model->createEvent($result['owner'], $result['text'], $text, $fn, $result['subject'], 2);
+                if ($query = $this->message_model->sendComment()) {
+                    $result['result'] = true;
+                    $user_array = $this->admin_model->get_user_id($result['owner']);
+                    $user_to = $this->admin_model->get_user_id($result['to']);
+                    if ($user_array[0]['message'] == '1') {
+                        $this->load->library('email');
+                        $this->email->from($user_array[0]['email'], 'team');
+                        $this->email->to($user_to[0]['email']);
+                        $this->email->subject('New comment from Brilliant Task Management');
+                        $this->email->message("Hello, ".$user_to[0]['first_name']." ".$user_to[0]['last_name']."\n"."\n"."You have new comment"."\n"."\n". "From: ".$user_array[0]['first_name']." ".$user_array[0]['last_name']."\n"."\n". "Subject: ".$result['subject']."\n"."\n"."Comment: ".$result['text']);
+                        $this->email->send();
+                    }
                 }
             }
             else {
-                $result['empty'] =  true;
+                $result['empty'] = true;
             }
         }
         else {
@@ -887,22 +896,6 @@ class Ajax extends CI_Controller {
         }
         else {
             $result = false;
-        }
-        echo json_encode ($result);
-    }
-
-
-    function checkSession() {
-        session_start();
-        $name = $_SESSION["username"];
-        if($name == '')
-        {
-            //session expired
-            $result = 1;
-        } else {
-            $result = 2;
-            //session not expired
-
         }
         echo json_encode ($result);
     }

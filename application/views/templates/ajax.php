@@ -509,6 +509,7 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               data: form_data_,
               dataType: 'json',
               success: function (msg) {
+                  console.log(msg);
                  if(msg.empty == true) {
                   $('#qm-empty-error').fadeIn('slow').css('display','block');
                      setTimeout(function () {
