@@ -587,7 +587,7 @@ class Ajax extends CI_Controller {
             if ($this->input->post('text') != '' AND $this->input->post('subject') != '') {
                 $text = 'added comment';
                 $this->project_model->createEvent($result['owner'], $result['text'], $text, $fn, $result['subject'], 2);
-                if ($query = $this->message_model->sendComment()) {
+                if ($query = $this->message_model->sendComment($result['to'])) {
                     $result['result'] = true;
                     $user_array = $this->admin_model->get_user_id($result['owner']);
                     $user_to = $this->admin_model->get_user_id($result['to']);
@@ -606,21 +606,30 @@ class Ajax extends CI_Controller {
             }
         }
         else {
-            if($this->input->post('text') !='' OR $this->input->post('subject') !='') {
 
+            $fullname = $this->input->post('fullname');
+            $result['idUser'] = $this->admin_model->getUserByName($fullname);
+            if($this->input->post('text') !='' OR $this->input->post('subject') !='') {
                 $text = 'added comment';
                 $this->project_model->createEvent($result['owner'], $result['text'],  $text, $fn, $result['subject'], 2);
-
-                if($query = $this->message_model->sendComment()) {
+                if($query = $this->message_model->sendComment($result['idUser'])) {
                     $result['result'] =  true;
+                    $user_array = $this->admin_model->get_user_id($result['owner']);
+                    $user_to = $this->admin_model->get_user_id($result['idUser']);
+                    if ($user_array[0]['message'] == '1') {
+                        $this->load->library('email');
+                        $this->email->from($user_array[0]['email'], 'team');
+                        $this->email->to($user_to[0]['email']);
+                        $this->email->subject('New comment from Brilliant Task Management');
+                        $this->email->message("Hello, ".$user_to[0]['first_name']." ".$user_to[0]['last_name']."\n"."\n"."You have new comment"."\n"."\n". "From: ".$user_array[0]['first_name']." ".$user_array[0]['last_name']."\n"."\n". "Subject: ".$result['subject']."\n"."\n"."Comment: ".$result['text']);
+                        $this->email->send();
+                    }
                 }
             }
             else {
                 $result['empty'] =  true;
             }
         }
-
-
         echo json_encode($result);
     }
 

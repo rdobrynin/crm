@@ -531,7 +531,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               data: form_data_,
               dataType: 'json',
               success: function (msg) {
-                  console.log(msg);
                  if(msg.empty == true) {
                   $('#qm-empty-error').fadeIn('slow').css('display','block');
                      setTimeout(function () {
@@ -602,6 +601,7 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               data: form_data_,
               dataType: 'json',
               success: function (msg) {
+                  console.log(msg);
                   if(msg.empty == true) {
                       $('#qm-empty-error').fadeIn('slow').css('display','block');
                       setTimeout(function () {
@@ -625,10 +625,8 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
   }
 
 
-
-
-  function updateUser($data){
-$('#update-user-modal').modal('show');
+  function updateUser($data) {
+      $('#update-user-modal').modal('show');
       $('#update-user-send-btn').click(function () {
           $role = $('#update-role-user-select').val();
           var form_data_ = {
@@ -641,20 +639,20 @@ $('#update-user-modal').modal('show');
               data: form_data_,
               dataType: 'json',
               success: function (msg) {
-                if(msg['user'] ==true) {
-                    $('#update-user-notificate').fadeIn('slow').show();
-                    setTimeout(function () {
-                    $('#update-user-modal').modal('hide');
-                        $('#update-user-notificate').hide();
-                    },2000);
-                }
+                  if (msg['user'] == true) {
+                      $('#update-user-notificate').fadeIn('slow').show();
+                      setTimeout(function () {
+                          $('#update-user-modal').modal('hide');
+                          $('#update-user-notificate').hide();
+                      }, 2000);
+                  }
 
               }
           });
       });
   }
 
-/**
+  /**
  * TaskToReady
  **/
 

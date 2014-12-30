@@ -621,6 +621,40 @@ class Admin_model extends CI_Model {
 
 
     /**
+     * get username
+     * @param $id
+     * @return mixed
+     */
+
+
+    public function getUserByName($name) {
+
+        $name_array = explode( ' ', $name );
+        $fname = $name_array[0];
+        $lname = $name_array[1];
+
+
+
+        $query = $this->db
+            ->where('first_name', $fname)
+            ->where('last_name', $lname)
+            ->limit('1')
+            ->get('users');
+        if ($query->num_rows > 0) {
+            foreach ($query->result() as $row) {
+                return $row->id;
+            }
+        }
+        else {
+            return FALSE;
+        }
+        return TRUE;
+    }
+
+
+
+
+    /**
      * activate new joined user();
      * @param $username
      * @return mixed
