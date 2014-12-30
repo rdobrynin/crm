@@ -13,7 +13,7 @@
   <!-- Keep all page content within the page-content inset div! -->
   <div class="page-content inset">
     <div class="row-fluid">
-        <h3 class="h_title">   PRM Brilliant</h3>
+        <p class="lead">Clients</p>
 <!--      --><?php //if(!empty($client)):?>
         <table class="table">
         <thead>

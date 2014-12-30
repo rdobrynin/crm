@@ -2,7 +2,7 @@
     <div class="page-content inset">
         <div class="row">
             <div class="col-md-12">
-                <h3 class="h_title">Logs activity</h3>
+                <p class="lead">Logs activity</p>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">

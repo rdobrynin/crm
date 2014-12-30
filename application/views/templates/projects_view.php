@@ -2,7 +2,7 @@
 <div class="page-content-wrapper">
   <!-- Keep all page content within the page-content inset div! -->
   <div class="page-content inset">
-    <h3>Administer projects&nbsp;<span class="curr-project"></span></h3>
+      <p class="lead">Projects&nbsp;<span class="curr-project"></span></p>
       <div class="row-fluid">
           <?php if ($projects == false): ?>
               <p>no projects found</p>

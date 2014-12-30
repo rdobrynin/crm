@@ -5,7 +5,7 @@
     <!-- Keep all page content within the page-content inset div! -->
     <div class="page-content inset">
         <div class="row-fluid">
-            <h3 class="h_title">Administer users</h3>
+            <p class="lead">Administer users</p>
             <!--      tabs-->
             <ul class="nav nav-tabs filter" id="admin-users-tab">
                 <li class="active"><a href="#current-users" class="tabs-filter" data-toggle="tab" title="Current users">

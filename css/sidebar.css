@@ -11,7 +11,7 @@
   height: 100%;
   z-index: 1000;
     overflow: hidden;
-    background: url('../img/mesh.png');
+    /*background: url('../img/mesh.png');*/
     background-position: 0 -30px;
 
 

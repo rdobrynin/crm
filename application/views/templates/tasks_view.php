@@ -2,7 +2,7 @@
 <div class="page-content-wrapper">
   <!-- Keep all page content within the page-content inset div! -->
     <div class="page-content inset">
-        <h3 class="h_title">Tasks in process</h3>
+        <p class="lead">Tasks in process</p>
         <?php if ($tasks != FALSE): ?>
             <div class="row-fluid">
                 <div class="panel">
@@ -67,7 +67,7 @@
         <!--                end last tasks-->
     </div>
   <div class="page-content inset">
-    <h3 class="h_title">Tasks&nbsp;(<span id="calc-all-tasks" ></span>)</h3>
+      <div class="lead">Tasks&nbsp;(<span id="calc-all-tasks" ></span>)</div>
       <?php if ($tasks != FALSE): ?>
           <div class="row-fluid">
               <div class="panel">
@@ -141,7 +141,7 @@
 
 <div class="page-content-wrapper">
 <div class="page-content inset">
-    <h3 class="h_title">Completed tasks</h3>
+    <p class="lead">Completed tasks</p>
     <?php if ($tasks != FALSE): ?>
         <div class="row-fluid">
             <div class="panel">

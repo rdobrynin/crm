@@ -1,10 +1,8 @@
 <!-- Page content -->
 <div class="page-content-wrapper">
-
   <!-- Keep all page content within the page-content inset div! -->
   <div class="page-content inset">
-      <h3 class="h_title">Comments&nbsp;(<span id="calc-all-comments" ></span>) </h3>
-
+      <p class="lead">Comments&nbsp;(<span id="calc-all-comments" ></span>)</p>
     <div class="row-fluid">
         <?php if ($comments != FALSE): ?>
             <div class="row-fluid">

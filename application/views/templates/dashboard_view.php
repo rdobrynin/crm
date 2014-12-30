@@ -3,7 +3,7 @@
     <div class="page-content inset">
         <div class="row">
             <div class="col-md-9">
-                <h3 class="h_title">Current activity</h3>
+                <p class="lead">Current activity</p>
                 <div class="row">
                     <div class="col-md-6 col-vlg-3 col-sm-6">
                         <div class="tiles green m-b-10">
@@ -64,8 +64,7 @@
 <!--                overdue tasks-->
 
                     <div class="row-fluid" style="padding-top: 20px;">
-
-                        <h3 class="h_title">Overdue tasks&nbsp;(<span id="calc-over-tasks" ><?php if ($over_tasks != false): ?><?php print(count($over_tasks)); ?><?php else:?>0<?php endif ?></span>)</h3>
+                        <p class="lead">Overdue tasks&nbsp;(<span id="calc-over-tasks" ><?php if ($over_tasks != false): ?><?php print(count($over_tasks)); ?><?php else:?>0<?php endif ?></span>)</p>
                         <?php if ($over_tasks != false): ?>
                         <div class="panel">
                             <div class="panel-body-table">
@@ -136,7 +135,7 @@
                 <div class="row-fluid" style="padding-top: 20px;">
                 <?php if ($tasks != FALSE): ?>
                         <?php if ($user[0]['role']==5 OR $user[0]['role']==4 OR $user[0]['role']==3): ?>
-                        <h3 class="h_title">Tasks for approve&nbsp;(<span id="calc-appr-tasks" ><?php if ($approve_tasks != false): ?><?php print(count($approve_tasks)); ?><?php else:?>0<?php endif ?></span>)</h3>
+                        <p class="lead">Tasks for approve&nbsp;(<span id="calc-appr-tasks" ><?php if ($approve_tasks != false): ?><?php print(count($approve_tasks)); ?><?php else:?>0<?php endif ?></span>)</p>
                         <?php endif ?>
 
                         <?php if ($user[0]['role']==2 ): ?>
@@ -282,7 +281,7 @@
             </div>
         <?php if ($comments !=false): ?>
             <div class="col-md-3">
-                <h3 class="h_title">Activity Stream</h3>
+                <p class="lead">Activity Stream</p>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">Last 7 comments</h3>

@@ -62,9 +62,9 @@
           <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i> <span style="text-transform: capitalize;"><?php print(show_lang($current_language));?></span>
               <b class="caret"></b></a>
           <ul class="dropdown-menu dropdown-user">
-              <li><a href='langswitch/switchLanguage/estonian'>&nbsp;Eesti</a></li>
-              <li><a href='langswitch/switchLanguage/english'>&nbsp;English</a></li>
-              <li><a href='langswitch/switchLanguage/russian'>&nbsp;Русский</a></li>
+              <li><a href='<?php print(base_url());?>langswitch/switchLanguage/estonian'>&nbsp;Eesti</a></li>
+              <li><a href='<?php print(base_url());?>langswitch/switchLanguage/english'>&nbsp;English</a></li>
+              <li><a href='<?php print(base_url());?>langswitch/switchLanguage/russian'>&nbsp;Русский</a></li>
           </ul>
       </li>
     <li class="dropdown user-dropdown">
