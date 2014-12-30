@@ -122,9 +122,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <ul class="pagination pagination-lg pager" id="pager_over_tasks"></ul>
-                        </div>
+<!--                        <div class="text-center">-->
+<!--                            <ul class="pagination pagination-lg pager" id="pager_over_tasks"></ul>-->
+<!--                        </div>-->
 
                     </div>
                     <?php else: ?>

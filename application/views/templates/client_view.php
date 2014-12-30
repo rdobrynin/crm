@@ -19,9 +19,9 @@
         <thead>
         <tr>
           <th style="width: 15%;">Title</th>
-          <th style="width: 25%;">description</th>
+          <th style="width: 15%;">description</th>
           <th style="width: 10%;">Email</th>
-          <th style="width: 5%;">URL</th>
+          <th style="width: 10%;">URL</th>
           <th style="width: 8%;">Phone</th>
           <th style="width: 7%;">Address</th>
           <th style="width: 5%;">Index</th>
@@ -37,7 +37,7 @@
         <?php foreach ($client as $ck => $cv): ?>
           <tr id="<?php print($cv['cid']);?>">
             <td><?php print($cv['title']);?></td>
-            <td><?php print(substr($cv['description'], 1,180)).' '.'...';?></td>
+            <td><?php print(substr($cv['description'], 0,40)).' '.'...';?></td>
             <td><a href="mailto:<?php print($cv['email']);?>"><?php print($cv['email']);?></a></td>
             <td><a href="<?php print($cv['url']);?>"><?php print($cv['url']);?></a></td>
             <td><?php print($cv['phone']);?></td>

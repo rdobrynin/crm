@@ -63,11 +63,14 @@
             <div class="col-md-12 text-center">
                 <ul class="pagination pagination-lg pager" id="pager_all_tasks"></ul>
             </div>
+
         <?php endif ?>
         <!--                end last tasks-->
     </div>
+</div>
+<div class="page-content-wrapper">
   <div class="page-content inset">
-      <div class="lead">Tasks&nbsp;(<span id="calc-all-tasks" ></span>)</div>
+      <p class="lead">Tasks&nbsp;(<span id="calc-all-tasks" ></span>)</p>
       <?php if ($tasks != FALSE): ?>
           <div class="row-fluid">
               <div class="panel">

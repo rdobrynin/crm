@@ -68,7 +68,7 @@
           </ul>
       </li>
     <li class="dropdown user-dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown"><span class="icon-user"></span>
+      <a class="dropdown-toggle" data-toggle="dropdown"><span class="icon-user"></span>&nbsp;
         <?php print($user[0]['first_name'].' '. lastname_letter($user[0]['last_name']))?>
         <b class="caret"></b></a>
       <ul class="dropdown-menu dropdown-user">
