@@ -291,6 +291,7 @@
                         <?php $rev_comm = array_reverse($comments);?>
                         <?php foreach (array_slice($rev_comm, 0, 7) as $ck=>$cv): ?>
                             <?php if ($cv['public'] == 0): ?>
+                        <?php if ($cv['to'] == $user[0]['id'] OR $cv['uid'] == $user[0]['id']): ?>
                         <div class="sub-activity">
                             <div class="activity-item-summary">
                                 <div class="avatar-activity">
@@ -312,7 +313,7 @@
                                 </div>
                             </div>
                         </div>
-
+                                <?php endif ?>
                             <?php endif ?>
                         <?php endforeach ?>
                     </div>
