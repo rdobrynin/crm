@@ -29,10 +29,10 @@
   <div class="show-info-online"><div class="show-info-content-online"></div></div>
 
   <ul class="nav navbar-nav navbar-right navbar-user">
-      <li id="li-comments"> <a href="#" onClick="SendComment(<?php print($user[0]['id'])?>)" ><i class="fa fa-comment"></i></a></li>
-      <li id="float-users"> <a href="#"><i class="fa fa-users"></i></a></li>
+      <li id="li-comments"> <a href="#" onClick="SendComment(<?php print($user[0]['id'])?>)" ><span class="icon-comment"></a></li>
+      <li id="float-users"> <a href="#"><span class="icon-users"></span></a></li>
       <li class="dropdown user-dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle"></i><b class="caret"></b></a>
+          <a class="dropdown-toggle" data-toggle="dropdown"><span class="icon-book"></span></a>
           <ul class="dropdown-menu dropdown-user">
               <li> <a href="#">Agile Ansewrs</a></li>
               <li> <a href="#">Online Help</a></li>
@@ -40,7 +40,7 @@
           </ul>
       </li>
       <li class="dropdown user-dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-plus"></i><b class="caret"></b></span></a>
+          <a class="dropdown-toggle" data-toggle="dropdown"><span class="icon-add"></span></a>
           <ul class="dropdown-menu dropdown-user">
               <?php if ($client == FALSE): ?>
                   <?php if ($user[0]['role'] ==5 OR $user[0]['role']==4): ?>
@@ -68,16 +68,16 @@
           </ul>
       </li>
     <li class="dropdown user-dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
+      <a class="dropdown-toggle" data-toggle="dropdown"><span class="icon-user"></span>
         <?php print($user[0]['first_name'].' '. lastname_letter($user[0]['last_name']))?>
         <b class="caret"></b></a>
       <ul class="dropdown-menu dropdown-user">
-        <li><a href="<?php print(base_url());?>profile"><i class="fa fa-user"></i><?php print(lang('menu_profile'))?></a></li>
-        <li><a href="<?php print(base_url());?>comments"><i class="fa fa-comment"></i><?php print(lang('mess_inbox'))?> <?php if ($comments != false): ?><span class="badge badge-resp" id="badge-count-comments-top"><?php print(count($comments));?></span> <?php else:?><span class="badge badge-resp" id="badge-count-tasks">0</span> <?php endif ?></a></li>
+        <li><a href="<?php print(base_url());?>profile"><?php print(lang('menu_profile'))?></a></li>
 
-        <li><a data-toggle="modal" href="#settings"><i class="fa fa-gear"></i><?php print(lang('menu_settings'))?></a></li>
+
+        <li><a data-toggle="modal" href="#settings"><?php print(lang('menu_settings'))?></a></li>
         <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
-          <li><a href="<?php print(base_url());?>users"><i class="fa fa-users"></i><?php print(lang('menu_admin_users'))?></a></li>
+          <li><a href="<?php print(base_url());?>users"><?php print(lang('menu_admin_users'))?></a></li>
         <? endif?>
         <li class="divider"></li>
         <li id="logout"><a href="<?php print(base_url());?>logout"><i class="fa fa-power-off"></i><?php print(lang('menu_logout'))?></a></li>

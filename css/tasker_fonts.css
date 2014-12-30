@@ -1,0 +1,319 @@
+@font-face {
+    font-family: 'icomoon';
+    src:url('../fonts/icomoon.eot?-qjxe5b');
+    src:url('../fonts/icomoon.eot?#iefix-qjxe5b') format('embedded-opentype'),
+    url('../fonts/icomoon.woff?-qjxe5b') format('woff'),
+    url('../fonts/icomoon.ttf?-qjxe5b') format('truetype'),
+    url('../fonts/icomoon.svg?-qjxe5b#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-rightarrow:before {
+    content: "\e600";
+}
+
+.icon-users:before {
+    content: "\e601";
+}
+
+.icon-removeround:before {
+    content: "\e602";
+}
+
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-eye:before {
+    content: "\e605";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-play:before {
+    content: "\e606";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-client:before {
+    content: "\e607";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-user:before {
+    content: "\e608";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-projects:before {
+    content: "\e609";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-book:before {
+    content: "\e60a";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-tasks:before {
+    content: "\e60b";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-scheme:before {
+    content: "\e60c";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-reminder:before {
+    content: "\e60d";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-report:before {
+    content: "\e60e";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-uparrow:before {
+    content: "\e60f";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-leftarrow:before {
+    content: "\e610";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-remove:before {
+    content: "\e611";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-downarrow:before {
+    content: "\e612";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-add:before {
+    content: "\e613";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-document:before {
+    content: "\e614";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-comment:before {
+    content: "\e615";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-comments:before {
+    content: "\e616";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-pause:before {
+    content: "\e617";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-stop:before {
+    content: "\e618";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon-menu:before {
+    content: "\e619";
+}
+.icon-eyeremove .path1:before {
+    content: "\e603";
+    color: rgba(0, 0, 3, 1);
+}
+.icon-eyeremove .path2:before {
+    content: "\e604";
+    margin-left: -1em;
+    color: rgba(0, 0, 0, 1);
+}

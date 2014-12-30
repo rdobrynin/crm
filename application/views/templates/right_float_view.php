@@ -13,6 +13,6 @@
             <div class="sidebar-position"><a href="mailto:<?php print($uv['email']); ?>"><?php print($uv['email']); ?></a></div>
             <div class="sidebar-position phone"><?php print($uv['phone']); ?>&nbsp;<span class="label label-xs label-primary sms sms-send-alert">sms</span>&nbsp;<a href="#" class="pull-right" onClick="qmSendComment(<?php print($uv['id']); ?>)"><i class="fa fa-comment comment-sidebar" id="comm-<?php print($uv['id']); ?>"></i></a></div>
         </div>
-        <div class="close-right-sidebar"><a href="#"><i class="fa fa-times"></i></a></div>
+        <div class="close-right-sidebar"><a href="#"><span class="icon-remove"></span></a></div>
     <?php endforeach ?>
 </div>

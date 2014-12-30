@@ -1,5 +1,5 @@
 <div class="qm-body">
-    <div class="qm-header"><span>New Comment</span><span class="pull-right close-qm"><i class="fa fa-times"></i></span></div>
+    <div class="qm-header"><span>New Comment</span><span class="pull-right close-qm"><span class="icon-remove"></span></span></div>
     <div class="quick-message">
         <?php $attributes = array('class' => 'quick-message-form form-horizontal', 'id' => 'qm-form'); ?>
         <?php echo form_open('#', $attributes); ?>

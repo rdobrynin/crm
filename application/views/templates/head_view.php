@@ -36,6 +36,7 @@
     <link href="<?php print(base_url()); ?>css/modal.css" rel="stylesheet">
     <link href="<?php print(base_url()); ?>css/btn.css" rel="stylesheet">
     <link href="<?php print(base_url()); ?>css/logs.css" rel="stylesheet">
+    <link href="<?php print(base_url()); ?>css/tasker_fonts.css" rel="stylesheet">
 
     <script src="assets/js/jquery-1.11.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>

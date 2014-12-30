@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content modal-content-inverse">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="close-time">×</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon-remove"></span></button>
                 <h4 class="modal-title">
                     <small>Contact person invitaion</small>
                 </h4>

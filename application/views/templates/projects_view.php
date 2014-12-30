@@ -38,9 +38,6 @@
                         <td><p><a href="#" id="edit-project-table"><i class="fa fa-pencil"></i></a></p></td>
                         <td><p><a href="#" id="delete-project-table"><i class="fa fa-times"></i></a></td>
                     </tr>
-
-
-
                     <!--TASK-->
                     <tr>
                         <td colspan="9" class="td-task" id="task-for-project">
@@ -83,7 +80,7 @@
                                                 <a href="#" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
                                                 <a href="#" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
                                                 <a href="#" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
-                                                <a href="#" style="text-decoration: none;"><i class="fa fa-times"></i></a>
+                                                <a href="#" style="text-decoration: none;"><span class="icon-remove"></span></a>
                                             </td>
                                         <?php endif ?>
                                     </tr>
