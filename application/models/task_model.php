@@ -78,6 +78,22 @@ class Task_model extends CI_Model {
     }
 
 
+
+    /**
+     * get curators by role of curator or master();
+     * @return mixed
+     */
+
+    public function get_curators() {
+        $query = $this
+            ->db
+           ->where("(role = '5' OR role = '4')")
+            ->get('users');
+        return $query->result_array();
+    }
+
+
+
     /**
      * Create task
      * @return mixed

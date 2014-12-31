@@ -555,6 +555,7 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
    **/
 
   function taskToEdit($data){
+      console.log($data);
       $('#edit-task-modal').show();
       $('#edittask_pr_btn').click(function () {
           $user = '<?php print($user[0]['id'])?>';
@@ -570,6 +571,10 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                   console.log(msg);
               }
           });
+      });
+
+      $('#close-edit-task-modal,#close-button-edit-task-modal').click(function () {
+          $('#edit-task-modal').hide();
       });
   }
 

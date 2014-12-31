@@ -212,7 +212,7 @@
         <?php echo form_open('#', $attributes); ?>
         <div class="modal-content modal-content-inverse">
             <div class="modal-header">
-                <a data-dismiss="modal" aria-hidden="true"><span class="icon-remove"></span></a>
+                <a data-dismiss="modal" id="close-edit-task-modal" aria-hidden="true"><span class="icon-remove"></span></a>
                 <h4 class="modal-title">
                     <small>Update task</small>
                 </h4>
@@ -264,11 +264,20 @@
                             </select>
                         </div>
                     </div>
-
+                    <div class="col-xs-12 col-md-12">
+                        <div class="form-group">
+                            <label for="edit_implementor_choose_modal">Reassign curator: </label>
+                            <select class="form-control selectpicker" id="edit_implementor_choose_modal" name="edit_implementor_choose_modal">
+                                <?php foreach ($curators as $k => $v): ?>
+                                    <option value="<?php echo $v['id'] ?>"><?php echo $v['first_name'] . ' ' . $v['last_name'] ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    </div>
 
                     <div class="col-xs-12 col-md-12">
                         <div class="form-group">
-                            <label for="edit_implementor_choose_modal">Choose implementor: </label>
+                            <label for="edit_implementor_choose_modal">Assign implementor: </label>
                                 <select class="form-control selectpicker" id="edit_implementor_choose_modal" name="edit_implementor_choose_modal">
                                     <?php foreach ($imps as $k => $v): ?>
                                         <option value="<?php echo $v['id'] ?>"><?php echo $v['first_name'] . ' ' . $v['last_name'] ?></option>
@@ -285,7 +294,7 @@
                     <input type="hidden" name="user_edit_task_pr_id" id="user_edit_task_pr_id" value="<?php print($user[0]['id'])?>">
                     <div style="display: none; margin-bottom: 10px;" id="check_empty_edit_task_pr" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;Fields must be not empty</div>
                     <button type="button" class="btn btn-success <?php if ($imps == false): ?>disabled<?php endif ?>" id="edittask_pr_btn">Update the task</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" id="close-button-edit-task-modal" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

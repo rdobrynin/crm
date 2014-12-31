@@ -68,20 +68,21 @@
     </div>
 </div> <!-- #/addproject_moda -->
 <script type="text/javascript">
-    $(function () {
-        introduce = <?php print json_encode($introduce);?>;
-        if(typeof(Storage) !== "undefined") {
+    introduce = <?php print json_encode($introduce);?>;
+    if(typeof(Storage) !== "undefined") {
         var check = localStorage.getItem('dialog');
-        }
-        if(check == 1 && introduce != 1) {
-            $('#introduce_modal').removeClass('show');
-        }
+    }
+    if(check == 1 && introduce != 1) {
+        $('#introduce_modal').removeClass('show');
+    }
 
-        if(introduce == 1) {
-            if(typeof(Storage) !== "undefined") {
+    if(introduce == 1) {
+        if(typeof(Storage) !== "undefined") {
             localStorage.setItem("dialog", "0");
-            }
         }
+    }
+
+    $(function () {
 
 
         $('#close-introduce').click(function () {

@@ -80,6 +80,16 @@ class Dashboard extends CI_Controller {
             $data['imps']=false;
         }
 
+        $curators = $this->task_model->get_curators();
+
+        if($curators) {
+            $data['curators']= $curators;
+        }
+        else {
+            $data['curators']=false;
+        }
+
+
         $task_array = $this->task_model->countTasks();
         if($task_array) {
             $data['tasks']= $task_array;
