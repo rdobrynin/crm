@@ -5,7 +5,7 @@
       <p class="lead">Projects&nbsp;<span class="curr-project"></span></p>
       <div class="row-fluid">
           <?php if ($projects == false): ?>
-              <p>no projects found</p>
+              <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one projects found</div></div>
             <?php else: ?>
               <div class="panel panel-primary filterable">
                   <div class="panel-heading">
@@ -78,8 +78,10 @@
                                         <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
                                             <td>
                                                 <?php if ($tv['status']!=3): ?>
+                                                    <?php if($user[0]['role']==2):?>
                                                     <a href="#" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
                                                     <a href="#" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
+                                                    <?php endif ?>
                                                 <?php endif ?>
                                                 <a href="#" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                                 <?php if ($tv['status']!=2 && $tv['status']!=3): ?>
