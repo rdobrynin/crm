@@ -735,6 +735,17 @@ class Ajax extends CI_Controller {
         echo json_encode ($result);
     }
 
+    /**
+     * task to edit
+     */
+
+
+    function taskToEdit() {
+        $id=$this->input->post('id');
+        $this->load->model('task_model');
+        $result['result'] = $this->task_model->getTask($id);
+        echo json_encode ($result);
+    }
 
 
     /**

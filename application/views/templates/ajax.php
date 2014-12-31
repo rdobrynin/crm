@@ -555,9 +555,7 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
    **/
 
   function taskToEdit($data){
-      console.log($data);
       $('#edit-task-modal').show();
-      $('#edittask_pr_btn').click(function () {
           $user = '<?php print($user[0]['id'])?>';
           var form_data = {
               id: $data
@@ -568,10 +566,24 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               data: form_data,
               dataType: 'json',
               success: function (msg) {
-                  console.log(msg);
+                  console.log(msg.result['due_time'][0]);
+                  var year = msg.result['due_time'][0]+msg.result['due_time'][1]+msg.result['due_time'][2]+msg.result['due_time'][3];
+                  var month = msg.result['due_time'][5]+msg.result['due_time'][6];
+                  var day = msg.result['due_time'][8]+msg.result['due_time'][9];
+                  var hour = msg.result['due_time'][11]+msg.result['due_time'][12];
+                  var min = msg.result['due_time'][14]+msg.result['due_time'][15];
+                  var date = day + '.'+month +'.'+year+'-'+hour+':'+min;
+                  $('#edit_task_pr_title').val(msg.result['title']);
+                  $('#edit_task_pr_desc').val(msg.result['desc']);
+                  $('#edit_dueto_modal').val(msg.result['due_time']);
+                  $('#edit_dueto_modal').datetimepicker({
+                      theme: 'dark',
+                      value:date,
+                      format:'d.m.Y-H:i'
+                  });
               }
           });
-      });
+
 
       $('#close-edit-task-modal,#close-button-edit-task-modal').click(function () {
           $('#edit-task-modal').hide();
