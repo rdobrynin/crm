@@ -129,6 +129,7 @@ class Task_model extends CI_Model {
             'due_time' =>$this->input->post('dueto'),
             'label' =>$this->input->post('label'),
             'priority' =>$this->input->post('priority'),
+            'date_edited' =>time(),
 
         );
         $this->db->where('id', $id);

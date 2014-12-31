@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8ede6c0-9a43-4a54-ac19-d55c4b9604aa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ajax.php" afterPath="$PROJECT_DIR$/application/controllers/ajax.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/ajax.php" afterPath="$PROJECT_DIR$/application/views/templates/ajax.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/interval.php" afterPath="$PROJECT_DIR$/application/views/templates/interval.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/logs_view.php" afterPath="$PROJECT_DIR$/application/views/templates/logs_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/task_model.php" afterPath="$PROJECT_DIR$/application/models/task_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,13 +53,13 @@
       <file leaf-file-name="interval.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/templates/interval.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="154" column="9" selection-start="9065" selection-end="9065" vertical-scroll-proportion="1.4077164" vertical-offset="1422" max-vertical-offset="3713">
+            <state line="105" column="59" selection-start="6866" selection-end="6866" vertical-scroll-proportion="0.5578069" vertical-offset="1422" max-vertical-offset="3593">
               <folding>
-                <marker date="1420019716227" expanded="true" signature="1352:1366" placeholder="..." />
-                <marker date="1420019716227" expanded="true" signature="2717:2731" placeholder="..." />
-                <marker date="1420019716227" expanded="true" signature="4592:4606" placeholder="..." />
-                <marker date="1420019716227" expanded="true" signature="5932:5972" placeholder="..." />
-                <marker date="1420019716227" expanded="true" signature="7305:7345" placeholder="..." />
+                <marker date="1420020328507" expanded="true" signature="1352:1366" placeholder="..." />
+                <marker date="1420020328507" expanded="true" signature="2717:2731" placeholder="..." />
+                <marker date="1420020328507" expanded="true" signature="4592:4606" placeholder="..." />
+                <marker date="1420020328507" expanded="true" signature="5932:5972" placeholder="..." />
+                <marker date="1420020328507" expanded="true" signature="7306:7346" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -67,8 +68,20 @@
       <file leaf-file-name="task_model.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/task_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="178" column="20" selection-start="3853" selection-end="3853" vertical-scroll-proportion="-5.6363635" vertical-offset="2894" max-vertical-offset="8437">
+            <state line="122" column="23" selection-start="2590" selection-end="2590" vertical-scroll-proportion="-7.927273" vertical-offset="1760" max-vertical-offset="8335">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logs_view.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/templates/logs_view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="42" selection-start="4176" selection-end="4176" vertical-scroll-proportion="-20.88889" vertical-offset="92" max-vertical-offset="1815">
+              <folding>
+                <element signature="n#style#0;n#i#1;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#3;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,15 +99,6 @@
         <entry file="file://$PROJECT_DIR$/application/models/project_model.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="40" column="10" selection-start="850" selection-end="850" vertical-scroll-proportion="-12.814815" vertical-offset="374" max-vertical-offset="4001">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tasks_view.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/templates/tasks_view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="167" column="59" selection-start="13239" selection-end="13239" vertical-scroll-proportion="736.6667" vertical-offset="22896" max-vertical-offset="35602">
               <folding />
             </state>
           </provider>
@@ -173,7 +177,6 @@
         <option value="$PROJECT_DIR$/css/tasker_fonts.css" />
         <option value="$PROJECT_DIR$/application/views/templates/quick_message.php" />
         <option value="$PROJECT_DIR$/application/config/config.php" />
-        <option value="$PROJECT_DIR$/application/views/templates/logs_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/users_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/comments_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/client_view.php" />
@@ -192,9 +195,10 @@
         <option value="$PROJECT_DIR$/application/views/templates/projects_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/tasks_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/modals/modal_view.php" />
-        <option value="$PROJECT_DIR$/application/models/task_model.php" />
         <option value="$PROJECT_DIR$/application/views/templates/ajax.php" />
         <option value="$PROJECT_DIR$/application/controllers/ajax.php" />
+        <option value="$PROJECT_DIR$/application/models/task_model.php" />
+        <option value="$PROJECT_DIR$/application/views/templates/logs_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/interval.php" />
       </list>
     </option>
@@ -637,8 +641,8 @@
     <layout>
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.326284" sideWeight="0.49979797" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32426304" sideWeight="0.49979797" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23356009" sideWeight="0.49979797" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32426304" sideWeight="0.49979797" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23356009" sideWeight="0.49979797" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.008484849" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -648,7 +652,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955405" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969697" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Jenkins" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16282828" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -814,11 +818,6 @@
     <entry file="file://$PROJECT_DIR$/application/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="263" column="65" selection-start="9230" selection-end="9230" vertical-scroll-proportion="-26.0" vertical-offset="4032" max-vertical-offset="7426" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/logs_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="426" selection-start="3431" selection-end="3431" vertical-scroll-proportion="-22.0" vertical-offset="0" max-vertical-offset="1936" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/users_view.php">
@@ -1002,13 +1001,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/task_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="20" selection-start="3853" selection-end="3853" vertical-scroll-proportion="-5.6363635" vertical-offset="2894" max-vertical-offset="8437">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/ajax.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="615" column="31" selection-start="22541" selection-end="22541" vertical-scroll-proportion="-198.40741" vertical-offset="5713" max-vertical-offset="17519">
@@ -1027,15 +1019,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/task_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="23" selection-start="2590" selection-end="2590" vertical-scroll-proportion="-7.927273" vertical-offset="1760" max-vertical-offset="8335">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/templates/logs_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="42" selection-start="4176" selection-end="4176" vertical-scroll-proportion="-20.88889" vertical-offset="92" max-vertical-offset="1815">
+          <folding>
+            <element signature="n#style#0;n#i#1;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#3;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/interval.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="154" column="9" selection-start="9065" selection-end="9065" vertical-scroll-proportion="1.4077164" vertical-offset="1422" max-vertical-offset="3713">
+        <state line="105" column="59" selection-start="6866" selection-end="6866" vertical-scroll-proportion="0.5578069" vertical-offset="1422" max-vertical-offset="3593">
           <folding>
-            <marker date="1420019716227" expanded="true" signature="1352:1366" placeholder="..." />
-            <marker date="1420019716227" expanded="true" signature="2717:2731" placeholder="..." />
-            <marker date="1420019716227" expanded="true" signature="4592:4606" placeholder="..." />
-            <marker date="1420019716227" expanded="true" signature="5932:5972" placeholder="..." />
-            <marker date="1420019716227" expanded="true" signature="7305:7345" placeholder="..." />
+            <marker date="1420020328507" expanded="true" signature="1352:1366" placeholder="..." />
+            <marker date="1420020328507" expanded="true" signature="2717:2731" placeholder="..." />
+            <marker date="1420020328507" expanded="true" signature="4592:4606" placeholder="..." />
+            <marker date="1420020328507" expanded="true" signature="5932:5972" placeholder="..." />
+            <marker date="1420020328507" expanded="true" signature="7306:7346" placeholder="..." />
           </folding>
         </state>
       </provider>
