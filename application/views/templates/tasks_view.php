@@ -120,7 +120,7 @@
                                               <a href="#" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
                                               <?php if ($tv['status']!=3): ?>
                                                   <?php if($user[0]['role']==2):?>
-                                              <a href="#" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
+                                                      <a href="#" onClick="taskToEdit(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
                                                   <?php endif ?>
                                               <?php endif ?>
                                               <a href="#" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
@@ -129,7 +129,6 @@
                                           <?php endif ?>
                                           </td>
                                       <?php endif ?>
-
                                   </tr>
                                   <?php endif ?>
                               <?php endforeach ?>
