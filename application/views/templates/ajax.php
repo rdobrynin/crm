@@ -610,8 +610,25 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                               }
                               if(msg.result == true) {
                                   $('#edit_task_pr_modal').css('display','block');
+                                  $({blurRadius: 0}).animate({blurRadius: 1}, {
+                                      duration: 500,
+                                      easing: 'swing', // or "linear"
+                                      // use jQuery UI or Easing plugin for more options
+                                      step: function() {
+                                          console.log(this.blurRadius);
+                                          $('#tr-dashboard-task-'+$data).css({
+                                              "-webkit-filter": "blur("+this.blurRadius+"px)",
+                                              "filter": "blur("+this.blurRadius+"px)"
+                                          });
+                                      }
+                                  });
                                   setTimeout(function() {
+                                      blurRadius = 0;
                                       $('#edit-task-modal').hide();
+                                      $('#tr-dashboard-task-'+$data).css({
+                                          "-webkit-filter": "blur("+this.blurRadius+"px)",
+                                          "filter": "blur("+this.blurRadius+"px)"
+                                      });
                                   }, 2000);
                               }
                               else {

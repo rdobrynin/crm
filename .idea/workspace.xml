@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8ede6c0-9a43-4a54-ac19-d55c4b9604aa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/interval.php" afterPath="$PROJECT_DIR$/application/views/templates/interval.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/logs_view.php" afterPath="$PROJECT_DIR$/application/views/templates/logs_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/task_model.php" afterPath="$PROJECT_DIR$/application/models/task_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/ajax.php" afterPath="$PROJECT_DIR$/application/views/templates/ajax.php" />
     </list>
     <ignored path="crm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,14 +25,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ajax.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ajax.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/templates/ajax.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="615" column="31" selection-start="22541" selection-end="22541" vertical-scroll-proportion="-198.40741" vertical-offset="5713" max-vertical-offset="17519">
+            <state line="617" column="71" selection-start="22760" selection-end="22760" vertical-scroll-proportion="0.613826" vertical-offset="10591" max-vertical-offset="17705">
               <folding>
-                <marker date="1420019296971" expanded="true" signature="28858:28868" placeholder="..." />
-                <marker date="1420019296971" expanded="true" signature="29566:29582" placeholder="..." />
-                <marker date="1420019296971" expanded="true" signature="29655:29671" placeholder="..." />
+                <marker date="1420020953171" expanded="true" signature="30007:30017" placeholder="..." />
+                <marker date="1420020953171" expanded="true" signature="30715:30731" placeholder="..." />
+                <marker date="1420020953171" expanded="true" signature="30804:30820" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -50,10 +47,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="interval.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="interval.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/templates/interval.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="59" selection-start="6866" selection-end="6866" vertical-scroll-proportion="0.5578069" vertical-offset="1422" max-vertical-offset="3593">
+            <state line="87" column="146" selection-start="5986" selection-end="5986" vertical-scroll-proportion="-23.333334" vertical-offset="936" max-vertical-offset="3593">
               <folding>
                 <marker date="1420020328507" expanded="true" signature="1352:1366" placeholder="..." />
                 <marker date="1420020328507" expanded="true" signature="2717:2731" placeholder="..." />
@@ -195,11 +192,11 @@
         <option value="$PROJECT_DIR$/application/views/templates/projects_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/tasks_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/modals/modal_view.php" />
-        <option value="$PROJECT_DIR$/application/views/templates/ajax.php" />
         <option value="$PROJECT_DIR$/application/controllers/ajax.php" />
         <option value="$PROJECT_DIR$/application/models/task_model.php" />
         <option value="$PROJECT_DIR$/application/views/templates/logs_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/interval.php" />
+        <option value="$PROJECT_DIR$/application/views/templates/ajax.php" />
       </list>
     </option>
   </component>
@@ -1001,17 +998,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/ajax.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="615" column="31" selection-start="22541" selection-end="22541" vertical-scroll-proportion="-198.40741" vertical-offset="5713" max-vertical-offset="17519">
-          <folding>
-            <marker date="1420019296971" expanded="true" signature="28858:28868" placeholder="..." />
-            <marker date="1420019296971" expanded="true" signature="29566:29582" placeholder="..." />
-            <marker date="1420019296971" expanded="true" signature="29655:29671" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/ajax.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="518" column="36" selection-start="17623" selection-end="17623" vertical-scroll-proportion="-8.418181" vertical-offset="8861" max-vertical-offset="20155">
@@ -1038,13 +1024,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/interval.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="59" selection-start="6866" selection-end="6866" vertical-scroll-proportion="0.5578069" vertical-offset="1422" max-vertical-offset="3593">
+        <state line="87" column="146" selection-start="5986" selection-end="5986" vertical-scroll-proportion="-23.333334" vertical-offset="936" max-vertical-offset="3593">
           <folding>
             <marker date="1420020328507" expanded="true" signature="1352:1366" placeholder="..." />
             <marker date="1420020328507" expanded="true" signature="2717:2731" placeholder="..." />
             <marker date="1420020328507" expanded="true" signature="4592:4606" placeholder="..." />
             <marker date="1420020328507" expanded="true" signature="5932:5972" placeholder="..." />
             <marker date="1420020328507" expanded="true" signature="7306:7346" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/templates/ajax.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="617" column="71" selection-start="22760" selection-end="22760" vertical-scroll-proportion="0.613826" vertical-offset="10591" max-vertical-offset="17705">
+          <folding>
+            <marker date="1420020953171" expanded="true" signature="30007:30017" placeholder="..." />
+            <marker date="1420020953171" expanded="true" signature="30715:30731" placeholder="..." />
+            <marker date="1420020953171" expanded="true" signature="30804:30820" placeholder="..." />
           </folding>
         </state>
       </provider>
