@@ -602,12 +602,20 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                           data: form_data,
                           dataType: 'json',
                           success: function (msg) {
-                              $('#edit-task-modal').hide();
                               if (msg.empty == true) {
                                   $('#check_empty_edit_task_pr').fadeIn('slow').css('display', 'block');
                               }
                               else {
                                   $('#check_empty_edit_task_pr').fadeIn('slow').css('display', 'none');
+                              }
+                              if(msg.result == true) {
+                                  $('#edit_task_pr_modal').css('display','block');
+                                  setTimeout(function() {
+                                      $('#edit-task-modal').hide();
+                                  }, 2000);
+                              }
+                              else {
+                                  $('#edit_error_task_pr_modal').css('display','block');
                               }
                           }
                       });
@@ -617,7 +625,7 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
           });
 
 
-      $('#close-button-edit-task-modal').click(function () {
+      $('#close-edit-task-modal,#close-button-edit-task-modal').click(function () {
           $('#edit-task-modal').hide();
       });
   }

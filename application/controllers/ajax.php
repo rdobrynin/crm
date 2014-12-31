@@ -520,8 +520,8 @@ class Ajax extends CI_Controller {
         }
         else {
             $result['empty'] = false;
-            $text = 'update task';
-            $this->project_model->createEvent($result['owner'], $result['desc'],  $text, $full_name, $result['title'], 1);
+            $text = 'edited task';
+            $this->project_model->createEvent($result['owner'], $result['desc'],  $text, $full_name, $result['title'], 5);
             if ($this->task_model->updateEditTask($id) == true) {
                 $result['result'] = true;
             }

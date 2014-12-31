@@ -1,6 +1,5 @@
 <script>
 //convert datetime to timestamp
-
     $(function () {
         // Get last record from events du to current timestamp
         setInterval(function(){
@@ -16,10 +15,8 @@
                     // build html markup
 //  for project add
                     if (data['type'] == 0) {
-
                         //                    insert to log table
                         var idtr =  'current-tr-'+data["id"];
-
                         $("#log-table").find('tbody:first')
                             .prepend("<tr id='"+idtr+"'><td class='text-left'>"+data['id']+"</td><td class='text-left'>"+data['time']+"</td>+" +
                                 "<td class='text-left'><a href='#' onclick='qmSendComment("+data['uid']+")'>"+data['name']+"</a></td><td class='text-left'><i class='fa fa-cube'></i>&nbsp;project</td>" +
@@ -44,9 +41,6 @@
                                 "<td class='text-left'><i class='fa fa-plus-circle' style='color:#5cb85c;'></i></td>" +
                                 "<td class='text-left'>"+data['title']+"</td>+" +
                                 "<td class='text-left'>"+data['event']+"</td></tr>");
-
-
-
 
                         $('.mini-inbox').append(
                             '<div class="alert inbox"><button type="button" class="close" data-dismiss="alert">×' +
@@ -104,7 +98,26 @@
                         ).fadeIn('3000');
                     }
 
+// update event
+                    else if (data['type'] == 5) {
+//                      insert to log table
+                        var idtr =  'current-tr-'+data["id"];
 
+                        $("#log-table").find('tbody:first')
+                            .prepend("<tr id='"+idtr+"'><td class='text-left'>"+data['id']+"</td><td class='text-left'>"+data['time']+"</td>+" +
+                                "<td class='text-left'><a href='#' onclick='qmSendComment("+data['uid']+")'>"+data['name']+"</a></td><td class='text-left'><i class='fa fa-gavel'></i>&nbsp;task</td>" +
+                                "<td class='text-left'><i class='fa fa-check-circle' style='color:#428BCA;font-size:14px !important;'></i></td>" +
+                                "<td class='text-left'>"+data['title']+"</td>+" +
+                                "<td class='text-left'>"+data['event']+"</td></tr>");
+
+
+
+                        $('.mini-inbox').append(
+                            '<div class="alert inbox"><button type="button" class="close" data-dismiss="alert">×' +
+                                '</button><a href="javascript:void(0)"><i class="fa fa-check-circle"></i>From: ' + name + '</a>' +
+                                '<span class="message-mini">' + data.title + ' task has been updated</span></div>'
+                        ).fadeIn('3000');
+                    }
                 }
 
             }, "json" );
@@ -120,8 +133,6 @@
                     else {
                         $('#dash-process-task').html(0);
                     }
-
-
                 }
             });
 
