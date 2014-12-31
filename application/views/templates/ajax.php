@@ -808,6 +808,8 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                   dataType: 'json',
                   success: function (msg) {
                       $('#tr-dashboard-task-'+currentTask).remove();
+                      $('#tr-project-task-'+currentTask).remove();
+                      $('#tr-task-task-'+currentTask).remove();
                       var rowCount = $('#approve_tasks_table tr').length;
                       if(rowCount <1) {
                           $('#table-new-users').hide();

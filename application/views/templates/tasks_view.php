@@ -100,7 +100,7 @@
                               <?php $tasks = array_reverse($tasks);?>
                               <?php foreach ($tasks as $tk => $tv): ?>
                               <?php if ($tv['status'] != 2 AND $tv['status'] != 3): ?>
-                                  <tr class="<?php print(check_deadline($tv['due_time'])); ?>">
+                                  <tr id="tr-task-task-<?php print($tv['id']); ?>" class="<?php print(check_deadline($tv['due_time'])); ?>">
                                       <td><?php print($tv['id']); ?></td>
                                       <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                       <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
@@ -118,9 +118,13 @@
                                       <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
                                           <td>
                                               <a href="#" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
+                                              <?php if ($tv['status']!=3): ?>
                                               <a href="#" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
+                                              <?php endif ?>
                                               <a href="#" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
-                                              <a href="#" style="text-decoration: none;"><span class="icon-remove"></span></a>
+                                          <?php if ($tv['status']!=2 && $tv['status']!=3): ?>
+                                              <a href="#" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv['id']); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>
+                                          <?php endif ?>
                                           </td>
                                       <?php endif ?>
 
