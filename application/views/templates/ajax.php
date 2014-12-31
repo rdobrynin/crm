@@ -834,8 +834,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
   unical_id = <?php print json_encode($user[0]['id']);?>;
 
   function impControl($data, $action) {
-
-
       var form_data = {
           id: $data,
           status: $action,
@@ -861,8 +859,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                      });
 
              }
-
-
           }
       });
 

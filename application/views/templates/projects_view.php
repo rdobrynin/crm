@@ -29,11 +29,11 @@
                     </thead>
                     <tbody>
                     <?php foreach ($projects as $pk => $pv): ?>
-                    <tr class="12">
+                    <tr onClick="projectToView()" style="cursor: pointer;">
                         <td><?php print($pv['pid']); ?></td>
                         <td class="current-title-project"><?php print($pv['title']); ?></td>
                         <td><?php print($pv['description']); ?></td>
-                        <td><a href="#"><span class="badge badge-task" id="route-task"><?php if ($tasks != false): ?><?php print(count($tasks));?><?php else:?>0<?php endif ?></span></a>&nbsp;&nbsp;<i class="fa fa-hand-o-left"></i></td>
+                        <td><a href="#"><span class="badge badge-task" id="route-task"><?php if ($tasks != false): ?><?php print(count($tasks));?><?php else:?>0<?php endif ?></span></a></td>
                         <td><a href="#" onClick="qmSendComment(<?php print($pv['owner']); ?>)"><?php print(short_name($user_name[$pv['owner']])); ?></a></td>
                         <td><p><a href="#" id="edit-project-table"><i class="fa fa-pencil"></i></a></p></td>
                         <td><p><a href="#" id="delete-project-table"><i class="fa fa-times"></i></a></td>
@@ -100,8 +100,6 @@
                     </tbody>
                 </table>
                   <?php endif ?>
-
-
         </div>
           <?php endif ?>
       </div>
@@ -164,24 +162,23 @@
 <?php include('footer_view.php');?>
 
 <script>
-  $(function () {
-    $("#route-task").click(function () {
-      var $panel = $('.filterable .btn-filter').parents('.filterable'),
-        $filters = $panel.find('.filters input'),
-        $tbody = $panel.find('.table tbody');
-      $filters.val('').prop('disabled', true);
-      $tbody.find('.no-result').remove();
-      $tbody.find('tr').show();
-      $(this).closest("tr").toggleClass("project-task-main");
-      $(".current-title-project").toggleClass("label label-info label-cur-pr");
-      $('#task-for-project').fadeToggle("fast", function () {
-      });
-      if ($("#route-task").closest("tr").hasClass('project-task-main')) {
-        $('.btn-filter').attr('disabled', 'disabled');
-      }
-      else {
-        $('.btn-filter').removeAttr('disabled');
-      }
-    });
-  });
+    function projectToView(){
+        var $panel = $('.filterable .btn-filter').parents('.filterable'),
+            $filters = $panel.find('.filters input'),
+            $tbody = $panel.find('.table tbody');
+        $filters.val('').prop('disabled', true);
+        $tbody.find('.no-result').remove();
+        $tbody.find('tr').show();
+        $(this).closest("tr").toggleClass("project-task-main");
+//        $(".current-title-project").css("label label-info label-cur-pr label-xs");
+        $('#task-for-project').fadeToggle("fast", function () {
+        });
+        if ($("#route-task").closest("tr").hasClass('project-task-main')) {
+            $('.btn-filter').attr('disabled', 'disabled');
+        }
+        else {
+            $('.btn-filter').removeAttr('disabled');
+        }
+    }
+
 </script>
