@@ -581,11 +581,43 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                       value:date,
                       format:'d.m.Y-H:i'
                   });
+//                  $('#edit_task_type_choose').html('<option>city1</option><option>city2</option>')
+//                      .selectpicker('refresh');
+
+                  $('#edittask_pr_btn').click(function () {
+                      var form_data = {
+                          title :$('#edit_task_pr_title').val(),
+                          desc :$('#edit_task_pr_desc').val(),
+                          project :msg.result['pid'],
+                          dueto :$('#edit_dueto_modal').val(),
+                          label :$('#edit_task_type_choose').val(),
+                          priority :$('#edit_task_priority_choose').val(),
+                          implementor :$('#edit_implementor_choose_modal').val(),
+                          owner :$('#edit_curator_choose_modal').val(),
+                          id: $data
+                      };
+                      $.ajax({
+                          url: "<?php echo site_url('ajax/updateEditTask'); ?>",
+                          type: 'POST',
+                          data: form_data,
+                          dataType: 'json',
+                          success: function (msg) {
+                              $('#edit-task-modal').hide();
+                              if (msg.empty == true) {
+                                  $('#check_empty_edit_task_pr').fadeIn('slow').css('display', 'block');
+                              }
+                              else {
+                                  $('#check_empty_edit_task_pr').fadeIn('slow').css('display', 'none');
+                              }
+                          }
+                      });
+                  });
+
               }
           });
 
 
-      $('#close-edit-task-modal,#close-button-edit-task-modal').click(function () {
+      $('#close-button-edit-task-modal').click(function () {
           $('#edit-task-modal').hide();
       });
   }

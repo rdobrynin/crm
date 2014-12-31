@@ -498,6 +498,42 @@ class Ajax extends CI_Controller {
         echo json_encode($result);
     }
 
+    function updateEditTask() {
+        $this->load->model('project_model');
+        $this->load->model('task_model');
+        $this->load->model('admin_model');
+        $result['title'] = $this->input->post('title');
+        $result['desc'] = $this->input->post('desc');
+        $result['project'] = $this->input->post('project');
+        $result['dueto'] = $this->input->post('dueto');
+        $result['label'] = $this->input->post('label');
+        $result['priority'] = $this->input->post('priority');
+        $result['implementor'] = $this->input->post('implementor');
+        $result['owner'] = $this->input->post('owner');
+        $result['empty'] = false;
+        $name_array =  $this->admin_model->get_user_id($result['owner']);
+        $full_name = $name_array[0]['first_name'].' '.$name_array[0]['last_name'];
+        $id = $this->input->post('id');
+
+        if ($_POST['title'] == '' OR $_POST['desc'] == '' OR $_POST['project'] == '' OR $_POST['label'] == '' OR $_POST['dueto'] == '' OR $_POST['priority'] == '' OR $_POST['implementor'] == '') {
+            $result['empty'] = true;
+        }
+        else {
+            $result['empty'] = false;
+            $text = 'update task';
+            $this->project_model->createEvent($result['owner'], $result['desc'],  $text, $full_name, $result['title'], 1);
+            if ($this->task_model->updateEditTask($id) == true) {
+                $result['result'] = true;
+            }
+            else {
+                $result['result'] = false;
+            }
+        }
+        echo json_encode($result);
+    }
+
+
+
 
     /**
      * switch help block

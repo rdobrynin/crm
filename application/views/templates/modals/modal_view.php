@@ -266,8 +266,8 @@
                     </div>
                     <div class="col-xs-12 col-md-12">
                         <div class="form-group">
-                            <label for="edit_implementor_choose_modal">Reassign curator: </label>
-                            <select class="form-control selectpicker" id="edit_implementor_choose_modal" name="edit_implementor_choose_modal">
+                            <label for="edit_curator_choose_modal">Reassign curator: </label>
+                            <select class="form-control selectpicker" id="edit_curator_choose_modal" name="edit_curator_choose_modal">
                                 <?php foreach ($curators as $k => $v): ?>
                                     <option value="<?php echo $v['id'] ?>"><?php echo $v['first_name'] . ' ' . $v['last_name'] ?></option>
                                 <?php endforeach ?>

@@ -114,6 +114,29 @@ class Task_model extends CI_Model {
     }
 
 
+
+    /**
+     * Create task
+     * @return mixed
+     */
+    public function updateEditTask($id) {
+        $data = array (
+            'uid' => $this->input->post('owner'),
+            'pid' => $this->input->post('project'),
+            'implementor' => $this->input->post('implementor'),
+            'title' => $this->input->post('title'),
+            'desc' => $this->input->post('desc'),
+            'due_time' =>$this->input->post('dueto'),
+            'label' =>$this->input->post('label'),
+            'priority' =>$this->input->post('priority'),
+
+        );
+        $this->db->where('id', $id);
+        $insert = $this->db->update('task', $data);
+        return $insert;
+    }
+
+
     /**
      * verify task
      * @param $id
