@@ -142,8 +142,6 @@
           }, 3000);
       });
 
-
-
       /**
        * Add task after project created
        **/
@@ -550,6 +548,36 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
       });
   }
 
+
+  /**
+   *
+   * Task to edit
+   **/
+
+  function taskToEdit($data){
+      $('#edit-task-modal').show();
+      $('#edittask_pr_btn').click(function () {
+          $user = '<?php print($user[0]['id'])?>';
+          var form_data = {
+              id: $data
+          };
+          $.ajax({
+              url: "<?php echo site_url('ajax/taskToEdit'); ?>",
+              type: 'POST',
+              data: form_data,
+              dataType: 'json',
+              success: function (msg) {
+                  console.log(msg);
+              }
+          });
+      });
+  }
+
+
+
+/**
+ * Send Comment
+ * */
 
   function SendComment($data){
       $('.qm-body').hide();

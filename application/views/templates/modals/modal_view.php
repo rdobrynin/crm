@@ -203,6 +203,100 @@
 
 
 
+
+
+<!--Update task for project modal window-->
+<div class="modal" id="edit-task-modal" tabindex="-1" role="dialog" aria-labelledby="edit-task-modal-formLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <?php $attributes = array('class' => 'form-signin', 'id' => 'edit_task_pr_form', 'autocomplete' => 'on'); ?>
+        <?php echo form_open('#', $attributes); ?>
+        <div class="modal-content modal-content-inverse">
+            <div class="modal-header">
+                <a data-dismiss="modal" aria-hidden="true"><span class="icon-remove"></span></a>
+                <h4 class="modal-title">
+                    <small>Update task</small>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="edit_task_pr_title">Task name</label>
+                            <input type="text" name="edit_task_pr_title" id="edit_task_pr_title" class="form-control btn-special" placeholder="Task name title">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="edit_task_pr_desc">Description</label>
+                            <textarea name="edit_task_pr_desc" id="edit_task_pr_desc" class="form-control btn-special" rows="3" placeholder="Description"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="form-group">
+                            <label for="edit_dueto_modal">Due to</label>
+                            <div class='input-group date'>
+                                <input type='text' class="form-control btn-special"  id='edit_dueto_modal' />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-8">
+                        <div class="form-group">
+                            <label for="edit_task_type_choose">Label</label>
+                            <select class="form-control selectpicker" id="edit_task_type_choose" name="edit_task_type_choose">
+                                <?php foreach ($task_types as $tk=>$tv): ?>
+                                    <option value="<?php print($tk); ?>" ><?php print(ucfirst($tv)); ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-4">
+                        <div class="form-group">
+                            <label for="task_priority_choose">Priority</label>
+                            <select class="form-control selectpicker" id="edit_task_priority_choose" name="edit_task_priority_choose">
+                                <option value="0" data-content="<span class='label label-xs label-primary'><?php echo priority_status_index(0) ?></span>"></option>
+                                <option value="1" data-content="<span class='label label-xs label-warning'><?php echo priority_status_index(1) ?></span>"></option>
+                                <option value="2" data-content="<span class='label label-xs label-danger'><?php echo priority_status_index(2) ?></span>"></option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12 col-md-12">
+                        <div class="form-group">
+                            <label for="edit_implementor_choose_modal">Choose implementor: </label>
+                                <select class="form-control selectpicker" id="edit_implementor_choose_modal" name="edit_implementor_choose_modal">
+                                    <?php foreach ($imps as $k => $v): ?>
+                                        <option value="<?php echo $v['id'] ?>"><?php echo $v['first_name'] . ' ' . $v['last_name'] ?></option>
+                                    <?php endforeach ?>
+                                </select>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: none; margin-bottom: 10px;" id="edit_task_pr_modal" class="label label-primary label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;You have successfully updatedthe task</div>
+                <div style="display: none; margin-bottom: 10px;" id="edit_error_task_pr_modal" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;Error to update task</div>
+            </div>
+            <div class="modal-footer" style="padding-top: 10px;">
+                <div class="form-group">
+                    <input type="hidden" name="user_edit_task_pr_id" id="user_edit_task_pr_id" value="<?php print($user[0]['id'])?>">
+                    <div style="display: none; margin-bottom: 10px;" id="check_empty_edit_task_pr" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;Fields must be not empty</div>
+                    <button type="button" class="btn btn-success <?php if ($imps == false): ?>disabled<?php endif ?>" id="edittask_pr_btn">Update the task</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+        <?php form_close( );?>
+    </div>
+</div> <!-- #/edittask_pr_modal -->
+
+
+
+
+
 <!--Create project modal window-->
 <div class="modal" id="demo_modal" tabindex="-1" role="dialog" aria-labelledby="demo_modalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -265,7 +359,7 @@
 <script type="text/javascript">
 
     $(function () {
-        $('#dueto_modal').datetimepicker({theme:'dark',minDate: 0,minTime:0});
+        $('#dueto_modal,#edit_dueto_modal').datetimepicker({theme:'dark',minDate: 0,minTime:0});
         $('#btn_modal_miss_imp').click(function () {
             $('#addtask_pr_modal').modal('hide');
             $('#invite').modal('show');

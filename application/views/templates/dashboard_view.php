@@ -62,7 +62,6 @@
                     </div>
                 </div>
 <!--                overdue tasks-->
-
                     <div class="row-fluid" style="padding-top: 20px;">
                         <p class="lead">Overdue tasks&nbsp;(<span id="calc-over-tasks" ><?php if ($over_tasks != false): ?><?php print(count($over_tasks)); ?><?php else:?>0<?php endif ?></span>)</p>
                         <?php if ($over_tasks != false): ?>
@@ -92,7 +91,6 @@
                                         <?php $tasks = array_reverse($tasks);?>
                                         <?php foreach ($tasks as $tk => $tv): ?>
                                             <?php if ($tv['status'] == 6): ?>
-
                                                 <tr id="tr-dashboard-task-<?php print($tv['id']); ?>" class="<?php print(check_deadline($tv['due_time'])); ?>">
                                                     <td>#<?php print($tv['id']); ?></td>
                                                     <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
@@ -137,7 +135,6 @@
                         <?php if ($user[0]['role']==5 OR $user[0]['role']==4 OR $user[0]['role']==3): ?>
                         <p class="lead">Tasks for approve&nbsp;(<span id="calc-appr-tasks" ><?php if ($approve_tasks != false): ?><?php print(count($approve_tasks)); ?><?php else:?>0<?php endif ?></span>)</p>
                         <?php endif ?>
-
                         <?php if ($user[0]['role']==2 ): ?>
                             <h3 class="h_title">Ready to go&nbsp;(<span id="calc-ready-tasks"><?php if ($ready_tasks != false): ?><?php print($ready_tasks); ?><?php else:?>0<?php endif ?></span>)</h3>
                         <?php endif ?>
@@ -166,7 +163,7 @@
                                         </tr>
                                         </thead>
                                         <tbody id="approve_tasks_table">
-<!--                                      --><?php //$tasks = array_reverse($tasks);?>
+                                      <?php $tasks = array_reverse($tasks);?>
                                         <?php foreach ($tasks as $tk => $tv): ?>
                                             <?php if ($tv['status'] == 0 && $user[0]['role']==5 OR $tv['status'] == 0 && $user[0]['role']==4 OR $tv['status'] == 0 &&  $user[0]['role']==3): ?>
 
@@ -184,7 +181,7 @@
                                                 <?php if($user[0]['role']!=3):?>
                                                 <td>
                                                     <a href="#" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
-                                                    <a href="#" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" onClick="taskToEdit(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
                                                     <a href="#" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                                     <a href="#" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv['id']); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>
                                                 </td>
