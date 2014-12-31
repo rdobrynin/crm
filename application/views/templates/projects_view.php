@@ -77,9 +77,9 @@
                                         <td class="text-left"><?php print(date_format(date_create($tv['due_time']),"F d H:i")); ?></td>
                                         <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
                                             <td>
-                                                <a href="#" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
                                                 <?php if ($tv['status']!=3): ?>
-                                                <a href="#" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
+                                                    <a href="#" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
                                                 <?php endif ?>
                                                 <a href="#" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                                 <?php if ($tv['status']!=2 && $tv['status']!=3): ?>
