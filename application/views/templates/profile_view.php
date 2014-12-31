@@ -4,7 +4,7 @@
 <!-- Page content -->
 <div class="page-content-wrapper">
     <div class="page-content inset">
-        <div class="row">
+        <div class="row-fluid">
             <!--FORM-->
             <div class="col-md-8">
                 <form role="form" class="form-horizontal" action="<?php print(base_url()); ?>update_profile" method="POST" autocomplete="on">

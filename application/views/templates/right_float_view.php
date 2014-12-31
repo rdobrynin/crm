@@ -1,9 +1,11 @@
 <div class="right-float-sidebar">
     <div class="close-right-sidebar"><a href="#"><i class="fa fa-times" style="top: -2px !important;position: relative;"></i></a></div>
     <?php foreach ($users as $uk => $uv): ?>
+
+        <?php if ($uv['id'] !== $user[0]['id']): ?>
         <div class="user-float-block">
             <div class="avatar-activity">
-                <span class="avatar-img"><a href="#"><img src="<?php print base_url() . 'uploads/avatar/'.$uv['avatar']; ?>" height="45"></a></span>
+                <span class="avatar-img"><a href="#"><img src="<?php print base_url() . 'uploads/avatar/'.$uv['avatar']; ?>" height="32"></a></span>
             </div>
             <div class="sidebar-fullname"><?php print($uv['first_name']. ' '.$uv['last_name']); ?></div>
             <div class="user-details-count-wrapper">
@@ -13,6 +15,7 @@
             <div class="sidebar-position"><a href="mailto:<?php print($uv['email']); ?>"><?php print($uv['email']); ?></a></div>
             <div class="sidebar-position phone"><?php print($uv['phone']); ?>&nbsp;<span class="label label-xs label-primary sms sms-send-alert">sms</span>&nbsp;<a href="#" class="pull-right" onClick="qmSendComment(<?php print($uv['id']); ?>)"><i class="fa fa-comment comment-sidebar" id="comm-<?php print($uv['id']); ?>"></i></a></div>
         </div>
+        <?php endif ?>
         <div class="close-right-sidebar"><a href="#"><span class="icon-remove"></span></a></div>
     <?php endforeach ?>
 </div>

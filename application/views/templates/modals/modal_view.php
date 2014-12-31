@@ -4,7 +4,7 @@
         <?php echo form_open('#', $attributes); ?>
         <div class="modal-content modal-content-inverse">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <a data-dismiss="modal" aria-hidden="true"><span class="icon-remove"></span></a>
                 <h4 class="modal-title" id="myModalLabel">
                     <small>Contact person invitation</small>
                 </h4>
@@ -36,9 +36,7 @@
                         <div class="form-group">
                             <select class="form-control selectpicker" id="role_invite" name="role_invite">
                                 <?php foreach ($roles as $rk => $rv): ?>
-                                    <?php if ($rv['rid'] != 5): ?>
                                         <option value="<?php print($rv['rid']); ?>"><?php print(ucfirst($rv['title'])); ?></option>
-                                    <?php endif ?>
                                 <?php endforeach ?>
                             </select>
                         </div>
@@ -64,7 +62,7 @@
         <?php echo form_open('#', $attributes); ?>
         <div class="modal-content modal-content-inverse">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <a data-dismiss="modal" aria-hidden="true"><span class="icon-remove"></span></a>
                 <h4 class="modal-title" id="myModalLabel">
                     <small>Create project</small>
                 </h4>
@@ -106,7 +104,7 @@
         <?php echo form_open('#', $attributes); ?>
         <div class="modal-content modal-content-inverse">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <a data-dismiss="modal" aria-hidden="true"><span class="icon-remove"></span></a>
                 <h4 class="modal-title">
                     <small>Add task</small>
                 </h4>
@@ -231,7 +229,7 @@
     <div class="modal-dialog">
         <div class="modal-content modal-content-inverse">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="close-time">×</span></button>
+                <a data-dismiss="modal" aria-hidden="true"><span class="icon-remove"></span></a>
                 <h4 class="modal-title">
                     <small>Update role</small>
                 </h4>

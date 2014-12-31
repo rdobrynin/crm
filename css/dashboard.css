@@ -57,6 +57,11 @@ a.clickable:hover {
     margin-bottom: 10px;
 }
 
+.user-float-block .avatar-activity {
+    width: 32px;
+    height: 32px;
+}
+
 .activity-item-summary span.resolved-link {
     text-decoration: line-through;
 }

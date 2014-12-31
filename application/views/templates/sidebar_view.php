@@ -23,26 +23,13 @@
 <!--      </li>-->
       <li class="<? $url_arg=='comments' ? print('active') : print('') ?> disabled"><a href="<?php print(base_url());?>comments"><span class="icon-comments"></span>&nbsp;<span class="left-resp-menu"><?php print(lang('menu_comments')); ?></span></a> <?php if ($comments != false): ?><span class="badge badge-resp" id="badge-count-tasks"><?php print(count($comments));?></span> <?php else:?><span class="badge badge-resp" id="badge-count-tasks">0</span> <?php endif ?>
       </li>
-<!--      <li class="--><?// $url_arg=='help' ? print('active') : print('') ?><!-- disabled"><a href="#"><i class="glyphicon glyphicon-question-sign"></i>&nbsp;<span class="left-resp-menu">--><?php //print(lang('menu_help')); ?><!--</span></a>-->
-<!--      </li>-->
+
+<div class="statistic-imps">
+<!-- todo-->
+</div>
 
       <!--MINI INBOX-->
-
-      <div class="mini-inbox">
-<!--        <div class="alert inbox">-->
-<!--          <button type="button" class="close" data-dismiss="alert">-->
-<!--            ×-->
-<!--          </button>-->
-<!--          <a href="javascript:void(0)">-->
-<!--            <i class="fa fa-comment"></i>-->
-<!--            From: Evgeni S...-->
-<!--          </a>-->
-<!--          <span class="message-mini">Andrei, <a href="">close</a> Task (111)...</span>-->
-<!--        </div>-->
-
-
-      </div>
+      <div class="mini-inbox"></div>
       <!--END MINI INBOX-->
-
     </ul>
   </div>
