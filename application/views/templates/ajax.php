@@ -108,8 +108,8 @@ console.log(msg);
                   var posVar = 50;
                   $("#sidebar-wrapper").animate({width: posVar + 'px'});
                   $("#wrapper").animate({paddingLeft: posVar + 'px'});
-                  $("#sidebar-wrapper").addClass('sidebar-wrapper-mini');
                   $("#switch-left-bar").css('display','none');
+                  $('.badge-resp').addClass('badge-resp-mini');
                   $('#switch-left-bar-back').fadeIn('slow');
               }
           });
@@ -136,9 +136,9 @@ console.log(msg);
               success: function (msg) {
                   var posVar = 198;
                   $("#sidebar-wrapper").animate({width: posVar + 'px'});
-                  $("#sidebar-wrapper").removeClass('sidebar-wrapper-mini');
                   $("#wrapper").animate({paddingLeft: posVar + 'px'});
                   $("#switch-left-bar-back").css('display','none');
+                  $('.badge-resp').removeClass('badge-resp-mini');
                   $('#switch-left-bar').fadeIn('slow');
               }
           });

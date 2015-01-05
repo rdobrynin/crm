@@ -20,19 +20,16 @@
     <link href="<?php print(base_url()); ?>assets/css/bootstrap-toggle.css" rel="stylesheet">
     <link href="<?php print(base_url()); ?>assets/css/font-awesome.css" rel="stylesheet">
     <?php var_dump($user[0]['sidebar_left']); ?>
-
     <?php if ($user[0]['sidebar_left'] == '1'): ?>
         <link href="<?php print(base_url()); ?>css/sidebar_left_mini.css" rel="stylesheet">
         <?php else: ?>
         <link href="<?php print(base_url()); ?>css/sidebar_left.css" rel="stylesheet">
     <?php endif ?>
-
     <?php if ($user[0]['sidebar_right'] == '1'): ?>
         <link href="<?php print(base_url()); ?>css/sidebar_right_open.css" rel="stylesheet">
     <?php else: ?>
         <link href="<?php print(base_url()); ?>css/sidebar_right_close.css" rel="stylesheet">
     <?php endif ?>
-
     <!-- Add custom CSS here -->
     <link href="<?php print(base_url()); ?>css/sidebar.css" rel="stylesheet">
     <link href="<?php print(base_url()); ?>css/add_client.css" rel="stylesheet">
