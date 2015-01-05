@@ -1,21 +1,4 @@
-#wrapper {
-  padding-left: 199px;
-}
 
-#sidebar-wrapper {
-  margin-left: -198px;
-  left: 198px;
-  width: 198px;
-  background: #222;
-  position: fixed;
-  height: 100%;
-  z-index: 1000;
-    overflow: hidden;
-    /*background: url('../img/mesh.png');*/
-    background-position: 0 -30px;
-
-
-}
 
 .sidebar-nav {
   position: absolute;
@@ -169,12 +152,6 @@ li.sidebar-brand {
 li.active a {
     color:#ddd;
 }
-
-
-
-
-
-
 
 
 .left-resp-menu {
@@ -357,25 +334,6 @@ li.message-preview {
 i.fa-clock-o {
     margin-left: 0;
 }
-
-
-.right-float-sidebar{
-    margin-left: 0;
-    right: -300px;
-    width: 246px;
-    position: fixed;
-    height: 100%;
-    background-position: 0 -30px;
-    float: right;
-    background-color: #222222;
-    top: 50px;
-    padding-top: 29px;
-    padding-left: 0;
-    -webkit-box-shadow: 2px 4px 26px 3px black;
-    -moz-box-shadow: 2px 4px 26px 3px black;
-    box-shadow: 2px 4px 26px 3px black;
-}
-
 
 
 

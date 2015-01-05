@@ -256,79 +256,23 @@ $('.closebox').click(function(e){
         }
     });
 
-    $("#float-users").click(function () {
-        var posVar = 0;
-        $(".right-float-sidebar").animate({right: posVar + 'px'});
-        localStorage.setItem("sidebar", true);
-
-    });
 
 
-    $("#switch-left-bar").click(function () {
-        var posVar = 50;
-        $("#sidebar-wrapper").animate({width: posVar + 'px'});
-        $("#wrapper").animate({paddingLeft: posVar + 'px'});
-        $("#sidebar-wrapper").addClass('sidebar-wrapper-mini');
-        $("#switch-left-bar").css('display','none');
-        $('#switch-left-bar-back').fadeIn('slow');
-        localStorage.setItem("sidebar-left", true);
 
-
-    });
-
-
-    $("#switch-left-bar-back").click(function () {
-        var posVar = 198;
-        $("#sidebar-wrapper").animate({width: posVar + 'px'});
-        $("#sidebar-wrapper").removeClass('sidebar-wrapper-mini');
-        $("#wrapper").animate({paddingLeft: posVar + 'px'});
-        $("#switch-left-bar-back").css('display','none');
-        $('#switch-left-bar').fadeIn('slow');
-        localStorage.setItem("sidebar-left", false);
-
-    });
+    /**
+     *
+     * Sidebar left ON/OFF
+     */
 
     $(".close-right-sidebar").click(function () {
         var posVar = -300;
         $(".right-float-sidebar").animate({right: posVar + 'px'});
-        $("#float-users").removeClass('active');
-        localStorage.setItem("sidebar", false);
     });
-
-// remember sidebar position
-    var current_sidebar = localStorage.getItem("sidebar");
-    if (current_sidebar == 'true') {
-        var posVar = 0;
-        $(".right-float-sidebar").animate({right: posVar + 'px'});
-        $('#float-users').addClass('active');
-    }
-    else {
-        $(".right-float-sidebar").css('right', '-300px');
-        $('#float-users').removeClass('active');
-    }
-
-//
-//    // remember sidebar left position
-    var left_sidebar = localStorage.getItem("sidebar-left");
-    if (left_sidebar == 'true') {
-        $("#sidebar-wrapper").css('width','50px');
-        $("#wrapper").css('padding-left','50px');
-        $("#switch-left-bar").css('display','none');
-        $('#switch-left-bar-back').fadeIn('slow');
-    }
-    else {
-        $("#sidebar-wrapper").css('width','198px');
-        $("#wrapper").css('padding-left','198px');
-        $("#switch-left-bar-back").css('display','none');
-        $("#switch-left-bar").css('display','block');
-
-    }
 
 
 
     $('#approve_tasks_table').pageMe({pagerSelector:'#pager_approve_tasks',showPrevNext:true,hidePageNumbers:true,perPage:35});
     $('#logs-tbody').pageMe({pagerSelector:'#pager_all_logs',showPrevNext:true,hidePageNumbers:true,perPage:25});
-
 
     var count_approve_tasks = $('#approve_tasks_table').children().length;
     var count_all_tasks = $('#all_task_table').children().length;
@@ -336,14 +280,9 @@ $('.closebox').click(function(e){
 
 $('#calc-appr-tasks').html(count_approve_tasks);
 
-
-
-
 $('#calc-all-tasks').html(count_all_tasks);
 $('#calc-all-comments').html(count_all_comments);
 $('#badge-count-comments-top').html(count_all_comments);
-
-
 
 
         //add class "highlight" when hover over the row

@@ -24,6 +24,39 @@ class Dashboard_model extends CI_Model {
   }
 
 
+    /**
+     * Sidebar
+     * @param $email
+     * @return bool
+     */
+    public function updateSidebarLeft($uid, $status) {
+        $data = array(
+            'sidebar_left' =>  $status
+        );
+
+        $this->db->where('id', $uid);
+        $update =$this->db->update('users', $data);
+        return $update;
+    }
+
+
+    /**
+     * Sidebar
+     * @param $email
+     * @return bool
+     */
+    public function updateSidebarRight($uid, $status) {
+        $data = array(
+            'sidebar_right' =>  $status
+        );
+
+        $this->db->where('id', $uid);
+        $update =$this->db->update('users', $data);
+        return $update;
+    }
+
+
+
     public function settingsDialog($id, $input) {
         $data = array(
             'introduce' =>  $input

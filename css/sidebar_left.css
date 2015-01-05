@@ -1,0 +1,44 @@
+#wrapper {
+  padding-left: 199px;
+}
+
+#sidebar-wrapper {
+  margin-left: -198px;
+  left: 198px;
+  width: 198px;
+  background: #222;
+  position: fixed;
+  height: 100%;
+  z-index: 1000;
+    overflow: hidden;
+    /*background: url('../img/mesh.png');*/
+    background-position: 0 -30px;
+
+
+}
+
+span#switch-left-bar {
+    color: #fff;
+    z-index: 9999999999;
+    cursor: pointer;
+    width: 30px;
+    padding: 0;
+    float: right;
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    padding-top: 13px;
+}
+
+span#switch-left-bar-back {
+    color: #fff;
+    z-index: 9999999999;
+    cursor: pointer;
+    width: 30px;
+    padding: 0;
+    float: left;
+    position: relative;
+    padding-left: 18px;
+    padding-top: 13px;
+    display: none;
+}

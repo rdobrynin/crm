@@ -514,33 +514,6 @@ span.icon-book {
 
 
 
-span#switch-left-bar {
-    color: #fff;
-    z-index: 9999999999;
-    cursor: pointer;
-    width: 30px;
-    padding: 0;
-    float: right;
-    position: relative;
-    display: block;
-    padding-left: 10px;
-    padding-top: 13px;
-}
-
-span#switch-left-bar-back {
-    color: #fff;
-    z-index: 9999999999;
-    cursor: pointer;
-    width: 30px;
-    padding: 0;
-    float: left;
-    position: relative;
-    padding-left: 18px;
-    padding-top: 13px;
-    display: none;
-}
-
-
 .mirror {
     display:block;
     -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
@@ -554,9 +527,3 @@ span#switch-left-bar-back {
 #sidebar-wrapper .icon-comments, #sidebar-wrapper .icon-users, #sidebar-wrapper .icon-tasks , #sidebar-wrapper .icon-projects , #sidebar-wrapper .icon-client, #sidebar-wrapper .icon-menu {
     padding-right: 15px;
 }
-
-.sidebar-wrapper-mini {
-    border-right: 1px solid #000;
-    box-shadow: 0px 1px 0px #2C2C2C;
-}
-

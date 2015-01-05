@@ -895,6 +895,46 @@ class Ajax extends CI_Controller {
 
 
 
+    /**
+     * Update sidebar_left
+     */
+
+    function updateSidebarLeft() {
+        $uid =  $this->input->post('uid');
+        $status =  $this->input->post('status');
+        $this->load->model('dashboard_model');
+        if($querty = $this->dashboard_model->updateSidebarLeft($uid,$status)) {
+            $result = true;
+        }
+        else {
+            $result = false;
+        }
+
+        echo json_encode ($result);
+    }
+
+
+    /**
+     * Update sidebar_right
+     */
+
+    function updateSidebarRight() {
+        $uid =  $this->input->post('uid');
+        $status =  $this->input->post('status');
+        $this->load->model('dashboard_model');
+        if($querty = $this->dashboard_model->updateSidebarRight($uid,$status)) {
+            $result = true;
+        }
+        else {
+            $result = false;
+        }
+
+        echo json_encode ($result);
+    }
+
+
+
+
 
 
 

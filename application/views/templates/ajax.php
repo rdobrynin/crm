@@ -85,6 +85,128 @@ console.log(msg);
 
 
       /**
+       *
+       * Sidebar left ON/OFF
+       */
+
+
+
+      $("#switch-left-bar").click(function () {
+
+          var $user = '<?php print($user[0]['id'])?>';
+          var form_data = {
+              uid: $user,
+              status: '1'
+
+          };
+          $.ajax({
+              url: "<?php echo site_url('ajax/updateSidebarLeft'); ?>",
+              type: 'POST',
+              data: form_data,
+              dataType: 'json',
+              success: function (msg) {
+                  var posVar = 50;
+                  $("#sidebar-wrapper").animate({width: posVar + 'px'});
+                  $("#wrapper").animate({paddingLeft: posVar + 'px'});
+                  $("#sidebar-wrapper").addClass('sidebar-wrapper-mini');
+                  $("#switch-left-bar").css('display','none');
+                  $('#switch-left-bar-back').fadeIn('slow');
+              }
+          });
+      });
+
+
+      /**
+       *
+       * Sidebar left ON/OFF
+       */
+
+      $("#switch-left-bar-back").click(function () {
+          var $user = '<?php print($user[0]['id'])?>';
+          var form_data = {
+              uid: $user,
+              status: '0'
+
+          };
+          $.ajax({
+              url: "<?php echo site_url('ajax/updateSidebarLeft'); ?>",
+              type: 'POST',
+              data: form_data,
+              dataType: 'json',
+              success: function (msg) {
+                  var posVar = 198;
+                  $("#sidebar-wrapper").animate({width: posVar + 'px'});
+                  $("#sidebar-wrapper").removeClass('sidebar-wrapper-mini');
+                  $("#wrapper").animate({paddingLeft: posVar + 'px'});
+                  $("#switch-left-bar-back").css('display','none');
+                  $('#switch-left-bar').fadeIn('slow');
+              }
+          });
+
+
+      });
+
+
+      /**
+       *
+       * Sidebar right ON/OFF
+       */
+
+      $("#float-users").click(function () {
+          var $user = '<?php print($user[0]['id'])?>';
+          var form_data = {
+              uid: $user,
+              status: '1'
+
+          };
+          $.ajax({
+              url: "<?php echo site_url('ajax/updateSidebarRight'); ?>",
+              type: 'POST',
+              data: form_data,
+              dataType: 'json',
+              success: function (msg) {
+                  var posVar = 0;
+                  $(".right-float-sidebar").animate({right: posVar + 'px'});
+
+              }
+          });
+
+      });
+
+
+      /**
+       *
+       * Sidebar right ON/OFF
+       */
+
+      $(".close-right-sidebar").click(function () {
+
+          var $user = '<?php print($user[0]['id'])?>';
+          var form_data = {
+              uid: $user,
+              status: '0'
+
+          };
+          $.ajax({
+              url: "<?php echo site_url('ajax/updateSidebarRight'); ?>",
+              type: 'POST',
+              data: form_data,
+              dataType: 'json',
+              success: function (msg) {
+                  var posVar = -300;
+                  $(".right-float-sidebar").animate({right: posVar + 'px'});
+                  $("#float-users").removeClass('active');
+
+              }
+          });
+      });
+
+
+
+
+
+
+      /**
        * Add project
        *
       **/
