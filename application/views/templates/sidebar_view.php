@@ -1,6 +1,8 @@
 <div id="wrapper">
   <!-- Sidebar -->
   <div id="sidebar-wrapper">
+    <a href="#"><span class="icon-rightarrow mirror" id="switch-left-bar"></span></a>
+    <a href="#"><span class="icon-rightarrow" id="switch-left-bar-back"></span></a>
     <?php $url_arg = $this->uri->segment(1);?>
 
     <ul class="sidebar-nav">

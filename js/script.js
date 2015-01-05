@@ -4,7 +4,6 @@ function toTimestamp(strDate){
 }
 
 
-
 //Pager
 
 $.fn.pageMe = function(opts){
@@ -261,6 +260,26 @@ $('.closebox').click(function(e){
         var posVar = 0;
         $(".right-float-sidebar").animate({right: posVar + 'px'});
         localStorage.setItem("sidebar", true);
+
+    });
+
+
+    $("#switch-left-bar").click(function () {
+        var posVar = 50;
+        $("#sidebar-wrapper").animate({width: posVar + 'px'});
+        $("#wrapper").animate({paddingLeft: posVar + 'px'});
+        $("#switch-left-bar").css('display','none');
+        $('#switch-left-bar-back').fadeIn('slow');
+
+    });
+
+
+    $("#switch-left-bar-back").click(function () {
+        var posVar = 198;
+        $("#sidebar-wrapper").animate({width: posVar + 'px'});
+        $("#wrapper").animate({paddingLeft: posVar + 'px'});
+        $("#switch-left-bar-back").css('display','none');
+        $('#switch-left-bar').fadeIn('slow');
 
     });
 

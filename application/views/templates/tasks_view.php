@@ -60,9 +60,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12 text-center">
-                <ul class="pagination pagination-lg pager" id="pager_all_tasks"></ul>
-            </div>
+
 
         <?php endif ?>
         <!--                end last tasks-->
@@ -117,7 +115,9 @@
                                       <td class="text-left"><?php print(date_format(date_create($tv['due_time']),"F d H:i")); ?></td>
                                       <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
                                           <td>
+                                              <?php if ($tv['status']!=5): ?>
                                               <a href="#" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
+                                              <?php endif ?>
                                               <?php if ($tv['status']!=3): ?>
                                                   <?php if($user[0]['role']==2):?>
                                                       <a href="#" onClick="taskToEdit(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>

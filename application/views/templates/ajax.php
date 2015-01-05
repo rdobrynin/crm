@@ -3,31 +3,29 @@
 //      check if task exists and overdue
       tasks = <?php print json_encode($tasks);?>;
 
-<!--      $.each(tasks, function(index, value){-->
-<!--         if(value['status'] !='3') {-->
-<!--             var data_time = toTimestamp(value['due_time']);-->
-<!--             var dt = new Date().getTime();-->
-<!--             var n = dt.toString();-->
-<!--             var new_time = n.slice(0, -3);-->
-<!--             if (data_time < new_time) {-->
-<!---->
-<!--                    var form_data = {-->
-<!--                        id: value['id'],-->
-<!--                        uid:value['uid'],-->
-<!--                        status: '6'-->
-<!--                    };-->
-<!--                    $.ajax({-->
-<!--                        url: "--><?php //echo site_url('ajax/updateTask'); ?><!--",-->
-<!--                        type: 'POST',-->
-<!--                        data: form_data,-->
-<!--                        dataType: 'json',-->
-<!--                        success: function (msg) {-->
-<!---->
-<!--                        }-->
-<!--                    });-->
-<!--             }-->
-<!--         }-->
-<!--      });-->
+      $.each(tasks, function(index, value){
+         if(value['status'] !='3') {
+             var data_time = toTimestamp(value['due_time']);
+             var dt = new Date().getTime();
+             var n = dt.toString();
+             var new_time = n.slice(0, -3);
+             if (data_time < new_time) {
+
+                    var form_data = {
+                        id: value['id']
+                    };
+                    $.ajax({
+                        url: "<?php echo site_url('ajax/updateTaskOverdue'); ?>",
+                        type: 'POST',
+                        data: form_data,
+                        dataType: 'json',
+                        success: function (msg) {
+console.log(msg);
+                        }
+                    });
+             }
+         }
+      });
 
 /**
  * INVITATION AJAX
@@ -358,6 +356,20 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                           $('#save_task_pr_modal,#save_error_task_pr_modal').css('display', 'none');
                           $("input[type=text], textarea").val("");
                           $('#addtask_pr_modal').modal('hide');
+//                          todo
+
+
+console.log(msg['newtask']);
+
+                          var idtr =  'tr-dashboard-task-'+msg["id"];
+                          $("#approve-task-table").find('tbody:first')
+                              .prepend("<tr id='"+idtr+"'><td class='text-left'>#"+msg['newtask']['id']+"</td><td class='text-left'>"+msg['newtask']['date_created']+"</td>+" +
+                                  "<td class='text-left'>3</td><td class='text-left'>4</td>" +
+                                  "<td class='text-left'>5</td>" +
+                                  "<td class='text-left'>6</td>+" +
+                                  "<td class='text-left'>7</td></tr>");
+
+
                       }, 2000);
 
 
@@ -602,6 +614,7 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                           data: form_data,
                           dataType: 'json',
                           success: function (msg) {
+                              console.log(msg);
                               if (msg.empty == true) {
                                   $('#check_empty_edit_task_pr').fadeIn('slow').css('display', 'block');
                               }
@@ -615,7 +628,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                                       easing: 'swing', // or "linear"
                                       // use jQuery UI or Easing plugin for more options
                                       step: function() {
-                                          console.log(this.blurRadius);
                                           $('#tr-dashboard-task-'+$data).css({
                                               "-webkit-filter": "blur("+this.blurRadius+"px)",
                                               "filter": "blur("+this.blurRadius+"px)"
@@ -623,6 +635,17 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                                       }
                                   });
                                   setTimeout(function() {
+                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').html('#'+$data);
+                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').html('<span style="color:#5cb85c;">updated now</span>');
+                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').html('<span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span>');
+                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').html('<a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv["implementor"]); ?>)"><?php print(short_name($user_name[$tv["implementor"]])); ?></a>');
+                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').html('<a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv["uid"]); ?>)"><?php print(short_name($user_name[$tv["uid"]])); ?></a>');
+                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').html(msg['title']);
+                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').html(msg['project']);
+                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html(msg['desc']);
+                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html('<span><i class="fa fa-circle circle-priority" style="<?php if ($tv["priority"] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv["priority"] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv["priority"] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv["priority"]) ?>');
+                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html(msg['dueto']);
+                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html('<a href="#" onClick="taskToReady(<?php print($tv["id"]); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a><a href="#" onClick="taskToEdit(<?php print($tv["id"]); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a><a href="#" onMouseDown="taskToView(<?php print($tv["id"]); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a><a href="#" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv["id"]); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>');
                                       blurRadius = 0;
                                       $('#edit-task-modal').hide();
                                       $('#tr-dashboard-task-'+$data).css({

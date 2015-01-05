@@ -25,7 +25,10 @@
 
 .icon-rightarrow:before {
     content: "\e600";
+
 }
+
+
 
 .icon-users:before {
     content: "\e601";

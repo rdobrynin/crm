@@ -79,6 +79,7 @@
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
                                             <th width="6%" class="text-left" style="border-left: 1px solid #ddd;">Project to</th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
+                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
                                             <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
                                             <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">CTS</th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
@@ -90,7 +91,7 @@
                                         <tbody id="over_tasks_table">
                                         <?php $tasks = array_reverse($tasks);?>
                                         <?php foreach ($tasks as $tk => $tv): ?>
-                                            <?php if ($tv['status'] == 6): ?>
+                                            <?php if ($tv['overdue'] == 1): ?>
                                                 <tr id="tr-dashboard-task-<?php print($tv['id']); ?>" class="<?php print(check_deadline($tv['due_time'])); ?>">
                                                     <td>#<?php print($tv['id']); ?></td>
                                                     <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
@@ -100,6 +101,9 @@
                                                     <td><?php print($tv['title']); ?></td>
                                                     <td><?php print($project_title[$tv['pid']]); ?></td>
                                                     <td><span class="muted"><?php print($tv['desc']); ?></span></td>
+                                                    <td>
+                                                        <span class="label <?php print(task_status_label($tv['status'])); ?> label-xs"><?php print(task_status($tv['status'])); ?></span>
+                                                    </td>
                                                     <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
                                                     <td><?php print(check_cts($tv['cts'])); ?></td>
                                                     <td class="text-left"><?php print(date_format(date_create($tv['due_time']),"F d H:i")); ?></td>
@@ -165,6 +169,9 @@
                                         <tbody id="approve_tasks_table">
                                       <?php $tasks = array_reverse($tasks);?>
                                         <?php foreach ($tasks as $tk => $tv): ?>
+
+                                            <?php if ($tv['overdue'] !=='1'): ?>
+
                                             <?php if ($tv['status'] == 0 && $user[0]['role']==5 OR $tv['status'] == 0 && $user[0]['role']==4 OR $tv['status'] == 0 &&  $user[0]['role']==3): ?>
 
                                             <tr class="<?php if ($tv['status'] == 6): ?>danger<?php endif ?> <?php print(check_deadline($tv['due_time'])); ?>" id="tr-dashboard-task-<?php print($tv['id']); ?>">
@@ -188,6 +195,9 @@
                                                 <?php endif ?>
                                             </tr>
                                             <?php endif ?>
+                                            <?php endif ?>
+
+
                                         <?php endforeach ?>
 
                                         </tbody>

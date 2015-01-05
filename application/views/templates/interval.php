@@ -110,8 +110,6 @@
                                 "<td class='text-left'>"+data['title']+"</td>+" +
                                 "<td class='text-left'>"+data['event']+"</td></tr>");
 
-
-
                         $('.mini-inbox').append(
                             '<div class="alert inbox"><button type="button" class="close" data-dismiss="alert">×' +
                                 '</button><a href="javascript:void(0)"><i class="fa fa-check-circle"></i>From: ' + name + '</a>' +

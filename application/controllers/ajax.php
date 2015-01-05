@@ -490,6 +490,7 @@ class Ajax extends CI_Controller {
                 $this->project_model->createEvent($result['owner'], $result['desc'],  $text, $full_name, $result['title'], 1);
                 if ($this->task_model->insertTask() == true) {
                     $result['result'] = true;
+                    $result['newtask'] = $this->task_model->getLastTask();
                 }
                 else {
                     $result['result'] = false;
@@ -874,6 +875,30 @@ class Ajax extends CI_Controller {
         echo json_encode ($result);
     }
 
+
+    /**
+     * Update Task for Overdue
+     */
+
+    function updateTaskOverdue() {
+        $id =  $this->input->post('id');
+        $this->load->model('task_model');
+        if($querty = $this->task_model->updateTaskOverdue($id)) {
+            $result = true;
+        }
+        else {
+            $result = false;
+        }
+
+        echo json_encode ($result);
+    }
+
+
+
+
+
+
+//updateTaskOverdue
 
 
     /**

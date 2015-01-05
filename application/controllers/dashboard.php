@@ -115,7 +115,6 @@ class Dashboard extends CI_Controller {
             $data['over_tasks']=false;
         }
 
-
         $readytasks = $this->task_model->getReadyTasks();
 
         if($readytasks) {

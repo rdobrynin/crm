@@ -133,9 +133,6 @@ if (!function_exists('task_status')) {
 if (!function_exists('task_status_label')) {
     function task_status_label($status) {
         $result=0;
-        if($status == 6) {
-            $result = 'label-danger';
-        }
         if($status == 5) {
             $result = 'label-primary';
         }
@@ -546,8 +543,6 @@ if (!function_exists('get_countries')) {
     if (!function_exists('check_cts')) {
         function check_cts ($date,$rcs = 0) {
             $nowtime = time();
-
-
             if($date == '0') {
                 $x = '--';
             }
@@ -571,15 +566,7 @@ if (!function_exists('get_countries')) {
                 if (($rcs > 0) && ($v >= 1))
                     $x .= ' ' . $this->time_ago($_tm, $rcs - 1);
             }
-
-
             return $x;
-
         }
     }
-
-
-
-
-
   }

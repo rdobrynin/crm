@@ -28,6 +28,28 @@ class Task_model extends CI_Model {
         return $return;
     }
 
+
+
+    /**
+     * Get Last Task
+     * @return mixed
+     */
+
+    public function getLastTask() {
+        $query = $this
+            ->db
+            ->limit('1')
+            ->order_by("id", "desc")
+            ->get('task');
+        if ($query->num_rows > 0) {
+            return $query->row();
+        }
+        else {
+            return FALSE;
+        }
+    }
+
+
     /**
      * verify task type
      * @param $id
@@ -62,6 +84,24 @@ class Task_model extends CI_Model {
         $update =$this->db->update('task_type', $data);
         return $update;
     }
+
+
+    /**
+     * Update task
+     * @return mixed
+     */
+
+    public function updateTaskOverdue($id) {
+        $data = array(
+            'overdue' =>  '1'
+        );
+        $this->db->where('id', $id);
+        $update =$this->db->update('task', $data);
+        return $update;
+    }
+
+
+
 
 
     /**
@@ -216,7 +256,7 @@ class Task_model extends CI_Model {
     public function getOverdueTasks() {
         $query = $this
             ->db
-            ->where('status', '6')
+            ->where('overdue', '1')
             ->get('task');
         if ($query->num_rows > 0) {
             return $query->result_array();
