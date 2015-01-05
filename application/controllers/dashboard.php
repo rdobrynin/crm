@@ -164,12 +164,7 @@ class Dashboard extends CI_Controller {
             $data['avatars']=false;
         }
 
-
-
-
         $data['users_names']= $this->admin_model->get_users_names();
-
-
         $this->session->set_userdata('user_id', $this->admin_model->get_user_id($_SESSION['username']));
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
         $data['introduce'] = $this->admin_model->getIntroduce($_SESSION['username']);
@@ -1137,6 +1132,7 @@ class Dashboard extends CI_Controller {
             $data['project_title']=false;
         }
         $data['users_names']= $this->admin_model->get_users_names();
+        $data['user_name'] = $this->admin_model->get_users_names();
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
         $data['client'] = $this->admin_model->get_own_client($_SESSION['username']);

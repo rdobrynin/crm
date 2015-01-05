@@ -1,5 +1,6 @@
 <script>
   $(function () {
+
 //      check if task exists and overdue
       tasks = <?php print json_encode($tasks);?>;
 
@@ -719,6 +720,7 @@ console.log(msg['newtask']);
 //                      .selectpicker('refresh');
 
                   $('#edittask_pr_btn').click(function () {
+                      console.log($('#edit_dueto_modal').val());
                       var form_data = {
                           title :$('#edit_task_pr_title').val(),
                           desc :$('#edit_task_pr_desc').val(),
@@ -775,6 +777,7 @@ console.log(msg['newtask']);
                                           "filter": "blur("+this.blurRadius+"px)"
                                       });
                                   }, 2000);
+
                               }
                               else {
                                   $('#edit_error_task_pr_modal').css('display','block');
