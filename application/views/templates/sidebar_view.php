@@ -23,7 +23,7 @@
         <?php endif ?>
 <!--      <li class="--><?// $url_arg=='charts' ? print('active') : print('') ?><!-- disabled"><a href="--><?php //print(base_url());?><!--charts"><i class="glyphicon glyphicon-stats"></i>&nbsp;<span class="left-resp-menu">--><?php //print(lang('menu_chart')); ?><!--</span></a>-->
 <!--      </li>-->
-      <li class="<? $url_arg=='comments' ? print('active') : print('') ?> disabled"><a href="<?php print(base_url());?>comments"><span class="icon-comments"></span>&nbsp;<span class="left-resp-menu"><?php print(lang('menu_comments')); ?></span></a> <?php if ($comments != false): ?><span class="badge badge-resp" id="badge-count-tasks"><?php print(count($comments));?></span> <?php else:?><span class="badge badge-resp" id="badge-count-tasks">0</span> <?php endif ?>
+      <li class="<? $url_arg=='comments' ? print('active') : print('') ?> disabled"><a href="<?php print(base_url());?>comments"><span class="icon-comments"></span>&nbsp<span class="left-resp-menu"><?php print(lang('menu_comments')); ?></span></a> <?php if ($comments != false): ?><span class="badge badge-resp" id="badge-count-comments"><?php print(count($comments));?></span> <?php else:?><span class="badge badge-resp" id="badge-count-comments">0</span> <?php endif ?>
       </li>
 
 <div class="statistic-imps">

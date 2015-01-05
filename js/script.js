@@ -270,6 +270,8 @@ $('.closebox').click(function(e){
         $("#wrapper").animate({paddingLeft: posVar + 'px'});
         $("#switch-left-bar").css('display','none');
         $('#switch-left-bar-back').fadeIn('slow');
+        localStorage.setItem("sidebar-left", true);
+
 
     });
 
@@ -280,6 +282,7 @@ $('.closebox').click(function(e){
         $("#wrapper").animate({paddingLeft: posVar + 'px'});
         $("#switch-left-bar-back").css('display','none');
         $('#switch-left-bar').fadeIn('slow');
+        localStorage.setItem("sidebar-left", false);
 
     });
 
@@ -301,6 +304,24 @@ $('.closebox').click(function(e){
         $(".right-float-sidebar").css('right', '-300px');
         $('#float-users').removeClass('active');
     }
+
+//
+//    // remember sidebar left position
+//    var current_sidebar = localStorage.getItem("sidebar-left");
+//    if (current_sidebar == 'true') {
+//        $("#sidebar-wrapper").css('width','50px');
+//        $("#wrapper").css('padding-left','50px');
+//        $("#switch-left-bar").css('display','none');
+//        $('#switch-left-bar-back').css('display,block');
+//    }
+//    else {
+//        $("#sidebar-wrapper").css('width','198px');
+//        $("#wrapper").css('padding-left','198px');
+//        $("#switch-left-bar-back").css('display','none');
+//        $("#switch-left-bar").css('display','block');
+//
+//    }
+
 
 
     $('#approve_tasks_table').pageMe({pagerSelector:'#pager_approve_tasks',showPrevNext:true,hidePageNumbers:true,perPage:35});
