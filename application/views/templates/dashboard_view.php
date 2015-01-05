@@ -92,7 +92,7 @@
                                         <?php $tasks = array_reverse($tasks);?>
                                         <?php foreach ($tasks as $tk => $tv): ?>
                                             <?php if ($tv['overdue'] == 1): ?>
-                                                <tr id="tr-dashboard-task-<?php print($tv['id']); ?>" class="<?php print(check_deadline($tv['due_time'])); ?>">
+                                                <tr id="tr-dashboard-task-<?php print($tv['id']); ?>">
                                                     <td>#<?php print($tv['id']); ?></td>
                                                     <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                                     <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>

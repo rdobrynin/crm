@@ -24,7 +24,6 @@ class Dashboard_model extends CI_Model {
   }
 
 
-
     public function settingsDialog($id, $input) {
         $data = array(
             'introduce' =>  $input

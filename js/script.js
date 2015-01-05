@@ -392,7 +392,7 @@ $('#badge-count-comments-top').html(count_all_comments);
 
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
-    })
+    });
 
     $('#show-more-comment').click(function () {
         $('#demo_modal').modal('show');
