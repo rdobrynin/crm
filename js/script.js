@@ -268,6 +268,7 @@ $('.closebox').click(function(e){
         var posVar = 50;
         $("#sidebar-wrapper").animate({width: posVar + 'px'});
         $("#wrapper").animate({paddingLeft: posVar + 'px'});
+        $("#sidebar-wrapper").addClass('sidebar-wrapper-mini');
         $("#switch-left-bar").css('display','none');
         $('#switch-left-bar-back').fadeIn('slow');
         localStorage.setItem("sidebar-left", true);
@@ -279,6 +280,7 @@ $('.closebox').click(function(e){
     $("#switch-left-bar-back").click(function () {
         var posVar = 198;
         $("#sidebar-wrapper").animate({width: posVar + 'px'});
+        $("#sidebar-wrapper").removeClass('sidebar-wrapper-mini');
         $("#wrapper").animate({paddingLeft: posVar + 'px'});
         $("#switch-left-bar-back").css('display','none');
         $('#switch-left-bar').fadeIn('slow');
@@ -307,20 +309,20 @@ $('.closebox').click(function(e){
 
 //
 //    // remember sidebar left position
-//    var current_sidebar = localStorage.getItem("sidebar-left");
-//    if (current_sidebar == 'true') {
-//        $("#sidebar-wrapper").css('width','50px');
-//        $("#wrapper").css('padding-left','50px');
-//        $("#switch-left-bar").css('display','none');
-//        $('#switch-left-bar-back').css('display,block');
-//    }
-//    else {
-//        $("#sidebar-wrapper").css('width','198px');
-//        $("#wrapper").css('padding-left','198px');
-//        $("#switch-left-bar-back").css('display','none');
-//        $("#switch-left-bar").css('display','block');
-//
-//    }
+    var left_sidebar = localStorage.getItem("sidebar-left");
+    if (left_sidebar == 'true') {
+        $("#sidebar-wrapper").css('width','50px');
+        $("#wrapper").css('padding-left','50px');
+        $("#switch-left-bar").css('display','none');
+        $('#switch-left-bar-back').fadeIn('slow');
+    }
+    else {
+        $("#sidebar-wrapper").css('width','198px');
+        $("#wrapper").css('padding-left','198px');
+        $("#switch-left-bar-back").css('display','none');
+        $("#switch-left-bar").css('display','block');
+
+    }
 
 
 
