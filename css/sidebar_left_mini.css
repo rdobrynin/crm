@@ -44,4 +44,25 @@ span#switch-left-bar-back {
     display: block;
 }
 
+.badge-mini{
+    position: absolute;
+    line-height: 11px;
+    height: 14px;
+    padding: 1px 3px;
+    color: black;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.25);
+    border: 1px solid;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 1px 1px rgba(0, 0, 0, 0.08);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 1px 1px rgba(0, 0, 0, 0.08);
+    left: 8px;
+    text-indent: initial;
+    font-size: 9px;
+    background-color: #67c1ef;
+    border-color: #30aae9;
+    margin-top: -11px;
+    display: block;
+}
+
+
 

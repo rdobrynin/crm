@@ -112,6 +112,7 @@ console.log(msg);
                   $("#switch-left-bar").css('display','none');
                   $('.badge-resp').addClass('badge-resp-mini');
                   $('#switch-left-bar-back').fadeIn('slow');
+                  $('.badge-mini').fadeIn('slow');
               }
           });
       });
@@ -140,6 +141,7 @@ console.log(msg);
                   $("#wrapper").animate({paddingLeft: posVar + 'px'});
                   $("#switch-left-bar-back").css('display','none');
                   $('.badge-resp').removeClass('badge-resp-mini');
+                  $('.badge-mini').css('display','none');
                   $('#switch-left-bar').fadeIn('slow');
               }
           });
