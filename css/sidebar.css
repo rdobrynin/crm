@@ -80,59 +80,7 @@ li.sidebar-brand {
     display: none;
 }
 
-@media (max-width: 767px) {
 
-    #wrapper {
-        padding-left: 0;
-    }
-
-    #sidebar-wrapper {
-        left: 45px;
-    }
-
-    #wrapper.active {
-        position: relative;
-        left: 250px;
-    }
-
-    #wrapper.active #sidebar-wrapper {
-        left: 250px;
-        width: 250px;
-    }
-
-    #menu-toggle {
-        display: inline-block;
-        background-color: #222;
-        height: 47px;
-        width: 48px;
-        visibility: hidden;
-    }
-
-    .inset {
-        padding: 30px;
-        padding-top: 0px;
-    }
-
-    ul.navbar.navbar-left {
-        display: none;
-    }
-
-    .nav > li {
-        position: relative;
-        display: block;
-        float: right;
-    }
-
-    .left-resp-menu {
-        display: none;
-    }
-
-    .sidebar-nav li a {
-        text-align: right;
-        text-shadow: 1px 1px #000;
-    }
-
-}
 
 /*NAV*/
 
@@ -159,77 +107,17 @@ li.active a {
 }
 
 
-@media (max-width: 767px) {
-    .sidebar-nav li a {
-        text-align: right;
-        padding-right: 0;
-        font-size: 21px;
-        margin-right: -6px;
-        text-shadow: 1px 1px #000;
-    }
-    .left-resp-menu {
-        display: none;
-    }
-
-    .sidebar-nav li {
-        border-bottom: 0 solid #000;
-        box-shadow: 0 0 0 #2C2C2C;
-        line-height: 48px;
-    }
-
-    .sidebar-nav {
-        left: -7px;
-    }
-
-    .sidebar-nav li.active {
-        background: transparent;
-    }
-
-    .sidebar-nav li:hover {
-        background: transparent;
-    }
-
-    span.badge-resp {
-        position: absolute;
-        right: 0;
-        /* width: 19px; */
-        height: 19px;
-        text-align: center;
-        padding: 0;
-        margin: 0;
-        float: inherit;
-        /* background: transparent; */
-        text-indent: initial;
-        padding: 7px;
-        padding-top: 4px;
-        display: block;
-    }
-
-
-    ul.navbar.navbar-left {
-   background: transparent;
-    }
-    ul.sidebar-nav li:hover {
-        transition: none;
-        background: transparent !important;
-    }
-
-
-
-}
-
-
 span.badge-resp {
     position: absolute;
-    right: 0;
-    height: 16px;
+    right: 11px;
+    /* height: 19px; */
     text-align: center;
     margin: 0;
     float: inherit;
     padding: 5px;
-    padding-top: 3px;
+    padding-top: 6px;
     display: block;
-    margin-top: -20px;
+    margin-top: -25px;
     -pie-background: linear-gradient(rgba(247,247,247,0.75) 0%,rgba(246,247,247,0.65) 25%,rgba(236,238,239,0.55) 85%,rgba(232,232,234,0.45) 100%);
     background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(247,247,247,0.75)), color-stop(25%, rgba(246,247,247,0.65)), color-stop(85%, rgba(236,238,239,0.55)), color-stop(100%, rgba(232,232,234,0.45)));
     background-image: -webkit-linear-gradient(rgba(247,247,247,0.75) 0%,rgba(246,247,247,0.65) 25%,rgba(236,238,239,0.55) 85%,rgba(232,232,234,0.45) 100%);
@@ -241,6 +129,10 @@ span.badge-resp {
     box-shadow: 0 1px 3px #2e2e30,0 1px 1px rgba(255,255,255,0.2) inset;
     text-shadow: 0 1px 1px rgba(0,0,0,0.4);
     background-color: #000;
+    text-indent: initial;
+    min-width: 25px;
+    min-height: 25px;
+    border-radius: 31px;
 }
 
 .dropdown-menu > li > a:hover > .badge-resp {
@@ -254,27 +146,6 @@ span.badge-resp {
     box-shadow: 0 1px 1px rgba(0,0,0,0.3) inset;
 }
 
-@media (min-width: 768px) {
-    span.badge-resp {
-        position: absolute;
-        right: 10px;
-        height: 18px;
-        text-align: center;
-        margin: 0;
-        float: inherit;
-        /* background: transparent; */
-        text-indent: initial;
-        padding: 5px;
-        padding-top: 3px;
-        display: block !important;
-        margin-top: -20px;
-        min-width: 24px;
-        width: auto;
-        /* padding-right: 7px; */
-        text-align: center;
-    }
-
-}
 
 .avatar-top {
     width: 45px;
