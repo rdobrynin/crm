@@ -23,7 +23,7 @@ h2 {
     width: 98%;
     margin: 0 auto;
     padding: 5px;
-    margin-top: 54px;
+    margin-top: 31px;
     margin-left: 0;
     padding-bottom: 25px;
     padding-top: 25px;
@@ -40,14 +40,14 @@ div.navbar-collapse.navbar-inverse.navbar-fixed-top {
 .back-to-top {
     cursor: pointer;
     position: fixed;
-    bottom: 20px;
+    bottom: 10%;
     right: 47px;
     display: none;
     background-color: rgba(50, 118, 177,0.8);
     padding: 7px;
-    padding-left: 9px;
-    padding-right: 9px;
-    border-radius: 37px;
+    padding-left: 10px;
+    padding-right: 7px;
+    border-radius: 37px !important;
 }
 
 .navbar-collapse {
@@ -522,6 +522,15 @@ span.icon-book {
     transform: matrix(-1, 0, 0, 1, 0, 0);
     padding-right: 190px;
 
+}
+
+
+.mirrorup {
+    -webkit-transform: matrix(0, -1, -1, 0, -1, -1);
+    -moz-transform: matrix(0, -1, -1, 0, -1, -1);
+    -ms-transform: matrix(0, -1, -1, 0, -1, -1);
+    -o-transform: matrix(0, -1, -1, 0, -1, -1);
+    transform: matrix(0, -1, -1, 0, -1, -1);
 }
 
 #sidebar-wrapper .icon-comments, #sidebar-wrapper .icon-users, #sidebar-wrapper .icon-tasks , #sidebar-wrapper .icon-projects , #sidebar-wrapper .icon-client, #sidebar-wrapper .icon-menu {

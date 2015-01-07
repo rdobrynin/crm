@@ -12,8 +12,37 @@
                 name = name+'...';
                 var new_time_int = parseInt(new_time);
                 if(new_time_int-3.5 < data_time) {
+
                     // build html markup
+
+//Get left sidebar status
+
+                    $user = '<?php print($user[0]['id'])?>';
+                    var form_data = {
+                        id: $user
+                    };
+                    $.ajax({
+                        url: "<?php echo site_url('ajax/getUserbyId'); ?>",
+                        type: 'POST',
+                        data: form_data,
+                        dataType: 'json',
+                        success: function (msg) {
+                            var status = msg.user[0]['sidebar_left'];
+
+                            if(status == '1') {
+$('.mini-inbox').css('display','none');
+                            }
+                            else {
+                                $('.mini-inbox').css('display','block');
+                            }
+                        }
+                    });
+
+
+
+
 //  for project add
+
                     if (data['type'] == 0) {
                         //                    insert to log table
                         var idtr =  'current-tr-'+data["id"];
@@ -25,11 +54,13 @@
                                 "<td class='text-left'>"+data['event']+"</td></tr>");
 
 
-                        $('.mini-inbox').append(
-                            '<div class="alert inbox"><button type="button" class="close" data-dismiss="alert">×' +
-                                '</button><a href="javascript:void(0)"><i class="fa fa-bell"></i>From: ' + name + '</a>' +
-                                '<span class="message-mini">' + data.title + ' Project has been created</span></div>'
-                        ).fadeIn('3000');
+                            $('.mini-inbox').append(
+                                '<div class="alert inbox"><button type="button" class="close" data-dismiss="alert">×' +
+                                    '</button><a href="javascript:void(0)"><i class="fa fa-bell"></i>From: ' + name + '</a>' +
+                                    '<span class="message-mini">' + data.title + ' Project has been created</span></div>'
+                            ).fadeIn('3000');
+
+
                     }
 // for tasks added
                     else if (data['type'] == 1) {
@@ -47,14 +78,19 @@
                                 '</button><a href="javascript:void(0)"><i class="fa fa-bell"></i>From: ' + name + '</a>' +
                                 '<span class="message-mini">' + data.title + ' Task has been added</span></div>'
                         ).fadeIn('3000');
+
+
                     }
 //for comments added
                     else if (data['type'] == 2) {
+
                         $('.mini-inbox').append(
                             '<div class="alert inbox"><button type="button" class="close" data-dismiss="alert">×' +
                                 '</button><a href="javascript:void(0)"><i class="fa fa-comment"></i>From: ' + name + '</a>' +
                                 '<span class="message-mini">' + data.title + ' comment has been added</span></div>'
                         ).fadeIn('3000');
+
+
                     }
 // delete task
                     else if (data['type'] == 3) {
@@ -75,6 +111,8 @@
                                 '</button><a href="javascript:void(0)"><i class="fa fa-gavel"></i>From: ' + name + '</a>' +
                                 '<span class="message-mini">' + data.title + ' task has been deleted</span></div>'
                         ).fadeIn('3000');
+
+
                     }
 
 // update event
@@ -96,6 +134,8 @@
                                 '</button><a href="javascript:void(0)"><i class="fa fa-check-circle"></i>From: ' + name + '</a>' +
                                 '<span class="message-mini">' + data.title + ' task has been updated</span></div>'
                         ).fadeIn('3000');
+
+
                     }
 
 // update event
@@ -115,6 +155,7 @@
                                 '</button><a href="javascript:void(0)"><i class="fa fa-check-circle"></i>From: ' + name + '</a>' +
                                 '<span class="message-mini">' + data.title + ' task has been updated</span></div>'
                         ).fadeIn('3000');
+
                     }
                 }
 

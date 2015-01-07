@@ -71,7 +71,7 @@
                                     <table class="table table-condensed">
                                         <thead>
                                         <tr>
-                                            <th width="2%" class="text-left">id</th>
+                                            <th width="5%" class="text-left">Article</th>
                                             <th width="8%" class="text-left"  style="border-left: 1px solid #ddd;">Created</th>
                                             <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Label</th>
                                             <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Implementor</th>
@@ -93,7 +93,7 @@
                                         <?php foreach ($tasks as $tk => $tv): ?>
                                             <?php if ($tv['overdue'] == 1): ?>
                                                 <tr id="tr-dashboard-task-<?php print($tv['id']); ?>">
-                                                    <td>#<?php print($tv['id']); ?></td>
+                                                    <td><?php print($tv['key']); ?>-<?php print($tv['id']); ?></td>
                                                     <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                                     <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
                                                     <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
@@ -106,7 +106,7 @@
                                                     </td>
                                                     <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
                                                     <td><?php print(check_cts($tv['cts'])); ?></td>
-                                                    <td class="text-left"><?php print(date_format(date_create($tv['due_time']),"F d H:i")); ?></td>
+                                                    <td class="text-left"><?php print($tv['due_time']); ?></td>
                                                     <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
                                                         <td>
                                                             <a href="#" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
@@ -151,7 +151,7 @@
                                     <table class="table table-condensed" id="approve-task-table">
                                         <thead>
                                         <tr>
-                                            <th width="2%" class="text-left">id</th>
+                                            <th width="5%" class="text-left">Article</th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
                                             <th width="4%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
                                             <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
@@ -169,13 +169,10 @@
                                         <tbody id="approve_tasks_table">
                                       <?php $tasks = array_reverse($tasks);?>
                                         <?php foreach ($tasks as $tk => $tv): ?>
-
                                             <?php if ($tv['overdue'] !=='1'): ?>
-
                                             <?php if ($tv['status'] == 0 && $user[0]['role']==5 OR $tv['status'] == 0 && $user[0]['role']==4 OR $tv['status'] == 0 &&  $user[0]['role']==3): ?>
-
                                             <tr class="<?php if ($tv['status'] == 6): ?>danger<?php endif ?> <?php print(check_deadline($tv['due_time'])); ?>" id="tr-dashboard-task-<?php print($tv['id']); ?>">
-                                                <td>#<?php print($tv['id']); ?></td>
+                                                <td><?php print($tv['key']); ?>-<?php print($tv['id']); ?></td>
                                                 <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                                 <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
                                                 <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
@@ -184,7 +181,7 @@
                                                 <td><?php print($project_title[$tv['pid']]); ?></td>
                                                 <td><span class="muted"><?php print($tv['desc']); ?></span></td>
                                                 <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
-                                                <td class="text-left"><?php print(date_format(date_create($tv['due_time']),"F d H:i")); ?></td>
+                                                <td class="text-left"><?php print($tv['due_time']); ?></td>
                                                 <?php if($user[0]['role']!=3):?>
                                                 <td>
                                                     <a href="#" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
@@ -196,21 +193,15 @@
                                             </tr>
                                             <?php endif ?>
                                             <?php endif ?>
-
-
                                         <?php endforeach ?>
-
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
                             <?php else: ?>
-
                                 <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of approve tasks found</div></div>
                             <?php endif ?>
-
-
                         <div class="text-center">
                             <ul class="pagination pagination-lg pager" id="pager_approve_tasks"></ul>
                         </div>
@@ -225,7 +216,7 @@
                                     <table class="table table-condensed" id="ready-task-table" <?php if ($ready_tasks==0): ?> style="display: none;" <?php endif ?>>
                                         <thead>
                                         <tr>
-                                            <th width="2%" class="text-left">id</th>
+                                            <th width="5%" class="text-left">Article</th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
                                             <th width="4%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
                                             <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
@@ -244,7 +235,7 @@
                                         <?php foreach ($tasks as $tk => $tv): ?>
                                             <?php if ($tv['status'] == 5): ?>
                                                 <tr id="ready-task-<?php print($tv['id']); ?>" class="<?php print(check_deadline($tv['due_time'])); ?>">
-                                                    <td>#<?php print($tv['id']); ?></td>
+                                                    <td><?php print($tv['key']); ?>-<?php print($tv['id']); ?></td>
                                                     <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                                     <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
                                                     <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
@@ -260,8 +251,6 @@
                                                         <a href="#" style="color:#5cb85c;" class="btn btn-xs imp-adjust-btn"  onClick="taskToProcess(<?php print($tv['id']); ?>)"  data-toggle="tooltip" data-placement="top" title="process"><i class="fa fa-play-circle"></i></a>
                                                         <a href="#"  onClick="impControl(<?php print($tv['id']); ?>,3)" class="btn btn-xs imp-adjust-btn" data-toggle="tooltip" data-placement="top" title="complete"><i class="fa fa-check-circle"></i></a>
                                                         <a href="#" style="color:#d9534f;" class="btn btn-xs imp-adjust-btn" onClick="impControl(<?php print($tv['id']); ?>,1)" data-toggle="tooltip" data-placement="top" title="unwant"><i class="fa fa-eye-slash"></i></a>
-
-
                                                         <?php else: ?>
 <td class="text-center">
     -
@@ -271,7 +260,6 @@
                                                 </tr>
                                             <?php endif ?>
                                         <?php endforeach ?>
-
                                         </tbody>
                                     </table>
                                 </div>

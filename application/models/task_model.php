@@ -148,6 +148,7 @@ class Task_model extends CI_Model {
             'due_time' =>$this->input->post('dueto'),
             'label' =>$this->input->post('label'),
             'priority' =>$this->input->post('priority'),
+            'key' =>$this->input->post('key'),
         );
         $insert = $this->db->insert('task', $data);
         return $insert;

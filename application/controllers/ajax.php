@@ -470,6 +470,7 @@ class Ajax extends CI_Controller {
         $this->load->model('admin_model');
         $result['title'] = $this->input->post('title');
         $result['desc'] = $this->input->post('desc');
+        $result['key'] = $this->input->post('key');
         $result['project'] = $this->input->post('project');
         $result['dueto'] = $this->input->post('dueto');
         $result['label'] = $this->input->post('label');
@@ -487,11 +488,32 @@ class Ajax extends CI_Controller {
 
                 $result['empty'] = false;
                 $text = 'added task';
-                $this->project_model->createEvent($result['owner'], $result['desc'],  $text, $full_name, $result['title'], 1);
-                if ($this->task_model->insertTask() == true) {
-                    $result['result'] = true;
-                    $result['newtask'] = $this->task_model->getLastTask();
-                }
+            if ($this->task_model->insertTask() == true) {
+                $result['result'] = true;
+                $result['newtask'] = $this->task_model->getLastTask();
+
+
+                /**
+                 * get task label
+                 */
+
+
+
+                   $result['text_label'] = $this->task_model->checkTaskType($result['label']);
+                   $cur_array =  $this->admin_model->get_user_id($result['owner']);
+                   $imp_array =  $this->admin_model->get_user_id($result['implementor']);
+                   $result['cur_name'] = short_name($cur_array[0]['first_name'].' '.$cur_array[0]['last_name']);
+                   $result['imp_name'] = short_name($imp_array[0]['first_name'].' '.$imp_array[0]['last_name']);
+
+
+
+
+
+
+
+                $key = $result['key'].'-'.$result['newtask']->id;
+                $this->project_model->createEvent($result['owner'], $result['desc'],  $text, $full_name, $result['title'], $key, 1);
+            }
                 else {
                     $result['result'] = false;
                 }
@@ -507,6 +529,7 @@ class Ajax extends CI_Controller {
         $result['desc'] = $this->input->post('desc');
         $result['project'] = $this->input->post('project');
         $result['dueto'] = $this->input->post('dueto');
+        $result['key'] = $this->input->post('key');
         $result['label'] = $this->input->post('label');
         $result['priority'] = $this->input->post('priority');
         $result['implementor'] = $this->input->post('implementor');
@@ -520,10 +543,12 @@ class Ajax extends CI_Controller {
             $result['empty'] = true;
         }
         else {
+            $key = $result['key'].'-'.$id;
+
             $result['empty'] = false;
             $text = 'edited task';
-            $this->project_model->createEvent($result['owner'], $result['desc'],  $text, $full_name, $result['title'], 5);
             if ($this->task_model->updateEditTask($id) == true) {
+                $this->project_model->createEvent($result['owner'], $result['desc'],  $text, $full_name, $result['title'],$key, 5);
                 $result['result'] = true;
             }
             else {
@@ -760,9 +785,9 @@ class Ajax extends CI_Controller {
         $full_name = $name_array[0]['first_name'].' '.$name_array[0]['last_name'];
         $array = $this->task_model->getTask($id);
         $text ='delete task';
-
+        $key =$array->key.'-'.$id;
         if($querty = $this->task_model->deleteTask($id)) {
-            $this->project_model->createEvent($array->uid, $array->desc, $text, $full_name, $array->title, 3);
+            $this->project_model->createEvent($array->uid, $array->desc, $text, $full_name, $array->title,$key, 3);
             $result = $id;
         }
         else {

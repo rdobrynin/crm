@@ -4,6 +4,70 @@ function toTimestamp(strDate){
 }
 
 
+function getLabelTask($status) {
+    $result=0;
+    if($status == 1) {
+        $result = 'label-danger';
+    }
+    else if($status == 2) {
+        $result = 'label-success';
+    }
+    else if($status == 3) {
+        $result = 'label-warning';
+    }
+    else if($status == 4) {
+        $result = 'label-primary';
+    }
+    else if($status == 5) {
+        $result = 'label-info';
+    }
+    else if($status == 6) {
+        $result = 'label-primary';
+    }
+    else if($status == 7) {
+        $result = 'label-danger';
+    }
+    else if($status == 8) {
+        $result = 'label-info';
+    }
+    return $result;
+}
+
+
+function getPriorityTask($status) {
+    $result=0;
+    if($status == 0) {
+        $result = 'minor';
+    }
+    else if($status == 1) {
+        $result = 'major';
+    }
+    else if($status == 2) {
+        $result = 'critical';
+    }
+    return $result;
+}
+
+
+function getPriorityTaskClass($status) {
+    $result=0;
+    if($status == 0) {
+        $result = 'color:#428bca';
+    }
+    else if($status == 1) {
+        $result = ' color:#f89406';
+    }
+    else if($status == 2) {
+        $result = ' color:#d9534f';
+    }
+    return $result;
+}
+
+
+
+
+
+
 //Pager
 
 $.fn.pageMe = function(opts){

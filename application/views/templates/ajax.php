@@ -205,10 +205,6 @@ console.log(msg);
       });
 
 
-
-
-
-
       /**
        * Add project
        *
@@ -259,7 +255,7 @@ console.log(msg);
           setInterval(function(){
               $.get( "<?php echo site_url('ajax/countProjects'); ?>", function( data ) {
                   if(data >0) {
-                      $('#badge-count-projects').html(data);
+                      $('#badge-count-projects,#badge-count-mini-projects').html(data);
                   }
               }, "json" );
           }, 3000);
@@ -451,6 +447,10 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
       });
 
       $("#addtask_pr_btn").click(function(event) {
+
+
+          var myString = $.trim($('#choose_project_modal').text().toUpperCase());
+          var newABB = myString.substr(0, myString.length-3);
           var form_data = {
               title :$('#task_pr_title').val(),
               desc :$('#task_pr_desc').val(),
@@ -459,9 +459,8 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               label :$('#task_type_choose').val(),
               priority :$('#task_priority_choose').val(),
               implementor :$('#implementor_choose_modal').val(),
-              owner :$('#user_added_task_pr_id').val()
-
-
+              owner :$('#user_added_task_pr_id').val(),
+              key: newABB
           };
           $.ajax({
               url: "<?php echo site_url('ajax/createTask'); ?>",
@@ -484,16 +483,48 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
 //                          todo
 
 
-console.log(msg['newtask']);
+
+
 
                           var idtr =  'tr-dashboard-task-'+msg["id"];
                           $("#approve-task-table").find('tbody:first')
-                              .prepend("<tr id='"+idtr+"'><td class='text-left'>#"+msg['newtask']['id']+"</td><td class='text-left'>"+msg['newtask']['date_created']+"</td>+" +
-                                  "<td class='text-left'>3</td><td class='text-left'>4</td>" +
-                                  "<td class='text-left'>5</td>" +
-                                  "<td class='text-left'>6</td>+" +
-                                  "<td class='text-left'>7</td></tr>");
+                              .prepend("<tr id='"+idtr+"'><td class='text-left'>#"+msg['newtask']['id']+"</td><td class='text-left'><span style='color:#5cb85c;'>created now</span></td>+" +
+                                  "<td class='text-left'><span class='label label-xs "+getLabelTask(msg['newtask']['label'])+" '>"+msg['text_label']['title']+"</span></td>+"+
+                                  "<td class='text-left'><a href='#' class='hover-td-name' onClick='qmSendComment("+msg['newtask']['implementor']+")'>"+msg['imp_name']+"</a></td>" +
+                                  "<td class='text-left'><a href='#' class='hover-td-name' onClick='qmSendComment("+msg['newtask']['uid']+")'>"+msg['cur_name']+"</a></td>" +
+                                  "<td class='text-left'>"+msg['newtask']['title']+"</td>+" +
+                                  "<td class='text-left'>"+msg['newtask']['pid']+"</td>+"+
+                                  "<td class='text-left'>"+msg['newtask']['desc']+"</td>+"+
+                                  "<td class='text-left'><span><i class='fa fa-circle circle-priority' style="+getPriorityTaskClass(msg['newtask']['priority'])+"></i></span> "+getPriorityTask(msg['newtask']['priority'])+"</td>+"+
+                                  "<td class='text-left'>"+msg['newtask']['due_time']+"</td>+"+
+                                  "<td class='text-left'> <a href='#' onClick='taskToReady("+msg['newtask']['id']+")' style='text-decoration: none;'><i class='fa fa-play'></i></a><a href='#'"+
+                                  "onClick='taskToEdit"+msg['newtask']['id']+")'style='text-decoration: none;'><i class='fa fa-pencil'></i></a><a href='#' onMouseDown='taskToView("+msg['newtask']['id']+")'"+
+                                  "onMouseOut='taskToHide()' style='text-decoration: none;'><i class='fa fa-eye'></i></a>"+
+                                  "<a href='#' data-toggle='confirmation-delete-current-task' data-singleton='true' data-target='"+msg['newtask']['id']+"' style='text-decoration: none;cursor: pointer;'>"+
+                                  "<span class='icon-remove'></span></a></td></tr>");
 
+
+
+
+
+                          idtr =  'tr-task-task-'+msg["id"];
+                          $("#common-tasks-table").find('tbody:first')
+                              .prepend("<tr id='"+idtr+"'><td class='text-left'>#"+msg['newtask']['id']+"</td><td class='text-left'><span style='color:#5cb85c;'>created now</span></td>+" +
+                                  "<td class='text-left'>"+msg['newtask']['label']+"</td>+"+
+                                  "<td class='text-left'><a href='#' class='hover-td-name' onClick='qmSendComment("+msg['newtask']['implementor']+")'>"+msg['imp_name']+"</a></td>" +
+                                  "<td class='text-left'><a href='#' class='hover-td-name' onClick='qmSendComment("+msg['newtask']['uid']+")'>"+msg['cur_name']+"</a></td>" +
+                                  "<td class='text-left'>"+msg['newtask']['title']+"</td>+" +
+                                  "<td class='text-left'>"+msg['newtask']['pid']+"</td>+"+
+                                  "<td class='text-left'>"+msg['newtask']['desc']+"</td>+"+
+                                  "<td class='text-left'>"+msg['newtask']['status']+"</td>+"+
+                                  "<td class='text-left'><span><i class='fa fa-circle circle-priority' style="+getPriorityTaskClass(msg['newtask']['priority'])+"></i></span> "+getPriorityTask(msg['newtask']['priority'])+"</td>+"+
+                                  "<td class='text-left'>-"+
+                                  "<td class='text-left'>"+msg['newtask']['due_time']+"</td>+"+
+                                  "<td class='text-left'> <a href='#' onClick='taskToReady("+msg['newtask']['id']+")' style='text-decoration: none;'><i class='fa fa-play'></i></a><a href='#'"+
+                                  "onClick='taskToEdit"+msg['newtask']['id']+")'style='text-decoration: none;'><i class='fa fa-pencil'></i></a><a href='#' onMouseDown='taskToView("+msg['newtask']['id']+")'"+
+                                  "onMouseOut='taskToHide()' style='text-decoration: none;'><i class='fa fa-eye'></i></a>"+
+                                  "<a href='#' data-toggle='confirmation-delete-current-task' data-singleton='true' data-target='"+msg['newtask']['id']+"' style='text-decoration: none;cursor: pointer;'>"+
+                                  "<span class='icon-remove'></span></a></td></tr>");
 
                       }, 2000);
 
@@ -501,7 +532,7 @@ console.log(msg['newtask']);
                       setInterval(function(){
                           $.get( "<?php echo site_url('ajax/countTasks'); ?>", function( data ) {
                               if(data.length >0) {
-                                  $('#badge-count-tasks').html(data.length);
+                                  $('#badge-count-tasks,#badge-count-mini-tasks').html(data.length);
 
 
                               }
@@ -727,6 +758,7 @@ console.log(msg['newtask']);
                           title :$('#edit_task_pr_title').val(),
                           desc :$('#edit_task_pr_desc').val(),
                           project :msg.result['pid'],
+                          key :msg.result['key'],
                           dueto :$('#edit_dueto_modal').val(),
                           label :$('#edit_task_type_choose').val(),
                           priority :$('#edit_task_priority_choose').val(),
@@ -921,6 +953,7 @@ console.log(msg['newtask']);
           data: form_data,
           dataType: 'json',
           success: function (msg) {
+              $('#tr-dashboard-task-'+$data).remove();
           }
       });
   }

@@ -44,7 +44,7 @@
                             <table class="table table-task">
                                 <thead>
                                 <tr>
-                                    <th width="3%" class="text-left">#ID</th>
+                                    <th width="5%" class="text-left">Article</th>
                                     <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
                                     <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
                                     <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
@@ -62,7 +62,7 @@
                                 <?php $tasks = array_reverse($tasks);?>
                                 <?php foreach ($tasks as $tk => $tv): ?>
                                     <tr id="tr-project-task-<?php print($tv['id']); ?>" class="<?php print(check_deadline($tv['due_time'])); ?>">
-                                        <td><?php print($tv['id']); ?></td>
+                                        <td><?php print($tv['key']); ?>-<?php print($tv['id']); ?></td>
                                         <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                         <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
                                         <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
