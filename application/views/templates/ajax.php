@@ -21,7 +21,6 @@
                         data: form_data,
                         dataType: 'json',
                         success: function (msg) {
-console.log(msg);
                         }
                     });
              }
@@ -590,7 +589,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               data: form_data,
               dataType: 'json',
               success: function (msg) {
-                  console.log(msg);
               }
           });
       });
@@ -772,7 +770,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                           data: form_data,
                           dataType: 'json',
                           success: function (msg) {
-                              console.log(msg);
                               if (msg.empty == true) {
                                   $('#check_empty_edit_task_pr').fadeIn('slow').css('display', 'block');
                               }
@@ -885,7 +882,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               data: form_data_,
               dataType: 'json',
               success: function (msg) {
-                  console.log(msg);
                   if(msg.empty == true) {
                       $('#qm-empty-error').fadeIn('slow').css('display','block');
                       setTimeout(function () {
@@ -975,7 +971,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
           data: form_data,
           dataType: 'json',
           success: function (msg) {
-              console.log(msg);
           }
       });
   }
