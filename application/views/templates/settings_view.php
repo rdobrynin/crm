@@ -70,7 +70,7 @@
                       </div>
                       <div class="col-md-2" style="padding-left: 0">
                           <div class="form-group">
-                           <a href="#" class="btn btn-primary btn-update-ttp"  id="ttp_<?php print($tk) ?>">apply</a>
+                           <a href="javascript:void(0);" class="btn btn-primary btn-update-ttp"  id="ttp_<?php print($tk) ?>">apply</a>
                           </div>
                       </div>
                       <?php endforeach ?>

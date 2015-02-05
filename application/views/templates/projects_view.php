@@ -33,10 +33,10 @@
                         <td><?php print($pv['pid']); ?></td>
                         <td class="current-title-project"><?php print($pv['title']); ?></td>
                         <td><?php print($pv['description']); ?></td>
-                        <td><a href="#"><span class="badge badge-task" id="route-task"><?php if ($tasks != false): ?><?php print(count($tasks));?><?php else:?>0<?php endif ?></span></a></td>
-                        <td><a href="#" onClick="qmSendComment(<?php print($pv['owner']); ?>)"><?php print(short_name($user_name[$pv['owner']])); ?></a></td>
-                        <td><p><a href="#" id="edit-project-table"><i class="fa fa-pencil"></i></a></p></td>
-                        <td><p><a href="#" id="delete-project-table"><i class="fa fa-times"></i></a></td>
+                        <td><a href="javascript:void(0);"><span class="badge badge-task" id="route-task"><?php if ($tasks != false): ?><?php print(count($tasks));?><?php else:?>0<?php endif ?></span></a></td>
+                        <td><a href="javascript:void(0);" onClick="qmSendComment(<?php print($pv['owner']); ?>)"><?php print(short_name($user_name[$pv['owner']])); ?></a></td>
+                        <td><p><a href="javascript:void(0);" id="edit-project-table"><i class="fa fa-pencil"></i></a></p></td>
+                        <td><p><a href="javascript:void(0);" id="delete-project-table"><i class="fa fa-times"></i></a></td>
                     </tr>
                     <!--TASK-->
                     <tr>
@@ -65,8 +65,8 @@
                                         <td><?php print($tv['key']); ?>-<?php print($tv['id']); ?></td>
                                         <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                         <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
-                                        <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
-                                        <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
+                                        <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
+                                        <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
                                         <td><?php print($tv['title']); ?></td>
                                         <td><span class="muted"><?php print($tv['desc']); ?></span></td>
                                         <td>
@@ -79,13 +79,13 @@
                                             <td>
                                                 <?php if ($tv['status']!=3): ?>
                                                     <?php if($user[0]['role']==2):?>
-                                                    <a href="#" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
-                                                        <a href="#" onClick="taskToEdit(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
+                                                    <a href="javascript:void(0);" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
+                                                        <a href="javascript:void(0);" onClick="taskToEdit(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
                                                     <?php endif ?>
                                                 <?php endif ?>
-                                                <a href="#" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
+                                                <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                                 <?php if ($tv['status']!=2 && $tv['status']!=3): ?>
-                                                    <a href="#" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv['id']); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>
+                                                    <a href="javascript:void(0);" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv['id']); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>
 
                                                 <?php endif ?>
                                             </td>

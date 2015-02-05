@@ -3,7 +3,6 @@
     <div class="page-content-wrapper">
         <div class="page-content inset">
             <div id="wrapper">
-<!--                --><?php //var_dump($avatar); ?>
                 <a class="btn" data-toggle="confirmation-inline"  data-animation="true" data-original-title="qwq" title="Delete ?">test</a>
             </div>
 

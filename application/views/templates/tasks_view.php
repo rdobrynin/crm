@@ -3,7 +3,7 @@
   <!-- Keep all page content within the page-content inset div! -->
     <div class="page-content inset">
         <p class="lead">Tasks in process</p>
-        <?php if ($tasks != FALSE): ?>
+        <?php if ($process_tasks != FALSE): ?>
             <div class="row-fluid">
                 <div class="panel">
                     <div class="panel-body-table">
@@ -27,15 +27,14 @@
                                 </tr>
                                 </thead>
                                 <tbody id="proccess_task_table">
-                                <?php $tasks = array_reverse($tasks);?>
-                                <?php foreach ($tasks as $tk => $tv): ?>
-                                <?php if ($tv['status'] == 2): ?>
+                                <?php $process_tasks = array_reverse($process_tasks);?>
+                                <?php foreach ($process_tasks as $tk => $tv): ?>
                                         <tr class="<?php print(check_deadline($tv['due_time'])); ?>">
                                         <td><?php print($tv['key']); ?>-<?php print($tv['id']); ?></td>
                                         <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                         <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
-                                        <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
-                                        <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
+                                        <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
+                                        <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
                                         <td><?php print($tv['title']); ?></td>
                                         <td><?php print($project_title[$tv['pid']]); ?></td>
                                         <td><span class="muted"><?php print($tv['desc']); ?></span></td>
@@ -47,12 +46,10 @@
                                         <td class="text-left"><?php print($tv['due_time']); ?></td>
                                         <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
                                             <td>
-                                                <a href="#" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
+                                                <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                             </td>
                                         <?php endif ?>
                                     </tr>
-
-                                    <?php endif ?>
                                 <?php endforeach ?>
                                 </tbody>
                             </table>
@@ -61,7 +58,8 @@
                 </div>
             </div>
 
-
+        <?php else: ?>
+            <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of process tasks found</div></div>
         <?php endif ?>
         <!--                end last tasks-->
     </div>
@@ -102,8 +100,8 @@
                                       <td><?php print($tv['key']); ?>-<?php print($tv['id']); ?></td>
                                       <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                       <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
-                                      <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
-                                      <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
+                                      <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
+                                      <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
                                       <td><?php print($tv['title']); ?></td>
                                       <td><?php print($project_title[$tv['pid']]); ?></td>
                                       <td><span class="muted"><?php print($tv['desc']); ?></span></td>
@@ -116,12 +114,12 @@
                                       <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
                                           <td>
                                               <?php if ($tv['status']!=5): ?>
-                                              <a href="#" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
+                                              <a href="javascript:void(0);" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
                                               <?php endif ?>
-                                                      <a href="#" onClick="taskToEdit(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
-                                              <a href="#" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
+                                                      <a href="javascript:void(0);" onClick="taskToEdit(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
+                                              <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                           <?php if ($tv['status']!=2 && $tv['status']!=3): ?>
-                                              <a href="#" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv['id']); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>
+                                              <a href="javascript:void(0);" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv['id']); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>
                                           <?php endif ?>
                                           </td>
                                       <?php endif ?>
@@ -174,12 +172,12 @@
                             <?php $tasks = array_reverse($tasks);?>
                             <?php foreach ($tasks as $tk => $tv): ?>
                                 <?php if ($tv['status'] == 3): ?>
-                                    <tr class="<?php print(check_deadline($tv['due_time'])); ?>">
+                                    <tr>
                                         <td><?php print($tv['key']); ?>-<?php print($tv['id']); ?></td>
                                         <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                         <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
-                                        <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
-                                        <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
+                                        <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
+                                        <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
                                         <td><?php print($tv['title']); ?></td>
                                         <td><?php print($project_title[$tv['pid']]); ?></td>
                                         <td><span class="muted"><?php print($tv['desc']); ?></span></td>
@@ -198,7 +196,7 @@
                                         <td class="text-left"><?php print($tv['due_time']); ?></td>
                                         <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
                                             <td>
-                                                <a href="#" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
+                                                <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                             </td>
                                         <?php endif ?>
 

@@ -11,7 +11,6 @@
   <div class="page-content">
     <div class="container-fluid">
         <pre>
-        <?php var_dump($users); ?>
             </pre>
       <?php foreach ($users as $ak => $u): ?>
         <ul>

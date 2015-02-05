@@ -80,7 +80,7 @@
         <div class="jumbotron">
           <h2>Start your productivity here</h2>
           <p>You can read technical documentation here</p>
-          <p><a href="#" class="btn btn-primary">Learn More&nbsp;&nbsp;<i class="fa fa-caret-right" style="padding-top: 2px; position: absolute;"></i></a>
+          <p><a href="javascript:void(0);" class="btn btn-primary">Learn More&nbsp;&nbsp;<i class="fa fa-caret-right" style="padding-top: 2px; position: absolute;"></i></a>
           </p>
         </div>
       </div>

@@ -148,12 +148,11 @@ class Dashboard extends CI_Controller {
         $approvetasks = $this->task_model->getApproveTasks();
 
         if($approvetasks) {
-            $data['approve_tasks']= $processtasks;
+            $data['approve_tasks']= $approvetasks;
         }
         else {
             $data['approve_tasks']=false;
         }
-
 
         $avatars = $this->admin_model->getAvatars();
 
@@ -356,6 +355,14 @@ class Dashboard extends CI_Controller {
             $data['all_events']=false;
         }
 
+        $processtasks = $this->task_model->getprocessTasks();
+
+        if($processtasks) {
+            $data['process_tasks']= $processtasks;
+        }
+        else {
+            $data['process_tasks']=false;
+        }
 
 
         $data['users_names']= $this->admin_model->get_users_names();

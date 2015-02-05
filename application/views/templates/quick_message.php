@@ -7,9 +7,9 @@
             <label for="qm-autocomplete" class="col-md-2 control-label">To</label>
             <div class="col-md-10">
                 <input type="text" class="form-control qm" placeholder="Search..." id="qm-autocomplete">
-                <span class="label label-default label-xs" id="qm-point-name"></span>
+                <span class="label label-default label" id="qm-point-name"></span>
                 <span class="label label-default label-tag point-name-tag" style="position: absolute;
-top: 4px;"><span class="get_old_mail" id="qm-point-name">roman.dobrynin@gmail.com</span>&nbsp;&nbsp;&nbsp;<i class="fa fa-times" id="qm-close-point-name"></i></span>
+top: 4px;"><span class="get_old_mail" id="qm-point-name"></span>&nbsp;&nbsp;&nbsp;<i class="fa fa-times" id="qm-close-point-name"></i></span>
             </div>
         </div>
         <div class="form-group qm">
@@ -30,9 +30,9 @@ top: 4px;"><span class="get_old_mail" id="qm-point-name">roman.dobrynin@gmail.co
             </div>
         <div class="bottom-panel-qm">
             <input type="hidden" id="user_qm_id" name="user_qm_id" value="" class="form-control"/>
-            <a href="#" class="btn btn-primary" id="qm-send-btn">Comment</a>
-            <a href="#" class="btn btn-default" id="qm-clear-form-btn">Clear</a>
-            <a href="#" id="qm-link-file-btn"><i class="fa fa-link"></i></a>
+            <a href="javascript:void(0);" class="btn btn-primary" id="qm-send-btn">Comment</a>
+            <a href="javascript:void(0);" class="btn btn-default" id="qm-clear-form-btn">Clear</a>
+            <a href="javascript:void(0);" id="qm-link-file-btn"><i class="fa fa-link"></i></a>
         </div>
         </div>
 

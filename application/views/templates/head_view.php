@@ -19,7 +19,6 @@
     <link href="<?php print(base_url()); ?>assets/css/jquery.autocomplete.css" rel="stylesheet">
     <link href="<?php print(base_url()); ?>assets/css/bootstrap-toggle.css" rel="stylesheet">
     <link href="<?php print(base_url()); ?>assets/css/font-awesome.css" rel="stylesheet">
-    <?php var_dump($user[0]['sidebar_left']); ?>
     <?php if ($user[0]['sidebar_left'] == '1'): ?>
         <link href="<?php print(base_url()); ?>css/sidebar_left_mini.css" rel="stylesheet">
         <?php else: ?>
@@ -48,19 +47,19 @@
     <link href="<?php print(base_url()); ?>css/logs.css" rel="stylesheet">
     <link href="<?php print(base_url()); ?>css/tasker_fonts.css" rel="stylesheet">
 
-    <script src="assets/js/jquery-1.11.1.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/bootstrap-switch.min.js"></script>
-    <script src="assets/js/jquery.bootstrap.wizard.min.js"></script>
-    <script src="assets/js/bootstrap-select.js"></script>
-    <script src="assets/js/ajaxfileupload.js"></script>
-    <script src="js/script.js"></script>
-    <script src="assets/js/bootstrap-tooltip.js"></script>
-    <script src="assets/js/bootstrap-confirmation.js"></script>
-    <script src="assets/js/jquery.validate.min.js"></script>
-    <script src="assets/js/jquery.datetimepicker.js"></script>
-    <script src="assets/js/jquery.autocomplete.js"></script>
-    <script src="assets/js/bootstrap-toggle.js"></script>
+    <script src="<?php print(base_url()); ?>assets/js/jquery-1.11.1.min.js"></script>
+    <script src="<?php print(base_url()); ?>assets/js/bootstrap.min.js"></script>
+    <script src="<?php print(base_url()); ?>assets/js/bootstrap-switch.min.js"></script>
+    <script src="<?php print(base_url()); ?>assets/js/jquery.bootstrap.wizard.min.js"></script>
+    <script src="<?php print(base_url()); ?>assets/js/bootstrap-select.js"></script>
+    <script src="<?php print(base_url()); ?>assets/js/ajaxfileupload.js"></script>
+    <script src="<?php print(base_url()); ?>js/script.js"></script>
+    <script src="<?php print(base_url()); ?>assets/js/bootstrap-tooltip.js"></script>
+    <script src="<?php print(base_url()); ?>assets/js/bootstrap-confirmation.js"></script>
+    <script src="<?php print(base_url()); ?>assets/js/jquery.validate.min.js"></script>
+    <script src="<?php print(base_url()); ?>assets/js/jquery.datetimepicker.js"></script>
+    <script src="<?php print(base_url()); ?>assets/js/jquery.autocomplete.js"></script>
+    <script src="<?php print(base_url()); ?>assets/js/bootstrap-toggle.js"></script>
 
     <!-- Bootstrap core CSS -->
 <!--    <link rel="stylesheet/less" type="text/css" href="--><?php //print(base_url()); ?><!--less/style.less">-->

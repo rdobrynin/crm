@@ -32,8 +32,8 @@
                                         <td><?php print($cv['id']); ?></td>
                                         <td><span class="muted"><?php print(date_format(date_create($cv['date_created']),"F d H:i")); ?></span></td>
                                         <td><?php print($cv['subject']); ?></td>
-                                        <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($cv['uid']); ?>)"><?php print(short_name($user_name[$cv['uid']])); ?></a></td>
-                                        <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($cv['to']); ?>)"><?php print(short_name($user_name[$cv['to']])); ?></a></td>
+                                        <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($cv['uid']); ?>)"><?php print(short_name($user_name[$cv['uid']])); ?></a></td>
+                                        <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($cv['to']); ?>)"><?php print(short_name($user_name[$cv['to']])); ?></a></td>
                                         <td><span class="muted"><?php print($cv['text']); ?></span></td>
                                         <td><i class="fa fa-clock-o clock-activity"></i>&nbsp;<?php print(time_ago($cv['date_created'])); ?></td>
                                     </tr>
@@ -43,8 +43,8 @@
                                             <td><?php print($cv['id']); ?></td>
                                             <td><span class="muted"><?php print(date_format(date_create($cv['date_created']),"F d H:i")); ?></span></td>
                                             <td><?php print($cv['subject']); ?></td>
-                                            <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($cv['uid']); ?>)"><?php print(short_name($user_name[$cv['uid']])); ?></a></td>
-                                            <td><a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($cv['to']); ?>)"><?php print(short_name($user_name[$cv['to']])); ?></a></td>
+                                            <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($cv['uid']); ?>)"><?php print(short_name($user_name[$cv['uid']])); ?></a></td>
+                                            <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($cv['to']); ?>)"><?php print(short_name($user_name[$cv['to']])); ?></a></td>
                                             <td><span class="muted"><?php print($cv['text']); ?></span></td>
                                             <td><i class="fa fa-clock-o clock-activity"></i>&nbsp;<?php print(time_ago($cv['date_created'])); ?></td>
                                                 <td class="center toggle-comment" data-comment="<?php print($cv['id']); ?>"><span class="muted"><input id="toggle-comment-<?php print($cv['id']); ?>" type="checkbox" data-off="disable" data-on="enable" class="onoff " <?php if ($cv['public'] == 0): ?> checked  <?php endif ?> data-size="small" data-onstyle="success" data-offstyle="danger"></span></td>

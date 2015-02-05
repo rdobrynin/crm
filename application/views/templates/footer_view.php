@@ -7,8 +7,8 @@
         <i class="fa fa-clock-o pull-left" id="clock-bottom"></i>&nbsp;
         <span id="task-timer">00:00</span>
         <button class="btn btn-default btn-md" id="play-timer" style="padding: 3px 12px; float: left;">Play</button>
-        <span id="task-timer-pause"><a href="#"><i class="fa fa-pause"></i></a></span>
-        <span id="task-timer-stop"><a href="#"><i class="fa fa-stop"></i></a></span>
+        <span id="task-timer-pause"><a href="javascript:void(0);"><i class="fa fa-pause"></i></a></span>
+        <span id="task-timer-stop"><a href="javascript:void(0);"><i class="fa fa-stop"></i></a></span>
 
     </div>
 </div>

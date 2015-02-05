@@ -649,7 +649,11 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
   function qmSendComment($data){
       $('.qm-body').hide();
       $('.qm-body').show();
-      $('.point-name-tag').show();
+      $('#li-comments').removeClass('active');
+      $('#qm-autocomplete').hide();
+      $('.point-name-tag').hide();
+      $('#qm-point-name').show();
+
       $user = '<?php print($user[0]['id'])?>';
       var form_data = {
           id: $data
@@ -687,7 +691,8 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               subject: $subject,
               text: $text,
               to: $to,
-              search:$search
+              search:$search,
+              fullname: $first_name + ' ' + $last_name
           };
           $.ajax({
               url: "<?php echo site_url('ajax/sendComment'); ?>",
@@ -695,6 +700,7 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               data: form_data_,
               dataType: 'json',
               success: function (msg) {
+                  console.log(msg);
                  if(msg.empty == true) {
                   $('#qm-empty-error').fadeIn('slow').css('display','block');
                      setTimeout(function () {
@@ -793,14 +799,14 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                                       $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').html('#'+$data);
                                       $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').html('<span style="color:#5cb85c;">updated now</span>');
                                       $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').html('<span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span>');
-                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').html('<a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv["implementor"]); ?>)"><?php print(short_name($user_name[$tv["implementor"]])); ?></a>');
-                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').html('<a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($tv["uid"]); ?>)"><?php print(short_name($user_name[$tv["uid"]])); ?></a>');
+                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').html('<a href="#;" class="hover-td-name" onClick="qmSendComment(<?php print($tv["implementor"]); ?>)"><?php print(short_name($user_name[$tv["implementor"]])); ?></a>');
+                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').html('<a href="#;" class="hover-td-name" onClick="qmSendComment(<?php print($tv["uid"]); ?>)"><?php print(short_name($user_name[$tv["uid"]])); ?></a>');
                                       $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').html(msg['title']);
                                       $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').html(msg['project']);
                                       $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html(msg['desc']);
                                       $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html('<span><i class="fa fa-circle circle-priority" style="<?php if ($tv["priority"] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv["priority"] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv["priority"] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv["priority"]) ?>');
                                       $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html(msg['dueto']);
-                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html('<a href="#" onClick="taskToReady(<?php print($tv["id"]); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a><a href="#" onClick="taskToEdit(<?php print($tv["id"]); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a><a href="#" onMouseDown="taskToView(<?php print($tv["id"]); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a><a href="#" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv["id"]); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>');
+                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html('<a href="#;" onClick="taskToReady(<?php print($tv["id"]); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a><a href="#;" onClick="taskToEdit(<?php print($tv["id"]); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a><a href="#;" onMouseDown="taskToView(<?php print($tv["id"]); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a><a href="#;" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv["id"]); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>');
                                       blurRadius = 0;
                                       $('#edit-task-modal').hide();
                                       $('#tr-dashboard-task-'+$data).css({
@@ -835,6 +841,8 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
   function SendComment($data){
       $('.qm-body').hide();
       $('.qm-body').show();
+    $('#qm-point-name').hide();
+    $('#qm-autocomplete').show();
       $user = '<?php print($user[0]['id'])?>';
       var form_data = {
           id: $data

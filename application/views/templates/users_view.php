@@ -64,16 +64,16 @@
                                                     <td><?php print($uv['id']); ?></td>
                                                     <td><?php print(short_name($user_name[$uv['id']])); ?></td>
                                                     <td>
-                                                        <a href="#" class="hover-td-name" onClick="qmSendComment(<?php print($uv['id']); ?>)"><?php print($uv['email']); ?></a>
+                                                        <a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($uv['id']); ?>)"><?php print($uv['email']); ?></a>
                                                     </td>
                                                     <td><?php print(show_role($uv['role'])); ?></td>
                                                     <td><?php print($uv['date_created']); ?></td>
                                                     <td>
-                                                        <a href="#" data-title="Edit" onClick="updateUser(<?php print($uv['id']); ?>)"><i class="fa fa-pencil"></i></a>
+                                                        <a href="javascript:void(0);" data-title="Edit" onClick="updateUser(<?php print($uv['id']); ?>)"><i class="fa fa-pencil"></i></a>
                                                     </td>
                                                     <td>
                                                         <?php if ($uv['role'] !=5): ?>
-                                                            <a href="#" style="cursor: pointer;" data-toggle="confirmation-delete-current-user" data-singleton="true" data-target="<?php print($uv['id']); ?>">Remove</a>
+                                                            <a href="javascript:void(0);" style="cursor: pointer;" data-toggle="confirmation-delete-current-user" data-singleton="true" data-target="<?php print($uv['id']); ?>">Remove</a>
                                                         <?php endif ?>
                                                     </td>
                                                 </tr>
@@ -130,10 +130,10 @@
                                                             <a href="mailto:<?php print($uv['email']); ?>"><?php print($uv['email']); ?></a>
                                                         </td>
                                                         <td>
-                                                            <a href="#" data-toggle="confirmation-activate-user" data-singleton="true"  data-target="<?php print($uv['id']); ?>">Activate</a>
+                                                            <a href="javascript:void(0);" data-toggle="confirmation-activate-user" data-singleton="true"  data-target="<?php print($uv['id']); ?>">Activate</a>
                                                         </td>
                                                         <td>
-                                                            <a href="#" data-toggle="confirmation-delete-new-user" data-singleton="true" data-target="<?php print($uv['id']); ?>">Remove</a>
+                                                            <a href="javascript:void(0);" data-toggle="confirmation-delete-new-user" data-singleton="true" data-target="<?php print($uv['id']); ?>">Remove</a>
                                                         </td>
                                                     </tr>
                                                 <?php endforeach; ?>
@@ -191,7 +191,6 @@
 <?php include('footer_view.php'); ?>
 <script>
     $(function () {
-
         $('#edit-btn-user').click(function () {
             $('#demo_modal').modal('show');
             return false;

@@ -640,10 +640,11 @@ class Ajax extends CI_Controller {
         $result['owner'] =  $this->input->post('uid');
         $result['subject']=  $this->input->post('subject');
         $result['text'] =  $this->input->post('text');
+        $result['search'] =  $this->input->post('search');
         $result['result'] =  false;
         $result['empty'] =  false;
         $result['fullname'] =  $this->input->post('fullname');
-       $fn =  $this->admin_model->getUsername($result['owner']);
+        $fn =  $this->admin_model->getUsername($result['owner']);
 
         if ($this->input->post('search') == 'false') {
             if ($this->input->post('text') != '' AND $this->input->post('subject') != '') {
