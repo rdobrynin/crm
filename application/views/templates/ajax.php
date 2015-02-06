@@ -1176,6 +1176,8 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
   unical_id = <?php print json_encode($user[0]['id']);?>;
 
   function impControl($data, $action) {
+      $('#task_modal_timer').modal({show:true});
+      return false;
       var form_data = {
           id: $data,
           status: $action,
