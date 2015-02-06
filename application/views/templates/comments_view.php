@@ -27,7 +27,7 @@
                                 <tbody id="all_comments_table">
                                 <?php $comments = array_reverse($comments);?>
                                 <?php foreach ($comments as $ck => $cv): ?>
-                                    <?php if ($user[0]['role'] ==2 && $user[0]['id']==$cv['to'] OR $user[0]['role'] ==3 && $user[0]['id']==$cv['to']): ?>
+                                    <?php if ($user[0]['role'] ==2 && $user[0]['id']==$cv['to'] OR $user[0]['role'] ==1 && $user[0]['id']==$cv['to']): ?>
                                     <tr class="<?php if ($cv['public'] == 1): ?>disabled<?php endif ?> ">
                                         <td><?php print($cv['id']); ?></td>
                                         <td><span class="muted"><?php print(date_format(date_create($cv['date_created']),"F d H:i")); ?></span></td>

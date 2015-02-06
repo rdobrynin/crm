@@ -1119,5 +1119,4 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
 
   }
 
-
 </script>

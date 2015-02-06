@@ -1,7 +1,8 @@
 <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top mirrorup" role="button"><span class="icon-rightarrow"></span></a>
 <!--<div class="bench">test: --><?php //echo $this->benchmark->elapsed_time();?><!--&nbsp;sec</div>-->
 
-<?php if ($user[0]['role'] ==5 OR $user[0]['role']==4 OR $user[0]['role']==2): ?>
+<?php //if ($user[0]['role'] ==5 OR $user[0]['role']==4 OR $user[0]['role']==2): ?>
+<?php if ($user[0]['role']==2): ?>
 <div class="time-wrapper">
     <div class="timer" style="width: auto;">
         <i class="fa fa-clock-o pull-left" id="clock-bottom"></i>&nbsp;

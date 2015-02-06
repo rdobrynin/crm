@@ -35,8 +35,8 @@
                         <td><?php print($pv['description']); ?></td>
                         <td><a href="javascript:void(0);"><span class="badge badge-task" id="route-task"><?php if ($tasks != false): ?><?php print(count($tasks));?><?php else:?>0<?php endif ?></span></a></td>
                         <td><a href="javascript:void(0);" onClick="qmSendComment(<?php print($pv['owner']); ?>)"><?php print(short_name($user_name[$pv['owner']])); ?></a></td>
-                        <td><p><a href="javascript:void(0);" id="edit-project-table"><i class="fa fa-pencil"></i></a></p></td>
-                        <td><p><a href="javascript:void(0);" id="delete-project-table"><i class="fa fa-times"></i></a></td>
+                        <td><?php if($user[0]['role']!=1 && $user[0]['role']!=2):?><p><a href="javascript:void(0);" id="edit-project-table"><i class="fa fa-pencil"></i></a></p><?php endif ?></td>
+                        <td><?php if($user[0]['role']!=1 && $user[0]['role']!=2):?><p><a href="javascript:void(0);" id="delete-project-table"><i class="fa fa-times"></i></a></p><?php endif ?></td>
                     </tr>
                     <!--TASK-->
                     <tr>
@@ -62,7 +62,7 @@
                                 <?php $tasks = array_reverse($tasks);?>
                                 <?php foreach ($tasks as $tk => $tv): ?>
                                     <tr id="tr-project-task-<?php print($tv['id']); ?>" class="<?php print(check_deadline($tv['due_time'])); ?>">
-                                        <td><?php print($tv['key']); ?>-<?php print($tv['id']); ?></td>
+                                        <td><?php print($tv['id']); ?></td>
                                         <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                         <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
                                         <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
@@ -75,8 +75,8 @@
                                         <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
                                         <td><?php print(check_cts($tv['cts'])); ?></td>
                                         <td class="text-left"><?php print(date_format(date_create($tv['due_time']),"F d H:i")); ?></td>
-                                        <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
                                             <td>
+                                                <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
                                                 <?php if ($tv['status']!=3): ?>
                                                     <?php if($user[0]['role']==2):?>
                                                     <a href="javascript:void(0);" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
@@ -88,8 +88,11 @@
                                                     <a href="javascript:void(0);" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv['id']); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>
 
                                                 <?php endif ?>
+
+                                                <?php else: ?>
+                                                    <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
+                                                <?php endif ?>
                                             </td>
-                                        <?php endif ?>
                                     </tr>
                                 <?php endforeach ?>
                                 </tbody>
