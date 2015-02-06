@@ -869,7 +869,14 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
        */
 
       $('#qm-send-btn').click(function () {
-          $search =true;
+          $search =false;
+//          if send messagi with autocomplete
+          var name = $("#qm-autocomplete").val();
+          if (name.length > 0){
+              $search =true;
+              console.log('test');
+          }
+
           $fullname = $('#qm-autocomplete').val();
           $to = $('#user_qm_id').val();
           $uid = $user;
