@@ -1337,4 +1337,88 @@ class Dashboard extends CI_Controller {
     function error() {
         $this->load->view('custom404_view');
     }
+
+
+    function group_chat() {
+
+        $roles_array = $this->admin_model->get_roles();
+        $roles = array();
+        foreach ($roles_array as $rk => $rv) {
+            $roles[] = $rv;
+        }
+
+        $task_types = $this->task_model->getTaskTypes();
+        if($task_types) {
+            $data['task_types']= $task_types;
+        }
+        else {
+            $data['task_types']=false;
+        }
+
+        $task_array = $this->task_model->countTasks();
+        if($task_array) {
+            $data['tasks']= $task_array;
+        }
+        else {
+            $data['tasks']=false;
+        }
+
+        $imps = $this->task_model->get_imps();
+
+        if($imps) {
+            $data['imps']= $imps;
+        }
+        else {
+            $data['imps']=false;
+        }
+
+        $project_title_array = $this->project_model->get_project_title();
+        if($project_title_array) {
+            $data['project_title']= $project_title_array;
+        }
+        else {
+            $data['project_title']=false;
+        }
+
+        $project_array = $this->project_model->get_projects();
+        if($project_array) {
+            $data['projects']= $project_array;
+        }
+        else {
+            $data['projects']=false;
+        }
+
+        $comments = $this->message_model->getComments();
+        if($comments) {
+            $data['comments']= $comments;
+        }
+        else {
+            $data['comments']=false;
+        }
+
+        $events_array = $this->project_model->readAllEvents();
+        if($events_array) {
+            $data['all_events']= $events_array;
+        }
+        else {
+            $data['all_events']=false;
+        }
+        $data['client'] = $this->admin_model->get_own_client($_SESSION['username']);
+        $data['user_name'] = $this->admin_model->get_users_names();
+        $data['users_names']= $this->admin_model->get_users_names();
+        $data['roles'] = $roles;
+        $data['current_language'] = $this->session->userdata('site_lang');
+        $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
+        $data['users'] = $this->admin_model->get_users();
+        $data['roles'] = $this->admin_model->get_roles();
+        $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
+        $this->load->view('templates/head_view',$data);
+        if ($data['user'][0]['helpblock'] == 1) {
+            $this->load->view('templates/help_block_view');
+        }
+
+            $this->load->view('templates/groupchat_view', $data);
+            $this->load->view('templates/settings_view', $data);
+
+    }
 }

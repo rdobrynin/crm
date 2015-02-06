@@ -55,6 +55,7 @@ $route['addclient'] = 'dashboard/addclient';
 $route['delete_client'] = 'dashboard/delete_client';
 $route['addclient_form'] = 'dashboard/addclient_form';
 $route['update_profile'] = 'dashboard/update_profile';
+$route['group_chat'] = 'dashboard/group_chat';
 $route['404_override'] = 'custom404';
 
 
