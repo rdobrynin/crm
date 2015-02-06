@@ -210,7 +210,6 @@
                             <ul class="pagination pagination-lg pager" id="pager_approve_tasks"></ul>
                         </div>
                         <?php endif ?>
-
 <!--                        END APPROVE-->
 <!--STARTS READY-->
                         <?php if ($user[0]['role']==2): ?>
@@ -276,10 +275,6 @@
                 <?php endif ?>
                     </div>
 <!--                end last tasks-->
-
-
-
-
             <?php if ($user[0]['role']==2): ?>
                 <p class="lead">Tasks in process</p>
                 <?php if ($process_tasks != FALSE): ?>
@@ -338,19 +333,12 @@
                             </div>
                         </div>
                     </div>
-
                 <?php else: ?>
                     <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of process tasks found</div></div>
                 <?php endif ?>
                 <!--                end last tasks-->
-
-
-
             <?php endif ?>
-
-
         </div>
-
         <?php if ($comments !=false): ?>
             <div class="col-md-3">
                 <p class="lead">Activity Stream</p>
@@ -360,9 +348,9 @@
                     </div>
                     <div class="panel-body comment">
                         <?php $rev_comm = array_reverse($comments);?>
-                        <?php foreach (array_slice($rev_comm, 0, 7) as $ck=>$cv): ?>
+                        <?php foreach ($rev_comm as $ck=>$cv): ?>
                             <?php if ($cv['public'] == 0): ?>
-                        <?php if ($cv['to'] == $user[0]['id'] OR $cv['uid'] == $user[0]['id']): ?>
+                        <?php if ($cv['to'] == $user[0]['id']): ?>
                         <div class="sub-activity">
                             <div class="activity-item-summary">
                                 <div class="avatar-activity">
@@ -372,7 +360,7 @@
                                 </div>
                                 <a href="javascript:void(0);" class="activity-item-user activity-item-author" target="_parent" onClick="qmSendComment(<?php print($cv['uid']); ?>)"> <?php print(short_name($user_name[$cv['uid']])); ?></a>
                                 &nbsp;<span class="label label-warning label-xs">subject</span>&nbsp;
-                                <a href="javascript:void(0);" target="_parent"><span class="resolved-link"><?php print($cv['subject']); ?></span></a>
+                                <a href="javascript:void(0);" target="_parent" onClick="qmSubjectSendComment('<?php print($cv['subject']); ?>','<?php print($cv['uid']); ?>')"><span class="resolved-link"><?php print($cv['subject']); ?></span></a>
                                 <div class="com-last-text"><?php print($cv['text']); ?></div>
                                 <div class="activity-item-description">
 
