@@ -37,6 +37,8 @@ class Dashboard extends CI_Controller {
 
     public function index() {
 
+
+
         $project_array = $this->project_model->get_projects();
         if($project_array) {
             $data['projects']= $project_array;
@@ -134,6 +136,14 @@ class Dashboard extends CI_Controller {
         else {
             $data['comp_tasks']=false;
         }
+
+//      Calculate total time of completed tasks
+        $totalTimeCompleteTask = 0;
+        foreach($comptasks as $ck => $cv) {
+            $totalTimeCompleteTask+=$cv['tts'];
+        }
+        //            in hours
+        $data['total_task_done']=$totalTimeCompleteTask/60;
 
 
         $processtasks = $this->task_model->getprocessTasks();

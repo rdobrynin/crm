@@ -3,12 +3,13 @@
     <div class="page-content inset">
         <div class="row">
             <div class="col-md-9">
+<!--                Current Activity Panel-->
                 <p class="lead">Current activity</p>
                 <div class="row">
                     <div class="col-md-6 col-vlg-3 col-sm-6">
                         <div class="tiles green m-b-10">
                             <div class="tiles-body">
-                                <div class="controller"> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
+                                <div class="controller"> <a href="javascript:void();" class="reload"></a> <a href="javascript:void();" class="remove"></a> </div>
                                 <div class="tiles-title text-black">Projects</div>
                                 <div class="widget-stats">
                                     <div class="wrapper transparent">
@@ -23,7 +24,7 @@
                                 </div>
                                 <div class="widget-stats ">
                                     <div class="wrapper last">
-                                        <span class="item-title">Overall workflow</span> <span class="item-count animate-number semi-bold" data-value="1547" data-animation-duration="700">143 h</span>
+                                        <span class="item-title">Overall workflow</span> <span class="item-count animate-number semi-bold" data-value="1547" data-animation-duration="700"><?php print($total_task_done); ?> h</span>
                                     </div>
                                 </div>
                                 <div class="progress transparent progress-small no-radius m-t-20" style="width:90%">
@@ -56,12 +57,12 @@
                                 <div class="progress transparent progress-small no-radius m-t-20" style="width:90%">
                                     <div class="progress-bar progress-bar-white animate-progress-bar" id="progress-tasks" data-percentage="25%" style="width: 54%;"></div>
                                 </div>
-                                <div class="description"> <span class="text-white mini-description "><span id="percent-completed-tasks">25%</span> all tasks <span class="blend">completed</span></span></div>
+                                <div class="description"> <span class="text-white mini-description "><span id="percent-completed-tasks">25%</span> all tasks <span class="blend">completed&nbsp;</span></span></div>
                             </div>
                         </div>
                     </div>
                 </div>
-<!--                overdue tasks-->
+<!--                Overdue tasks-->
                     <div class="row-fluid" style="padding-top: 20px;">
                         <p class="lead">Overdue tasks&nbsp;(<span id="calc-over-tasks" ><?php if ($over_tasks != false): ?><?php print(count($over_tasks)); ?><?php else:?>0<?php endif ?></span>)</p>
                         <?php if ($over_tasks != false): ?>
@@ -133,7 +134,7 @@
                     <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of overdue tasks found</div></div>
                     </div>
                 <?php endif ?>
-<!--                end overdue-->
+<!--                End overdue-->
                 <div class="row-fluid" style="margin-bottom: -20px;">
                 <?php if ($tasks != FALSE): ?>
                         <?php if ($user[0]['role']==5 OR $user[0]['role']==4 OR $user[0]['role']==1 OR $user[0]['role']==3): ?>
@@ -210,7 +211,7 @@
                             <ul class="pagination pagination-lg pager" id="pager_approve_tasks"></ul>
                         </div>
                         <?php endif ?>
-<!--                        END APPROVE-->
+<!-- END APPROVE-->
 <!--STARTS READY-->
                         <?php if ($user[0]['role']==2): ?>
                         <div class="panel">
@@ -336,7 +337,7 @@
                 <?php else: ?>
                     <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of process tasks found</div></div>
                 <?php endif ?>
-                <!--                end last tasks-->
+                <!--   end last tasks-->
             <?php endif ?>
         </div>
         <?php if ($comments !=false): ?>
@@ -379,7 +380,6 @@
                     <div class="show-more-activity"> <button class="btn btn-default btn-xs" id="show-more-comment" style="width: 100%">Show more</button></div>
                 </div>
             </div>
-
         <?php endif ?>
     </div>
         <!-- ./row-->

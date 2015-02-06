@@ -26,6 +26,9 @@
       <li class="<? $url_arg=='comments' ? print('active') : print('') ?> disabled"><a href="<?php print(base_url());?>comments"><span class="icon-comments"></span><?php if ($comments != false): ?><div class="badge-mini" id="badge-count-mini-comments"><?php print(count($comments));?></div> <?php endif ?>&nbsp;<span class="left-resp-menu"><?php print(lang('menu_comments')); ?></span></a> <?php if ($comments != false): ?><span class="badge badge-resp" id="badge-count-comments"><?php print(count($comments));?></span> <?php else:?><span class="badge badge-resp" id="badge-count-comments">0</span> <?php endif ?>
       </li>
 
+        <li class="<? $url_arg=='chat' ? print('active') : print('') ?> disabled"><a href="<?php print(base_url());?>chat"> <i class="fa fa-comments"></i><span class="left-resp-menu"><?php print(lang('menu_groupchat')); ?></span></a>
+        </li>
+
 <div class="statistic-imps">
 <!-- todo-->
 </div>
@@ -35,3 +38,5 @@
       <!--END MINI INBOX-->
     </ul>
   </div>
+
+<!--    <i class="fa fa-comments"></i>-->

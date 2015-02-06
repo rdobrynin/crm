@@ -292,16 +292,25 @@ i.fa-clock-o {
 }
 
 
-
-
 .close-right-sidebar a {
    color:#fff;
 }
 
-
 .statistic-imps {
     padding: 10px;
     /*border-top: 1px dashed #636363;*/
+}
+
+.fa-comments {
+    font-size: 20px !important;
+    position: relative;
+    display: inline-block;
+    line-height: 0px;
+    top: -1px;
+    padding-right: 5px;
+    /* width: 36px; */
+    vertical-align: middle;
+    padding-left: 20px;
 }
 
 

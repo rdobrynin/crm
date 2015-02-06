@@ -7,7 +7,6 @@
         <?php if ($comments != FALSE): ?>
             <div class="row-fluid">
                 <div class="panel">
-                    <?php var_dump($comments); ?>
                     <div class="panel-body-table">
                         <div class="table-responsive">
                             <table class="table table-condensed">
