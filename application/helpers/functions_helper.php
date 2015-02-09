@@ -569,4 +569,14 @@ if (!function_exists('get_countries')) {
             return $x;
         }
     }
+
+
+    if (!function_exists('round_up')) {
+        function round_up($number, $precision = 2) {
+            // XXX - I'm sure there is a better way to getting the base figure.
+            $fig = (int)str_pad('1', $precision, '0');
+            return (ceil($number * $fig) / $fig);
+        }
+    }
+
   }

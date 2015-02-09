@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="widget-stats ">
                                     <div class="wrapper last">
-                                        <span class="item-title">Overall workflow</span> <span class="item-count animate-number semi-bold" data-value="1547" data-animation-duration="700"><?php print($total_task_done); ?> h</span>
+                                        <span class="item-title">Overall workflow</span> <span class="item-count animate-number semi-bold" data-value="1547" data-animation-duration="700"><?php print(round_up($total_task_done,2)); ?> h</span>
                                     </div>
                                 </div>
                                 <div class="progress transparent progress-small no-radius m-t-20" style="width:90%">
@@ -215,9 +215,12 @@
 <!--STARTS READY-->
                         <?php if ($user[0]['role']==2): ?>
                         <div class="panel">
+
+                            <?php if ($ready_tasks!=0): ?>
+
                             <div class="panel-body-table">
                                 <div class="table-responsive">
-                                    <table class="table table-condensed" id="ready-task-table" <?php if ($ready_tasks==0): ?> style="display: none;" <?php endif ?>>
+                                    <table class="table table-condensed" id="ready-task-table">
                                         <thead>
                                         <tr>
                                             <th width="5%" class="text-left">Article</th>
@@ -267,6 +270,12 @@
                                     </table>
                                 </div>
                             </div>
+
+                            <?php else: ?>
+                                <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of ready tasks found</div></div>
+                            <?php endif ?>
+
+
                         </div>
                         <?php endif ?>
                         <div class="text-center">
@@ -295,7 +304,7 @@
                                             <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Project</th>
                                             <th width="18%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
                                             <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
-                                            <th width="2%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
+                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
                                             <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">CTS</th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
                                             <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>

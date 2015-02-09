@@ -156,17 +156,14 @@
                     return val ;
                 });
 
-                clearInterval(timer);
-                localStorage.play = false;
-                localStorage.pause = false;
-                localStorage.stop = 'ok';
+
             }
             else {
                 alert('fault with local storage');
             }
-            $('#play-timer').removeClass('active-time');
-            $('#play-timer').prop("disabled", false);
-            $('#task-timer, #task-timer-pause, #task-timer-stop').hide();
+//            $('#play-timer').removeClass('active-time');
+//            $('#play-timer').prop("disabled", false);
+//            $('#task-timer, #task-timer-pause, #task-timer-stop').hide();
         });
 
         $('#task-timer-pause').click(function () {
@@ -243,6 +240,15 @@
                         dataType: 'json',
                         success: function (msg) {
                          console.log(msg);
+                            if (typeof(Storage) !== "undefined") {
+                            clearInterval(timer);
+                            localStorage.play = false;
+                            localStorage.pause = false;
+                            localStorage.stop = 'ok';
+                            }
+                            $('#play-timer').removeClass('active-time');
+                            $('#play-timer').prop("disabled", false);
+                            $('#task-timer, #task-timer-pause, #task-timer-stop').hide();
                         }
                     });
 
