@@ -1177,7 +1177,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
 
   function impControl($data, $action) {
       $('#task_modal_timer').modal({show:true});
-      return false;
       var form_data = {
           id: $data,
           status: $action,
@@ -1203,6 +1202,40 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                      });
 
              }
+          }
+      });
+
+  }
+
+
+  function impControlComplete($data, $tts) {
+    var min =   $tts.split(/\s+/);
+      var form_data = {
+          id: $data,
+          status: 3,
+          tts: min[0],
+          uid: unical_id
+      };
+      $.ajax({
+          url: "<?php echo site_url('ajax/completeTask'); ?>",
+          type: 'POST',
+          data: form_data,
+          dataType: 'json',
+          success: function (msg) {
+              if(msg==true) {
+                  $('#ready-task-'+$data).remove();
+                  $.ajax({
+                      url: "<?php echo site_url('ajax/countReadyTasks'); ?>",
+                      type: 'GET',
+                      dataType: 'json',
+                      success: function (msg) {
+                          if (msg < 1) {
+                              $('#ready-task-table').css('display','none');
+                          }
+                      }
+                  });
+
+              }
           }
       });
 

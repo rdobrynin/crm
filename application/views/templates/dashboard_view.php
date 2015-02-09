@@ -324,12 +324,13 @@
                                                     <span class="label <?php print(task_status_label($tv['status'])); ?> label-xs"><?php print(task_status($tv['status'])); ?></span>
                                                 </td>
                                                 <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
+                                                <?php var_dump($tv['cts']); ?>
                                                 <td><?php print(check_cts($tv['cts'])); ?></td>
                                                 <td class="text-left"><?php print($tv['due_time']); ?></td>
                                                 <td>
                                                     <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                                     <?php if ($user[0]['id'] == $tv['implementor'] && $user[0]['role']==2): ?>
-                                                        <a href="javascript:void(0);"  onClick="impControl(<?php print($tv['id']); ?>,3)" class="btn btn-xs imp-adjust-btn" data-toggle="tooltip" data-placement="top" title="complete"><i class="fa fa-check-circle"></i></a>
+                                                        <a href="javascript:void(0);"  onClick="impControlComplete(<?php print($tv['id']); ?>,'<?php print(check_cts($tv['cts'])); ?>')" class="btn btn-xs imp-adjust-btn" data-toggle="tooltip" data-placement="top" title="complete"><i class="fa fa-check-circle"></i></a>
                                                         <a href="javascript:void(0);" style="color:#d9534f;" class="btn btn-xs imp-adjust-btn" onClick="impControl(<?php print($tv['id']); ?>,1)" data-toggle="tooltip" data-placement="top" title="unwant"><i class="fa fa-eye-slash"></i></a>
                                                     <?php endif ?>
                                                 </td>

@@ -20,6 +20,7 @@
 <!-- JavaScript -->
 <?php include('modals/modal_view.php');?>
 <?php include('modals/modal_task.php');?>
+<?php include('modals/modal_task_complete.php');?>
 <?php include('timer.php');?>
 <!-- Custom JavaScript for the Menu Toggle -->
 <script>
