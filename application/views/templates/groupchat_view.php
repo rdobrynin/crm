@@ -2,7 +2,7 @@
 <?php include('sidebar_view.php'); ?>
 <div class="page-content-wrapper">
     <div class="page-content inset">
-        <div class="row-fluid">
+        <div class="row">
             <div class="col-md-12">
                 <p class="lead"><?php print(lang('menu_groupchat')); ?> </p>
                 <?php if ( $user[0]['id'] ==14): ?>

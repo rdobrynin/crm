@@ -20,7 +20,7 @@
                                     <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Project</th>
                                     <th width="18%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
                                     <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
-                                    <th width="2%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
+                                    <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
                                     <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">CTS</th>
                                     <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
                                     <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
@@ -30,7 +30,7 @@
                                 <?php $process_tasks = array_reverse($process_tasks);?>
                                 <?php foreach ($process_tasks as $tk => $tv): ?>
                                         <tr class="<?php print(check_deadline($tv['due_time'])); ?>">
-                                        <td><?php print($tv['id']); ?></td>
+                                        <td>#<?php print($tv['id']); ?></td>
                                         <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                         <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
                                         <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
@@ -65,11 +65,6 @@
         <?php endif ?>
         <!--                end last tasks-->
     </div>
-
-
-
-
-
 </div>
 <div class="page-content-wrapper">
   <div class="page-content inset">
@@ -104,7 +99,7 @@
                               <?php foreach ($tasks as $tk => $tv): ?>
                               <?php if ($tv['status'] != 2 AND $tv['status'] != 3): ?>
                                   <tr id="tr-task-task-<?php print($tv['id']); ?>" class="<?php print(check_deadline($tv['due_time'])); ?>">
-                                      <td><?php print($tv['id']); ?></td>
+                                      <td>#<?php print($tv['id']); ?></td>
                                       <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                       <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
                                       <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
@@ -144,10 +139,8 @@
           </div>
       <?php endif ?>
       <!--                end last tasks-->
-
   </div>
 </div>
-
 <div class="page-content-wrapper">
 <div class="page-content inset">
     <p class="lead">Completed tasks</p>
@@ -168,7 +161,7 @@
                                 <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Project</th>
                                 <th width="18%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
                                 <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
-                                <th width="2%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
+                                <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
                                 <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">TTS</th>
                                 <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">CTS</th>
                                 <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
@@ -180,7 +173,7 @@
                             <?php foreach ($tasks as $tk => $tv): ?>
                                 <?php if ($tv['status'] == 3): ?>
                                     <tr>
-                                        <td><?php print($tv['id']); ?></td>
+                                        <td>#<?php print($tv['id']); ?></td>
                                         <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                         <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
                                         <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>

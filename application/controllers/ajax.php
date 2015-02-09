@@ -617,8 +617,6 @@ class Ajax extends CI_Controller {
         echo json_encode($result);
     }
 
-
-
     /**
      * Send Comment
      */
@@ -947,12 +945,6 @@ class Ajax extends CI_Controller {
 
         echo json_encode ($result);
     }
-
-
-
-
-
-
 
 //updateTaskOverdue
 

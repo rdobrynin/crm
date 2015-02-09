@@ -94,7 +94,7 @@
                                         <?php foreach ($tasks as $tk => $tv): ?>
                                             <?php if ($tv['overdue'] == 1 && task_status($tv['status']) != 'complete'): ?>
                                                 <tr id="tr-dashboard-task-<?php print($tv['id']); ?>">
-                                                    <td><?php print($tv['id']); ?></td>
+                                                    <td>#<?php print($tv['id']); ?></td>
                                                     <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                                     <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
                                                     <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
@@ -173,7 +173,7 @@
                                             <?php if ($tv['overdue'] !=='1'): ?>
                                             <?php if ($tv['status'] == 0 && $user[0]['role']==5 OR $tv['status'] == 0 && $user[0]['role']==1   OR $tv['status'] == 0 && $user[0]['role']==4 OR $tv['status'] == 0 &&  $user[0]['role']==3): ?>
                                             <tr class="<?php if ($tv['status'] == 6): ?>danger<?php endif ?> <?php print(check_deadline($tv['due_time'])); ?>" id="tr-dashboard-task-<?php print($tv['id']); ?>">
-                                                <td><?php print($tv['id']); ?></td>
+                                                <td>#<?php print($tv['id']); ?></td>
                                                 <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                                 <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
                                                 <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
@@ -241,7 +241,7 @@
                                         <?php foreach ($tasks as $tk => $tv): ?>
                                             <?php if ($tv['status'] == 5): ?>
                                                 <tr id="ready-task-<?php print($tv['id']); ?>" class="<?php print(check_deadline($tv['due_time'])); ?>">
-                                                    <td><?php print($tv['id']); ?></td>
+                                                    <td>#<?php print($tv['id']); ?></td>
                                                     <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                                     <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
                                                     <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
@@ -274,8 +274,6 @@
                             <?php else: ?>
                                 <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of ready tasks found</div></div>
                             <?php endif ?>
-
-
                         </div>
                         <?php endif ?>
                         <div class="text-center">
@@ -304,8 +302,8 @@
                                             <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Project</th>
                                             <th width="18%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
                                             <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
-                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
-                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">CTS</th>
+                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
+                                            <th width="3%" class="text-left" style="border-left: 1px solid #ddd;">CTS</th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
                                             <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
                                         </tr>
@@ -314,7 +312,7 @@
                                         <?php $process_tasks = array_reverse($process_tasks);?>
                                         <?php foreach ($process_tasks as $tk => $tv): ?>
                                             <tr class="<?php print(check_deadline($tv['due_time'])); ?>">
-                                                <td><?php print($tv['id']); ?></td>
+                                                <td>#<?php print($tv['id']); ?></td>
                                                 <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
                                                 <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
                                                 <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
