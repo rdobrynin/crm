@@ -10,6 +10,7 @@
         <button class="btn btn-default btn-md" id="play-timer" style="padding: 3px 12px; float: left;">Play</button>
         <span id="task-timer-pause"><a href="javascript:void(0);"><i class="fa fa-pause"></i></a></span>
         <span id="task-timer-stop"><a href="javascript:void(0);"><i class="fa fa-stop"></i></a></span>
+        <span id="task-timer-clear"><a href="javascript:void(0);"><i class="fa fa-times"></i></a></span>
 
     </div>
 </div>

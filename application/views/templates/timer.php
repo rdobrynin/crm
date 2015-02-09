@@ -122,6 +122,7 @@
         }
 
         $('#play-timer').click(function () {
+
             if (typeof(Storage) !== "undefined") {
 
                 if(localStorage.pause !== 'ok') {
@@ -144,7 +145,7 @@
             }
             $(this).addClass('active-time');
             $('.active-time').attr("disabled", "disabled");
-            $('#task-timer, #task-timer-pause, #task-timer-stop').show();
+            $('#task-timer, #task-timer-pause, #task-timer-stop,#task-timer-clear ').show();
         });
 
         $('#task-timer-stop').click(function () {
@@ -254,6 +255,18 @@
 
                 }
             });
+        });
+
+        $('#task-timer-clear').click(function () {
+            if (typeof(Storage) !== "undefined") {
+                clearInterval(timer);
+                localStorage.play = false;
+                localStorage.pause = false;
+                localStorage.stop = 'ok';
+            }
+            $('#play-timer').removeClass('active-time');
+            $('#play-timer').prop("disabled", false);
+            $('#task-timer, #task-timer-pause, #task-timer-stop, #task-timer-clear').hide();
         });
 
         window.onbeforeunload = function () {

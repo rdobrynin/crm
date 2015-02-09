@@ -547,6 +547,17 @@ span#task-timer-stop{
     color: rgb(134, 134, 134);
 }
 
+span#task-timer-clear{
+    float: left;
+    position: relative;
+    top: 3px;
+    left: 11px;
+}
+
+span#task-timer-clear .fa{
+    color: rgb(255, 126, 132) !important
+}
+
 span#task-timer-stop a, span#task-timer-pause a {
     color: #B8B8B8;
 }
