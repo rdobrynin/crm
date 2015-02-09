@@ -57,6 +57,23 @@ a.clickable:hover {
     margin-bottom: 10px;
 }
 
+
+
+.media .avatar-activity {
+    width: 80px;
+    height: 80px;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    border-radius: 80px;
+    display: block;
+    top: 17px;
+    left: 19px;
+    overflow: hidden;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
 .user-float-block .avatar-activity {
     width: 32px;
     height: 32px;
@@ -191,3 +208,4 @@ i.clock-activity {
     display: inline-block;
     float: right;
 }
+

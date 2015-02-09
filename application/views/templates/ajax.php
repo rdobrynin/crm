@@ -831,7 +831,9 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                   $('#edit_dueto_modal').datetimepicker({
                       theme: 'dark',
                       value:date,
-                      format:'d.m.Y-H:i'
+                      format:'d.m.Y-H:i',
+                      minDate: '<?php date("F j, Y, g:i a"); ?>'
+
                   });
 //                  $('#edit_task_type_choose').html('<option>city1</option><option>city2</option>')
 //                      .selectpicker('refresh');

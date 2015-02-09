@@ -1,5 +1,8 @@
 <div class="right-float-sidebar">
     <div class="close-right-sidebar"><a href="javascript:void(0);"><i class="fa fa-times" style="top: -2px !important;position: relative;"></i></a></div>
+
+    <?php if ($users !=null): ?>
+
     <?php foreach ($users as $uk => $uv): ?>
 
         <?php if ($uv['id'] !== $user[0]['id']): ?>
@@ -18,4 +21,7 @@
         <?php endif ?>
         <div class="close-right-sidebar"><a href="javascript:void(0);"><span class="icon-remove"></span></a></div>
     <?php endforeach ?>
+
+    <?php endif ?>
+
 </div>

@@ -5,190 +5,37 @@
     <div class="page-content inset">
         <div class="row">
             <div class="col-md-12">
-                <p class="lead">Team</p>
+                <p class="lead">Team&nbsp;(<?php print(count($users)); ?>)</p>
+                <div class="row">
+                    <?php if ($users != null): ?>
+                        <?php foreach ($users as $uk => $uv): ?>
+<!--                            --><?php //var_dump($uv); ?>
+                            <div class="col-md-4 col-sm-6">
+                                <div class="well well-sm" style="background-color: rgb(231, 231, 231); border-color: #BDBDBD;">
+                                    <div class="media">
+                                        <?php if (($uv['status'] == 1)): ?><span class="label label-xs label-success" style="left: -88px; position: relative;">Online</span><?php else: ?><span class="label label-xs label-default" style="left: -88px; position: relative;">Offline</span><?php endif ?>
+                                        <div class="avatar-activity">
+                                            <span class="avatar-img"><a href="javascript:void(0);"><img src="<?php print base_url() . 'uploads/avatar/' . $uv['avatar']; ?>" height="80"></a></span>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="media-heading" style="margin-bottom: 10px;"><?php print($uv['first_name'] . ' ' . $uv['last_name']); ?></h4>
+                                          <p>Email:&nbsp;<a href="mailto:<?php print($uv['email']); ?>"><?php print($uv['email']); ?></a></p>
 
-              <div class="row">
-                  <div class="col-md-3 col-sm-6">
-                      <div class="well well-sm" style="background-color: transparent; border-color: #BDBDBD;">
-                          <div class="media">
-                              <a class="thumbnail pull-left" href="#">
-                                  <img class="media-object" src="//placehold.it/80">
-                              </a>
-
-                              <div class="media-body">
-                                  <h4 class="media-heading">John Doe</h4>
-
-                                  <p><span class="label label-info">10 photos</span> <span class="label label-primary">89 followers</span>
-                                  </p>
-
-                                  <p>
-                                      <a href="#" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-comment"></span>
-                                          Message</a>
-                                  </p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-
-
-                  <div class="col-md-3 col-sm-6">
-                      <div class="well well-sm" style="background-color: transparent; border-color: #BDBDBD;">
-                          <div class="media">
-                              <a class="thumbnail pull-left" href="#">
-                                  <img class="media-object" src="//placehold.it/80">
-                              </a>
-
-                              <div class="media-body">
-                                  <h4 class="media-heading">John Doe</h4>
-
-                                  <p><span class="label label-info">10 photos</span> <span class="label label-primary">89 followers</span>
-                                  </p>
-
-                                  <p>
-                                      <a href="#" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-comment"></span>
-                                          Message</a>
-                                  </p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-
-
-                  <div class="col-md-3 col-sm-6">
-                      <div class="well well-sm" style="background-color: transparent; border-color: #BDBDBD;">
-                          <div class="media">
-                              <a class="thumbnail pull-left" href="#">
-                                  <img class="media-object" src="//placehold.it/80">
-                              </a>
-
-                              <div class="media-body">
-                                  <h4 class="media-heading">John Doe</h4>
-
-                                  <p><span class="label label-info">10 photos</span> <span class="label label-primary">89 followers</span>
-                                  </p>
-
-                                  <p>
-                                      <a href="#" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-comment"></span>
-                                          Message</a>
-                                  </p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-
-
-                  <div class="col-md-3 col-sm-6">
-                      <div class="well well-sm" style="background-color: transparent; border-color: #BDBDBD;">
-                          <div class="media">
-                              <a class="thumbnail pull-left" href="#">
-                                  <img class="media-object" src="//placehold.it/80">
-                              </a>
-
-                              <div class="media-body">
-                                  <h4 class="media-heading">John Doe</h4>
-
-                                  <p><span class="label label-info">10 photos</span> <span class="label label-primary">89 followers</span>
-                                  </p>
-
-                                  <p>
-                                      <a href="#" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-comment"></span>
-                                          Message</a>
-                                  </p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="col-md-3 col-sm-6">
-                      <div class="well well-sm" style="background-color: transparent; border-color: #BDBDBD;">
-                          <div class="media">
-                              <a class="thumbnail pull-left" href="#">
-                                  <img class="media-object" src="//placehold.it/80">
-                              </a>
-
-                              <div class="media-body">
-                                  <h4 class="media-heading">John Doe</h4>
-
-                                  <p><span class="label label-info">10 photos</span> <span class="label label-primary">89 followers</span>
-                                  </p>
-
-                                  <p>
-                                      <a href="#" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-comment"></span>
-                                          Message</a>
-                                  </p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-
-
-                  <div class="col-md-3 col-sm-6">
-                      <div class="well well-sm" style="background-color: transparent; border-color: #BDBDBD;">
-                          <div class="media">
-                              <a class="thumbnail pull-left" href="#">
-                                  <img class="media-object" src="//placehold.it/80">
-                              </a>
-
-                              <div class="media-body">
-                                  <h4 class="media-heading">John Doe</h4>
-
-                                  <p><span class="label label-info">10 photos</span> <span class="label label-primary">89 followers</span>
-                                  </p>
-
-                                  <p>
-                                      <a href="#" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-comment"></span>
-                                          Message</a>
-                                  </p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-
-
-                  <div class="col-md-3 col-sm-6">
-                      <div class="well well-sm" style="background-color: transparent; border-color: #BDBDBD;">
-                          <div class="media">
-                              <a class="thumbnail pull-left" href="#">
-                                  <img class="media-object" src="//placehold.it/80">
-                              </a>
-
-                              <div class="media-body">
-                                  <h4 class="media-heading">John Doe</h4>
-
-                                  <p><span class="label label-info">10 photos</span> <span class="label label-primary">89 followers</span>
-                                  </p>
-
-                                  <p>
-                                      <a href="#" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-comment"></span>
-                                          Message</a>
-                                  </p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-
-
-
-
-
-                  <!-- Keep all page content within the page-content inset div! -->
-<div class="col-sm-12">
-
-    <?php foreach ($users as $ak => $u): ?>
-        <ul>
-            <?php if (($u['status'] == 1)): ?>
-                <li><span
-                        class="label label-xs label-success label-round"></span><?php print($u['first_name'] . ' ' . $u['last_name']); ?>
-                </li>
-            <?php else: ?>
-                <li><span
-                        class="label label-xs label-default label-round"></span><?php print($u['first_name'] . ' ' . $u['last_name']); ?>
-                </li>
-            <?php endif; ?>
-        </ul>
-    <?php endforeach ?>
-</div>
-           </div>
+                                                <p>GSM:&nbsp;<?php if ($uv['phone'] !==''): ?><?php print($uv['phone']); ?><?php else: ?>absent<?php endif ?></p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                                                <a href="#" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-comment"></span>&nbsp;Message</a>&nbsp;
+                                                <a href="#" class="btn btn-xs btn-primary " style="cursor: pointer">sms</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach ?>
+                    <?php endif ?>
+                </div>
             </div>
         </div>
     </div>

@@ -368,7 +368,11 @@
 <script type="text/javascript">
 
     $(function () {
-        $('#dueto_modal').datetimepicker({theme:'dark',minDate: 0,minTime:0});
+        $('#dueto_modal').datetimepicker({
+            theme:'dark',
+            minDate: '<?php date("F j, Y, g:i a"); ?>',
+            minTime:0
+        });
         $('#btn_modal_miss_imp').click(function () {
             $('#addtask_pr_modal').modal('hide');
             $('#invite').modal('show');
