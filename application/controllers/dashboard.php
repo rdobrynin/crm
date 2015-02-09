@@ -994,12 +994,21 @@ class Dashboard extends CI_Controller {
         foreach ($roles_array as $rk => $rv) {
             $roles[] = $rv;
         }
-        $project_array = $this->project_model->get_projects();
-        if($project_array) {
-            $data['projects']= $project_array;
+
+        $task_types = $this->task_model->getTaskTypes();
+        if($task_types) {
+            $data['task_types']= $task_types;
         }
         else {
-            $data['projects']=false;
+            $data['task_types']=false;
+        }
+
+        $task_array = $this->task_model->countTasks();
+        if($task_array) {
+            $data['tasks']= $task_array;
+        }
+        else {
+            $data['tasks']=false;
         }
 
         $imps = $this->task_model->get_imps();
@@ -1011,12 +1020,20 @@ class Dashboard extends CI_Controller {
             $data['imps']=false;
         }
 
-        $task_array = $this->task_model->countTasks();
-        if($task_array) {
-            $data['tasks']= $task_array;
+        $project_title_array = $this->project_model->get_project_title();
+        if($project_title_array) {
+            $data['project_title']= $project_title_array;
         }
         else {
-            $data['tasks']=false;
+            $data['project_title']=false;
+        }
+
+        $project_array = $this->project_model->get_projects();
+        if($project_array) {
+            $data['projects']= $project_array;
+        }
+        else {
+            $data['projects']=false;
         }
 
         $comments = $this->message_model->getComments();
@@ -1027,22 +1044,6 @@ class Dashboard extends CI_Controller {
             $data['comments']=false;
         }
 
-        $task_types = $this->task_model->getTaskTypes();
-        if($task_types) {
-            $data['task_types']= $task_types;
-        }
-        else {
-            $data['task_types']=false;
-        }
-
-        $project_title_array = $this->project_model->get_project_title();
-        if($project_array) {
-            $data['project_title']= $project_title_array;
-        }
-        else {
-            $data['project_title']=false;
-        }
-
         $events_array = $this->project_model->readAllEvents();
         if($events_array) {
             $data['all_events']= $events_array;
@@ -1050,39 +1051,26 @@ class Dashboard extends CI_Controller {
         else {
             $data['all_events']=false;
         }
-
+        $data['client'] = $this->admin_model->get_own_client($_SESSION['username']);
+        $data['user_name'] = $this->admin_model->get_users_names();
         $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
-        $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
-        $data['client'] = $this->admin_model->get_own_client($_SESSION['username']);
-        $users = $this->admin_model->get_users();
         $data['users'] = $this->admin_model->get_users();
-        $data['avatars'] = $this->admin_model->get_avatars();
-        foreach ($users as $uv) {
-            $data['avatars']['test'][] = $uv['id'];
-            $data['avatars']['test'][] = $uv['status'];
-            $data['avatars']['test'][] = $uv['first_name'];
+        $data['roles'] = $this->admin_model->get_roles();
+        $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
+        $this->load->view('templates/head_view',$data);
+        if ($data['user'][0]['helpblock'] == 1) {
+            $this->load->view('templates/help_block_view');
         }
 
-        if($data['user'][0]['role'] == 5 OR $data['user'][0]['role'] == 4 ) {
-            $this->load->view('templates/head_view',$data);
-            if ($data['user'][0]['helpblock'] == 1) {
-                $this->load->view('templates/help_block_view');
-            }
-            $this->load->view('templates/navtop_view', $data);
-            $this->load->view('templates/sidebar_view', $data);
-
-            $this->load->view('templates/team_view', $data);
-            $this->load->view('templates/footer_view', $data);
-            $this->load->view('templates/settings_view', $data);
-        }
-        else {
-            show_404();
-        }
+        $this->load->view('templates/team_view', $data);
+        $this->load->view('templates/settings_view', $data);
 
     }
+
+
 
 
     /**
