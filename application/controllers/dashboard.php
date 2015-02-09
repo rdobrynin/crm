@@ -36,9 +36,6 @@ class Dashboard extends CI_Controller {
      */
 
     public function index() {
-
-
-
         $project_array = $this->project_model->get_projects();
         if($project_array) {
             $data['projects']= $project_array;
@@ -47,7 +44,6 @@ class Dashboard extends CI_Controller {
             $data['projects']=false;
         }
 
-
         $project_title_array = $this->project_model->get_project_title();
         if($project_array) {
             $data['project_title']= $project_title_array;
@@ -55,7 +51,6 @@ class Dashboard extends CI_Controller {
         else {
             $data['project_title']=false;
         }
-
 
         $task_types = $this->task_model->getTaskTypes();
         if($task_types) {
@@ -107,6 +102,8 @@ class Dashboard extends CI_Controller {
         else {
             $data['comments']=false;
         }
+        $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
+
 
         $overtasks = $this->task_model->getOverdueTasks();
 
@@ -175,7 +172,6 @@ class Dashboard extends CI_Controller {
 
         $data['users_names']= $this->admin_model->get_users_names();
         $this->session->set_userdata('user_id', $this->admin_model->get_user_id($_SESSION['username']));
-        $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
         $data['introduce'] = $this->admin_model->getIntroduce($_SESSION['username']);
         $roles_array = $this->admin_model->get_roles();
         $roles = array();

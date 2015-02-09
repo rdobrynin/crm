@@ -110,10 +110,14 @@
                                                     <td class="text-left"><?php print($tv['due_time']); ?></td>
                                                     <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
                                                         <td>
+                                                            <?php if($user[0]['id']==$tv['uid']):?>
                                                             <a href="javascript:void(0);" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
                                                             <a href="javascript:void(0);" onClick="taskToEdit(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
+                                                            <?php endif ?>
                                                             <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
+                                                        <?php if($user[0]['id']==$tv['uid']):?>
                                                             <a href="javascript:void(0);" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv['id']); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>
+                                                        <?php endif ?>
                                                         </td>
                                                     <?php endif ?>
                                                 </tr>
@@ -128,7 +132,6 @@
 <!--                        <div class="text-center">-->
 <!--                            <ul class="pagination pagination-lg pager" id="pager_over_tasks"></ul>-->
 <!--                        </div>-->
-
                     </div>
                     <?php else: ?>
                     <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of overdue tasks found</div></div>
@@ -215,9 +218,7 @@
 <!--STARTS READY-->
                         <?php if ($user[0]['role']==2): ?>
                         <div class="panel">
-
                             <?php if ($ready_tasks!=0): ?>
-
                             <div class="panel-body-table">
                                 <div class="table-responsive">
                                     <table class="table table-condensed" id="ready-task-table">
@@ -283,7 +284,7 @@
                 <?php endif ?>
                     </div>
 <!--                end last tasks-->
-            <?php if ($user[0]['role']==2): ?>
+
                 <p class="lead">Tasks in process</p>
                 <?php if ($process_tasks != FALSE): ?>
                     <div class="row-fluid">
@@ -324,7 +325,6 @@
                                                     <span class="label <?php print(task_status_label($tv['status'])); ?> label-xs"><?php print(task_status($tv['status'])); ?></span>
                                                 </td>
                                                 <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
-                                                <?php var_dump($tv['cts']); ?>
                                                 <td><?php print(check_cts($tv['cts'])); ?></td>
                                                 <td class="text-left"><?php print($tv['due_time']); ?></td>
                                                 <td>
@@ -346,14 +346,14 @@
                     <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of process tasks found</div></div>
                 <?php endif ?>
                 <!--   end last tasks-->
-            <?php endif ?>
+
         </div>
         <?php if ($comments !=false): ?>
             <div class="col-md-3">
                 <p class="lead">Activity Stream</p>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Last 7 comments</h3>
+                        <h3 class="panel-title">Comments</h3>
                     </div>
                     <div class="panel-body comment">
                         <?php $rev_comm = array_reverse($comments);?>

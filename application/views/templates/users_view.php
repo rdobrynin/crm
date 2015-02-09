@@ -69,10 +69,13 @@
                                                     <td><?php print(show_role($uv['role'])); ?></td>
                                                     <td><?php print($uv['date_created']); ?></td>
                                                     <td>
+                                                        <?php if ($user[0]['role'] ==5): ?>
+
                                                         <a href="javascript:void(0);" data-title="Edit" onClick="updateUser(<?php print($uv['id']); ?>)"><i class="fa fa-pencil"></i></a>
+                                                        <?php endif ?>
                                                     </td>
                                                     <td>
-                                                        <?php if ($uv['role'] !=5): ?>
+                                                        <?php if ($uv['role'] !=5 AND $user[0]['role'] ==5): ?>
                                                             <a href="javascript:void(0);" style="cursor: pointer;" data-toggle="confirmation-delete-current-user" data-singleton="true" data-target="<?php print($uv['id']); ?>">Remove</a>
                                                         <?php endif ?>
                                                     </td>
