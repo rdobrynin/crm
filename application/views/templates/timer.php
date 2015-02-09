@@ -258,6 +258,12 @@
         });
 
         $('#task-timer-clear').click(function () {
+            $('#modal-confirm-cancel-time').modal('show');
+        });
+
+
+        $('#modal-btn-cancel-time').click(function () {
+
             if (typeof(Storage) !== "undefined") {
                 clearInterval(timer);
                 localStorage.play = false;
@@ -266,6 +272,7 @@
             }
             $('#play-timer').removeClass('active-time');
             $('#play-timer').prop("disabled", false);
+            $('#modal-confirm-cancel-time').modal('hide');
             $('#task-timer, #task-timer-pause, #task-timer-stop, #task-timer-clear').hide();
         });
 

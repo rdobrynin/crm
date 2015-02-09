@@ -47,7 +47,7 @@
                                             <td>
                                                 <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                                 <?php if ($user[0]['id'] == $tv['implementor']): ?>
-                                                    <a href="javascript:void(0);"  onClick="impControl(<?php print($tv['id']); ?>,3)" class="btn btn-xs imp-adjust-btn" data-toggle="tooltip" data-placement="top" title="complete"><i class="fa fa-check-circle"></i></a>
+                                                    <a href="javascript:void(0);"  onClick="impControlComplete(<?php print($tv['id']); ?>,'<?php print(check_cts($tv['cts'])); ?>')" class="btn btn-xs imp-adjust-btn" data-toggle="tooltip" data-placement="top" title="complete"><i class="fa fa-check-circle"></i></a>
                                                     <a href="javascript:void(0);" style="color:#d9534f;" class="btn btn-xs imp-adjust-btn" onClick="impControl(<?php print($tv['id']); ?>,1)" data-toggle="tooltip" data-placement="top" title="unwant"><i class="fa fa-eye-slash"></i></a>
                                                 <?php endif ?>
                                             </td>
