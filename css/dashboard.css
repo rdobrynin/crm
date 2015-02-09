@@ -209,3 +209,9 @@ i.clock-activity {
     float: right;
 }
 
+
+
+input.lights {
+    background-color: transparent;
+    color: #000;
+}

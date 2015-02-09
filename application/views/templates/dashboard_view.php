@@ -68,8 +68,13 @@
                         <?php if ($over_tasks != false): ?>
                         <div class="panel">
                             <div class="panel-body-table">
+                         <div class="row">
+                                    <div class="col-lg-2 col-md-4 col-sm-12 pull-right">  <input type="text" id="search-over-table" class=" form-control lights" placeholder="live search"/>
+                                   </div>
+                          </div>
+
                                 <div class="table-responsive">
-                                    <table class="table table-condensed">
+                                    <table class="table table-condensed" id="over-table">
                                         <thead>
                                         <tr>
                                             <th width="5%" class="text-left">Article</th>
