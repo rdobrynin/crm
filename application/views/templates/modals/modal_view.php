@@ -302,10 +302,6 @@
     </div>
 </div> <!-- #/edittask_pr_modal -->
 
-
-
-
-
 <!--Create project modal window-->
 <div class="modal" id="demo_modal" tabindex="-1" role="dialog" aria-labelledby="demo_modalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -322,10 +318,6 @@
         <?php form_close( );?>
     </div>
 </div> <!-- #/addproject_moda -->
-
-
-
-
 
 <!-- Modal -->
 <div class="modal fade" id="update-user-modal" tabindex="-1" role="dialog"  aria-hidden="true">
@@ -363,6 +355,22 @@
 </div> <!-- #/myModal -->
 
 
+
+<div class="modal" id="view_task_modal" tabindex="-1" role="dialog" aria-labelledby="view_task_modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-view-title"></h4>
+            </div>
+            <div class="modal-body" id="modal-view-body">
+
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn btn-default" style="width: 100%">Close</a>
+            </div>
+        </div>
+    </div>
+</div> <!-- #/addproject_moda -->
 
 
 <script type="text/javascript">

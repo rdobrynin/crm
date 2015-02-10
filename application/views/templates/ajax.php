@@ -498,7 +498,7 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                                   "<td class='text-left'>"+msg['newtask']['due_time']+"</td>+"+
                                   "<td class='text-left'> <a href='#' onClick='taskToReady("+msg['newtask']['id']+")' style='text-decoration: none;'><i class='fa fa-play'></i></a><a href='#'"+
                                   "onClick='taskToEdit"+msg['newtask']['id']+")'style='text-decoration: none;'><i class='fa fa-pencil'></i></a><a href='#' onMouseDown='taskToView("+msg['newtask']['id']+")'"+
-                                  "onMouseOut='taskToHide()' style='text-decoration: none;'><i class='fa fa-eye'></i></a>"+
+                                  "><i class='fa fa-eye'></i></a>"+
                                   "<a href='#' data-toggle='confirmation-delete-current-task' data-singleton='true' data-target='"+msg['newtask']['id']+"' style='text-decoration: none;cursor: pointer;'>"+
                                   "<span class='icon-remove'></span></a></td></tr>");
 
@@ -888,7 +888,7 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                                       $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html(msg['desc']);
                                       $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html('<span><i class="fa fa-circle circle-priority" style="<?php if ($tv["priority"] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv["priority"] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv["priority"] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv["priority"]) ?>');
                                       $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html(msg['dueto']);
-                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html('<a href="#;" onClick="taskToReady(<?php print($tv["id"]); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a><a href="#;" onClick="taskToEdit(<?php print($tv["id"]); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a><a href="#;" onMouseDown="taskToView(<?php print($tv["id"]); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a><a href="#;" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv["id"]); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>');
+                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html('<a href="#;" onClick="taskToReady(<?php print($tv["id"]); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a><a href="#;" onClick="taskToEdit(<?php print($tv["id"]); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a><a href="#;" onMouseDown="taskToView(<?php print($tv["id"]); ?>)" style="text-decoration: none;"><i class="fa fa-eye"></i></a><a href="#;" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv["id"]); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>');
                                       blurRadius = 0;
                                       $('#edit-task-modal').hide();
                                       $('#tr-dashboard-task-'+$data).css({
@@ -1090,6 +1090,7 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
           dataType: 'json',
           success: function (msg) {
               if(msg != 'false') {
+              $('#view_task_modal').modal('show');
                   colorPriority = 'color:#f89406;';
                   if (msg['task'].priority == '0') {
                       colorPriority = 'color:#428bca;';
@@ -1102,17 +1103,9 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                       colorPriority = 'color:#d9534f;';
                   }
                   $('.task-view-wrapper').css('display','block');
-                  $('.tasks-view').css('display','block');
-
-                  $('.task-view-header').html('<span class="pull-left">'+msg['task'].title+' ('+msg['project'][0]['title']+')'+'</span><span class="pull-right"><i class="fa fa-circle circle-priority-view" style="'+colorPriority+'"></i></span>');
-
-
-                  if(msg['task'].status == '6') {
-                      $('.task-view-header').html('<span class="pull-left">'+msg['task'].title+' ('+msg['project'][0]['title']+')'+'</<span>&nbsp;&nbsp;<span class="label label-danger label-xs">Overdue</span></span><span class="pull-right"><i class="fa fa-circle circle-priority-view" style="'+colorPriority+'"></i></span>');
-                  }
-
-
-                  $('.task-view-content').html('<p><strong>Created: </strong>'+msg['task'].date_created+'</p>'+
+                  $('.tasks-#ay','block');
+                  $('#modal-view-title').html('<span class="pull-left" style="'+colorPriority+'">#'+msg['task'].id+' '+msg['task'].title+' / project('+msg['project'][0]['title']+')'+'</span>');
+                  $('#modal-view-body').html('<p><strong>Created: </strong>'+msg['task'].date_created+'</p>'+
                       '<p><strong>Due to: </strong><span style="color:red;">'+msg['task'].due_time+'</span></p>'+
                       '<p><strong>Implementor: </strong>'+msg['implementor']+' | <strong>Curator: </strong>'+msg['curator']+'</p>'+
                       '<p><strong>Description: </strong>'+msg['task'].desc+'</p>');
@@ -1121,11 +1114,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               }
 
       });
-  }
-
-  function taskToHide(){
-      $('.task-view-wrapper').css('display','none');
-      $('.tasks-view').css('display','none');
   }
 
 
