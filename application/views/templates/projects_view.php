@@ -40,7 +40,12 @@
                     </tr>
                     <!--TASK-->
                     <tr>
+
+
                         <td colspan="9" class="td-task" id="task-for-project">
+                            <div class="search-form-table">
+                                <input type="text" id="search-project-task-table" class=" form-control lights" placeholder="live search"/>
+                            </div>
                             <table class="table table-task">
                                 <thead>
                                 <tr>

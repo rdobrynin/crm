@@ -249,10 +249,35 @@ $(function() {
     });
 
 
+    $("#search-project-task-table").keyup(function(){
+        _this = this;
+        // Show only matching TR, hide rest of them
+        $.each($(".table-task tbody").find("tr"), function() {
+            console.log($(this).text());
+            if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
+                $(this).hide();
+            else
+                $(this).show();
+        });
+    });
+
+
     $("#search-task-complete-table").keyup(function(){
         _this = this;
         // Show only matching TR, hide rest of them
         $.each($("#table-task-complete tbody").find("tr"), function() {
+            console.log($(this).text());
+            if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
+                $(this).hide();
+            else
+                $(this).show();
+        });
+    });
+
+    $("#search-dash-ready-table").keyup(function(){
+        _this = this;
+        // Show only matching TR, hide rest of them
+        $.each($("#ready-task-table tbody").find("tr"), function() {
             console.log($(this).text());
             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                 $(this).hide();

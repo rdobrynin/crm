@@ -37,7 +37,7 @@
                     <div class="col-md-6 col-vlg-3 col-sm-6">
                         <div class="tiles blue m-b-10">
                             <div class="tiles-body">
-                                <div class="controller"> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
+                                <div class="controller"> <a href="javascript:void();" class="reload"></a> <a href="javascript:void();" class="remove"></a> </div>
                                 <div class="tiles-title text-black">Tasks</div>
                                 <div class="widget-stats">
                                     <div class="wrapper transparent">
@@ -163,7 +163,17 @@
 
                         <?php endif ?>
                         <?php if ($user[0]['role']==2 ): ?>
+                <div class="row">
+                    <div class="col-lg-10 col-md-12">
                             <p class="lead">Ready to go&nbsp;(<span id="calc-ready-tasks"><?php if ($ready_tasks != false): ?><?php print($ready_tasks); ?><?php else:?>0<?php endif ?></span>)<p>
+                        </p>
+                </div>
+                            <?php if ($ready_tasks != false): ?>
+                                <div class="col-lg-2 col-md-4 search-form">
+                                    <input type="text" id="search-dash-ready-table" class=" form-control lights" placeholder="live search"/>
+                                </div>
+                            <?php endif ?>
+                    </div>
                         <?php endif ?>
 <!--                 START APPROVE  TASK      -->
                         <?php if ($user[0]['role']!=2): ?>
