@@ -2,14 +2,23 @@
 <div class="page-content-wrapper">
   <!-- Keep all page content within the page-content inset div! -->
   <div class="page-content inset">
-      <p class="lead">Comments&nbsp;(<span id="calc-all-comments" ></span>)</p>
+      <div class="row">
+          <div class="col-lg-10 col-md-8">
+              <p class="lead">Comments&nbsp;(<span id="calc-all-comments" ></span>)</p>
+          </div>
+          <?php if ($comments != FALSE): ?>
+          <div class="col-lg-2 col-md-4  pull-right search-form">
+              <input type="text" id="search-all-comments" class=" form-control lights" placeholder="live search"/>
+          </div>
+          <?php endif ?>
+      </div>
     <div class="row-fluid">
         <?php if ($comments != FALSE): ?>
             <div class="row-fluid">
                 <div class="panel">
                     <div class="panel-body-table">
                         <div class="table-responsive">
-                            <table class="table table-condensed">
+                            <table class="table table-condensed" id="table-all-comments">
                                 <thead>
                                 <tr>
                                     <th width="5%" class="text-left">#ID</th>
@@ -29,7 +38,7 @@
                                 <?php foreach ($comments as $ck => $cv): ?>
                                     <?php if ($user[0]['role'] ==2 && $user[0]['id']==$cv['to'] OR $user[0]['role'] ==1 && $user[0]['id']==$cv['to']): ?>
                                     <tr class="<?php if ($cv['public'] == 1): ?>disabled<?php endif ?> ">
-                                        <td><?php print($cv['id']); ?></td>
+                                        <td>#<?php print($cv['id']); ?></td>
                                         <td><span class="muted"><?php print(date_format(date_create($cv['date_created']),"F d H:i")); ?></span></td>
                                         <td><?php print($cv['subject']); ?></td>
                                         <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($cv['uid']); ?>)"><?php print(short_name($user_name[$cv['uid']])); ?></a></td>
@@ -40,7 +49,7 @@
                                     <?php endif ?>
                                     <?php if ($user[0]['role'] ==4 OR $user[0]['role'] ==5 ): ?>
                                         <tr class="<?php if ($cv['public'] == 1): ?>disabled<?php endif ?>" id="adjust-comment-<?php print($cv['id']); ?>">
-                                            <td><?php print($cv['id']); ?></td>
+                                            <td>#<?php print($cv['id']); ?></td>
                                             <td><span class="muted"><?php print(date_format(date_create($cv['date_created']),"F d H:i")); ?></span></td>
                                             <td><?php print($cv['subject']); ?></td>
                                             <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($cv['uid']); ?>)"><?php print(short_name($user_name[$cv['uid']])); ?></a></td>

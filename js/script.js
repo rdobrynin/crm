@@ -200,6 +200,23 @@ $(function() {
         });
     });
 
+
+    /**
+     * Live search in dashboard page process tasks
+     */
+
+    $("#search-all-comments").keyup(function(){
+        _this = this;
+        // Show only matching TR, hide rest of them
+        $.each($("#table-all-comments tbody").find("tr"), function() {
+//            console.log($(this).text());
+            if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
+                $(this).hide();
+            else
+                $(this).show();
+        });
+    });
+
     /**
      * Live search logs
      */
