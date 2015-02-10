@@ -1,8 +1,18 @@
+/**
+ * Convert date to timestamp
+ * @param strDate
+ * @returns {number}
+ */
+
 function toTimestamp(strDate){
     var datum = Date.parse(strDate);
     return datum/1000;
 }
-
+/**
+ * Get Label Task
+ * @param $status
+ * @returns {number|*}
+ */
 
 function getLabelTask($status) {
     $result=0;
@@ -33,6 +43,12 @@ function getLabelTask($status) {
     return $result;
 }
 
+/**
+ * Priority task status shows
+ * @param $status
+ * @returns {number|*}
+ */
+
 function getPriorityTask($status) {
     $result=0;
     if($status == 0) {
@@ -46,6 +62,12 @@ function getPriorityTask($status) {
     }
     return $result;
 }
+
+/**
+ * Priority color task
+ * @param $status
+ * @returns {number|*}
+ */
 
 
 function getPriorityTaskClass($status) {
@@ -63,6 +85,11 @@ function getPriorityTaskClass($status) {
 }
 
 //Pager
+
+/**
+ * Pager for tables
+ * @param opts
+ */
 
 $.fn.pageMe = function(opts){
     var $this = this,
@@ -386,7 +413,7 @@ $(function() {
     $('.navbar-toggler').on('click', function(event) {
         event.preventDefault();
         $(this).closest('.navbar-minimal').toggleClass('open');
-    })
+    });
 
     $("li a").click(function(e) {
         $('li').removeClass('active');
