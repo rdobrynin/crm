@@ -789,12 +789,13 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                   var hour = msg.result['due_time'][11]+msg.result['due_time'][12];
                   var min = msg.result['due_time'][14]+msg.result['due_time'][15];
                   var date = day + '.'+month +'.'+year+'-'+hour+':'+min;
+//                  var date = year + '/'+month +'/'+day+' '+hour+':'+min;
                   $('#edit_task_pr_title').val(msg.result['title']);
                   $('#edit_task_pr_desc').val(msg.result['desc']);
                   $('#edit_dueto_modal').val(msg.result['due_time']);
                   $('#edit_dueto_modal').datetimepicker({
                       theme: 'dark',
-                      value:date,
+                      value:  date,
                       format:'d.m.Y-H:i',
                       minDate: '<?php date("F j, Y, g:i a"); ?>'
 

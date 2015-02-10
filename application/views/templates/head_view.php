@@ -46,8 +46,10 @@
     <link href="<?php print(base_url()); ?>css/btn.css" rel="stylesheet">
     <link href="<?php print(base_url()); ?>css/logs.css" rel="stylesheet">
     <link href="<?php print(base_url()); ?>css/tasker_fonts.css" rel="stylesheet">
+    <link href="<?php print(base_url()); ?>assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
 
     <script src="<?php print(base_url()); ?>assets/js/jquery-1.11.1.min.js"></script>
+    <script src="<?php print(base_url()); ?>assets/js/jquery.mCustomScrollbar.js"></script>
     <script src="<?php print(base_url()); ?>assets/js/bootstrap.min.js"></script>
     <script src="<?php print(base_url()); ?>assets/js/bootstrap-switch.min.js"></script>
     <script src="<?php print(base_url()); ?>assets/js/jquery.bootstrap.wizard.min.js"></script>

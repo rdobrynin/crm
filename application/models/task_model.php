@@ -171,6 +171,7 @@ class Task_model extends CI_Model {
             'label' =>$this->input->post('label'),
             'priority' =>$this->input->post('priority'),
             'date_edited' =>time(),
+            'overdue' => '0',
 
         );
         $this->db->where('id', $id);
