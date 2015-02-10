@@ -398,7 +398,7 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Comments</h3>
                     </div>
-                    <div class="panel-body comment" style="overflow: auto; max-height: 581px;">
+                    <div class="panel-body comment comment-jsscroll" style="padding-right:0;max-height: 581px;">
                         <?php $rev_comm = array_reverse($comments);?>
                         <?php foreach ($rev_comm as $ck=>$cv): ?>
                             <?php if ($cv['public'] == 0): ?>
@@ -442,6 +442,18 @@
 </div>
 <!--logs-->
 <!--test-->
+<script>
+    (function($){
+        $(window).load(function(){
+            $(".comment-jsscroll").mCustomScrollbar({
+                scrollButtons:{enable:true,scrollType:"stepped"},
+                theme:"rounded-dark",
+                autoExpandScrollbar:true,
+                snapOffset:65
+            });
+        });
+    })(jQuery);
+</script>
 <?php if ($introduce == 0): ?>
     <?php include('introduce.php'); ?>
 <?php endif ?>
