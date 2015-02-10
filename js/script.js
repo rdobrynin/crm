@@ -175,10 +175,10 @@ $.fn.pageMe = function(opts){
 $(function() {
 
 
-    $("#search-over-table").keyup(function(){
+    $("#search-dash-over-table").keyup(function(){
         _this = this;
         // Show only matching TR, hide rest of them
-        $.each($("#over-table tbody").find("tr"), function() {
+        $.each($("#dash-over-table tbody").find("tr"), function() {
             console.log($(this).text());
             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                 $(this).hide();
@@ -187,10 +187,34 @@ $(function() {
         });
     });
 
-    $("#search-process-table").keyup(function(){
+    $("#search-dash-process-table").keyup(function(){
         _this = this;
         // Show only matching TR, hide rest of them
-        $.each($("#over-table tbody").find("tr"), function() {
+        $.each($("#dash-process-table tbody").find("tr"), function() {
+            console.log($(this).text());
+            if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
+                $(this).hide();
+            else
+                $(this).show();
+        });
+    });
+
+    $("#search-logs-table").keyup(function(){
+        _this = this;
+        // Show only matching TR, hide rest of them
+        $.each($("#log-table tbody").find("tr"), function() {
+            console.log($(this).text());
+            if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
+                $(this).hide();
+            else
+                $(this).show();
+        });
+    });
+
+    $("#search-dash-approve-table").keyup(function(){
+        _this = this;
+        // Show only matching TR, hide rest of them
+        $.each($("#approve-task-table tbody").find("tr"), function() {
             console.log($(this).text());
             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                 $(this).hide();
@@ -361,7 +385,7 @@ $('.closebox').click(function(e){
 
 
 
-    $('#approve_tasks_table').pageMe({pagerSelector:'#pager_approve_tasks',showPrevNext:true,hidePageNumbers:true,perPage:35});
+//    $('#approve_tasks_table').pageMe({pagerSelector:'#pager_approve_tasks',showPrevNext:true,hidePageNumbers:true,perPage:35});
     $('#logs-tbody').pageMe({pagerSelector:'#pager_all_logs',showPrevNext:true,hidePageNumbers:true,perPage:25});
 
     var count_approve_tasks = $('#approve_tasks_table').children().length;

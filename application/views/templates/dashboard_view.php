@@ -63,18 +63,20 @@
                     </div>
                 </div>
 <!--                Overdue tasks-->
-                    <div class="row-fluid" style="padding-top: 20px;">
-                        <p class="lead">Overdue tasks&nbsp;(<span id="calc-over-tasks" ><?php if ($over_tasks != false): ?><?php print(count($over_tasks)); ?><?php else:?>0<?php endif ?></span>)</p>
+                    <div  style="padding-top: 20px;">
+                     <div class="row">
+                         <div class="col-lg-10 col-md-12">
+                             <p class="lead">Overdue tasks&nbsp;(<span id="calc-over-tasks" ><?php if ($over_tasks != false): ?><?php print(count($over_tasks)); ?><?php else:?>0<?php endif ?></span>)</p>
+                         </div>
+                         <div class="col-lg-2 col-md-4 search-form">
+                             <input type="text" id="search-dash-over-table" class=" form-control lights" placeholder="live search"/>
+                         </div>
+                     </div>
                         <?php if ($over_tasks != false): ?>
                         <div class="panel">
                             <div class="panel-body-table">
-                         <div class="row">
-                                    <div class="col-lg-2 col-md-4 col-sm-12 pull-right">  <input type="text" id="search-over-table" class=" form-control lights" placeholder="live search"/>
-                                   </div>
-                          </div>
-
                                 <div class="table-responsive">
-                                    <table class="table table-condensed" id="over-table">
+                                    <table class="table table-condensed" id="dash-over-table">
                                         <thead>
                                         <tr>
                                             <th width="5%" class="text-left">Article</th>
@@ -143,10 +145,20 @@
                     </div>
                 <?php endif ?>
 <!--                End overdue-->
-                <div class="row-fluid" style="margin-bottom: -20px;">
+                <div style="padding-top: 20px;">
                 <?php if ($tasks != FALSE): ?>
                         <?php if ($user[0]['role']==5 OR $user[0]['role']==4 OR $user[0]['role']==1 OR $user[0]['role']==3): ?>
+                <div class="row">
+                    <div class="col-lg-10 col-md-12">
                         <p class="lead">Tasks for approve&nbsp;(<span id="calc-appr-tasks" ><?php if ($approve_tasks != false): ?><?php print(count($approve_tasks)); ?><?php else:?>0<?php endif ?></span>)</p>
+                        </div>
+                            <?php if ($approve_tasks != false): ?>
+                    <div class="col-lg-2 col-md-4 search-form">
+                        <input type="text" id="search-dash-approve-table" class=" form-control lights" placeholder="live search"/>
+                    </div>
+                            <?php endif ?>
+                </div>
+
                         <?php endif ?>
                         <?php if ($user[0]['role']==2 ): ?>
                             <p class="lead">Ready to go&nbsp;(<span id="calc-ready-tasks"><?php if ($ready_tasks != false): ?><?php print($ready_tasks); ?><?php else:?>0<?php endif ?></span>)<p>
@@ -215,9 +227,9 @@
                             <?php else: ?>
                                 <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of approve tasks found</div></div>
                             <?php endif ?>
-                        <div class="text-center">
-                            <ul class="pagination pagination-lg pager" id="pager_approve_tasks"></ul>
-                        </div>
+<!--                        <div class="text-center">-->
+<!--                            <ul class="pagination pagination-lg pager" id="pager_approve_tasks"></ul>-->
+<!--                        </div>-->
                         <?php endif ?>
 <!-- END APPROVE-->
 <!--STARTS READY-->
@@ -289,14 +301,21 @@
                 <?php endif ?>
                     </div>
 <!--                end last tasks-->
+<div class="row">
+    <div class="col-lg-10 col-md-8">
+        <p class="lead">Tasks in process</p>
+    </div>
+    <div class="col-lg-2 col-md-4  pull-right search-form">
+        <input type="text" id="search-dash-process-table" class=" form-control lights" placeholder="live search"/>
+    </div>
+</div>
 
-                <p class="lead">Tasks in process</p>
                 <?php if ($process_tasks != FALSE): ?>
                     <div class="row-fluid">
                         <div class="panel">
                             <div class="panel-body-table">
                                 <div class="table-responsive">
-                                    <table class="table table-condensed">
+                                    <table class="table table-condensed" id="dash-process-table">
                                         <thead>
                                         <tr>
                                             <th width="5%" class="text-left">Article</th>

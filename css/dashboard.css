@@ -214,4 +214,23 @@ i.clock-activity {
 input.lights {
     background-color: transparent;
     color: #000;
+    border: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    
+}
+
+.search-form {
+    float: right !important;
+}
+
+.search-form:before {
+    font-family: 'FontAwesome';
+    content: "\f002";
+    color: rgb(186, 186, 186);
+    font-size: 17px;
+    position: absolute;
+    left: 3px;
+    top: 5px;
 }

@@ -1,8 +1,13 @@
 <div class="page-content-wrapper">
     <div class="page-content inset">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-lg-10 col-md-8">
                 <p class="lead">Logs activity</p>
+            </div>
+            <div class="col-lg-2 col-md-4  pull-right search-form">
+                <input type="text" id="search-logs-table" class=" form-control lights" placeholder="live search"/>
+            </div>
+            </div>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
@@ -50,7 +55,7 @@
                     </div>
                 </div>
 
-            </div>
+
             <!-- ./row-->
         </div>
     </div>
