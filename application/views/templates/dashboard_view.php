@@ -30,7 +30,7 @@
                                 <div class="progress transparent progress-small no-radius m-t-20" style="width:90%">
                                     <div class="progress-bar progress-bar-white animate-progress-bar"  data-percentage="43%" style="width: 64.8%;"></div>
                                 </div>
-                                <div class="description"> <span class="text-white mini-description ">43% all projects <span class="blend">completed</span></span></div>
+                                <div class="description"> <span class="text-white mini-description ">0 projects <span class="blend">&nbsp;completed</span></span></div>
                             </div>
                         </div>
                     </div>
