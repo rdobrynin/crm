@@ -68,9 +68,11 @@
                          <div class="col-lg-10 col-md-12">
                              <p class="lead">Overdue tasks&nbsp;(<span id="calc-over-tasks" ><?php if ($over_tasks != false): ?><?php print(count($over_tasks)); ?><?php else:?>0<?php endif ?></span>)</p>
                          </div>
+                         <?php if ($over_tasks != false): ?>
                          <div class="col-lg-2 col-md-4 search-form">
                              <input type="text" id="search-dash-over-table" class=" form-control lights" placeholder="live search"/>
                          </div>
+                         <?php endif ?>
                      </div>
                         <?php if ($over_tasks != false): ?>
 
