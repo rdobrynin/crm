@@ -321,7 +321,6 @@
         <input type="text" id="search-dash-process-table" class=" form-control lights" placeholder="live search"/>
     </div>
 </div>
-
                 <?php if ($process_tasks != FALSE): ?>
                     <div class="row-fluid">
                         <div class="panel">
@@ -382,11 +381,19 @@
                     <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of process tasks found</div></div>
                 <?php endif ?>
                 <!--   end last tasks-->
-
         </div>
         <?php if ($comments !=false): ?>
             <div class="col-md-3">
-                <p class="lead">Activity Stream</p>
+               <div class="row">
+                   <div class="col-md-8">
+                       <p class="lead" style="float: left;">Activity Stream</p>
+                   </div>
+                   <div class="col-md-4">
+                <span class="search-form">
+                    <input type="text" id="search-dash-comment" class=" form-control lights" placeholder="live search"/>
+                </span>
+                   </div>
+               </div>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">Comments</h3>
@@ -396,7 +403,9 @@
                         <?php foreach ($rev_comm as $ck=>$cv): ?>
                             <?php if ($cv['public'] == 0): ?>
                         <?php if ($cv['to'] == $user[0]['id']): ?>
-                        <div class="sub-activity">
+
+
+                        <div class="sub-activity search-filter-comment">
                             <div class="activity-item-summary">
                                 <div class="avatar-activity">
                                 <span class="avatar-img">
@@ -417,6 +426,8 @@
                                 </div>
                             </div>
                         </div>
+
+
                                 <?php endif ?>
                             <?php endif ?>
                         <?php endforeach ?>
