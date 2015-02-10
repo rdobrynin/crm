@@ -398,7 +398,7 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Comments</h3>
                     </div>
-                    <div class="panel-body comment">
+                    <div class="panel-body comment" style="overflow: auto; max-height: 581px;">
                         <?php $rev_comm = array_reverse($comments);?>
                         <?php foreach ($rev_comm as $ck=>$cv): ?>
                             <?php if ($cv['public'] == 0): ?>
@@ -432,7 +432,7 @@
                             <?php endif ?>
                         <?php endforeach ?>
                     </div>
-                    <div class="show-more-activity"> <button class="btn btn-default btn-xs" id="show-more-comment" style="width: 100%">Show more</button></div>
+
                 </div>
             </div>
         <?php endif ?>
