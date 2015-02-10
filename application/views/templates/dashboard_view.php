@@ -73,7 +73,7 @@
                          </div>
                      </div>
                         <?php if ($over_tasks != false): ?>
-                        <div class="panel">
+
                             <div class="panel-body-table">
                                 <div class="table-responsive">
                                     <table class="table table-condensed" id="dash-over-table">
@@ -135,7 +135,7 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
+
 <!--                        <div class="text-center">-->
 <!--                            <ul class="pagination pagination-lg pager" id="pager_over_tasks"></ul>-->
 <!--                        </div>-->
@@ -294,9 +294,9 @@
                             <?php endif ?>
                         </div>
                         <?php endif ?>
-                        <div class="text-center">
-                            <ul class="pagination pagination-lg pager" id="pager_ready_tasks"></ul>
-                        </div>
+<!--                        <div class="text-center">-->
+<!--                            <ul class="pagination pagination-lg pager" id="pager_ready_tasks"></ul>-->
+<!--                        </div>-->
                         <!--                        END READY-->
                 <?php endif ?>
                     </div>
