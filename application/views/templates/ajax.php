@@ -1112,14 +1112,10 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               }
 
               }
-
       });
   }
 
-
-
-  $('[data-toggle=confirmation-delete-current-task]').confirmation(
-      {
+  $('[data-toggle=confirmation-delete-current-task]').confirmation(  {
           placement: 'left',
           animation: false,
           btnOkClass:'btn-xs',
