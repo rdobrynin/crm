@@ -2,13 +2,20 @@
 <div class="page-content-wrapper">
   <!-- Keep all page content within the page-content inset div! -->
     <div class="page-content inset">
+        <div class="row">
+            <div class="col-lg-10 col-md-12">
         <p class="lead">Tasks in process</p>
+                </div>
+            <div class="col-lg-2 col-md-4 search-form">
+                <input type="text" id="search-task-process-table" class=" form-control lights" placeholder="live search"/>
+            </div>
+            </div>
         <?php if ($process_tasks != FALSE): ?>
             <div class="row-fluid">
                 <div class="panel">
                     <div class="panel-body-table">
                         <div class="table-responsive">
-                            <table class="table table-condensed">
+                            <table class="table table-condensed" id="table-task-process">
                                 <thead>
                                 <tr>
                                     <th width="5%" class="text-left">Article</th>
@@ -68,7 +75,14 @@
 </div>
 <div class="page-content-wrapper">
   <div class="page-content inset">
+      <div class="row">
+          <div class="col-lg-10 col-md-12">
       <p class="lead">Tasks&nbsp;(<span id="calc-all-tasks" ></span>)</p>
+              </div>
+          <div class="col-lg-2 col-md-4 search-form">
+              <input type="text" id="search-task-common-table" class=" form-control lights" placeholder="live search"/>
+          </div>
+          </div>
       <?php if ($tasks != FALSE): ?>
           <div class="row-fluid">
               <div class="panel">
@@ -138,22 +152,29 @@
                   </div>
               </div>
           </div>
-          <div class="col-md-12 text-center">
-              <ul class="pagination pagination-lg pager" id="pager_all_tasks"></ul>
-          </div>
+<!--          <div class="col-md-12 text-center">-->
+<!--              <ul class="pagination pagination-lg pager" id="pager_all_tasks"></ul>-->
+<!--          </div>-->
       <?php endif ?>
       <!--                end last tasks-->
   </div>
 </div>
 <div class="page-content-wrapper">
 <div class="page-content inset">
+    <div class="row">
+        <div class="col-lg-10 col-md-12">
     <p class="lead">Completed tasks</p>
+            </div>
+        <div class="col-lg-2 col-md-4 search-form">
+            <input type="text" id="search-task-complete-table" class=" form-control lights" placeholder="live search"/>
+        </div>
+        </div>
     <?php if ($tasks != FALSE): ?>
         <div class="row-fluid">
             <div class="panel">
                 <div class="panel-body-table">
                     <div class="table-responsive">
-                        <table class="table table-condensed">
+                        <table class="table table-condensed" id="table-task-complete">
                             <thead>
                             <tr>
                                 <th width="5%" class="text-left">Article</th>
@@ -209,9 +230,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-12 text-center">
-            <ul class="pagination pagination-lg pager" id="pager_comp_tasks"></ul>
         </div>
     <?php endif ?>
     <!--                end last tasks-->

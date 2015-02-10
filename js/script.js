@@ -223,34 +223,44 @@ $(function() {
         });
     });
 
-//localStorage.clear();
-//
-//    $(document).on('click', '.panel-heading span.clickable', function (e) {
-//        var $this = $(this);
-//        if (!$this.hasClass('panel-collapsed')) {
-//            $this.parents('.panel').find('.panel-body').slideUp();
-//            $this.addClass('panel-collapsed');
-//            $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
-//        } else {
-//            $this.parents('.panel').find('.panel-body').slideDown();
-//            $this.removeClass('panel-collapsed');
-//            $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
-//        }
-//    });
-//    $(document).on('click', '.panel div.clickable', function (e) {
-//        var $this = $(this);
-//        if (!$this.hasClass('panel-collapsed')) {
-//            $this.parents('.panel').find('.panel-body').slideUp();
-//            $this.addClass('panel-collapsed');
-//            $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
-//            $('.show-more-activity').hide();
-//        } else {
-//            $this.parents('.panel').find('.panel-body').slideDown();
-//            $this.removeClass('panel-collapsed');
-//            $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
-//            $('.show-more-activity').show();
-//        }
-//    });
+
+    $("#search-task-process-table").keyup(function(){
+        _this = this;
+        // Show only matching TR, hide rest of them
+        $.each($("#table-task-process tbody").find("tr"), function() {
+            console.log($(this).text());
+            if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
+                $(this).hide();
+            else
+                $(this).show();
+        });
+    });
+
+    $("#search-task-common-table").keyup(function(){
+        _this = this;
+        // Show only matching TR, hide rest of them
+        $.each($("#common-tasks-table tbody").find("tr"), function() {
+            console.log($(this).text());
+            if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
+                $(this).hide();
+            else
+                $(this).show();
+        });
+    });
+
+
+    $("#search-task-complete-table").keyup(function(){
+        _this = this;
+        // Show only matching TR, hide rest of them
+        $.each($("#table-task-complete tbody").find("tr"), function() {
+            console.log($(this).text());
+            if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
+                $(this).hide();
+            else
+                $(this).show();
+        });
+    });
+
     $(document).ready(function () {
         $('.panel-heading span.clickable').click();
         $('.panel div.clickable').click();
@@ -387,6 +397,7 @@ $('.closebox').click(function(e){
 
 //    $('#approve_tasks_table').pageMe({pagerSelector:'#pager_approve_tasks',showPrevNext:true,hidePageNumbers:true,perPage:35});
     $('#logs-tbody').pageMe({pagerSelector:'#pager_all_logs',showPrevNext:true,hidePageNumbers:true,perPage:25});
+//    $('#comp_task_table').pageMe({pagerSelector:'#pager_comp_tasks',showPrevNext:true,hidePageNumbers:true,perPage:15});
 
     var count_approve_tasks = $('#approve_tasks_table').children().length;
     var count_all_tasks = $('#all_task_table').children().length;
