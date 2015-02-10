@@ -1,7 +1,5 @@
 <script>
   $(function () {
-
-//      check if task exists and overdue
       tasks = <?php print json_encode($tasks);?>;
 
       $.each(tasks, function(index, value){
@@ -77,8 +75,6 @@
                           $('#invite').modal('hide');
                       }, 2000);
                   }
-
-
               }
           });
       });
@@ -88,8 +84,6 @@
        *
        * Sidebar left ON/OFF
        */
-
-
 
       $("#switch-left-bar").click(function () {
 
@@ -115,7 +109,6 @@
               }
           });
       });
-
 
       /**
        *
@@ -144,10 +137,7 @@
                   $('#switch-left-bar').fadeIn('slow');
               }
           });
-
-
       });
-
 
       /**
        *
@@ -172,9 +162,7 @@
 
               }
           });
-
       });
-
 
       /**
        *
@@ -198,11 +186,9 @@
                   var posVar = -300;
                   $(".right-float-sidebar").animate({right: posVar + 'px'});
                   $("#float-users").removeClass('active');
-
               }
           });
       });
-
 
       /**
        * Add project
@@ -250,7 +236,6 @@
                   }
               }
           });
-//update count of projects
           setInterval(function(){
               $.get( "<?php echo site_url('ajax/countProjects'); ?>", function( data ) {
                   if(data >0) {
@@ -306,7 +291,6 @@
                   }
               }
           });
-//update count of projects
           setInterval(function(){
               $.get( "<?php echo site_url('ajax/countProjects'); ?>", function( data ) {
                   if(data >0) {
@@ -327,7 +311,7 @@
               fileElementId   :'userfile',
               dataType        : 'json',
               data            : {
-              'user_id'             : $('#user_id').val()
+              'user_id'       : $('#user_id').val()
               },
               success : function (data, status)
               {
@@ -446,8 +430,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
       });
 
       $("#addtask_pr_btn").click(function(event) {
-
-
           var myString = $.trim($('#choose_project_modal').text().toUpperCase());
           var newABB = myString.substr(0, myString.length-3);
           var form_data = {
@@ -479,12 +461,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                           $('#save_task_pr_modal,#save_error_task_pr_modal').css('display', 'none');
                           $("input[type=text], textarea").val("");
                           $('#addtask_pr_modal').modal('hide');
-//                          todo
-
-
-
-
-
                           var idtr =  'tr-dashboard-task-'+msg["id"];
                           $("#approve-task-table").find('tbody:first')
                               .prepend("<tr id='"+idtr+"'><td class='text-left'>#"+msg['newtask']['id']+"</td><td class='text-left'><span style='color:#5cb85c;'>created now</span></td>+" +
@@ -501,10 +477,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                                   "><i class='fa fa-eye'></i></a>"+
                                   "<a href='#' data-toggle='confirmation-delete-current-task' data-singleton='true' data-target='"+msg['newtask']['id']+"' style='text-decoration: none;cursor: pointer;'>"+
                                   "<span class='icon-remove'></span></a></td></tr>");
-
-
-
-
 
                           idtr =  'tr-task-task-'+msg["id"];
                           $("#common-tasks-table").find('tbody:first')
@@ -527,7 +499,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
 
                       }, 2000);
 
-
                       setInterval(function(){
                           $.get( "<?php echo site_url('ajax/countTasks'); ?>", function( data ) {
                               if(data.length >0) {
@@ -538,11 +509,9 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                           }, "json" );
                       }, 3000);
 
-
                   }
                   else {
                       $('#save_task_pr_modal').css('display', 'none');
-//                      $('#save_error_task_pr_modal').fadeIn('slow').css('display', 'block');
                   }
               }
           });
@@ -570,7 +539,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
           });
       });
 
-
       $(".toggle-div-dialog").click(function(event) {
           var check =false;
           if ($('#toggle-dialog-btn').is(":checked")){
@@ -593,8 +561,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
           });
       });
 
-
-
       $(".toggle-div-message").click(function(event) {
           var check =false;
           if ($('#toggle-message-btn').is(":checked")){
@@ -616,8 +582,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               }
           });
       });
-
-
 
       $('#qm-clear-form-btn').click(function () {
           $("#qm-text, #qm-subject-field").val("");
@@ -723,6 +687,7 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
 
 /**
  * Subject Send
+ *
  **/
 
   function qmSubjectSendComment($title, $data){
@@ -800,7 +765,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
       });
   }
 
-
   /**
    *
    * Task to edit
@@ -835,8 +799,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                       minDate: '<?php date("F j, Y, g:i a"); ?>'
 
                   });
-//                  $('#edit_task_type_choose').html('<option>city1</option><option>city2</option>')
-//                      .selectpicker('refresh');
 
                   $('#edittask_pr_btn').click(function () {
                       console.log($('#edit_dueto_modal').val());
@@ -907,18 +869,15 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
 
               }
           });
-
-
       $('#close-edit-task-modal,#close-button-edit-task-modal').click(function () {
           $('#edit-task-modal').hide();
       });
   }
 
 
-
 /**
  * Send Comment
- * */
+ **/
 
   function SendComment($data){
       $('.qm-body').hide();
@@ -997,10 +956,11 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               }
           });
       });
-
-
   }
 
+  /**
+   *  Update User
+   **/
 
   function updateUser($data) {
       $('#update-user-modal').modal('show');
@@ -1023,7 +983,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                           $('#update-user-notificate').hide();
                       }, 2000);
                   }
-
               }
           });
       });
@@ -1109,11 +1068,14 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                       '<p><strong>Due to: </strong><span style="color:red;">'+msg['task'].due_time+'</span></p>'+
                       '<p><strong>Implementor: </strong>'+msg['implementor']+' | <strong>Curator: </strong>'+msg['curator']+'</p>'+
                       '<p><strong>Description: </strong>'+msg['task'].desc+'</p>');
-              }
-
+               }
               }
       });
   }
+
+  /**
+   * Delete confirmation task
+   **/
 
   $('[data-toggle=confirmation-delete-current-task]').confirmation(  {
           placement: 'left',
@@ -1145,9 +1107,7 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                           $('#calc-appr-tasks').css('display','none');
                       }
                       $('#calc-appr-tasks').html(rowCount);
-//
                       $('[data-toggle=confirmation-delete-current-task]').confirmation('hide');
-
                   }
               });
 
@@ -1160,6 +1120,10 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
       }
   );
   unical_id = <?php print json_encode($user[0]['id']);?>;
+
+/**
+ * Update Task
+ **/
 
   function impControl($data, $action) {
       $('#task_modal_timer').modal({show:true});
@@ -1186,13 +1150,17 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                              }
                          }
                      });
-
              }
           }
       });
 
   }
 
+  /**
+   * Complete Task
+   * @param $data
+   * @param $tts
+   */
 
   function impControlComplete($data, $tts) {
     var min =   $tts.split(/\s+/);
@@ -1224,7 +1192,6 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
               }
           }
       });
-
   }
 
 </script>
