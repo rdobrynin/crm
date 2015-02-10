@@ -245,4 +245,24 @@ input.lights {
     margin-left: -15px;
 }
 
+.search-form-sidebar {
+    float: left !important;
+    padding-left: 10px;
+    padding-left: 30px;
+}
+
+.search-form-sidebar:before {
+    font-family: 'FontAwesome';
+    content: "\f002";
+    color: rgb(186, 186, 186);
+    font-size: 17px;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: -15px;
+}
+
+input#search-sidebar-users {
+    color: #c7c7c7;
+}
+
 

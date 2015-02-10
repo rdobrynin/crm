@@ -33,7 +33,6 @@ function getLabelTask($status) {
     return $result;
 }
 
-
 function getPriorityTask($status) {
     $result=0;
     if($status == 0) {
@@ -62,11 +61,6 @@ function getPriorityTaskClass($status) {
     }
     return $result;
 }
-
-
-
-
-
 
 //Pager
 
@@ -174,12 +168,11 @@ $.fn.pageMe = function(opts){
 
 $(function() {
 
-
     $("#search-dash-over-table").keyup(function(){
         _this = this;
         // Show only matching TR, hide rest of them
         $.each($("#dash-over-table tbody").find("tr"), function() {
-            console.log($(this).text());
+//            console.log($(this).text());
             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                 $(this).hide();
             else
@@ -191,7 +184,7 @@ $(function() {
         _this = this;
         // Show only matching TR, hide rest of them
         $.each($("#dash-process-table tbody").find("tr"), function() {
-            console.log($(this).text());
+//            console.log($(this).text());
             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                 $(this).hide();
             else
@@ -203,7 +196,7 @@ $(function() {
         _this = this;
         // Show only matching TR, hide rest of them
         $.each($("#log-table tbody").find("tr"), function() {
-            console.log($(this).text());
+//            console.log($(this).text());
             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                 $(this).hide();
             else
@@ -215,7 +208,20 @@ $(function() {
         _this = this;
         // Show only matching TR, hide rest of them
         $.each($("#approve-task-table tbody").find("tr"), function() {
-            console.log($(this).text());
+//            console.log($(this).text());
+            if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
+                $(this).hide();
+            else
+                $(this).show();
+        });
+    });
+
+
+    $("#search-sidebar-users").keyup(function(){
+        _this = this;
+        // Show only matching TR, hide rest of them
+        $.each($(".user-float-block"), function() {
+//            console.log($(this).text());
             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                 $(this).hide();
             else
@@ -228,7 +234,7 @@ $(function() {
         _this = this;
         // Show only matching TR, hide rest of them
         $.each($("#table-task-process tbody").find("tr"), function() {
-            console.log($(this).text());
+//            console.log($(this).text());
             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                 $(this).hide();
             else
@@ -240,7 +246,7 @@ $(function() {
         _this = this;
         // Show only matching TR, hide rest of them
         $.each($("#common-tasks-table tbody").find("tr"), function() {
-            console.log($(this).text());
+//            console.log($(this).text());
             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                 $(this).hide();
             else
@@ -248,12 +254,11 @@ $(function() {
         });
     });
 
-
     $("#search-project-task-table").keyup(function(){
         _this = this;
         // Show only matching TR, hide rest of them
         $.each($(".table-task tbody").find("tr"), function() {
-            console.log($(this).text());
+//            console.log($(this).text());
             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                 $(this).hide();
             else
@@ -266,7 +271,7 @@ $(function() {
         _this = this;
         // Show only matching TR, hide rest of them
         $.each($("#table-task-complete tbody").find("tr"), function() {
-            console.log($(this).text());
+//            console.log($(this).text());
             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                 $(this).hide();
             else
@@ -278,7 +283,7 @@ $(function() {
         _this = this;
         // Show only matching TR, hide rest of them
         $.each($("#ready-task-table tbody").find("tr"), function() {
-            console.log($(this).text());
+//            console.log($(this).text());
             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                 $(this).hide();
             else
@@ -300,13 +305,6 @@ $(function() {
     });
 
 
-
-    /* START OF DEMO JS - NOT NEEDED */
-    if (window.location == window.parent.location) {
-        $('#fullscreen').html('<span class="glyphicon glyphicon-resize-small"></span>');
-        $('#fullscreen').attr('href', 'http://bootsnipp.com/mouse0270/snippets/PbDb5');
-        $('#fullscreen').attr('title', 'Back To Bootsnipp');
-    }
     $('#fullscreen').on('click', function(event) {
         event.preventDefault();
         window.parent.location =  $('#fullscreen').attr('href');
@@ -405,9 +403,6 @@ $('.closebox').click(function(e){
         }
     });
 
-
-
-
     /**
      *
      * Sidebar left ON/OFF
@@ -417,8 +412,6 @@ $('.closebox').click(function(e){
         var posVar = -300;
         $(".right-float-sidebar").animate({right: posVar + 'px'});
     });
-
-
 
 //    $('#approve_tasks_table').pageMe({pagerSelector:'#pager_approve_tasks',showPrevNext:true,hidePageNumbers:true,perPage:35});
     $('#logs-tbody').pageMe({pagerSelector:'#pager_all_logs',showPrevNext:true,hidePageNumbers:true,perPage:25});
@@ -446,18 +439,6 @@ $('#badge-count-comments-top').html(count_all_comments);
         $('.qm-body').css('display', 'none');
         $('#li-comments').removeClass('active');
     });
-
-
-//
-//    $(".hover-td-name").hover(
-//        function () {
-//            $(this).css("background","yellow");
-//        },
-//        function () {
-//            $(this).css("background","");
-//        }
-//    );
-
 
     $('.sms-send-alert').click(function () {
         $('#demo_modal').modal('show');
