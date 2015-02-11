@@ -3,6 +3,7 @@
     <div class="page-content inset">
         <div class="row">
             <div class="col-md-9">
+                <?php echo $this->session->flashdata('permission'); ?>
 <!--                Current Activity Panel-->
                 <p class="lead">Current activity</p>
                 <div class="row">
