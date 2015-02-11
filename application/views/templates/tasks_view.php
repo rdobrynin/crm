@@ -25,7 +25,7 @@
                                     <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Curator</th>
                                     <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
                                     <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Project</th>
-                                    <th width="18%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
+                                    <th width="6%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
                                     <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
                                     <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
                                     <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">CTS</th>
@@ -44,7 +44,7 @@
                                         <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
                                         <td><?php print($tv['title']); ?></td>
                                         <td><?php print($project_title[$tv['pid']]); ?></td>
-                                        <td><span class="muted"><?php print($tv['desc']); ?></span></td>
+                                        <td><span class="muted"><?php print(substr($tv['desc'], 0,20)).' '.'...';?></span></td>
                                         <td>
                                             <span class="label <?php print(task_status_label($tv['status'])); ?> label-xs"><?php print(task_status($tv['status'])); ?></span>
                                         </td>
@@ -98,7 +98,7 @@
                                   <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Creator</th>
                                   <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
                                   <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Project</th>
-                                  <th width="18%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
+                                  <th width="6%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
                                   <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
                                   <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
                                   <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">CTS</th>
@@ -120,7 +120,7 @@
                                       <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
                                       <td><?php print($tv['title']); ?></td>
                                       <td><?php print($project_title[$tv['pid']]); ?></td>
-                                      <td><span class="muted"><?php print($tv['desc']); ?></span></td>
+                                      <td><span class="muted"><?php print(substr($tv['desc'], 0,20)).' '.'...';?></span></td>
                                       <td>
                                           <span class="label <?php print(task_status_label($tv['status'])); ?> label-xs"><?php print(task_status($tv['status'])); ?></span>
                                       </td>
@@ -184,7 +184,7 @@
                                 <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Creator</th>
                                 <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
                                 <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Project</th>
-                                <th width="18%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
+                                <th width="6%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
                                 <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
                                 <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
                                 <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">TTS</th>
@@ -205,7 +205,7 @@
                                         <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
                                         <td><?php print($tv['title']); ?></td>
                                         <td><?php print($project_title[$tv['pid']]); ?></td>
-                                        <td><span class="muted"><?php print($tv['desc']); ?></span></td>
+                                        <td><span class="muted"><?php print(substr($tv['desc'], 0,20)).' '.'...';?></span></td>
                                         <td>
                                             <span class="label <?php print(task_status_label($tv['status'])); ?> label-xs"><?php print(task_status($tv['status'])); ?></span>
                                         </td>

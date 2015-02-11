@@ -34,7 +34,7 @@
       <li class="dropdown user-dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown"><span class="icon-book"></span></a>
           <ul class="dropdown-menu dropdown-user">
-              <li> <a href="javascript:void(0);">Agile Ansewrs</a></li>
+              <li> <a href="javascript:void(0);">Agile Answers</a></li>
               <li> <a href="javascript:void(0);">Online Help</a></li>
               <li> <a href="http://www.brilliant-solutions.eu" target="blank">Brilliant Solutions</a></li>
           </ul>

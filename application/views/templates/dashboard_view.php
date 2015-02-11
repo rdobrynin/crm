@@ -110,7 +110,7 @@
                                                     <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
                                                     <td><?php print($tv['title']); ?></td>
                                                     <td><?php print($project_title[$tv['pid']]); ?></td>
-                                                    <td><span class="muted"><?php print($tv['desc']); ?></span></td>
+                                                    <td><span class="muted"><?php print(substr($tv['desc'], 0,20)).' '.'...';?></span></td>
                                                     <td>
                                                         <span class="label <?php print(task_status_label($tv['status'])); ?> label-xs"><?php print(task_status($tv['status'])); ?></span>
                                                     </td>
@@ -212,14 +212,14 @@
                                                 <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
                                                 <td><?php print($tv['title']); ?></td>
                                                 <td><?php print($project_title[$tv['pid']]); ?></td>
-                                                <td><span class="muted"><?php print($tv['desc']); ?></span></td>
+                                                <td><span class="muted"><?php print(substr($tv['desc'], 0,20)).' '.'...';?></span></td>
                                                 <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
                                                 <td class="text-left"><?php print($tv['due_time']); ?></td>
                                                 <?php if($user[0]['role']!=3):?>
                                                 <td>
                                                     <?php if($user[0]['role']!=1):?>
-                                                    <a href="javascript:void(0);" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
                                                         <?php if ($user[0]['id'] == $tv['uid'] ): ?>
+                                                            <a href="javascript:void(0);" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
                                                             <a href="javascript:void(0);" onClick="taskToEdit(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
                                                         <?php endif ?>
                                                     <?php endif ?>
@@ -280,7 +280,7 @@
                                                     <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
                                                     <td><?php print($tv['title']); ?></td>
                                                     <td><?php print($project_title[$tv['pid']]); ?></td>
-                                                    <td><span class="muted"><?php print($tv['desc']); ?></span></td>
+                                                    <td><span class="muted"><?php print(substr($tv['desc'], 0,20)).' '.'...';?></span></td>
                                                     <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
                                                     <td class="text-left"><?php print(date_format(date_create($tv['due_time']),"F d H:i")); ?></td>
                                                     <td class="text-center"><a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-eye"></i></a></td>
@@ -338,7 +338,7 @@
                                             <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Curator</th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
                                             <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Project</th>
-                                            <th width="18%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
                                             <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
                                             <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
                                             <th width="3%" class="text-left" style="border-left: 1px solid #ddd;">CTS</th>
@@ -357,7 +357,7 @@
                                                 <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
                                                 <td><?php print($tv['title']); ?></td>
                                                 <td><?php print($project_title[$tv['pid']]); ?></td>
-                                                <td><span class="muted"><?php print($tv['desc']); ?></span></td>
+                                                <td><span class="muted"><?php print(substr($tv['desc'], 0,20)).' '.'...';?></span></td>
                                                 <td>
                                                     <span class="label <?php print(task_status_label($tv['status'])); ?> label-xs"><?php print(task_status($tv['status'])); ?></span>
                                                 </td>

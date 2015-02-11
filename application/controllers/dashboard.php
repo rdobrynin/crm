@@ -86,7 +86,6 @@ class Dashboard extends CI_Controller {
             $data['curators']=false;
         }
 
-
         $task_array = $this->task_model->countTasks();
         if($task_array) {
             $data['tasks']= $task_array;
@@ -103,7 +102,6 @@ class Dashboard extends CI_Controller {
             $data['comments']=false;
         }
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
-
 
         $overtasks = $this->task_model->getOverdueTasks();
 
@@ -122,8 +120,6 @@ class Dashboard extends CI_Controller {
         else {
             $data['ready_tasks']=0;
         }
-
-
 
         $comptasks = $this->task_model->getCompTasks();
 
@@ -203,7 +199,6 @@ class Dashboard extends CI_Controller {
         $this->load->view('templates/dashboard_js',$data);
         $this->load->view('templates/footer_view',$data);
         $this->load->view('templates/settings_view', $data);
-
     }
 
     /**
@@ -370,7 +365,6 @@ class Dashboard extends CI_Controller {
             $data['process_tasks']=false;
         }
 
-
         $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
@@ -388,8 +382,6 @@ class Dashboard extends CI_Controller {
         $this->load->view('templates/tasks_view', $data);
         $this->load->view('templates/settings_view', $data);
     }
-
-
 
     /**
      * USERS ADMINISTRATION
@@ -530,7 +522,6 @@ class Dashboard extends CI_Controller {
             $data['task_types']=false;
         }
 
-
         $project_title_array = $this->project_model->get_project_title();
         if($project_array) {
             $data['project_title']= $project_title_array;
@@ -538,7 +529,6 @@ class Dashboard extends CI_Controller {
         else {
             $data['project_title']=false;
         }
-
 
         $comments = $this->message_model->getComments();
         if($comments) {
@@ -573,7 +563,6 @@ class Dashboard extends CI_Controller {
         $this->load->view('templates/settings_view', $data);
         $this->load->view('templates/comments_view', $data);
     }
-
 
     function charts() {
         $roles_array = $this->admin_model->get_roles();
@@ -964,7 +953,6 @@ class Dashboard extends CI_Controller {
                         }
                         $this->load->view('templates/success_view', $data);
                         $this->load->view('templates/settings_view', $data);
-
                     }
                 }
             }
@@ -1067,18 +1055,13 @@ class Dashboard extends CI_Controller {
 
         $this->load->view('templates/team_view', $data);
         $this->load->view('templates/settings_view', $data);
-
     }
-
-
-
 
     /**
      * Profile view
      */
 
     function profile() {
-
         $roles_array = $this->admin_model->get_roles();
         $roles = array();
         foreach ($roles_array as $rk => $rv) {
@@ -1150,7 +1133,6 @@ class Dashboard extends CI_Controller {
         }
         foreach ($roles as $rk => $rv) {
             $roles_array[$rv['rid']] = $rv['title'];
-
         }
         $data['user_role']=$data['user'][0]['role'];
         $data['roles'] = $roles_array;
@@ -1322,7 +1304,6 @@ class Dashboard extends CI_Controller {
         $this->load->view('custom404_view');
     }
 
-
     function group_chat() {
 
         $roles_array = $this->admin_model->get_roles();
@@ -1400,7 +1381,6 @@ class Dashboard extends CI_Controller {
         if ($data['user'][0]['helpblock'] == 1) {
             $this->load->view('templates/help_block_view');
         }
-
             $this->load->view('templates/groupchat_view', $data);
             $this->load->view('templates/settings_view', $data);
 

@@ -30,7 +30,7 @@
                     <tbody>
                     <?php foreach ($projects as $pk => $pv): ?>
                     <tr onClick="projectToView()" style="cursor: pointer;">
-                        <td><?php print($pv['pid']); ?></td>
+                        <td>#<?php print($pv['pid']); ?></td>
                         <td class="current-title-project"><?php print($pv['title']); ?></td>
                         <td><?php print($pv['description']); ?></td>
                         <td><a href="javascript:void(0);"><span class="badge badge-task" id="route-task"><?php if ($tasks != false): ?><?php print(count($tasks));?><?php else:?>0<?php endif ?></span></a></td>
@@ -40,8 +40,6 @@
                     </tr>
                     <!--TASK-->
                     <tr>
-
-
                         <td colspan="9" class="td-task" id="task-for-project">
                             <div class="search-form-table">
                                 <input type="text" id="search-project-task-table" class=" form-control lights" placeholder="live search"/>
@@ -55,7 +53,7 @@
                                     <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
                                     <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Creator</th>
                                     <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
-                                    <th width="18%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
+                                    <th width="6%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
                                     <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
                                     <th width="2%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
                                     <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">CTS</th>
@@ -73,7 +71,7 @@
                                         <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
                                         <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
                                         <td><?php print($tv['title']); ?></td>
-                                        <td><span class="muted"><?php print($tv['desc']); ?></span></td>
+                                        <td><span class="muted"><?php print(substr($tv['desc'], 0,20)).' '.'...';?></span></td>
                                         <td>
                                             <span class="label <?php print(task_status_label($tv['status'])); ?> label-xs"><?php print(task_status($tv['status'])); ?></span>
                                         </td>
@@ -164,13 +162,10 @@
   </div>
 </div>
 <!--logs-->
-
 <?php include('logs_view.php'); ?>
 <?php include('right_float_view.php'); ?>
 </div>
-
 <?php include('footer_view.php');?>
-
 <script>
     function projectToView(){
         var $panel = $('.filterable .btn-filter').parents('.filterable'),
