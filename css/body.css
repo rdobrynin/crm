@@ -542,3 +542,9 @@ span.icon-book {
     padding-right: 15px;
 }
 
+.alert {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+

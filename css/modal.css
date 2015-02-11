@@ -158,4 +158,52 @@ padding-bottom: 18px;
 
 
 
+#view_detail_task_modal .modal-content {
+    border: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
 
+}
+
+#view_detail_task_modal .modal-dialog {
+    width: 900px;
+}
+
+#view_detail_task_modal .modal-content {
+   padding: 20px;
+}
+
+#view_detail_task_modal .send-comment {
+    top: 10px;
+    position: relative;
+    width: 77px;
+    padding-top: 14px;
+    padding-bottom: 7px;
+    min-height: 50px;
+}
+
+#view_detail_task_modal .send-comment:hover {
+   background-color: transparent;
+}
+
+#view_detail_task_modal .form-control {
+    color: #818181;
+    background-color: #FFFFFF;
+}
+
+#view_detail_task_modal .fa-paper-plane {
+    font-size: 26px;
+    margin-right: 10px;
+    position: relative;
+    color: rgb(57, 127, 255);
+}
+
+
+#view_detail_task_modal .activity-item-summary {
+    font-size: 13px;
+    border: 0;
+    border-radius: 3px;
+    background-color: #EDEDED;
+    padding: 10px;
+}
