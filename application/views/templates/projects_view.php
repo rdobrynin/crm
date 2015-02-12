@@ -7,29 +7,10 @@
           <?php if ($projects == false): ?>
               <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one projects found</div></div>
             <?php else: ?>
-              <div class="panel panel-primary filterable">
-                  <div class="panel-heading">
-                      <h3 class="panel-title">Current Projects</h3>
-                      <div class="pull-right">
-                          <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
-                      </div>
-                  </div>
-                  <?php if ($projects != false): ?>
+              <?php foreach ($projects as $pk => $pv): ?>
                 <table class="table" style="border: 0">
-                    <thead>
-                    <tr class="filters">
-                        <th><input type="text" class="form-control filter-input" placeholder="#" disabled></th>
-                        <th><input type="text" class="form-control filter-input" placeholder="Project name" disabled></th>
-                        <th><input type="text" class="form-control filter-input" placeholder="Description" disabled></th>
-                        <th><input type="text" class="form-control filter-input" placeholder="Tasks" disabled></th>
-                        <th><input type="text" class="form-control filter-input" placeholder="Curator" disabled></th>
-                        <th><input type="hidden" placeholder="Edit" disabled></th>
-                        <th><input type="hidden" placeholder="Action" disabled></th>
-                    </tr>
-                    </thead>
                     <tbody>
-                    <?php foreach ($projects as $pk => $pv): ?>
-                    <tr onClick="projectToView()" style="cursor: pointer;">
+                    <tr onClick="projectToView(<?php print($pv['pid']); ?>)" style="cursor: pointer;">
                         <td>#<?php print($pv['pid']); ?></td>
                         <td class="current-title-project"><?php print($pv['title']); ?></td>
                         <td><?php print($pv['description']); ?></td>
@@ -40,7 +21,7 @@
                     </tr>
                     <!--TASK-->
                     <tr>
-                        <td colspan="9" class="td-task" id="task-for-project">
+                        <td colspan="9" class="td-task" id="task-for-project-<?php print($pv['pid']); ?>">
                             <div class="search-form-table">
                                 <input type="text" id="search-project-task-table" class=" form-control lights" placeholder="live search"/>
                             </div>
@@ -101,16 +82,15 @@
                                     </tr>
                                 <?php endforeach ?>
                                 </tbody>
-                                <?php endforeach ?>
-                                </tbody>
                             </table>
                         </td>
                     </tr>
-
                     </tbody>
                 </table>
-                  <?php endif ?>
-        </div>
+             <?php endforeach ?>
+
+
+
           <?php endif ?>
       </div>
     <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
@@ -169,16 +149,17 @@
 </div>
 <?php include('footer_view.php');?>
 <script>
-    function projectToView(){
+    function projectToView($data){
+        console.log($data);
         var $panel = $('.filterable .btn-filter').parents('.filterable'),
-            $filters = $panel.find('.filters input'),
+//            $filters = $panel.find('.filters input'),
             $tbody = $panel.find('.table tbody');
-        $filters.val('').prop('disabled', true);
+//        $filters.val('').prop('disabled', true);
         $tbody.find('.no-result').remove();
         $tbody.find('tr').show();
         $(this).closest("tr").toggleClass("project-task-main");
 //        $(".current-title-project").css("label label-info label-cur-pr label-xs");
-        $('#task-for-project').fadeToggle("fast", function () {
+        $('#task-for-project-'+$data).fadeToggle("fast", function () {
         });
         if ($("#route-task").closest("tr").hasClass('project-task-main')) {
             $('.btn-filter').attr('disabled', 'disabled');

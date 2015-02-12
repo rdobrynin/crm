@@ -19,7 +19,7 @@
                                 </div>
                                 <div class="widget-stats">
                                     <div class="wrapper transparent">
-                                        <span class="item-title">Current Team</span> <span class="item-count animate-number semi-bold" data-value="751" data-animation-duration="700"><?php if ($users != false): ?><?php print(count($users));?><?php else:?>0<?php endif ?></span>
+                                        <span class="item-title">Users</span> <span class="item-count animate-number semi-bold" data-value="751" data-animation-duration="700"><?php if ($users != false): ?><?php print(count($users));?><?php else:?>0<?php endif ?></span>
 
                                     </div>
                                 </div>

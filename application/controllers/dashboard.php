@@ -204,6 +204,12 @@ class Dashboard extends CI_Controller {
 //        echo('</pre>');
 //        exit();
 
+        if($data['user'][0]['id'] !=14) {
+            $this->session->set_flashdata('maintenance', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>We\'re sorry, system in maintenance mode now.</strong></div>');
+            redirect("maintenance");
+        }
+
+
         $data['user_name'] = $this->admin_model->get_users_names();
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
         $this->load->view('templates/head_view',$data);
@@ -874,15 +880,12 @@ class Dashboard extends CI_Controller {
     }
 
     /**
-     * switch help block
+     * Maintenance page
      */
 
-//    function  switch_help() {
-//        $data['current_language'] = $this->session->userdata('site_lang');
-//        $data['help'] = $this->dashboard_model->settings_help($_SESSION['username'], $this->input->post('help_block'));
-//        $url = $this->input->post('input_url');
-//        redirect(base_url() . $url);
-//    }
+    function  maintenance() {
+        $this->load->view('templates/maintenance_view');
+    }
 
     /**
      * Add client form

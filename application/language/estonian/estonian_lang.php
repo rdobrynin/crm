@@ -51,11 +51,10 @@ $lang['index'] ='index';
 $lang['country'] ='Country';
 $lang['city'] ='City';
 
-$lang['role_master'] ='Master';
-$lang['role_curator'] ='Curator';
+$lang['role_master'] ='Admin';
+$lang['role_curator'] ='Manager';
 $lang['role_implementor'] ='Implementor';
 $lang['role_customer'] ='Customer';
 $lang['role_guest'] ='Guest';
-$lang['role_manager'] ='Manager';
 
 $lang['add_comment'] ='Lisa komment';

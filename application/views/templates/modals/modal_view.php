@@ -35,9 +35,13 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <select class="form-control selectpicker" id="role_invite" name="role_invite">
-                                <?php foreach ($roles as $rk => $rv): ?>
-                                        <option value="<?php print($rv['rid']); ?>"><?php print(ucfirst($rv['title'])); ?></option>
-                                <?php endforeach ?>
+                                <?php if ($user[0]['role']=5 OR $user[0]['role']=4): ?>
+                                    <?php foreach ($roles as $rk => $rv): ?>
+                                        <?php if ($rv['rid'] !=0 AND $rv['rid'] !=5): ?>
+                                            <option value="<?php print($rv['rid']); ?>"><?php print(show_role($rv['rid'])); ?></option>
+                                        <?php endif ?>
+                                    <?php endforeach ?>
+                                <?php endif ?>
                             </select>
                         </div>
                     </div>
