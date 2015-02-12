@@ -88,8 +88,10 @@
                                                 <?php endif ?>
                                                 <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                                 <?php if ($tv['status']!=2 && $tv['status']!=3): ?>
-                                                    <a href="javascript:void(0);" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv['id']); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>
+                                                        <?php if ($user[0]['id'] ==$tv['uid']): ?>
 
+                                                    <a href="javascript:void(0);" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv['id']); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>
+                                                        <?php endif ?>
                                                 <?php endif ?>
 
                                                 <?php else: ?>
