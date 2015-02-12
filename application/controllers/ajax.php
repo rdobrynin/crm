@@ -331,13 +331,10 @@ class Ajax extends CI_Controller {
         $title = $_POST['project_title'];
         $desc = $_POST['project_desc'];
         $uid = $_POST['user_id'];
-
         //validate title of project
         $verify_title = $this->project_model->check_project($title);
-
         $name_array =  $this->admin_model->get_user_id($uid);
         $full_name = $name_array[0]['first_name'].' '.$name_array[0]['last_name'];
-
         $result['id']=$uid;
         $result['title']=$title;
         $result['desc']=$desc;
@@ -353,6 +350,9 @@ class Ajax extends CI_Controller {
             if ($query = $this->project_model->create_project($title, $desc, $uid)) {
                 $result['send'] = true;
                 $result['project'] = true;
+                $last= $this->project_model->getLastProject();
+                $result['lastproject'] = $last->pid;
+                $this->project_model->assign_project($last->pid, $uid);
             }
         }
         echo json_encode($result);

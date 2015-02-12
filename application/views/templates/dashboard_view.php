@@ -411,7 +411,7 @@
                                 <div class="avatar-activity">
                                 <span class="avatar-img">
                                     <a href="javascript:void(0);"><img src="<?php print(base_url());?>uploads/avatar/<?php if (isset($avatars[$cv['uid']])): ?><?php print($avatars[$cv['uid']]); ?><?php else: ?>placeholder_user.jpg<?php endif ?>" height="45"></a>
-                                    <span class="mini-role  <?php if ($get_users_online[$cv['uid']]==1): ?>green <?php else: ?>grey<?php endif ?>"><?php print(show_role_abbr($users_title_roles[$cv['uid']])); ?></span>
+                                    <span class="mini-role  <?php if ($get_users_online[$cv['uid']]==1): ?>green <?php else: ?>grey<?php endif ?>" id="status-online-comment-<?php print($cv['uid']); ?>"><?php print(show_role_abbr($users_title_roles[$cv['uid']])); ?></span>
                                 </span>
                                 </div>
                                 <a href="javascript:void(0);" class="activity-item-user activity-item-author" target="_parent" onClick="qmSendComment(<?php print($cv['uid']); ?>)"> <?php print(short_name($user_name[$cv['uid']])); ?></a>

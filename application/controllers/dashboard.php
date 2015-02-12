@@ -44,6 +44,18 @@ class Dashboard extends CI_Controller {
             $data['projects']=false;
         }
 
+        $project_all_array = $this->project_model->get_all_projects();
+        if($project_all_array) {
+            $data['all_projects']= $project_all_array;
+        }
+        else {
+            $data['all_projects']=false;
+        }
+//echo('<pre>');
+//        var_dump($data['all_projects']);
+//        echo('</pre>');
+//        exit();
+
         $project_title_array = $this->project_model->get_project_title();
         if($project_array) {
             $data['project_title']= $project_title_array;

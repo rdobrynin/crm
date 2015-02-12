@@ -190,15 +190,19 @@
           });
       });
 
+      // clear fields after close modal
+      $('#close-project-create').click(function () {
+          $('#save_project_modal, #check_empty_project, #check_title_project').css('display', 'none');
+          $("input[type=text], textarea").val("");
+      });
+
       /**
        * Add project
        *
       **/
 
       $("#addproject_btn").click(function () {
-          $('#addproject_modal').modal('hide');
-          $('#demo_modal').modal('show');
-          return false;
+
           var form_data = {
               project_title: $('#project_title').val(),
               project_desc: $('#project_desc').val(),
@@ -210,6 +214,7 @@
               data: form_data,
               dataType: 'json',
               success: function (msg) {
+                  console.log(msg);
                   if(msg.empty == false) {
                       $('#check_empty_project').css('display', 'block');
                   }
@@ -217,17 +222,16 @@
                       $('#check_empty_project').css('display', 'none');
                   }
 
-                  if(msg.project == true) {
-                      $('#check_title_project').css('display', 'none');
-                  }
                   if(msg.project == false) {
                       $('#check_title_project').css('display', 'block');
                   }
+                  if(msg.project == true) {
+                      $('#check_title_project').css('display', 'none');
+                  }
 
-                  if(msg.send == true && msg.project == true) {
+                  if(msg.send == true && msg.project == true && msg.empty == true) {
                       $('#save_project_modal').css('display', 'block');
                       setTimeout(function() {
-
                           $('#save_project_modal, #check_empty_project, #check_title_project').css('display', 'none');
                           $("input[type=text], textarea").val("");
 
@@ -244,6 +248,7 @@
               }, "json" );
           }, 3000);
       });
+
 
       /**
        * Add task after project created
@@ -376,6 +381,7 @@
             $('.show-info-online').children( ".show-info-content-online").html('<span class="label label-xs label-success label-round"></span>'+name+' is online');
 
 $('#status-online-'+id).removeClass('grey').addClass('green');
+$('#status-online-comment-'+id).removeClass('grey').addClass('green');
 
 
             $('.show-info-online').delay(2500).fadeOut();
@@ -394,6 +400,7 @@ $('#status-online-'+id).removeClass('grey').addClass('green');
                   $('.show-info-online').show();
                   $('.show-info-online').children( ".show-info-content-online").html('<span class="label label-xs label-primary label-round"></span>'+name+' is offline');
                     $('#status-online-'+id).removeClass('green').addClass('grey');
+                    $('#status-online-comment-'+id).removeClass('green').addClass('grey');
                   $('.show-info-online').delay(2500).fadeOut();
                 }
               }

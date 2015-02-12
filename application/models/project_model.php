@@ -27,6 +27,39 @@ class Project_model extends CI_Model {
         return $insert;
     }
 
+    public function getLastProject() {
+        $query = $this
+            ->db
+            ->limit('1')
+            ->order_by("pid", "desc")
+            ->get('project');
+        if ($query->num_rows > 0) {
+            return $query->row();
+        }
+        else {
+            return FALSE;
+        }
+    }
+
+
+
+    /**
+     * Assign users for project
+     * @param $title
+     * @param $desc
+     * @param $owner_id
+     * @return mixed
+     */
+
+    public function assign_project($pid,$uid) {
+        $data = array (
+            'pid' => $pid,
+            'uid' => $uid
+        );
+        $insert = $this->db->insert('projects', $data);
+        return $insert;
+    }
+
     /**
      * Update projects
      * @param $id
@@ -54,6 +87,21 @@ class Project_model extends CI_Model {
             ->get('project');
         return $query->result_array();
     }
+
+
+
+    /**
+     * Get all projects
+     * @return mixed
+     */
+
+    public function get_all_projects() {
+        $query = $this
+            ->db
+            ->get('projects');
+        return $query->result_array();
+    }
+
 
 
     /**
