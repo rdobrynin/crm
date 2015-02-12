@@ -165,7 +165,8 @@ class Dashboard extends CI_Controller {
         else {
             $data['avatars']=false;
         }
-
+        $data['users_title_roles']= $this->admin_model->get_users_title_roles();
+       $data['get_users_online'] = $this->admin_model->get_users_online();
         $data['users_names']= $this->admin_model->get_users_names();
         $this->session->set_userdata('user_id', $this->admin_model->get_user_id($_SESSION['username']));
         $data['introduce'] = $this->admin_model->getIntroduce($_SESSION['username']);

@@ -584,6 +584,46 @@ class Admin_model extends CI_Model {
 
   }
 
+
+    /**
+     * Get roles name
+     * @return array
+     */
+
+
+    public function get_users_title_roles() {
+        $return = array();
+        $query = $this->db->get('users');
+        $result = $query->result_array();
+        if(!empty($result)){
+            foreach($result as $users){
+                $return[$users["id"]] = $users["role"];
+                $return[$users["status"]] = $users["status"];
+            }
+        }
+        return $return;
+    }
+
+
+    /**
+     * Get onlien statuses
+     * @return array
+     */
+
+
+    public function get_users_online() {
+        $return = array();
+        $query = $this->db->get('users');
+        $result = $query->result_array();
+        if(!empty($result)){
+            foreach($result as $users){
+                $return[$users["id"]] = $users["status"];
+            }
+        }
+        return $return;
+    }
+
+
     /**
      * get session_data();
      * @return mixed

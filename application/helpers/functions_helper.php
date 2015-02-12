@@ -28,6 +28,39 @@ if (!function_exists('show_role')) {
   }
 }
 
+
+/**
+ * Show role with first character
+ */
+
+if (!function_exists('show_role_abbr')) {
+    function show_role_abbr($role) {
+        $result='none';
+        if($role == 5) {
+            $string = lang('role_master');
+            $result = $string[0];
+        }
+        else if($role == 4) {
+            $string = lang('role_curator');
+            $result = $string[0];
+        }
+        else if($role == 1) {
+            $string = lang('role_customer');
+            $result = $string[0];
+        }
+        else if($role == 2) {
+            $string = lang('role_implementor');
+            $result = $string[0];
+        }
+        else if($role == 0) {
+            $string = lang('role_quest');
+            $result = $string[0];
+        }
+        return $result;
+    }
+}
+
+
 /**Show language string
  *
  */
