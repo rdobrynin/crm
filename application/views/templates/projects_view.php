@@ -2,7 +2,7 @@
 <div class="page-content-wrapper">
   <!-- Keep all page content within the page-content inset div! -->
   <div class="page-content inset">
-      <p class="lead">Projects&nbsp;<span class="curr-project"></span></p>
+      <p class="lead">Projects&nbsp;<span class="curr-project">(<?php print(count($projects));?>)</span></p>
       <div class="row-fluid">
           <?php if ($projects == false): ?>
               <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one projects found</div></div>
@@ -11,15 +11,19 @@
                 <table class="table" style="border: 0">
                     <tbody>
                     <tr onClick="projectToView(<?php print($pv['pid']); ?>)" style="cursor: pointer;">
-                        <td>#<?php print($pv['pid']); ?></td>
-                        <td class="current-title-project"><?php print($pv['title']); ?></td>
-                        <td><?php print($pv['description']); ?></td>
-                        <td><a href="javascript:void(0);"><span class="badge badge-task" id="route-task"><?php if ($tasks != false): ?><?php print(count($tasks));?><?php else:?>0<?php endif ?></span></a></td>
-                        <td><a href="javascript:void(0);" onClick="qmSendComment(<?php print($pv['owner']); ?>)"><?php print(short_name($user_name[$pv['owner']])); ?></a></td>
-                        <td><?php if($user[0]['role']!=1 && $user[0]['role']!=2):?><p><a href="javascript:void(0);" id="edit-project-table"><i class="fa fa-pencil"></i></a></p><?php endif ?></td>
-                        <td><?php if($user[0]['role']!=1 && $user[0]['role']!=2):?><p><a href="javascript:void(0);" id="delete-project-table"><i class="fa fa-times"></i></a></p><?php endif ?></td>
+                        <td style="width: 5%; text-align: left;">#<?php print($pv['pid']); ?></td>
+                        <td style="width: 15%; text-align: left;" class="current-title-project"><?php print($pv['title']); ?></td>
+                        <td style="width: 20%; text-align: left;"><?php print($pv['description']); ?></td>
+                        <td style="width: 20%; text-align: center;"><a href="javascript:void(0);"><span class="badge badge-task" id="route-task"><?php if ($tasks != false): ?><?php print(count($tasks));?><?php else:?>0<?php endif ?></span></a></td>
+                        <td style="width: 20%; text-align: center;"><a href="javascript:void(0);" onClick="qmSendComment(<?php print($pv['owner']); ?>)"><?php print(short_name($user_name[$pv['owner']])); ?></a></td>
+                        <td style="width: 10%; text-align: center;"><?php if($user[0]['role']!=1 && $user[0]['role']!=2):?><p><a href="javascript:void(0);" id="edit-project-table"><i class="fa fa-pencil"></i></a></p><?php endif ?></td>
+                        <td style="width: 10%; text-align: center;"><?php if($user[0]['role']!=1 && $user[0]['role']!=2):?><p><a href="javascript:void(0);" id="delete-project-table"><i class="fa fa-times"></i></a></p><?php endif ?></td>
                     </tr>
                     <!--TASK-->
+
+
+                    <?php if ($project_tasks[$pv['pid']] !=NULL): ?>
+
                     <tr>
                         <td colspan="9" class="td-task" id="task-for-project-<?php print($pv['pid']); ?>">
                             <div class="search-form-table">
@@ -43,8 +47,15 @@
                                 </tr>
                                 </thead>
                                 <tbody id="all_task_table">
-                                <?php $tasks = array_reverse($tasks);?>
-                                <?php foreach ($tasks as $tk => $tv): ?>
+                                <?php $project_tasks[$pv['pid']] = array_reverse($project_tasks[$pv['pid']]);?>
+                                <?php foreach ($project_tasks[$pv['pid']] as $tk => $tv): ?>
+
+
+
+
+
+
+
                                     <tr id="tr-project-task-<?php print($tv['id']); ?>"<?php if ($tv['status'] !=3): ?>class="<?php print(check_deadline($tv['due_time'])); ?>"<?php endif ?>>
                                         <td>#<?php print($tv['id']); ?></td>
                                         <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
@@ -80,11 +91,18 @@
                                                 <?php endif ?>
                                             </td>
                                     </tr>
+
+
                                 <?php endforeach ?>
                                 </tbody>
                             </table>
                         </td>
                     </tr>
+                    <?php endif ?>
+
+
+
+
                     </tbody>
                 </table>
              <?php endforeach ?>

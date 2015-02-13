@@ -18,7 +18,7 @@
 <div class="container">
     <div class="page-404">
         <?php echo $this->session->flashdata('maintenance'); ?>
-        <a href="<?php print(base_url());?>logout"><i class="fa fa-power-off"></i>&nbsp;<?php print(lang('menu_logout'))?></a>
+        <a href="<?php print(base_url());?>logout" class="btn btn-primary"><i class="fa fa-power-off"></i>&nbsp;Logout</a>
     </div>
 </div>
 

@@ -26,6 +26,16 @@ class Admin extends CI_Controller {
        ->verify_user(
          $this->input->post('email'),
          $this->input->post('password'));
+
+
+        if($res->froze == 1) {
+            $this->session->set_flashdata('maintenance', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>We\'re sorry, database model in redesigning now.</strong></div>');
+            redirect("maintenance");
+
+            redirect('maintenance');
+        }
+
+
       if($res !== FALSE) {
         $this->admin_model->online_status($res->id);
         //person has account

@@ -739,6 +739,42 @@ class Ajax extends CI_Controller {
         echo json_encode($result);
     }
 
+    /**
+     * Froze current user by ID
+     */
+    function frozeCurrentUser() {
+        $this->load->model('admin_model');
+        $id =  $this->input->post('user');
+
+        if(!empty($id)) {
+            $result['user']= $this->admin_model->frozeCurrentUser($id);
+        }
+        else {
+            $result['user'] = false;
+        }
+
+        echo json_encode($result);
+    }
+
+
+    /**
+     * Froze current user by ID
+     */
+    function unfrozeCurrentUser() {
+        $this->load->model('admin_model');
+        $id =  $this->input->post('user');
+
+        if(!empty($id)) {
+            $result['user']= $this->admin_model->unfrozeCurrentUser($id);
+        }
+        else {
+            $result['user'] = false;
+        }
+
+        echo json_encode($result);
+    }
+
+
 
     /**
      * Quick search task

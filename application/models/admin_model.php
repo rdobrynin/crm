@@ -768,6 +768,37 @@ class Admin_model extends CI_Model {
         $this->db->delete($table);
     }
 
+    /**
+     * Froze current user
+     * @param $id
+     */
+
+    public function frozeCurrentUser($id) {
+        $data = array(
+            'froze' => 1
+        );
+
+        $this->db->where('id', $id);
+        $this->db->update('users', $data);
+    }
+
+
+    /**
+     * Activate current user
+     * @param $id
+     */
+
+    public function unfrozeCurrentUser($id) {
+        $data = array(
+            'froze' => 0
+        );
+
+        $this->db->where('id', $id);
+        $this->db->update('users', $data);
+    }
+
+
+
 
 
     /**

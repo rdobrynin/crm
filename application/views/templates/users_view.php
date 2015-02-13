@@ -56,11 +56,14 @@
                                                 <th>
                                                     <input type="hidden" class="form-control filter" placeholder="Delete" disabled>
                                                 </th>
+                                                <th>
+                                                    <input type="hidden" class="form-control filter" placeholder="Froze" disabled>
+                                                </th>
                                             </tr>
                                             </thead>
                                             <tbody id="tbody-current-users">
                                             <?php foreach ($users as $uk => $uv): ?>
-                                                <tr id="tr_current_user_<?php print($uv['id']); ?>">
+                                                <tr id="tr_current_user_<?php print($uv['id']); ?>" class="<?php if ($uv['froze'] == 1): ?>disabled<?php endif ?>">
                                                     <td><?php print($uv['id']); ?></td>
                                                     <td><?php print(short_name($user_name[$uv['id']])); ?></td>
                                                     <td>
@@ -77,6 +80,16 @@
                                                     <td>
                                                         <?php if ($uv['role'] !=5 AND $user[0]['role'] ==5): ?>
                                                             <a href="javascript:void(0);" style="cursor: pointer;" data-toggle="confirmation-delete-current-user" data-singleton="true" data-target="<?php print($uv['id']); ?>">Remove</a>
+                                                        <?php endif ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php if ($user[0]['role'] ==5 AND $user[0]['id'] != $uv['id']): ?>
+                                                            <?php if ($uv['froze'] == 1): ?>
+                                                                <a href="javascript:void(0);" style="cursor: pointer;" data-toggle="confirmation-unfroze-current-user" data-singleton="true" data-target="<?php print($uv['id']); ?>">Unfroze</a>
+                                                            <?php else: ?>
+                                                                <a href="javascript:void(0);" style="cursor: pointer;" data-toggle="confirmation-froze-current-user" data-singleton="true" data-target="<?php print($uv['id']); ?>">Froze</a>
+                                                            <?php endif ?>
+
                                                         <?php endif ?>
                                                     </td>
                                                 </tr>
@@ -293,7 +306,6 @@
             btnCancelLabel:'<i class="fa fa-times-circle" style="margin-right: 0;"></i> No',
             btnOkLabel:'<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
             onConfirm: function () {
-//                todo
                 var currentUser = $(this).attr('target');
                 var form_data = {
                     user: currentUser
@@ -320,6 +332,81 @@
             }
         }
     );
+
+
+    $('[data-toggle=confirmation-froze-current-user]').confirmation(
+        {
+            placement: 'left',
+            animation: false,
+            btnOkClass:'btn-xs',
+            btnCancelClass:'btn-xs',
+            btnCancelLabel:'<i class="fa fa-times-circle" style="margin-right: 0;"></i> No',
+            btnOkLabel:'<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
+            onConfirm: function () {
+                var currentUser = $(this).attr('target');
+                var form_data = {
+                    user: currentUser
+                };
+                $.ajax({
+                    url: "<?php echo site_url('ajax/frozeCurrentUser'); ?>",
+                    type: 'POST',
+                    data: form_data,
+                    dataType: 'json',
+                    success: function (msg) {
+                        $('#tr_current_user_'+currentUser).remove();
+
+                        $('[data-toggle=confirmation-froze-current-user]').confirmation('hide');
+                        var rowCount = $('#tbody-current-users tr').length;
+                        if(rowCount <1) {
+                            $('#current-users').remove();
+                            $('#table-current-users').hide();
+                        }
+                    }
+                });
+            },
+            onCancel: function () {
+                $('[data-toggle=confirmation-froze-current-user]').confirmation('hide');
+            }
+        }
+    );
+
+    $('[data-toggle=confirmation-unfroze-current-user]').confirmation(
+        {
+            placement: 'left',
+            animation: false,
+            btnOkClass:'btn-xs',
+            btnCancelClass:'btn-xs',
+            btnCancelLabel:'<i class="fa fa-times-circle" style="margin-right: 0;"></i> No',
+            btnOkLabel:'<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
+            onConfirm: function () {
+                var currentUser = $(this).attr('target');
+                var form_data = {
+                    user: currentUser
+                };
+                $.ajax({
+                    url: "<?php echo site_url('ajax/unfrozeCurrentUser'); ?>",
+                    type: 'POST',
+                    data: form_data,
+                    dataType: 'json',
+                    success: function (msg) {
+                        $('#tr_current_user_'+currentUser).remove();
+
+                        $('[data-toggle=confirmation-unfroze-current-user]').confirmation('hide');
+                        var rowCount = $('#tbody-current-users tr').length;
+                        if(rowCount <1) {
+                            $('#current-users').remove();
+                            $('#table-current-users').hide();
+                        }
+                    }
+                });
+            },
+            onCancel: function () {
+                $('[data-toggle=confirmation-unfroze-current-user]').confirmation('hide');
+            }
+        }
+    );
+
+
 
 
 </script>

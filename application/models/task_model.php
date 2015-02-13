@@ -31,6 +31,27 @@ class Task_model extends CI_Model {
 
 
     /**
+     * Get projectTasks
+     * @return mixed
+     */
+
+    public function getProjectTasks() {
+        $return = array();
+        $query = $this
+            ->db
+            ->get('task');
+        $result = $query->result_array();
+        if(!empty($result)){
+            foreach($result as $task_type){
+                $return[$task_type["id"]] = $task_type["pid"];
+            }
+        }
+        return $return;
+    }
+
+
+
+    /**
      * Get Last Task
      * @return mixed
      */
