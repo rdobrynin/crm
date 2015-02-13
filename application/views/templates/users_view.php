@@ -71,6 +71,7 @@
                                                     </td>
                                                     <td><?php print(show_role($uv['role'])); ?></td>
                                                     <td><?php print($uv['date_created']); ?></td>
+
                                                     <td>
                                                         <?php if ($user[0]['role'] ==5): ?>
 
@@ -85,9 +86,9 @@
                                                     <td>
                                                         <?php if ($user[0]['role'] ==5 AND $user[0]['id'] != $uv['id']): ?>
                                                             <?php if ($uv['froze'] == 1): ?>
-                                                                <a href="javascript:void(0);" style="cursor: pointer;" data-toggle="confirmation-unfroze-current-user" data-singleton="true" data-target="<?php print($uv['id']); ?>">Unfroze</a>
+                                                                <a href="javascript:void(0);" id="froze-<?php print($uv['id']); ?>"  style="cursor: pointer;" data-toggle="confirmation-unfroze-current-user" data-singleton="true" data-froze="1" data-target="<?php print($uv['id']); ?>">Unfroze</a>
                                                             <?php else: ?>
-                                                                <a href="javascript:void(0);" style="cursor: pointer;" data-toggle="confirmation-froze-current-user" data-singleton="true" data-target="<?php print($uv['id']); ?>">Froze</a>
+                                                                <a href="javascript:void(0);" id="froze-<?php print($uv['id']); ?>"  class="test" style="cursor: pointer;" data-toggle="confirmation-froze-current-user" data-singleton="true" data-froze="0" data-target="<?php print($uv['id']); ?>">Froze</a>
                                                             <?php endif ?>
 
                                                         <?php endif ?>
@@ -333,6 +334,9 @@
         }
     );
 
+    /**
+     * Froze user
+     */
 
     $('[data-toggle=confirmation-froze-current-user]').confirmation(
         {
@@ -347,20 +351,21 @@
                 var form_data = {
                     user: currentUser
                 };
+
                 $.ajax({
                     url: "<?php echo site_url('ajax/frozeCurrentUser'); ?>",
                     type: 'POST',
                     data: form_data,
                     dataType: 'json',
                     success: function (msg) {
-                        $('#tr_current_user_'+currentUser).remove();
+//                        $('#tr_current_user_'+currentUser).remove();
 
                         $('[data-toggle=confirmation-froze-current-user]').confirmation('hide');
-                        var rowCount = $('#tbody-current-users tr').length;
-                        if(rowCount <1) {
-                            $('#current-users').remove();
-                            $('#table-current-users').hide();
-                        }
+//                        var rowCount = $('#tbody-current-users tr').length;
+//                        if(rowCount <1) {
+//                            $('#current-users').remove();
+//                            $('#table-current-users').hide();
+//                        }
                     }
                 });
             },
@@ -369,6 +374,11 @@
             }
         }
     );
+
+
+    /**
+     * UnFroze user
+     */
 
     $('[data-toggle=confirmation-unfroze-current-user]').confirmation(
         {
@@ -389,14 +399,14 @@
                     data: form_data,
                     dataType: 'json',
                     success: function (msg) {
-                        $('#tr_current_user_'+currentUser).remove();
+//                        $('#tr_current_user_'+currentUser).remove();
 
                         $('[data-toggle=confirmation-unfroze-current-user]').confirmation('hide');
-                        var rowCount = $('#tbody-current-users tr').length;
-                        if(rowCount <1) {
-                            $('#current-users').remove();
-                            $('#table-current-users').hide();
-                        }
+//                        var rowCount = $('#tbody-current-users tr').length;
+//                        if(rowCount <1) {
+//                            $('#current-users').remove();
+//                            $('#table-current-users').hide();
+//                        }
                     }
                 });
             },

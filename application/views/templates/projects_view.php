@@ -14,16 +14,14 @@
                         <td style="width: 5%; text-align: left;">#<?php print($pv['pid']); ?></td>
                         <td style="width: 15%; text-align: left;" class="current-title-project"><?php print($pv['title']); ?></td>
                         <td style="width: 20%; text-align: left;"><?php print($pv['description']); ?></td>
-                        <td style="width: 20%; text-align: center;"><a href="javascript:void(0);"><span class="badge badge-task" id="route-task"><?php if ($tasks != false): ?><?php print(count($tasks));?><?php else:?>0<?php endif ?></span></a></td>
+                        <td style="width: 20%; text-align: center;"><a href="javascript:void(0);"><span class="badge badge-task" id="route-task">    <?php if (isset($project_tasks[$pv['pid']])): ?><?php print(count($project_tasks[$pv['pid']])); ?><?php else:?>0<?php endif ?></span></a></td>
                         <td style="width: 20%; text-align: center;"><a href="javascript:void(0);" onClick="qmSendComment(<?php print($pv['owner']); ?>)"><?php print(short_name($user_name[$pv['owner']])); ?></a></td>
                         <td style="width: 10%; text-align: center;"><?php if($user[0]['role']!=1 && $user[0]['role']!=2):?><p><a href="javascript:void(0);" id="edit-project-table"><i class="fa fa-pencil"></i></a></p><?php endif ?></td>
                         <td style="width: 10%; text-align: center;"><?php if($user[0]['role']!=1 && $user[0]['role']!=2):?><p><a href="javascript:void(0);" id="delete-project-table"><i class="fa fa-times"></i></a></p><?php endif ?></td>
                     </tr>
                     <!--TASK-->
 
-
-                    <?php if ($project_tasks[$pv['pid']] !=NULL): ?>
-
+                    <?php if (isset($project_tasks[$pv['pid']])): ?>
                     <tr>
                         <td colspan="9" class="td-task" id="task-for-project-<?php print($pv['pid']); ?>">
                             <div class="search-form-table">

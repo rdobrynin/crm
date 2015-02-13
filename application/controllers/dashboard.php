@@ -199,14 +199,6 @@ class Dashboard extends CI_Controller {
         $data['current_language'] = $this->session->userdata('site_lang');
         $data['client'] = $this->admin_model->get_own_client();
         $data['users'] = $this->admin_model->get_users();
-//        echo('<pre>');
-//        var_dump($data['tasks']);
-//        echo('</pre>');
-//        exit();
-
-
-
-
         $data['user_name'] = $this->admin_model->get_users_names();
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
         $this->load->view('templates/head_view',$data);
@@ -268,12 +260,20 @@ class Dashboard extends CI_Controller {
 
         $project_task = array();
         foreach($data['tasks'] as $tk=>$tv) {
-            $project_task[$tv['pid']][] = $tv;
+            if($tv['pid'] !=false) {
+                $project_task[$tv['pid']][] = $tv;
+            }
+            else {
+                $project_task[$tv['pid']] = false;
+            }
+
         }
 
+
+
         $data['project_tasks'] = $project_task;
-
-
+//var_dump($data['project_tasks']);
+//exit();
         $imps = $this->task_model->get_imps();
 
         if($imps) {
