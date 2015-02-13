@@ -64,13 +64,6 @@ class Dashboard extends CI_Controller {
             $data['user_projects']=false;
         }
 
-        var_dump( $data['user_projects']);
-        exit();
-
-
-
-
-
         $project_title_array = $this->project_model->get_project_title();
         if($project_array) {
             $data['project_title']= $project_title_array;
@@ -89,11 +82,31 @@ class Dashboard extends CI_Controller {
 
         $tasks = $this->task_model->getTasks();
         if($tasks) {
-            $data['tasks']= $tasks;
+            $data_task= $tasks;
         }
         else {
-            $data['tasks']=false;
+            $data_task=false;
         }
+
+
+//        todo
+
+        $array_new_tasks = array();
+        if($data_task !=false) {
+            foreach ($data_task as $tk=>$tv) {
+                $array_new_tasks[$tv['pid']][$tv['id']] = $tv;
+            }
+        }
+
+        if($array_new_tasks) {
+            $data['tasks1']= $array_new_tasks;
+        }
+        else {
+            $data['tasks1']=false;
+        }
+
+// end todo
+
 
         $imps = $this->task_model->get_imps();
 

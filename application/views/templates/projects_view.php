@@ -158,6 +158,7 @@
     </div>
   </div>
 </div>
+<?php include('manage_projects_view.php'); ?>
 <!--logs-->
 <?php include('logs_view.php'); ?>
 <?php include('right_float_view.php'); ?>

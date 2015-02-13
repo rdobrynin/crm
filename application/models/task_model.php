@@ -271,6 +271,25 @@ class Task_model extends CI_Model {
         }
     }
 
+
+    /**
+     * Get tasks
+     * @return mixed
+     */
+
+    public function checkTasks($pid) {
+        $query = $this
+            ->db
+            ->where('pid', $pid)
+            ->get('task');
+        if ($query->num_rows > 0) {
+            return true;
+        }
+        else {
+            return FALSE;
+        }
+    }
+
     /**
      * Get overdue tasks
      * @return mixed
