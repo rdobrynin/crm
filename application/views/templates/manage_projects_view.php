@@ -3,8 +3,11 @@
         <!-- Keep all page content within the page-content inset div! -->
         <div class="page-content inset">
             <p class="lead">Administer Projects</p>
+
             <div class="row">
                 <?php foreach ($projects as $pk => $pv): ?>
+                    <?php if (isset($user_projects[$pv['pid']])): ?>
+                <?php if ($user_projects[$pv['pid']] == $user[0]['id'] OR $user[0]['role'] == 5): ?>
                     <div class="col-md-4 col-sm-6">
                         <div class="well well-sm" style="background-color: rgb(231, 231, 231); border-color: #BDBDBD;">
                             <div class="media">
@@ -20,8 +23,11 @@
                             </div>
                         </div>
                     </div>
+                    <?php endif ?>
+                    <?php endif ?>
                 <?php endforeach ?>
             </div>
+
         </div>
     </div>
 <?php endif ?>

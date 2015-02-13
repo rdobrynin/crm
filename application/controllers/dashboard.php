@@ -329,6 +329,18 @@ class Dashboard extends CI_Controller {
             $data['all_events']=false;
         }
 
+
+        $project_all_users_array = $this->project_model->get_all_projects_user($_SESSION['username']);
+
+        if($project_all_users_array) {
+            $data['user_projects']= $project_all_users_array;
+        }
+        else {
+            $data['user_projects']=false;
+        }
+
+
+
         $data['users_names']= $this->admin_model->get_users_names();
 
         $data['roles'] = $roles;
