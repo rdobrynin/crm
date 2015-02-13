@@ -10,9 +10,10 @@
                 <?php if ($user_projects[$pv['pid']] == $user[0]['id'] OR $user[0]['role'] == 5): ?>
                     <div class="col-md-4 col-sm-6">
                         <div class="well well-sm" style="background-color: rgb(231, 231, 231); border-color: #BDBDBD;">
-                            <div class="media">
-                                <div class="media-body">
-                                    <h4 class="media-heading" style="margin-bottom: 10px;">#<?php print($pv['pid']); ?>&nbsp;(<?php print($pv['title']); ?>)</h4>
+                            <div class="media" style="margin-bottom: 20px">
+                                <div class="media-body" style="padding-bottom: 20px;border-bottom: 1px solid rgb(208, 208, 208);">
+                                    <h4 class="media-heading" style="margin-bottom: 10px;border-bottom: 1px solid rgb(208, 208, 208);
+padding-bottom: 10px;">#<?php print($pv['pid']); ?>&nbsp;(<?php print($pv['title']); ?>)</h4>
                                     <p>Owner:&nbsp;<a href="javascript:void();" onClick="qmSendComment(<?php print($pv['owner']); ?>)"><?php print(short_name($user_name[$pv['owner']])); ?></a></p>
                                     <p>Created:&nbsp;<b><?php print($pv['date_created']); ?></b></p>
                                     <p>Description:&nbsp;<b><?php print($pv['description']); ?></b></p>
@@ -21,13 +22,14 @@
                                     <p>Users in workflow:&nbsp;&nbsp;</p>
                                 </div>
                             </div>
+                            <a href="javascript:void();" class="btn btn-danger">Froze project</a>
+                            <a href="javascript:void();" class="btn btn-success pull-right">Invite user</a>
                         </div>
                     </div>
                     <?php endif ?>
                     <?php endif ?>
                 <?php endforeach ?>
             </div>
-
         </div>
     </div>
 <?php endif ?>
