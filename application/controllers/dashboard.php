@@ -51,10 +51,25 @@ class Dashboard extends CI_Controller {
         else {
             $data['all_projects']=false;
         }
-//echo('<pre>');
-//        var_dump($data['all_projects']);
-//        echo('</pre>');
-//        exit();
+
+
+
+//        Get users assign to project
+        $project_all_users_array = $this->project_model->get_all_projects_user($_SESSION['username']);
+
+        if($project_all_users_array) {
+            $data['user_projects']= $project_all_users_array;
+        }
+        else {
+            $data['user_projects']=false;
+        }
+
+        var_dump( $data['user_projects']);
+        exit();
+
+
+
+
 
         $project_title_array = $this->project_model->get_project_title();
         if($project_array) {
@@ -248,6 +263,8 @@ class Dashboard extends CI_Controller {
         else {
             $data['projects']=false;
         }
+
+
 
         $task_array = $this->task_model->countTasks();
         if($task_array) {

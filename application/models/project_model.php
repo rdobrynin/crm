@@ -105,6 +105,29 @@ class Project_model extends CI_Model {
 
 
     /**
+     * Get all projects for user
+     * @return mixed
+     */
+
+    public function get_all_projects_user($id) {
+        $return = array();
+        $query = $this
+            ->db
+            ->where('uid', $id)
+            ->get('projects');
+        $result = $query->result_array();
+        if(!empty($result)){
+            foreach($result as $projects){
+                $return[$projects["pid"]] = $projects["uid"];
+            }
+        }
+        return $return;
+    }
+
+
+
+
+    /**
      * Get projects
      * @return mixed
      */
