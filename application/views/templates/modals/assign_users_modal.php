@@ -23,19 +23,14 @@
            </div>
     </form>
 </div>
-
-
-
-
-
 <script type="text/javascript">
 
     /**
-     * Restfull data get
+     * AJAX data get HTML in tpl
      * @param $data
      */
 
-    function assignUsersProject($data){
+    function openAssignUsersProject($data){
         $('#assign_user_modal').modal('show');
         $.get( "<?php echo base_url('ajax/getUsersProject') ?>", { 'project': $data }, function( data ) {
             $('#assign_users_details').html(data);
@@ -45,6 +40,28 @@
                 autoExpandScrollbar:true,
                 snapOffset:65
             });
+        });
+    }
+
+    /**
+     *
+     * @param $data
+     */
+
+    function assignUserProject($data) {
+//        $('#assign-user-li-' + $data).fadeOut('slow');
+
+        var form_data = {
+            id: $data
+        };
+        $.ajax({
+            url: "<?php echo site_url('ajax/assignUserProject'); ?>",
+            type: 'POST',
+            data: form_data,
+            dataType: 'json',
+            success: function (msg) {
+             console.log(msg);
+            }
         });
 
 

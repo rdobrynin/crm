@@ -3,7 +3,7 @@
     <?php foreach ($users as $uv): ?>
         <?php if ($users_title_roles[$uv['id']] != 5): ?>
             <?php if (isset($assign_users[$uv['id']])): ?>
-                <li id="assign-user-li-"<?php print($assign_users[$uv['id']]); ?>>
+                <li id="assign-user-li-<?php print($assign_users[$uv['id']]); ?>">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="avatar-activity" style="1px solid rgb(221, 221, 221)">
@@ -15,12 +15,12 @@
                             </span>
                             </div>
                             <span class="assign-name"> <?php print($user_name[$uv['id']]); ?></span>
-                            <span class="pull-right"><a href="javascript:void(0)" class="btn btn-success">assign</a></span>
+                            <span class="pull-right"><a href="javascript:void(0)"  onClick="assignUserProject('<?php print($uv['id']); ?>')" class="btn btn-success">Assign</a></span>
                         </div>
                     </div>
                 </li>
             <?php else: ?>
-                <div style="margin-bottom: 10px; float: left; width: 100%" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;No found any more users for assign to this project</div>
+                <div style="margin-bottom: 10px; float: left; width: 100%" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;No found any more users to assign for this project</div>
                 <?php return false; ?>
             <?php endif ?>
         <?php endif ?>

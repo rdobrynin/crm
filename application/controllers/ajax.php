@@ -1242,6 +1242,21 @@ class Ajax extends CI_Controller {
         $this->load->view('templates/ajax/assign_users_view',$data);
     }
 
+    /**
+     * Assign user to project and send message to email & added event
+     */
+
+    function assignUserProject() {
+        $id =  $this->input->post('id');
+        if(isset($_POST['id']) ) {
+            $result['id'] = $id;
+        }
+        else {
+            $result = false;
+        }
+        echo json_encode ($result);
+    }
+
 }
 
 
