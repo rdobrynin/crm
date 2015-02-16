@@ -271,11 +271,17 @@ class Dashboard extends CI_Controller {
 
         $project_array = $this->project_model->get_projects();
         if($project_array) {
-            $data['projects']= $project_array;
+            $projects= $project_array;
         }
         else {
-            $data['projects']=false;
+            $projects=false;
         }
+
+        $projects_key = array();
+        foreach( $projects as $dk=>$dv) {
+            $projects_key[$dv['pid']] = $dv;
+        }
+        $data['projects'] = $projects_key;
 
 
 

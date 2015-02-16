@@ -30,8 +30,10 @@
                                     </p>
                                 </div>
                             </div>
+                            <?php if ($projects[$pv['pid']]['owner'] == $user[0]['id']): ?>
                             <a href="javascript:void();" class="btn btn-danger disabled">Froze project</a>&nbsp;
-                            <a href="javascript:void();" class="btn btn-success">Invite user</a>
+                                <a href="javascript:void();" class="btn btn-success">Invite user</a>
+                            <?php endif ?>
                         </div>
                     </div>
                     <?php endif ?>
