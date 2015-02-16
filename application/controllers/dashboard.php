@@ -306,10 +306,20 @@ class Dashboard extends CI_Controller {
         }
 
 
+        $avatars = $this->admin_model->getAvatars();
+
+        if($avatars) {
+            $data['avatars']= $avatars;
+        }
+        else {
+            $data['avatars']=false;
+        }
+
+
 
         $data['project_tasks'] = $project_task;
         $data['users_title_roles']= $this->admin_model->get_users_title_roles();
-
+        $data['get_users_online'] = $this->admin_model->get_users_online();
         $all_project_array = $this->project_model->get_all_projects();
         if($all_project_array) {
             $data['all_projects']= $all_project_array;

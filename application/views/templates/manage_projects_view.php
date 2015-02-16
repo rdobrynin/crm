@@ -3,7 +3,7 @@
     <div class="page-content-wrapper">
         <!-- Keep all page content within the page-content inset div! -->
         <div class="page-content inset">
-            <p class="lead">Administer Projects</p>
+            <p class="lead">Administer Projects <b>(IN DEVELOPMENT)</b></p>
 
             <div class="row">
                 <?php foreach ($projects as $pk => $pv): ?>
@@ -14,7 +14,7 @@
                             <div class="media" style="margin-bottom: 20px">
                                 <div class="media-body" style="padding-bottom: 20px;border-bottom: 1px solid rgb(208, 208, 208);">
                                     <h4 class="media-heading" style="margin-bottom: 10px;border-bottom: 1px solid rgb(208, 208, 208);padding-bottom: 10px;">#<?php print($pv['pid']); ?>&nbsp;(<?php print($pv['title']); ?>)</h4>
-                                    <p>Owner:&nbsp;<a href="javascript:void();" onClick="qmSendComment(<?php print($pv['owner']); ?>)"><?php print(short_name($user_name[$pv['owner']])); ?></a></p>
+                                    <p>Owner:&nbsp;<a href="javascript:void(0);" onClick="qmSendComment(<?php print($pv['owner']); ?>)"><?php print(short_name($user_name[$pv['owner']])); ?></a></p>
                                     <p>Created:&nbsp;<b><?php print($pv['date_created']); ?></b></p>
                                     <p>Description:&nbsp;<b><?php print($pv['description']); ?></b></p>
                                     <p>Status:&nbsp;&nbsp;<span class="label label-primary label-xs">open</span></p>
@@ -22,8 +22,7 @@
                                     <p>Assigned users:&nbsp;&nbsp;
                                         <?php foreach ($all_projects as $ak => $av): ?>
                                             <?php if ($av['pid'] ==$pv['pid'] AND $users_title_roles[$av['uid']] !=5 ): ?>
-
-<span class="label label-default label-tag delete-add-email"><i class="fa fa-mail"></i>&nbsp;<span class="get_old_mail"><?php print(short_name($user_name[$av['uid']])); ?>&nbsp;(<?php print(show_role_abbr($users_title_roles[$av['uid']])); ?>)</span>
+<span class="label label-default label-tag"><i class="fa fa-mail"></i>&nbsp;<span class="get_old_mail"><?php print(short_name($user_name[$av['uid']])); ?>&nbsp;(<?php print(show_role_abbr($users_title_roles[$av['uid']])); ?>)</span>
                             &nbsp;&nbsp;&nbsp;</span>
                                             <?php endif ?>
                                         <?php endforeach ?>
@@ -31,8 +30,8 @@
                                 </div>
                             </div>
                             <?php if ($projects[$pv['pid']]['owner'] == $user[0]['id']): ?>
-                            <a href="javascript:void();" class="btn btn-danger disabled">Froze project</a>&nbsp;
-                                <a href="javascript:void();" class="btn btn-success">Invite user</a>
+                            <a href="javascript:void(0);" class="btn btn-danger disabled">Froze project</a>&nbsp;
+                                <a href="javascript:void(0);" class="btn btn-success test">Assign member</a>
                             <?php endif ?>
                         </div>
                     </div>
@@ -43,3 +42,5 @@
         </div>
     </div>
 <?php endif ?>
+
+<?php include('modals/assign_users_modal.php'); ?>

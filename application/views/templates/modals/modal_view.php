@@ -527,7 +527,7 @@
 
         </div>
     </div>
-</div> <!-- #/addproject_moda -->
+</div> <!-- #/task_details_modal -->
 <script type="text/javascript">
 
     $(function () {

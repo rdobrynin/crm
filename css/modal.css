@@ -158,6 +158,72 @@ padding-bottom: 18px;
 
 
 
+
+
+#assign_user_modal .modal-content {
+    border: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+#assign_user_modal .modal-dialog {
+    width: 500px;
+}
+
+
+#assign_user_modal .modal-content {
+    padding: 20px;
+}
+
+#assign_user_modal .send-comment {
+    top: 10px;
+    position: relative;
+    width: 77px;
+    padding-top: 14px;
+    padding-bottom: 7px;
+    min-height: 50px;
+}
+
+#assign_user_modal .send-comment:hover {
+    background-color: transparent;
+}
+
+#assign_user_modal .form-control {
+    color: #818181;
+    background-color: #FFFFFF;
+}
+
+#assign_user_modal .fa-paper-plane {
+    font-size: 26px;
+    margin-right: 10px;
+    position: relative;
+    color: rgb(57, 127, 255);
+}
+
+
+#assign_user_modal .activity-item-summary {
+    font-size: 13px;
+    border: 0;
+    border-radius: 3px;
+    background-color: #EDEDED;
+    padding: 10px;
+}
+
+#assign_user_modal ul {
+    padding-left: 10px;
+    padding-right: 10px;
+    max-height: 400px;
+    overflow: auto;
+    overflow-x:hidden;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#assign_user_modal .avatar-activity {
+    border: 1px solid #EAE9E9;
+}
+
 #view_detail_task_modal .modal-content {
     border: 0;
     -webkit-border-radius: 0;
@@ -207,3 +273,13 @@ padding-bottom: 18px;
     background-color: #EDEDED;
     padding: 10px;
 }
+
+.assign-name {
+    float: left;
+    height: 75px;
+    position: relative;
+    display: inline;
+    padding-top: 10px;
+}
+
+
