@@ -382,6 +382,7 @@
 
 $('#status-online-'+id).removeClass('grey').addClass('green');
 $('#status-online-comment-'+id).removeClass('grey').addClass('green');
+$('#status-assign-user-'+id).removeClass('grey').addClass('green');
 
 
             $('.show-info-online').delay(2500).fadeOut();
@@ -401,6 +402,7 @@ $('#status-online-comment-'+id).removeClass('grey').addClass('green');
                   $('.show-info-online').children( ".show-info-content-online").html('<span class="label label-xs label-primary label-round"></span>'+name+' is offline');
                     $('#status-online-'+id).removeClass('green').addClass('grey');
                     $('#status-online-comment-'+id).removeClass('green').addClass('grey');
+                    $('#status-assign-user-'+id).removeClass('green').addClass('grey');
                   $('.show-info-online').delay(2500).fadeOut();
                 }
               }

@@ -31,7 +31,7 @@
                             </div>
                             <?php if ($projects[$pv['pid']]['owner'] == $user[0]['id']): ?>
                             <a href="javascript:void(0);" class="btn btn-danger disabled">Froze project</a>&nbsp;
-                                <a href="javascript:void(0);" class="btn btn-success test">Assign member</a>
+                                <a href="javascript:void(0);"  onClick="assignUsersProject('<?php print($pv['pid']); ?>')" class="btn btn-success test">Assign member</a>
                             <?php endif ?>
                         </div>
                     </div>
