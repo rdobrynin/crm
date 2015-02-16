@@ -12,7 +12,7 @@
                             </div>
                         </div>
                     <div id="assign_users_details">
-
+                        <div id="response"></div>
                     </div>
                     </div>
                     </div>
@@ -32,19 +32,34 @@
 
     function openAssignUsersProject($data){
         $('#assign_user_modal').modal('show');
-        $.get( "<?php echo base_url('ajax/getUsersProject') ?>", { 'project': $data }, function( data ) {
-            $('#assign_users_details').html(data);
-            $(".assign-users-jsscroll").mCustomScrollbar({
-                scrollButtons:{enable:true,scrollType:"stepped"},
-                theme:"rounded-dark",
-                autoExpandScrollbar:true,
-                snapOffset:65
-            });
+        $.ajax({
+            type: 'GET',
+            url: "<?php echo base_url('ajax/getUsersProject') ?>",
+            data: { project: $data},
+            beforeSend:function(){
+                $('.loader').css('display','block');
+            },
+            complete: function()  {
+                $('.loader').css('display','none');
+            },
+            success:function(data){
+                $('#assign_users_details').html(data);
+                $(".assign-users-jsscroll").mCustomScrollbar({
+                    scrollButtons:{enable:true,scrollType:"stepped"},
+                    theme:"rounded-dark",
+                    autoExpandScrollbar:true,
+                    snapOffset:65
+                });
+
+            },
+            error:function(){
+              alert('Something went with error')
+            }
         });
     }
 
     /**
-     *
+     * @param $project
      * @param $data
      */
 

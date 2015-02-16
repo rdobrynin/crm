@@ -72,6 +72,7 @@
 <!--    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>-->
 </head>
 <body>
+<div class="loader"></div>
 <div class="b-overlay"></div>
 <div class="task-view-wrapper">
 <div class="tasks-view">
