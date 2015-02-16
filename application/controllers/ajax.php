@@ -1177,24 +1177,18 @@ class Ajax extends CI_Controller {
         $this->load->model('admin_model');
         $this->load->model('task_model');
         $this->load->model('project_model');
-
-
         $roles_array = $this->admin_model->get_roles();
         $roles = array();
         foreach ($roles_array as $rk => $rv) {
             $roles[] = $rv;
         }
-
-
         $avatars = $this->admin_model->getAvatars();
-
         if($avatars) {
             $data['avatars']= $avatars;
         }
         else {
             $data['avatars']=false;
         }
-
         $task_array = $this->task_model->countTasks();
         if($task_array) {
             $data['tasks']= $task_array;
@@ -1202,7 +1196,6 @@ class Ajax extends CI_Controller {
         else {
             $data['tasks']=false;
         }
-
         $project_task = array();
         foreach($data['tasks'] as $tk=>$tv) {
             if($tv['pid'] !=false) {
@@ -1211,15 +1204,41 @@ class Ajax extends CI_Controller {
             else {
                 $project_task[$tv['pid']] = false;
             }
-
         }
-
-
+        $all_project_array = $this->project_model->get_all_projects();
+        if($all_project_array) {
+            $data['all_projects']= $all_project_array;
+        }
+        else {
+            $data['all_projects']=false;
+        }
         $data['project_tasks'] = $project_task;
         $data['users_title_roles']= $this->admin_model->get_users_title_roles();
         $data['get_users_online'] = $this->admin_model->get_users_online();
         $data['user_name'] = $this->admin_model->get_users_names();
-        $data['users'] = $this->admin_model->get_users();
+        $users = $this->admin_model->get_users();
+        $data['users'] = $users;
+
+        $new_array_users = array();
+        foreach($users as $uk=>$uv) {
+            $new_array_users[$uv['id']] = $uv;
+        }
+        $users_to_assign = array();
+        foreach ($all_project_array as $pk => $pv) {
+
+            if ($pv['pid'] != $id) {
+                if ($new_array_users[$uv['id']] = $pv['uid']) {
+                    $users_to_assign[$new_array_users[$uv['id']]] = $new_array_users[$uv['id']];
+                }
+            }
+
+        }
+        $data['assign_users'] = $users_to_assign;
+        $p_users = array();
+        foreach ($users as $uk => $uv) {
+            $p_users[$uv['id']] = $uv;
+        }
+        $data['users'] = $p_users;
         $this->load->view('templates/ajax/assign_users_view',$data);
     }
 
