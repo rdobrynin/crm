@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8ede6c0-9a43-4a54-ac19-d55c4b9604aa" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/dashboard.php" afterPath="$PROJECT_DIR$/application/controllers/dashboard.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/manage_projects_view.php" afterPath="$PROJECT_DIR$/application/views/templates/manage_projects_view.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -28,89 +29,14 @@
     <favorites_list name="crm" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7246654">
+    <splitter split-orientation="horizontal" split-proportion="0.8642355">
       <split-first>
         <leaf>
-          <file leaf-file-name="dashboard.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/controllers/dashboard.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="338" column="41" selection-start="9273" selection-end="9273" vertical-scroll-proportion="-15.9375" vertical-offset="7264" max-vertical-offset="35020">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="dashboard_view.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/views/templates/dashboard_view.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="109" column="167" selection-start="9395" selection-end="9455" vertical-scroll-proportion="-17.333334" vertical-offset="1494" max-vertical-offset="9763">
+                <state line="407" column="66" selection-start="36756" selection-end="36756" vertical-scroll-proportion="18.666666" vertical-offset="7830" max-vertical-offset="10197">
                   <folding>
-                    <element signature="n#style#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#5;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#7;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#8;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#9;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#10;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#11;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#12;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#i#0;n#span#0;n#td#9;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#0;n#td#12;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#1;n#td#12;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#2;n#td#12;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#3;n#td#12;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#7;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#8;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#9;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#i#0;n#span#0;n#td#8;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#0;n#td#10;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#1;n#td#10;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#2;n#td#10;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#3;n#td#10;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#7;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#8;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#9;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#10;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#i#0;n#span#0;n#td#8;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#0;n#td#10;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#0;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#2;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#7;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#8;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#9;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#10;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#11;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#12;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#i#0;n#span#0;n#td#9;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#0;n#td#12;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#2;n#td#12;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                     <marker date="1423837237587" expanded="true" signature="10494:10508" placeholder="..." />
                     <marker date="1423837237587" expanded="true" signature="11133:11212" placeholder="..." />
                     <marker date="1423837237587" expanded="true" signature="13425:13516" placeholder="..." />
@@ -148,35 +74,7 @@
           <file leaf-file-name="projects_view.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/views/templates/projects_view.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="10" column="55" selection-start="647" selection-end="647" vertical-scroll-proportion="40.909092" vertical-offset="2430" max-vertical-offset="4569">
-                  <folding>
-                    <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#7;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#8;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#9;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#10;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#th#11;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#i#0;n#span#0;n#td#8;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#0;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#1;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#2;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#3;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#a#4;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="logs_view.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/views/templates/logs_view.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="46" column="42" selection-start="4444" selection-end="4444" vertical-scroll-proportion="-14.666667" vertical-offset="432" max-vertical-offset="2311">
+                <state line="10" column="21" selection-start="613" selection-end="613" vertical-scroll-proportion="15.333333" vertical-offset="594" max-vertical-offset="4419">
                   <folding />
                 </state>
               </provider>
@@ -185,18 +83,41 @@
           <file leaf-file-name="manage_projects_view.php" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/application/views/templates/manage_projects_view.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="8" column="68" selection-start="473" selection-end="473" vertical-scroll-proportion="0.15728329" vertical-offset="0" max-vertical-offset="1911">
+                <state line="43" column="0" selection-start="3202" selection-end="3202" vertical-scroll-proportion="0.7149644" vertical-offset="0" max-vertical-offset="1430">
                   <folding>
-                    <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <marker date="1423840756395" expanded="true" signature="625:1127" placeholder="..." />
-                    <marker date="1423840756395" expanded="true" signature="745:1127" placeholder="..." />
-                    <marker date="1423840756395" expanded="true" signature="821:1127" placeholder="..." />
-                    <marker date="1423840756395" expanded="true" signature="952:1127" placeholder="..." />
-                    <marker date="1423840756395" expanded="true" signature="1023:1043" placeholder="..." />
+                    <marker date="1424076251033" expanded="true" signature="628:957" placeholder="..." />
+                    <marker date="1424076251033" expanded="true" signature="748:957" placeholder="..." />
+                    <marker date="1424076251033" expanded="true" signature="824:957" placeholder="..." />
+                    <marker date="1424076251033" expanded="true" signature="955:957" placeholder="..." />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="phrase.rnc" pinned="false" current="false" current-in-tab="false">
+            <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/phrase.rnc">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="331" column="23" selection-start="6295" selection-end="6295" vertical-scroll-proportion="0.0" vertical-offset="5676" max-vertical-offset="8028">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="functions_helper.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/helpers/functions_helper.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="124" column="60" selection-start="2507" selection-end="2507" vertical-scroll-proportion="-15.333333" vertical-offset="1818" max-vertical-offset="11871">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="comments_view.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/views/templates/comments_view.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="43" column="200" selection-start="3083" selection-end="3134" vertical-scroll-proportion="-10.444445" vertical-offset="492" max-vertical-offset="3249">
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -204,7 +125,7 @@
           <file leaf-file-name="elements.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/elements.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="165" column="0" selection-start="3162" selection-end="3162" vertical-scroll-proportion="0.0" vertical-offset="2587" max-vertical-offset="12022">
+                <state line="165" column="0" selection-start="3162" selection-end="3162" vertical-scroll-proportion="0.0" vertical-offset="2970" max-vertical-offset="10926">
                   <folding />
                 </state>
               </provider>
@@ -213,7 +134,7 @@
           <file leaf-file-name="common.rnc" pinned="false" current="false" current-in-tab="false">
             <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/common.rnc">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="132" column="23" selection-start="3392" selection-end="3392" vertical-scroll-proportion="0.0" vertical-offset="2001" max-vertical-offset="9713">
+                <state line="132" column="23" selection-start="3392" selection-end="3392" vertical-scroll-proportion="0.0" vertical-offset="2376" max-vertical-offset="8640">
                   <folding />
                 </state>
               </provider>
@@ -222,16 +143,7 @@
           <file leaf-file-name="html5chars.ent" pinned="false" current="false" current-in-tab="false">
             <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5chars.ent">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="63" column="10" selection-start="1953" selection-end="1953" vertical-scroll-proportion="-13.888889" vertical-offset="759" max-vertical-offset="37982">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="footer_view.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/views/templates/footer_view.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1771">
+                <state line="63" column="10" selection-start="1953" selection-end="1953" vertical-scroll-proportion="-10.37037" vertical-offset="854" max-vertical-offset="37724">
                   <folding />
                 </state>
               </provider>
@@ -240,7 +152,7 @@
           <file leaf-file-name="project_model.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/models/project_model.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="122" column="9" selection-start="2495" selection-end="2495" vertical-scroll-proportion="-16.0" vertical-offset="1764" max-vertical-offset="5443">
+                <state line="96" column="0" selection-start="1885" selection-end="1885" vertical-scroll-proportion="-3.3333333" vertical-offset="1638" max-vertical-offset="5139">
                   <folding />
                 </state>
               </provider>
@@ -249,17 +161,34 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file leaf-file-name="dashboard.php" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/application/controllers/dashboard.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="51" column="35" selection-start="1540" selection-end="1540" vertical-scroll-proportion="0.016028496" vertical-offset="918" max-vertical-offset="29941">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="horizontal" split-proportion="0.8227633">
+          <split-first>
+            <leaf>
+              <file leaf-file-name="dashboard.php" pinned="false" current="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/application/controllers/dashboard.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state line="307" column="27" selection-start="8554" selection-end="8554" vertical-scroll-proportion="1.455971" vertical-offset="20447" max-vertical-offset="123589">
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file leaf-file-name="dashboard.php" pinned="false" current="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/application/controllers/dashboard.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state line="207" column="1" selection-start="5241" selection-end="5320" vertical-scroll-proportion="1.7191011" vertical-offset="16677" max-vertical-offset="159615">
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-second>
     </splitter>
   </component>
@@ -331,9 +260,9 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="41" />
-    <option name="y" value="24" />
+    <option name="y" value="-4" />
     <option name="width" value="2519" />
-    <option name="height" value="1416" />
+    <option name="height" value="1444" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -361,7 +290,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -686,6 +614,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -764,12 +693,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="41" y="24" width="2519" height="1416" extended-state="6" />
+    <frame x="41" y="-4" width="2519" height="1444" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32250756" sideWeight="0.49979797" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32250756" sideWeight="0.49979797" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854986" sideWeight="0.49979797" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1102719" sideWeight="0.49979797" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.10951661" sideWeight="0.49979797" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.3134441" sideWeight="0.49979797" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.08888889" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -778,9 +707,9 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32955405" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.025454545" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.09777778" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Jenkins" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.115555555" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.08040404" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -832,13 +761,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/dashboard.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="249" column="23" selection-start="3993" selection-end="3993" vertical-scroll-proportion="0.0" vertical-offset="3908" max-vertical-offset="5686">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/font-awesome.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="1" selection-start="858" selection-end="858" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="30985" />
@@ -849,16 +771,9 @@
         <state line="1" column="0" selection-start="1" selection-end="1" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1186" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/comments_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="104" selection-start="3456" selection-end="3456" vertical-scroll-proportion="0.739726" vertical-offset="540" max-vertical-offset="2705" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/modal.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="187" column="1" selection-start="3670" selection-end="3670" vertical-scroll-proportion="0.5910194" vertical-offset="6587" max-vertical-offset="8618">
-          <folding />
-        </state>
+        <state line="187" column="1" selection-start="3670" selection-end="3670" vertical-scroll-proportion="0.5910194" vertical-offset="6587" max-vertical-offset="8618" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/client_view.php">
@@ -868,9 +783,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/body.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="550" column="0" selection-start="11662" selection-end="11662" vertical-scroll-proportion="0.0" vertical-offset="9414" max-vertical-offset="10814">
-          <folding />
-        </state>
+        <state line="550" column="0" selection-start="11662" selection-end="11662" vertical-scroll-proportion="0.0" vertical-offset="9414" max-vertical-offset="10814" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/tasks_view.php">
@@ -950,18 +863,9 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2042" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/helpers/functions_helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="569" selection-end="569" vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="12174">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/core-scripting.rnc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="175" column="18" selection-start="4883" selection-end="4883" vertical-scroll-proportion="0.0" vertical-offset="2767" max-vertical-offset="7233">
-          <folding />
-        </state>
+        <state line="175" column="18" selection-start="4883" selection-end="4883" vertical-scroll-proportion="0.0" vertical-offset="2767" max-vertical-offset="7233" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/login/error_view.php">
@@ -981,123 +885,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/navtop_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="136" selection-start="5261" selection-end="5373" vertical-scroll-proportion="0.0" vertical-offset="1476" max-vertical-offset="1656">
-          <folding />
-        </state>
+        <state line="82" column="136" selection-start="5261" selection-end="5373" vertical-scroll-proportion="0.0" vertical-offset="1476" max-vertical-offset="1656" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/sidebar_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="134" selection-start="1376" selection-end="1408" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="774">
-          <folding />
-        </state>
+        <state line="14" column="134" selection-start="1376" selection-end="1408" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="774" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/message_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2814">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2814" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/ajax.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="772" column="0" selection-start="26333" selection-end="26333" vertical-scroll-proportion="-21.185184" vertical-offset="13324" max-vertical-offset="22046">
-          <folding />
-        </state>
+        <state line="772" column="0" selection-start="26333" selection-end="26333" vertical-scroll-proportion="-21.185184" vertical-offset="13324" max-vertical-offset="22046" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/login/ajax.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="11" selection-start="1981" selection-end="1981" vertical-scroll-proportion="-26.0" vertical-offset="180" max-vertical-offset="1832">
-          <folding />
-        </state>
+        <state line="49" column="11" selection-start="1981" selection-end="1981" vertical-scroll-proportion="-26.0" vertical-offset="180" max-vertical-offset="1832" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/users_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="70" selection-start="7401" selection-end="7401" vertical-scroll-proportion="0.62428844" vertical-offset="1381" max-vertical-offset="8123">
-          <folding>
-            <marker date="1423828680694" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1423828680694" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1423828680694" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1423828680694" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1423828680694" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1423828680694" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1423828680694" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1423828680694" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1423828680694" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1423828680694" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
+        <state line="93" column="70" selection-start="7401" selection-end="7401" vertical-scroll-proportion="0.62428844" vertical-offset="1381" max-vertical-offset="8123" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/custom404.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="262" selection-end="262" vertical-scroll-proportion="-9.333333" vertical-offset="0" max-vertical-offset="1076">
-          <folding />
-        </state>
+        <state line="14" column="0" selection-start="262" selection-end="262" vertical-scroll-proportion="-9.333333" vertical-offset="0" max-vertical-offset="1076" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/maintenance_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="23" selection-start="752" selection-end="752" vertical-scroll-proportion="-11.333333" vertical-offset="0" max-vertical-offset="1645">
-          <folding />
-        </state>
+        <state line="17" column="23" selection-start="752" selection-end="752" vertical-scroll-proportion="-11.333333" vertical-offset="0" max-vertical-offset="1645" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/login/login_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="8" selection-start="1394" selection-end="1394" vertical-scroll-proportion="-12.666667" vertical-offset="0" max-vertical-offset="1166">
-          <folding>
-            <marker date="1423665674982" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1423665674982" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1423665674982" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1423665674982" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1423665674982" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1423665674982" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
+        <state line="19" column="8" selection-start="1394" selection-end="1394" vertical-scroll-proportion="-12.666667" vertical-offset="0" max-vertical-offset="1166" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="761" selection-end="761" vertical-scroll-proportion="-15.333333" vertical-offset="108" max-vertical-offset="3776">
-          <folding />
-        </state>
+        <state line="29" column="0" selection-start="761" selection-end="761" vertical-scroll-proportion="-15.333333" vertical-offset="108" max-vertical-offset="3776" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/maintenance.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="27" selection-start="215" selection-end="215" vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="1076">
-          <folding />
-        </state>
+        <state line="9" column="27" selection-start="215" selection-end="215" vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="1076" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="40" selection-start="1893" selection-end="1893" vertical-scroll-proportion="-14.0" vertical-offset="558" max-vertical-offset="1958">
-          <folding />
-        </state>
+        <state line="52" column="40" selection-start="1893" selection-end="1893" vertical-scroll-proportion="-14.0" vertical-offset="558" max-vertical-offset="1958" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/admin_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="826" column="2" selection-start="16855" selection-end="17180" vertical-scroll-proportion="-12.509091" vertical-offset="14180" max-vertical-offset="17223">
-          <folding />
-        </state>
+        <state line="826" column="2" selection-start="16855" selection-end="17180" vertical-scroll-proportion="-12.509091" vertical-offset="14180" max-vertical-offset="17223" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/task_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="263" column="16" selection-start="5516" selection-end="5516" vertical-scroll-proportion="-16.0" vertical-offset="4302" max-vertical-offset="10123">
-          <folding />
-        </state>
+        <state line="263" column="16" selection-start="5516" selection-end="5516" vertical-scroll-proportion="-16.0" vertical-offset="4302" max-vertical-offset="10123" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/logs_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="42" selection-start="4444" selection-end="4444" vertical-scroll-proportion="-14.666667" vertical-offset="432" max-vertical-offset="2311">
+        <state line="46" column="42" selection-start="4444" selection-end="4444" vertical-scroll-proportion="0.0" vertical-offset="828" max-vertical-offset="1206">
           <folding />
         </state>
       </provider>
@@ -1109,76 +967,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/common.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="132" column="23" selection-start="3392" selection-end="3392" vertical-scroll-proportion="0.0" vertical-offset="2001" max-vertical-offset="9713">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/elements.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="165" column="0" selection-start="3162" selection-end="3162" vertical-scroll-proportion="0.0" vertical-offset="2587" max-vertical-offset="12022">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/project_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="0" selection-start="1885" selection-end="1885" vertical-scroll-proportion="-3.3333333" vertical-offset="1638" max-vertical-offset="5139">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/helpers/functions_helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="124" column="60" selection-start="2507" selection-end="2507" vertical-scroll-proportion="-15.333333" vertical-offset="1818" max-vertical-offset="11871">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/templates/comments_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="200" selection-start="3083" selection-end="3134" vertical-scroll-proportion="-10.444445" vertical-offset="492" max-vertical-offset="3249">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/phrase.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="331" column="23" selection-start="6295" selection-end="6295" vertical-scroll-proportion="0.0" vertical-offset="5676" max-vertical-offset="8028">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/dashboard_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="167" selection-start="9395" selection-end="9455" vertical-scroll-proportion="-17.333334" vertical-offset="1494" max-vertical-offset="9763">
+        <state line="407" column="66" selection-start="36756" selection-end="36756" vertical-scroll-proportion="18.666666" vertical-offset="7830" max-vertical-offset="10197">
           <folding>
-            <element signature="n#style#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#7;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#8;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#9;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#10;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#11;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#12;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#span#0;n#td#9;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#td#12;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#td#12;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#td#12;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#td#12;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#7;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#8;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#9;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#span#0;n#td#8;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#td#10;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#td#10;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#td#10;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#td#10;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#7;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#8;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#9;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#10;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#span#0;n#td#8;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#td#10;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#7;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#8;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#9;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#10;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#11;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#12;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#span#0;n#td#9;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#td#12;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#td#12;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <marker date="1423837237587" expanded="true" signature="10494:10508" placeholder="..." />
             <marker date="1423837237587" expanded="true" signature="11133:11212" placeholder="..." />
             <marker date="1423837237587" expanded="true" signature="13425:13516" placeholder="..." />
@@ -1212,80 +1046,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/project_model.php">
+    <entry file="file://$PROJECT_DIR$/application/views/templates/projects_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="9" selection-start="2495" selection-end="2495" vertical-scroll-proportion="-16.0" vertical-offset="1764" max-vertical-offset="5443">
+        <state line="10" column="21" selection-start="613" selection-end="613" vertical-scroll-proportion="15.333333" vertical-offset="594" max-vertical-offset="4419">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="338" column="41" selection-start="9273" selection-end="9273" vertical-scroll-proportion="-15.9375" vertical-offset="7264" max-vertical-offset="35020">
+        <state line="307" column="27" selection-start="8554" selection-end="8554" vertical-scroll-proportion="1.455971" vertical-offset="20447" max-vertical-offset="123589">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5chars.ent">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="10" selection-start="1953" selection-end="1953" vertical-scroll-proportion="-13.888889" vertical-offset="759" max-vertical-offset="37982">
+        <state line="63" column="10" selection-start="1953" selection-end="1953" vertical-scroll-proportion="-10.37037" vertical-offset="854" max-vertical-offset="37724">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/common.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="23" selection-start="3392" selection-end="3392" vertical-scroll-proportion="0.0" vertical-offset="2001" max-vertical-offset="9713">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/elements.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="0" selection-start="3162" selection-end="3162" vertical-scroll-proportion="0.0" vertical-offset="2587" max-vertical-offset="12022">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/projects_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="55" selection-start="647" selection-end="647" vertical-scroll-proportion="40.909092" vertical-offset="2430" max-vertical-offset="4569">
-          <folding>
-            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#7;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#8;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#9;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#10;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#11;n#tr#0;n#thead#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#span#0;n#td#8;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#4;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/manage_projects_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="68" selection-start="473" selection-end="473" vertical-scroll-proportion="0.15728329" vertical-offset="0" max-vertical-offset="1911">
+        <state line="43" column="0" selection-start="3202" selection-end="3202" vertical-scroll-proportion="0.7149644" vertical-offset="0" max-vertical-offset="1430">
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <marker date="1423840756395" expanded="true" signature="625:1127" placeholder="..." />
-            <marker date="1423840756395" expanded="true" signature="745:1127" placeholder="..." />
-            <marker date="1423840756395" expanded="true" signature="821:1127" placeholder="..." />
-            <marker date="1423840756395" expanded="true" signature="952:1127" placeholder="..." />
-            <marker date="1423840756395" expanded="true" signature="1023:1043" placeholder="..." />
+            <marker date="1424076251033" expanded="true" signature="628:957" placeholder="..." />
+            <marker date="1424076251033" expanded="true" signature="748:957" placeholder="..." />
+            <marker date="1424076251033" expanded="true" signature="824:957" placeholder="..." />
+            <marker date="1424076251033" expanded="true" signature="955:957" placeholder="..." />
           </folding>
         </state>
       </provider>

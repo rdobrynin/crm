@@ -302,8 +302,15 @@ class Dashboard extends CI_Controller {
 
 
         $data['project_tasks'] = $project_task;
-//var_dump($data['project_tasks']);
-//exit();
+        $data['users_title_roles']= $this->admin_model->get_users_title_roles();
+
+        $all_project_array = $this->project_model->get_all_projects();
+        if($all_project_array) {
+            $data['all_projects']= $all_project_array;
+        }
+        else {
+            $data['all_projects']=false;
+        }
         $imps = $this->task_model->get_imps();
 
         if($imps) {
