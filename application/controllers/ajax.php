@@ -1168,6 +1168,18 @@ class Ajax extends CI_Controller {
     }
 
 
+    /**
+     * Get users by project ID
+     */
+
+    function getUsersProject() {
+        $id =  $this->input->get('project');
+        $result['project'] = 'blabla';
+        echo json_encode ($result);
+    }
+
+
+
 
 
 }
