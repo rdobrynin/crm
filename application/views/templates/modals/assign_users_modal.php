@@ -48,11 +48,13 @@
      * @param $data
      */
 
-    function assignUserProject($data) {
-//        $('#assign-user-li-' + $data).fadeOut('slow');
+    function assignUserProject($data, $project) {
+        var $user = '<?php print($user[0]['id'])?>';
 
         var form_data = {
-            id: $data
+            id: $data,
+            pid: $project,
+            uid: $user
         };
         $.ajax({
             url: "<?php echo site_url('ajax/assignUserProject'); ?>",
@@ -60,7 +62,13 @@
             data: form_data,
             dataType: 'json',
             success: function (msg) {
-             console.log(msg);
+                if (msg.id != 'false') {
+                    console.log(msg);
+                 $('#assign-user-li-' + $data).fadeOut('slow');
+                }
+                else {
+                    console.log('sadsd');
+                }
             }
         });
 

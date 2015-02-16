@@ -1239,6 +1239,7 @@ class Ajax extends CI_Controller {
             $p_users[$uv['id']] = $uv;
         }
         $data['users'] = $p_users;
+        $data['id'] = $id;
         $this->load->view('templates/ajax/assign_users_view',$data);
     }
 
@@ -1247,12 +1248,46 @@ class Ajax extends CI_Controller {
      */
 
     function assignUserProject() {
+        $this->load->model('project_model');
+        $this->load->model('admin_model');
+        $this->load->model('message_model');
         $id =  $this->input->post('id');
-        if(isset($_POST['id']) ) {
-            $result['id'] = $id;
+        $uid = $this->input->post('uid');
+        $pid = $this->input->post('pid');
+        if(isset($_POST['id']) AND isset($_POST['uid']) AND isset($_POST['pid'])) {
+            $result['id'] =  $id;
+            $result['uid'] =  $uid;
+            $result['pid'] =  $pid;
+//            todo
+            if($this->project_model->assign_project($result['pid'], $result['id'])) {
+                $result['insert'] =  true;
+                $name_array =  $this->admin_model->get_user_id($uid);
+                $assign_name_array =  $this->admin_model->get_user_id($id);
+                $full_name = $name_array[0]['first_name'].' '.$name_array[0]['last_name'];
+                $assign_full_name = $assign_name_array[0]['first_name'].' '.$assign_name_array[0]['last_name'];
+                $text ='Assigned user';
+                $desc = $assign_full_name.' assigned to project';
+                    $this->project_model->createEvent($uid, $desc, $text, $full_name, $assign_full_name, 6);
+                    $result['result'] = true;
+                $user_array = $this->admin_model->get_user_id($result['uid']);
+                $user_to = $this->admin_model->get_user_id($result['id']);
+                if ($user_array[0]['message'] == '1') {
+                    $this->load->library('email');
+                    $this->email->from($user_array[0]['email'], 'team');
+                    $this->email->to($user_to[0]['email']);
+                    $this->email->subject('New event from Brilliant Task Management');
+                    $this->email->message("Hello, ".$user_to[0]['first_name']." ".$user_to[0]['last_name']."\n"."\n"."You have been assigned to project"."\n"."\n". "From: ".$user_array[0]['first_name']." ".$user_array[0]['last_name']."\n"."\n". "Subject: ".$result['subject']."\n"."\n");
+                    $this->email->send();
+                }
+            }
+            else {
+                $result['insert'] =  false;
+            }
         }
         else {
-            $result = false;
+            $result['id'] =  false;
+            $result['uid'] =  false;
+            $result['pid'] =  false;
         }
         echo json_encode ($result);
     }

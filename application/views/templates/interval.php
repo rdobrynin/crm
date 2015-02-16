@@ -157,6 +157,27 @@ $('.mini-inbox').css('display','none');
                         ).fadeIn('3000');
 
                     }
+
+
+                    else if (data['type'] == 6) {
+//                      insert to log table
+                        var idtr =  'current-tr-'+data["id"];
+
+                        $("#log-table").find('tbody:first')
+                            .prepend("<tr id='"+idtr+"'><td class='text-left'>"+data['id']+"</td><td class='text-left'>"+data['time']+"</td>+" +
+                                "<td class='text-left'><a href='#' onclick='qmSendComment("+data['uid']+")'>"+data['name']+"</a></td>+" +
+                                "<td class='text-left'><i class='fa fa-cube'></i>&nbsp;assign user</td>" +
+                                "<td class='text-left'><i class='fa fa-plus-circle' style='color:#5cb85c;'></i></td>" +
+                                "<td class='text-left'>"+data['title']+"</td>+" +
+                                "<td class='text-left'>"+data['event']+"</td></tr>");
+
+                        $('.mini-inbox').append(
+                            '<div class="alert inbox"><button type="button" class="close" data-dismiss="alert">×' +
+                                '</button><a href="javascript:void(0)"><i class="fa fa-user-plus"></i>From: ' + name + '</a>' +
+                                '<span class="message-mini">' + data.title + ' assigned to project</span></div>'
+                        ).fadeIn('3000');
+
+                    }
                 }
 
             }, "json" );
