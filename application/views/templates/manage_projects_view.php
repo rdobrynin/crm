@@ -43,4 +43,3 @@
     </div>
 <?php endif ?>
 
-<?php include('modals/assign_users_modal.php'); ?>

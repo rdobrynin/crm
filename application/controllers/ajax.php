@@ -1174,13 +1174,54 @@ class Ajax extends CI_Controller {
 
     function getUsersProject() {
         $id =  $this->input->get('project');
-        $result['project'] = 'blabla';
-        echo json_encode ($result);
+        $this->load->model('admin_model');
+        $this->load->model('task_model');
+        $this->load->model('project_model');
+
+
+        $roles_array = $this->admin_model->get_roles();
+        $roles = array();
+        foreach ($roles_array as $rk => $rv) {
+            $roles[] = $rv;
+        }
+
+
+        $avatars = $this->admin_model->getAvatars();
+
+        if($avatars) {
+            $data['avatars']= $avatars;
+        }
+        else {
+            $data['avatars']=false;
+        }
+
+        $task_array = $this->task_model->countTasks();
+        if($task_array) {
+            $data['tasks']= $task_array;
+        }
+        else {
+            $data['tasks']=false;
+        }
+
+        $project_task = array();
+        foreach($data['tasks'] as $tk=>$tv) {
+            if($tv['pid'] !=false) {
+                $project_task[$tv['pid']][] = $tv;
+            }
+            else {
+                $project_task[$tv['pid']] = false;
+            }
+
+        }
+
+
+        $data['project_tasks'] = $project_task;
+        $data['users_title_roles']= $this->admin_model->get_users_title_roles();
+        $data['get_users_online'] = $this->admin_model->get_users_online();
+        $data['user_name'] = $this->admin_model->get_users_names();
+        $data['users'] = $this->admin_model->get_users();
+        $this->load->view('templates/ajax/assign_users_view',$data);
     }
-
-
-
-
 
 }
 
