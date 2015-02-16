@@ -361,14 +361,21 @@ class Dashboard extends CI_Controller {
         else {
             $data['user_projects']=false;
         }
+        $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
 
+
+
+        if($data['user'][0]['role'] !=5) {
+            $this->session->set_flashdata('permission', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!</strong> Administer projects in development phase.</div>');
+            redirect("dashboard");
+        }
 
 
         $data['users_names']= $this->admin_model->get_users_names();
 
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
-        $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
+
         $data['client'] = $this->admin_model->get_own_client($_SESSION['username']);
         $data['users'] = $this->admin_model->get_users();
         $data['user_name'] = $this->admin_model->get_users_names();

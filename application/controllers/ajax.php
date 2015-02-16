@@ -1250,7 +1250,6 @@ class Ajax extends CI_Controller {
     function assignUserProject() {
         $this->load->model('project_model');
         $this->load->model('admin_model');
-        $this->load->model('message_model');
         $id =  $this->input->post('id');
         $uid = $this->input->post('uid');
         $pid = $this->input->post('pid');
