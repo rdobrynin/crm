@@ -240,6 +240,7 @@ class Ajax extends CI_Controller {
         $result['empty'] = true;
         $result['send'] = false;
         $this->load->model('admin_model');
+        $this->load->model('project_model');
         $email = trim($_POST['email']);
         $fname = trim($_POST['first_name']);
         $lname = trim($_POST['last_name']);
@@ -300,9 +301,13 @@ class Ajax extends CI_Controller {
         for ($i = 0; $i < 6; $i++){
             $pass .= $letter[mt_rand(0, strlen($letter)-1)];
         }
-
         if ($result['email'] == true AND $result['empty'] == true AND $result['check_email'] == true ) {
             if ($query = $this->admin_model->insert_user($fname,$lname,$role,$email,$pass)) {
+                $projects_array = $this->project_model->get_projects();
+                $last_user = $this->admin_model->getLastUser();
+                foreach($projects_array as $pk=>$pv) {
+                    $this->project_model->assign_project($pv['pid'], $last_user, 0);
+                }
             $this->load->library('email');
             $this->email->from($curator_email, $curator_name);
             $this->email->to($email);
@@ -704,10 +709,15 @@ class Ajax extends CI_Controller {
      */
     function activateUser() {
         $this->load->model('admin_model');
+        $this->load->model('project_model');
         $id =  $this->input->post('user');
-
         if(!empty($id)) {
             $result['user']= $this->admin_model->activateNewUser($id);
+            $projects_array = $this->project_model->get_projects();
+            $last_user = $this->admin_model->getLastUser();
+            foreach($projects_array as $pk=>$pv) {
+                $this->project_model->assign_project($pv['pid'], $last_user, 0);
+            }
         }
         else {
             $result['user'] = false;
