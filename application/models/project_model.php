@@ -236,6 +236,33 @@ class Project_model extends CI_Model {
         return $query->result_array();
     }
 
+    /**
+     * Select join users for project due to ID of project
+     * @param $pid
+     * @return mixed
+     */
+
+    public function getProjectUsers($pid) {
+        $data = array();
+        $query = $this->db->select('*')
+        ->from('projects')
+        ->join('users', 'projects.uid = users.id')
+        ->where('projects.pid !=', $pid)
+        ->get();
+        if ($query->num_rows() > 0)
+        {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+        }
+        else {
+            $data = false;
+        }
+
+        $query->free_result();
+        return $data;
+    }
+
 }
 
 
