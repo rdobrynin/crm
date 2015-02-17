@@ -1248,8 +1248,10 @@ class Ajax extends CI_Controller {
                 $assign_name_array =  $this->admin_model->get_user_id($id);
                 $full_name = $name_array[0]['first_name'].' '.$name_array[0]['last_name'];
                 $assign_full_name = $assign_name_array[0]['first_name'].' '.$assign_name_array[0]['last_name'];
+                $result['full_name'] = $assign_full_name;
                 $text ='Assigned user';
-                $desc = $assign_full_name.' assigned to project';
+                $project_arr =$this->project_model->getProject($pid);
+                $desc = $assign_full_name.' assigned to project '.$project_arr[0]['title'];
                     $this->project_model->createEvent($uid, $desc, $text, $full_name, $assign_full_name, 6);
                     $result['result'] = true;
                 $user_array = $this->admin_model->get_user_id($result['uid']);

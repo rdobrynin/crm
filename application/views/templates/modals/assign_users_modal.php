@@ -65,7 +65,6 @@
 
     function assignUserProject($data, $project) {
         var $user = '<?php print($user[0]['id'])?>';
-
         var form_data = {
             id: $data,
             pid: $project,
@@ -80,6 +79,8 @@
                 if (msg.id != 'false') {
                     console.log(msg);
                  $('#assign-user-li-' + $data).fadeOut('slow');
+                    $('#assign-panel-'+$project).append('&nbsp;<span class="label label-default label-tag" <i class="fa fa-mail"></i>&nbsp;<span class="get_old_mail">'+msg.full_name+
+                        ' </span>&nbsp;');
                 }
                 else {
                     console.log('sadsd');
