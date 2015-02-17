@@ -1,8 +1,8 @@
 <!--AJAX HTML GET METHODS-->
-<?php if ($assign_users != false OR !empty($assign_users)): ?>
 <ul class="assign-users-jsscroll">
+    <?php if ($assign_users != false OR !empty($assign_users)): ?>
     <?php foreach ($assign_users as $uk=>$uv): ?>
-        <?php if ($uv->role !=5 AND $uv->pid !=$id): ?>
+        <?php if ($uv->role !=5 AND $uv->pid ==$id): ?>
 
 
 
@@ -22,10 +22,12 @@
                         </div>
                     </div>
                 </li>
-
-
-
         <?php endif ?>
     <?php endforeach ?>
+
+<?php else: ?>
+
+    <div style="margin-bottom: 10px; float: left; width: 100%" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;No found any more users to assign for this project</div>
+
 </ul>
 <?php endif ?>

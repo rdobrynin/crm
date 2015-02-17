@@ -51,14 +51,32 @@ class Project_model extends CI_Model {
      * @return mixed
      */
 
-    public function assign_project($pid,$uid) {
+    public function assign_project($pid,$uid, $assign) {
         $data = array (
             'pid' => $pid,
-            'uid' => $uid
+            'uid' => $uid,
+            'assign' => $assign
         );
         $insert = $this->db->insert('projects', $data);
         return $insert;
     }
+
+    /**
+     * Update assigned user to the project
+     * @param $uid
+     * @param $assign
+     * @return mixed
+     */
+
+    public function assign_project_update ($uid, $assign) {
+        $data = array (
+            'assign' => $assign
+        );
+        $this->db->where('uid', $uid);
+        $update = $this->db->update('projects', $data);
+        return $update;
+    }
+
 
     /**
      * Update projects
@@ -247,7 +265,8 @@ class Project_model extends CI_Model {
         $query = $this->db->select('*')
         ->from('projects')
         ->join('users', 'projects.uid = users.id')
-        ->where('projects.pid !=', $pid)
+        ->where('projects.assign', 0)
+            ->where('projects.pid', $pid)
         ->get();
         if ($query->num_rows() > 0)
         {

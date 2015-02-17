@@ -19,7 +19,7 @@
                                     <p>Total tasks:&nbsp;&nbsp;<span class="badge badge-task" id="route-task"><?php if (isset($project_tasks[$pv['pid']])): ?><?php print(count($project_tasks[$pv['pid']])); ?><?php else:?>0<?php endif ?></span></p>
                                     <p>Assigned users:&nbsp;&nbsp;
                                         <?php foreach ($all_projects as $ak => $av): ?>
-                                            <?php if ($av['pid'] ==$pv['pid'] AND $users_title_roles[$av['uid']] !=5 AND $av['uid'] != $pv['owner']): ?>
+                                            <?php if ($av['pid'] ==$pv['pid'] AND $users_title_roles[$av['uid']] !=5 AND $av['uid'] != $pv['owner'] AND $av['assign'] !=0): ?>
 <span class="label label-default label-tag"><i class="fa fa-mail"></i>&nbsp;<span class="get_old_mail"><?php print(short_name($user_name[$av['uid']])); ?>&nbsp;(<?php print(show_role_abbr($users_title_roles[$av['uid']])); ?>)</span>
                             &nbsp;&nbsp;&nbsp;</span>
                                             <?php endif ?>

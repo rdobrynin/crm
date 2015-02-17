@@ -352,7 +352,21 @@ class Ajax extends CI_Controller {
                 $result['project'] = true;
                 $last= $this->project_model->getLastProject();
                 $result['lastproject'] = $last->pid;
-                $this->project_model->assign_project($last->pid, $uid);
+                $this->project_model->assign_project($last->pid, $uid, 1);
+
+
+
+
+
+                $users = $this->admin_model->get_users();
+
+                foreach($users as $uk=>$uv) {
+                 if($uv['id'] != $uid) {
+                     $this->project_model->assign_project($last->pid, $uv['id'], 0);
+                 }
+                }
+
+
             }
         }
         echo json_encode($result);
@@ -1194,10 +1208,6 @@ class Ajax extends CI_Controller {
         $users = $this->admin_model->get_users();
         $data['users'] = $users;
         $data['assign_users'] =  $this->project_model->getProjectUsers($id);
-
-
-
-
         $p_users = array();
         foreach ($users as $uk => $uv) {
             $p_users[$uv['id']] = $uv;
@@ -1222,7 +1232,7 @@ class Ajax extends CI_Controller {
             $result['uid'] =  $uid;
             $result['pid'] =  $pid;
 //            todo
-            if($this->project_model->assign_project($result['pid'], $result['id'])) {
+            if($this->project_model->assign_project_update($result['id'], 1)) {
                 $result['insert'] =  true;
                 $name_array =  $this->admin_model->get_user_id($uid);
                 $assign_name_array =  $this->admin_model->get_user_id($id);
