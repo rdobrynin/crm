@@ -157,6 +157,26 @@ padding-bottom: 18px;
 }
 
 
+#froze-project-modal .modal-content {
+    border: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+#froze-project-modal .modal-dialog {
+    width: 500px;
+}
+
+
+#froze-project-modal .modal-content {
+    padding: 20px;
+}
+
+
+#froze-project-modal .icon-remove {
+    padding-top: 7px;
+}
 
 
 

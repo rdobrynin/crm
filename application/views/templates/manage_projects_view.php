@@ -30,7 +30,7 @@
                                 </div>
                             </div>
                             <?php if ($projects[$pv['pid']]['owner'] == $user[0]['id']): ?>
-                            <a href="javascript:void(0);" class="btn btn-danger disabled">Froze project</a>&nbsp;
+                            <a href="javascript:void(0);"  onClick="frozeProject('<?php print($pv['pid']); ?>')" class="btn btn-danger">Froze project</a>&nbsp;
                                 <a href="javascript:void(0);"  onClick="openAssignUsersProject('<?php print($pv['pid']); ?>')" class="btn btn-success test">Assign member</a>
                             <?php endif ?>
                         </div>
@@ -42,6 +42,48 @@
         </div>
     </div>
 <?php endif ?>
+
+<script type="text/javascript">
+
+    /**
+     * AJAX froze project
+     * @param $data
+     */
+
+    function frozeProject($data){
+        $('#froze-project-modal').modal('show');
+        $('.froze-btn-project').click(function () {
+            console.log($data);
+            $('.froze-btn-cancel').addClass('disabled');
+
+        });
+        return false;
+        $.ajax({
+            type: 'GET',
+            url: "<?php echo base_url('ajax/frozeProject') ?>",
+            data: { project: $data},
+            beforeSend:function(){
+                $('.loader').css('display','block');
+            },
+            complete: function()  {
+                $('.loader').css('display','none');
+            },
+            success:function(data){
+                $('#assign_users_details').html(data);
+                $(".assign-users-jsscroll").mCustomScrollbar({
+                    scrollButtons:{enable:true,scrollType:"stepped"},
+                    theme:"rounded-dark",
+                    autoExpandScrollbar:true,
+                    snapOffset:65
+                });
+
+            },
+            error:function(){
+                alert('Something went with error')
+            }
+        });
+    }
+    </script>
 
 
 
