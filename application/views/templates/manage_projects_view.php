@@ -57,31 +57,31 @@
             $('.froze-btn-cancel').addClass('disabled');
 
         });
-        return false;
-        $.ajax({
-            type: 'GET',
-            url: "<?php echo base_url('ajax/frozeProject') ?>",
-            data: { project: $data},
-            beforeSend:function(){
-                $('.loader').css('display','block');
-            },
-            complete: function()  {
-                $('.loader').css('display','none');
-            },
-            success:function(data){
-                $('#assign_users_details').html(data);
-                $(".assign-users-jsscroll").mCustomScrollbar({
-                    scrollButtons:{enable:true,scrollType:"stepped"},
-                    theme:"rounded-dark",
-                    autoExpandScrollbar:true,
-                    snapOffset:65
-                });
-
-            },
-            error:function(){
-                alert('Something went with error')
-            }
-        });
+<!--        return false;-->
+<!--        $.ajax({-->
+<!--            type: 'GET',-->
+<!--            url: "--><?php //echo base_url('ajax/frozeProject') ?><!--",-->
+<!--            data: { project: $data},-->
+<!--            beforeSend:function(){-->
+<!--                $('.loader').css('display','block');-->
+<!--            },-->
+<!--            complete: function()  {-->
+<!--                $('.loader').css('display','none');-->
+<!--            },-->
+<!--            success:function(data){-->
+<!--                $('#assign_users_details').html(data);-->
+<!--                $(".assign-users-jsscroll").mCustomScrollbar({-->
+<!--                    scrollButtons:{enable:true,scrollType:"stepped"},-->
+<!--                    theme:"rounded-dark",-->
+<!--                    autoExpandScrollbar:true,-->
+<!--                    snapOffset:65-->
+<!--                });-->
+<!---->
+<!--            },-->
+<!--            error:function(){-->
+<!--                alert('Something went with error')-->
+<!--            }-->
+<!--        });-->
     }
     </script>
 
