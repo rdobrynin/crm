@@ -1,5 +1,5 @@
 <!--assign user modal-->
-<div class="modal" id="assign_user_modal" tabindex="-1" role="dialog" aria-labelledby="assign_user_modalLabel" aria-hidden="true">
+<div class="modal" id="assign_user_modal" data-toggle="modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="assign_user_modalLabel" aria-hidden="true">
     <form role="form">
         <div class="modal-dialog">
             <div class="modal-content">
