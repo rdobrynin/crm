@@ -240,6 +240,7 @@ class Ajax extends CI_Controller {
         $result['empty'] = true;
         $result['send'] = false;
         $this->load->model('admin_model');
+        $this->load->model('project_model');
         $email = trim($_POST['email']);
         $fname = trim($_POST['first_name']);
         $lname = trim($_POST['last_name']);
@@ -300,9 +301,13 @@ class Ajax extends CI_Controller {
         for ($i = 0; $i < 6; $i++){
             $pass .= $letter[mt_rand(0, strlen($letter)-1)];
         }
-
         if ($result['email'] == true AND $result['empty'] == true AND $result['check_email'] == true ) {
             if ($query = $this->admin_model->insert_user($fname,$lname,$role,$email,$pass)) {
+                $projects_array = $this->project_model->get_projects();
+                $last_user = $this->admin_model->getLastUser();
+                foreach($projects_array as $pk=>$pv) {
+                    $this->project_model->assign_project($pv['pid'], $last_user, 0);
+                }
             $this->load->library('email');
             $this->email->from($curator_email, $curator_name);
             $this->email->to($email);
@@ -352,7 +357,21 @@ class Ajax extends CI_Controller {
                 $result['project'] = true;
                 $last= $this->project_model->getLastProject();
                 $result['lastproject'] = $last->pid;
-                $this->project_model->assign_project($last->pid, $uid);
+                $this->project_model->assign_project($last->pid, $uid, 1);
+
+
+
+
+
+                $users = $this->admin_model->get_users();
+
+                foreach($users as $uk=>$uv) {
+                 if($uv['id'] != $uid) {
+                     $this->project_model->assign_project($last->pid, $uv['id'], 0);
+                 }
+                }
+
+
             }
         }
         echo json_encode($result);
@@ -690,10 +709,15 @@ class Ajax extends CI_Controller {
      */
     function activateUser() {
         $this->load->model('admin_model');
+        $this->load->model('project_model');
         $id =  $this->input->post('user');
-
         if(!empty($id)) {
             $result['user']= $this->admin_model->activateNewUser($id);
+            $projects_array = $this->project_model->get_projects();
+            $last_user = $this->admin_model->getLastUser();
+            foreach($projects_array as $pk=>$pv) {
+                $this->project_model->assign_project($pv['pid'], $last_user, 0);
+            }
         }
         else {
             $result['user'] = false;
@@ -1175,7 +1199,6 @@ class Ajax extends CI_Controller {
     function getUsersProject() {
         $id =  $this->input->get('project');
         $this->load->model('admin_model');
-        $this->load->model('task_model');
         $this->load->model('project_model');
         $roles_array = $this->admin_model->get_roles();
         $roles = array();
@@ -1189,51 +1212,12 @@ class Ajax extends CI_Controller {
         else {
             $data['avatars']=false;
         }
-        $task_array = $this->task_model->countTasks();
-        if($task_array) {
-            $data['tasks']= $task_array;
-        }
-        else {
-            $data['tasks']=false;
-        }
-        $project_task = array();
-        foreach($data['tasks'] as $tk=>$tv) {
-            if($tv['pid'] !=false) {
-                $project_task[$tv['pid']][] = $tv;
-            }
-            else {
-                $project_task[$tv['pid']] = false;
-            }
-        }
-        $all_project_array = $this->project_model->get_all_projects();
-        if($all_project_array) {
-            $data['all_projects']= $all_project_array;
-        }
-        else {
-            $data['all_projects']=false;
-        }
-        $data['project_tasks'] = $project_task;
         $data['users_title_roles']= $this->admin_model->get_users_title_roles();
         $data['get_users_online'] = $this->admin_model->get_users_online();
         $data['user_name'] = $this->admin_model->get_users_names();
         $users = $this->admin_model->get_users();
         $data['users'] = $users;
-
-        $new_array_users = array();
-        foreach($users as $uk=>$uv) {
-            $new_array_users[$uv['id']] = $uv;
-        }
-        $users_to_assign = array();
-        foreach ($all_project_array as $pk => $pv) {
-
-            if ($pv['pid'] != $id) {
-                if ($new_array_users[$uv['id']] = $pv['uid']) {
-                    $users_to_assign[$new_array_users[$uv['id']]] = $new_array_users[$uv['id']];
-                }
-            }
-
-        }
-        $data['assign_users'] = $users_to_assign;
+        $data['assign_users'] =  $this->project_model->getProjectUsers($id);
         $p_users = array();
         foreach ($users as $uk => $uv) {
             $p_users[$uv['id']] = $uv;
@@ -1258,14 +1242,16 @@ class Ajax extends CI_Controller {
             $result['uid'] =  $uid;
             $result['pid'] =  $pid;
 //            todo
-            if($this->project_model->assign_project($result['pid'], $result['id'])) {
+            if($this->project_model->assign_project_update($result['id'], 1)) {
                 $result['insert'] =  true;
                 $name_array =  $this->admin_model->get_user_id($uid);
                 $assign_name_array =  $this->admin_model->get_user_id($id);
                 $full_name = $name_array[0]['first_name'].' '.$name_array[0]['last_name'];
                 $assign_full_name = $assign_name_array[0]['first_name'].' '.$assign_name_array[0]['last_name'];
+                $result['full_name'] = $assign_full_name;
                 $text ='Assigned user';
-                $desc = $assign_full_name.' assigned to project';
+                $project_arr =$this->project_model->getProject($pid);
+                $desc = $assign_full_name.' assigned to project '.$project_arr[0]['title'];
                     $this->project_model->createEvent($uid, $desc, $text, $full_name, $assign_full_name, 6);
                     $result['result'] = true;
                 $user_array = $this->admin_model->get_user_id($result['uid']);
@@ -1289,6 +1275,24 @@ class Ajax extends CI_Controller {
             $result['pid'] =  false;
         }
         echo json_encode ($result);
+    }
+
+    function frozeProject() {
+        $result = array();
+        $this->load->model('project_model');
+        $pid =  $this->input->post('project');
+        $status =  $this->input->post('status');
+        if(isset($_POST['project']) AND isset($_POST['status'])) {
+           if($this->project_model->frozeProject($pid, $status)) {
+               $result['froze'] = $status;
+           }
+            $result['status'] = true;
+        }
+        else {
+            $result['status'] = false;
+        }
+        echo json_encode ($result);
+
     }
 
 }

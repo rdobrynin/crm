@@ -52,8 +52,6 @@ class Dashboard extends CI_Controller {
             $data['all_projects']=false;
         }
 
-
-
 //        Get users assign to project
         $project_all_users_array = $this->project_model->get_all_projects_user($_SESSION['username']);
 
@@ -88,9 +86,6 @@ class Dashboard extends CI_Controller {
             $data_task=false;
         }
 
-
-//        todo
-
         $array_new_tasks = array();
         if($data_task !=false) {
             foreach ($data_task as $tk=>$tv) {
@@ -104,9 +99,6 @@ class Dashboard extends CI_Controller {
         else {
             $data['tasks1']=false;
         }
-
-// end todo
-
 
         $imps = $this->task_model->get_imps();
 
@@ -293,7 +285,6 @@ class Dashboard extends CI_Controller {
             $data['tasks']=false;
         }
 
-
         $project_task = array();
         foreach($data['tasks'] as $tk=>$tv) {
             if($tv['pid'] !=false) {
@@ -305,7 +296,6 @@ class Dashboard extends CI_Controller {
 
         }
 
-
         $avatars = $this->admin_model->getAvatars();
 
         if($avatars) {
@@ -314,8 +304,6 @@ class Dashboard extends CI_Controller {
         else {
             $data['avatars']=false;
         }
-
-
 
         $data['project_tasks'] = $project_task;
         $data['users_title_roles']= $this->admin_model->get_users_title_roles();
@@ -363,12 +351,10 @@ class Dashboard extends CI_Controller {
         }
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
 
-
-
-        if($data['user'][0]['role'] !=5) {
-            $this->session->set_flashdata('permission', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!</strong> Administer projects in development phase.</div>');
-            redirect("dashboard");
-        }
+//        if($data['user'][0]['role'] !=5) {
+//            $this->session->set_flashdata('permission', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!</strong> Administer projects in development phase.</div>');
+//            redirect("dashboard");
+//        }
 
 
         $data['users_names']= $this->admin_model->get_users_names();

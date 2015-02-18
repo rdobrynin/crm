@@ -307,7 +307,7 @@
     </div>
 </div> <!-- #/edittask_pr_modal -->
 
-<!--Create project modal window-->
+<!--Demo modal window-->
 <div class="modal" id="demo_modal" tabindex="-1" role="dialog" aria-labelledby="demo_modalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <?php $attributes = array('class' => 'form-signin', 'id' => 'addproject_form', 'autocomplete' => 'on'); ?>
@@ -322,7 +322,53 @@
         </div>
         <?php form_close( );?>
     </div>
-</div> <!-- #/addproject_moda -->
+</div> <!-- #/demo_modal -->
+
+<!--Froze project modal window-->
+<div class="modal" id="froze-project-modal" tabindex="-1" role="dialog" data-toggle="modal" data-backdrop="static"  aria-labelledby="froze-project-modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+            <div class="row">
+                <h4 style="text-align:center; padding-bottom: 40px;">Are you sure to froze the project ?!</h4>
+            </div>
+                        <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                            <h4>Important!</h4>
+                            <p><i class="fa fa-info-circle"></i>When you froze the project, all tasks going to archive and will be invisible while project is not unfrozed, and all users is no longer will be assigned to</p>
+                            <p style="padding-bottom: 20px;"><i class="fa fa-info-circle"></i>All members will get notifications by email</p>
+                            <p>
+                                <button type="button" class="btn btn-danger froze-btn-project">Froze project</button>
+                                <button type="button" class="btn btn-default pull-right froze-btn-cancel" data-dismiss="modal">Cancel</button>
+                            </p>
+                        </div>
+            </div>
+<!--            <div class="modal-footer">-->
+<!--                <a href="javascript:void(0);" class="btn btn-danger froze-btn-project" style="width: 100%">Froze</a>-->
+<!--            </div>-->
+        </div>
+
+    </div>
+</div> <!-- #/froze_modal -->
+
+<!--Unfroze project modal window-->
+<div class="modal" id="unfroze-project-modal" tabindex="-1" role="dialog" data-toggle="modal" data-backdrop="static"
+     aria-labelledby="unfroze-project-modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <h4 style="text-align:center; padding-bottom: 40px;">Are you sure to unfroze the project ?!</h4>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary unfroze-btn-project">Unfroze project</button>
+                <button type="button" class="btn btn-default pull-right unfroze-btn-cancel" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div> <!-- #/froze_modal -->
+
 
 <!-- Modal -->
 <div class="modal fade" id="update-user-modal" tabindex="-1" role="dialog"  aria-hidden="true">

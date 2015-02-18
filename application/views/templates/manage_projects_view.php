@@ -18,17 +18,24 @@
                                     <p>Status:&nbsp;&nbsp;<span class="label label-primary label-xs">open</span></p>
                                     <p>Total tasks:&nbsp;&nbsp;<span class="badge badge-task" id="route-task"><?php if (isset($project_tasks[$pv['pid']])): ?><?php print(count($project_tasks[$pv['pid']])); ?><?php else:?>0<?php endif ?></span></p>
                                     <p>Assigned users:&nbsp;&nbsp;
+                                        <span id="assign-panel-<?php print($pv['pid']); ?>">
                                         <?php foreach ($all_projects as $ak => $av): ?>
-                                            <?php if ($av['pid'] ==$pv['pid'] AND $users_title_roles[$av['uid']] !=5 AND $av['uid'] != $pv['owner']): ?>
+                                            <?php if ($av['pid'] ==$pv['pid'] AND $users_title_roles[$av['uid']] !=5 AND $av['uid'] != $pv['owner'] AND $av['assign'] !=0): ?>
 <span class="label label-default label-tag"><i class="fa fa-mail"></i>&nbsp;<span class="get_old_mail"><?php print(short_name($user_name[$av['uid']])); ?>&nbsp;(<?php print(show_role_abbr($users_title_roles[$av['uid']])); ?>)</span>
                             &nbsp;&nbsp;&nbsp;</span>
                                             <?php endif ?>
                                         <?php endforeach ?>
+                                    </span>
                                     </p>
                                 </div>
                             </div>
                             <?php if ($projects[$pv['pid']]['owner'] == $user[0]['id']): ?>
-                            <a href="javascript:void(0);" class="btn btn-danger disabled">Froze project</a>&nbsp;
+                                <?php if ($projects[$pv['pid']]['froze'] == 0): ?>
+                                    <a href="javascript:void(0);"  onClick="frozeProject('<?php print($pv['pid']); ?>')" class="btn btn-danger">Froze project</a>&nbsp;
+                                <?php else: ?>
+                                    <a href="javascript:void(0);"  onClick="unfrozeProject('<?php print($pv['pid']); ?>')" class="btn btn-primary">Unfroze project</a>&nbsp;
+                                <?php endif ?>
+
                                 <a href="javascript:void(0);"  onClick="openAssignUsersProject('<?php print($pv['pid']); ?>')" class="btn btn-success test">Assign member</a>
                             <?php endif ?>
                         </div>
@@ -40,4 +47,59 @@
         </div>
     </div>
 <?php endif ?>
+
+<script type="text/javascript">
+
+    /**
+     * AJAX froze project
+     * @param $data
+     */
+
+    function frozeProject($data){
+        $('#froze-project-modal').modal('show');
+        $('.froze-btn-project').click(function () {
+            $.ajax({
+
+                type: 'POST',
+                url: "<?php echo base_url('ajax/frozeProject') ?>",
+                data: {project: $data, status: 1},
+                beforeSend: function () {
+                    $('.froze-btn-cancel').addClass('disabled');
+                },
+
+                success: function (data) {
+                    $('.froze-btn-cancel').removeClass('disabled');
+                    $('#froze-project-modal').modal('hide');
+                },
+                error: function () {
+                    alert('Something went with error')
+                }
+            });
+        });
+    }
+
+    function unfrozeProject($data){
+        $('#unfroze-project-modal').modal('show');
+        $('.unfroze-btn-project').click(function () {
+            $.ajax({
+                type: 'POST',
+                url: "<?php echo base_url('ajax/frozeProject') ?>",
+                data: {project: $data, status: 0},
+                beforeSend: function () {
+                    $('.unfroze-btn-cancel').addClass('disabled');
+                },
+
+                success: function (data) {
+                    $('.unfroze-btn-cancel').removeClass('disabled');
+                    $('#unfroze-project-modal').modal('hide');
+                },
+                error: function () {
+                    alert('Something went with error')
+                }
+            });
+        });
+    }
+    </script>
+
+
 

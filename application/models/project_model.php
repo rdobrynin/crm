@@ -21,7 +21,8 @@ class Project_model extends CI_Model {
         $data = array (
             'title' => $title,
             'description' => $desc,
-            'owner' => $uid
+            'owner' => $uid,
+            'date_created' => time()
         );
         $insert = $this->db->insert('project', $data);
         return $insert;
@@ -51,14 +52,32 @@ class Project_model extends CI_Model {
      * @return mixed
      */
 
-    public function assign_project($pid,$uid) {
+    public function assign_project($pid,$uid, $assign) {
         $data = array (
             'pid' => $pid,
-            'uid' => $uid
+            'uid' => $uid,
+            'assign' => $assign
         );
         $insert = $this->db->insert('projects', $data);
         return $insert;
     }
+
+    /**
+     * Update assigned user to the project
+     * @param $uid
+     * @param $assign
+     * @return mixed
+     */
+
+    public function assign_project_update ($uid, $assign) {
+        $data = array (
+            'assign' => $assign
+        );
+        $this->db->where('uid', $uid);
+        $update = $this->db->update('projects', $data);
+        return $update;
+    }
+
 
     /**
      * Update projects
@@ -74,6 +93,19 @@ class Project_model extends CI_Model {
         );
         $this->db->where('pid', $id);
         $this->db->update('project', $data);
+    }
+
+
+
+
+    public function frozeProject($pid,$status) {
+        $data = array(
+            'froze' => $status,
+            'date_edited' => time()
+        );
+        $this->db->where('pid', $pid);
+        $update = $this->db->update('project', $data);
+        return $update;
     }
 
     /**
@@ -234,6 +266,34 @@ class Project_model extends CI_Model {
             ->where('pid', $pid)
             ->get('project');
         return $query->result_array();
+    }
+
+    /**
+     * Select join users for project due to ID of project
+     * @param $pid
+     * @return mixed
+     */
+
+    public function getProjectUsers($pid) {
+        $data = array();
+        $query = $this->db->select('*')
+        ->from('projects')
+        ->join('users', 'projects.uid = users.id')
+        ->where('projects.assign', 0)
+            ->where('projects.pid', $pid)
+        ->get();
+        if ($query->num_rows() > 0)
+        {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+        }
+        else {
+            $data = false;
+        }
+
+        $query->free_result();
+        return $data;
     }
 
 }

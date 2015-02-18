@@ -163,8 +163,8 @@
 <?php include('logs_view.php'); ?>
 <?php include('right_float_view.php'); ?>
 </div>
-<?php include('footer_view.php');?>
 <?php include('modals/assign_users_modal.php'); ?>
+<?php include('footer_view.php');?>
 <script>
     function projectToView($data){
         console.log($data);

@@ -68,6 +68,23 @@ class Admin_model extends CI_Model {
         }
     }
 
+
+
+
+    public function getLastUser() {
+        $query = $this
+            ->db
+            ->limit('1')
+            ->order_by("id", "desc")
+            ->get('users');
+        foreach ($query->result() as $row)
+        {
+            return $row->id;
+        }
+
+
+    }
+
     /**
      * get avatars
      * @return bool
