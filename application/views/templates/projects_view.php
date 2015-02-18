@@ -8,6 +8,7 @@
               <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one projects found</div></div>
             <?php else: ?>
               <?php foreach ($projects as $pk => $pv): ?>
+                  <?php if ($pv['froze'] != 1): ?>
                 <table class="table" style="border: 0">
                     <tbody>
                     <tr onClick="projectToView(<?php print($pv['pid']); ?>)" style="cursor: pointer;">
@@ -102,6 +103,8 @@
 
                     </tbody>
                 </table>
+
+                  <?php endif ?>
              <?php endforeach ?>
 
 

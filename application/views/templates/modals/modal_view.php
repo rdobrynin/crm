@@ -334,7 +334,7 @@
             </div>
                         <div class="alert alert-danger alert-dismissible fade in" role="alert">
                             <h4>Important!</h4>
-                            <p><i class="fa fa-info-circle"></i>When you froze the project, all tasks going to archive and will be invisible while project is not unfrozed, and all users is no longer will be assigned to</p>
+                            <p><i class="fa fa-info-circle"></i>When you froze the project, all tasks moves to archive and tasks will be invisible when manager or administrator unfreeze them, and all users is no longer will be assigned to this project</p>
                             <p style="padding-bottom: 20px;"><i class="fa fa-info-circle"></i>All members will get notifications by email</p>
                             <p>
                                 <button type="button" class="btn btn-danger froze-btn-project">Froze project</button>

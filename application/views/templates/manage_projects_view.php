@@ -13,11 +13,12 @@
                                 <div class="media-body" style="padding-bottom: 20px;border-bottom: 1px solid rgb(208, 208, 208);">
                                     <h4 class="media-heading" style="margin-bottom: 10px;border-bottom: 1px solid rgb(208, 208, 208);padding-bottom: 10px;">#<?php print($pv['pid']); ?>&nbsp;(<?php print($pv['title']); ?>)</h4>
                                     <p>Owner:&nbsp;<a href="javascript:void(0);" onClick="qmSendComment(<?php print($pv['owner']); ?>)"><?php print(short_name($user_name[$pv['owner']])); ?></a></p>
-                                    <p>Created:&nbsp;<b><?php print($pv['date_created']); ?></b></p>
-                                    <p>Last edited:&nbsp;<b> <?php if ($pv['date_edited'] == 0): ?>none<?php else: ?><?php print($pv['date_edited']); ?><?php endif ?></b></p>
+                                    <p>Created:&nbsp;<b><?php print(date('jS F Y', $pv['date_created'])); ?></b></p>
+                                    <p>Last edited:&nbsp;<b> <?php if ($pv['date_edited'] == 0): ?>none<?php else: ?><?php print(date('jS F Y', $pv['date_edited'])); ?><?php endif ?></b></p>
 
                                     <p>Description:&nbsp;<b><?php print($pv['description']); ?></b></p>
-                                    <p>Status:&nbsp;&nbsp;<span class="label label-primary label-xs">open</span></p>
+
+                                    <p>Status:&nbsp;&nbsp;<?php if ($pv['froze'] == 0): ?><span class="label label-primary label-xs">open</span><?php else: ?><span class="label label-danger label-xs">frozen</span><?php endif ?></p>
                                     <p>Total tasks:&nbsp;&nbsp;<span class="badge badge-task" id="route-task"><?php if (isset($project_tasks[$pv['pid']])): ?><?php print(count($project_tasks[$pv['pid']])); ?><?php else:?>0<?php endif ?></span></p>
                                     <p>Assigned users:&nbsp;&nbsp;
                                         <span id="assign-panel-<?php print($pv['pid']); ?>">
