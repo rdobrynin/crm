@@ -31,16 +31,20 @@
      */
 
     function openAssignUsersProject($data){
-        $('#assign_user_modal').modal('show');
         $.ajax({
             type: 'GET',
             url: "<?php echo base_url('ajax/getUsersProject') ?>",
             data: { project: $data},
             beforeSend:function(){
-                $('.loader').css('display','block');
+                $('.manage-project').addClass('loading');
+                $('.manage-project-block').css('visibility','hidden');
             },
             complete: function()  {
-                $('.loader').css('display','none');
+                setTimeout(function() {
+                    $('#assign_user_modal').modal('show');
+                    $('.manage-project').removeClass('loading');
+                    $('.manage-project-block').css('visibility','visible');
+                }, 700);
             },
             success:function(data){
                 $('#assign_users_details').html(data);

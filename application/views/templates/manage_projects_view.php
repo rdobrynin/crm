@@ -3,11 +3,11 @@
         <!-- Keep all page content within the page-content inset div! -->
         <div class="page-content inset">
             <p class="lead">Administer Projects <b>(IN DEVELOPMENT)</b></p>
-            <div class="row">
+            <div class="row manage-project">
                 <?php foreach ($projects as $pk => $pv): ?>
                     <?php if (isset($user_projects[$pv['pid']])): ?>
                 <?php if ($user_projects[$pv['pid']] == $user[0]['id'] OR $user[0]['role'] == 5): ?>
-                    <div class="col-md-12 col-sm-12">
+                    <div class="col-md-12 col-sm-12 manage-project-block">
                         <div class="well well-sm" style="background-color: rgb(231, 231, 231); border-color: #BDBDBD;">
                             <div class="media" style="margin-bottom: 20px">
                                 <div class="media-body" style="padding-bottom: 20px;border-bottom: 1px solid rgb(208, 208, 208);">

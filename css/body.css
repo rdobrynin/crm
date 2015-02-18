@@ -559,3 +559,13 @@ span.icon-book {
     background: url('../img/page-loader.gif') 50% 50% no-repeat rgb(249,249,249);
 }
 
+.manage-project.loading {
+    display: block;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    z-index: 9999;
+    background: url('../img/page-loader.gif') 50% 50% no-repeat rgb(248,248,248);
+}
+
+
