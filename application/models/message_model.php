@@ -64,9 +64,31 @@ class Message_model extends CI_Model {
             ->db
             ->where('public', '0')
             ->get('comment');
-        $insert = $query->result_array();
-        if(!empty($insert)){
-            return $insert;
+        $result = $query->result_array();
+        if(!empty($result)){
+            return $result;
+        }
+        else {
+            return false;
+        }
+
+    }
+
+
+    /**
+     * Get comment by ID
+     * @return mixed
+     */
+
+    public function getCommentLast() {
+        $query = $this
+            ->db
+            ->order_by("id","desc")
+            ->limit('1')
+            ->get('comment');
+        $result = $query->result_array();
+        if(!empty($result)){
+            return $result;
         }
         else {
             return false;

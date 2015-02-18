@@ -673,7 +673,6 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
               data: form_data_,
               dataType: 'json',
               success: function (msg) {
-                  console.log(msg);
                  if(msg.empty == true) {
                   $('#qm-empty-error').fadeIn('slow').css('display','block');
                      setTimeout(function () {
@@ -690,6 +689,24 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
                  }
               }
           });
+
+          $user = '<?php print($user[0]['id'])?>';
+          setTimeout(function () {
+          $.ajax({
+              type: 'GET',
+              url: "<?php echo base_url('ajax/getCommentDashboard') ?>",
+              data: { to: $to, uid: $user},
+              success:function(data){
+                  console.log(data);
+                  $('.new-comment-dashboard-ajax').fadeIn('slow');
+                  $('.new-comment-dashboard-ajax').html(data);
+
+              },
+              error:function(){
+                  alert('Something went with error')
+              }
+          });
+          },5000);
       });
   }
 

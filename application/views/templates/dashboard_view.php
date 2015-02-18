@@ -367,7 +367,7 @@
                                                 <td><?php print(check_cts($tv['cts'])); ?></td>
                                                 <td class="text-left"><?php print(date('jS F Y G:i', $tv['due_time'])); ?></td>
                                                 <td>
-                                                    <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
+                                                    <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                                     <?php if ($user[0]['id'] == $tv['implementor'] && $user[0]['role']==2): ?>
                                                         <a href="javascript:void(0);"  onClick="impControlComplete(<?php print($tv['id']); ?>,'<?php print(check_cts($tv['cts'])); ?>')" class="btn btn-xs imp-adjust-btn" data-toggle="tooltip" data-placement="top" title="complete"><i class="fa fa-check-circle"></i></a>
                                                         <a href="javascript:void(0);" style="color:#d9534f;" class="btn btn-xs imp-adjust-btn" onClick="impControl(<?php print($tv['id']); ?>,1)" data-toggle="tooltip" data-placement="top" title="unwant"><i class="fa fa-eye-slash"></i></a>
@@ -398,16 +398,30 @@
                 </span>
                    </div>
                </div>
+<!--                start ajax-->
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">Comments</h3>
                     </div>
                     <div class="panel-body comment comment-jsscroll" style="padding-right:0;max-height: 581px;">
+
+
+                        <div class="new-comment-dashboard-ajax">
+
+
+                        </div>
+
+
+
+
                         <?php $rev_comm = array_reverse($comments);?>
                         <?php foreach ($rev_comm as $ck=>$cv): ?>
                             <?php if ($cv['public'] == 0): ?>
                         <?php if ($cv['to'] == $user[0]['id']): ?>
                         <div class="sub-activity search-filter-comment">
+
+
+
                             <div class="activity-item-summary">
                                 <div class="avatar-activity">
                                 <span class="avatar-img">
@@ -433,8 +447,8 @@
                             <?php endif ?>
                         <?php endforeach ?>
                     </div>
-
                 </div>
+<!--                end ajax-->
             </div>
         <?php endif ?>
     </div>
