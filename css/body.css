@@ -564,7 +564,7 @@ span.icon-book {
     position: relative;
     left: 0px;
     top: 0px;
-    z-index: 9999;
+    z-index: 1;
     background: url('../img/page-loader.gif') 50% 50% no-repeat rgb(248,248,248);
 }
 

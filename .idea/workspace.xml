@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8ede6c0-9a43-4a54-ac19-d55c4b9604aa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/modals/assign_users_modal.php" afterPath="$PROJECT_DIR$/application/views/templates/modals/assign_users_modal.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/body.css" afterPath="$PROJECT_DIR$/css/body.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/manage_projects_view.php" afterPath="$PROJECT_DIR$/application/views/templates/manage_projects_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -120,7 +117,7 @@
           <file leaf-file-name="manage_projects_view.php" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/application/views/templates/manage_projects_view.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="17" column="0" selection-start="1748" selection-end="1748" vertical-scroll-proportion="0.52509654" vertical-offset="0" max-vertical-offset="2310">
+                <state line="21" column="82" selection-start="2168" selection-end="2168" vertical-scroll-proportion="0.6795367" vertical-offset="0" max-vertical-offset="2310">
                   <folding>
                     <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                     <marker date="1424255476139" expanded="true" signature="6124:6130" placeholder="{...}" />
@@ -133,19 +130,19 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="assign_users_modal.php" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="assign_users_modal.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/views/templates/modals/assign_users_modal.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="42" column="39" selection-start="1623" selection-end="1623" vertical-scroll-proportion="0.45833334" vertical-offset="558" max-vertical-offset="2142">
+                <state line="42" column="39" selection-start="1623" selection-end="1623" vertical-scroll-proportion="-7.3333335" vertical-offset="558" max-vertical-offset="2142">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="body.css" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="body.css" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/css/body.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="558" column="78" selection-start="11873" selection-end="11873" vertical-scroll-proportion="0.0" vertical-offset="9873" max-vertical-offset="10791">
+                <state line="561" column="25" selection-start="11905" selection-end="11905" vertical-scroll-proportion="0.64705884" vertical-offset="9873" max-vertical-offset="10791">
                   <folding />
                 </state>
               </provider>
@@ -180,8 +177,8 @@
         <option value="$PROJECT_DIR$/application/views/templates/tasks_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/modals/modal_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/manage_projects_view.php" />
-        <option value="$PROJECT_DIR$/css/body.css" />
         <option value="$PROJECT_DIR$/application/views/templates/modals/assign_users_modal.php" />
+        <option value="$PROJECT_DIR$/css/body.css" />
       </list>
     </option>
   </component>
@@ -971,7 +968,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/manage_projects_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="1748" selection-end="1748" vertical-scroll-proportion="0.52509654" vertical-offset="0" max-vertical-offset="2310">
+        <state line="21" column="82" selection-start="2168" selection-end="2168" vertical-scroll-proportion="0.6795367" vertical-offset="0" max-vertical-offset="2310">
           <folding>
             <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <marker date="1424255476139" expanded="true" signature="6124:6130" placeholder="{...}" />
@@ -979,16 +976,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/body.css">
+    <entry file="file://$PROJECT_DIR$/application/views/templates/modals/assign_users_modal.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="558" column="78" selection-start="11873" selection-end="11873" vertical-scroll-proportion="0.0" vertical-offset="9873" max-vertical-offset="10791">
+        <state line="42" column="39" selection-start="1623" selection-end="1623" vertical-scroll-proportion="-7.3333335" vertical-offset="558" max-vertical-offset="2142">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/modals/assign_users_modal.php">
+    <entry file="file://$PROJECT_DIR$/css/body.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="39" selection-start="1623" selection-end="1623" vertical-scroll-proportion="0.45833334" vertical-offset="558" max-vertical-offset="2142">
+        <state line="561" column="25" selection-start="11905" selection-end="11905" vertical-scroll-proportion="0.64705884" vertical-offset="9873" max-vertical-offset="10791">
           <folding />
         </state>
       </provider>
