@@ -325,7 +325,7 @@
 </div> <!-- #/demo_modal -->
 
 <!--Froze project modal window-->
-<div class="modal" id="froze-project-modal" tabindex="-1" role="dialog" data-toggle="modal" data-backdrop="static"  aria-labelledby="froze-project-modalLabel" aria-hidden="true">
+<div class="modal white-modal" id="froze-project-modal" tabindex="-1" role="dialog" data-toggle="modal" data-backdrop="static"  aria-labelledby="froze-project-modalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
@@ -351,7 +351,7 @@
 </div> <!-- #/froze_modal -->
 
 <!--Unfroze project modal window-->
-<div class="modal" id="unfroze-project-modal" tabindex="-1" role="dialog" data-toggle="modal" data-backdrop="static"
+<div class="modal white-modal" id="unfroze-project-modal" tabindex="-1" role="dialog" data-toggle="modal" data-backdrop="static"
      aria-labelledby="unfroze-project-modalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -361,7 +361,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary unfroze-btn-project">Unfroze project</button>
+                <button type="button" class="btn btn-primary unfroze-btn-project pull-left">Unfroze project</button>
                 <button type="button" class="btn btn-default pull-right unfroze-btn-cancel" data-dismiss="modal">Cancel</button>
             </div>
         </div>
