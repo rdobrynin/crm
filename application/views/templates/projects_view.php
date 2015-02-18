@@ -25,7 +25,7 @@
                     <tr>
                         <td colspan="9" class="td-task" id="task-for-project-<?php print($pv['pid']); ?>">
                             <div class="search-form-table">
-                                <input type="text" id="search-project-task-table" class=" form-control lights" placeholder="live search"/>
+                                <input type="text" id="search-project-task-table" class=" form-control lights" placeholder="Search"/>
                             </div>
                             <table class="table table-task">
                                 <thead>

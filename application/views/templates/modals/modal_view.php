@@ -495,7 +495,7 @@
                 </div>
                 <div class="col-md-5 view-modal-right">
                     <div class="row">
-                        <div class="search-form-sidebar" style="float: right !important;"><input type="text" id="search-sidebar-users" class=" form-control lights" placeholder="live search"></div>
+                        <div class="search-form-sidebar" style="float: right !important;"><input type="text" id="search-sidebar-users" class=" form-control lights" placeholder="Search"></div>
                     </div>
                     <div class="panel">
                         <div class="panel-body comment" style="padding: 0">

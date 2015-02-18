@@ -7,7 +7,7 @@
         <p class="lead">Tasks in process</p>
                 </div>
             <div class="col-lg-2 col-md-4 search-form">
-                <input type="text" id="search-task-process-table" class=" form-control lights" placeholder="live search"/>
+                <input type="text" id="search-task-process-table" class=" form-control lights" placeholder="Search"/>
             </div>
             </div>
         <?php if ($process_tasks != FALSE): ?>
@@ -80,7 +80,7 @@
       <p class="lead">Tasks&nbsp;(<span id="calc-all-tasks" ></span>)</p>
               </div>
           <div class="col-lg-2 col-md-4 search-form">
-              <input type="text" id="search-task-common-table" class=" form-control lights" placeholder="live search"/>
+              <input type="text" id="search-task-common-table" class=" form-control lights" placeholder="Search"/>
           </div>
           </div>
       <?php if ($tasks != FALSE): ?>
@@ -166,7 +166,7 @@
     <p class="lead">Completed tasks</p>
             </div>
         <div class="col-lg-2 col-md-4 search-form">
-            <input type="text" id="search-task-complete-table" class=" form-control lights" placeholder="live search"/>
+            <input type="text" id="search-task-complete-table" class=" form-control lights" placeholder="Search"/>
         </div>
         </div>
     <?php if ($tasks != FALSE): ?>

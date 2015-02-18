@@ -8,7 +8,7 @@
           </div>
           <?php if ($comments != FALSE): ?>
           <div class="col-lg-2 col-md-4  pull-right search-form">
-              <input type="text" id="search-all-comments" class=" form-control lights" placeholder="live search"/>
+              <input type="text" id="search-all-comments" class=" form-control lights" placeholder="Search"/>
           </div>
           <?php endif ?>
       </div>

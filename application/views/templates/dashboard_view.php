@@ -71,7 +71,7 @@
                          </div>
                          <?php if ($over_tasks != false): ?>
                          <div class="col-lg-2 col-md-4 search-form">
-                             <input type="text" id="search-dash-over-table" class=" form-control lights" placeholder="live search"/>
+                             <input type="text" id="search-dash-over-table" class=" form-control lights" placeholder="Search"/>
                          </div>
                          <?php endif ?>
                      </div>
@@ -157,7 +157,7 @@
                         </div>
                             <?php if ($approve_tasks != false): ?>
                     <div class="col-lg-2 col-md-4 search-form">
-                        <input type="text" id="search-dash-approve-table" class=" form-control lights" placeholder="live search"/>
+                        <input type="text" id="search-dash-approve-table" class=" form-control lights" placeholder="Search"/>
                     </div>
                             <?php endif ?>
                 </div>
@@ -171,7 +171,7 @@
                 </div>
                             <?php if ($ready_tasks != false): ?>
                                 <div class="col-lg-2 col-md-4 search-form">
-                                    <input type="text" id="search-dash-ready-table" class=" form-control lights" placeholder="live search"/>
+                                    <input type="text" id="search-dash-ready-table" class=" form-control lights" placeholder="Search"/>
                                 </div>
                             <?php endif ?>
                     </div>
@@ -321,7 +321,7 @@
         <p class="lead">Tasks in process</p>
     </div>
     <div class="col-lg-2 col-md-4  pull-right search-form">
-        <input type="text" id="search-dash-process-table" class=" form-control lights" placeholder="live search"/>
+        <input type="text" id="search-dash-process-table" class=" form-control lights" placeholder="Search"/>
     </div>
 </div>
                 <?php if ($process_tasks != FALSE): ?>
@@ -393,7 +393,7 @@
                    </div>
                    <div class="col-md-4">
                 <span class="search-form">
-                    <input type="text" id="search-dash-comment" class=" form-control lights" placeholder="live search"/>
+                    <input type="text" id="search-dash-comment" class=" form-control lights" placeholder="Search"/>
                 </span>
                    </div>
                </div>

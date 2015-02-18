@@ -1,5 +1,5 @@
 <div class="right-float-sidebar">
-<div class="search-form-sidebar"><input type="text" id="search-sidebar-users" class=" form-control lights" placeholder="live search"/></div>
+<div class="search-form-sidebar"><input type="text" id="search-sidebar-users" class=" form-control lights" placeholder="Search"/></div>
     <div class="close-right-sidebar"><a href="javascript:void(0);"><i class="fa fa-times" style="top: -2px !important;position: relative;"></i></a></div>
 
     <?php if ($users !=null): ?>
