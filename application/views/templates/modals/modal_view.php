@@ -424,162 +424,163 @@
 </div> <!-- #/addproject_moda -->
 
 
-<div class="modal" id="view_detail_task_modal" tabindex="-1" role="dialog" aria-labelledby="view_detail_task_modalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="row">
-                <div class="col-md-7 view-modal-left">
-                    <form class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Title:</label>
-                            <div class="col-lg-9">
-                                <input class="form-control" value="Jane" type="text">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Description:</label>
-                            <div class="col-md-9">
-                                <textarea class="form-control" row="6"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label" for="edit_dueto_modal">Due to</label>
-                            <div class='date col-md-6'>
-                                <input type='text' class="form-control"  id='edit_dueto_modal' />
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Label:</label>
-                            <div class="col-lg-9">
-                                <div class="ui-select">
-                                    <select id="user_time_zone" class="form-control">
-                                        <option value="" selected="selected">Bug</option>
-                                        <option value="">Story</option>
-                                        <option value="">Analysis</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Priority:</label>
-                            <div class="col-lg-9">
-                                <div class="ui-select">
-                                    <select id="user_time_zone" class="form-control">
-                                        <option value="" selected="selected">Minor</option>
-                                        <option value="">Major</option>
-                                        <option value="">Critical</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Reassign Curator:</label>
-                            <div class="col-lg-9">
-                                <div class="ui-select">
-                                    <select id="user_time_zone" class="form-control">
-                                        <option value="" selected="selected">Garry Koort</option>
-                                        <option value="">Ken Koort</option>
-                                        <option value="">First name Lastname</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-</form>
-
-                </div>
-                <div class="col-md-5 view-modal-right">
-                    <div class="row">
-                        <div class="search-form-sidebar" style="float: right !important;"><input type="text" id="search-sidebar-users" class=" form-control lights" placeholder="Search"></div>
-                    </div>
-                    <div class="panel">
-                        <div class="panel-body comment" style="padding: 0">
-
-                            <div tabindex="0" style="max-height: 551px; overflow: auto;">
-
-                                <div class="sub-activity search-filter-comment">
-                                    <div class="activity-item-summary">
-                                        <div class="avatar-activity">
-                                <span class="avatar-img">
-                                    <a href="javascript:void(0);"><img src="http://crm.brilliant-solutions.eu/uploads/avatar/placeholder_user.jpg" height="45" class="mCS_img_loaded"></a>
-                                </span>
-                                        </div>
-                                        <a href="javascript:void(0);" class="activity-item-user activity-item-author" target="_parent" onclick="qmSendComment(46)">
-                                            David S...</a>
-                                        &nbsp;<span class="label label-warning label-xs">subject</span>&nbsp;
-                                        <a href="javascript:void(0);" target="_parent" onclick="qmSubjectSendComment('чат','46')"><span class="resolved-link">чат</span></a>
-
-                                        <div class="com-last-text">не закрывается сучье окно чата</div>
-                                        <div class="activity-item-description">
-                                            <div class="activity-item-info">
-                                                <i class="fa fa-clock-o clock-activity"></i>
-                                                <span class="timestamp">2 months</span>&nbsp;
-                                                <span class="activity-item-action"><a href="javascript:void(0);" class="activity-item-comment-link" onclick="qmSendComment(46)">Comment</a></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-<!--                                end activity-->
-                                <div class="sub-activity search-filter-comment">
-                                    <div class="activity-item-summary">
-                                        <div class="avatar-activity">
-                                <span class="avatar-img">
-                                    <a href="javascript:void(0);"><img src="http://crm.brilliant-solutions.eu/uploads/avatar/placeholder_user.jpg" height="45" class="mCS_img_loaded"></a>
-                                </span>
-                                        </div>
-                                        <a href="javascript:void(0);" class="activity-item-user activity-item-author" target="_parent" onclick="qmSendComment(46)">
-                                            David S...</a>
-                                        &nbsp;<span class="label label-warning label-xs">subject</span>&nbsp;
-                                        <a href="javascript:void(0);" target="_parent" onclick="qmSubjectSendComment('чат','46')"><span class="resolved-link">чат</span></a>
-
-                                        <div class="com-last-text">не закрывается сучье окно чата</div>
-                                        <div class="activity-item-description">
-                                            <div class="activity-item-info">
-                                                <i class="fa fa-clock-o clock-activity"></i>
-                                                <span class="timestamp">2 months</span>&nbsp;
-                                                <span class="activity-item-action"><a href="javascript:void(0);" class="activity-item-comment-link" onclick="qmSendComment(46)">Comment</a></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--                                end activity-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-<!--            end row-->
-              <div class="row">
-                  <div class="col-md-7 view-modal-left">
-                      <a href="#" data-dismiss="modal" class="btn btn-default pull-right send-comment">Close</a>
-
-                  </div>
-                  <div class="col-md-5 view-modal-right">
-                      <form class="form-inline">
-                          <div class="form-group">
-                              <textarea class="form-control" id="input-task-comment" cols="30" rows="2"></textarea>
-                          </div>
-                          <button type="submit" class="btn btn-default pull-right send-comment"><i class="fa fa-paper-plane"></i></button>
-                      </form>
-                  </div>
-              </div>
-
-
-
-        </div>
-    </div>
-</div> <!-- #/task_details_modal -->
+<!--<div class="modal" id="view_detail_task_modal" tabindex="-1" role="dialog" aria-labelledby="view_detail_task_modalLabel" aria-hidden="true">-->
+<!--    <div class="modal-dialog">-->
+<!--        <div class="modal-content">-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-7 view-modal-left">-->
+<!--                    <form class="form-horizontal" role="form">-->
+<!--                        <div class="form-group">-->
+<!--                            <label class="col-lg-3 control-label">Title:</label>-->
+<!--                            <div class="col-lg-9">-->
+<!--                                <input class="form-control" value="Jane" type="text">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!---->
+<!--                        <div class="form-group">-->
+<!--                            <label class="col-md-3 control-label">Description:</label>-->
+<!--                            <div class="col-md-9">-->
+<!--                                <textarea class="form-control" row="6"></textarea>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label class="col-md-3 control-label" for="edit_dueto_modal">Due to</label>-->
+<!--                            <div class='date col-md-6'>-->
+<!--                                <input type='text' class="form-control"  id='edit_dueto_modal' />-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label class="col-lg-3 control-label">Label:</label>-->
+<!--                            <div class="col-lg-9">-->
+<!--                                <div class="ui-select">-->
+<!--                                    <select id="user_time_zone" class="form-control">-->
+<!--                                        <option value="" selected="selected">Bug</option>-->
+<!--                                        <option value="">Story</option>-->
+<!--                                        <option value="">Analysis</option>-->
+<!--                                    </select>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!---->
+<!--                        <div class="form-group">-->
+<!--                            <label class="col-lg-3 control-label">Priority:</label>-->
+<!--                            <div class="col-lg-9">-->
+<!--                                <div class="ui-select">-->
+<!--                                    <select id="user_time_zone" class="form-control">-->
+<!--                                        <option value="" selected="selected">Minor</option>-->
+<!--                                        <option value="">Major</option>-->
+<!--                                        <option value="">Critical</option>-->
+<!--                                    </select>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!---->
+<!---->
+<!---->
+<!--                        <div class="form-group">-->
+<!--                            <label class="col-lg-3 control-label">Reassign Curator:</label>-->
+<!--                            <div class="col-lg-9">-->
+<!--                                <div class="ui-select">-->
+<!--                                    <select id="user_time_zone" class="form-control">-->
+<!--                                        <option value="" selected="selected">Garry Koort</option>-->
+<!--                                        <option value="">Ken Koort</option>-->
+<!--                                        <option value="">First name Lastname</option>-->
+<!--                                    </select>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!---->
+<!--</form>-->
+<!---->
+<!--                </div>-->
+<!--                <div class="col-md-5 view-modal-right">-->
+<!--                    <div class="row">-->
+<!--                        <div class="search-form-sidebar" style="float: right !important;"><input type="text" id="search-sidebar-users" class=" form-control lights" placeholder="Search"></div>-->
+<!--                    </div>-->
+<!--                    <div class="panel">-->
+<!--                        <div class="panel-body comment" style="padding: 0">-->
+<!---->
+<!--                            <div tabindex="0" style="max-height: 551px; overflow: auto;">-->
+<!---->
+<!--                                <div class="sub-activity search-filter-comment">-->
+<!--                                    <div class="activity-item-summary">-->
+<!--                                        <div class="avatar-activity">-->
+<!--                                <span class="avatar-img">-->
+<!--                                    <a href="javascript:void(0);"><img src="http://crm.brilliant-solutions.eu/uploads/avatar/placeholder_user.jpg" height="45" class="mCS_img_loaded"></a>-->
+<!--                                </span>-->
+<!--                                        </div>-->
+<!--                                        <a href="javascript:void(0);" class="activity-item-user activity-item-author" target="_parent" onclick="qmSendComment(46)">-->
+<!--                                            David S...</a>-->
+<!--                                        &nbsp;<span class="label label-warning label-xs">subject</span>&nbsp;-->
+<!--                                        <a href="javascript:void(0);" target="_parent" onclick="qmSubjectSendComment('чат','46')"><span class="resolved-link">чат</span></a>-->
+<!---->
+<!--                                        <div class="com-last-text">не закрывается сучье окно чата</div>-->
+<!--                                        <div class="activity-item-description">-->
+<!--                                            <div class="activity-item-info">-->
+<!--                                                <i class="fa fa-clock-o clock-activity"></i>-->
+<!--                                                <span class="timestamp">2 months</span>&nbsp;-->
+<!--                                                <span class="activity-item-action"><a href="javascript:void(0);" class="activity-item-comment-link" onclick="qmSendComment(46)">Comment</a></span>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--<!--                                end activity-->-->
+<!--                                <div class="sub-activity search-filter-comment">-->
+<!--                                    <div class="activity-item-summary">-->
+<!--                                        <div class="avatar-activity">-->
+<!--                                <span class="avatar-img">-->
+<!--                                    <a href="javascript:void(0);"><img src="http://crm.brilliant-solutions.eu/uploads/avatar/placeholder_user.jpg" height="45" class="mCS_img_loaded"></a>-->
+<!--                                </span>-->
+<!--                                        </div>-->
+<!--                                        <a href="javascript:void(0);" class="activity-item-user activity-item-author" target="_parent" onclick="qmSendComment(46)">-->
+<!--                                            David S...</a>-->
+<!--                                        &nbsp;<span class="label label-warning label-xs">subject</span>&nbsp;-->
+<!--                                        <a href="javascript:void(0);" target="_parent" onclick="qmSubjectSendComment('чат','46')"><span class="resolved-link">чат</span></a>-->
+<!---->
+<!--                                        <div class="com-last-text">не закрывается сучье окно чата</div>-->
+<!--                                        <div class="activity-item-description">-->
+<!--                                            <div class="activity-item-info">-->
+<!--                                                <i class="fa fa-clock-o clock-activity"></i>-->
+<!--                                                <span class="timestamp">2 months</span>&nbsp;-->
+<!--                                                <span class="activity-item-action"><a href="javascript:void(0);" class="activity-item-comment-link" onclick="qmSendComment(46)">Comment</a></span>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <!--                                end activity-->-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--<!--            end row-->-->
+<!--              <div class="row">-->
+<!--                  <div class="col-md-7 view-modal-left">-->
+<!--                      <a href="#" data-dismiss="modal" class="btn btn-default pull-right send-comment">Close</a>-->
+<!---->
+<!--                  </div>-->
+<!--                  <div class="col-md-5 view-modal-right">-->
+<!--                      <form class="form-inline">-->
+<!--                          <div class="form-group">-->
+<!--                              <textarea class="form-control" id="input-task-comment" cols="30" rows="2"></textarea>-->
+<!--                          </div>-->
+<!--                          <button type="submit" class="btn btn-default pull-right send-comment"><i class="fa fa-paper-plane"></i></button>-->
+<!--                      </form>-->
+<!--                  </div>-->
+<!--              </div>-->
+<!---->
+<!---->
+<!---->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div> <!-- #/task_details_modal -->-->
 <script type="text/javascript">
 
     $(function () {
 //        $('#view_detail_task_modal').modal('show');
         $('#dueto_modal').datetimepicker({
             theme:'dark',
+            format:'d.m.Y H:i',
             minDate: '<?php date("F j, Y, g:i a"); ?>',
             minTime:0
         });

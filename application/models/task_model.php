@@ -160,16 +160,18 @@ class Task_model extends CI_Model {
      * @return mixed
      */
     public function insertTask() {
+        $due_time = $this->input->post('dueto');
         $data = array (
             'uid' => $this->input->post('owner'),
             'pid' => $this->input->post('project'),
             'implementor' => $this->input->post('implementor'),
             'title' => $this->input->post('title'),
             'desc' => $this->input->post('desc'),
-            'due_time' =>$this->input->post('dueto'),
+            'due_time' =>strtotime($due_time),
             'label' =>$this->input->post('label'),
             'priority' =>$this->input->post('priority'),
             'key' =>$this->input->post('key'),
+            'date_created' =>time(),
         );
         $insert = $this->db->insert('task', $data);
         return $insert;
@@ -182,13 +184,14 @@ class Task_model extends CI_Model {
      * @return mixed
      */
     public function updateEditTask($id) {
+        $due_time = $this->input->post('dueto');
         $data = array (
             'uid' => $this->input->post('owner'),
             'pid' => $this->input->post('project'),
             'implementor' => $this->input->post('implementor'),
             'title' => $this->input->post('title'),
             'desc' => $this->input->post('desc'),
-            'due_time' =>$this->input->post('dueto'),
+            'due_time' =>strtotime($due_time),
             'label' =>$this->input->post('label'),
             'priority' =>$this->input->post('priority'),
             'date_edited' =>time(),

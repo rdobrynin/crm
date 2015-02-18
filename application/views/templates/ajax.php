@@ -441,6 +441,7 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
       $("#addtask_pr_btn").click(function(event) {
           var myString = $.trim($('#choose_project_modal').text().toUpperCase());
           var newABB = myString.substr(0, myString.length-3);
+
           var form_data = {
               title :$('#task_pr_title').val(),
               desc :$('#task_pr_desc').val(),
@@ -501,8 +502,7 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
                                   "<td class='text-left'>-"+
                                   "<td class='text-left'>"+msg['newtask']['due_time']+"</td>+"+
                                   "<td class='text-left'> <a href='#' onClick='taskToReady("+msg['newtask']['id']+")' style='text-decoration: none;'><i class='fa fa-play'></i></a><a href='#'"+
-                                  "onClick='taskToEdit"+msg['newtask']['id']+")'style='text-decoration: none;'><i class='fa fa-pencil'></i></a><a href='#' onMouseDown='taskToView("+msg['newtask']['id']+")'"+
-                                  "onMouseOut='taskToHide()' style='text-decoration: none;'><i class='fa fa-eye'></i></a>"+
+                                  "onClick='taskToEdit"+msg['newtask']['id']+")'style='text-decoration: none;'><i class='fa fa-pencil'></i></a><a href='#' onMouseDown='taskToView("+msg['newtask']['id']+")' style='text-decoration: none;'><i class='fa fa-eye'></i></a>"+
                                   "<a href='#' data-toggle='confirmation-delete-current-task' data-singleton='true' data-target='"+msg['newtask']['id']+"' style='text-decoration: none;cursor: pointer;'>"+
                                   "<span class='icon-remove'></span></a></td></tr>");
 
@@ -791,20 +791,13 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
               data: form_data,
               dataType: 'json',
               success: function (msg) {
-                  console.log(msg.result['due_time'][0]);
-                  var year = msg.result['due_time'][0]+msg.result['due_time'][1]+msg.result['due_time'][2]+msg.result['due_time'][3];
-                  var month = msg.result['due_time'][5]+msg.result['due_time'][6];
-                  var day = msg.result['due_time'][8]+msg.result['due_time'][9];
-                  var hour = msg.result['due_time'][11]+msg.result['due_time'][12];
-                  var min = msg.result['due_time'][14]+msg.result['due_time'][15];
-                  var date = day + '.'+month +'.'+year+'-'+hour+':'+min;
-//                  var date = year + '/'+month +'/'+day+' '+hour+':'+min;
+                  time = msg.time;
                   $('#edit_task_pr_title').val(msg.result['title']);
                   $('#edit_task_pr_desc').val(msg.result['desc']);
-                  $('#edit_dueto_modal').val(msg.result['due_time']);
+                  $('#edit_dueto_modal').val(msg.time);
                   $('#edit_dueto_modal').datetimepicker({
                       theme: 'dark',
-                      value:  date,
+                      value:  msg.time,
                       format:'d.m.Y-H:i',
                       minDate: '<?php date("F j, Y, g:i a"); ?>'
 

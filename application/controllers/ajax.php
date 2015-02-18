@@ -491,7 +491,11 @@ class Ajax extends CI_Controller {
         $result['desc'] = $this->input->post('desc');
         $result['key'] = $this->input->post('key');
         $result['project'] = $this->input->post('project');
+
+
         $result['dueto'] = $this->input->post('dueto');
+
+
         $result['label'] = $this->input->post('label');
         $result['priority'] = $this->input->post('priority');
         $result['implementor'] = $this->input->post('implementor');
@@ -854,7 +858,12 @@ class Ajax extends CI_Controller {
     function taskToEdit() {
         $id=$this->input->post('id');
         $this->load->model('task_model');
-        $result['result'] = $this->task_model->getTask($id);
+        $task  = $this->task_model->getTask($id);
+        $result['result'] =$task;
+//        20.02.2015 15:00
+        $result['time'] = date('d.m.Y H:i', $task->due_time);
+
+
         echo json_encode ($result);
     }
 

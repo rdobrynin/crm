@@ -56,7 +56,7 @@
 
                                     <tr id="tr-project-task-<?php print($tv['id']); ?>"<?php if ($tv['status'] !=3): ?>class="<?php print(check_deadline($tv['due_time'])); ?>"<?php endif ?>>
                                         <td>#<?php print($tv['id']); ?></td>
-                                        <td><span class="muted"><?php print(date_format(date_create($tv['date_created']),"F d H:i")); ?></span></td>
+                                        <td><span class="muted"><?php print(date('jS F Y G:i', $tv['date_created'])); ?></span></td>
                                         <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
                                         <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
                                         <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
@@ -67,7 +67,7 @@
                                         </td>
                                         <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
                                         <td><?php print(check_cts($tv['cts'])); ?></td>
-                                        <td class="text-left"><?php print(date_format(date_create($tv['due_time']),"F d H:i")); ?></td>
+                                        <td class="text-left"><?php print(date('jS F Y G:i', $tv['due_time'])); ?></td>
                                             <td>
                                                 <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
                                                 <?php if ($tv['status']!=3): ?>
