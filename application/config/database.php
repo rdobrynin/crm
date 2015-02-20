@@ -65,9 +65,9 @@ $active_record = TRUE;
 //$db['default']['stricton'] = FALSE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'tsk';
+$db['default']['username'] = 'tsk1';
 $db['default']['password'] = '94Aj4rrt';
-$db['default']['database'] = 'tsk';
+$db['default']['database'] = 'tsk1';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
