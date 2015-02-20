@@ -809,17 +809,26 @@ class Ajax extends CI_Controller {
      */
 
     function getTask() {
-        $id =  $this->input->post('tid');
+        $id =  $this->input->get('tid');
         $this->load->model('task_model');
         $this->load->model('admin_model');
         $this->load->model('project_model');
-        $array = $this->task_model->getTask($id);
-        $result['task'] = $array;
-        $result['curator'] = $this->admin_model->getUsername($array->uid);
-        $result['implementor'] = $this->admin_model->getUsername($array->implementor);
-        $result['project'] = $this->project_model->getProject($array->pid);
+        $task_types = $this->task_model->getTaskTypes();
+        if($task_types) {
+            $data['task_types']= $task_types;
+        }
+        else {
+            $data['task_types']=false;
+        }
+        $data['task'] = $this->task_model->getTask($id);
+        $data['task_label'] = $this->task_model->getTaskLabel($data['task']->label);
+//        $data['project'] = $this->project_model->getProject($data['task']->pid);
+        $data['project'] = $this->project_model->getProject($data['task']->pid);
+        $data['manager'] = $this->admin_model->getUsername($data['task']->uid);
+        $data['implementor'] = $this->admin_model->getUsername($data['task']->implementor);
 
-        echo json_encode ($result);
+        $this->load->view('templates/ajax/task_view',$data);
+//        echo json_encode ($result);
     }
 
 

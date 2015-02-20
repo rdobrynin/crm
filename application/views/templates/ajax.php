@@ -1059,39 +1059,26 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
    */
 
   function taskToView($data){
-      var form_data_ = {
-          tid: $data
-      };
-      $.ajax({
-          url: "<?php echo site_url('ajax/getTask'); ?>",
-          type: 'POST',
-          data: form_data_,
-          dataType: 'json',
-          success: function (msg) {
-              if(msg != 'false') {
-              $('#view_task_modal').modal('show');
-                  colorPriority = 'color:#f89406;';
-                  if (msg['task'].priority == '0') {
-                      colorPriority = 'color:#428bca;';
-                  }
-                  else if (msg['task'].priority == '1') {
-                      colorPriority = 'color:#f89406;';
 
-                  }
-                  else {
-                      colorPriority = 'color:#d9534f;';
-                  }
-                  $('.task-view-wrapper').css('display','block');
-                  $('.tasks-#ay','block');
-                  $('#modal-view-title').html('<span class="pull-left" style="'+colorPriority+'">#'+msg['task'].id+' '+msg['task'].title+' / project('+msg['project'][0]['title']+')'+'</span>');
-                  $('#modal-view-body').html('<p><strong>Created: </strong>'+msg['task'].date_created+'</p>'+
-                      '<p><strong>Due to: </strong><span style="color:red;">'+msg['task'].due_time+'</span></p>'+
-                      '<p><strong>Implementor: </strong>'+msg['implementor']+' | <strong>Curator: </strong>'+msg['curator']+'</p>'+
-                      '<p><strong>Description: </strong>'+msg['task'].desc+'</p>');
-               }
-              }
+      $.ajax({
+          type: 'GET',
+          url: "<?php echo base_url('ajax/getTask') ?>",
+          data: { tid: $data},
+          beforeSend: function () {
+//              $('.froze-btn-cancel').addClass('disabled');
+          },
+          success:function(data){
+              console.log(data);
+              $('#view_task_modal').modal('show');
+              $('#modal-ajax-view').html(data);
+
+          },
+          error:function(){
+              alert('Something went with error')
+          }
       });
   }
+
 
   /**
    * Delete confirmation task

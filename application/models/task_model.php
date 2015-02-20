@@ -499,6 +499,31 @@ class Task_model extends CI_Model {
         return $update;
     }
 
+
+
+    /**
+     * Get label
+     * @return mixed
+     */
+
+    public function getTaskLabel($id) {
+        $query = $this
+            ->db
+            ->where('id', $id)
+            ->limit('1')
+            ->get('task_type');
+        if ($query->num_rows > 0) {
+            foreach ($query->result() as $row) {
+                return $row->title;
+            }
+        }
+        else {
+            return FALSE;
+        }
+        return TRUE;
+    }
+
+
 }
 
 

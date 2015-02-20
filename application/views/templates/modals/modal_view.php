@@ -407,19 +407,10 @@
 
 
 
-<div class="modal" id="view_task_modal" tabindex="-1" role="dialog" aria-labelledby="view_task_modalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="modal-view-title"></h4>
-            </div>
-            <div class="modal-body" id="modal-view-body">
+<div class="modal" id="view_task_modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="view_task_modalLabel" aria-hidden="true">
+    <div class="modal-dialog" id="modal-ajax-view">
 
-            </div>
-            <div class="modal-footer">
-                <a href="#" data-dismiss="modal" class="btn btn-default" style="width: 100%">Close</a>
-            </div>
-        </div>
+
     </div>
 </div> <!-- #/addproject_moda -->
 
