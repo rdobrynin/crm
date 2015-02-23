@@ -18,6 +18,11 @@
                 url: "<?php echo base_url('ajax/check_login_avatar') ?>",
                 data: postData,
                 dataType: 'json',
+                beforeSend: function () {
+                    $('#avatar-login').hide();
+                    $('#avatar-login-original').show();
+                    $("#avatar-login-original").html('<img style="top: 18px;position: relative;" src="img/loading_small.gif" height="64">');
+                },
                 success: function (data, status) {
                     if (data.avatar !== null) {
                         $('.error-frame').fadeOut(500);
