@@ -66,7 +66,15 @@ class Admin extends CI_Controller {
 
   function signup() {
     $this->load->model('admin_model');
-    $data['admins'] = $this->admin_model->get_admins();
+    $this->load->model('task_model');
+      $curators = $this->task_model->get_curators();
+
+      if($curators) {
+          $data['curators']= $curators;
+      }
+      else {
+          $data['curators']=false;
+      }
 
 
     $this->load->library('form_validation');

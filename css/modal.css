@@ -256,6 +256,50 @@ padding-bottom: 18px;
     background-color: #FFFFFF;
 }
 
+.form-control-default {
+    color: #818181;
+    background-color: #FFFFFF;
+    margin-top: 0;
+}
+
+.input-group input {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+
+#switch-curator-group, #switch-implementor-group {
+    display: none;
+}
+
+
+textarea:focus  {
+    border: 1px solid #333 !important;
+}
+
+.fa.large {
+    font-size: 14px;
+    position: relative;
+    float: right;
+    text-align: right;
+    padding-left: 10px;
+    line-height: 20px;
+}
+
+
+.selectpicker> li > a:hover, .selectpicker> li > a:focus {
+    color: #333 !important;
+    background-color: #bebebe !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.selectpicker> li.selected > a, .selectpicker> li.selected:focus > a {
+    background-color: #bebebe !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
 #view_detail_task_modal .fa-paper-plane {
     font-size: 26px;
     margin-right: 10px;

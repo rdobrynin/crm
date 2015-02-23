@@ -79,14 +79,20 @@ background: transparent;
 }
 
 .selectpicker, .open {
-   background-color: #575757 !important;
+   background-color: #FFF !important;
     -webkit-border-radius: 0 !important;
     -moz-border-radius: 0 !important;
     border-radius: 0 !important;
 }
 
 .selectpicker  > li > a:hover, .selectpicker  > li > a:focus{
-    background-color: #3a3a3a !important;
+    background-color: #FFF !important;
+}
+
+.bootstrap-select .btn:focus {
+    outline: solid #333333 !important;
+    outline: 0 auto -webkit-focus-ring-color !important;
+    outline-offset: 0;
 }
 
 
@@ -431,10 +437,10 @@ div#files {
 .flag.flag-ru {background-position: -16px -11px}
 
 .selectpicker> li > a {
-    color:#fff !important;
+    color:#333 !important;
 }
 .selectpicker> li > a:hover {
-    color:#fff !important;
+    color:#333 !important;
 }
 
 

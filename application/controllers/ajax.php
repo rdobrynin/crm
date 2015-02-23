@@ -865,15 +865,46 @@ class Ajax extends CI_Controller {
 
 
     function taskToEdit() {
-        $id=$this->input->post('id');
+        $id=$this->input->get('tid');
+        $user=$this->input->get('user');
+        $this->load->model('admin_model');
         $this->load->model('task_model');
-        $task  = $this->task_model->getTask($id);
-        $result['result'] =$task;
-//        20.02.2015 15:00
-        $result['time'] = date('d.m.Y H:i', $task->due_time);
+        $data['user'] = $this->admin_model->get_user_id($user);
+        $data['task']  = $this->task_model->getTask($id);
+        $task_types = $this->task_model->getTaskTypes();
+        if($task_types) {
+            $data['task_types']= $task_types;
+        }
+        else {
+            $data['task_types']=false;
+        }
+        $avatars = $this->admin_model->getAvatars();
 
+        if($avatars) {
+            $data['avatars']= $avatars;
+        }
+        else {
+            $data['avatars']=false;
+        }
+        $curators = $this->task_model->get_curators();
 
-        echo json_encode ($result);
+        if($curators) {
+            $data['curators']= $curators;
+        }
+        else {
+            $data['curators']=false;
+        }
+
+        $imps = $this->task_model->get_imps();
+
+        if($imps) {
+            $data['imps']= $imps;
+        }
+        else {
+            $data['imps']=false;
+        }
+        $data['user_name'] = $this->admin_model->get_users_names();
+        $this->load->view('templates/ajax/edit_task_view',$data);
     }
 
 

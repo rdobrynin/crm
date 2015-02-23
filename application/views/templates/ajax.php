@@ -797,100 +797,25 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
    **/
 
   function taskToEdit($data){
-      $('#edit-task-modal').show();
-          $user = '<?php print($user[0]['id'])?>';
-          var form_data = {
-              id: $data
-          };
-          $.ajax({
-              url: "<?php echo site_url('ajax/taskToEdit'); ?>",
-              type: 'POST',
-              data: form_data,
-              dataType: 'json',
-              success: function (msg) {
-                  time = msg.time;
-                  $('#edit_task_pr_title').val(msg.result['title']);
-                  $('#edit_task_pr_desc').val(msg.result['desc']);
-                  $('#edit_dueto_modal').val(msg.time);
-                  $('#edit_dueto_modal').datetimepicker({
-                      theme: 'dark',
-                      value:  msg.time,
-                      format:'d.m.Y-H:i',
-                      minDate: '<?php date("F j, Y, g:i a"); ?>'
+      $user = '<?php print($user[0]['id'])?>';
+      $.ajax({
+          type: 'GET',
+          url: "<?php echo base_url('ajax/taskToEdit') ?>",
+          data: { tid: $data, user:$user},
+          beforeSend: function () {
+              $('#edit-task-modal').show();
+              $('#modal-ajax-edit').html('<img style="left: 100px;position: relative;" src="/img/ajax-loader.gif" height="250" alt="">');
+          },
+          success:function(data){
+              setTimeout(function() {
+                  $('#modal-ajax-edit').html(data);
+              },700);
 
-                  });
 
-                  $('#edittask_pr_btn').click(function () {
-                      console.log($('#edit_dueto_modal').val());
-                      var form_data = {
-                          title :$('#edit_task_pr_title').val(),
-                          desc :$('#edit_task_pr_desc').val(),
-                          project :msg.result['pid'],
-                          key :msg.result['key'],
-                          dueto :$('#edit_dueto_modal').val(),
-                          label :$('#edit_task_type_choose').val(),
-                          priority :$('#edit_task_priority_choose').val(),
-                          implementor :$('#edit_implementor_choose_modal').val(),
-                          owner :$('#edit_curator_choose_modal').val(),
-                          id: $data
-                      };
-                      $.ajax({
-                          url: "<?php echo site_url('ajax/updateEditTask'); ?>",
-                          type: 'POST',
-                          data: form_data,
-                          dataType: 'json',
-                          success: function (msg) {
-                              if (msg.empty == true) {
-                                  $('#check_empty_edit_task_pr').fadeIn('slow').css('display', 'block');
-                              }
-                              else {
-                                  $('#check_empty_edit_task_pr').fadeIn('slow').css('display', 'none');
-                              }
-                              if(msg.result == true) {
-                                  $('#edit_task_pr_modal').css('display','block');
-                                  $({blurRadius: 0}).animate({blurRadius: 1}, {
-                                      duration: 500,
-                                      easing: 'swing', // or "linear"
-                                      // use jQuery UI or Easing plugin for more options
-                                      step: function() {
-                                          $('#tr-dashboard-task-'+$data).css({
-                                              "-webkit-filter": "blur("+this.blurRadius+"px)",
-                                              "filter": "blur("+this.blurRadius+"px)"
-                                          });
-                                      }
-                                  });
-                                  setTimeout(function() {
-                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').html('#'+$data);
-                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').html('<span style="color:#5cb85c;">updated now</span>');
-                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').html('<span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span>');
-                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').html('<a href="#;" class="hover-td-name" onClick="qmSendComment(<?php print($tv["implementor"]); ?>)"><?php print(short_name($user_name[$tv["implementor"]])); ?></a>');
-                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').html('<a href="#;" class="hover-td-name" onClick="qmSendComment(<?php print($tv["uid"]); ?>)"><?php print(short_name($user_name[$tv["uid"]])); ?></a>');
-                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').html(msg['title']);
-                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').html(msg['project']);
-                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html(msg['desc']);
-                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html('<span><i class="fa fa-circle circle-priority" style="<?php if ($tv["priority"] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv["priority"] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv["priority"] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv["priority"]) ?>');
-                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html(msg['dueto']);
-                                      $('#approve_tasks_table').find('#tr-dashboard-task-'+$data).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html('<a href="#;" onClick="taskToReady(<?php print($tv["id"]); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a><a href="#;" onClick="taskToEdit(<?php print($tv["id"]); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a><a href="#;" onMouseDown="taskToView(<?php print($tv["id"]); ?>)" style="text-decoration: none;"><i class="fa fa-eye"></i></a><a href="#;" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv["id"]); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>');
-                                      blurRadius = 0;
-                                      $('#edit-task-modal').hide();
-                                      $('#tr-dashboard-task-'+$data).css({
-                                          "-webkit-filter": "blur("+this.blurRadius+"px)",
-                                          "filter": "blur("+this.blurRadius+"px)"
-                                      });
-                                  }, 2000);
-
-                              }
-                              else {
-                                  $('#edit_error_task_pr_modal').css('display','block');
-                              }
-                          }
-                      });
-                  });
-
-              }
-          });
-      $('#close-edit-task-modal,#close-button-edit-task-modal').click(function () {
-          $('#edit-task-modal').hide();
+          },
+          error:function(){
+              alert('Something went with error')
+          }
       });
   }
 

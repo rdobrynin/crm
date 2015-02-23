@@ -14,7 +14,7 @@
       <div class="form-group">
           <label for="curator">Choose curator:</label>
           <select class="selectpicker" name="curator" id="curator">
-              <?php foreach($admins as $k=>$v): ?>
+              <?php foreach($curators as $k=>$v): ?>
                   <option value="<?php echo $v['id']?>"><?php echo $v['first_name'].' '.$v['last_name']?></option>
               <?php endforeach ?>
           </select>
