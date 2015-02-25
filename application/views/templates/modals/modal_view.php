@@ -60,11 +60,11 @@
 </div> <!-- #/myModal -->
 
 <!--Create project modal window-->
-<div class="modal" id="addproject_modal" tabindex="-1" role="dialog" aria-labelledby="addproject_formLabel" aria-hidden="true">
+<div class="modal white-modal" id="addproject_modal" tabindex="-1" role="dialog" aria-labelledby="addproject_formLabel" aria-hidden="true">
     <div class="modal-dialog">
         <?php $attributes = array('class' => 'form-signin', 'id' => 'addproject_form', 'autocomplete' => 'on'); ?>
         <?php echo form_open('#', $attributes); ?>
-        <div class="modal-content modal-content-inverse">
+        <div class="modal-content">
             <div class="modal-header">
                 <a data-dismiss="modal" aria-hidden="true"><span class="icon-remove"></span></a>
                 <h4 class="modal-title" id="myModalLabel">
@@ -76,7 +76,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="project_title">Project title</label>
-                            <input type="text" name="project_title" id="project_title" class="form-control btn-special" placeholder="Project title">
+                            <input type="text" name="project_title" id="project_title" class="form-control form-control-default" placeholder="Project title">
                         </div>
 
                         <span style="display:none;float: left; width: 100%; margin-bottom: 10px;" id="check_title_project" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;This project already exist</span>
@@ -84,7 +84,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="project_desc">Description</label>
-                            <textarea name="project_desc" id="project_desc" class="form-control btn-special" rows="3" placeholder="Description"></textarea>
+                            <textarea name="project_desc" id="project_desc" class="form-control form-control-default" rows="3" placeholder="Description"></textarea>
                         </div>
                     </div>
                 </div>
@@ -93,9 +93,9 @@
             <div class="modal-footer">
                 <input type="hidden" name="user_added_id" id="user_added_id" value="<?php print($user[0]['id'])?>">
                 <div style="display: none; margin-bottom: 10px;" id="check_empty_project" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;Fields must not be empty</div>
-                <button type="button" class="btn btn-success" id="addproject_btn">Create</button>
+                <button type="button" class="btn btn-success btn-lg pull-left" id="addproject_btn">Create</button>
 <!--                <button type="button" class="btn btn-success" id="addproject_addtask_btn">Save & create task</button>-->
-                <button type="button" class="btn btn-default" id="close-project-create" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default btn-lg" id="close-project-create" data-dismiss="modal">Close</button>
             </div>
         </div>
         <?php form_close( );?>
@@ -279,9 +279,9 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="update-user-modal" tabindex="-1" role="dialog"  aria-hidden="true">
+<div class="modal fade white-modal" id="update-user-modal" tabindex="-1" role="dialog"  aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content modal-content-inverse">
+        <div class="modal-content">
             <div class="modal-header">
                 <a data-dismiss="modal" aria-hidden="true"><span class="icon-remove"></span></a>
                 <h4 class="modal-title">
@@ -295,7 +295,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <select class="form-control selectpicker" id="update-role-user-select"  name="category" data-style="btn-info">
+                            <select class="form-control selectpicker form-control-default" id="update-role-user-select"  name="category" data-style="btn-info">
                                 <?php foreach ($roles as $rk => $rv): ?>
                                     <option value="<?php print($rv['rid']); ?>"><?php print(ucfirst($rv['title'])); ?></option>
                                 <?php endforeach ?>
@@ -307,7 +307,7 @@
             </div>
             <div class="modal-footer">
                 <div style="display: none; margin-bottom: 10px;" id="update-user-notificate" class="label label-info label-signin col-md-12"><i class="fa fa-exclamation-circle"></i>&nbsp;You have successfully updated role</div>
-                <button type="button" class="btn btn-success pull-right" id="update-user-send-btn">Update</button>
+                <button type="button" class="btn btn-success pull-left btn-lg" id="update-user-send-btn">Update</button>
             </div>
         </div>
     </div>
