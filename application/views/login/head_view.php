@@ -17,6 +17,13 @@
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
 
+    <!-- JavaScript -->
+    <script data-main="<?php print(base_url());?>js/app_external.js" src="<?php print(base_url());?>assets/js/require.js"></script>
+    <script src="<?php print(base_url());?>assets/js/jquery-1.11.1.min.js"></script>
+    <script src="<?php print(base_url());?>assets/js/bootstrap.min.js"></script>
+    <script src="<?php print(base_url());?>assets/js/bootstrap-select.js"></script>
+    <script src="<?php print(base_url());?>js/script.js"></script>
+
 </head>
 
 <body>
