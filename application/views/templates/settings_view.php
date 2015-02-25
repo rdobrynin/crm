@@ -1,7 +1,7 @@
-<div class="modal" id="settings">
+<div class="modal white-modal" id="settings">
   <div class="modal-dialog" id="settings-dialog-modal">
 
-    <div class="modal-content modal-content-inverse" id="settings-content-modal">
+    <div class="modal-content" id="settings-content-modal">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h4 class="modal-title custom_align" id="Heading"><i class="fa fa-gear"></i>&nbsp;Settings</h4>
@@ -64,7 +64,7 @@
                   <div class="row-fluid">
                       <div class="col-md-8" style="padding-left: 0">
                           <div class="form-group">
-                              <input type="text" class="form-control btn-special" id="ttp_<?php print($tk) ?>_input" value="<?php print($tv) ?>"/>
+                              <input type="text" class="form-control form-control-default" id="ttp_<?php print($tk) ?>_input" value="<?php print($tv) ?>"/>
                           </div>
                           <div style="display: none; margin-bottom: 10px;" id="check_empty_ttp_<?php print($tk) ?>_input" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;Fields must be not empty</div>
                       </div>
@@ -86,7 +86,7 @@
           <?php endif ?>
       </div>
       <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location = '<?php print(site_url()) ?>';">Apply categories</button>
+          <button type="button" class="btn btn-success btn-lg" data-dismiss="modal" onclick="window.location = '<?php print(site_url()) ?>';">Apply categories</button>
       </div>
     </div>
 

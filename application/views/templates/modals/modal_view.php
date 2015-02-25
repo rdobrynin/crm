@@ -1,8 +1,8 @@
-<div class="modal" id="invite" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal white-modal" id="invite" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <?php $attributes = array('class' => 'form-signin', 'id' => 'invite-form', 'autocomplete' => 'off'); ?>
         <?php echo form_open('#', $attributes); ?>
-        <div class="modal-content modal-content-inverse">
+        <div class="modal-content">
             <div class="modal-header">
                 <a data-dismiss="modal" aria-hidden="true"><span class="icon-remove"></span></a>
                 <h4 class="modal-title" id="myModalLabel">
@@ -13,19 +13,19 @@
                 <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="first_name_invite" id="first_name_invite" class="form-control btn-special" placeholder="First Name" required>
+                            <input type="text" name="first_name_invite" id="first_name_invite" class="form-control form-control-default" placeholder="First Name" required>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="last_name_invite" id="last_name_invite" class="form-control btn-special" placeholder="Last Name">
+                            <input type="text" name="last_name_invite" id="last_name_invite" class="form-control form-control-default" placeholder="Last Name">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <input type="email" name="email_invite" id="email_invite" class="form-control btn-special" placeholder="Email Address">
+                            <input type="email" name="email_invite" id="email_invite" class="form-control form-control-default" placeholder="Email Address">
                         </div>
                         <div style="display: none; margin-bottom: 10px;" id="check_email" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;This email is already in system</div>
                         <div style="display: none; margin-bottom: 10px;" id="check_email_f" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;Email address is invalid</div>
@@ -51,7 +51,7 @@
             <div class="modal-footer">
                 <input type="hidden" name="user_id" id="user_invite_id" value="<?php print($user[0]['id'])?>">
                 <div style="display: none; margin-bottom: 10px;" id="check_empty" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;Fields must be not empty</div>
-                <button type="button" class="btn btn-success" id="invite-ajax-btn">Invite</button>
+                <button type="button" class="btn btn-success btn-lg" id="invite-ajax-btn">Invite</button>
                 <!-- <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">Close</button>-->
             </div>
         </div>
@@ -162,7 +162,6 @@
                             </select>
                         </div>
                     </div>
-
                     <div class="col-xs-12 col-md-4">
                         <div class="form-group">
                             <label for="task_priority_choose">Priority</label>
@@ -173,8 +172,6 @@
                             </select>
                         </div>
                     </div>
-
-
                     <div class="col-xs-12 col-md-12">
                         <div class="form-group">
                             <label for="implementor_choose_modal">Choose implementor: </label>

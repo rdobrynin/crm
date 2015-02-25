@@ -20,7 +20,6 @@
 
                     </tr>
                     <!--TASK-->
-
                     <?php if (isset($project_tasks[$pv['pid']])): ?>
                     <tr>
                         <td colspan="9" class="td-task" id="task-for-project-<?php print($pv['pid']); ?>">
@@ -47,14 +46,7 @@
                                 <tbody id="all_task_table">
                                 <?php $project_tasks[$pv['pid']] = array_reverse($project_tasks[$pv['pid']]);?>
                                 <?php foreach ($project_tasks[$pv['pid']] as $tk => $tv): ?>
-
-
-
-
-
-
-
-                                    <tr id="tr-project-task-<?php print($tv['id']); ?>"<?php if ($tv['status'] !=3): ?>class="<?php print(check_deadline($tv['due_time'])); ?>"<?php endif ?>>
+                                    <tr id="tr-project-task-<?php print($tv['id']); ?>"<?php if ($tv['status'] !=3): ?>class="<?php print(check_deadline(date('jS F Y G:i', $tv['due_time']))); ?>"<?php endif ?>>
                                         <td>#<?php print($tv['id']); ?></td>
                                         <td><span class="muted"><?php print(date('jS F Y G:i', $tv['date_created'])); ?></span></td>
                                         <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
@@ -89,26 +81,16 @@
                                                 <?php endif ?>
                                             </td>
                                     </tr>
-
-
                                 <?php endforeach ?>
                                 </tbody>
                             </table>
                         </td>
                     </tr>
                     <?php endif ?>
-
-
-
-
                     </tbody>
                 </table>
-
                   <?php endif ?>
              <?php endforeach ?>
-
-
-
           <?php endif ?>
       </div>
     <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
