@@ -1,4 +1,12 @@
-//base_url = window.location.origin;
+
+
+
+
+requirejs.config({
+    "paths": {
+        "jquery": window.location.origin+"/assets/js/jquery-1.11.1.min"
+    }
+});
 
 
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="tasker" promptOnLocalOverwrite="false">
+  <component name="PublishConfigData" autoUpload="Always" serverName="crm-brilliant" promptOnLocalOverwrite="false">
     <serverData>
-      <paths name="tasker">
+      <paths name="crm-brilliant">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
@@ -13,4 +13,3 @@
     <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
-
