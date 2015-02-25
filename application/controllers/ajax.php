@@ -561,6 +561,13 @@ class Ajax extends CI_Controller {
             $result['empty'] = false;
             $text = 'edited task';
             if ($this->task_model->updateEditTask($id) == true) {
+                $result['new'] = $this->task_model->getTask($id);
+                $result['dueto'] = date('jS F Y G:i', $result['new']->due_time);
+                $project_task = $this->project_model->getProject($result['new']->pid);
+                $result['project_task'] = $project_task[0]['title'];
+
+
+
                 $this->project_model->createEvent($result['owner'], $result['desc'],  $text, $full_name, $result['title'], 5);
                 $result['result'] = true;
             }

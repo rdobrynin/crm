@@ -613,7 +613,28 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
           selectFirst: true,
           width: '240px'
       });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   });
+//  END READY FUNCTION
 
   /**
    *  Quick comment add function()
@@ -796,6 +817,13 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
    * Task to edit
    **/
 
+
+
+
+
+
+
+
   function taskToEdit($data){
       $user = '<?php print($user[0]['id'])?>';
       $.ajax({
@@ -818,6 +846,11 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
           }
       });
   }
+
+
+
+
+
 
 
 /**
