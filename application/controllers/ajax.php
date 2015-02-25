@@ -514,7 +514,9 @@ class Ajax extends CI_Controller {
             if ($this->task_model->insertTask() == true) {
                 $result['result'] = true;
                 $result['newtask'] = $this->task_model->getLastTask();
-
+                $result['dueto'] = date('jS F Y G:i', $result['newtask']->due_time);
+                $project_task = $this->project_model->getProject($result['newtask']->pid);
+                $result['project_task'] = $project_task[0]['title'];
 
                 /**
                  * get task label

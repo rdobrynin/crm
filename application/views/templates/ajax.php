@@ -450,8 +450,7 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
               label :$('#task_type_choose').val(),
               priority :$('#task_priority_choose').val(),
               implementor :$('#implementor_choose_modal').val(),
-              owner :$('#user_added_task_pr_id').val(),
-              key: newABB
+              owner :$('#user_added_task_pr_id').val()
           };
           $.ajax({
               url: "<?php echo site_url('ajax/createTask'); ?>",
@@ -466,6 +465,7 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
                       $('#check_empty_task_pr').fadeIn('slow').css('display', 'none');
                   }
                   if(msg.result == true) {
+                      console.log(msg.newtask);
                       $('#save_task_pr_modal').fadeIn('slow').css('display', 'block');
                       setTimeout(function() {
                           $('#save_task_pr_modal,#save_error_task_pr_modal').css('display', 'none');
@@ -478,10 +478,10 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
                                   "<td class='text-left'><a href='#' class='hover-td-name' onClick='qmSendComment("+msg['newtask']['implementor']+")'>"+msg['imp_name']+"</a></td>" +
                                   "<td class='text-left'><a href='#' class='hover-td-name' onClick='qmSendComment("+msg['newtask']['uid']+")'>"+msg['cur_name']+"</a></td>" +
                                   "<td class='text-left'>"+msg['newtask']['title']+"</td>+" +
-                                  "<td class='text-left'>"+msg['newtask']['pid']+"</td>+"+
+                                  "<td class='text-left'>"+msg.project_task+"</td>+"+
                                   "<td class='text-left'>"+msg['newtask']['desc']+"</td>+"+
                                   "<td class='text-left'><span><i class='fa fa-circle circle-priority' style="+getPriorityTaskClass(msg['newtask']['priority'])+"></i></span> "+getPriorityTask(msg['newtask']['priority'])+"</td>+"+
-                                  "<td class='text-left'>"+msg['newtask']['due_time']+"</td>+"+
+                                  "<td class='text-left'>"+msg.dueto+"</td>+"+
                                   "<td class='text-left'> <a href='#' onClick='taskToReady("+msg['newtask']['id']+")' style='text-decoration: none;'><i class='fa fa-play'></i></a><a href='#'"+
                                   "onClick='taskToEdit"+msg['newtask']['id']+")'style='text-decoration: none;'><i class='fa fa-pencil'></i></a><a href='#' onMouseDown='taskToView("+msg['newtask']['id']+")'"+
                                   "><i class='fa fa-eye'></i></a>"+

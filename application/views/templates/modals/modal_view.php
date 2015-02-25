@@ -103,11 +103,11 @@
 </div> <!-- #/addproject_moda -->
 
 <!--Create task for project modal window-->
-<div class="modal" id="addtask_pr_modal" tabindex="-1" role="dialog" aria-labelledby="addtask_pr_formLabel" aria-hidden="true">
+<div class="modal white-modal" id="addtask_pr_modal" tabindex="-1" role="dialog" aria-labelledby="addtask_pr_formLabel" aria-hidden="true">
     <div class="modal-dialog">
         <?php $attributes = array('class' => 'form-signin', 'id' => 'addtask_pr_form', 'autocomplete' => 'on'); ?>
         <?php echo form_open('#', $attributes); ?>
-        <div class="modal-content modal-content-inverse">
+        <div class="modal-content">
             <div class="modal-header">
                 <a data-dismiss="modal" aria-hidden="true"><span class="icon-remove"></span></a>
                 <h4 class="modal-title">
@@ -119,13 +119,13 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="task_pr_title">Task name</label>
-                            <input type="text" name="task_pr_title" id="task_pr_title" class="form-control btn-special" placeholder="Task name title">
+                            <input type="text" name="task_pr_title" id="task_pr_title" class="form-control form-control-default" placeholder="Task name title">
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="task_pr_desc">Description</label>
-                            <textarea name="task_pr_desc" id="task_pr_desc" class="form-control btn-special" rows="3" placeholder="Description"></textarea>
+                            <textarea name="task_pr_desc" id="task_pr_desc" class="form-control form-control-default" rows="3" placeholder="Description"></textarea>
                         </div>
                     </div>
                 </div>
@@ -133,7 +133,7 @@
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label for="choose_project_modal">Choose project</label>
-                            <select class="form-control selectpicker" id="choose_project_modal" name="choose_project_modal">
+                            <select class="form-control selectpicker form-control-default" id="choose_project_modal" name="choose_project_modal">
                                 <?php foreach ($projects as $pk=>$pv): ?>
                                     <option value="<?php print($pv['pid']); ?>" ><?php print(ucfirst($pv['title'])); ?></option>
                                 <?php endforeach ?>
@@ -146,7 +146,7 @@
                        <div class="form-group">
                            <label for="dueto_modal">Due to</label>
                                <div class='input-group date'>
-                                   <input type='text' class="form-control btn-special"  id='dueto_modal' />
+                                   <input type='text' class="form-control form-control-default"  id='dueto_modal' />
                                </div>
                        </div>
                    </div>
@@ -155,7 +155,7 @@
                     <div class="col-xs-12 col-md-8">
                         <div class="form-group">
                             <label for="task_type_choose">Label</label>
-                            <select class="form-control selectpicker" id="task_type_choose" name="task_type_choose">
+                            <select class="form-control form-control-default selectpicker" id="task_type_choose" name="task_type_choose">
                                 <?php foreach ($task_types as $tk=>$tv): ?>
                                         <option value="<?php print($tk); ?>" ><?php print(ucfirst($tv)); ?></option>
                                 <?php endforeach ?>
@@ -166,7 +166,7 @@
                     <div class="col-xs-12 col-md-4">
                         <div class="form-group">
                             <label for="task_priority_choose">Priority</label>
-                            <select class="form-control selectpicker" id="task_priority_choose" name="task_priority_choose">
+                            <select class="form-control form-control-default selectpicker" id="task_priority_choose" name="task_priority_choose">
                                     <option value="0" data-content="<span class='label label-xs label-primary'><?php echo priority_status_index(0) ?></span>"></option>
                                     <option value="1" data-content="<span class='label label-xs label-warning'><?php echo priority_status_index(1) ?></span>"></option>
                                     <option value="2" data-content="<span class='label label-xs label-danger'><?php echo priority_status_index(2) ?></span>"></option>
@@ -179,7 +179,7 @@
                         <div class="form-group">
                             <label for="implementor_choose_modal">Choose implementor: </label>
                             <?php if ($imps != false): ?>
-                                <select class="form-control selectpicker" id="implementor_choose_modal" name="implementor_choose_modal">
+                                <select class="form-control form-control-default selectpicker" id="implementor_choose_modal" name="implementor_choose_modal">
                                     <?php foreach ($imps as $k => $v): ?>
                                         <option value="<?php echo $v['id'] ?>"><?php echo $v['first_name'] . ' ' . $v['last_name'] ?></option>
                                     <?php endforeach ?>
@@ -480,7 +480,7 @@
     $(function () {
 //        $('#view_detail_task_modal').modal('show');
         $('#dueto_modal').datetimepicker({
-            theme:'dark',
+            theme:'light',
             format:'d.m.Y H:i',
             minDate: '<?php date("F j, Y, g:i a"); ?>',
             minTime:0
