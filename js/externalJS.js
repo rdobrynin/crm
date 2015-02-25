@@ -1,4 +1,4 @@
-base_url = window.location.origin;
+
 // Appear Avatar on blur effect
 define(function(){
   function appearAvatar() {
@@ -9,7 +9,7 @@ define(function(){
           };
           $.ajax({
               type: "POST",
-              url: base_url+'/ajax/check_login_avatar',
+              url: '/ajax/check_login_avatar',
               data: postData,
               dataType: 'json',
               beforeSend: function () {
@@ -40,7 +40,7 @@ define(function(){
                 email: $(this).val()
             };
             $.ajax({
-                url: base_url+'/ajax/check_emails',
+                url: '/ajax/check_emails',
                 type: 'POST',
                 data: form_data,
                 dataType: 'json',
