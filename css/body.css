@@ -472,9 +472,16 @@ td .fa-play-circle:hover, td .fa-stop:hover, td .fa-check-circle:hover, td .fa-e
 
 .icon-remove {
     position: absolute;
-    top: 8px;
-    left: 6px;
-    font-size: 13px;
+    top: 15px;
+    left: 9px;
+    font-size: 17px;
+}
+
+td .icon-remove {
+    position: absolute;
+    top: 15px;
+    left: 9px;
+    font-size: 12px;
 }
 
 tr .icon-remove {
@@ -497,12 +504,12 @@ span.icon-book {
 
 .close-qm .icon-remove {
     position: relative;
-    top: 0px;
+    top: 0;
     padding-right: 10px;
 }
 
 .modal-header .icon-remove {
-    right: 15px;
+    right: 18px;
     float: right;
     text-align: right;
     color: #A3A3A3;

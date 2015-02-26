@@ -29,13 +29,13 @@
   <div class="show-info-online"><div class="show-info-content-online"></div></div>
 
   <ul class="nav navbar-nav navbar-right navbar-user">
-      <li id="li-comments"> <a href="javascript:void(0);" onClick="SendComment(<?php print($user[0]['id'])?>)" ><span class="icon-comment"></a></li>
-      <li id="float-users"> <a href="javascript:void(0);"><span class="icon-users"></span></a></li>
+      <li id="li-comments"> <a href="#" onClick="SendComment(<?php print($user[0]['id'])?>)" ><span class="icon-comment"></a></li>
+      <li id="float-users"> <a href="#"><span class="icon-users"></span></a></li>
       <li class="dropdown user-dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown"><span class="icon-book"></span></a>
           <ul class="dropdown-menu dropdown-user">
-              <li> <a href="javascript:void(0);">Agile Answers</a></li>
-              <li> <a href="javascript:void(0);">Online Help</a></li>
+              <li> <a href="#">Agile Answers</a></li>
+              <li> <a href="#">Online Help</a></li>
               <li> <a href="http://www.brilliant-solutions.eu" target="blank">Brilliant Solutions</a></li>
           </ul>
       </li>
@@ -49,11 +49,11 @@
 
               <?php endif ?>
               <?php if ($user[0]['role'] ==5 OR $user[0]['role']==4): ?>
-              <li> <a href="javascript:void(0);" data-toggle="modal" data-target="#invite" title="invite"><i class="fa fa-plus"></i><?php print(lang('menu_invite_person')); ?></a></li>
+              <li> <a href="#" data-toggle="modal" data-target="#invite" title="invite"><i class="fa fa-plus"></i><?php print(lang('menu_invite_person')); ?></a></li>
 
-                  <li class="add-client"><a href="javascript:void(0);" data-toggle="modal" data-target="#addproject_modal" title="create project"><i class="fa fa-plus"></i><?php print(lang('menu_add_project')); ?></a></li>
+                  <li class="add-client"><a href="#" data-toggle="modal" data-target="#addproject_modal" title="create project"><i class="fa fa-plus"></i><?php print(lang('menu_add_project')); ?></a></li>
                   <?php endif ?>
-              <?php if ($projects != false): ?><li class="add-client"><a href="javascript:void(0);" data-toggle="modal" data-target="#addtask_pr_modal" title="create task"><i class="fa fa-plus"></i><?php print(lang('menu_add_task')); ?></a></li><?php endif ?>
+              <?php if ($projects != false): ?><li class="add-client"><a href="#" data-toggle="modal" data-target="#addtask_pr_modal" title="create task"><i class="fa fa-plus"></i><?php print(lang('menu_add_task')); ?></a></li><?php endif ?>
 
           </ul>
       </li>

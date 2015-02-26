@@ -34,6 +34,6 @@ require(['jquery','external'], function ($, external) {
 
 //Bootstrap select
 
-requirejs(['jquery', 'bootstrap_select'], function ($) {
+require(['jquery', 'bootstrap_select'], function ($) {
             $('.selectpicker').selectpicker();
 });
