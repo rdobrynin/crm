@@ -27,7 +27,7 @@
           </center>
         </small>
         <small class="pull-right">
-          <center><br><a href="<?php echo base_url();?>/forgot" id="show_activate_form">Forgot password ?</a>
+          <center><br><a href="<?php echo base_url();?>/forgot" id="show_activate_form_login">Forgot password ?</a>
           </center>
         </small>
 

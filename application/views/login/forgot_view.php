@@ -13,7 +13,7 @@
     </center>
   </small>
   <small class="pull-right">
-    <center><br><a href="admin" id="show_activate_form">Login</a>
+    <center><br><a href="admin" id="show_activate_form_login">Login</a>
     </center>
   </small>
 </div>
