@@ -19,10 +19,6 @@
 
     <!-- JavaScript -->
     <script data-main="<?php print(base_url());?>js/app_external.js" src="<?php print(base_url());?>assets/js/require.js"></script>
-    <script src="<?php print(base_url());?>assets/js/jquery-1.11.1.min.js"></script>
-    <script src="<?php print(base_url());?>assets/js/bootstrap.min.js"></script>
-    <script src="<?php print(base_url());?>assets/js/bootstrap-select.js"></script>
-
 </head>
 
 <body>

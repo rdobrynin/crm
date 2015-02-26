@@ -58,6 +58,7 @@ define(function(){
                 }
             });
         });
+//        $('.selectpicker').selectpicker();
     }
 
     return {

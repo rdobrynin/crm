@@ -34,8 +34,3 @@
       </div>
       <?php echo form_close(); ?>
       <?php include('footer_view.php');?>
-      <script>
-          $(function () {
-              $('.selectpicker').selectpicker();
-          });
-      </script>
