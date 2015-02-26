@@ -135,6 +135,12 @@ class Dashboard extends CI_Controller {
         }
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
 
+
+        $user_role = $this->admin_model->getUserRole('14','5');
+        $user_roles = $this->admin_model->getUserRoles('14');
+        var_dump($user_roles);
+        exit();
+
         $overtasks = $this->task_model->getOverdueTasks();
 
         if($overtasks) {

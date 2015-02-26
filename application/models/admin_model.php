@@ -909,6 +909,39 @@ class Admin_model extends CI_Model {
     }
 
 
+    /**
+     * Get user roles
+     */
+
+    function getUserRole($id,$role) {
+        $query = $this
+            ->db
+            ->where('user_id', $id)
+            ->where('role_id', $role)
+            ->get('user_roles');
+        if ($query->num_rows > 0) {
+            foreach ($query->result() as $row) {
+                return $row->role_id;
+            }
+        }
+        else {
+            return FALSE;
+        }
+        return TRUE;
+    }
+
+
+    /**
+     * Get user roles
+     */
+
+    function getUserRoles($id) {
+        $query = $this->db->where('user_id', $id)->get('user_roles');
+        $result = $query->result_array();
+        return $result;
+
+    }
+
 }
 
 
