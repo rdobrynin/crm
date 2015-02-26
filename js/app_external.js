@@ -1,7 +1,4 @@
 
-
-
-
 requirejs.config({
     "paths": {
         "jquery": "/assets/js/jquery-1.11.1.min",
@@ -23,25 +20,20 @@ requirejs.config({
 
 
 
-
-
-require(['jquery','externalJS'], function ($, externalJS) {
+require(['jquery','external'], function ($, external) {
     $(function () {
-        return externalJS.appearAvatar();
+        return external.appearAvatar();
     });
     var pathArray = window.location.pathname.split('/');
     if (pathArray[1] == 'signup') {
         $(function () {
-            return externalJS.checkEmail();
+            return external.checkEmail();
         });
     }
 });
 
-requirejs(['jquery', 'bootstrap_select'], function ($) {
-//    define(['bootstrap-select'], function() {
-//        $(function () {
-            $('.selectpicker').selectpicker();
-//        });
-//    });
+//Bootstrap select
 
+requirejs(['jquery', 'bootstrap_select'], function ($) {
+            $('.selectpicker').selectpicker();
 });
