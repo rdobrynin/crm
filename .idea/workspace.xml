@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b5c62b4-a621-4d4d-8746-6975ce18f490" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/login/head_view.php" afterPath="$PROJECT_DIR$/application/views/login/head_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/navtop_view.php" afterPath="$PROJECT_DIR$/application/views/templates/navtop_view.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/right_sidebar.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/body.css" afterPath="$PROJECT_DIR$/css/body.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/elements.css" afterPath="$PROJECT_DIR$/css/elements.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mini_inbox.css" afterPath="$PROJECT_DIR$/css/mini_inbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,19 +30,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="script.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/script.js">
+      <file leaf-file-name="head_view.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/login/head_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="0" selection-start="928" selection-end="1181" vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="11342">
+            <state line="19" column="0" selection-start="944" selection-end="944" vertical-scroll-proportion="-12.666667" vertical-offset="0" max-vertical-offset="1199">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="head_view.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/login/head_view.php">
+      <file leaf-file-name="body.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/body.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="944" selection-end="944" vertical-scroll-proportion="0.42007002" vertical-offset="0" max-vertical-offset="1199">
+            <state line="348" column="23" selection-start="7654" selection-end="7654" vertical-scroll-proportion="-10.821428" vertical-offset="5961" max-vertical-offset="11260">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="elements.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/elements.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="346" column="1" selection-start="7221" selection-end="7221" vertical-scroll-proportion="-12.75" vertical-offset="5871" max-vertical-offset="11818">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mini_inbox.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/mini_inbox.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="1" selection-start="783" selection-end="783" vertical-scroll-proportion="0.58878505" vertical-offset="270" max-vertical-offset="1612">
               <folding />
             </state>
           </provider>
@@ -49,15 +70,6 @@
         <entry file="file://$PROJECT_DIR$/less/variables.less">
           <provider selected="true" editor-type-id="text-editor">
             <state line="21" column="16" selection-start="599" selection-end="599" vertical-scroll-proportion="-4.725" vertical-offset="0" max-vertical-offset="15971">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="variables.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bower_components/bootstrap/less/variables.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="32" selection-start="667" selection-end="667" vertical-scroll-proportion="-6.8846154" vertical-offset="2" max-vertical-offset="16215">
               <folding />
             </state>
           </provider>
@@ -112,15 +124,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/less/style.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="17" selection-start="245" selection-end="245" vertical-scroll-proportion="-4.1538463" vertical-offset="0" max-vertical-offset="1149">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -139,7 +142,6 @@
         <option value="$PROJECT_DIR$/application/views/templates/froze_view.php" />
         <option value="$PROJECT_DIR$/application/controllers/froze.php" />
         <option value="$PROJECT_DIR$/js/externalJS.js" />
-        <option value="$PROJECT_DIR$/css/body.css" />
         <option value="$PROJECT_DIR$/css/login.css" />
         <option value="$PROJECT_DIR$/less/ts_icons.less" />
         <option value="$PROJECT_DIR$/less/bootstrap-select.less" />
@@ -155,6 +157,9 @@
         <option value="$PROJECT_DIR$/less/content.less" />
         <option value="$PROJECT_DIR$/application/views/templates/navtop_view.php" />
         <option value="$PROJECT_DIR$/application/views/login/head_view.php" />
+        <option value="$PROJECT_DIR$/css/body.css" />
+        <option value="$PROJECT_DIR$/css/elements.css" />
+        <option value="$PROJECT_DIR$/css/mini_inbox.css" />
       </list>
     </option>
   </component>
@@ -238,6 +243,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -590,13 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/body.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="476" column="20" selection-start="10292" selection-end="10292" vertical-scroll-proportion="0.0" vertical-offset="8426" max-vertical-offset="11281">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="0" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3775">
@@ -764,7 +776,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/login/head_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="944" selection-end="944" vertical-scroll-proportion="0.42007002" vertical-offset="0" max-vertical-offset="1199">
+        <state line="19" column="0" selection-start="944" selection-end="944" vertical-scroll-proportion="-12.666667" vertical-offset="0" max-vertical-offset="1199">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/body.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="348" column="23" selection-start="7654" selection-end="7654" vertical-scroll-proportion="-10.821428" vertical-offset="5961" max-vertical-offset="11260">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/elements.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="346" column="1" selection-start="7221" selection-end="7221" vertical-scroll-proportion="-12.75" vertical-offset="5871" max-vertical-offset="11818">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/mini_inbox.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="1" selection-start="783" selection-end="783" vertical-scroll-proportion="0.58878505" vertical-offset="270" max-vertical-offset="1612">
           <folding />
         </state>
       </provider>

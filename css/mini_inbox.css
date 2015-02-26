@@ -1,32 +1,27 @@
-div.alert.inbox {
+.alert.inbox {
     border: 1px solid #303030;
     width: 95%;
     margin: 0 auto;
     margin-bottom: 17px;
     margin-top: 17px;
     color: #ddd;
-    -moz-border-radius: 0;
     -webkit-border-radius: 0;
-radial-gradient(black 15 %, transparent 16 %) 0 0,
-radial-gradient(black 15 %, transparent 16 %) 8 px 8 px,
-radial-gradient(rgba(255, 255, 255, .1) 15 %, transparent 20 %) 0 1 px,
-radial-gradient(rgba(255, 255, 255, .1) 15 %, transparent 20 %) 8 px 9 px;
+    -moz-border-radius: 0;
+    border-radius: 0;
     background-color: #282828;
     background-size: 16px 16px;
-
 }
 
-span.message-mini {
+.message-mini {
     display: block;
     padding-top: 13px;
     font-weight: 400;
     text-shadow: 1px 1px #000;
 }
 
-div.alert.inbox a:hover, div.alert.inbox  {
+.alert.inbox a:hover, .alert.inbox  {
     text-shadow: 1px 1px #000;
     background:rgba(24, 24, 24, 0.5);
-
 }
 
 

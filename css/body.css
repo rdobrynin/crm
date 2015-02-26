@@ -351,7 +351,6 @@ i.fa.fa-times {
     top: 0;
     margin: 0 auto;
     display: none;
-    pointer-events: none;
 }
 
 .tasks-view {
