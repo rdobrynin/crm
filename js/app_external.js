@@ -3,7 +3,7 @@ requirejs.config({
     "paths": {
         "jquery": "/bower_components/jquery/dist/jquery.min",
         "bootstrap": "/bower_components/bootstrap/dist/js/bootstrap.min",
-        "bootstrap_select": "/assets/js/bootstrap-select"
+        "bootstrap_select": "/bower_components/bootstrap-select/js/bootstrap-select"
     },
     shim: {
         bootstrap: {
