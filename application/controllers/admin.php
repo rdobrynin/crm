@@ -29,10 +29,9 @@ class Admin extends CI_Controller {
 
 
         if($res->froze == 1) {
-            $this->session->set_flashdata('maintenance', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>We\'re sorry, database model in redesigning now.</strong></div>');
-            redirect("maintenance");
+            $this->session->set_flashdata('froze', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>We\'re sorry, Your account has been frozen. Contact with administrator</strong></div>');
+            redirect("froze");
 
-            redirect('maintenance');
         }
 
 
