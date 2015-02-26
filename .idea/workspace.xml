@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b5c62b4-a621-4d4d-8746-6975ce18f490" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin.php" afterPath="$PROJECT_DIR$/application/controllers/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/admin_model.php" afterPath="$PROJECT_DIR$/application/models/admin_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/dashboard.php" afterPath="$PROJECT_DIR$/application/controllers/dashboard.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/less/login.less" afterPath="$PROJECT_DIR$/less/login.less" />
     </list>
     <ignored path="crm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,10 +47,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="login.less" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="login.less" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/less/login.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="143" column="13" selection-start="2414" selection-end="2414" vertical-scroll-proportion="-0.6923077" vertical-offset="2538" max-vertical-offset="3340">
+                <state line="153" column="0" selection-start="2563" selection-end="2563" vertical-scroll-proportion="0.17427386" vertical-offset="2628" max-vertical-offset="3459">
                   <folding />
                 </state>
               </provider>
@@ -75,10 +74,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="admin_model.php" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="admin_model.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/models/admin_model.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="928" column="9" selection-start="18880" selection-end="18880" vertical-scroll-proportion="0.56684494" vertical-offset="16280" max-vertical-offset="17776">
+                <state line="909" column="0" selection-start="18457" selection-end="18457" vertical-scroll-proportion="-3.0370371" vertical-offset="16280" max-vertical-offset="17776">
                   <folding />
                 </state>
               </provider>
@@ -136,7 +135,7 @@
           <file leaf-file-name="dashboard.php" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/application/controllers/dashboard.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="140" column="30" selection-start="3839" selection-end="3839" vertical-scroll-proportion="0.24930748" vertical-offset="2430" max-vertical-offset="27253">
+                <state line="139" column="52" selection-start="3692" selection-end="3820" vertical-scroll-proportion="0.34903046" vertical-offset="2376" max-vertical-offset="27235">
                   <folding />
                 </state>
               </provider>
@@ -176,14 +175,14 @@
         <option value="$PROJECT_DIR$/css/mini_inbox.css" />
         <option value="$PROJECT_DIR$/js/app_external.js" />
         <option value="$PROJECT_DIR$/less/style.less" />
-        <option value="$PROJECT_DIR$/less/login.less" />
         <option value="$PROJECT_DIR$/application/views/templates/head_view.php" />
         <option value="$PROJECT_DIR$/css/modal.css" />
         <option value="$PROJECT_DIR$/css/elements.css" />
         <option value="$PROJECT_DIR$/css/body.css" />
         <option value="$PROJECT_DIR$/application/controllers/admin.php" />
-        <option value="$PROJECT_DIR$/application/controllers/dashboard.php" />
         <option value="$PROJECT_DIR$/application/models/admin_model.php" />
+        <option value="$PROJECT_DIR$/application/controllers/dashboard.php" />
+        <option value="$PROJECT_DIR$/less/login.less" />
       </list>
     </option>
   </component>
@@ -857,13 +856,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/less/login.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="13" selection-start="2414" selection-end="2414" vertical-scroll-proportion="-0.6923077" vertical-offset="2538" max-vertical-offset="3340">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/modal.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="318" column="0" selection-start="6124" selection-end="6124" vertical-scroll-proportion="-13.035714" vertical-offset="5359" max-vertical-offset="6640">
@@ -899,13 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="30" selection-start="3839" selection-end="3839" vertical-scroll-proportion="0.24930748" vertical-offset="2430" max-vertical-offset="27253">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/task_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="40" selection-start="822" selection-end="844" vertical-scroll-proportion="154.0" vertical-offset="4914" max-vertical-offset="10252">
@@ -913,9 +898,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="139" column="52" selection-start="3692" selection-end="3820" vertical-scroll-proportion="0.34903046" vertical-offset="2376" max-vertical-offset="27235">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/admin_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="928" column="9" selection-start="18880" selection-end="18880" vertical-scroll-proportion="0.56684494" vertical-offset="16280" max-vertical-offset="17776">
+        <state line="909" column="0" selection-start="18457" selection-end="18457" vertical-scroll-proportion="-3.0370371" vertical-offset="16280" max-vertical-offset="17776">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/less/login.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="153" column="0" selection-start="2563" selection-end="2563" vertical-scroll-proportion="0.17427386" vertical-offset="2628" max-vertical-offset="3459">
           <folding />
         </state>
       </provider>
