@@ -50,7 +50,7 @@
 
     <script src="<?php print(base_url()); ?>bower_components/jquery/dist/jquery.min.js"></script>
     <script src="<?php print(base_url()); ?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="<?php print(base_url()); ?>bower_components/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="<?php print(base_url()); ?>assets/js/bootstrap-select.js"></script>
 
     <script src="<?php print(base_url()); ?>assets/js/jquery.mCustomScrollbar.js"></script>
     <script src="<?php print(base_url()); ?>assets/js/bootstrap-switch.min.js"></script>

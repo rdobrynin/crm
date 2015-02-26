@@ -304,7 +304,7 @@ textarea:focus  {
     box-shadow: none !important;
 }
 
-.selectpicker> li.selected > a, .selectpicker> li.selected:focus > a {
+.selectpicker> li.selected > a, .selectpicker> li.selected:focus > a ,.selectpicker> li.selected, .selectpicker> li.selected:focus{
     background-color: #bebebe !important;
     border: 0 !important;
     box-shadow: none !important;
