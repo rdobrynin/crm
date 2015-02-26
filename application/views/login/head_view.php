@@ -8,14 +8,10 @@
   <meta name="author" content="">
 
   <title>Brilliant Project management</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="<?php print(base_url());?>assets/css/bootstrap.css" rel="stylesheet">
-    <link href="<?php print(base_url());?>assets/css/bootstrap-select.css" rel="stylesheet">
   <!-- Add custom CSS here -->
         <link rel="stylesheet/less" type="text/css" href="<?php print(base_url()); ?>less/style.less">
     <script src="<?php print(base_url()); ?>assets/js/less.min.js" type="text/javascript"></script>
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<!--  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
 
     <!-- JavaScript -->
