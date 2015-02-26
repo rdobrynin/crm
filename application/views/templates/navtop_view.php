@@ -29,6 +29,9 @@
   <div class="show-info-online"><div class="show-info-content-online"></div></div>
 
   <ul class="nav navbar-nav navbar-right navbar-user">
+      <?php if ($user[0]['id']==14): ?>
+          <li class="add-client"><a href="#" onClick="clearCache()">Clear cache</a></li>
+      <?php endif ?>
       <li id="li-comments"> <a href="#" onClick="SendComment(<?php print($user[0]['id'])?>)" ><span class="icon-comment"></a></li>
       <li id="float-users"> <a href="#"><span class="icon-users"></span></a></li>
       <li class="dropdown user-dropdown">
@@ -88,3 +91,9 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+<script>
+        function clearCache() {
+            localStorage.clear();
+            location.reload();
+        }
+</script>
