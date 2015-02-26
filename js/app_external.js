@@ -1,8 +1,8 @@
 
 requirejs.config({
     "paths": {
-        "jquery": "/assets/js/jquery-1.11.1.min",
-        "bootstrap": "/assets/js/bootstrap.min",
+        "jquery": "/bower_components/jquery/dist/jquery.min",
+        "bootstrap": "/bower_components/bootstrap/dist/js/bootstrap.min",
         "bootstrap_select": "/assets/js/bootstrap-select"
     },
     shim: {
