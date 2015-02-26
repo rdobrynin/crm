@@ -4,7 +4,6 @@
     <list default="true" id="6b5c62b4-a621-4d4d-8746-6975ce18f490" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/login/head_view.php" afterPath="$PROJECT_DIR$/application/views/login/head_view.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/navtop_view.php" afterPath="$PROJECT_DIR$/application/views/templates/navtop_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,10 +36,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="head_view.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="head_view.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/login/head_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="940" selection-end="940" vertical-scroll-proportion="-12.666667" vertical-offset="0" max-vertical-offset="1199">
+            <state line="19" column="0" selection-start="944" selection-end="944" vertical-scroll-proportion="0.42007002" vertical-offset="0" max-vertical-offset="1199">
               <folding />
             </state>
           </provider>
@@ -102,10 +101,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navtop_view.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="navtop_view.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/templates/navtop_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="99" column="0" selection-start="5645" selection-end="5645" vertical-scroll-proportion="0.59348613" vertical-offset="1326" max-vertical-offset="2629">
+            <state line="89" column="0" selection-start="5433" selection-end="5433" vertical-scroll-proportion="-5.018182" vertical-offset="1326" max-vertical-offset="2629">
               <folding>
                 <element signature="n#style#0;n#span#0;n#a#0;n#li#5;n#ul#1;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
               </folding>
@@ -154,8 +153,8 @@
         <option value="$PROJECT_DIR$/application/views/login/login_view.php" />
         <option value="$PROJECT_DIR$/less/variables.less" />
         <option value="$PROJECT_DIR$/less/content.less" />
-        <option value="$PROJECT_DIR$/application/views/login/head_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/navtop_view.php" />
+        <option value="$PROJECT_DIR$/application/views/login/head_view.php" />
       </list>
     </option>
   </component>
@@ -754,19 +753,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/login/head_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="940" selection-end="940" vertical-scroll-proportion="-12.666667" vertical-offset="0" max-vertical-offset="1199">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/navtop_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="0" selection-start="5645" selection-end="5645" vertical-scroll-proportion="0.59348613" vertical-offset="1326" max-vertical-offset="2629">
+        <state line="89" column="0" selection-start="5433" selection-end="5433" vertical-scroll-proportion="-5.018182" vertical-offset="1326" max-vertical-offset="2629">
           <folding>
             <element signature="n#style#0;n#span#0;n#a#0;n#li#5;n#ul#1;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/login/head_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="944" selection-end="944" vertical-scroll-proportion="0.42007002" vertical-offset="0" max-vertical-offset="1199">
+          <folding />
         </state>
       </provider>
     </entry>
