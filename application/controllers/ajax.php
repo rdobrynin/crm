@@ -681,6 +681,7 @@ class Ajax extends CI_Controller {
                         $this->email->subject('New comment from Brilliant Task Management');
                         $this->email->message("Hello, ".$user_to[0]['first_name']." ".$user_to[0]['last_name']."\n"."\n"."You have new comment"."\n"."\n". "From: ".$user_array[0]['first_name']." ".$user_array[0]['last_name']."\n"."\n". "Subject: ".$result['subject']."\n"."\n"."Comment: ".$result['text']);
                         $this->email->send();
+                        $this->email->clear();
                     }
                 }
             }
@@ -1035,17 +1036,17 @@ class Ajax extends CI_Controller {
 //                Send email to curator
                 if ($curator_object->message == '1') {
                     $this->load->library('email');
-                    $this->email->from('info@brilliant-solutions.eu', 'Admin');
+                    $this->email->from('info@brilliant-solutions.eu', 'Project management robot');
                     $this->email->to($curator_email);
                     $this->email->subject('Brilliant project management - Project '.$project_title.' Task( #' .$task->id.')');
                     $this->email->message("Hello, ".$curator_name."\n"."\n"."Task ".$task->title." is over due"."\n"."\n");
                     $this->email->send();
                     $this->email->clear();
                 }
-
+//                Send email to implementor
                 if ($implementor_object->message == '1') {
                     $this->load->library('email');
-                    $this->email->from('info@brilliant-solutions.eu', $curator_name);
+                    $this->email->from('info@brilliant-solutions.eu', 'Project management robot');
                     $this->email->to($implementor_email);
                     $this->email->subject('Brilliant project management - Project '.$project_title.' Task( #' .$task->id.')');
                     $this->email->message("Hello, ".$implementor_name."\n"."\n"."Task ".$task->title." is over due"."\n"."\n");
