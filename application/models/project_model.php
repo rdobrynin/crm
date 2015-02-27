@@ -264,8 +264,23 @@ class Project_model extends CI_Model {
         $query = $this
             ->db
             ->where('pid', $pid)
+            ->limit('1')
             ->get('project');
         return $query->result_array();
+    }
+
+    public function getProjectObject($pid) {
+        $query = $this
+            ->db
+            ->where('pid', $pid)
+            ->limit('1')
+            ->get('project');
+        if ($query->num_rows > 0) {
+            return $query->row();
+        }
+        else {
+            return FALSE;
+        }
     }
 
     /**

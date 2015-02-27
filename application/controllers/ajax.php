@@ -1016,8 +1016,43 @@ class Ajax extends CI_Controller {
         $id =  $this->input->post('id');
         $overdue =  $this->input->post('overdue');
         $this->load->model('task_model');
+        $this->load->model('admin_model');
+        $this->load->model('project_model');
         if($querty = $this->task_model->updateTaskOverdue($id,$overdue)) {
             $result = true;
+            if($overdue == 1) {
+                $task = $this->task_model->getTask($id);
+                $curator_object = $this->admin_model->get_user_object($task->uid);
+                $implementor_object = $this->admin_model->get_user_object($task->implementor);
+                $curator_email = $curator_object->email;
+                $implementor_email = $implementor_object->email;
+                $implementor_name = $this->admin_model->getUsername($task->implementor);
+                $curator_name = $this->admin_model->getUsername($task->uid);
+                $project_array =  $this->project_model->getProjectObject($task->pid);
+                $project_title = $project_array->title;
+                $project_id = $project_array->pid;
+
+//                Send email to curator
+                if ($curator_object->message == '1') {
+                    $this->load->library('email');
+                    $this->email->from('info@brilliant-solutions.eu', 'Admin');
+                    $this->email->to($curator_email);
+                    $this->email->subject('Brilliant project management - Project '.$project_title.' Task( #' .$task->id.')');
+                    $this->email->message("Hello, ".$curator_name."\n"."\n"."Task ".$task->title." is over due"."\n"."\n");
+                    $this->email->send();
+                    $this->email->clear();
+                }
+
+                if ($implementor_object->message == '1') {
+                    $this->load->library('email');
+                    $this->email->from('info@brilliant-solutions.eu', $curator_name);
+                    $this->email->to($implementor_email);
+                    $this->email->subject('Brilliant project management - Project '.$project_title.' Task( #' .$task->id.')');
+                    $this->email->message("Hello, ".$implementor_name."\n"."\n"."Task ".$task->title." is over due"."\n"."\n");
+                    $this->email->send();
+                    $this->email->clear();
+                }
+            }
         }
         else {
             $result = false;

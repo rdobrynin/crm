@@ -4,14 +4,13 @@
 
       $.each(tasks, function(index, value){
 
-         if(value['status'] !='3') {
+         if(value['status'] !='3' && value['overdue'] !='1') {
              var data_time = value['due_time'];
              var dt = new Date().getTime();
              var n = dt.toString();
              var new_time = n.slice(0, -3);
              console.log(data_time+'new: '+new_time);
              if (data_time < new_time) {
-
                     var form_data = {
                         id: value['id'],
                         overdue: 1
@@ -39,7 +38,6 @@
                      }
                  });
              }
-
          }
       });
 
