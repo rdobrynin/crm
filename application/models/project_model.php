@@ -121,6 +121,27 @@ class Project_model extends CI_Model {
     }
 
 
+    /**
+     * Get projects
+     * @return mixed
+     */
+
+    public function checkProjectFroze() {
+        $return = array();
+        $query = $this
+            ->db
+            ->get('project');
+        $result = $query->result_array();
+        if(!empty($result)){
+            foreach($result as $pr){
+                $return[$pr["pid"]] = $pr["froze"];
+            }
+        }
+        return $return;
+    }
+
+
+
 //    get by ipd projects
 
     public function getProjectsAssign($pid) {
@@ -227,7 +248,6 @@ class Project_model extends CI_Model {
      */
 
     public function createEvent($uid,$event,$text,$name,$title,$type) {
-
         $data = array (
             'uid' => $uid,
             'event' => $event,

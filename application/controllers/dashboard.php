@@ -44,6 +44,19 @@ class Dashboard extends CI_Controller {
             $data['projects']=false;
         }
 
+
+
+        $projects_froze = $this->project_model->checkProjectFroze();
+        if($projects_froze) {
+            $data['projects_froze']= $projects_froze;
+        }
+        else {
+            $data['projects_froze']=false;
+        }
+
+//var_dump($data['projects_froze']);
+//        exit();
+
         $project_all_array = $this->project_model->get_all_projects();
         if($project_all_array) {
             $data['all_projects']= $project_all_array;
@@ -298,7 +311,15 @@ class Dashboard extends CI_Controller {
             else {
                 $project_task[$tv['pid']] = false;
             }
+        }
 
+
+        $projects_froze = $this->project_model->checkProjectFroze();
+        if($projects_froze) {
+            $data['projects_froze']= $projects_froze;
+        }
+        else {
+            $data['projects_froze']=false;
         }
 
         $avatars = $this->admin_model->getAvatars();
@@ -441,6 +462,14 @@ class Dashboard extends CI_Controller {
             $data['comments']=false;
         }
 
+        $projects_froze = $this->project_model->checkProjectFroze();
+        if($projects_froze) {
+            $data['projects_froze']= $projects_froze;
+        }
+        else {
+            $data['projects_froze']=false;
+        }
+
         $events_array = $this->project_model->readAllEvents();
         if($events_array) {
             $data['all_events']= $events_array;
@@ -544,6 +573,14 @@ class Dashboard extends CI_Controller {
         else {
             $data['all_events']=false;
         }
+
+        $projects_froze = $this->project_model->checkProjectFroze();
+        if($projects_froze) {
+            $data['projects_froze']= $projects_froze;
+        }
+        else {
+            $data['projects_froze']=false;
+        }
         $data['user_name'] = $this->admin_model->get_users_names();
         $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
@@ -614,6 +651,14 @@ class Dashboard extends CI_Controller {
         }
         else {
             $data['imps']=false;
+        }
+
+        $projects_froze = $this->project_model->checkProjectFroze();
+        if($projects_froze) {
+            $data['projects_froze']= $projects_froze;
+        }
+        else {
+            $data['projects_froze']=false;
         }
 
         $task_types = $this->task_model->getTaskTypes();
@@ -696,6 +741,14 @@ class Dashboard extends CI_Controller {
         }
         else {
             $data['task_types']=false;
+        }
+
+        $projects_froze = $this->project_model->checkProjectFroze();
+        if($projects_froze) {
+            $data['projects_froze']= $projects_froze;
+        }
+        else {
+            $data['projects_froze']=false;
         }
 
         $project_array = $this->project_model->get_projects();
@@ -806,6 +859,14 @@ class Dashboard extends CI_Controller {
             $data['comments']=false;
         }
 
+        $projects_froze = $this->project_model->checkProjectFroze();
+        if($projects_froze) {
+            $data['projects_froze']= $projects_froze;
+        }
+        else {
+            $data['projects_froze']=false;
+        }
+
         $events_array = $this->project_model->readAllEvents();
         if($events_array) {
             $data['all_events']= $events_array;
@@ -878,6 +939,14 @@ class Dashboard extends CI_Controller {
         }
         else {
             $data['task_types']=false;
+        }
+
+        $projects_froze = $this->project_model->checkProjectFroze();
+        if($projects_froze) {
+            $data['projects_froze']= $projects_froze;
+        }
+        else {
+            $data['projects_froze']=false;
         }
 
         $project_title_array = $this->project_model->get_project_title();
@@ -1014,6 +1083,14 @@ class Dashboard extends CI_Controller {
             $data['all_events']=false;
         }
 
+        $projects_froze = $this->project_model->checkProjectFroze();
+        if($projects_froze) {
+            $data['projects_froze']= $projects_froze;
+        }
+        else {
+            $data['projects_froze']=false;
+        }
+
         $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
@@ -1110,6 +1187,14 @@ class Dashboard extends CI_Controller {
         }
         else {
             $data['project_title']=false;
+        }
+
+        $projects_froze = $this->project_model->checkProjectFroze();
+        if($projects_froze) {
+            $data['projects_froze']= $projects_froze;
+        }
+        else {
+            $data['projects_froze']=false;
         }
 
         $project_array = $this->project_model->get_projects();
@@ -1211,6 +1296,14 @@ class Dashboard extends CI_Controller {
         else {
             $data['project_title']=false;
         }
+
+        $projects_froze = $this->project_model->checkProjectFroze();
+        if($projects_froze) {
+            $data['projects_froze']= $projects_froze;
+        }
+        else {
+            $data['projects_froze']=false;
+        }
         $data['users_names']= $this->admin_model->get_users_names();
         $data['user_name'] = $this->admin_model->get_users_names();
         $data['roles'] = $roles;
@@ -1294,6 +1387,15 @@ class Dashboard extends CI_Controller {
         else {
             $data['comments']=false;
         }
+
+        $projects_froze = $this->project_model->checkProjectFroze();
+        if($projects_froze) {
+            $data['projects_froze']= $projects_froze;
+        }
+        else {
+            $data['projects_froze']=false;
+        }
+
         $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
         $data['password'] =  $this->admin_model->get_password($_SESSION['username']);
@@ -1422,6 +1524,14 @@ class Dashboard extends CI_Controller {
         }
         else {
             $data['tasks']=false;
+        }
+
+        $projects_froze = $this->project_model->checkProjectFroze();
+        if($projects_froze) {
+            $data['projects_froze']= $projects_froze;
+        }
+        else {
+            $data['projects_froze']=false;
         }
 
         $imps = $this->task_model->get_imps();
