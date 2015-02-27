@@ -80,6 +80,7 @@
             data: form_data,
             dataType: 'json',
             success: function (msg) {
+                console.log(msg);
                 if (msg.id != 'false') {
                     console.log(msg);
                  $('#assign-user-li-' + $data).fadeOut('slow');

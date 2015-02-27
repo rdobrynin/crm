@@ -38,8 +38,11 @@
                                 <?php else: ?>
                                     <a href="javascript:void(0);"  onClick="unfrozeProject('<?php print($pv['pid']); ?>')" class="btn btn-primary">Unfroze project</a>&nbsp;
                                 <?php endif ?>
-
-                                <a href="javascript:void(0);"  onClick="openAssignUsersProject('<?php print($pv['pid']); ?>')" class="btn btn-success test">Assign member</a>
+                        <?php if ($projects[$pv['pid']]['froze'] == 0): ?>
+                                    <a href="javascript:void(0);"  onClick="openAssignUsersProject('<?php print($pv['pid']); ?>')" class="btn btn-success test">Assign member</a>
+                                    <?php else: ?>
+                                    <a href="javascript:void(0);"  onClick="openAssignUsersProject('<?php print($pv['pid']); ?>')" class="btn btn-success test disabled">Assign member</a>
+                                <?php endif ?>
                             <?php endif ?>
                         </div>
                     </div>

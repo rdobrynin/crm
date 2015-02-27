@@ -1382,14 +1382,15 @@ class Ajax extends CI_Controller {
                     $result['result'] = true;
                 $user_array = $this->admin_model->get_user_id($result['uid']);
                 $user_to = $this->admin_model->get_user_id($result['id']);
-                if ($user_array[0]['message'] == '1') {
-                    $this->load->library('email');
-                    $this->email->from($user_array[0]['email'], 'team');
-                    $this->email->to($user_to[0]['email']);
-                    $this->email->subject('New event from Brilliant Task Management');
-                    $this->email->message("Hello, ".$user_to[0]['first_name']." ".$user_to[0]['last_name']."\n"."\n"."You have been assigned to project"."\n"."\n". "From: ".$user_array[0]['first_name']." ".$user_array[0]['last_name']."\n"."\n". "Subject: ".$result['subject']."\n"."\n");
-                    $this->email->send();
-                }
+//                if ($user_array[0]['message'] == '1') {
+////                    $this->email->clear();
+//                    $this->load->library('email');
+//                    $this->email->from($user_array[0]['email'], 'team');
+//                    $this->email->to($user_to[0]['email']);
+//                    $this->email->subject('New event from Brilliant Task Management');
+//                    $this->email->message("Hello, ".$user_to[0]['first_name']." ".$user_to[0]['last_name']."\n"."\n"."You have been assigned to project"."\n"."\n". "From: ".$user_array[0]['first_name']." ".$user_array[0]['last_name']."\n"."\n". "Subject: ".$result['subject']."\n"."\n");
+//                    $this->email->send();
+//                }
             }
             else {
                 $result['insert'] =  false;
