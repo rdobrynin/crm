@@ -112,9 +112,9 @@ class Task_model extends CI_Model {
      * @return mixed
      */
 
-    public function updateTaskOverdue($id) {
+    public function updateTaskOverdue($id,$overdue) {
         $data = array(
-            'overdue' =>  '1'
+            'overdue' =>  $overdue
         );
         $this->db->where('id', $id);
         $update =$this->db->update('task', $data);

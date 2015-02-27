@@ -1014,8 +1014,9 @@ class Ajax extends CI_Controller {
 
     function updateTaskOverdue() {
         $id =  $this->input->post('id');
+        $overdue =  $this->input->post('overdue');
         $this->load->model('task_model');
-        if($querty = $this->task_model->updateTaskOverdue($id)) {
+        if($querty = $this->task_model->updateTaskOverdue($id,$overdue)) {
             $result = true;
         }
         else {
