@@ -44,8 +44,6 @@ class Dashboard extends CI_Controller {
             $data['projects']=false;
         }
 
-
-
         $projects_froze = $this->project_model->checkProjectFroze();
         if($projects_froze) {
             $data['projects_froze']= $projects_froze;
@@ -53,9 +51,6 @@ class Dashboard extends CI_Controller {
         else {
             $data['projects_froze']=false;
         }
-
-//var_dump($data['projects_froze']);
-//        exit();
 
         $project_all_array = $this->project_model->get_all_projects();
         if($project_all_array) {
@@ -65,7 +60,6 @@ class Dashboard extends CI_Controller {
             $data['all_projects']=false;
         }
 
-//        Get users assign to project
         $project_all_users_array = $this->project_model->get_all_projects_user($_SESSION['username']);
 
         if($project_all_users_array) {
@@ -148,11 +142,6 @@ class Dashboard extends CI_Controller {
         }
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
 
-
-//        $data['user_role'] = $this->admin_model->getUserRole('14','5');
-//        $user_roles = $this->admin_model->getUserRoles('14');
-
-
         $overtasks = $this->task_model->getOverdueTasks();
 
         if($overtasks) {
@@ -187,8 +176,6 @@ class Dashboard extends CI_Controller {
         }
         //            in hours
         $data['total_task_done']=$totalTimeCompleteTask/60;
-
-
         $processtasks = $this->task_model->getprocessTasks();
 
         if($processtasks) {
@@ -245,7 +232,6 @@ class Dashboard extends CI_Controller {
         }
         $this->load->view('templates/navtop_view', $data);
         $this->load->view('templates/sidebar_view', $data);
-
         $this->load->view('templates/dashboard_view', $data);
         $this->load->view('templates/dashboard_js',$data);
         $this->load->view('templates/footer_view',$data);
@@ -382,12 +368,9 @@ class Dashboard extends CI_Controller {
             redirect("dashboard");
         }
 
-
         $data['users_names']= $this->admin_model->get_users_names();
-
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
-
         $data['client'] = $this->admin_model->get_own_client($_SESSION['username']);
         $data['users'] = $this->admin_model->get_users();
         $data['user_name'] = $this->admin_model->get_users_names();

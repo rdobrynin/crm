@@ -38,11 +38,7 @@
                                 <?php else: ?>
                                     <a href="javascript:void(0);"  onClick="unfrozeProject('<?php print($pv['pid']); ?>')" class="btn btn-primary">Unfroze project</a>&nbsp;
                                 <?php endif ?>
-                        <?php if ($projects[$pv['pid']]['froze'] == 0): ?>
-                                    <a href="javascript:void(0);"  onClick="openAssignUsersProject('<?php print($pv['pid']); ?>')" class="btn btn-success test">Assign member</a>
-                                    <?php else: ?>
-                                    <a href="javascript:void(0);"  onClick="openAssignUsersProject('<?php print($pv['pid']); ?>')" class="btn btn-success test disabled">Assign member</a>
-                                <?php endif ?>
+                                    <a href="javascript:void(0);"  onClick="openAssignUsersProject('<?php print($pv['pid']); ?>')" class="btn btn-success test <?php if ($projects[$pv['pid']]['froze'] == 1):  ?><?php print('disabled'); ?><?php endif ?>">Assign member</a>
                             <?php endif ?>
                         </div>
                     </div>
@@ -53,7 +49,6 @@
         </div>
     </div>
 <?php endif ?>
-
 <script type="text/javascript">
 
     /**
@@ -65,14 +60,12 @@
         $('#froze-project-modal').modal('show');
         $('.froze-btn-project').click(function () {
             $.ajax({
-
                 type: 'POST',
                 url: "<?php echo base_url('ajax/frozeProject') ?>",
                 data: {project: $data, status: 1},
                 beforeSend: function () {
                     $('.froze-btn-cancel').addClass('disabled');
                 },
-
                 success: function (data) {
                     var $data = JSON.parse(data);
                     $('.froze-btn-cancel').removeClass('disabled');
