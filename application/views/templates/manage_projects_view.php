@@ -71,6 +71,7 @@
                 },
 
                 success: function (data) {
+                    var $data = JSON.parse(data);
                     $('.froze-btn-cancel').removeClass('disabled');
                     $('#froze-project-modal').modal('hide');
                     window.location.href = '/projects';
