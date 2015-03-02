@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" sizes="114x114" href="http://brilliant-solutions.eu/ico/icon@2x.png"/>
     <link rel="apple-touch-icon" sizes="144x144" href="http://brilliant-solutions.eu/ico/icon-72@2x.png"/>
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="http://brilliant-solutions.eu/ico/favicon.ico"/>
-    <title>Brilliant project management</title>
+    <title>Brilliant Project Management</title>
     <!-- Bootstrap core CSS -->
     <link href="<?php print(base_url()); ?>assets/css/bootstrap.css" rel="stylesheet">
     <link href="<?php print(base_url()); ?>assets/css/bootstrap-switch.min.css" rel="stylesheet">

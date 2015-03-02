@@ -17,7 +17,7 @@
                     </div>
                     </div>
                 <div class="modal-footer">
-                    <a href="#" data-dismiss="modal" class="btn btn-default" style="width: 100%">Close</a>
+                    <a href="#" data-dismiss="modal" class="btn btn-default" style="width: 100%"><?php print(lang('act_close'))?></a>
                 </div>
 
            </div>

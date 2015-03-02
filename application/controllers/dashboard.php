@@ -1213,7 +1213,7 @@ class Dashboard extends CI_Controller {
         $data['roles'] = $this->admin_model->get_roles();
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
         $this->load->view('templates/head_view',$data);
-        if ($data['user'][0]['helpblock'] == 1) {
+        if ($data['user']->helpblock == 1) {
             $this->load->view('templates/help_block_view');
         }
 

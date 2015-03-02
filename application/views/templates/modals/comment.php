@@ -6,7 +6,7 @@
             <div class="modal-header" id="new-comment">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="close-time">×</span></button>
                 <h4 class="modal-title">
-                    <small>Add new comment</small>
+                    <small><?php print(lang('modal_add_new_comment'))?></small>
                 </h4>
             </div>
             <div class="modal-body">
@@ -14,9 +14,9 @@
                 <?php echo form_open('#', $attributes); ?>
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
-                        <label class="label-modal" for="name-comment">User name</label>
+                        <label class="label-modal" for="name-comment"><?php print(lang('modal_username'))?></label>
                         <div class="form-group">
-                            <input type="text" name="name-comment" id="name-comment" class="form-control" placeholder="Choose name">
+                            <input type="text" name="name-comment" id="name-comment" class="form-control" placeholder="<?php print(lang('modal_choose_name'))?>">
                         </div>
                     </div>
 
@@ -27,7 +27,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
-                        <label class="label-modal" for="text-comment">Message</label>
+                        <label class="label-modal" for="text-comment"><?php print(lang('modal_message'))?></label>
                         <div class="">
                             <textarea rows="6" id="text-comment" name="text-comment"></textarea>
                         </div>
@@ -36,7 +36,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-brilliant pull-right btn-xs" id="add-comment-btn">Comment</button>
+                <button type="button" class="btn btn-brilliant pull-right btn-xs" id="add-comment-btn"><?php print(lang('modal_comment'))?></button>
             </div>
         </div>
     </div>

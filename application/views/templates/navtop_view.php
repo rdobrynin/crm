@@ -37,8 +37,8 @@
       <li class="dropdown user-dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown"><span class="icon-book"></span></a>
           <ul class="dropdown-menu dropdown-user">
-              <li> <a href="#">Agile Answers</a></li>
-              <li> <a href="#">Online Help</a></li>
+              <li> <a href="#"><?php print(lang('top_agile_answers')); ?></a></li>
+              <li> <a href="#"><?php print(lang('top_online_help')); ?></a></li>
               <li> <a href="http://www.brilliant-solutions.eu" target="blank">Brilliant Solutions</a></li>
           </ul>
       </li>

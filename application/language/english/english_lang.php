@@ -6,6 +6,8 @@ $lang['menu_tasks'] = "Tasks";
 $lang['menu_team'] = "Admin users";
 $lang['menu_chart'] = "Charts";
 $lang['menu_comments'] = "Comments";
+$lang['menu_settings'] = "Settings";
+$lang['menu_help_panel'] = "Help Panel";
 $lang['menu_groupchat'] = "Messenger";
 $lang['menu_help'] = "Help";
 $lang['menu_lang'] = "Language";
@@ -59,4 +61,35 @@ $lang['role_customer'] ='Customer';
 $lang['role_guest'] ='Guest';
 
 $lang['add_comment'] ='Add comment';
+
+
+$lang['act_close'] ='Close';
+
+
+// NAV TOP
+$lang['top_agile_answers'] ='Agile answers';
+$lang['top_online_help'] ='Online help';
+
+//Notifications
+$lang['mess_fields_not_empty'] ='Fields must be not empty';
+
+//Modal
+$lang['modal_intro'] ='Online help';
+$lang['modal_mess_email'] ='Message to email';
+$lang['modal_task_category'] ='Task category';
+$lang['modal_apply'] ='Apply';
+$lang['modal_apply_cat'] ='Apply categories';
+$lang['modal_message'] ='Message';
+$lang['modal_username'] ='User name';
+$lang['modal_comment'] ='Comment';
+$lang['modal_add_new_comment'] ='Add new comment';
+$lang['modal_choose_name'] ='Choose name';
+$lang['modal_cancel_time'] ='Cancel the time';
+$lang['modal_sure_cancel_time'] ='Are you sure to cancel the current time ?';
+$lang['modal_cancel_time_tracker'] ='Cancel time tracker';
+
+$lang['modal_log_task_for_complete'] ='Log task for complete';
+$lang['modal_choose_task'] ='Choose task';
+$lang['modal_worked'] ='Worked';
+
 

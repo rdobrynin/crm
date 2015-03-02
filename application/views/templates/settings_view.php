@@ -4,13 +4,13 @@
     <div class="modal-content" id="settings-content-modal">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title custom_align" id="Heading"><i class="fa fa-gear"></i>&nbsp;Settings</h4>
+        <h4 class="modal-title custom_align" id="Heading"><i class="fa fa-gear"></i>&nbsp;<?php print(lang('menu_settings')); ?></h4>
       </div>
       <div class="modal-body">
          <form role="form" id="settings_form_help">
          <div class="well">
              <fieldset class="scheduler-border">
-                 <legend class="scheduler-border">Help panel</legend>
+                 <legend class="scheduler-border"><?php print(lang('menu_help_panel')); ?></legend>
                  <div class="row-fluid">
                      <div class="col-md-12" style="padding-left: 0">
                          <div class="form-group">
@@ -27,7 +27,7 @@
           <form role="form" id="settings_form_introduce">
               <div class="well">
                   <fieldset class="scheduler-border">
-                      <legend class="scheduler-border">Intro modal</legend>
+                      <legend class="scheduler-border"><?php print(lang('modal_intro'))?></legend>
                       <div class="row-fluid">
                           <div class="col-md-12" style="padding-left: 0">
                               <div class="form-group">
@@ -43,7 +43,7 @@
           <form role="form" id="settings_form_message">
               <div class="well">
                   <fieldset class="scheduler-border">
-                      <legend class="scheduler-border">Message to email</legend>
+                      <legend class="scheduler-border"><?php print(lang('modal_mess_email'))?></legend>
                       <div class="row-fluid">
                           <div class="col-md-12" style="padding-left: 0">
                               <div class="form-group">
@@ -59,25 +59,25 @@
           <form role="form" id="settings_form_ttp">
               <div class="well">
                   <fieldset class="scheduler-border">
-                      <legend class="scheduler-border">Task category</legend>
+                      <legend class="scheduler-border"><?php print(lang('modal_task_category'))?></legend>
                   <?php foreach ($task_types as $tk => $tv): ?>
                   <div class="row-fluid">
                       <div class="col-md-8" style="padding-left: 0">
                           <div class="form-group">
                               <input type="text" class="form-control form-control-default" id="ttp_<?php print($tk) ?>_input" value="<?php print($tv) ?>"/>
                           </div>
-                          <div style="display: none; margin-bottom: 10px;" id="check_empty_ttp_<?php print($tk) ?>_input" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;Fields must be not empty</div>
+                          <div style="display: none; margin-bottom: 10px;" id="check_empty_ttp_<?php print($tk) ?>_input" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;<?php print(lang('mess_fields_not_empty'))?></div>
                       </div>
                       <div class="col-md-2" style="padding-left: 0">
                           <div class="form-group">
-                           <a href="javascript:void(0);" class="btn btn-primary btn-update-ttp"  id="ttp_<?php print($tk) ?>">apply</a>
+                           <a href="javascript:void(0);" class="btn btn-primary btn-update-ttp"  id="ttp_<?php print($tk) ?>"><?php print(lang('modal_apply'))?></a>
                           </div>
                       </div>
                       <?php endforeach ?>
                   </div>
                   <div class="row-fluid">
                       <div class="col-md-12" style="padding-left: 0">
-                          <div style="display: none; margin-bottom: 10px;" id="check_empty_ttp" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;Fields must be not empty</div>
+                          <div style="display: none; margin-bottom: 10px;" id="check_empty_ttp" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;<?php print(lang('mess_fields_not_empty'))?></div>
                       </div>
                   </div>
                   </fieldset>
@@ -86,7 +86,7 @@
           <?php endif ?>
       </div>
       <div class="modal-footer">
-          <button type="button" class="btn btn-success btn-lg" data-dismiss="modal" onclick="window.location = '<?php print(site_url()) ?>';">Apply categories</button>
+          <button type="button" class="btn btn-success btn-lg" data-dismiss="modal" onclick="window.location = '<?php print(site_url()) ?>';"><?php print(lang('modal_apply_cat'))?></button>
       </div>
     </div>
 
