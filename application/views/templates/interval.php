@@ -17,7 +17,7 @@
 
 //Get left sidebar status
 
-                    $user = '<?php print($user[0]['id'])?>';
+                    $user = '<?php print($user->id)?>';
                     var form_data = {
                         id: $user
                     };

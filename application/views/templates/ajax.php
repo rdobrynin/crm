@@ -103,7 +103,7 @@
 
       $("#switch-left-bar").click(function () {
 
-          var $user = '<?php print($user[0]['id'])?>';
+          var $user = '<?php print($user->id)?>';
           var form_data = {
               uid: $user,
               status: '1'
@@ -132,7 +132,7 @@
        */
 
       $("#switch-left-bar-back").click(function () {
-          var $user = '<?php print($user[0]['id'])?>';
+          var $user = '<?php print($user->id)?>';
           var form_data = {
               uid: $user,
               status: '0'
@@ -161,7 +161,7 @@
        */
 
       $("#float-users").click(function () {
-          var $user = '<?php print($user[0]['id'])?>';
+          var $user = '<?php print($user->id)?>';
           var form_data = {
               uid: $user,
               status: '1'
@@ -187,7 +187,7 @@
 
       $(".close-right-sidebar").click(function () {
 
-          var $user = '<?php print($user[0]['id'])?>';
+          var $user = '<?php print($user->id)?>';
           var form_data = {
               uid: $user,
               status: '0'
@@ -664,7 +664,7 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
       $('.point-name-tag').hide();
       $('#qm-point-name').show();
 
-      $user = '<?php print($user[0]['id'])?>';
+      $user = '<?php print($user->id)?>';
       var form_data = {
           id: $data
       };
@@ -674,6 +674,7 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
           data: form_data,
           dataType: 'json',
           success: function (msg) {
+              console.log(msg);
               $first_name = msg.user[0]['first_name'];
               $last_name = msg.user[0]['last_name'];
               $currentID = msg.user[0]['id'];
@@ -727,7 +728,7 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
               }
           });
 
-          $user = '<?php print($user[0]['id'])?>';
+          $user = '<?php print($user->id)?>';
           setTimeout(function () {
           $.ajax({
               type: 'GET',
@@ -762,7 +763,7 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
       $('#qm-point-name').show();
       $('#qm-subject-field').val($title);
 
-      $user = '<?php print($user[0]['id'])?>';
+      $user = '<?php print($user->id)?>';
       var form_data = {
           id: $data
       };
@@ -772,6 +773,7 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
           data: form_data,
           dataType: 'json',
           success: function (msg) {
+              console.log(msg);
               $first_name = msg.user[0]['first_name'];
               $last_name = msg.user[0]['last_name'];
               $currentID = msg.user[0]['id'];
@@ -841,7 +843,7 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
 
 
   function taskToEdit($data){
-      $user = '<?php print($user[0]['id'])?>';
+      $user = '<?php print($user->id)?>';
       $.ajax({
           type: 'GET',
           url: "<?php echo base_url('ajax/taskToEdit') ?>",
@@ -878,7 +880,7 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
       $('.qm-body').show();
     $('#qm-point-name').hide();
     $('#qm-autocomplete').show();
-      $user = '<?php print($user[0]['id'])?>';
+      $user = '<?php print($user->id)?>';
       var form_data = {
           id: $data
       };
@@ -987,7 +989,7 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
  **/
 
   function taskToReady($data){
-      $editor = '<?php print($user[0]['id'])?>';
+      $editor = '<?php print($user->id)?>';
       var form_data = {
           id: $data,
           uid:$editor,
@@ -1010,7 +1012,7 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
    **/
 
   function taskToProcess($data){
-      $editor = '<?php print($user[0]['id'])?>';
+      $editor = '<?php print($user->id)?>';
       var form_data = {
           id: $data,
           uid:$editor
@@ -1067,7 +1069,7 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
           btnOkLabel:'<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
           onConfirm: function () {
               var currentTask = $(this).attr('target');
-              var uid = '<?php print($user[0]['id'])?>';
+              var uid = '<?php print($user->id)?>';
               var form_data = {
                   id: currentTask,
                    uid: uid
@@ -1100,7 +1102,7 @@ $('#status-assign-user-'+id).removeClass('grey').addClass('green');
           }
       }
   );
-  unical_id = <?php print json_encode($user[0]['id']);?>;
+  unical_id = <?php print json_encode($user->id);?>;
 
 /**
  * Update Task

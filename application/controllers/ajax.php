@@ -625,7 +625,7 @@ class Ajax extends CI_Controller {
     function getUserbyId() {
         $this->load->model('admin_model');
         $user =  $this->input->post('id');
-        $result['user']= $this->admin_model->get_user_id($user);
+        $result['user']= $this->admin_model->get_user_id_array($user);
         echo json_encode($result);
     }
 
@@ -1023,8 +1023,8 @@ class Ajax extends CI_Controller {
             $result = true;
             if($overdue == 1) {
                 $task = $this->task_model->getTask($id);
-                $curator_object = $this->admin_model->get_user_object($task->uid);
-                $implementor_object = $this->admin_model->get_user_object($task->implementor);
+                $curator_object = $this->admin_model->get_user_id($task->uid);
+                $implementor_object = $this->admin_model->get_user_id($task->implementor);
                 $curator_email = $curator_object->email;
                 $implementor_email = $implementor_object->email;
                 $implementor_name = $this->admin_model->getUsername($task->implementor);
@@ -1372,8 +1372,8 @@ class Ajax extends CI_Controller {
                 $result['insert'] =  true;
                 $name_array =  $this->admin_model->get_user_id($uid);
                 $assign_name_array =  $this->admin_model->get_user_id($id);
-                $full_name = $name_array[0]['first_name'].' '.$name_array[0]['last_name'];
-                $assign_full_name = $assign_name_array[0]['first_name'].' '.$assign_name_array[0]['last_name'];
+                $full_name = $name_array->first_name.' '.$name_array->last_name;
+                $assign_full_name = $assign_name_array->first_name.' '.$assign_name_array->last_name;
                 $result['full_name'] = $assign_full_name;
                 $text ='Assigned user';
                 $project_arr =$this->project_model->getProject($pid);
@@ -1424,7 +1424,7 @@ class Ajax extends CI_Controller {
                if($status == '1') {
                    $this->load->library('email');
                    foreach ($project_array as $k => $v) {
-                       $user_object = $this->admin_model->get_user_object($v['uid']);
+                       $user_object = $this->admin_model->get_user_id($v['uid']);
                        if ($user_object->message == 1) {
                            $this->email->clear();
                            $user_name = $user_object->first_name . ' ' . $user_object->last_name;

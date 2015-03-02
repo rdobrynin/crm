@@ -15,11 +15,11 @@
                             <div class="form-group">
                                 <div class="col-md-6">
                                     <label for="first_name"><?php print(lang('first_name'))?></label>
-                                    <input type="text" value="<?php print($user[0]['first_name']); ?>" class="form-control" name="first_name" id="first_name" placeholder="First name">
+                                    <input type="text" value="<?php print($user->first_name); ?>" class="form-control" name="first_name" id="first_name" placeholder="First name">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="last_name" ><?php print(lang('last_name'))?></label>
-                                    <input type="text" value="<?php print($user[0]['last_name']); ?>" class="form-control" name="last_name" id="last_name" placeholder="Last name">
+                                    <input type="text" value="<?php print($user->last_name); ?>" class="form-control" name="last_name" id="last_name" placeholder="Last name">
                                 </div>
                             </div>
 
@@ -38,7 +38,7 @@
                             <div class="form-group">
                                 <div class="col-md-6">
                                     <label for="phone"><?php print(lang('phone'))?></label>
-                                    <input type="text" value="<?php print($user[0]['phone']); ?>" class="form-control" name="phone" id="basic_phone" placeholder="Phone number">
+                                    <input type="text" value="<?php print($user->phone); ?>" class="form-control" name="phone" id="basic_phone" placeholder="Phone number">
                                 </div>
                                 <!--                additional phones-->
                                 <div class="form-group">
@@ -64,7 +64,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-6" style="margin-bottom: 10px;">
-                                    <p><span class="label label-primary"><?php print(lang('prim_email'))?> :</span>  <span><span class="lead">&nbsp;<?php print($user['0']['email']); ?></span></span></p>
+                                    <p><span class="label label-primary"><?php print(lang('prim_email'))?> :</span>  <span><span class="lead">&nbsp;<?php print($user->email); ?></span></span></p>
                                     </div>
 <!--ADD EMAIL-->
                                 <div class="form-group">
@@ -89,7 +89,7 @@
                                 <span id="check_email_profile"></span>
                             </div>
 
-                            <input type="hidden" value="<?php print($user[0]['role']); ?>" name="role-select" id="role-select">
+                            <input type="hidden" value="<?php print($user->role); ?>" name="role-select" id="role-select">
                         </div>
 <!--ADD INFO-->
                         <div class="address-wrapper" style="height: 100%;">
@@ -97,18 +97,18 @@
                             <div class="form-group">
                                 <div class="col-md-6">
                                     <label for="skype_address">Skype</label>
-                                    <input type="text" value="<?php print($user[0]['skype_address']); ?>" class="form-control" id="skype_address" name="skype_address" placeholder="Skype address">
+                                    <input type="text" value="<?php print($user->skype_address); ?>" class="form-control" id="skype_address" name="skype_address" placeholder="Skype address">
 
                             </div>
                                 <div class="col-md-6">
                                     <label for="facebook_address">Facebook</label>
-                                    <input type="text" value="<?php print($user[0]['facebook_address']); ?>" class="form-control" id="facebook_address" name="facebook_address" placeholder="Facebook address">
+                                    <input type="text" value="<?php print($user->facebook_address); ?>" class="form-control" id="facebook_address" name="facebook_address" placeholder="Facebook address">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-6">
                                     <label for="linkedin_address">Linkedin</label>
-                                    <input type="text" value="<?php print($user[0]['linkedin_address']); ?>" class="form-control" id="linkedin_address" name="linkedin_address" placeholder="Linkedin address">
+                                    <input type="text" value="<?php print($user->linkedin_address); ?>" class="form-control" id="linkedin_address" name="linkedin_address" placeholder="Linkedin address">
                                 </div>
                             </div>
                         </div>
@@ -125,7 +125,7 @@
                             <form method="post" action="" id="upload_file">
                                 <label for="userfile"><?php print(lang('upload'))?></label>
                                 <input type="file" name="userfile" id="userfile" size="20"/>
-                                <input type="hidden" value="<?php print($user[0]['id']); ?>" name="user_id" id="user_id">
+                                <input type="hidden" value="<?php print($user->id); ?>" name="user_id" id="user_id">
                                 <br/>
                                 <input type="submit" class="btn btn-info" name="<?php print(lang('submit'))?>" id="submit"/>
                             </form>

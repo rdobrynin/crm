@@ -14,10 +14,10 @@
                  <div class="row-fluid">
                      <div class="col-md-12" style="padding-left: 0">
                          <div class="form-group">
-                             <input type="hidden" value="<?php print($user[0]['id']); ?>" name="user_id_help" id="user_id_help">
+                             <input type="hidden" value="<?php print($user->id); ?>" name="user_id_help" id="user_id_help">
 
                              <div class="toggle-div-help">
-                                 <input type="checkbox" id="toggle-help-btn" data-off="OFF" data-on="ON" class="onoff"  <?php if ($user[0]["helpblock"] == 1): ?> checked  <?php endif ?> data-onstyle="success" data-offstyle="danger" data-toggle="toggle">
+                                 <input type="checkbox" id="toggle-help-btn" data-off="OFF" data-on="ON" class="onoff"  <?php if ($user->helpblock == 1): ?> checked  <?php endif ?> data-onstyle="success" data-offstyle="danger" data-toggle="toggle">
                              </div>
                          </div>
                      </div>
@@ -31,9 +31,9 @@
                       <div class="row-fluid">
                           <div class="col-md-12" style="padding-left: 0">
                               <div class="form-group">
-                                  <input type="hidden" value="<?php print($user[0]['id']); ?>" name="user_id_dialog" id="user_id_dialog">
+                                  <input type="hidden" value="<?php print($user->id); ?>" name="user_id_dialog" id="user_id_dialog">
                                   <div class="toggle-div-dialog">
-                                      <input type="checkbox" id="toggle-dialog-btn" data-off="OFF" data-on="ON"  class="onoff"  <?php if ($user[0]["introduce"]==0): ?> checked  <?php endif ?> data-onstyle="success" data-offstyle="danger" data-toggle="toggle">
+                                      <input type="checkbox" id="toggle-dialog-btn" data-off="OFF" data-on="ON"  class="onoff"  <?php if ($user->introduce==0): ?> checked  <?php endif ?> data-onstyle="success" data-offstyle="danger" data-toggle="toggle">
                                   </div>
                               </div>
                   </fieldset>
@@ -47,15 +47,15 @@
                       <div class="row-fluid">
                           <div class="col-md-12" style="padding-left: 0">
                               <div class="form-group">
-                                  <input type="hidden" value="<?php print($user[0]['id']); ?>" name="user_id_message" id="user_id_message">
+                                  <input type="hidden" value="<?php print($user->id); ?>" name="user_id_message" id="user_id_message">
                                   <div class="toggle-div-message">
-                                      <input type="checkbox" id="toggle-message-btn" data-off="OFF" data-on="ON"  class="onoff"  <?php if ($user[0]["message"]==1): ?> checked  <?php endif ?> data-onstyle="success" data-offstyle="danger" data-toggle="toggle">
+                                      <input type="checkbox" id="toggle-message-btn" data-off="OFF" data-on="ON"  class="onoff"  <?php if ($user->message==1): ?> checked  <?php endif ?> data-onstyle="success" data-offstyle="danger" data-toggle="toggle">
                                   </div>
                               </div>
                   </fieldset>
               </div>
           </form>
-          <?php if ($task_types != false AND $user[0]['role'] ==5 OR $user[0]['role']==4): ?>
+          <?php if ($task_types != false AND $user->role ==5 OR $user->role==4): ?>
           <form role="form" id="settings_form_ttp">
               <div class="well">
                   <fieldset class="scheduler-border">

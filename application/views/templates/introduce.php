@@ -60,7 +60,7 @@
             </div>
             <div class="modal-footer">
                 <div class="pull-left" style="padding-top: 10px;"><input id="dont-show-whats-new" type="checkbox" name="dontshow"><label for="dont-show-whats-new" type="checkbox">&nbsp;Dont'show again. You will still be able to access this dialog through the "Settings" Menu in the application header</div>
-                <input type="hidden" name="user_introduce_id" id="user_introduce_id" value="<?php print($user[0]['id'])?>">
+                <input type="hidden" name="user_introduce_id" id="user_introduce_id" value="<?php print($user->id)?>">
                 <button type="button" class="btn btn-default pull-right" id="close-introduce" style="margin-top:5px;" data-dismiss="modal">Close</button>
             </div>
         </div>

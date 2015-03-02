@@ -18,7 +18,7 @@
                             <label for="task_log_title">Choose task</label>
                             <select class="form-control selectpicker form-control-default" id="task_log_title" name="category">
                                 <?php foreach ($tasks as $tk => $tv): ?>
-                                    <?php if ($tv['status'] !=3 AND $tv['status'] !=0 AND $user[0]['id'] == $tv['implementor']): ?>
+                                    <?php if ($tv['status'] !=3 AND $tv['status'] !=0 AND $user->id == $tv['implementor']): ?>
                                     <option value="<?php print($tv['id']); ?>"><?php print($tv['title']); ?></option>
                                     <?php endif ?>
                                 <?php endforeach ?>

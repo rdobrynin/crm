@@ -38,7 +38,7 @@
     $(function () {
 
 
-        unical_id = <?php print json_encode($user[0]['id']);?>;
+        unical_id = <?php print json_encode($user->id);?>;
 
 
 //        localStorage.clear();
@@ -185,7 +185,7 @@
         });
 
         // Calculate total time in seconds
-        current_uid = <?php print json_encode($user[0]['id']);?>;
+        current_uid = <?php print json_encode($user->id);?>;
         currentTimeRecord = localStorage.getItem("ctime");
         var new0 = currentTimeRecord[0];
         var new1 = currentTimeRecord[1];
@@ -195,7 +195,7 @@
         currentTimeRecord_sec =  parseFloat(currentTimeRecord[3]+currentTimeRecord[4]);
         currentTimeRecord = currentTimeRecord_min;
         var form_data_ = {
-            id: <?php print json_encode($user[0]['id']);?>
+            id: <?php print json_encode($user->id);?>
         };
         $.ajax({
             url: "<?php echo site_url('ajax/getTimer'); ?>",
@@ -215,7 +215,7 @@
 
         $('#log_task_btn').click(function () {
             var form_data_ = {
-                id: <?php print json_encode($user[0]['id']);?>,
+                id: <?php print json_encode($user->id);?>,
                 time: '0'
             };
             $.ajax({
@@ -229,7 +229,7 @@
                     var tts = $('#log_timer').val();
                     var form_data = {
                         id: id_task,
-                        uid:<?php print json_encode($user[0]['id']);?>,
+                        uid:<?php print json_encode($user->id);?>,
                         status: '3',
                         tts: tts
                     };
@@ -278,7 +278,7 @@
 
         window.onbeforeunload = function () {
             var form_data_ = {
-                id: <?php print json_encode($user[0]['id']);?>,
+                id: <?php print json_encode($user->id);?>,
                 time: currentTimeRecord
             };
             $.ajax({

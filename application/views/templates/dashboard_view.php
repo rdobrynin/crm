@@ -94,7 +94,7 @@
                                             <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
                                             <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">CTS</th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
-                                            <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
+                                            <?php if($user->role==5 OR $user->role==4):?>
                                                 <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
                                             <?php endif ?>
                                         </tr>
@@ -119,14 +119,14 @@
                                                     <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
                                                     <td><?php print(check_cts($tv['cts'])); ?></td>
                                                     <td class="text-left"><?php print(date('jS F Y G:i', $tv['due_time'])); ?></td>
-                                                    <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
+                                                    <?php if($user->role==5 OR $user->role==4):?>
                                                         <td>
-                                                            <?php if($user[0]['id']==$tv['uid']):?>
+                                                            <?php if($user->id==$tv['uid']):?>
                                                             <a href="javascript:void(0);" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
                                                             <a href="javascript:void(0);" onClick="taskToEdit(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
                                                             <?php endif ?>
                                                             <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)"  style="text-decoration: none;"><i class="fa fa-eye"></i></a>
-                                                        <?php if($user[0]['id']==$tv['uid']):?>
+                                                        <?php if($user->id==$tv['uid']):?>
                                                             <a href="javascript:void(0);" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv['id']); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>
                                                         <?php endif ?>
                                                         </td>
@@ -151,7 +151,7 @@
 <!--                End overdue-->
                 <div style="padding-top: 20px;">
                 <?php if ($tasks != FALSE): ?>
-                        <?php if ($user[0]['role']==5 OR $user[0]['role']==4 OR $user[0]['role']==1 OR $user[0]['role']==3): ?>
+                        <?php if ($user->role==5 OR $user->role==4 OR $user->role==1 OR $user->role==3): ?>
                 <div class="row">
                     <div class="col-lg-10 col-md-12">
                         <p class="lead">Tasks for approve&nbsp;(<span id="calc-appr-tasks" ><?php if ($approve_tasks != false): ?><?php print(count($approve_tasks)); ?><?php else:?>0<?php endif ?></span>)</p>
@@ -164,7 +164,8 @@
                 </div>
 
                         <?php endif ?>
-                        <?php if ($user[0]['role']==2 ): ?>
+                        <?php if ($user->role
+                        ==2 ): ?>
                 <div class="row">
                     <div class="col-lg-10 col-md-12">
                             <p class="lead">Ready to go&nbsp;(<span id="calc-ready-tasks"><?php if ($ready_tasks != false): ?><?php print($ready_tasks); ?><?php else:?>0<?php endif ?></span>)<p>
@@ -178,7 +179,7 @@
                     </div>
                         <?php endif ?>
 <!--                 START APPROVE  TASK      -->
-                        <?php if ($user[0]['role']!=2): ?>
+                        <?php if ($user->role!=2): ?>
                         <?php if ($approve_tasks != false): ?>
                         <div class="panel">
                             <div class="panel-body-table">
@@ -196,7 +197,7 @@
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
                                             <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
-                                            <?php if($user[0]['role']!=3):?>
+                                            <?php if($user->role!=3):?>
                                             <th width="15%" class="text-left"></th>
                                             <?php endif ?>
                                         </tr>
@@ -205,7 +206,7 @@
                                       <?php $tasks = array_reverse($tasks);?>
                                         <?php foreach ($tasks as $tk => $tv): ?>
                                             <?php if ($tv['overdue'] !=='1'): ?>
-                                            <?php if ($tv['status'] == 0 && $user[0]['role']==5 OR $tv['status'] == 0 && $user[0]['role']==1   OR $tv['status'] == 0 && $user[0]['role']==4 OR $tv['status'] == 0 &&  $user[0]['role']==3): ?>
+                                            <?php if ($tv['status'] == 0 && $user->role==5 OR $tv['status'] == 0 && $user->role==1   OR $tv['status'] == 0 && $user->role==4 OR $tv['status'] == 0 &&  $user->role==3): ?>
                                             <tr class="<?php if ($tv['status'] == 6): ?>danger<?php endif ?> <?php print(check_deadline(date('jS F Y G:i', $tv['due_time']))); ?>" id="tr-dashboard-task-<?php print($tv['id']); ?>">
                                                 <td>#<?php print($tv['id']); ?></td>
                                                 <td><span class="muted"><?php print(date('jS F Y G:i', $tv['date_created'])); ?></span></td>
@@ -217,16 +218,16 @@
                                                 <td><span class="muted"><?php print(substr($tv['desc'], 0,20)).' '.'...';?></span></td>
                                                 <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
                                                 <td class="text-left"><?php print(date('jS F Y G:i', $tv['due_time'])); ?></td>
-                                                <?php if($user[0]['role']!=3):?>
+                                                <?php if($user->role!=3):?>
                                                 <td>
-                                                    <?php if($user[0]['role']!=1):?>
-                                                        <?php if ($user[0]['id'] == $tv['uid'] ): ?>
+                                                    <?php if($user->role!=1):?>
+                                                        <?php if ($user->id == $tv['uid'] ): ?>
                                                             <a href="javascript:void(0);" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
                                                             <a href="javascript:void(0);" onClick="taskToEdit(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
                                                         <?php endif ?>
                                                     <?php endif ?>
                                                     <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
-                                                    <?php if($user[0]['role']!=1 AND $user[0]['id'] == $tv['uid'] ):?>
+                                                    <?php if($user->role!=1 AND $user->id == $tv['uid'] ):?>
                                                     <a href="javascript:void(0);" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv['id']); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>
                                                     <?php endif ?>
                                                 </td>
@@ -249,7 +250,7 @@
                         <?php endif ?>
 <!-- END APPROVE-->
 <!--STARTS READY-->
-                        <?php if ($user[0]['role']==2): ?>
+                        <?php if ($user->role==2): ?>
                         <div class="panel">
                             <?php if ($ready_tasks!=0): ?>
                             <div class="panel-body-table">
@@ -286,7 +287,7 @@
                                                     <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
                                                     <td class="text-left"><?php print(date('jS F Y G:i', $tv['due_time'])); ?></td>
                                                     <td class="text-center"><a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-eye"></i></a></td>
-                                                    <?php if ($user[0]['id'] == $tv['implementor']): ?>
+                                                    <?php if ($user->id == $tv['implementor']): ?>
                                                     <td class="text-center">
                                                         <a href="javascript:void(0);" style="color:#5cb85c;" class="btn btn-xs imp-adjust-btn"  onClick="taskToProcess(<?php print($tv['id']); ?>)"  data-toggle="tooltip" data-placement="top" title="process"><i class="fa fa-play-circle"></i></a>
                                                         <a href="javascript:void(0);"  onClick="impControl(<?php print($tv['id']); ?>,3)" class="btn btn-xs imp-adjust-btn" data-toggle="tooltip" data-placement="top" title="complete"><i class="fa fa-check-circle"></i></a>
@@ -368,7 +369,7 @@
                                                 <td class="text-left"><?php print(date('jS F Y G:i', $tv['due_time'])); ?></td>
                                                 <td>
                                                     <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
-                                                    <?php if ($user[0]['id'] == $tv['implementor'] && $user[0]['role']==2): ?>
+                                                    <?php if ($user->id == $tv['implementor'] && $user->role==2): ?>
                                                         <a href="javascript:void(0);"  onClick="impControlComplete(<?php print($tv['id']); ?>,'<?php print(check_cts($tv['cts'])); ?>')" class="btn btn-xs imp-adjust-btn" data-toggle="tooltip" data-placement="top" title="complete"><i class="fa fa-check-circle"></i></a>
                                                         <a href="javascript:void(0);" style="color:#d9534f;" class="btn btn-xs imp-adjust-btn" onClick="impControl(<?php print($tv['id']); ?>,1)" data-toggle="tooltip" data-placement="top" title="unwant"><i class="fa fa-eye-slash"></i></a>
                                                     <?php endif ?>
@@ -417,7 +418,7 @@
                         <?php $rev_comm = array_reverse($comments);?>
                         <?php foreach ($rev_comm as $ck=>$cv): ?>
                             <?php if ($cv['public'] == 0): ?>
-                        <?php if ($cv['to'] == $user[0]['id']): ?>
+                        <?php if ($cv['to'] == $user->id): ?>
                         <div class="sub-activity search-filter-comment">
 
 

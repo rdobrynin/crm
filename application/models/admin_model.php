@@ -549,26 +549,30 @@ class Admin_model extends CI_Model {
       ->where('id', $id)
       ->limit('1')
       ->get('users');
-    return $query->result_array();
+      if ($query->num_rows > 0) {
+          return $query->row();
+      }
+      else {
+          return FALSE;
+      }
   }
 
-    public function get_user_object($id) {
+
+
+
+    public function get_user_id_array($id) {
         $query = $this
             ->db
             ->where('id', $id)
             ->limit('1')
             ->get('users');
-        if ($query->num_rows > 0) {
-            return $query->row();
-        }
-        else {
-            return FALSE;
-        }
+        return $query->result_array();
     }
 
 
 
- /**
+
+    /**
    * get users();
    * @return mixed
    */

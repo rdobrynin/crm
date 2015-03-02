@@ -73,18 +73,18 @@
                                                     <td><?php print($uv['date_created']); ?></td>
 
                                                     <td>
-                                                        <?php if ($user[0]['role'] ==5): ?>
+                                                        <?php if ($user->role ==5): ?>
 
                                                         <a href="javascript:void(0);" data-title="Edit" onClick="updateUser(<?php print($uv['id']); ?>)"><i class="fa fa-pencil"></i></a>
                                                         <?php endif ?>
                                                     </td>
                                                     <td>
-                                                        <?php if ($uv['role'] !=5 AND $user[0]['role'] ==5): ?>
+                                                        <?php if ($uv['role'] !=5 AND $user->role ==5): ?>
                                                             <a href="javascript:void(0);" style="cursor: pointer;" data-toggle="confirmation-delete-current-user" data-singleton="true" data-target="<?php print($uv['id']); ?>">Remove</a>
                                                         <?php endif ?>
                                                     </td>
                                                     <td>
-                                                        <?php if ($user[0]['role'] ==5 AND $user[0]['id'] != $uv['id']): ?>
+                                                        <?php if ($user->role ==5 AND $user->id != $uv['id']): ?>
                                                             <?php if ($uv['froze'] == 1): ?>
                                                                 <a href="javascript:void(0);" id="froze-<?php print($uv['id']); ?>"  style="cursor: pointer;" data-toggle="confirmation-unfroze-current-user" data-singleton="true" data-froze="1" data-target="<?php print($uv['id']); ?>">Unfroze</a>
                                                             <?php else: ?>

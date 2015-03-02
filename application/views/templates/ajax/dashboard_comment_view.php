@@ -1,4 +1,4 @@
-<?php if ($to[0]['id'] == $user[0]['id']): ?>
+<?php if ($to[0]['id'] == $user->id): ?>
     <div class="sub-activity">
         <div class="activity-item-summary">
             <div class="avatar-activity">

@@ -35,7 +35,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <select class="form-control selectpicker" id="role_invite" name="role_invite">
-                                <?php if ($user[0]['role']=5 OR $user[0]['role']=4): ?>
+                                <?php if ($user->role=5 OR $user->role=4): ?>
                                     <?php foreach ($roles as $rk => $rv): ?>
                                         <?php if ($rv['rid'] !=0 AND $rv['rid'] !=5): ?>
                                             <option value="<?php print($rv['rid']); ?>"><?php print(show_role($rv['rid'])); ?></option>
@@ -49,7 +49,7 @@
                 <div style="display: none; margin-bottom: 10px;" id="send_mail" class="label label-primary label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;You have successfully sent invitation</div>
             </div>
             <div class="modal-footer">
-                <input type="hidden" name="user_id" id="user_invite_id" value="<?php print($user[0]['id'])?>">
+                <input type="hidden" name="user_id" id="user_invite_id" value="<?php print($user->id)?>">
                 <div style="display: none; margin-bottom: 10px;" id="check_empty" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;Fields must be not empty</div>
                 <button type="button" class="btn btn-success btn-lg" id="invite-ajax-btn">Invite</button>
                 <!-- <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">Close</button>-->
@@ -91,7 +91,7 @@
                 <div style="display: none; margin-bottom: 10px;" id="save_project_modal" class="label label-primary label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;You have successfully added the project</div>
                 </div>
             <div class="modal-footer">
-                <input type="hidden" name="user_added_id" id="user_added_id" value="<?php print($user[0]['id'])?>">
+                <input type="hidden" name="user_added_id" id="user_added_id" value="<?php print($user->id)?>">
                 <div style="display: none; margin-bottom: 10px;" id="check_empty_project" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;Fields must not be empty</div>
                 <button type="button" class="btn btn-success btn-lg pull-left" id="addproject_btn">Create</button>
 <!--                <button type="button" class="btn btn-success" id="addproject_addtask_btn">Save & create task</button>-->
@@ -195,7 +195,7 @@
             </div>
             <div class="modal-footer" style="padding-top: 10px;">
                 <div class="form-group">
-                <input type="hidden" name="user_added_task_pr_id" id="user_added_task_pr_id" value="<?php print($user[0]['id'])?>">
+                <input type="hidden" name="user_added_task_pr_id" id="user_added_task_pr_id" value="<?php print($user->id)?>">
                 <div style="display: none; margin-bottom: 10px;" id="check_empty_task_pr" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;Fields must be not empty</div>
                 <button type="button" class="btn btn-success btn-lg pull-left <?php if ($imps == false): ?>disabled<?php endif ?>" id="addtask_pr_btn">Add task</button>
                 <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">Close</button>

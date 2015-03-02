@@ -143,7 +143,7 @@
 <div class="modal-footer" style="padding-top: 10px;">
     <div style="display: none; margin-bottom: 10px;" id="check_empty_edit_task_pr" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;Fields must be not empty</div>
     <div class="form-group">
-        <input type="hidden" name="user_edit_task_pr_id" id="user_edit_task_pr_id" value="<?php print($user[0]['id'])?>">
+        <input type="hidden" name="user_edit_task_pr_id" id="user_edit_task_pr_id" value="<?php print($user->id)?>">
         <input type="hidden" name="user_edit_project_id" id="user_edit_project_id" value="<?php print($task->pid)?>">
         <input type="hidden" name="user_edit_key_id" id="user_edit_key_id" value="<?php print($task->key)?>">
         <input type="hidden" name="user_task_edit_id" id="user_task_edit_id" value="<?php print($task->id)?>">
@@ -171,7 +171,7 @@
         });
 
         $('#clear-form-edit-task').click(function () {
-            $user = '<?php print($user[0]['id'])?>';
+            $user = '<?php print($user->id)?>';
             $tid = '<?php print($task->id)?>';
             $.ajax({
                 type: 'GET',

@@ -17,11 +17,11 @@
                <?php if ($avatar != FALSE): ?>
                   <a href="<?php print(base_url());?>profile"><img src="<?php print base_url().'uploads/avatar/'.($avatar); ?>"  height="45"></a>
                <?php else: ?>
-                 <a href="<?php print(base_url());?>profile"><img src="<?php print base_url().'uploads/avatar/'.($user[0]['avatar']); ?>"  height="45"></a>
+                 <a href="<?php print(base_url());?>profile"><img src="<?php print base_url().'uploads/avatar/'.($user->avatar); ?>"  height="45"></a>
                <?php endif ?>
             </span></span>
 
-        <span class="avatar-name visible-lg"><?php print(show_role($user[0]['role'])); ?></span>
+        <span class="avatar-name visible-lg"><?php print(show_role($user->role)); ?></span>
     </li>
   </ul>
 <div class="show-info"><div class="show-info-content"></div><div class="expandable-image"></div></div>
@@ -29,10 +29,10 @@
   <div class="show-info-online"><div class="show-info-content-online"></div></div>
 
   <ul class="nav navbar-nav navbar-right navbar-user">
-      <?php if ($user[0]['id']==14): ?>
+      <?php if ($user->id==14): ?>
           <li class="add-client"><a href="#" onClick="clearCache()">Clear cache</a></li>
       <?php endif ?>
-      <li id="li-comments"> <a href="#" onClick="SendComment(<?php print($user[0]['id'])?>)" ><span class="icon-comment"></a></li>
+      <li id="li-comments"> <a href="#" onClick="SendComment(<?php print($user->id)?>)" ><span class="icon-comment"></a></li>
       <li id="float-users"> <a href="#"><span class="icon-users"></span></a></li>
       <li class="dropdown user-dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown"><span class="icon-book"></span></a>
@@ -46,12 +46,12 @@
           <a class="dropdown-toggle" data-toggle="dropdown"><span class="icon-add"></span></a>
           <ul class="dropdown-menu dropdown-user">
               <?php if ($client == FALSE): ?>
-                  <?php if ($user[0]['role'] ==5 OR $user[0]['role']==4): ?>
+                  <?php if ($user->role ==5 OR $user->role==4): ?>
                       <li class="add-client"><a href="<?php print(base_url());?>addclient"><i class="fa fa-plus"></i><?php print(lang('menu_add_client')); ?></a></li>
                   <?php endif ?>
 
               <?php endif ?>
-              <?php if ($user[0]['role'] ==5 OR $user[0]['role']==4): ?>
+              <?php if ($user->role ==5 OR $user->role==4): ?>
               <li> <a href="#" data-toggle="modal" data-target="#invite" title="invite"><i class="fa fa-plus"></i><?php print(lang('menu_invite_person')); ?></a></li>
 
                   <li class="add-client"><a href="#" data-toggle="modal" data-target="#addproject_modal" title="create project"><i class="fa fa-plus"></i><?php print(lang('menu_add_project')); ?></a></li>
@@ -72,14 +72,14 @@
       </li>
     <li class="dropdown user-dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown"><span class="icon-user"></span>&nbsp;
-        <?php print($user[0]['first_name'].' '. lastname_letter($user[0]['last_name']))?>
+        <?php print($user->first_name.' '. lastname_letter($user->last_name))?>
         <b class="caret"></b></a>
       <ul class="dropdown-menu dropdown-user">
         <li><a href="<?php print(base_url());?>profile"><?php print(lang('menu_profile'))?></a></li>
 
 
         <li><a data-toggle="modal" href="#settings"><?php print(lang('menu_settings'))?></a></li>
-        <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
+        <?php if($user->role==5 OR $user->role==4):?>
           <li><a href="<?php print(base_url());?>users"><?php print(lang('menu_admin_users'))?></a></li>
         <? endif?>
         <li class="divider"></li>

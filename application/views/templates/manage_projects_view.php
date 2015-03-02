@@ -1,4 +1,4 @@
-<?php if ($projects != false AND $user[0]['role'] == 5 OR $projects != false AND $user[0]['role'] == 4): ?>
+<?php if ($projects != false AND $user->role == 5 OR $projects != false AND $user->role == 4): ?>
     <div class="page-content-wrapper">
         <!-- Keep all page content within the page-content inset div! -->
         <div class="page-content inset">
@@ -6,7 +6,7 @@
             <div class="row manage-project">
                 <?php foreach ($projects as $pk => $pv): ?>
                     <?php if (isset($user_projects[$pv['pid']])): ?>
-                <?php if ($user_projects[$pv['pid']] == $user[0]['id'] OR $user[0]['role'] == 5): ?>
+                <?php if ($user_projects[$pv['pid']] == $user->id OR $user->role== 5): ?>
                     <div class="col-md-12 col-sm-12 manage-project-block">
                         <div class="well well-sm" style="background-color: rgb(231, 231, 231); border-color: #BDBDBD;">
                             <div class="media" style="margin-bottom: 20px">
@@ -32,7 +32,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <?php if ($projects[$pv['pid']]['owner'] == $user[0]['id']): ?>
+                            <?php if ($projects[$pv['pid']]['owner'] == $user->id): ?>
                                 <?php if ($projects[$pv['pid']]['froze'] == 0): ?>
                                     <a href="javascript:void(0);"  onClick="frozeProject('<?php print($pv['pid']); ?>')" class="btn btn-danger">Froze project</a>&nbsp;
                                 <?php else: ?>

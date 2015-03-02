@@ -2,7 +2,7 @@
 <!--<div class="bench">test: --><?php //echo $this->benchmark->elapsed_time();?><!--&nbsp;sec</div>-->
 
 <?php //if ($user[0]['role'] ==5 OR $user[0]['role']==4 OR $user[0]['role']==2): ?>
-<?php if ($user[0]['role']==2): ?>
+<?php if ($user->role==2): ?>
 <div class="time-wrapper">
     <div class="timer" style="width: auto;">
         <i class="fa fa-clock-o pull-left" id="clock-bottom"></i>&nbsp;
@@ -15,14 +15,14 @@
     </div>
 </div>
 <?php endif ?>
-
+<!---->
 <?php include('quick_message.php');?>
-<!-- JavaScript -->
+<!--<!-- JavaScript -->-->
 <?php include('modals/modal_view.php');?>
 <?php include('modals/modal_task.php');?>
 <?php include('modals/modal_confirmation.php');?>
 
-<?php include('timer.php');?>
+<?php //include('timer.php');?>
 <!-- Custom JavaScript for the Menu Toggle -->
 <script>
         $('.selectpicker').selectpicker({

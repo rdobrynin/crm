@@ -28,7 +28,7 @@
                                     <th width="10%" class="text-" style="border-left: 1px solid #ddd;">To</th>
                                     <th width="35%" class="text-left" style="border-left: 1px solid #ddd;">Message</th>
                                     <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Time ago</th>
-                                    <?php if($user[0]['role']==5 OR $user[0]['role']==4):?>
+                                    <?php if($user->role==5 OR $user->role==4):?>
                                         <th width="3%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
                                     <? endif?>
                                 </tr>
@@ -36,7 +36,7 @@
                                 <tbody id="all_comments_table">
                                 <?php $comments = array_reverse($comments);?>
                                 <?php foreach ($comments as $ck => $cv): ?>
-                                    <?php if ($user[0]['role'] ==2 && $user[0]['id']==$cv['to'] OR $user[0]['role'] ==1 && $user[0]['id']==$cv['to']): ?>
+                                    <?php if ($user->role ==2 && $user->id==$cv['to'] OR $user->role ==1 && $user->id==$cv['to']): ?>
                                     <tr class="<?php if ($cv['public'] == 1): ?>disabled<?php endif ?> ">
                                         <td>#<?php print($cv['id']); ?></td>
                                         <td><span class="muted"><?php print(date_format(date_create($cv['date_created']),"F d H:i")); ?></span></td>
@@ -47,7 +47,7 @@
                                         <td><i class="fa fa-clock-o clock-activity"></i>&nbsp;<?php print(time_ago($cv['date_created'])); ?></td>
                                     </tr>
                                     <?php endif ?>
-                                    <?php if ($user[0]['role'] ==4 OR $user[0]['role'] ==5 ): ?>
+                                    <?php if ($user->role ==4 OR $user->role ==5 ): ?>
                                         <tr class="<?php if ($cv['public'] == 1): ?>disabled<?php endif ?>" id="adjust-comment-<?php print($cv['id']); ?>">
                                             <td>#<?php print($cv['id']); ?></td>
                                             <td><span class="muted"><?php print(date_format(date_create($cv['date_created']),"F d H:i")); ?></span></td>

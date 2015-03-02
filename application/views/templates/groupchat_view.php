@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12">
                 <p class="lead"><?php print(lang('menu_groupchat')); ?> </p>
-                <?php if ( $user[0]['id'] ==14): ?>
+                <?php if ( $user->id ==14): ?>
 
 <!--                    TODO-->
 <!--                    Chat wrapper here-->

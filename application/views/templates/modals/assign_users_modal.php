@@ -68,7 +68,7 @@
      */
 
     function assignUserProject($data, $project) {
-        var $user = '<?php print($user[0]['id'])?>';
+        var $user = '<?php print($user->id)?>';
         var form_data = {
             id: $data,
             pid: $project,

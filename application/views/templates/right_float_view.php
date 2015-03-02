@@ -6,7 +6,7 @@
 
     <?php foreach ($users as $uk => $uv): ?>
 
-        <?php if ($uv['id'] !== $user[0]['id']): ?>
+        <?php if ($uv['id'] !== $user->id): ?>
         <div class="user-float-block">
             <div class="avatar-activity">
                 <span class="avatar-img"><a href="javascript:void(0);"><img src="<?php print base_url() . 'uploads/avatar/'.$uv['avatar']; ?>" height="32"></a></span>

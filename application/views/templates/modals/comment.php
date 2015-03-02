@@ -23,7 +23,7 @@
                 </div>
                 <div class="row">
                     <input type="file" name="userfile-comment" id="userfile-comment"/>
-                    <input type="hidden" value="<?php print($user[0]['id']); ?>" name="user_id" id="user-id-comment">
+                    <input type="hidden" value="<?php print($user->id); ?>" name="user_id" id="user-id-comment">
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">

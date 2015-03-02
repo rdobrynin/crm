@@ -69,7 +69,7 @@
                 <div id="contact_form">
                 </div>
                 <hr>
-                <input type="hidden" class="form-control" id="client_owner" name="curator" value="<?php print($user[0]['id']);?>">
+                <input type="hidden" class="form-control" id="client_owner" name="curator" value="<?php print($user->id);?>">
 
                 <span class="pull-left" ><a href="javascript:history.back()"  class="btn btn-default">Back</a></span>
                 <input type="submit"  class="btn btn-default pull-right" id="create_company" value="Create company">

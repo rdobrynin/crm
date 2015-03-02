@@ -1,16 +1,7 @@
-
-
-
 <!-- Page content -->
 <div class="page-content-wrapper">
-
-
-      <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-
-
-
-
-  <!-- Keep all page content within the page-content inset div! -->
+     <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+ <!-- Keep all page content within the page-content inset div! -->
   <div class="page-content inset">
     <div class="row-fluid">
         <p class="lead">Clients</p>
@@ -28,7 +19,7 @@
           <th style="width: 5%;">City</th>
           <th style="width: 5%;">Country</th>
           <th style="width: 8%;">Created</th>
-            <?php if ($user[0]['role']==5 OR $user[0]['role']==4): ?>
+            <?php if ($user->role==5 OR $user->role==4): ?>
           <th style="width: 7%;">Action</th>
            <?php endif?>
         </tr>
@@ -46,7 +37,7 @@
             <td><?php print($cv['city']);?></td>
             <td><?php print($cv['country']);?></td>
             <td><?php print($cv['created']);?></td>
-              <?php if ($user[0]['role']==5 OR $user[0]['role']==4): ?>
+              <?php if ($user->role==5 OR $user->role==4): ?>
             <td> <form action="<?php print(base_url());?>delete_client" method="POST">
                 <input type="hidden" name="cid" value="<?php print($cv['cid']);?>">
                 <span class="pull-left"><input type="submit" id="btn-del-company" value="delete" class="btn btn-xs btn-danger"></span>

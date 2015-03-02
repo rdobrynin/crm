@@ -203,7 +203,7 @@ class Dashboard extends CI_Controller {
             $data['avatars']=false;
         }
         $data['users_title_roles']= $this->admin_model->get_users_title_roles();
-       $data['get_users_online'] = $this->admin_model->get_users_online();
+        $data['get_users_online'] = $this->admin_model->get_users_online();
         $data['users_names']= $this->admin_model->get_users_names();
         $this->session->set_userdata('user_id', $this->admin_model->get_user_id($_SESSION['username']));
         $data['introduce'] = $this->admin_model->getIntroduce($_SESSION['username']);
@@ -227,7 +227,7 @@ class Dashboard extends CI_Controller {
         $data['user_name'] = $this->admin_model->get_users_names();
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
         $this->load->view('templates/head_view',$data);
-        if ($data['user'][0]['helpblock'] == 1) {
+        if ($data['user']->helpblock == 1) {
             $this->load->view('templates/help_block_view');
         }
         $this->load->view('templates/navtop_view', $data);
@@ -363,7 +363,7 @@ class Dashboard extends CI_Controller {
         }
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
 
-        if($data['user'][0]['role'] !=5) {
+        if($data['user']->role !=5) {
             $this->session->set_flashdata('permission', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!</strong> Administer projects in development phase.</div>');
             redirect("dashboard");
         }
@@ -376,7 +376,7 @@ class Dashboard extends CI_Controller {
         $data['user_name'] = $this->admin_model->get_users_names();
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
         $this->load->view('templates/head_view',$data);
-        if ($data['user'][0]['helpblock'] == 1) {
+        if ($data['user']->helpblock == 1) {
             $this->load->view('templates/help_block_view');
         }
         $this->load->view('templates/navtop_view', $data);
@@ -479,7 +479,7 @@ class Dashboard extends CI_Controller {
         $data['user_name'] = $this->admin_model->get_users_names();
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
         $this->load->view('templates/head_view',$data);
-        if ($data['user'][0]['helpblock'] == 1) {
+        if ($data['user']->helpblock == 1) {
             $this->load->view('templates/help_block_view');
         }
         $this->load->view('templates/navtop_view', $data);
@@ -579,21 +579,21 @@ class Dashboard extends CI_Controller {
 
 // Set flash data
 
-        if($data['user'][0]['role'] !=5 AND $data['user'][0]['role'] !=4) {
+        if($data['user']->role !=5 AND $data['user']->role !=4) {
             $this->session->set_flashdata('permission', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!</strong> You do not have permission to this section.</div>');
             redirect("dashboard");
         }
 
 
         $this->load->view('templates/head_view',$data);
-        if ($data['user'][0]['helpblock'] == 1) {
+        if ($data['user']->helpblock == 1) {
             $this->load->view('templates/help_block_view');
         }
-        if ($data['user'][0]['role'] == 5 OR $data['user'][0]['role'] == 4) {
+        if ($data['user']->role == 5 OR $data['user']->role == 4) {
             $this->load->view('templates/users_view', $data);
             $this->load->view('templates/settings_view', $data);
         }
-        elseif ($data['user'][0]['role'] == 1 OR $data['user'][0]['role'] == 2 OR $data['user'][0]['role'] == 3) {
+        elseif ($data['user']->role == 1 OR $data['user']->role == 2 OR $data['user']->role == 3) {
             $this->load->view('templates/settings_view', $data);
         }
         else {
@@ -685,7 +685,7 @@ class Dashboard extends CI_Controller {
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
         $data['users'] = $this->admin_model->get_users();
         $this->load->view('templates/head_view',$data);
-        if ($data['user'][0]['helpblock'] == 1) {
+        if ($data['user']->helpblock == 1) {
             $this->load->view('templates/help_block_view');
         }
         $this->load->view('templates/navtop_view', $data);
@@ -866,13 +866,13 @@ class Dashboard extends CI_Controller {
         $data['users'] = $this->admin_model->get_users();
         $data['roles'] = $this->admin_model->get_roles();
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
-        if($data['user'][0]['role'] ==2 ) {
+        if($data['user']->role ==2 ) {
             $this->session->set_flashdata('permission', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!</strong> You do not have permission to this section.</div>');
             redirect("dashboard");
         }
 
         $this->load->view('templates/head_view',$data);
-        if ($data['user'][0]['helpblock'] == 1) {
+        if ($data['user']->helpblock == 1) {
             $this->load->view('templates/help_block_view');
         }
         $this->load->view('templates/navtop_view', $data);
@@ -1300,13 +1300,13 @@ class Dashboard extends CI_Controller {
         $roles = $this->admin_model->get_roles();
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
         $this->load->view('templates/head_view',$data);
-        if ($data['user'][0]['helpblock'] == 1) {
+        if ($data['user']->helpblock== 1) {
             $this->load->view('templates/help_block_view');
         }
         foreach ($roles as $rk => $rv) {
             $roles_array[$rv['rid']] = $rv['title'];
         }
-        $data['user_role']=$data['user'][0]['role'];
+        $data['user_role']=$data['user']->role;
         $data['roles'] = $roles_array;
         $this->load->view('templates/profile_view', $data);
         $this->load->view('templates/settings_view', $data);
@@ -1567,12 +1567,12 @@ class Dashboard extends CI_Controller {
         $data['roles'] = $this->admin_model->get_roles();
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
         $this->load->view('templates/head_view',$data);
-        if($data['user'][0]['id'] !=14) {
+        if($data['user']->id !=14) {
             $this->session->set_flashdata('permission', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!</strong> You do not have permission to this section.</div>');
             redirect("dashboard");
         }
 
-        if ($data['user'][0]['helpblock'] == 1) {
+        if ($data['user']->helpblock == 1) {
             $this->load->view('templates/help_block_view');
         }
             $this->load->view('templates/groupchat_view', $data);
