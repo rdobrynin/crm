@@ -22,7 +22,7 @@
 <?php include('modals/modal_task.php');?>
 <?php include('modals/modal_confirmation.php');?>
 
-<?php //include('timer.php');?>
+<?php include('timer.php');?>
 <!-- Custom JavaScript for the Menu Toggle -->
 <script>
         $('.selectpicker').selectpicker({

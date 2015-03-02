@@ -57,8 +57,8 @@ class Admin extends CI_Controller {
 
 // logout and session destroy
   function logout() {
-    $id=$this->admin_model->get_user_id($_SESSION['username']);
-    $this->admin_model->offline_status($id[0]['id']);
+    $user=$this->admin_model->get_user_id($_SESSION['username']);
+    $this->admin_model->offline_status($user->id);
     session_destroy();
     redirect(base_url());
   }
@@ -90,7 +90,7 @@ class Admin extends CI_Controller {
           if ($this->form_validation->run() !== FALSE) {
           $curator = $this->input->post('curator');
           $curator_email = $this->admin_model->get_user_id($curator);
-          $curator_email =$curator_email[0]['email'];
+          $curator_email =$curator_email->email;
               if ($query = $this->admin_model->create_member()) {
                   $f_name = $this->input->post('first_name');
                   $l_name = $this->input->post('last_name');

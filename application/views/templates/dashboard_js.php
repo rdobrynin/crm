@@ -7,9 +7,6 @@
             task_percent_ready = 0;
         }
         $('#percent-completed-tasks').text(task_percent_ready+' %');
-
-//      id="progress-tasks" data-percentage="43%"
-
         $('#progress-tasks').attr('data-percentage',task_percent_ready+'%');
         $('#progress-tasks').attr('style','width:'+task_percent_ready+'%');
     });
