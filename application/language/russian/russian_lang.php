@@ -1,4 +1,10 @@
 <?php
+
+//system
+$lang['admin_manager_perm'] = 'Только администраторы и менеджеры могут войти в данный раздел ';
+$lang['you_havenot_permissions'] = 'У вас нет прав на данный раздел';
+$lang['warning'] = 'Предупрежедние!';
+
 $lang['menu_dashboard'] = "Панель управления";
 $lang['menu_clients'] = "Клиенты";
 $lang['menu_projects'] = "Проекты";

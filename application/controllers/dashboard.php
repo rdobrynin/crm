@@ -364,7 +364,7 @@ class Dashboard extends CI_Controller {
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
 
         if($data['user']->role ==2) {
-            $this->session->set_flashdata('permission', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!&nbsp;</strong>Only Administrators and managers can access to this section</div>');
+            $this->session->set_flashdata('permission', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>'. $this->lang->line('warning').'</strong> '. $this->lang->line('you_havenot_permissions').'</div>');
             redirect("dashboard");
         }
 
@@ -580,7 +580,7 @@ class Dashboard extends CI_Controller {
 // Set flash data
 
         if($data['user']->role !=5 AND $data['user']->role !=4) {
-            $this->session->set_flashdata('permission', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!</strong> You do not have permission to this section.</div>');
+            $this->session->set_flashdata('permission', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>'.$this->lang->line('warning').'</strong> '. $this->lang->line('admin_manager_perm').'</div>');
             redirect("dashboard");
         }
 
@@ -867,7 +867,7 @@ class Dashboard extends CI_Controller {
         $data['roles'] = $this->admin_model->get_roles();
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
         if($data['user']->role ==2 ) {
-            $this->session->set_flashdata('permission', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!</strong> You do not have permission to this section.</div>');
+            $this->session->set_flashdata('permission', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>'. $this->lang->line('warning').'</strong> '. $this->lang->line('you_havenot_permissions').'</div>');
             redirect("dashboard");
         }
 

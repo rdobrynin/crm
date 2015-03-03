@@ -1,4 +1,10 @@
 <?php
+
+//system
+
+$lang['admin_manager_perm'] = 'Only administrators and managers can access to this section';
+$lang['you_havenot_permissions'] = 'You do not have permission to this section';
+$lang['warning'] = 'Warning!';
 $lang['menu_dashboard'] = "Dashboard";
 $lang['menu_clients'] = "Clients";
 $lang['menu_projects'] = "Projects";
