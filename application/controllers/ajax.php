@@ -502,7 +502,7 @@ class Ajax extends CI_Controller {
         $result['owner'] = $this->input->post('owner');
         $result['empty'] = false;
         $name_array =  $this->admin_model->get_user_id($result['owner']);
-        $full_name = $name_array[0]['first_name'].' '.$name_array[0]['last_name'];
+        $full_name = $name_array->first_name.' '.$name_array->last_name;
 
         if ($_POST['title'] == '' OR $_POST['desc'] == '' OR $_POST['project'] == '' OR $_POST['label'] == '' OR $_POST['dueto'] == '' OR $_POST['priority'] == '' OR $_POST['implementor'] == '') {
             $result['empty'] = true;
@@ -524,8 +524,8 @@ class Ajax extends CI_Controller {
                    $result['text_label'] = $this->task_model->checkTaskType($result['label']);
                    $cur_array =  $this->admin_model->get_user_id($result['owner']);
                    $imp_array =  $this->admin_model->get_user_id($result['implementor']);
-                   $result['cur_name'] = short_name($cur_array[0]['first_name'].' '.$cur_array[0]['last_name']);
-                   $result['imp_name'] = short_name($imp_array[0]['first_name'].' '.$imp_array[0]['last_name']);
+                   $result['cur_name'] = short_name($cur_array->first_name.' '.$cur_array->last_name);
+                   $result['imp_name'] = short_name($imp_array->first_name.' '.$imp_array->last_name);
                 $key = $result['key'].'-'.$result['newtask']->id;
                 $this->project_model->createEvent($result['owner'], $result['desc'],  $text, $full_name, $result['title'], 1);
             }
@@ -551,7 +551,7 @@ class Ajax extends CI_Controller {
         $result['owner'] = $this->input->post('owner');
         $result['empty'] = false;
         $name_array =  $this->admin_model->get_user_id($result['owner']);
-        $full_name = $name_array[0]['first_name'].' '.$name_array[0]['last_name'];
+        $full_name = $name_array->first_name.' '.$name_array->last_name;
         $id = $this->input->post('id');
 
         if ($_POST['title'] == '' OR $_POST['desc'] == '' OR $_POST['project'] == '' OR $_POST['label'] == '' OR $_POST['dueto'] == '' OR $_POST['priority'] == '' OR $_POST['implementor'] == '') {
@@ -579,8 +579,6 @@ class Ajax extends CI_Controller {
         }
         echo json_encode($result);
     }
-
-
 
 
     /**
@@ -674,12 +672,12 @@ class Ajax extends CI_Controller {
                     $result['result'] = true;
                     $user_array = $this->admin_model->get_user_id($result['owner']);
                     $user_to = $this->admin_model->get_user_id($result['to']);
-                    if ($user_array[0]['message'] == '1') {
+                    if ($user_array->message == '1') {
                         $this->load->library('email');
-                        $this->email->from($user_array[0]['email'], 'team');
-                        $this->email->to($user_to[0]['email']);
+                        $this->email->from($user_array->email, 'team');
+                        $this->email->to($user_to->email);
                         $this->email->subject('New comment from Brilliant Task Management');
-                        $this->email->message("Hello, ".$user_to[0]['first_name']." ".$user_to[0]['last_name']."\n"."\n"."You have new comment"."\n"."\n". "From: ".$user_array[0]['first_name']." ".$user_array[0]['last_name']."\n"."\n". "Subject: ".$result['subject']."\n"."\n"."Comment: ".$result['text']);
+                        $this->email->message("Hello, ".$user_to->first_name." ".$user_to->last_name."\n"."\n"."You have new comment"."\n"."\n". "From: ".$user_array->first_name." ".$user_array->last_name."\n"."\n". "Subject: ".$result['subject']."\n"."\n"."Comment: ".$result['text']);
                         $this->email->send();
                         $this->email->clear();
                     }
@@ -700,12 +698,12 @@ class Ajax extends CI_Controller {
                     $result['result'] =  true;
                     $user_array = $this->admin_model->get_user_id($result['owner']);
                     $user_to = $this->admin_model->get_user_id($result['idUser']);
-                    if ($user_array[0]['message'] == '1') {
+                    if ($user_array->message == '1') {
                         $this->load->library('email');
-                        $this->email->from($user_array[0]['email'], 'team');
-                        $this->email->to($user_to[0]['email']);
+                        $this->email->from($user_array->email, 'team');
+                        $this->email->to($user_to->email);
                         $this->email->subject('New comment from Brilliant Task Management');
-                        $this->email->message("Hello, ".$user_to[0]['first_name']." ".$user_to[0]['last_name']."\n"."\n"."You have new comment"."\n"."\n". "From: ".$user_array[0]['first_name']." ".$user_array[0]['last_name']."\n"."\n". "Subject: ".$result['subject']."\n"."\n"."Comment: ".$result['text']);
+                        $this->email->message("Hello, ".$user_to->first_name." ".$user_to->last_name."\n"."\n"."You have new comment"."\n"."\n". "From: ".$user_array->first_name." ".$user_array->last_name."\n"."\n". "Subject: ".$result['subject']."\n"."\n"."Comment: ".$result['text']);
                         $this->email->send();
                     }
                 }
@@ -854,7 +852,7 @@ class Ajax extends CI_Controller {
         $this->load->model('task_model');
         $this->load->model('project_model');
         $name_array =  $this->admin_model->get_user_id($uid);
-        $full_name = $name_array[0]['first_name'].' '.$name_array[0]['last_name'];
+        $full_name = $name_array->first_name.' '.$name_array->last_name;
         $array = $this->task_model->getTask($id);
         $text ='delete task';
         $key =$array->key.'-'.$id;
@@ -995,7 +993,7 @@ class Ajax extends CI_Controller {
         $array = $this->task_model->getTask($id);
 
         $name_array =  $this->admin_model->get_user_id($uid);
-        $full_name = $name_array[0]['first_name'].' '.$name_array[0]['last_name'];
+        $full_name = $name_array->first_name.' '.$name_array->last_name;
         $text ='update task';
         if($querty = $this->task_model->updateTask($id,$status)) {
             $this->project_model->createEvent($uid, $array->desc, $text, $full_name, $array->title, 4);
@@ -1119,7 +1117,7 @@ class Ajax extends CI_Controller {
         $array = $this->task_model->getTask($id);
 
         $name_array =  $this->admin_model->get_user_id($uid);
-        $full_name = $name_array[0]['first_name'].' '.$name_array[0]['last_name'];
+        $full_name = $name_array->first_name.' '.$name_array->last_name;
         $text ='complete task';
         $result['test'] = $tts;
         if($querty = $this->task_model->completeTask($id,$status,$tts)) {
@@ -1151,7 +1149,7 @@ class Ajax extends CI_Controller {
 
 
         $name_array =  $this->admin_model->get_user_id($uid);
-        $full_name = $name_array[0]['first_name'].' '.$name_array[0]['last_name'];
+        $full_name = $name_array->first_name.' '.$name_array->last_name;
         $text ='update task';
         if($querty = $this->task_model->updateTaskProcess($id,'2',$cts)) {
             $this->project_model->createEvent($uid, $array->desc, $text, $full_name, $array->title, 4);
