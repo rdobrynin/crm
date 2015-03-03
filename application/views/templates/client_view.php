@@ -4,23 +4,23 @@
  <!-- Keep all page content within the page-content inset div! -->
   <div class="page-content inset">
     <div class="row-fluid">
-        <p class="lead">Clients</p>
+        <p class="lead"><?php print(lang('client_clients'))?></p>
 <!--      --><?php //if(!empty($client)):?>
         <table class="table">
         <thead>
         <tr>
-          <th style="width: 15%;">Title</th>
-          <th style="width: 15%;">description</th>
-          <th style="width: 10%;">Email</th>
-          <th style="width: 10%;">URL</th>
-          <th style="width: 8%;">Phone</th>
-          <th style="width: 7%;">Address</th>
-          <th style="width: 5%;">Index</th>
-          <th style="width: 5%;">City</th>
-          <th style="width: 5%;">Country</th>
-          <th style="width: 8%;">Created</th>
+          <th style="width: 15%;"><?php print(lang('client_th_title'))?></th>
+          <th style="width: 15%;"><?php print(lang('client_th_description'))?></th>
+          <th style="width: 10%;"><?php print(lang('client_th_email'))?></th>
+          <th style="width: 10%;"><?php print(lang('client_th_url'))?></th>
+          <th style="width: 8%;"><?php print(lang('client_th_phone'))?></th>
+          <th style="width: 7%;"><?php print(lang('client_th_address'))?></th>
+          <th style="width: 5%;"><?php print(lang('client_th_index'))?></th>
+          <th style="width: 5%;"><?php print(lang('client_th_city'))?></th>
+          <th style="width: 5%;"><?php print(lang('client_th_country'))?></th>
+          <th style="width: 8%;"><?php print(lang('client_th_created'))?></th>
             <?php if ($user->role==5 OR $user->role==4): ?>
-          <th style="width: 7%;">Action</th>
+          <th style="width: 7%;"><?php print(lang('client_th_action'))?></th>
            <?php endif?>
         </tr>
         </thead>

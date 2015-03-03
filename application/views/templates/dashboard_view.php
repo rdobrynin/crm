@@ -5,27 +5,27 @@
             <div class="col-md-9">
                 <?php echo $this->session->flashdata('permission'); ?>
 <!--                Current Activity Panel-->
-                <p class="lead">Current activity</p>
+                <p class="lead"><?php print(lang('dsb_current_activity'))?></p>
                 <div class="row">
                     <div class="col-md-6 col-vlg-3 col-sm-6">
                         <div class="tiles green m-b-10">
                             <div class="tiles-body">
                                 <div class="controller"> <a href="javascript:void();" class="reload"></a> <a href="javascript:void();" class="remove"></a> </div>
-                                <div class="tiles-title text-black">Projects</div>
+                                <div class="tiles-title text-black"><?php print(lang('dsb_projects'))?></div>
                                 <div class="widget-stats">
                                     <div class="wrapper transparent">
-                                        <span class="item-title">Overall Projects</span> <span class="item-count animate-number semi-bold" data-value="2415" data-animation-duration="700"><?php if ($projects != false): ?><?php print(count($projects));?><?php else:?>0<?php endif ?></span>
+                                        <span class="item-title"><?php print(lang('dsb_overall_projects_short'))?></span> <span class="item-count animate-number semi-bold" data-value="2415" data-animation-duration="700"><?php if ($projects != false): ?><?php print(count($projects));?><?php else:?>0<?php endif ?></span>
                                     </div>
                                 </div>
                                 <div class="widget-stats">
                                     <div class="wrapper transparent">
-                                        <span class="item-title">Users</span> <span class="item-count animate-number semi-bold" data-value="751" data-animation-duration="700"><?php if ($users != false): ?><?php print(count($users));?><?php else:?>0<?php endif ?></span>
+                                        <span class="item-title"><?php print(lang('dsb_users_short'))?></span> <span class="item-count animate-number semi-bold" data-value="751" data-animation-duration="700"><?php if ($users != false): ?><?php print(count($users));?><?php else:?>0<?php endif ?></span>
 
                                     </div>
                                 </div>
                                 <div class="widget-stats ">
                                     <div class="wrapper last">
-                                        <span class="item-title">Overall workflow</span> <span class="item-count animate-number semi-bold" data-value="1547" data-animation-duration="700"><?php print(round_up($total_task_done,2)); ?> h</span>
+                                        <span class="item-title"><?php print(lang('dsb_overall_workflow_short'))?></span> <span class="item-count animate-number semi-bold" data-value="1547" data-animation-duration="700"><?php print(round_up($total_task_done,2)); ?> h</span>
                                     </div>
                                 </div>
                                 <div class="progress transparent progress-small no-radius m-t-20" style="width:90%">
@@ -39,26 +39,26 @@
                         <div class="tiles blue m-b-10">
                             <div class="tiles-body">
                                 <div class="controller"> <a href="javascript:void();" class="reload"></a> <a href="javascript:void();" class="remove"></a> </div>
-                                <div class="tiles-title text-black">Tasks</div>
+                                <div class="tiles-title text-black"><?php print(lang('dsb_tasks'))?></div>
                                 <div class="widget-stats">
                                     <div class="wrapper transparent">
-                                        <span class="item-title">Overall Tasks</span> <span class="item-count animate-number semi-bold" data-value="15489" data-="" animation-duration="700"><?php if ($tasks != false): ?><?php print(count($tasks));?><?php else:?>0<?php endif ?></span>
+                                        <span class="item-title"><?php print(lang('dsb_overall_tasks_short'))?></span> <span class="item-count animate-number semi-bold" data-value="15489" data-="" animation-duration="700"><?php if ($tasks != false): ?><?php print(count($tasks));?><?php else:?>0<?php endif ?></span>
                                     </div>
                                 </div>
                                 <div class="widget-stats">
                                     <div class="wrapper transparent">
-                                        <span class="item-title">Process Tasks</span> <span class="item-count animate-number semi-bold" id="dash-process-task" data-value="551" data-animation-duration="700"><?php if ($process_tasks != false): ?><?php print(count($process_tasks)); ?><?php else:?>0<?php endif ?></span>
+                                        <span class="item-title"><?php print(lang('dsb_process_tasks_short'))?></span> <span class="item-count animate-number semi-bold" id="dash-process-task" data-value="551" data-animation-duration="700"><?php if ($process_tasks != false): ?><?php print(count($process_tasks)); ?><?php else:?>0<?php endif ?></span>
                                     </div>
                                 </div>
                                 <div class="widget-stats ">
                                     <div class="wrapper last">
-                                        <span class="item-title">Overdue Tasks</span> <span class="item-count animate-number semi-bold" data-value="1450" data-animation-duration="700"><?php if ($over_tasks != false): ?><?php print(count($over_tasks)); ?><?php else:?>0<?php endif ?></span>
+                                        <span class="item-title"><?php print(lang('dsb_overdue_tasks_short'))?></span> <span class="item-count animate-number semi-bold" data-value="1450" data-animation-duration="700"><?php if ($over_tasks != false): ?><?php print(count($over_tasks)); ?><?php else:?>0<?php endif ?></span>
                                     </div>
                                 </div>
                                 <div class="progress transparent progress-small no-radius m-t-20" style="width:90%">
                                     <div class="progress-bar progress-bar-white animate-progress-bar" id="progress-tasks" data-percentage="25%" style="width: 54%;"></div>
                                 </div>
-                                <div class="description"> <span class="text-white mini-description "><span id="percent-completed-tasks">25%</span> all tasks <span class="blend">completed&nbsp;</span></span></div>
+                                <div class="description"> <span class="text-white mini-description "><span id="percent-completed-tasks">25%</span> of all tasks <span class="blend">completed&nbsp;</span></span></div>
                             </div>
                         </div>
                     </div>
@@ -67,11 +67,11 @@
                     <div  style="padding-top: 20px;">
                      <div class="row">
                          <div class="col-lg-10 col-md-12">
-                             <p class="lead">Overdue tasks&nbsp;(<span id="calc-over-tasks" ><?php if ($over_tasks != false): ?><?php print(count($over_tasks)); ?><?php else:?>0<?php endif ?></span>)</p>
+                             <p class="lead"><?php print(lang('dsb_overdue_tasks'))?>&nbsp;(<span id="calc-over-tasks" ><?php if ($over_tasks != false): ?><?php print(count($over_tasks)); ?><?php else:?>0<?php endif ?></span>)</p>
                          </div>
                          <?php if ($over_tasks != false): ?>
                          <div class="col-lg-2 col-md-4 search-form">
-                             <input type="text" id="search-dash-over-table" class=" form-control lights" placeholder="Search"/>
+                             <input type="text" id="search-dash-over-table" class=" form-control lights" placeholder="<?php print(lang('dsb_search'))?>"/>
                          </div>
                          <?php endif ?>
                      </div>
@@ -82,20 +82,20 @@
                                     <table class="table table-condensed" id="dash-over-table">
                                         <thead>
                                         <tr>
-                                            <th width="5%" class="text-left">Article</th>
-                                            <th width="8%" class="text-left"  style="border-left: 1px solid #ddd;">Created</th>
-                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Label</th>
-                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Implementor</th>
-                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Creator</th>
-                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
-                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Project</th>
-                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
-                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
-                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
-                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">CTS</th>
-                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
+                                            <th width="5%" class="text-left"><?php print(lang('dsb_th_article'))?></th>
+                                            <th width="8%" class="text-left"  style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_created'))?></th>
+                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_label'))?></th>
+                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_implementer'))?></th>
+                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_creator'))?></th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_title'))?></th>
+                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_project'))?></th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_description'))?></th>
+                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_status'))?></th>
+                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_priority'))?></th>
+                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_cts'))?></th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_dueto'))?></th>
                                             <?php if($user->role==5 OR $user->role==4):?>
-                                                <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
+                                                <th width="10%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_action'))?></th>
                                             <?php endif ?>
                                         </tr>
                                         </thead>
@@ -154,11 +154,11 @@
                         <?php if ($user->role==5 OR $user->role==4 OR $user->role==1 OR $user->role==3): ?>
                 <div class="row">
                     <div class="col-lg-10 col-md-12">
-                        <p class="lead">Tasks for approve&nbsp;(<span id="calc-appr-tasks" ><?php if ($approve_tasks != false): ?><?php print(count($approve_tasks)); ?><?php else:?>0<?php endif ?></span>)</p>
+                        <p class="lead"><?php print(lang('dsb_tasks_for_approval'))?>&nbsp;(<span id="calc-appr-tasks" ><?php if ($approve_tasks != false): ?><?php print(count($approve_tasks)); ?><?php else:?>0<?php endif ?></span>)</p>
                         </div>
                             <?php if ($approve_tasks != false): ?>
                     <div class="col-lg-2 col-md-4 search-form">
-                        <input type="text" id="search-dash-approve-table" class=" form-control lights" placeholder="Search"/>
+                        <input type="text" id="search-dash-approve-table" class=" form-control lights" placeholder="<?php print(lang('dsb_search'))?>"/>
                     </div>
                             <?php endif ?>
                 </div>
@@ -173,7 +173,7 @@
                 </div>
                             <?php if ($ready_tasks != false): ?>
                                 <div class="col-lg-2 col-md-4 search-form">
-                                    <input type="text" id="search-dash-ready-table" class=" form-control lights" placeholder="Search"/>
+                                    <input type="text" id="search-dash-ready-table" class=" form-control lights" placeholder="<?php print(lang('dsb_search'))?>"/>
                                 </div>
                             <?php endif ?>
                     </div>
@@ -187,16 +187,16 @@
                                     <table class="table table-condensed" id="approve-task-table">
                                         <thead>
                                         <tr>
-                                            <th width="5%" class="text-left">Article</th>
-                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
-                                            <th width="4%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
-                                            <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
-                                            <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Creator</th>
-                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
-                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Project</th>
-                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
-                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
-                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
+                                            <th width="5%" class="text-left"><?php print(lang('dsb_th_article'))?></th>
+                                            <th width="8%" class="text-left"  style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_created'))?></th>
+                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_label'))?></th>
+                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_implementor'))?></th>
+                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_creator'))?></th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_title'))?></th>
+                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_project'))?></th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_description'))?></th>
+                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_priority'))?></th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_dueto'))?></th>
                                             <?php if($user->role!=3):?>
                                             <th width="15%" class="text-left"></th>
                                             <?php endif ?>
@@ -242,7 +242,7 @@
                             </div>
                         </div>
                             <?php else: ?>
-                                <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of approve tasks found</div></div>
+                                <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;<?php print(lang('dsb_no_process_tasks'))?></div></div>
                             <?php endif ?>
 <!--                        <div class="text-center">-->
 <!--                            <ul class="pagination pagination-lg pager" id="pager_approve_tasks"></ul>-->
@@ -258,17 +258,17 @@
                                     <table class="table table-condensed" id="ready-task-table">
                                         <thead>
                                         <tr>
-                                            <th width="5%" class="text-left">Article</th>
-                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
-                                            <th width="4%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
-                                            <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
-                                            <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Creator</th>
-                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
-                                            <th width="6%" class="text-left" style="border-left: 1px solid #ddd;">Project to</th>
-                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
-                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
-                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
-                                            <th width="3%" class="text-left" style="border-left: 1px solid #ddd;border-right: 1px solid #ddd;">View</th>
+                                            <th width="5%" class="text-left"><?php print(lang('dsb_th_article'))?></th>
+                                            <th width="8%" class="text-left"  style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_created'))?></th>
+                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_label'))?></th>
+                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_implementor'))?></th>
+                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_creator'))?></th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_title'))?></th>
+                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_project_to'))?></th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_description'))?></th>
+                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_priority'))?></th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_dueto'))?></th>
+                                            <th width="3%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_view'))?></th>
                                             <th width="15%" class="text-left"></th>
                                         </tr>
                                         </thead>
@@ -320,10 +320,10 @@
 <!--                end last tasks-->
 <div class="row">
     <div class="col-lg-10 col-md-8">
-        <p class="lead">Tasks in process</p>
+        <p class="lead"><?php print(lang('dsb_tasks_in_process'))?></p>
     </div>
     <div class="col-lg-2 col-md-4  pull-right search-form">
-        <input type="text" id="search-dash-process-table" class=" form-control lights" placeholder="Search"/>
+        <input type="text" id="search-dash-process-table" class=" form-control lights" placeholder="<?php print(lang('dsb_search'))?>"/>
     </div>
 </div>
                 <?php if ($process_tasks != FALSE): ?>
@@ -334,19 +334,19 @@
                                     <table class="table table-condensed" id="dash-process-table">
                                         <thead>
                                         <tr>
-                                            <th width="5%" class="text-left">Article</th>
-                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
-                                            <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
-                                            <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
-                                            <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Curator</th>
-                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
-                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Project</th>
-                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
-                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
-                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
-                                            <th width="3%" class="text-left" style="border-left: 1px solid #ddd;">CTS</th>
-                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
-                                            <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
+                                            <th width="5%" class="text-left"><?php print(lang('dsb_th_article'))?></th>
+                                            <th width="8%" class="text-left"  style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_created'))?></th>
+                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_label'))?></th>
+                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_implementor'))?></th>
+                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_creator'))?></th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_title'))?></th>
+                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_project'))?></th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_description'))?></th>
+                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_status'))?></th>
+                                            <th width="4%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_priority'))?></th>
+                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_cts'))?></th>
+                                            <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_dueto'))?></th>
+                                            <th width="10%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_action'))?></th>
                                         </tr>
                                         </thead>
                                         <tbody id="proccess_task_table">
@@ -391,18 +391,18 @@
             <div class="col-md-3">
                <div class="row">
                    <div class="col-md-8">
-                       <p class="lead" style="float: left;">Activity Stream</p>
+                       <p class="lead" style="float: left;"><?php print(lang('dsb_activity_stream'))?></p>
                    </div>
                    <div class="col-md-4">
                 <span class="search-form">
-                    <input type="text" id="search-dash-comment" class=" form-control lights" placeholder="Search"/>
+                    <input type="text" id="search-dash-comment" class=" form-control lights" placeholder="<?php print(lang('dsb_search'))?>"/>
                 </span>
                    </div>
                </div>
 <!--                start ajax-->
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Comments</h3>
+                        <h3 class="panel-title"><?php print(lang('dsb_comments'))?></h3>
                     </div>
                     <div class="panel-body comment comment-jsscroll" style="padding-right:0;max-height: 581px;">
 

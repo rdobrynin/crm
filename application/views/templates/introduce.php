@@ -6,7 +6,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">
-                    What's is new in Brilliant Task Management
+                    What's new in Brilliant Task Management
                 </h4>
             </div>
             <div class="modal-body" style="padding: 20px;">

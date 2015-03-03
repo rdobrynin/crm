@@ -4,10 +4,10 @@
     <div class="page-content inset">
         <div class="row">
             <div class="col-lg-10 col-md-12">
-        <p class="lead">Tasks in process</p>
+        <p class="lead"><?php print(lang('task_tasks_in_process'))?></p>
                 </div>
             <div class="col-lg-2 col-md-4 search-form">
-                <input type="text" id="search-task-process-table" class=" form-control lights" placeholder="Search"/>
+                <input type="text" id="search-task-process-table" class=" form-control lights" placeholder="<?php print(lang('task_search'))?>"/>
             </div>
             </div>
         <?php if ($process_tasks != FALSE): ?>
@@ -18,19 +18,19 @@
                             <table class="table table-condensed" id="table-task-process">
                                 <thead>
                                 <tr>
-                                    <th width="5%" class="text-left">Article</th>
-                                    <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
-                                    <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
-                                    <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
-                                    <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Curator</th>
-                                    <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
-                                    <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Project</th>
-                                    <th width="6%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
-                                    <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
-                                    <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
-                                    <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">CTS</th>
-                                    <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
-                                    <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
+                                    <th width="5%" class="text-left"><?php print(lang('task_th_article'))?></th>
+                                    <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_created'))?></th>
+                                    <th width="5%" class="text-" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_label'))?></th>
+                                    <th width="5%" class="text-" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_implementer'))?></th>
+                                    <th width="5%" class="text-" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_creator'))?></th>
+                                    <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_title'))?></th>
+                                    <th width="4%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_project'))?></th>
+                                    <th width="6%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_description'))?></th>
+                                    <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_status'))?></th>
+                                    <th width="2%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_priority'))?></th>
+                                    <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_cts'))?></th>
+                                    <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_dueto'))?></th>
+                                    <th width="10%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_action'))?></th>
                                 </tr>
                                 </thead>
                                 <tbody id="proccess_task_table">
@@ -77,10 +77,10 @@
   <div class="page-content inset">
       <div class="row">
           <div class="col-lg-10 col-md-12">
-      <p class="lead">Tasks&nbsp;(<span id="calc-all-tasks" ></span>)</p>
+      <p class="lead"><?php print(lang('task_tasks'))?>&nbsp;(<span id="calc-all-tasks" ></span>)</p>
               </div>
           <div class="col-lg-2 col-md-4 search-form">
-              <input type="text" id="search-task-common-table" class=" form-control lights" placeholder="Search"/>
+              <input type="text" id="search-task-common-table" class=" form-control lights" placeholder="<?php print(lang('task_search'))?>"/>
           </div>
           </div>
       <?php if ($tasks != FALSE): ?>
@@ -91,20 +91,20 @@
                           <table class="table table-condensed" id="common-tasks-table">
                               <thead>
                               <tr>
-                                  <th width="5%" class="text-left">Article</th>
-                                  <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
-                                  <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
-                                  <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
-                                  <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Creator</th>
-                                  <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
-                                  <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Project</th>
-                                  <th width="6%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
-                                  <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
-                                  <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
-                                  <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">CTS</th>
-                                  <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
+                                  <th width="5%" class="text-left"><?php print(lang('task_th_article'))?></th>
+                                  <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_created'))?></th>
+                                  <th width="5%" class="text-" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_label'))?></th>
+                                  <th width="5%" class="text-" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_implementer'))?></th>
+                                  <th width="5%" class="text-" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_creator'))?></th>
+                                  <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_title'))?></th>
+                                  <th width="4%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_project'))?></th>
+                                  <th width="6%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_description'))?></th>
+                                  <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_status'))?></th>
+                                  <th width="2%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_priority'))?></th>
+                                  <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_cts'))?></th>
+                                  <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_dueto'))?></th>
                                   <?php if($user->role==5 OR $user->role==4):?>
-                                      <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
+                                      <th width="10%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_action'))?></th>
                                   <?php endif ?>
                               </tr>
                               </thead>
@@ -163,10 +163,10 @@
 <div class="page-content inset">
     <div class="row">
         <div class="col-lg-10 col-md-12">
-    <p class="lead">Completed tasks</p>
+    <p class="lead"><?php print(lang('task_tasks_completed'))?></p>
             </div>
         <div class="col-lg-2 col-md-4 search-form">
-            <input type="text" id="search-task-complete-table" class=" form-control lights" placeholder="Search"/>
+            <input type="text" id="search-task-complete-table" class=" form-control lights" placeholder="<?php print(lang('task_search'))?>"/>
         </div>
         </div>
     <?php if ($tasks != FALSE): ?>
@@ -177,20 +177,20 @@
                         <table class="table table-condensed" id="table-task-complete">
                             <thead>
                             <tr>
-                                <th width="5%" class="text-left">Article</th>
-                                <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
-                                <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Label</th>
-                                <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Implementor</th>
-                                <th width="5%" class="text-" style="border-left: 1px solid #ddd;">Creator</th>
-                                <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Title</th>
-                                <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Project</th>
-                                <th width="6%" class="text-left" style="border-left: 1px solid #ddd;">Description</th>
-                                <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
-                                <th width="4%" class="text-left" style="border-left: 1px solid #ddd;">Priority</th>
-                                <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">TTS</th>
-                                <th width="5%" class="text-left" style="border-left: 1px solid #ddd;">CTS</th>
-                                <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Due to</th>
-                                    <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Action</th>
+                                <th width="5%" class="text-left"><?php print(lang('task_th_article'))?></th>
+                                <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_created'))?></th>
+                                <th width="5%" class="text-" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_label'))?></th>
+                                <th width="5%" class="text-" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_implementer'))?></th>
+                                <th width="5%" class="text-" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_creator'))?></th>
+                                <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_title'))?></th>
+                                <th width="4%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_project'))?></th>
+                                <th width="6%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_description'))?></th>
+                                <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_status'))?></th>
+                                <th width="2%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_priority'))?></th>
+                                <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_tts'))?></th>
+                                <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_cts'))?></th>
+                                <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_dueto'))?></th>
+                                <th width="10%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('task_th_action'))?></th>
                             </tr>
                             </thead>
                             <tbody id="comp_task_table">

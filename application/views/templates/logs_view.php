@@ -2,10 +2,10 @@
     <div class="page-content inset">
         <div class="row">
             <div class="col-lg-10 col-md-8">
-                <p class="lead">Logs activity</p>
+                <p class="lead"><?php print(lang('logs_activity'))?></p>
             </div>
             <div class="col-lg-2 col-md-4  pull-right search-form">
-                <input type="text" id="search-logs-table" class=" form-control lights" placeholder="Search"/>
+                <input type="text" id="search-logs-table" class=" form-control lights" placeholder="<?php print(lang('logs_search'))?>"/>
             </div>
             </div>
                 <div class="container-fluid">
@@ -17,13 +17,13 @@
                                         <table class="table table-condensed" id="log-table">
                                             <thead>
                                             <tr>
-                                                <td style="width: 5%;"><strong>#ID</strong></td>
-                                                <td class="text-left" style="width:13%;border-left: 1px solid #ddd;"><strong>Date</strong></td>
-                                                <td class="text-left" style="width:10%;border-left: 1px solid #ddd;"><strong>User</strong></td>
-                                                <td class="text-left" style="width:10%;border-left: 1px solid #ddd;"><strong>item</strong></td>
-                                                <td class="text-left" style="width:2%;border-left: 1px solid #ddd;"><strong>Act</strong></td>
-                                                <td class="text-left" style="width:10%;border-left: 1px solid #ddd;"><strong>Title</strong></td>
-                                                <td class="text-left" style="width:50%;border-left: 1px solid #ddd;"><strong>Description</strong></td>
+                                                <td style="width: 5%;"><strong><?php print(lang('logs_th_id'))?></strong></td>
+                                                <td class="text-left" style="width:13%;border-left: 1px solid #ddd;"><strong><?php print(lang('logs_th_date'))?></strong></td>
+                                                <td class="text-left" style="width:10%;border-left: 1px solid #ddd;"><strong><?php print(lang('logs_th_user'))?></strong></td>
+                                                <td class="text-left" style="width:10%;border-left: 1px solid #ddd;"><strong><?php print(lang('logs_th_item'))?></strong></td>
+                                                <td class="text-left" style="width:2%;border-left: 1px solid #ddd;"><strong><?php print(lang('logs_th_act'))?></strong></td>
+                                                <td class="text-left" style="width:10%;border-left: 1px solid #ddd;"><strong><?php print(lang('logs_th_title'))?></strong></td>
+                                                <td class="text-left" style="width:50%;border-left: 1px solid #ddd;"><strong><?php print(lang('logs_th_description'))?></strong></td>
                                             </tr>
                                             </thead>
                                             <tbody id="logs-tbody">
