@@ -225,3 +225,25 @@ function plz(digit) {
     }
     return zpad;
 }
+
+function clearCache() {
+    localStorage.clear();
+    location.reload();
+}
+
+function projectToView($data){
+    console.log($data);
+    var $panel = $('.filterable .btn-filter').parents('.filterable'),
+        $tbody = $panel.find('.table tbody');
+    $tbody.find('.no-result').remove();
+    $tbody.find('tr').show();
+    $(this).closest("tr").toggleClass("project-task-main");
+    $('#task-for-project-'+$data).fadeToggle("fast", function () {
+    });
+    if ($("#route-task").closest("tr").hasClass('project-task-main')) {
+        $('.btn-filter').attr('disabled', 'disabled');
+    }
+    else {
+        $('.btn-filter').removeAttr('disabled');
+    }
+}

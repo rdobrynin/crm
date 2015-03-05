@@ -91,9 +91,3 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<script>
-    function clearCache() {
-        localStorage.clear();
-        location.reload();
-    }
-</script>

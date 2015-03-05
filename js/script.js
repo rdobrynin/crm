@@ -394,4 +394,23 @@ $('#badge-count-comments-top').html(count_all_comments);
         $('#demo_modal').modal('show');
     });
 
+    $('#edit-btn-user').click(function () {
+        $('#demo_modal').modal('show');
+        return false;
+    });
+
+    $('#admin-users-tab a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    });
+
+});
+
+$(window).load(function(){
+    $(".comment-jsscroll").mCustomScrollbar({
+        scrollButtons:{enable:true,scrollType:"stepped"},
+        theme:"rounded-dark",
+        autoExpandScrollbar:true,
+        snapOffset:65
+    });
 });

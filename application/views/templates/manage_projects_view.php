@@ -49,59 +49,6 @@
         </div>
     </div>
 <?php endif ?>
-<script type="text/javascript">
-
-    /**
-     * AJAX froze project
-     * @param $data
-     */
-
-    function frozeProject($data){
-        $('#froze-project-modal').modal('show');
-        $('.froze-btn-project').click(function () {
-            $.ajax({
-                type: 'POST',
-                url: "<?php echo base_url('ajax/frozeProject') ?>",
-                data: {project: $data, status: 1},
-                beforeSend: function () {
-                    $('.froze-btn-cancel').addClass('disabled');
-                },
-                success: function (data) {
-                    var $data = JSON.parse(data);
-                    $('.froze-btn-cancel').removeClass('disabled');
-                    $('#froze-project-modal').modal('hide');
-                    window.location.href = '/projects';
-                },
-                error: function () {
-                    alert('Something went with error')
-                }
-            });
-        });
-    }
-
-    function unfrozeProject($data){
-        $('#unfroze-project-modal').modal('show');
-        $('.unfroze-btn-project').click(function () {
-            $.ajax({
-                type: 'POST',
-                url: "<?php echo base_url('ajax/frozeProject') ?>",
-                data: {project: $data, status: 0},
-                beforeSend: function () {
-                    $('.unfroze-btn-cancel').addClass('disabled');
-                },
-
-                success: function (data) {
-                    $('.unfroze-btn-cancel').removeClass('disabled');
-                    $('#unfroze-project-modal').modal('hide');
-                    window.location.href = '/projects';
-                },
-                error: function () {
-                    alert('Something went with error')
-                }
-            });
-        });
-    }
-    </script>
 
 
 

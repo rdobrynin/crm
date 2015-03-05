@@ -138,48 +138,13 @@
       $('.errors').slideUp( "fast");
     });
 
-//    AJAX CREATE COMPANY
-<!--    $('#create_company').click(function () {-->
-<!--      var form_data = {-->
-<!--        title: $('#client_title').val(),-->
-<!--        description: $('#client_description').val(),-->
-<!--        email: $('#client_email').val(),-->
-<!--        phone: $('#client_phone').val(),-->
-<!--        address: $('#client_address').val(),-->
-<!--        index: $('#client_index').val(),-->
-<!--        url: $('#client_url').val(),-->
-<!--        city: $('#client_city').val(),-->
-<!--        country: $('#select-country option:selected').val(),-->
-<!--        curator: $('#client_owner').val()-->
-<!--      };-->
-<!--      $.ajax({-->
-<!--        url: "--><?php //echo site_url('ajax/addclient'); ?><!--",-->
-<!--        type: 'POST',-->
-<!--        data: form_data,-->
-<!--        dataType: 'json',-->
-<!--        success: function (msg) {-->
-<!--    if(msg.error==0) {-->
-<!--      $('.show-info').show();-->
-<!--      $('.show-info').children( ".show-info-content").html(msg.result);-->
-<!--      $('.show-info').delay(3500).fadeOut();-->
-<!--    }-->
-<!--          else if(msg.error==1){-->
-<!--      $('.show-info-error').show();-->
-<!--      $('.show-info-error').children( ".show-info-content").html(msg.result);-->
-<!--      $('.show-info-error').delay(3500).fadeOut();-->
-<!--          }-->
-<!--        }-->
-<!--      });-->
-<!--      $(this).closest('form').find("input[type=text], textarea").val("");-->
-<!--      });-->
-
 //      Check if title is already registered
     $( "#client_title" ).blur(function() {
       var form_data = {
         title: $(this).val()
       };
       $.ajax({
-        url: "<?php echo site_url('ajax/check_client'); ?>",
+        url: '/ajax/check_client',
         type: 'POST',
         data: form_data,
         dataType: 'json',
@@ -203,7 +168,7 @@
               email: $(this).val()
           };
           $.ajax({
-              url: "<?php echo site_url('ajax/check_emails'); ?>",
+              url: '/ajax/check_emails',
               type: 'POST',
               data: form_data,
               dataType: 'json',

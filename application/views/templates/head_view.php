@@ -65,7 +65,10 @@
     <script src="<?php print(base_url()); ?>js/interval.js"></script>
     <script src="<?php print(base_url()); ?>js/timer.js"></script>
     <script src="<?php print(base_url()); ?>js/script.js"></script>
+    <script src="<?php print(base_url()); ?>js/onload.js"></script>
     <script src="<?php print(base_url()); ?>js/ajax.js"></script>
+    <script src="<?php print(base_url()); ?>js/profile.js"></script>
+    <script src="<?php print(base_url()); ?>js/pager.js"></script>
 
 
     <!-- Bootstrap core CSS -->

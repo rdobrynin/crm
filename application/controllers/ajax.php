@@ -404,6 +404,26 @@ class Ajax extends CI_Controller {
         echo json_encode ($result);
     }
 
+    function calculateTasks() {
+        $r= $this->task_model->countTasks();
+        $c= $this->task_model->getCompTasks();
+        if($r !=false) {
+            $result['tasks'] = count($r);
+        }
+        else {
+            $result['tasks'] = 0;
+        }
+
+        if($c !=false) {
+            $result['comp_tasks'] = count($c);
+        }
+        else {
+            $result['comp_tasks'] = 0;
+        }
+        echo json_encode ($result);
+    }
+
+
 
     /**
      * Read event
@@ -600,6 +620,16 @@ class Ajax extends CI_Controller {
         $result['user']= $this->admin_model->get_user_id_array($user);
         echo json_encode($result);
     }
+
+    /**
+     * Get introduce 1 or 0
+     */
+
+    function introduceDialog() {
+         $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+         $result = $session_uid->introduce;
+         echo json_encode($result);
+     }
 
     /**
      * Update user
@@ -805,6 +835,8 @@ class Ajax extends CI_Controller {
         $result['tasks'] = $this->task_model->getTasks();
         echo json_encode($result);
     }
+
+
 
 
     /**
@@ -1280,9 +1312,10 @@ class Ajax extends CI_Controller {
 
     function assignUserProject() {
         $id =  $this->input->post('id');
-        $uid = $this->input->post('uid');
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        $uid = $session_uid->id;
         $pid = $this->input->post('pid');
-        if(isset($_POST['id']) AND isset($_POST['uid']) AND isset($_POST['pid'])) {
+        if(isset($_POST['id']) AND isset($_POST['pid'])) {
             $result['id'] =  $id;
             $result['uid'] =  $uid;
             $result['pid'] =  $pid;

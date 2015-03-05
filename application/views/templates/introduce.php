@@ -69,6 +69,7 @@
 </div> <!-- #/addproject_moda -->
 <script type="text/javascript">
     introduce = <?php print json_encode($introduce);?>;
+
     if(typeof(Storage) !== "undefined") {
         var check = localStorage.getItem('dialog');
     }

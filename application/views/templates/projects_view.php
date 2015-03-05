@@ -150,25 +150,3 @@
 </div>
 <?php include('modals/assign_users_modal.php'); ?>
 <?php include('footer_view.php');?>
-<script>
-    function projectToView($data){
-        console.log($data);
-        var $panel = $('.filterable .btn-filter').parents('.filterable'),
-//            $filters = $panel.find('.filters input'),
-            $tbody = $panel.find('.table tbody');
-//        $filters.val('').prop('disabled', true);
-        $tbody.find('.no-result').remove();
-        $tbody.find('tr').show();
-        $(this).closest("tr").toggleClass("project-task-main");
-//        $(".current-title-project").css("label label-info label-cur-pr label-xs");
-        $('#task-for-project-'+$data).fadeToggle("fast", function () {
-        });
-        if ($("#route-task").closest("tr").hasClass('project-task-main')) {
-            $('.btn-filter').attr('disabled', 'disabled');
-        }
-        else {
-            $('.btn-filter').removeAttr('disabled');
-        }
-    }
-
-</script>

@@ -232,7 +232,6 @@ class Dashboard extends CI_Controller {
         $this->load->view('templates/navtop_view', $data);
         $this->load->view('templates/sidebar_view', $data);
         $this->load->view('templates/dashboard_view', $data);
-        $this->load->view('templates/dashboard_js',$data);
         $this->load->view('templates/footer_view',$data);
         $this->load->view('templates/settings_view', $data);
     }
@@ -1421,7 +1420,7 @@ class Dashboard extends CI_Controller {
             }
             $this->load->model('admin_model');
             $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
-            $id = $data['user'][0]['id'];
+            $id = $data['user']->id;
             if ($this->form_validation->run() !== FALSE) {
                 $this->load->model('admin_model');
                 $password = $this->input->post('password');
@@ -1465,14 +1464,14 @@ class Dashboard extends CI_Controller {
                 $roles = $this->admin_model->get_roles();
                 $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
                 $this->load->view('templates/head_view',$data);
-                if ($data['user'][0]['helpblock'] == 1) {
+                if ($data['user']->helpblock == 1) {
                     $this->load->view('templates/help_block_view');
                 }
                 foreach ($roles as $rk => $rv) {
                     $roles_array[$rv['rid']] = $rv['title'];
 
                 }
-                $data['user_role']=$data['user'][0]['role'];
+                $data['user_role']=$data['user']->role;
                 $data['roles'] = $roles_array;
                 $this->load->view('templates/profile_view', $data);
                 $this->load->view('templates/settings_view', $data);

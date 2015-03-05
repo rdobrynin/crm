@@ -11,8 +11,6 @@
               <li><?php print($rv['title']);?></li>
         <?php endforeach?>
 </ul>
-
-
       </div>
       <div class="modal-footer ">
         <button type="button" class="btn btn-warning" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>

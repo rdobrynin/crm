@@ -14,27 +14,28 @@
   </div>
 </div>
 <?php include('footer_view.php');?>
+
 <script>
-  $(function () {
-    $.ajax({
-      type: "post",
-      url: "ajax/success",
-      cache: false,
-      data: $('#clientForm').serialize(),
-      success: function(json){
-        try{
-          var obj = jQuery.parseJSON(json);
-          url_path = obj['URL'];
-          url_result = obj['RESULT'];
-        }catch(e) {
-          alert('Exception while request..');
-        }
-      },
-      error: function(){
-        alert('Error while request..');
-      }
+    $(function () {
+        $.ajax({
+            type: "post",
+            url: "ajax/success",
+            cache: false,
+            data: $('#clientForm').serialize(),
+            success: function(json){
+                try{
+                    var obj = jQuery.parseJSON(json);
+                    url_path = obj['URL'];
+                    url_result = obj['RESULT'];
+                }catch(e) {
+                    alert('Exception while request..');
+                }
+            },
+            error: function(){
+                alert('Error while request..');
+            }
+        });
+        var delay = 1300; //Your delay in milliseconds
+        setTimeout(function(){ window.location = url_path+url_result; }, delay);
     });
-    var delay = 1300; //Your delay in milliseconds
-    setTimeout(function(){ window.location = url_path+url_result; }, delay);
-  });
 </script>

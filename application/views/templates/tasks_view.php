@@ -241,8 +241,3 @@
 </div>
 
 <?php include('footer_view.php');?>
-<script>
-    $(function () {
-        $('#all_task_table').pageMe({pagerSelector:'#pager_all_tasks',showPrevNext:true,hidePageNumbers:true,perPage:10});
-    });
-</script>

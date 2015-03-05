@@ -207,19 +207,9 @@
 <?php include('right_float_view.php'); ?>
 <?php include('footer_view.php'); ?>
 <script>
-    $(function () {
-        $('#edit-btn-user').click(function () {
-            $('#demo_modal').modal('show');
-            return false;
-        });
-
-    });
 
 
-    $('#admin-users-tab a').click(function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    });
+
     $('[data-toggle=confirmation-activate-user]').confirmation(
         {
             placement: 'left',
@@ -234,7 +224,7 @@
                     user: currentUser
                 };
                 $.ajax({
-                    url: "<?php echo site_url('ajax/activateUser'); ?>",
+                    url: '/ajax/activateUser',
                     type: 'POST',
                     data: form_data,
                     dataType: 'json',
@@ -273,7 +263,7 @@
                     user: currentUser
                 };
                 $.ajax({
-                    url: "<?php echo site_url('ajax/deleteNewUser'); ?>",
+                    url: '/ajax/deleteNewUser',
                     type: 'POST',
                     data: form_data,
                     dataType: 'json',
@@ -312,7 +302,7 @@
                     user: currentUser
                 };
                 $.ajax({
-                    url: "<?php echo site_url('ajax/deleteCurrentUser'); ?>",
+                    url: '/ajax/deleteCurrentUser',
                     type: 'POST',
                     data: form_data,
                     dataType: 'json',
@@ -353,19 +343,12 @@
                 };
 
                 $.ajax({
-                    url: "<?php echo site_url('ajax/frozeCurrentUser'); ?>",
+                    url: '/ajax/frozeCurrentUser',
                     type: 'POST',
                     data: form_data,
                     dataType: 'json',
                     success: function (msg) {
-//                        $('#tr_current_user_'+currentUser).remove();
-
                         $('[data-toggle=confirmation-froze-current-user]').confirmation('hide');
-//                        var rowCount = $('#tbody-current-users tr').length;
-//                        if(rowCount <1) {
-//                            $('#current-users').remove();
-//                            $('#table-current-users').hide();
-//                        }
                     }
                 });
             },
@@ -394,7 +377,7 @@
                     user: currentUser
                 };
                 $.ajax({
-                    url: "<?php echo site_url('ajax/unfrozeCurrentUser'); ?>",
+                    url: '/ajax/unfrozeCurrentUser',
                     type: 'POST',
                     data: form_data,
                     dataType: 'json',
@@ -402,11 +385,7 @@
 //                        $('#tr_current_user_'+currentUser).remove();
 
                         $('[data-toggle=confirmation-unfroze-current-user]').confirmation('hide');
-//                        var rowCount = $('#tbody-current-users tr').length;
-//                        if(rowCount <1) {
-//                            $('#current-users').remove();
-//                            $('#table-current-users').hide();
-//                        }
+
                     }
                 });
             },

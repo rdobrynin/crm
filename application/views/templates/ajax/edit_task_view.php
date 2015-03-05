@@ -171,12 +171,11 @@
         });
 
         $('#clear-form-edit-task').click(function () {
-            $user = '<?php print($user->id)?>';
             $tid = '<?php print($task->id)?>';
             $.ajax({
                 type: 'GET',
-                url: "<?php echo base_url('ajax/taskToEdit') ?>",
-                data: { tid: $tid, user:$user},
+                url: '/ajax/taskToEdit',
+                data: { tid: $tid},
                 beforeSend: function () {
                     $('#modal-ajax-edit').html('<img style="left: 100px;position: relative;" src="/img/ajax-loader.gif" height="250" alt="">');
                 },
@@ -212,7 +211,7 @@
             };
 
             $.ajax({
-                url: "<?php echo site_url('ajax/updateEditTask'); ?>",
+                url: '/ajax/updateEditTask',
                 type: 'POST',
                 data: form_data,
                 dataType: 'json',

@@ -405,24 +405,13 @@
                         <h3 class="panel-title"><?php print(lang('dsb_comments'))?></h3>
                     </div>
                     <div class="panel-body comment comment-jsscroll" style="padding-right:0;max-height: 581px;">
-
-
                         <div class="new-comment-dashboard-ajax">
-
-
                         </div>
-
-
-
-
                         <?php $rev_comm = array_reverse($comments);?>
                         <?php foreach ($rev_comm as $ck=>$cv): ?>
                             <?php if ($cv['public'] == 0): ?>
                         <?php if ($cv['to'] == $user->id): ?>
                         <div class="sub-activity search-filter-comment">
-
-
-
                             <div class="activity-item-summary">
                                 <div class="avatar-activity">
                                 <span class="avatar-img">
@@ -458,18 +447,7 @@
 </div>
 <!--logs-->
 <!--test-->
-<script>
-    (function($){
-        $(window).load(function(){
-            $(".comment-jsscroll").mCustomScrollbar({
-                scrollButtons:{enable:true,scrollType:"stepped"},
-                theme:"rounded-dark",
-                autoExpandScrollbar:true,
-                snapOffset:65
-            });
-        });
-    })(jQuery);
-</script>
+
 <?php if ($introduce == 0): ?>
     <?php include('introduce.php'); ?>
 <?php endif ?>
