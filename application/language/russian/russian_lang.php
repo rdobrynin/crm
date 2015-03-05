@@ -95,6 +95,11 @@ $lang['dsb_process_tasks_short']= 'In Process';
 $lang['dsb_overdue_tasks_short']= 'Overdue';
 $lang['dsb_search']= 'Search';
 
+$lang['dsb_projects_completed_1'] = '0 projects';
+$lang['dsb_projects_completed_2'] = 'completed';
+$lang['dsb_tasks_completed_1'] = 'of all tasks';
+$lang['dsb_tasks_completed_2'] = 'completed';
+
 $lang['dsb_th_article'] = 'Article';
 $lang['dsb_th_created'] = 'Created';
 $lang['dsb_th_label'] = 'Label';
@@ -112,8 +117,13 @@ $lang['dsb_th_action'] = 'Action';
 $lang['dsb_th_view'] = 'View';
 
 $lang['dsb_overdue_tasks'] = 'Tasks Overdue';
+$lang['dsb_tasks_ready_togo'] = 'Tasks Ready to Go';
 $lang['dsb_tasks_for_approval'] = 'Tasks for Approval';
 $lang['dsb_tasks_in_process'] = 'Tasks in Process';
+
+$lang['dsb_no_approve_tasks'] = 'No Tasks currently waiting for approval';
+$lang['dsb_no_overdue_tasks'] = 'No tasks currently overdue';
+$lang['dsb_no_ready_tasks'] = 'No tasks currently ready';
 $lang['dsb_no_process_tasks'] = 'No Tasks currently in process';
 
 $lang['dsb_activity_stream'] = 'Activity Stream';
@@ -192,3 +202,17 @@ $lang['task_th_cts'] = 'CTS';
 $lang['task_th_tts'] = 'TTS';
 $lang['task_th_dueto'] = 'Due date';
 $lang['task_th_action'] = 'Action';
+
+//Comments
+$lang['comment_search'] = 'Search';
+
+$lang['comment_comments'] = 'Comments';
+
+$lang['comment_th_id'] = '#ID';
+$lang['comment_th_created'] = 'Created';
+$lang['comment_th_subject'] = 'Subject';
+$lang['comment_th_from'] = 'From';
+$lang['comment_th_to'] = 'To';
+$lang['comment_th_message'] = 'Message';
+$lang['comment_th_time'] = 'Time ago';
+$lang['comment_th_status'] = 'Status';

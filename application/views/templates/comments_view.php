@@ -4,11 +4,11 @@
   <div class="page-content inset">
       <div class="row">
           <div class="col-lg-10 col-md-8">
-              <p class="lead">Comments&nbsp;(<span id="calc-all-comments" ></span>)</p>
+              <p class="lead"><?php print(lang('comment_comments'))?>&nbsp;(<span id="calc-all-comments" ></span>)</p>
           </div>
           <?php if ($comments != FALSE): ?>
           <div class="col-lg-2 col-md-4  pull-right search-form">
-              <input type="text" id="search-all-comments" class=" form-control lights" placeholder="Search"/>
+              <input type="text" id="search-all-comments" class=" form-control lights" placeholder="<?php print(lang('comment_search'))?>"/>
           </div>
           <?php endif ?>
       </div>
@@ -21,15 +21,15 @@
                             <table class="table table-condensed" id="table-all-comments">
                                 <thead>
                                 <tr>
-                                    <th width="5%" class="text-left">#ID</th>
-                                    <th width="8%" class="text-left" style="border-left: 1px solid #ddd;">Created</th>
-                                    <th width="10%" class="text-" style="border-left: 1px solid #ddd;">Subject</th>
-                                    <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">From</th>
-                                    <th width="10%" class="text-" style="border-left: 1px solid #ddd;">To</th>
-                                    <th width="35%" class="text-left" style="border-left: 1px solid #ddd;">Message</th>
-                                    <th width="10%" class="text-left" style="border-left: 1px solid #ddd;">Time ago</th>
+                                    <th width="5%" class="text-left"><?php print(lang('comment_th_id'))?></th>
+                                    <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('comment_th_created'))?></th>
+                                    <th width="10%" class="text-" style="border-left: 1px solid #ddd;"><?php print(lang('comment_th_subject'))?></th>
+                                    <th width="10%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('comment_th_from'))?></th>
+                                    <th width="10%" class="text-" style="border-left: 1px solid #ddd;"><?php print(lang('comment_th_to'))?></th>
+                                    <th width="35%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('comment_th_message'))?></th>
+                                    <th width="10%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('comment_th_time'))?></th>
                                     <?php if($user->role==5 OR $user->role==4):?>
-                                        <th width="3%" class="text-left" style="border-left: 1px solid #ddd;">Status</th>
+                                        <th width="3%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('comment_th_status'))?></th>
                                     <? endif?>
                                 </tr>
                                 </thead>

@@ -1,46 +1,48 @@
 <?php
 
 //system
-$lang['admin_manager_perm'] = 'Only administrators and managers can access to this section';
-$lang['you_havenot_permissions'] = 'You do not have permission to this section';
-$lang['warning'] = 'Warning!';
+$lang['admin_manager_perm'] = 'Ainult administraatoritel ning haldajatel on ligipääs valitud sektsioonile';
+$lang['you_havenot_permissions'] = 'Teil puudub ligipääs valitud sektsioonile';
+$lang['warning'] = 'Hoiatus!';
 
 $lang['menu_dashboard'] = "Töölaud";
 $lang['menu_clients'] = "Kliendid";
 $lang['menu_projects'] = "Projektid";
 $lang['menu_tasks'] = "Ülesanded";
 $lang['menu_team'] = "Rühm";
-$lang['menu_chart'] = "Aruanne";
+$lang['menu_chart'] = "Aruanded";
 $lang['menu_comments'] = "Kommentaarid";
 $lang['menu_groupchat'] = "Messenger";
-$lang['menu_help'] = "Järele aitama";
+$lang['menu_help'] = "Abi";
+$lang['menu_help_panel'] = "Help Panel";
 $lang['menu_lang'] = "Keel";
 $lang['menu_add_client'] = "Lisa klient";
-$lang['menu_add_project'] = "Create project";
-$lang['menu_add_task'] = "Add task";
-$lang['menu_settings'] = "Settings";
-$lang['menu_profile'] = "Profile";
+$lang['menu_add_project'] = "Loo projekt";
+$lang['menu_add_task'] = "Lisa ülesanne";
+$lang['menu_settings'] = "Seaded";
+$lang['menu_profile'] = "Profiil";
 $lang['menu_admin_users'] = "Administer users";
-$lang['menu_logout'] = "Log out";
-$lang['menu_messages'] = "Messages";
-$lang['menu_invite_person'] ='Invite person';
+$lang['menu_logout'] = "Logi välja";
+$lang['menu_messages'] = "Sõnumid";
+$lang['menu_invite_person'] ='Kutsu isik';
 $lang['mess_new_messages'] ='New messages';
-$lang['mess_inbox'] ='Inbox';
-$lang['mess_view_inbox'] ='View inbox';
+$lang['mess_inbox'] ='Postkast';
+$lang['mess_view_inbox'] ='Vaata postkasti';
 
 $lang['profile_view'] ='Profile view';
-$lang['req_info'] ='Requirement information';
-$lang['first_name'] ='First name';
-$lang['last_name'] ='Last name';
-$lang['add_phone'] ='Add phone';
-$lang['phone'] ='Phone';
-$lang['prim_email'] ='Primary email';
-$lang['add_email'] ='Add email';
-$lang['role'] ='Role';
-$lang['add_info'] ='Additional information';
+$lang['req_info'] ='Kohustuslik informatsioon';
+$lang['first_name'] ='Eesnimi';
+$lang['last_name'] ='Perekonnanimi';
+$lang['add_phone'] ='Lisa telefon';
+$lang['phone'] ='Telefon';
+$lang['prim_email'] ='Peamine email';
+$lang['add_email'] ='Lisa email';
+$lang['role'] ='Roll';
+$lang['add_info'] ='Lisainformatsioon';
 $lang['profile_picture'] ='Avatar';
-$lang['password'] ='Password';
-$lang['password_confirm'] ='Password confirmation';
+$lang['password'] ='Parool';
+$lang['new_password'] ='Uus parool';
+$lang['password_confirm'] ='Parooli kinnitus';
 
 
 $lang['back'] ='Back';
@@ -59,7 +61,7 @@ $lang['city'] ='City';
 
 $lang['role_master'] ='Admin';
 $lang['role_curator'] ='Manager';
-$lang['role_implementor'] ='Implementor';
+$lang['role_implementor'] ='Implementer';
 $lang['role_customer'] ='Customer';
 $lang['role_guest'] ='Guest';
 
@@ -96,6 +98,11 @@ $lang['dsb_process_tasks_short']= 'Käivad';
 $lang['dsb_overdue_tasks_short']= 'Hilinenud';
 $lang['dsb_search']= 'Otsi';
 
+$lang['dsb_projects_completed_1'] = '0 projekti';
+$lang['dsb_projects_completed_2'] = 'lõpetatud';
+$lang['dsb_tasks_completed_1'] = 'ülesannetest';
+$lang['dsb_tasks_completed_2'] = 'lõpetatud';
+
 $lang['dsb_th_article'] = 'Artikkel';
 $lang['dsb_th_created'] = 'Loodud';
 $lang['dsb_th_label'] = 'Silt';
@@ -113,8 +120,13 @@ $lang['dsb_th_action'] = 'Tegevus';
 $lang['dsb_th_view'] = 'Vaata';
 
 $lang['dsb_overdue_tasks'] = 'Hilinenud Ülesanded';
+$lang['dsb_tasks_ready_togo'] = 'Ready to Go Ülesanded';
 $lang['dsb_tasks_for_approval'] = 'Kinnitamata Ülesanded';
 $lang['dsb_tasks_in_process'] = 'Käivad Ülesanded';
+
+$lang['dsb_no_approve_tasks'] = 'No Tasks currently waiting for approval';
+$lang['dsb_no_overdue_tasks'] = 'No tasks currently overdue';
+$lang['dsb_no_ready_tasks'] = 'No tasks currently ready';
 $lang['dsb_no_process_tasks'] = 'No Tasks currently in process';
 
 $lang['dsb_activity_stream'] = 'Tegevuste Voog';
@@ -193,3 +205,17 @@ $lang['task_th_cts'] = 'CTS';
 $lang['task_th_tts'] = 'TTS';
 $lang['task_th_dueto'] = 'Tähtaeg';
 $lang['task_th_action'] = 'Tegevus';
+
+//Comments
+$lang['comment_search'] = 'Otsi';
+
+$lang['comment_comments'] = 'Kommentaarid';
+
+$lang['comment_th_id'] = '#ID';
+$lang['comment_th_created'] = 'Loodud';
+$lang['comment_th_subject'] = 'Teema';
+$lang['comment_th_from'] = 'Kellelt';
+$lang['comment_th_to'] = 'Kellele';
+$lang['comment_th_message'] = 'Sõnum';
+$lang['comment_th_time'] = 'Millal';
+$lang['comment_th_status'] = 'Staatus';

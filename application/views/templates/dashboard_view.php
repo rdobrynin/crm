@@ -31,7 +31,7 @@
                                 <div class="progress transparent progress-small no-radius m-t-20" style="width:90%">
                                     <div class="progress-bar progress-bar-white animate-progress-bar"  data-percentage="43%" style="width: 64.8%;"></div>
                                 </div>
-                                <div class="description"> <span class="text-white mini-description ">0 projects <span class="blend">&nbsp;completed</span></span></div>
+                                <div class="description"> <span class="text-white mini-description "><?php print(lang('dsb_projects_completed_1'))?><span class="blend">&nbsp;<?php print(lang('dsb_projects_completed_2'))?></span></span></div>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                                 <div class="progress transparent progress-small no-radius m-t-20" style="width:90%">
                                     <div class="progress-bar progress-bar-white animate-progress-bar" id="progress-tasks" data-percentage="25%" style="width: 54%;"></div>
                                 </div>
-                                <div class="description"> <span class="text-white mini-description "><span id="percent-completed-tasks">25%</span> of all tasks <span class="blend">completed&nbsp;</span></span></div>
+                                <div class="description"> <span class="text-white mini-description "><span id="percent-completed-tasks">25%</span> <?php print(lang('dsb_tasks_completed_1'))?> <span class="blend"> <?php print(lang('dsb_tasks_completed_2'))?></span></span></div>
                             </div>
                         </div>
                     </div>
@@ -145,7 +145,7 @@
 <!--                        </div>-->
                     </div>
                     <?php else: ?>
-                    <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of overdue tasks found</div></div>
+                    <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;<?php print(lang('dsb_no_poverdue_tasks'))?></div></div>
                     </div>
                 <?php endif ?>
 <!--                End overdue-->
@@ -168,7 +168,7 @@
                         ==2 ): ?>
                 <div class="row">
                     <div class="col-lg-10 col-md-12">
-                            <p class="lead">Ready to go&nbsp;(<span id="calc-ready-tasks"><?php if ($ready_tasks != false): ?><?php print($ready_tasks); ?><?php else:?>0<?php endif ?></span>)<p>
+                            <p class="lead"><?php print(lang('dsb_tasks_ready_togo'))?>&nbsp;(<span id="calc-ready-tasks"><?php if ($ready_tasks != false): ?><?php print($ready_tasks); ?><?php else:?>0<?php endif ?></span>)<p>
                         </p>
                 </div>
                             <?php if ($ready_tasks != false): ?>
@@ -190,7 +190,7 @@
                                             <th width="5%" class="text-left"><?php print(lang('dsb_th_article'))?></th>
                                             <th width="8%" class="text-left"  style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_created'))?></th>
                                             <th width="4%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_label'))?></th>
-                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_implementor'))?></th>
+                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_implementer'))?></th>
                                             <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_creator'))?></th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_title'))?></th>
                                             <th width="4%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_project'))?></th>
@@ -242,7 +242,7 @@
                             </div>
                         </div>
                             <?php else: ?>
-                                <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;<?php print(lang('dsb_no_process_tasks'))?></div></div>
+                                <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;<?php print(lang('dsb_no_approve_tasks'))?></div></div>
                             <?php endif ?>
 <!--                        <div class="text-center">-->
 <!--                            <ul class="pagination pagination-lg pager" id="pager_approve_tasks"></ul>-->
@@ -307,7 +307,7 @@
                             </div>
 
                             <?php else: ?>
-                                <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of ready tasks found</div></div>
+                                <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;<?php print(lang('dsb_no_ready_tasks'))?></div></div>
                             <?php endif ?>
                         </div>
                         <?php endif ?>
@@ -383,7 +383,7 @@
                         </div>
                     </div>
                 <?php else: ?>
-                    <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of process tasks found</div></div>
+                    <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;<?php print(lang('dsb_no_process_tasks'))?></div></div>
                 <?php endif ?>
                 <!--   end last tasks-->
         </div>
