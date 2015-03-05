@@ -621,22 +621,6 @@ function qmSendComment($data) {
                 }
             }
         });
-
-        setTimeout(function () {
-            $.ajax({
-                type: 'GET',
-                url: '/ajax/getCommentDashboard',
-                data: { to: $to},
-                success: function (data) {
-                    $('.new-comment-dashboard-ajax').fadeIn('slow');
-                    $('.new-comment-dashboard-ajax').html(data);
-
-                },
-                error: function () {
-                    alert('Something went with error')
-                }
-            });
-        }, 5000);
     });
 }
 

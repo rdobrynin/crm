@@ -1279,32 +1279,6 @@ class Ajax extends CI_Controller {
         $this->load->view('templates/ajax/assign_users_view',$data);
     }
 
-    /**
-     * Insert last comment to user
-     */
-
-    function getCommentDashboard() {
-        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
-        $uid = $session_uid->id;
-        $to =  $this->input->get('to');
-        $avatars = $this->admin_model->getAvatars();
-        if($avatars) {
-            $data['avatars']= $avatars;
-        }
-        else {
-            $data['avatars']=false;
-        }
-        $data['cv'] = $this->message_model->getCommentLast();
-        $data['get_users_online'] = $this->admin_model->get_users_online();
-        $data['user'] = $this->admin_model->get_user_id($uid);
-        $data['user_name'] = $this->admin_model->get_users_names();
-        $data['users_title_roles']= $this->admin_model->get_users_title_roles();
-        $users = $this->admin_model->get_users();
-        $data['users'] = $users;
-        $data['to'] = $this->admin_model->get_user_id($to);
-        $this->load->view('templates/ajax/dashboard_comment_view',$data);
-    }
-
 
     /**
      * Assign user to project and send message to email & added event

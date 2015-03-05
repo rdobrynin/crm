@@ -3,8 +3,33 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Project management app">
+    <meta name="author" content="Roman Dobrynin">
+
+        <!--
+
+        +++++++++++           ++++++++++
+        +++++++++++           +++++++++++
+        ++       ++           ++        ++
+        ++       ++           ++         ++
+        ++ ++++++++           ++          ++
+        ++ ++++++++           ++          ++
+        ++ +++                ++          ++
+        ++   +++              ++          ++
+        ++     +++            ++          ++
+        ++      +++           ++         ++
+        ++       +++    +++   ++        ++    +++
+        ++        +++   +++   ++++++++++      +++
+
+
+        Want to make it  better? I'm looking for a enthusiast :)))
+
+        WBW,
+        Roman Dobrynin
+        emai: roman.dobrynin@gmail.com
+
+        -->
+
     <link rel="apple-touch-icon" href="http://brilliant-solutions.eu/ico/icon.png"/>
     <link rel="apple-touch-icon" sizes="72x72" href="http://brilliant-solutions.eu/ico/icon-72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="http://brilliant-solutions.eu/ico/icon@2x.png"/>
