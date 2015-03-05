@@ -2,11 +2,137 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b5c62b4-a621-4d4d-8746-6975ce18f490" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/comments_view.php" afterPath="$PROJECT_DIR$/application/views/templates/comments_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/dashboard_view.php" afterPath="$PROJECT_DIR$/application/views/templates/dashboard_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/language/english/english_lang.php" afterPath="$PROJECT_DIR$/application/language/english/english_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/language/estonian/estonian_lang.php" afterPath="$PROJECT_DIR$/application/language/estonian/estonian_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/language/russian/russian_lang.php" afterPath="$PROJECT_DIR$/application/language/russian/russian_lang.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/helpers/parser_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/helpers/twiggy_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/MY_Parser.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/libraries/Smarty.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/Smarty.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/SmartyBC.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/debug.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/block.textformat.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/function.counter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/function.css.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/function.cycle.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/function.fetch.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/function.html_checkboxes.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/function.html_image.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/function.html_options.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/function.html_radios.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/function.html_select_date.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/function.html_select_time.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/function.html_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/function.img.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/function.js.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/function.mailto.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/function.math.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifier.capitalize.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifier.date_format.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifier.debug_print_var.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifier.escape.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifier.regex_replace.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifier.replace.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifier.spacify.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifier.truncate.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifiercompiler.cat.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifiercompiler.count_characters.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifiercompiler.count_paragraphs.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifiercompiler.count_sentences.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifiercompiler.count_words.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifiercompiler.default.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifiercompiler.escape.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifiercompiler.from_charset.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifiercompiler.indent.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifiercompiler.lower.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifiercompiler.noprint.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifiercompiler.string_format.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifiercompiler.strip.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifiercompiler.strip_tags.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifiercompiler.to_charset.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifiercompiler.unescape.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifiercompiler.upper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/modifiercompiler.wordwrap.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/outputfilter.trimwhitespace.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/shared.escape_special_chars.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/shared.literal_compiler_param.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/shared.make_timestamp.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/shared.mb_str_replace.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/shared.mb_unicode.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/shared.mb_wordwrap.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/plugins/variablefilter.htmlspecialchars.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_cacheresource.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_cacheresource_custom.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_cacheresource_keyvaluestore.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_config_source.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_cacheresource_file.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_append.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_assign.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_block.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_break.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_call.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_capture.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_config_load.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_continue.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_debug.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_eval.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_extends.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_for.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_foreach.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_function.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_if.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_include.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_include_php.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_insert.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_ldelim.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_nocache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_private_block_plugin.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_private_function_plugin.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_private_modifier.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_private_object_block_function.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_private_object_function.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_private_print_expression.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_private_registered_block.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_private_registered_function.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_private_special_variable.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_rdelim.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_section.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_setfilter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compile_while.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_compilebase.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_config_file_compiler.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_configfilelexer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_configfileparser.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_data.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_debug.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_filter_handler.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_function_call_handler.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_get_include_path.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_nocache_insert.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_parsetree.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_resource_eval.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_resource_extends.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_resource_file.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_resource_php.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_resource_registered.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_resource_stream.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_resource_string.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_smartytemplatecompiler.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_template.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_templatebase.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_templatecompilerbase.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_templatelexer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_templateparser.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_internal_write_file.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_resource.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_resource_custom.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_resource_recompiled.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_resource_uncompiled.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/third_party/Smarty/sysplugins/smarty_security.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/inheritancetest.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/master.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/smartytest.tpl" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/dashboard.php" afterPath="$PROJECT_DIR$/application/controllers/dashboard.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crm.iws" />
@@ -30,151 +156,26 @@
     <favorites_list name="crm" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.9">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="dashboard.php" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/application/controllers/dashboard.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="74" column="9" selection-start="2242" selection-end="2242" vertical-scroll-proportion="0.47619048" vertical-offset="792" max-vertical-offset="29682">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="head_view.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/views/templates/head_view.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="67" column="53" selection-start="4785" selection-end="4785" vertical-scroll-proportion="0.0" vertical-offset="1206" max-vertical-offset="1728">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="modal_confirmation.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/views/templates/modals/modal_confirmation.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="10" column="27" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="306">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="modal_task.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/views/templates/modals/modal_task.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="11" column="18" selection-start="730" selection-end="730" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1044">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="comment.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/views/templates/modals/comment.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="32" column="30" selection-start="1929" selection-end="1929" vertical-scroll-proportion="0.0" vertical-offset="576" max-vertical-offset="810">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="sidebar_view.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/views/templates/sidebar_view.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="22" column="31" selection-start="2502" selection-end="2502" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="774">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="assign_users_modal.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/views/templates/modals/assign_users_modal.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="19" column="97" selection-start="1005" selection-end="1037" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="1782">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="right_float_view.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/views/templates/right_float_view.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="15" column="164" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="540">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="settings_view.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/views/templates/settings_view.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="73" column="32" selection-start="4841" selection-end="4841" vertical-scroll-proportion="0.0" vertical-offset="1314" max-vertical-offset="1890">
-                  <folding>
-                    <marker date="1425297746000" expanded="true" signature="737:1426" placeholder="..." />
-                    <marker date="1425297746000" expanded="true" signature="856:1357" placeholder="..." />
-                    <marker date="1425297746000" expanded="true" signature="1862:2394" placeholder="..." />
-                    <marker date="1425297746000" expanded="true" signature="2886:3420" placeholder="..." />
-                    <marker date="1425297746000" expanded="true" signature="4045:4234" placeholder="..." />
-                    <marker date="1425297746000" expanded="true" signature="4642:4840" placeholder="..." />
-                    <marker date="1425297746000" expanded="true" signature="5088:5123" placeholder="..." />
-                    <marker date="1425297746000" expanded="true" signature="5475:5587" placeholder="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="project_model.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/models/project_model.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="302" column="30" selection-start="6100" selection-end="6110" vertical-scroll-proportion="0.0" vertical-offset="5436" max-vertical-offset="6282">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="english_lang.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/language/english/english_lang.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="9" column="36" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="4212">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="russian_lang.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/language/russian/russian_lang.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="14" column="35" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="3942">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ajax.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/controllers/ajax.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="704" column="92" selection-start="25077" selection-end="25077" vertical-scroll-proportion="0.0" vertical-offset="12672" max-vertical-offset="26136">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="estonian_lang.php" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/application/language/estonian/estonian_lang.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="0" selection-start="235" selection-end="235" vertical-scroll-proportion="0.25714287" vertical-offset="90" max-vertical-offset="4030">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="dashboard.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/dashboard.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="8" selection-start="914" selection-end="914" vertical-scroll-proportion="0.5625" vertical-offset="0" max-vertical-offset="29362">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/admin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="158" column="49" selection-start="6615" selection-end="6615" vertical-scroll-proportion="-105.333336" vertical-offset="0" max-vertical-offset="3856">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -236,8 +237,8 @@
         <option value="$PROJECT_DIR$/application/controllers/ajax.php" />
         <option value="$PROJECT_DIR$/application/language/english/english_lang.php" />
         <option value="$PROJECT_DIR$/application/language/russian/russian_lang.php" />
-        <option value="$PROJECT_DIR$/application/controllers/dashboard.php" />
         <option value="$PROJECT_DIR$/application/language/estonian/estonian_lang.php" />
+        <option value="$PROJECT_DIR$/application/controllers/dashboard.php" />
       </list>
     </option>
   </component>
@@ -364,6 +365,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="third_party" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -382,55 +401,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="language" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="russian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="language" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="estonian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="language" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="english" />
+              <option name="myItemId" value="libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -464,6 +435,10 @@
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="options.lastSelected" value="org.codinjutsu.tools.jenkins.JenkinsComponent" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -545,20 +520,20 @@
     <frame x="41" y="24" width="2519" height="1416" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32955405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1866969" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1292517" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969698" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15717171" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12727273" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14626263" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15717171" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12727273" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14626263" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Jenkins" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32955405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15873016" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -586,16 +561,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/elements.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="577" column="15" selection-start="11162" selection-end="11162" vertical-scroll-proportion="0.030789826" vertical-offset="10363" max-vertical-offset="11709" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/modal.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="318" column="0" selection-start="6124" selection-end="6124" vertical-scroll-proportion="0.5368139" vertical-offset="5359" max-vertical-offset="6831" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/custom404.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="0" selection-start="262" selection-end="262" vertical-scroll-proportion="0.30508474" vertical-offset="0" max-vertical-offset="1060" />
@@ -721,11 +686,6 @@
         <state line="556" column="7" selection-start="11515" selection-end="11515" vertical-scroll-proportion="0.0" vertical-offset="10008" max-vertical-offset="17424" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="49" selection-start="6615" selection-end="6615" vertical-scroll-proportion="0.0" vertical-offset="2844" max-vertical-offset="3024" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/less/variables.less">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="49" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="15246" />
@@ -761,44 +721,9 @@
         <state line="7" column="66" selection-start="293" selection-end="297" vertical-scroll-proportion="-2.290909" vertical-offset="0" max-vertical-offset="1405" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/sidebar_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="31" selection-start="2502" selection-end="2502" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="774">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/right_float_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="164" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="540">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/navtop_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="85" column="132" selection-start="5357" selection-end="5391" vertical-scroll-proportion="-4.6666665" vertical-offset="1404" max-vertical-offset="2199" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/modals/assign_users_modal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="97" selection-start="1005" selection-end="1037" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="1782">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/modals/comment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="30" selection-start="1929" selection-end="1929" vertical-scroll-proportion="0.0" vertical-offset="576" max-vertical-offset="810">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/modals/modal_task.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="18" selection-start="730" selection-end="730" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1044">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/head_view.php">
@@ -808,72 +733,114 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tasker.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/modals/modal_confirmation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="27" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="306">
+        <state line="10" column="27" selection-start="655" selection-end="655" vertical-scroll-proportion="0.19736843" vertical-offset="0" max-vertical-offset="1164">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/templates/modals/modal_task.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="18" selection-start="730" selection-end="730" vertical-scroll-proportion="0.019736841" vertical-offset="180" max-vertical-offset="1902">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/templates/modals/comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="30" selection-start="1929" selection-end="1929" vertical-scroll-proportion="0.42982456" vertical-offset="184" max-vertical-offset="1668">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/templates/sidebar_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="31" selection-start="2502" selection-end="2502" vertical-scroll-proportion="0.4002193" vertical-offset="157" max-vertical-offset="1848">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/templates/modals/assign_users_modal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="97" selection-start="1005" selection-end="1037" vertical-scroll-proportion="0.019736841" vertical-offset="324" max-vertical-offset="2640">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/templates/right_float_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="164" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.29605263" vertical-offset="0" max-vertical-offset="1416">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/settings_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="32" selection-start="4841" selection-end="4841" vertical-scroll-proportion="0.0" vertical-offset="1314" max-vertical-offset="1890">
+        <state line="73" column="32" selection-start="4841" selection-end="4841" vertical-scroll-proportion="0.123903506" vertical-offset="1273" max-vertical-offset="2820">
           <folding>
-            <marker date="1425297746000" expanded="true" signature="737:1426" placeholder="..." />
-            <marker date="1425297746000" expanded="true" signature="856:1357" placeholder="..." />
-            <marker date="1425297746000" expanded="true" signature="1862:2394" placeholder="..." />
-            <marker date="1425297746000" expanded="true" signature="2886:3420" placeholder="..." />
-            <marker date="1425297746000" expanded="true" signature="4045:4234" placeholder="..." />
-            <marker date="1425297746000" expanded="true" signature="4642:4840" placeholder="..." />
-            <marker date="1425297746000" expanded="true" signature="5088:5123" placeholder="..." />
-            <marker date="1425297746000" expanded="true" signature="5475:5587" placeholder="..." />
+            <marker date="1425297746000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425297746000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425297746000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425297746000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425297746000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425297746000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425297746000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425297746000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/project_model.php">
+    <entry file="file://$PROJECT_DIR$/application/language/estonian/estonian_lang.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="302" column="30" selection-start="6100" selection-end="6110" vertical-scroll-proportion="0.0" vertical-offset="5436" max-vertical-offset="6282">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/language/english/english_lang.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="36" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="4212">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/language/russian/russian_lang.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="35" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="3942">
+        <state line="32" column="47" selection-start="1193" selection-end="1193" vertical-scroll-proportion="0.47600392" vertical-offset="90" max-vertical-offset="4981">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/ajax.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="704" column="92" selection-start="25077" selection-end="25077" vertical-scroll-proportion="0.0" vertical-offset="12672" max-vertical-offset="26136">
+        <state line="704" column="92" selection-start="25077" selection-end="25077" vertical-scroll-proportion="0.052889325" vertical-offset="12672" max-vertical-offset="27193">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/language/estonian/estonian_lang.php">
+    <entry file="file://$PROJECT_DIR$/application/language/russian/russian_lang.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="235" selection-end="235" vertical-scroll-proportion="0.25714287" vertical-offset="90" max-vertical-offset="4030">
+        <state line="14" column="35" selection-start="512" selection-end="512" vertical-scroll-proportion="0.017629774" vertical-offset="234" max-vertical-offset="4909">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tasker.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/application/language/english/english_lang.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="36" selection-start="336" selection-end="336" vertical-scroll-proportion="0.017629774" vertical-offset="144" max-vertical-offset="5179">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/project_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="302" column="30" selection-start="6100" selection-end="6110" vertical-scroll-proportion="0.017629774" vertical-offset="5418" max-vertical-offset="7249">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="158" column="49" selection-start="6615" selection-end="6615" vertical-scroll-proportion="-105.333336" vertical-offset="0" max-vertical-offset="3856">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="9" selection-start="2242" selection-end="2242" vertical-scroll-proportion="0.47619048" vertical-offset="792" max-vertical-offset="29682">
+        <state line="26" column="8" selection-start="914" selection-end="914" vertical-scroll-proportion="0.5625" vertical-offset="0" max-vertical-offset="29362">
           <folding />
         </state>
       </provider>

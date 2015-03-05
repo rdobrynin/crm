@@ -7,7 +7,6 @@ class Dashboard extends CI_Controller {
     public function __construct() {
         session_start();
         parent::__construct();
-        $this->load->library('parser');
         $this->load->model('admin_model');
         $this->load->model('dashboard_model');
         $this->load->model('project_model');
