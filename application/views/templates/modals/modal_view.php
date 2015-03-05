@@ -321,19 +321,3 @@
 </div> <!-- #/addproject_moda -->
 
 <!--</div> <!-- #/task_details_modal -->-->
-<script type="text/javascript">
-
-    $(function () {
-//        $('#view_detail_task_modal').modal('show');
-        $('#dueto_modal').datetimepicker({
-            theme:'light',
-            format:'d.m.Y H:i',
-            minDate: '<?php date("F j, Y, g:i a"); ?>',
-            minTime:0
-        });
-        $('#btn_modal_miss_imp').click(function () {
-            $('#addtask_pr_modal').modal('hide');
-            $('#invite').modal('show');
-        });
-    });
-</script>

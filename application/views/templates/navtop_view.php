@@ -56,7 +56,7 @@
 
                   <li class="add-client"><a href="#" data-toggle="modal" data-target="#addproject_modal" title="create project"><i class="fa fa-plus"></i><?php print(lang('menu_add_project')); ?></a></li>
                   <?php endif ?>
-              <?php if ($projects != false): ?><li class="add-client"><a href="#" data-toggle="modal" data-target="#addtask_pr_modal" title="create task"><i class="fa fa-plus"></i><?php print(lang('menu_add_task')); ?></a></li><?php endif ?>
+              <?php if ($projects != false): ?><li class="add-client"><a href="#" id="add_task_modal"  title="create task"><i class="fa fa-plus"></i><?php print(lang('menu_add_task')); ?></a></li><?php endif ?>
 
           </ul>
       </li>

@@ -5,6 +5,11 @@ $('.selectpicker').selectpicker({
 
 $(function() {
 
+    $('#add_task_modal').click(function () {
+        $('#addtask_pr_modal').modal('show');
+        $('.selectpicker').selectpicker();
+    });
+
 
     $('.onoff').bootstrapToggle({
         size:'mini'
@@ -403,6 +408,16 @@ $('#badge-count-comments-top').html(count_all_comments);
         e.preventDefault()
         $(this).tab('show')
     });
+
+
+
+    $('#btn_modal_miss_imp').click(function () {
+        $('#addtask_pr_modal').modal('hide');
+        $('#invite').modal('show');
+    });
+
+
+
 
 });
 

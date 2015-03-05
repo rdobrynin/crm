@@ -77,7 +77,7 @@
                                                             <?php endif ?>
 
                                                         <?php else: ?>
-                                                            <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" onMouseOut="taskToHide()" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
+                                                            <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)"  style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                                         <?php endif ?>
                                                     </td>
                                                 </tr>

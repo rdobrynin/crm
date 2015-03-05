@@ -1228,6 +1228,15 @@ class Ajax extends CI_Controller {
         echo json_encode ($result);
     }
 
+    /**
+     * Get current time
+     */
+
+    function getCurrentTime() {
+        $result = date("F j, Y, g:i a");
+        echo json_encode ($result);
+    }
+
 
     /**
      * MessageToEmail

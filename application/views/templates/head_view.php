@@ -22,11 +22,14 @@
         ++        +++   +++   ++++++++++      +++
 
 
-        Want to make it  better? I'm looking for a enthusiast :)))
+        Want to make it  better? I'm looking for an enthusiast :)))
 
-        WBW,
+        Best,
         Roman Dobrynin
-        emai: roman.dobrynin@gmail.com
+        email: roman.dobrynin@gmail.com
+        linkedin: ee.linkedin.com/in/rdobrynin/
+        skype: roman.dobrynin
+        github: https://github.com/rdobrynin
 
         -->
 
@@ -90,12 +93,10 @@
     <script src="<?php print(base_url()); ?>js/interval.js"></script>
     <script src="<?php print(base_url()); ?>js/timer.js"></script>
     <script src="<?php print(base_url()); ?>js/script.js"></script>
-    <script src="<?php print(base_url()); ?>js/onload.js"></script>
     <script src="<?php print(base_url()); ?>js/ajax.js"></script>
+    <script src="<?php print(base_url()); ?>js/onload.js"></script>
     <script src="<?php print(base_url()); ?>js/profile.js"></script>
     <script src="<?php print(base_url()); ?>js/pager.js"></script>
-
-
     <!-- Bootstrap core CSS -->
 <!--    <link rel="stylesheet/less" type="text/css" href="--><?php //print(base_url()); ?><!--less/style.less">-->
     <script src="<?php print(base_url()); ?>assets/js/less.min.js" type="text/javascript"></script>
@@ -120,6 +121,5 @@
     </div>
 </div>
 </div>
-
 <div class="right-sidebar">
 </div>

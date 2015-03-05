@@ -54,4 +54,4 @@
         </div>
         <?php form_close( );?>
     </div>
-</div> <!-- #/addtask_pr_modal -->
+</div> <!-- #/modal_timer -->

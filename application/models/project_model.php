@@ -116,9 +116,11 @@ class Project_model extends CI_Model {
     public function get_projects() {
         $query = $this
             ->db
+//        ->where('froze','0')
             ->get('project');
         return $query->result_array();
     }
+
 
 
     /**
