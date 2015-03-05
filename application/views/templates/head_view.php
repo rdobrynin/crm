@@ -47,22 +47,26 @@
     <link href="<?php print(base_url()); ?>css/logs.css" rel="stylesheet">
     <link href="<?php print(base_url()); ?>css/tasker_fonts.css" rel="stylesheet">
     <link href="<?php print(base_url()); ?>assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
-
     <script src="<?php print(base_url()); ?>bower_components/jquery/dist/jquery.min.js"></script>
     <script src="<?php print(base_url()); ?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="<?php print(base_url()); ?>assets/js/bootstrap-select.js"></script>
-
     <script src="<?php print(base_url()); ?>assets/js/jquery.mCustomScrollbar.js"></script>
     <script src="<?php print(base_url()); ?>assets/js/bootstrap-switch.min.js"></script>
     <script src="<?php print(base_url()); ?>assets/js/jquery.bootstrap.wizard.min.js"></script>
     <script src="<?php print(base_url()); ?>assets/js/ajaxfileupload.js"></script>
-    <script src="<?php print(base_url()); ?>js/script.js"></script>
     <script src="<?php print(base_url()); ?>assets/js/bootstrap-tooltip.js"></script>
     <script src="<?php print(base_url()); ?>assets/js/bootstrap-confirmation.js"></script>
     <script src="<?php print(base_url()); ?>assets/js/jquery.validate.min.js"></script>
     <script src="<?php print(base_url()); ?>assets/js/jquery.datetimepicker.js"></script>
     <script src="<?php print(base_url()); ?>assets/js/jquery.autocomplete.js"></script>
     <script src="<?php print(base_url()); ?>assets/js/bootstrap-toggle.js"></script>
+    <script src="<?php print(base_url()); ?>js/dashboard.js"></script>
+    <script src="<?php print(base_url()); ?>js/functions.js"></script>
+    <script src="<?php print(base_url()); ?>js/interval.js"></script>
+    <script src="<?php print(base_url()); ?>js/timer.js"></script>
+    <script src="<?php print(base_url()); ?>js/script.js"></script>
+    <script src="<?php print(base_url()); ?>js/ajax.js"></script>
+
 
     <!-- Bootstrap core CSS -->
 <!--    <link rel="stylesheet/less" type="text/css" href="--><?php //print(base_url()); ?><!--less/style.less">-->
@@ -71,6 +75,8 @@
     <script src="<?php print(base_url()); ?>assets/js/ie10-viewport-bug-workaround.js"></script>
 <!--    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">-->
 <!--    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>-->
+<!--    <script data-main="--><?php //print(base_url());?><!--js/app_main.js" src="--><?php //print(base_url());?><!--assets/js/require.js"></script>-->
+
 </head>
 <body>
 <div class="loader"></div>
@@ -80,12 +86,8 @@
 <div class="task-view-header"></div>
     <div class="task-view-body">
         <div class="row">
-            <!--/col-->
             <div class="col-xs-12 task-view-content">
-
             </div>
-
-
         </div>
     </div>
 </div>

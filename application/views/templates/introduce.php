@@ -83,8 +83,6 @@
     }
 
     $(function () {
-
-
         $('#close-introduce').click(function () {
            var check = $('#dont-show-whats-new').prop('checked');
             var user = $('#user_introduce_id').val();
@@ -93,7 +91,7 @@
                 id: user
             };
             $.ajax({
-                url: "<?php echo site_url('ajax/updateIntroduce'); ?>",
+                url: '/ajax/updateIntroduce',
                 type: 'POST',
                 data: form_data_,
                 dataType: 'json',
@@ -106,12 +104,9 @@
                 }
             });
         });
-
         var check = localStorage.getItem('dialog');
         if ( $( "#introduce_modal" ).is( ".show" ) && check !== '1' ) {
             $('.b-overlay').css('display','block');
-
-//  todo
             if(typeof(Storage) !== "undefined") {
                 localStorage.setItem("dialog", "1");
             }

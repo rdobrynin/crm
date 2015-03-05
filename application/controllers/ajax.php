@@ -4,13 +4,21 @@
 
 class Ajax extends CI_Controller {
 
-
+    public function __construct() {
+        session_start();
+        parent::__construct();
+        $this->load->model('admin_model');
+        $this->load->model('dashboard_model');
+        $this->load->model('project_model');
+        $this->load->model('task_model');
+        $this->load->model('files_model');
+        $this->load->model('message_model');
+    }
   /**
    * Check client on input blur
    */
   public function check_client() {
     $title = $this->input->post('title');
-    $this->load->model('admin_model');
     $check_title= $this->admin_model->verify_client($title);
     $result = array();
     if($title === $check_title[0]['title']){
@@ -24,12 +32,18 @@ class Ajax extends CI_Controller {
 
   }
 
+
+    public function getUserNames() {
+        $result['users_names']= $this->admin_model->get_users_names();
+        echo json_encode($result);
+
+    }
+
+
     /**
      * Check login avatar
      */
     public function check_login_avatar() {
-        $this->load->model('admin_model');
-        $this->load->model('files_model');
         $email = $_POST['email'];
         $check_email= $this->admin_model->check_email($email);
         $getuser= $this->admin_model->get_user($email);
@@ -55,7 +69,6 @@ class Ajax extends CI_Controller {
      */
     public function check_emails() {
         $result['result'] = TRUE;
-        $this->load->model('admin_model');
         $email = $_POST['email'];
         $query= $this->admin_model->emails_users($email);
         foreach($query as $v) {
@@ -132,7 +145,6 @@ class Ajax extends CI_Controller {
     $this->form_validation->set_rules('city', 'City', 'trim|required');
     $this->form_validation->set_rules('country', 'Country', 'trim|required');
     if ($this->form_validation->run() !== false) {
-      $this->load->model('admin_model');
       $query = $this->admin_model->create_client();
       if ($query){  //&& any other condition
         $result['title'] = $_POST['title'];
@@ -165,7 +177,6 @@ class Ajax extends CI_Controller {
      */
 
     function do_upload() {
-        $this->load->model('files_model');
         $status = "";
         $msg = "";
         $del = "";
@@ -239,8 +250,6 @@ class Ajax extends CI_Controller {
         $result['check_email'] = true;
         $result['empty'] = true;
         $result['send'] = false;
-        $this->load->model('admin_model');
-        $this->load->model('project_model');
         $email = trim($_POST['email']);
         $fname = trim($_POST['first_name']);
         $lname = trim($_POST['last_name']);
@@ -248,10 +257,10 @@ class Ajax extends CI_Controller {
         $user_id = $_POST['user_id'];
         $user_array = $this->admin_model->get_user_id($user_id);
 //        get curator data
-        $curator_fname = $user_array[0]['first_name'];
-        $curator_lname = $user_array[0]['last_name'];
+        $curator_fname = $user_array->first_name;
+        $curator_lname = $user_array->lasst_name;
         $curator_name = $curator_fname. ' '.$curator_lname;
-        $curator_email = $user_array[0]['email'];
+        $curator_email = $user_array->email;
         $query= $this->admin_model->emails_users($email);
         foreach($query as $v) {
             if($v['email'] == $email) {
@@ -328,8 +337,6 @@ class Ajax extends CI_Controller {
      */
 
     function addproject() {
-        $this->load->model('project_model');
-        $this->load->model('admin_model');
         $result['empty'] = true;
         $result['send'] = false;
         $result['project'] = true;
@@ -339,7 +346,7 @@ class Ajax extends CI_Controller {
         //validate title of project
         $verify_title = $this->project_model->check_project($title);
         $name_array =  $this->admin_model->get_user_id($uid);
-        $full_name = $name_array[0]['first_name'].' '.$name_array[0]['last_name'];
+        $full_name = $name_array->first_name.' '.$name_array->last_name;
         $result['id']=$uid;
         $result['title']=$title;
         $result['desc']=$desc;
@@ -358,20 +365,12 @@ class Ajax extends CI_Controller {
                 $last= $this->project_model->getLastProject();
                 $result['lastproject'] = $last->pid;
                 $this->project_model->assign_project($last->pid, $uid, 1);
-
-
-
-
-
                 $users = $this->admin_model->get_users();
-
                 foreach($users as $uk=>$uv) {
                  if($uv['id'] != $uid) {
                      $this->project_model->assign_project($last->pid, $uv['id'], 0);
                  }
                 }
-
-
             }
         }
         echo json_encode($result);
@@ -391,7 +390,6 @@ class Ajax extends CI_Controller {
      */
 
     function countProjects() {
-        $this->load->model('project_model');
         $result = $this->project_model->countProjects();
         echo json_encode ($result);
     }
@@ -402,7 +400,6 @@ class Ajax extends CI_Controller {
      */
 
     function countTasks() {
-        $this->load->model('task_model');
         $result = $this->task_model->countTasks();
         echo json_encode ($result);
     }
@@ -412,7 +409,6 @@ class Ajax extends CI_Controller {
      * Read event
      */
     function readEvent() {
-        $this->load->model('project_model');
         $result = $this->project_model->readEvent();
         echo json_encode ($result);
     }
@@ -459,15 +455,12 @@ class Ajax extends CI_Controller {
      */
 
     function changeTaskType() {
-        $this->load->model('task_model');
         $result['title'] = $_POST['title'];
         $result['id'] = substr(trim($_POST['id']), 4);
         $check_task = $this->task_model->checkTaskType($result['id']);
         $result['title_change'] = false;
-
         $result['empty']=false;
         if ($_POST['title'] != '') {
-
             $result['check'] =$check_task;
                 if ($query = $this->task_model->updateTaskType($result['id'], $result['title'])) {
                     $result['result']=$result['title'];
@@ -475,7 +468,6 @@ class Ajax extends CI_Controller {
                 else {
                     $result['result']=false;
                 }
-
         }
         else {
             $result['empty']=true;
@@ -484,18 +476,11 @@ class Ajax extends CI_Controller {
     }
 
     function createTask() {
-        $this->load->model('project_model');
-        $this->load->model('task_model');
-        $this->load->model('admin_model');
         $result['title'] = $this->input->post('title');
         $result['desc'] = $this->input->post('desc');
         $result['key'] = $this->input->post('key');
         $result['project'] = $this->input->post('project');
-
-
         $result['dueto'] = $this->input->post('dueto');
-
-
         $result['label'] = $this->input->post('label');
         $result['priority'] = $this->input->post('priority');
         $result['implementor'] = $this->input->post('implementor');
@@ -508,7 +493,6 @@ class Ajax extends CI_Controller {
             $result['empty'] = true;
         }
         else {
-
                 $result['empty'] = false;
                 $text = 'added task';
             if ($this->task_model->insertTask() == true) {
@@ -537,9 +521,6 @@ class Ajax extends CI_Controller {
     }
 
     function updateEditTask() {
-        $this->load->model('project_model');
-        $this->load->model('task_model');
-        $this->load->model('admin_model');
         $result['title'] = $this->input->post('title');
         $result['desc'] = $this->input->post('desc');
         $result['project'] = $this->input->post('project');
@@ -553,13 +534,11 @@ class Ajax extends CI_Controller {
         $name_array =  $this->admin_model->get_user_id($result['owner']);
         $full_name = $name_array->first_name.' '.$name_array->last_name;
         $id = $this->input->post('id');
-
         if ($_POST['title'] == '' OR $_POST['desc'] == '' OR $_POST['project'] == '' OR $_POST['label'] == '' OR $_POST['dueto'] == '' OR $_POST['priority'] == '' OR $_POST['implementor'] == '') {
             $result['empty'] = true;
         }
         else {
             $key = $result['key'].'-'.$id;
-
             $result['empty'] = false;
             $text = 'edited task';
             if ($this->task_model->updateEditTask($id) == true) {
@@ -567,9 +546,6 @@ class Ajax extends CI_Controller {
                 $result['dueto'] = date('jS F Y G:i', $result['new']->due_time);
                 $project_task = $this->project_model->getProject($result['new']->pid);
                 $result['project_task'] = $project_task[0]['title'];
-
-
-
                 $this->project_model->createEvent($result['owner'], $result['desc'],  $text, $full_name, $result['title'], 5);
                 $result['result'] = true;
             }
@@ -588,7 +564,6 @@ class Ajax extends CI_Controller {
     function switchHelp() {
         $result['id'] = $this->input->post('user_id');
         $result['help'] = $this->input->post('help_block');
-        $this->load->model('dashboard_model');
       if(  $this->dashboard_model->settings_help($result['id'], $result['help'])) {
           $result = true;
       }
@@ -607,7 +582,6 @@ class Ajax extends CI_Controller {
     function settingsDialog() {
         $result['id'] = $this->input->post('user_id');
         $result['introduce'] = $this->input->post('introduce');
-        $this->load->model('dashboard_model');
         if(  $this->dashboard_model->settingsDialog($result['id'], $result['introduce'])) {
             $result = true;
         }
@@ -621,19 +595,16 @@ class Ajax extends CI_Controller {
      * Get user id
      */
     function getUserbyId() {
-        $this->load->model('admin_model');
-        $user =  $this->input->post('id');
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        $user = $session_uid->id;
         $result['user']= $this->admin_model->get_user_id_array($user);
         echo json_encode($result);
     }
-
-
 
     /**
      * Update user
      */
     function updateUser() {
-        $this->load->model('admin_model');
         $user =  $this->input->post('id');
         $role =  $this->input->post('role');
         $result['user']= $this->admin_model->updateUser($user,$role);
@@ -651,11 +622,9 @@ class Ajax extends CI_Controller {
      * Send Comment
      */
     function sendComment() {
-        $this->load->model('message_model');
-        $this->load->model('project_model');
-        $this->load->model('admin_model');
         $result['to'] =  $this->input->post('to');
-        $result['owner'] =  $this->input->post('uid');
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        $result['owner'] = $session_uid->id;
         $result['subject']=  $this->input->post('subject');
         $result['text'] =  $this->input->post('text');
         $result['search'] =  $this->input->post('search');
@@ -668,7 +637,7 @@ class Ajax extends CI_Controller {
             if ($this->input->post('text') != '' AND $this->input->post('subject') != '') {
                 $text = 'added comment';
                 $this->project_model->createEvent($result['owner'], $result['text'], $text, $fn, $result['subject'], 2);
-                if ($query = $this->message_model->sendComment($result['to'])) {
+                if ($query = $this->message_model->sendComment($result['to'], $result['owner'])) {
                     $result['result'] = true;
                     $user_array = $this->admin_model->get_user_id($result['owner']);
                     $user_to = $this->admin_model->get_user_id($result['to']);
@@ -694,7 +663,7 @@ class Ajax extends CI_Controller {
             if($this->input->post('text') !='' OR $this->input->post('subject') !='') {
                 $text = 'added comment';
                 $this->project_model->createEvent($result['owner'], $result['text'],  $text, $fn, $result['subject'], 2);
-                if($query = $this->message_model->sendComment($result['idUser'])) {
+                if($query = $this->message_model->sendComment($result['idUser'], $result['owner'])) {
                     $result['result'] =  true;
                     $user_array = $this->admin_model->get_user_id($result['owner']);
                     $user_to = $this->admin_model->get_user_id($result['idUser']);
@@ -720,8 +689,6 @@ class Ajax extends CI_Controller {
      * Get user id
      */
     function activateUser() {
-        $this->load->model('admin_model');
-        $this->load->model('project_model');
         $id =  $this->input->post('user');
         if(!empty($id)) {
             $result['user']= $this->admin_model->activateNewUser($id);
@@ -744,7 +711,6 @@ class Ajax extends CI_Controller {
      * Remove new user by ID
      */
     function deleteNewUser() {
-        $this->load->model('admin_model');
         $id =  $this->input->post('user');
 
         if(!empty($id)) {
@@ -762,7 +728,6 @@ class Ajax extends CI_Controller {
      * Remove current user by ID
      */
     function deleteCurrentUser() {
-        $this->load->model('admin_model');
         $id =  $this->input->post('user');
 
         if(!empty($id)) {
@@ -779,7 +744,6 @@ class Ajax extends CI_Controller {
      * Froze current user by ID
      */
     function frozeCurrentUser() {
-        $this->load->model('admin_model');
         $id =  $this->input->post('user');
 
         if(!empty($id)) {
@@ -797,7 +761,6 @@ class Ajax extends CI_Controller {
      * Froze current user by ID
      */
     function unfrozeCurrentUser() {
-        $this->load->model('admin_model');
         $id =  $this->input->post('user');
 
         if(!empty($id)) {
@@ -818,9 +781,6 @@ class Ajax extends CI_Controller {
 
     function getTask() {
         $id =  $this->input->get('tid');
-        $this->load->model('task_model');
-        $this->load->model('admin_model');
-        $this->load->model('project_model');
         $task_types = $this->task_model->getTaskTypes();
         if($task_types) {
             $data['task_types']= $task_types;
@@ -830,15 +790,21 @@ class Ajax extends CI_Controller {
         }
         $data['task'] = $this->task_model->getTask($id);
         $data['task_label'] = $this->task_model->getTaskLabel($data['task']->label);
-//        $data['project'] = $this->project_model->getProject($data['task']->pid);
         $data['project'] = $this->project_model->getProject($data['task']->pid);
         $data['manager'] = $this->admin_model->getUsername($data['task']->uid);
         $data['implementor'] = $this->admin_model->getUsername($data['task']->implementor);
-
         $this->load->view('templates/ajax/task_view',$data);
-//        echo json_encode ($result);
     }
 
+    /**
+     * Get tasks
+     */
+
+
+    function getTasks() {
+        $result['tasks'] = $this->task_model->getTasks();
+        echo json_encode($result);
+    }
 
 
     /**
@@ -846,11 +812,9 @@ class Ajax extends CI_Controller {
      */
 
     function deleteTask() {
-        $uid =  $this->input->post('uid');
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        $uid = $session_uid->id;
         $id =  $this->input->post('id');
-        $this->load->model('admin_model');
-        $this->load->model('task_model');
-        $this->load->model('project_model');
         $name_array =  $this->admin_model->get_user_id($uid);
         $full_name = $name_array->first_name.' '.$name_array->last_name;
         $array = $this->task_model->getTask($id);
@@ -874,9 +838,8 @@ class Ajax extends CI_Controller {
 
     function taskToEdit() {
         $id=$this->input->get('tid');
-        $user=$this->input->get('user');
-        $this->load->model('admin_model');
-        $this->load->model('task_model');
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        $user = $session_uid->id;
         $data['user'] = $this->admin_model->get_user_id($user);
         $data['task']  = $this->task_model->getTask($id);
         $task_types = $this->task_model->getTaskTypes();
@@ -923,7 +886,6 @@ class Ajax extends CI_Controller {
     function updateIntroduce() {
         $check =  $this->input->post('check');
         $id =  $this->input->post('id');
-        $this->load->model('admin_model');
         if($check == 'true') {
             $onoff = 1;
         }
@@ -948,8 +910,8 @@ class Ajax extends CI_Controller {
 
     function updateTimer() {
         $time =  $this->input->post('time');
-        $id =  $this->input->post('id');
-        $this->load->model('admin_model');
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        $id = $session_uid->id;
         if($querty = $this->admin_model->updateTimer($id,$time)) {
             $result = true;
         }
@@ -966,15 +928,14 @@ class Ajax extends CI_Controller {
      */
 
     function getTimer() {
-        $id =  $this->input->post('id');
-        $this->load->model('admin_model');
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        $id = $session_uid->id;
         if($querty = $this->admin_model->getTimer($id)) {
             $result = $querty;
         }
         else {
             $result = false;
         }
-
         echo json_encode ($result);
     }
 
@@ -984,14 +945,11 @@ class Ajax extends CI_Controller {
      */
 
     function updateTask() {
-        $uid =  $this->input->post('uid');
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        $uid = $session_uid->id;
         $id =  $this->input->post('id');
         $status =  $this->input->post('status');
-        $this->load->model('task_model');
-        $this->load->model('admin_model');
-        $this->load->model('project_model');
         $array = $this->task_model->getTask($id);
-
         $name_array =  $this->admin_model->get_user_id($uid);
         $full_name = $name_array->first_name.' '.$name_array->last_name;
         $text ='update task';
@@ -1014,9 +972,6 @@ class Ajax extends CI_Controller {
     function updateTaskOverdue() {
         $id =  $this->input->post('id');
         $overdue =  $this->input->post('overdue');
-        $this->load->model('task_model');
-        $this->load->model('admin_model');
-        $this->load->model('project_model');
         if($querty = $this->task_model->updateTaskOverdue($id,$overdue)) {
             $result = true;
             if($overdue == 1) {
@@ -1056,27 +1011,23 @@ class Ajax extends CI_Controller {
         else {
             $result = false;
         }
-
         echo json_encode ($result);
     }
-
-
 
     /**
      * Update sidebar_left
      */
 
     function updateSidebarLeft() {
-        $uid =  $this->input->post('uid');
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        $uid = $session_uid->id;
         $status =  $this->input->post('status');
-        $this->load->model('dashboard_model');
         if($querty = $this->dashboard_model->updateSidebarLeft($uid,$status)) {
             $result = true;
         }
         else {
             $result = false;
         }
-
         echo json_encode ($result);
     }
 
@@ -1086,16 +1037,15 @@ class Ajax extends CI_Controller {
      */
 
     function updateSidebarRight() {
-        $uid =  $this->input->post('uid');
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        $uid = $session_uid->id;
         $status =  $this->input->post('status');
-        $this->load->model('dashboard_model');
         if($querty = $this->dashboard_model->updateSidebarRight($uid,$status)) {
             $result = true;
         }
         else {
             $result = false;
         }
-
         echo json_encode ($result);
     }
 
@@ -1107,15 +1057,12 @@ class Ajax extends CI_Controller {
      */
 
     function completeTask() {
-        $uid =  $this->input->post('uid');
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        $uid = $session_uid->id;
         $id =  $this->input->post('id');
         $status =  $this->input->post('status');
         $tts =  $this->input->post('tts');
-        $this->load->model('task_model');
-        $this->load->model('admin_model');
-        $this->load->model('project_model');
         $array = $this->task_model->getTask($id);
-
         $name_array =  $this->admin_model->get_user_id($uid);
         $full_name = $name_array->first_name.' '.$name_array->last_name;
         $text ='complete task';
@@ -1127,7 +1074,6 @@ class Ajax extends CI_Controller {
         else {
             $result['result'] = false;
         }
-
         echo json_encode ($result);
     }
 
@@ -1139,15 +1085,11 @@ class Ajax extends CI_Controller {
      */
 
     function updateTaskProcess() {
-        $uid =  $this->input->post('uid');
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        $uid = $session_uid->id;
         $id =  $this->input->post('id');
-        $this->load->model('task_model');
-        $this->load->model('admin_model');
-        $this->load->model('project_model');
         $array = $this->task_model->getTask($id);
         $cts = time();
-
-
         $name_array =  $this->admin_model->get_user_id($uid);
         $full_name = $name_array->first_name.' '.$name_array->last_name;
         $text ='update task';
@@ -1158,7 +1100,6 @@ class Ajax extends CI_Controller {
         else {
             $result = false;
         }
-
         echo json_encode ($result);
     }
 
@@ -1169,14 +1110,12 @@ class Ajax extends CI_Controller {
      */
 
     function countProcessTasks() {
-        $this->load->model('task_model');
         if($querty = $this->task_model->getProcessTasks()) {
             $result = count($querty);
         }
         else {
             $result = 0;
         }
-
         echo json_encode ($result);
     }
 
@@ -1186,14 +1125,12 @@ class Ajax extends CI_Controller {
      */
 
     function countOverdueTasks() {
-        $this->load->model('task_model');
         if($querty = $this->task_model->getOverdueTasks()) {
             $result = count($querty);
         }
         else {
             $result = 0;
         }
-
         echo json_encode ($result);
     }
 
@@ -1203,14 +1140,12 @@ class Ajax extends CI_Controller {
      */
 
     function countApproveTasks() {
-        $this->load->model('task_model');
         if($querty = $this->task_model->getApproveTasks()) {
             $result = count($querty);
         }
         else {
             $result = 0;
         }
-
         echo json_encode ($result);
     }
 
@@ -1220,14 +1155,12 @@ class Ajax extends CI_Controller {
      */
 
     function countCompTasks() {
-        $this->load->model('task_model');
         if($querty = $this->task_model->getCompTasks()) {
             $result = count($querty);
         }
         else {
             $result = 0;
         }
-
         echo json_encode ($result);
     }
 
@@ -1237,14 +1170,12 @@ class Ajax extends CI_Controller {
      */
 
     function countReadyTasks() {
-        $this->load->model('task_model');
         if($querty = $this->task_model->getReadyTasks()) {
             $result = count($querty);
         }
         else {
             $result = 0;
         }
-
         echo json_encode ($result);
     }
 
@@ -1256,7 +1187,6 @@ class Ajax extends CI_Controller {
     function publishComment() {
         $id =  $this->input->post('id');
         $check =  $this->input->post('check');
-        $this->load->model('task_model');
         if($querty = $this->task_model->publishComment($id,$check)) {
             $result = true;
         }
@@ -1274,7 +1204,6 @@ class Ajax extends CI_Controller {
     function messageToEmail() {
         $id =  $this->input->post('id');
         $check =  $this->input->post('check');
-        $this->load->model('message_model');
         if($querty = $this->message_model->messageToEmail($id,$check)) {
             $result = true;
         }
@@ -1291,8 +1220,6 @@ class Ajax extends CI_Controller {
 
     function getUsersProject() {
         $id =  $this->input->get('project');
-        $this->load->model('admin_model');
-        $this->load->model('project_model');
         $roles_array = $this->admin_model->get_roles();
         $roles = array();
         foreach ($roles_array as $rk => $rv) {
@@ -1325,13 +1252,9 @@ class Ajax extends CI_Controller {
      */
 
     function getCommentDashboard() {
-        $uid =  $this->input->get('uid');
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        $uid = $session_uid->id;
         $to =  $this->input->get('to');
-
-        $this->load->model('admin_model');
-        $this->load->model('project_model');
-        $this->load->model('message_model');
-
         $avatars = $this->admin_model->getAvatars();
         if($avatars) {
             $data['avatars']= $avatars;
@@ -1356,8 +1279,6 @@ class Ajax extends CI_Controller {
      */
 
     function assignUserProject() {
-        $this->load->model('project_model');
-        $this->load->model('admin_model');
         $id =  $this->input->post('id');
         $uid = $this->input->post('uid');
         $pid = $this->input->post('pid');
@@ -1402,12 +1323,8 @@ class Ajax extends CI_Controller {
         echo json_encode ($result);
     }
 
-//    todo
-
     function frozeProject() {
         $result = array();
-        $this->load->model('project_model');
-        $this->load->model('admin_model');
         $pid =  $this->input->post('project');
         $status =  $this->input->post('status');
         $project = $this->project_model-> getProjectObject($pid);
@@ -1435,16 +1352,13 @@ class Ajax extends CI_Controller {
                    }
                }
                $result['projects'] = $project_array;
-
            }
         }
         else {
             $result['status'] = false;
         }
         echo json_encode ($result);
-
     }
-
 }
 
 

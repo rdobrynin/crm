@@ -85,9 +85,7 @@
 
 
     $(function () {
-        $('.onoff').bootstrapToggle({
-            size:'mini'
-        });
+
         $('#all_comments_table').pageMe({pagerSelector:'#pager_all_comments',showPrevNext:true,hidePageNumbers:false,perPage:20});
 
         $('.toggle-comment').click(function () {

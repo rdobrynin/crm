@@ -92,7 +92,7 @@
 
         };
         $.ajax({
-            url: "<?php echo site_url('ajax/error_mail'); ?>",
+            url: '/ajax/error_mail',
             type: 'POST',
             data: form_data,
             dataType: 'json',

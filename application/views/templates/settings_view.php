@@ -93,11 +93,3 @@
   </div>
 </div>
 
-<script>
-    $(function () {
-        $('.onoff').bootstrapToggle({
-            size:'mini'
-        });
-    });
-</script>
-

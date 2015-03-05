@@ -1,63 +1,12 @@
-<script>
-//TIMER
-
-function startCount() {
-    timer = setInterval(count,1000);
-}
-
-function count() {
-    var time_shown = $("#task-timer").text();
-    var time_chunks = time_shown.split(":");
-    var  mins, secs;
-    mins=Number(time_chunks[0]);
-    secs=Number(time_chunks[1]);
-    secs++;
-    if (secs==60){
-        secs = 0;
-        mins=mins + 1;
-    }
-
-    $("#task-timer").text(plz(mins) + ":" + plz(secs));
-    if (typeof(Storage) !== "undefined") {
-        localStorage.ctime= $('#task-timer').text();
-    }
-    else {
-        localStorage.ctime= '00:00';
-    }
-}
-
-function plz(digit) {
-    var zpad = digit + '';
-    if (digit < 10) {
-        zpad = "0" + zpad;
-    }
-    return zpad;
-}
-
-
 $(function () {
-
-
-    unical_id = <?php print json_encode($user->id);?>;
-
-
-//        localStorage.clear();
-
-
     var findTime = localStorage.getItem('ctime');
-
-
     if (typeof(Storage) !== "undefined") {
         var find_Time = localStorage.getItem('ctime');
         if(find_Time === null || findTime === undefined  ) {
             localStorage.ctime='00:00';
-
-
-
             $.ajax({
-                url: "<?php echo site_url('ajax/getTimer'); ?>",
-                type: 'POST',
-                data: form_data_,
+                url: '/ajax/getTimer',
+                type: 'GET',
                 dataType: 'json',
                 success: function (msg) {
                     if(msg == false) {
@@ -70,7 +19,6 @@ $(function () {
             });
         }
 
-//            localStorage.ctime='00:00';
         if(localStorage.ctime[0] !==0 && localStorage.ctime[1] !==0 && localStorage.ctime[3] !== 0 && localStorage.ctime[4] !== 0) {
             $("#task-timer").text(localStorage.ctime[0] + localStorage.ctime[1] + ":" + localStorage.ctime[3] + localStorage.ctime[4]);
         }
@@ -93,10 +41,6 @@ $(function () {
             $('#task-timer, #task-timer-pause, #task-timer-stop').hide();
         }
     }
-
-
-
-
 
     if (typeof(Storage) !== "undefined") {
         if (localStorage.play === 'ok') {
@@ -150,8 +94,6 @@ $(function () {
                 val = localStorage.ctime;
                 return val ;
             });
-
-
         }
         else {
             alert('fault with local storage');
@@ -179,7 +121,6 @@ $(function () {
     });
 
     // Calculate total time in seconds
-    current_uid = <?php print json_encode($user->id);?>;
     currentTimeRecord = localStorage.getItem("ctime");
     var new0 = currentTimeRecord[0];
     var new1 = currentTimeRecord[1];
@@ -188,13 +129,10 @@ $(function () {
     currentTimeRecord_min =  parseFloat(currentTimeRecord[0]+currentTimeRecord[1]);
     currentTimeRecord_sec =  parseFloat(currentTimeRecord[3]+currentTimeRecord[4]);
     currentTimeRecord = currentTimeRecord_min;
-    var form_data_ = {
-        id: <?php print json_encode($user->id);?>
-    };
+
     $.ajax({
-        url: "<?php echo site_url('ajax/getTimer'); ?>",
-        type: 'POST',
-        data: form_data_,
+        url: '/ajax/getTimer',
+        type: 'GET',
         dataType: 'json',
         success: function (msg) {
             if(msg == false) {
@@ -209,11 +147,10 @@ $(function () {
 
     $('#log_task_btn').click(function () {
         var form_data_ = {
-            id: <?php print json_encode($user->id);?>,
             time: '0'
         };
         $.ajax({
-            url: "<?php echo site_url('ajax/updateTimer'); ?>",
+            url: '/ajax/updateTimer',
             type: 'POST',
             data: form_data_,
             dataType: 'json',
@@ -223,13 +160,12 @@ $(function () {
                 var tts = $('#log_timer').val();
                 var form_data = {
                     id: id_task,
-                    uid:<?php print json_encode($user->id);?>,
                     status: '3',
                     tts: tts
                 };
 
                 $.ajax({
-                    url: "<?php echo site_url('ajax/completeTask'); ?>",
+                    url: '/ajax/completeTask',
                     type: 'POST',
                     data: form_data,
                     dataType: 'json',
@@ -246,7 +182,6 @@ $(function () {
                         $('#task-timer, #task-timer-pause, #task-timer-stop').hide();
                     }
                 });
-
             }
         });
     });
@@ -272,11 +207,10 @@ $(function () {
 
     window.onbeforeunload = function () {
         var form_data_ = {
-            id: <?php print json_encode($user->id);?>,
             time: currentTimeRecord
         };
         $.ajax({
-            url: "<?php echo site_url('ajax/updateTimer'); ?>",
+            url: '/ajax/updateTimer',
             type: 'POST',
             data: form_data_,
             dataType: 'json',
@@ -286,4 +220,3 @@ $(function () {
         });
     }
 });
-</script>

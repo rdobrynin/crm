@@ -15,11 +15,11 @@ class Message_model extends CI_Model {
      * @return mixed
      */
 
-    public function sendComment($tos) {
+    public function sendComment($tos, $owner) {
         $subject = $this->input->post('subject');
         $text = $this->input->post('text');
         $to = $tos;
-        $uid = $this->input->post('uid');
+        $uid = $owner;
         $insert = false;
             $data = array(
                 'subject' => $subject,

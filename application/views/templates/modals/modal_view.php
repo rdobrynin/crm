@@ -94,7 +94,6 @@
                 <input type="hidden" name="user_added_id" id="user_added_id" value="<?php print($user->id)?>">
                 <div style="display: none; margin-bottom: 10px;" id="check_empty_project" class="label label-danger label-signin"><i class="fa fa-exclamation-circle"></i>&nbsp;Fields must not be empty</div>
                 <button type="button" class="btn btn-success btn-lg pull-left" id="addproject_btn">Create</button>
-<!--                <button type="button" class="btn btn-success" id="addproject_addtask_btn">Save & create task</button>-->
                 <button type="button" class="btn btn-default btn-lg" id="close-project-create" data-dismiss="modal">Close</button>
             </div>
         </div>
