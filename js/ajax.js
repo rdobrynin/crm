@@ -782,6 +782,32 @@ function taskToEdit($data) {
         success: function (data) {
             setTimeout(function () {
                 $('#modal-ajax-edit').html(data);
+                $('.selectpicker').selectpicker();
+                $.ajax({
+                    url: '/ajax/getCurrentTime',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (time) {
+
+                        $('#edit_dueto_modal').datetimepicker({
+                            theme:'light',
+                            format:'d.m.Y H:i',
+                            minDate: time,
+                            minTime:0
+                        });
+
+                        $('#switch-curator-btn').click(function () {
+                            $('#switch-curator-group').fadeIn('slow');
+                        });
+                        $('#switch-implementor-btn').click(function () {
+                            $('#switch-implementor-group').fadeIn('slow');
+                        });
+
+                    }
+                });
+
+
+
             }, 700);
 
 

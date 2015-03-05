@@ -419,6 +419,7 @@ $('#badge-count-comments-top').html(count_all_comments);
 
 
 
+
 });
 
 $(window).load(function(){

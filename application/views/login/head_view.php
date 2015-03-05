@@ -6,6 +6,34 @@
   <meta name="description" content="Project management application">
   <meta name="author" content="Roman Dobrynin">
 
+
+    <!--
+
+    +++++++++++           ++++++++++
+    +++++++++++           +++++++++++
+    ++       ++           ++        ++
+    ++       ++           ++         ++
+    ++ ++++++++           ++          ++
+    ++ ++++++++           ++          ++
+    ++ +++                ++          ++
+    ++   +++              ++          ++
+    ++     +++            ++          ++
+    ++      +++           ++         ++
+    ++       +++    +++   ++        ++    +++
+    ++        +++   +++   ++++++++++      +++
+
+
+    Want to make it  better? I'm looking for an enthusiast :)))
+
+    Best,
+    Roman Dobrynin
+    email: roman.dobrynin@gmail.com
+    linkedin: ee.linkedin.com/in/rdobrynin/
+    skype: roman.dobrynin
+    github: https://github.com/rdobrynin
+
+    -->
+
   <title>Brilliant Project management</title>
   <!-- Add custom CSS here -->
     <link rel="stylesheet/less" type="text/css" href="<?php print(base_url()); ?>less/style.less">

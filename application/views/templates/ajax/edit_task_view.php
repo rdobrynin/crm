@@ -1,11 +1,8 @@
 <!--AJAX HTML GET METHODS-->
 <div class="modal-header">
     <h2 class="modal-title">Update task&nbsp;#<?php print($task->id); ?></h2>
-<!--    --><?php //var_dump($task); ?>
 </div>
 <div class="modal-body">
-
-
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
@@ -155,23 +152,8 @@
 
 <script>
     $(function () {
-        $('.selectpicker').selectpicker();
-        $('#edit_dueto_modal').datetimepicker({
-            theme:'light',
-            format:'d.m.Y H:i',
-            minDate: '<?php date("F j, Y, g:i a"); ?>',
-            minTime:0
-        });
-
-        $('#switch-curator-btn').click(function () {
-            $('#switch-curator-group').fadeIn('slow');
-        });
-        $('#switch-implementor-btn').click(function () {
-            $('#switch-implementor-group').fadeIn('slow');
-        });
-
         $('#clear-form-edit-task').click(function () {
-            $tid = '<?php print($task->id)?>';
+            $tid = $('#user_task_edit_id').val();
             $.ajax({
                 type: 'GET',
                 url: '/ajax/taskToEdit',
@@ -182,6 +164,26 @@
                 success:function(data){
                     setTimeout(function() {
                         $('#modal-ajax-edit').html(data);
+                        $('.selectpicker').selectpicker();
+                        $.ajax({
+                            url: '/ajax/getCurrentTime',
+                            type: 'GET',
+                            dataType: 'json',
+                            success: function (time) {
+                                $('#edit_dueto_modal').datetimepicker({
+                                    theme:'light',
+                                    format:'d.m.Y H:i',
+                                    minDate: time,
+                                    minTime:0
+                                });
+                                $('#switch-curator-btn').click(function () {
+                                    $('#switch-curator-group').fadeIn('slow');
+                                });
+                                $('#switch-implementor-btn').click(function () {
+                                    $('#switch-implementor-group').fadeIn('slow');
+                                });
+                            }
+                        });
                     },700);
                 },
                 error:function(){
@@ -196,6 +198,7 @@
 
 
         $('#edittask_pr_btn').click(function () {
+            $tid = $('#user_task_edit_id').val();
             var priority = $('input[name=priority]:checked').val();
             var form_data = {
                 title :$('#edit_task_pr_title').val(),
@@ -207,7 +210,7 @@
                 priority :priority,
                 implementor :$('#edit_implementor_choose_modal').val(),
                 owner :$('#edit_curator_choose_modal').val(),
-                id: $('#user_task_edit_id').val()
+                id: $tid
             };
 
             $.ajax({
@@ -229,32 +232,31 @@
                             easing: 'swing', // or "linear"
                             // use jQuery UI or Easing plugin for more options
                             step: function() {
-                                $('#tr-dashboard-task-'+<?php print($task->id); ?>).css({
+                                $('#tr-dashboard-task-'+$tid).css({
                                     "-webkit-filter": "blur("+this.blurRadius+"px)",
                                     "filter": "blur("+this.blurRadius+"px)"
                                 });
                             }
                         });
                         setTimeout(function() {
-                            $('#approve_tasks_table').find('#tr-dashboard-task-'+<?php print($task->id); ?>).find('td:first').html('#'+<?php print($task->id); ?>);
-                            $('#approve_tasks_table').find('#tr-dashboard-task-'+<?php print($task->id); ?>).find('td:first').next('td').html('<span style="color:#5cb85c;">updated now</span>');
-                            $('#approve_tasks_table').find('#tr-dashboard-task-'+<?php print($task->id); ?>).find('td:first').next('td').next('td').html('<span class="label <?php print(task_type_label($task->label)); ?> label-xs"><?php print($task_types[$task->label]); ?></span>');
-                            $('#approve_tasks_table').find('#tr-dashboard-task-'+<?php print($task->id); ?>).find('td:first').next('td').next('td').next('td').html('<a href="#;" class="hover-td-name" onClick="qmSendComment(<?php print($task->implementor); ?>)"><?php print(short_name($user_name[$task->implementor])); ?></a>');
+                            $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').html('#'+$tid);
+                            $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').html('<span style="color:#5cb85c;">updated now</span>');
+                            $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').html('<span class="label <?php print(task_type_label($task->label)); ?> label-xs"><?php print($task_types[$task->label]); ?></span>');
+                            $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').next('td').html('<a href="#;" class="hover-td-name" onClick="qmSendComment(<?php print($task->implementor); ?>)"><?php print(short_name($user_name[$task->implementor])); ?></a>');
                             $('#approve_tasks_table').find('#tr-dashboard-task-'+<?php print($task->id); ?>).find('td:first').next('td').next('td').next('td').next('td').html('<a href="#;" class="hover-td-name" onClick="qmSendComment(<?php print($task->uid); ?>)"><?php print(short_name($user_name[$task->uid])); ?></a>');
-                            $('#approve_tasks_table').find('#tr-dashboard-task-'+<?php print($task->id); ?>).find('td:first').next('td').next('td').next('td').next('td').next('td').html(msg.new['title']);
-                            $('#approve_tasks_table').find('#tr-dashboard-task-'+<?php print($task->id); ?>).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').html(msg.project_task);
-                            $('#approve_tasks_table').find('#tr-dashboard-task-'+<?php print($task->id); ?>).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html(msg.new['desc']);
-                            $('#approve_tasks_table').find('#tr-dashboard-task-'+<?php print($task->id); ?>).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html('<span><i class="fa fa-circle circle-priority" style="<?php if ($task->priority ==0): ?> color:#428bca;<?php endif ?><?php if ($task->priority): ?> color:#f89406;<?php endif ?><?php if ($task->priority ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($task->priority) ?>');
-                            $('#approve_tasks_table').find('#tr-dashboard-task-'+<?php print($task->id); ?>).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html(msg.dueto);
-                            $('#approve_tasks_table').find('#tr-dashboard-task-'+<?php print($task->id); ?>).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html('<a href="#;" onClick="taskToReady(<?php print($task->id); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a><a href="#;" onClick="taskToEdit(<?php print($task->id); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a><a href="#;" onMouseDown="taskToView(<?php print($task->id); ?>)" style="text-decoration: none;"><i class="fa fa-eye"></i></a><a href="#;" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($task->id); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>');
+                            $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').next('td').next('td').next('td').html(msg.new['title']);
+                            $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').html(msg.project_task);
+                            $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html(msg.new['desc']);
+                            $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html('<span><i class="fa fa-circle circle-priority" style="<?php if ($task->priority ==0): ?> color:#428bca;<?php endif ?><?php if ($task->priority): ?> color:#f89406;<?php endif ?><?php if ($task->priority ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($task->priority) ?>');
+                            $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html(msg.dueto);
+                            $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html('<a href="#;" onClick="taskToReady('+$tid+')" style="text-decoration: none;"><i class="fa fa-play"></i></a><a href="#" onClick="taskToEdit('+$tid+')" style="text-decoration: none;"><i class="fa fa-pencil"></i></a><a href="#;" onMouseDown="taskToView('+$tid+')" style="text-decoration: none;"><i class="fa fa-eye"></i></a><a href="#;" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="'+$tid+'" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>');
                             blurRadius = 0;
                             $('#edit-task-modal').hide();
-                            $('#tr-dashboard-task-'+<?php print($task->id); ?>).css({
+                            $('#tr-dashboard-task-'+$tid).css({
                                 "-webkit-filter": "blur("+this.blurRadius+"px)",
                                 "filter": "blur("+this.blurRadius+"px)"
                             });
                         }, 2000);
-
                     }
                     else {
                         $('#edit_error_task_pr_modal').css('display','block');
@@ -263,7 +265,5 @@
             });
 
         });
-
-
     });
 </script>
