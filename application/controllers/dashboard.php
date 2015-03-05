@@ -771,7 +771,7 @@ class Dashboard extends CI_Controller {
         $data['users'] = $this->admin_model->get_users();
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
         $this->load->view('templates/head_view',$data);
-        if ($data['user'][0]['helpblock'] == 1) {
+        if ($data['user']->helpblock == 1) {
             $this->load->view('templates/help_block_view');
         }
         $this->load->view('templates/navtop_view', $data);
@@ -963,9 +963,9 @@ class Dashboard extends CI_Controller {
         $data['users'] = $this->admin_model->get_users();
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
         if ($client === FALSE) {
-            if ($data['user'][0]['role'] == 5 OR $data['user'][0]['role'] == 4) {
+            if ($data['user']->role == 5 OR $data['user']->role == 4) {
                 $this->load->view('templates/head_view',$data);
-                if ($data['user'][0]['helpblock'] == 1) {
+                if ($data['user']->helpblock == 1) {
                     $this->load->view('templates/help_block_view');
                 }
                 $this->load->view('templates/addclient_view', $data);
@@ -1086,12 +1086,12 @@ class Dashboard extends CI_Controller {
         $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
         $data['users'] = $this->admin_model->get_users();
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
-        if ($data['user'][0]['role'] == 5 OR $data['user'][0]['role'] == 4) {
+        if ($data['user']->role == 5 OR $data['user']->role == 4) {
             if ($this->form_validation->run() !== FALSE) {
                 $title = $this->admin_model->verify_client($this->input->post('title'));
                 if ($title) {
                     $this->load->view('templates/head_view',$data);
-                    if ($data['user'][0]['helpblock'] == 1) {
+                    if ($data['user']->helpblock == 1) {
                         $this->load->view('templates/help_block_view');
                     }
                     $this->load->view('templates/addclient_view', $data);
@@ -1102,7 +1102,7 @@ class Dashboard extends CI_Controller {
                         $data['response'] = 'Company creating...';
                         $data['result'] = 'clients';
                         $this->load->view('templates/head_view',$data);
-                        if ($data['user'][0]['helpblock'] == 1) {
+                        if ($data['user']->helpblock == 1) {
                             $this->load->view('templates/help_block_view');
                         }
                         $this->load->view('templates/success_view', $data);
@@ -1114,7 +1114,7 @@ class Dashboard extends CI_Controller {
                 $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
                 $data['users'] = $this->admin_model->get_users();
                 $this->load->view('templates/head_view',$data);
-                if ($data['user'][0]['helpblock'] == 1) {
+                if ($data['user']->helpblock == 1) {
                     $this->load->view('templates/help_block_view');
                 }
                 $this->load->view('templates/addclient_view', $data);
