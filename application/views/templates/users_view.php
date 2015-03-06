@@ -1,5 +1,7 @@
 <?php include('navtop_view.php'); ?>
 <?php include('sidebar_view.php'); ?>
+
+
 <!-- Page content -->
 <div class="page-content-wrapper">
     <!-- Keep all page content within the page-content inset div! -->
@@ -207,7 +209,6 @@
 <?php include('right_float_view.php'); ?>
 <?php include('footer_view.php'); ?>
 <script>
-
 
 
     $('[data-toggle=confirmation-activate-user]').confirmation(

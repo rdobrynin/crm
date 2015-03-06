@@ -5,6 +5,11 @@ $('.selectpicker').selectpicker({
 
 $(function() {
 
+    $('#admin-users-tab a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    });
+
     $('#add_task_modal').click(function () {
         $('#addtask_pr_modal').modal('show');
         $('.selectpicker').selectpicker();
@@ -402,11 +407,6 @@ $('#badge-count-comments-top').html(count_all_comments);
     $('#edit-btn-user').click(function () {
         $('#demo_modal').modal('show');
         return false;
-    });
-
-    $('#admin-users-tab a').click(function (e) {
-        e.preventDefault()
-        $(this).tab('show')
     });
 
 
