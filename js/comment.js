@@ -1,5 +1,5 @@
 $(function () {
-    $('.qm-send-comment').click(function () {
+    $('.qm-send-comment').on( "click", function() {
         $data =  $(this).attr('data-uid');
         $('.qm-body').hide();
         $('.qm-body').show();
@@ -71,7 +71,7 @@ $(function () {
     });
 
 
-    $('.send-comment').click(function () {
+    $('.send-comment').on( "click", function() {
         $data =  $(this).attr('data-uid');
         console.log($data);
 
@@ -149,7 +149,7 @@ $(function () {
         });
     });
 
-    $('.send-comment-subject').click(function () {
+    $('.send-comment-subject').on( "click", function() {
         $data =  $(this).attr('data-uid');
         $title =  $(this).attr('data-title');
         $('.qm-body').hide();
