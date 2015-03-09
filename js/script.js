@@ -5,26 +5,26 @@ $('.selectpicker').selectpicker({
 
 $(function() {
 
-
-    $('#invite-person').click(function () {
-
-$('#invite').modal('show');
-
-        $('.selectpicker').selectpicker({
-            style: 'btn-special',
-            size: 14
-        });
-    });
+//
+//    $('#invite-person').click(function () {
+//
+//$('#invite').modal('show');
+//
+//        $('.selectpicker').selectpicker({
+//            style: 'btn-special',
+//            size: 14
+//        });
+//    });
 
     $('#admin-users-tab a').click(function (e) {
         e.preventDefault()
         $(this).tab('show')
     });
 
-    $('#add_task_modal').click(function () {
-        $('#addtask_pr_modal').modal('show');
-        $('.selectpicker').selectpicker();
-    });
+//    $('#add_task_modal').click(function () {
+//        $('#addtask_pr_modal').modal('show');
+//        $('.selectpicker').selectpicker();
+//    });
 
 
     $('.onoff').bootstrapToggle({

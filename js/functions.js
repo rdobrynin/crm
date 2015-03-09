@@ -1,3 +1,5 @@
+
+define(function(){
 /**
  * Convert date to timestamp
  * @param strDate
@@ -246,3 +248,5 @@ function projectToView($data){
         $('.btn-filter').removeAttr('disabled');
     }
 }
+
+});

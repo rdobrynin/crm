@@ -108,97 +108,6 @@ $(function () {
      * Sidebar left ON/OFF
      */
 
-    $("#switch-left-bar").click(function () {
-        var form_data = {
-            status: '1'
-        };
-        $.ajax({
-            url: '/ajax/updateSidebarLeft',
-            type: 'POST',
-            data: form_data,
-            dataType: 'json',
-            success: function (msg) {
-                var posVar = 50;
-                $("#sidebar-wrapper").animate({width: posVar + 'px'});
-                $("#wrapper").animate({paddingLeft: posVar + 'px'});
-                $("#switch-left-bar").css('display', 'none');
-                $('.badge-resp').addClass('badge-resp-mini');
-                $('#switch-left-bar-back').fadeIn('slow');
-                $('.badge-mini').fadeIn('slow');
-            }
-        });
-    });
-
-    /**
-     *
-     * Sidebar left ON/OFF
-     */
-
-    $("#switch-left-bar-back").click(function () {
-        var form_data = {
-            status: '0'
-        };
-        $.ajax({
-            url: '/ajax/updateSidebarLeft',
-            type: 'POST',
-            data: form_data,
-            dataType: 'json',
-            success: function (msg) {
-                var posVar = 198;
-                $("#sidebar-wrapper").animate({width: posVar + 'px'});
-                $("#wrapper").animate({paddingLeft: posVar + 'px'});
-                $("#switch-left-bar-back").css('display', 'none');
-                $('.badge-resp').removeClass('badge-resp-mini');
-                $('.badge-mini').css('display', 'none');
-                $('#switch-left-bar').fadeIn('slow');
-            }
-        });
-    });
-
-    /**
-     *
-     * Sidebar right ON/OFF
-     */
-
-    $("#float-users").click(function () {
-        var form_data = {
-            status: '1'
-
-        };
-        $.ajax({
-            url: '/ajax/updateSidebarRight',
-            type: 'POST',
-            data: form_data,
-            dataType: 'json',
-            success: function (msg) {
-                var posVar = 0;
-                $(".right-float-sidebar").animate({right: posVar + 'px'});
-
-            }
-        });
-    });
-
-    /**
-     *
-     * Sidebar right ON/OFF
-     */
-
-    $(".close-right-sidebar").click(function () {
-        var form_data = {
-            status: '0'
-        };
-        $.ajax({
-            url: '/ajax/updateSidebarRight',
-            type: 'POST',
-            data: form_data,
-            dataType: 'json',
-            success: function (msg) {
-                var posVar = -300;
-                $(".right-float-sidebar").animate({right: posVar + 'px'});
-                $("#float-users").removeClass('active');
-            }
-        });
-    });
 
 // clear fields after close modal
     $('#close-project-create').click(function () {
@@ -211,51 +120,7 @@ $(function () {
      *
      **/
 
-    $("#addproject_btn").click(function () {
-        var form_data = {
-            project_title: $('#project_title').val(),
-            project_desc: $('#project_desc').val(),
-            user_id: $('#user_added_id').val()
-        };
-        $.ajax({
-            url: '/ajax/addproject',
-            type: 'POST',
-            data: form_data,
-            dataType: 'json',
-            success: function (msg) {
-                if (msg.empty == false) {
-                    $('#check_empty_project').css('display', 'block');
-                }
-                if (msg.empty == true) {
-                    $('#check_empty_project').css('display', 'none');
-                }
 
-                if (msg.project == false) {
-                    $('#check_title_project').css('display', 'block');
-                }
-                if (msg.project == true) {
-                    $('#check_title_project').css('display', 'none');
-                }
-
-                if (msg.send == true && msg.project == true && msg.empty == true) {
-                    $('#save_project_modal').css('display', 'block');
-                    setTimeout(function () {
-                        $('#save_project_modal, #check_empty_project, #check_title_project').css('display', 'none');
-                        $("input[type=text], textarea").val("");
-
-                        $('#addproject_modal').modal('hide');
-                    }, 2000);
-                }
-            }
-        });
-        setInterval(function () {
-            $.get('/ajax/countProjects', function (data) {
-                if (data > 0) {
-                    $('#badge-count-projects,#badge-count-mini-projects').html(data);
-                }
-            }, "json");
-        }, 3000);
-    });
 
 
     /**
