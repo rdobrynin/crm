@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b5c62b4-a621-4d4d-8746-6975ce18f490" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/edit_task.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/users.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/controllers/froze.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/templates/froze_view.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ajax.php" afterPath="$PROJECT_DIR$/application/controllers/ajax.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/custom404_view.php" afterPath="$PROJECT_DIR$/application/views/custom404_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/dashboard.php" afterPath="$PROJECT_DIR$/application/controllers/dashboard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/ajax/edit_task_view.php" afterPath="$PROJECT_DIR$/application/views/templates/ajax/edit_task_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/head_view.php" afterPath="$PROJECT_DIR$/application/views/templates/head_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/introduce.php" afterPath="$PROJECT_DIR$/application/views/templates/introduce.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/logs_view.php" afterPath="$PROJECT_DIR$/application/views/templates/logs_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/manage_projects_view.php" afterPath="$PROJECT_DIR$/application/views/templates/manage_projects_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/navtop_view.php" afterPath="$PROJECT_DIR$/application/views/templates/navtop_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/quick_message.php" afterPath="$PROJECT_DIR$/application/views/templates/quick_message.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/routes.php" afterPath="$PROJECT_DIR$/application/config/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/script.js" afterPath="$PROJECT_DIR$/js/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/users_view.php" afterPath="$PROJECT_DIR$/application/views/templates/users_view.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ajax.js" afterPath="$PROJECT_DIR$/js/ajax.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app_main.js" afterPath="$PROJECT_DIR$/js/app_main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crm.iws" />
@@ -42,132 +28,83 @@
     <favorites_list name="crm" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="script.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/script.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="44" selection-start="444" selection-end="444" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8758">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head_view.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/templates/head_view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="65" selection-start="5916" selection-end="5916" vertical-scroll-proportion="-10.0" vertical-offset="1440" max-vertical-offset="2989">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajax.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/ajax.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="576" column="59" selection-start="20449" selection-end="20449" vertical-scroll-proportion="-5.509091" vertical-offset="10065" max-vertical-offset="25857">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajax.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/ajax.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="873" column="37" selection-start="31768" selection-end="31768" vertical-scroll-proportion="0.0" vertical-offset="17071" max-vertical-offset="26108">
-              <folding>
-                <marker date="1425897821308" expanded="true" signature="14639:14653" placeholder="..." />
-                <marker date="1425897821308" expanded="true" signature="16883:16897" placeholder="..." />
-                <marker date="1425897821308" expanded="true" signature="22152:22168" placeholder="..." />
-                <marker date="1425897821308" expanded="true" signature="22244:22260" placeholder="..." />
-                <marker date="1425897821308" expanded="true" signature="31356:31387" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin_model.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/admin_model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="683" column="20" selection-start="13754" selection-end="13765" vertical-scroll-proportion="-4.2" vertical-offset="12063" max-vertical-offset="18063">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit_task_view.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/templates/ajax/edit_task_view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="199" selection-start="8883" selection-end="8883" vertical-scroll-proportion="0.55755895" vertical-offset="2190" max-vertical-offset="3475">
-              <folding>
-                <element signature="n#style#0;n#label#0;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#2;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#0;n#div#2;n#div#2;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#3;n#div#2;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#0;n#div#3;n#div#2;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#2;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#div#2;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/users.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="60" selection-start="803" selection-end="803" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4042">
-              <folding>
-                <marker date="1425894862300" expanded="false" signature="259:275" placeholder="..." />
-                <marker date="1425894862300" expanded="false" signature="346:362" placeholder="..." />
-                <marker date="1425894862300" expanded="true" signature="1844:1860" placeholder="..." />
-                <marker date="1425894862300" expanded="true" signature="1931:1947" placeholder="..." />
-                <marker date="1425894862300" expanded="true" signature="3438:3454" placeholder="..." />
-                <marker date="1425894862300" expanded="true" signature="3525:3541" placeholder="..." />
-                <marker date="1425894862300" expanded="true" signature="4784:4800" placeholder="..." />
-                <marker date="1425894862300" expanded="true" signature="4871:4887" placeholder="..." />
-                <marker date="1425894862300" expanded="false" signature="5823:5839" placeholder="..." />
-                <marker date="1425894862300" expanded="false" signature="5910:5926" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit_task.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/edit_task.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="27" selection-start="1866" selection-end="1866" vertical-scroll-proportion="0.0" vertical-offset="543" max-vertical-offset="2980">
-              <folding>
-                <marker date="1425899878076" expanded="true" signature="214:245" placeholder="..." />
-                <marker date="1425899878076" expanded="true" signature="3712:3726" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bower_components/jquery/dist/jquery.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2672" column="4" selection-start="73549" selection-end="73549" vertical-scroll-proportion="0.0" vertical-offset="47631" max-vertical-offset="166204">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/dashboard.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="225" column="7" selection-start="6394" selection-end="6454" vertical-scroll-proportion="-22.88889" vertical-offset="3432" max-vertical-offset="29269">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.608419">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="external.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/external.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="12" column="29" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2008">
+                  <folding>
+                    <marker date="1424943976000" expanded="false" signature="582:611" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="head_view.php" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/application/views/templates/head_view.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="97" column="68" selection-start="6053" selection-end="6053" vertical-scroll-proportion="0.67360455" vertical-offset="1034" max-vertical-offset="3343">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="app_external.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/app_external.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="22" column="0" selection-start="484" selection-end="788" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1750">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="app_main.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/app_main.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="78" column="0" selection-start="2320" selection-end="2320" vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="2470">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ajax.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/ajax.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="151" column="32" selection-start="5080" selection-end="5080" vertical-scroll-proportion="0.0" vertical-offset="2654" max-vertical-offset="24286">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/main.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="8" column="3" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1210">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="external.js" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/js/external.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="3" column="27" selection-start="79" selection-end="79" vertical-scroll-proportion="0.016605167" vertical-offset="36" max-vertical-offset="2380">
+                  <folding>
+                    <marker date="1424943976000" expanded="false" signature="582:611" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -180,8 +117,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/views/templates/timer.php" />
-        <option value="$PROJECT_DIR$/application/views/templates/footer_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/froze_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/dashboard_js.php" />
         <option value="$PROJECT_DIR$/js/dashboard.js" />
@@ -225,12 +160,14 @@
         <option value="$PROJECT_DIR$/application/views/custom404_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/navtop_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/manage_projects_view.php" />
-        <option value="$PROJECT_DIR$/js/ajax.js" />
         <option value="$PROJECT_DIR$/js/script.js" />
-        <option value="$PROJECT_DIR$/application/views/templates/head_view.php" />
         <option value="$PROJECT_DIR$/application/controllers/ajax.php" />
         <option value="$PROJECT_DIR$/js/edit_task.js" />
         <option value="$PROJECT_DIR$/application/views/templates/ajax/edit_task_view.php" />
+        <option value="$PROJECT_DIR$/js/ajax.js" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/js/app_main.js" />
+        <option value="$PROJECT_DIR$/application/views/templates/head_view.php" />
       </list>
     </option>
   </component>
@@ -712,10 +649,10 @@
     <frame x="41" y="-4" width="2519" height="1444" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16012084" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16012084" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12839879" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41389728" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41389728" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969698" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12727273" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -723,7 +660,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15717171" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15717171" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Jenkins" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17454545" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -753,36 +690,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/js/jquery.mCustomScrollbar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2252" column="39" selection-start="85170" selection-end="85170" vertical-scroll-proportion="0.0" vertical-offset="40220" max-vertical-offset="41846">
-          <folding>
-            <marker date="1419866936000" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="241" column="31" selection-start="5334" selection-end="5334" vertical-scroll-proportion="0.0" vertical-offset="3914" max-vertical-offset="5288">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/timer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="177" column="25" selection-start="6184" selection-end="6184" vertical-scroll-proportion="0.0" vertical-offset="2798" max-vertical-offset="4784">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/pager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="3" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="896">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/language/english/english_lang.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="36" selection-start="743" selection-end="743" vertical-scroll-proportion="-11.333333" vertical-offset="0" max-vertical-offset="4724">
@@ -1141,13 +1048,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/custom404_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="0" selection-start="4638" selection-end="4638" vertical-scroll-proportion="-10.037037" vertical-offset="1205" max-vertical-offset="3101">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/helpers/functions_helper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="120" column="13" selection-start="2337" selection-end="2337" vertical-scroll-proportion="-14.888889" vertical-offset="1758" max-vertical-offset="12231">
@@ -1155,107 +1055,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/ajax.js">
+    <entry file="file://$PROJECT_DIR$/application/views/custom404_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="873" column="37" selection-start="31768" selection-end="31768" vertical-scroll-proportion="0.0" vertical-offset="17071" max-vertical-offset="26108">
-          <folding>
-            <marker date="1425897821308" expanded="true" signature="14639:14653" placeholder="..." />
-            <marker date="1425897821308" expanded="true" signature="16883:16897" placeholder="..." />
-            <marker date="1425897821308" expanded="true" signature="22152:22168" placeholder="..." />
-            <marker date="1425897821308" expanded="true" signature="22244:22260" placeholder="..." />
-            <marker date="1425897821308" expanded="true" signature="31356:31387" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="44" selection-start="444" selection-end="444" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8758">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/head_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="65" selection-start="5916" selection-end="5916" vertical-scroll-proportion="-10.0" vertical-offset="1440" max-vertical-offset="2989">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="225" column="7" selection-start="6394" selection-end="6454" vertical-scroll-proportion="-22.88889" vertical-offset="3432" max-vertical-offset="29269">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/admin_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="683" column="20" selection-start="13754" selection-end="13765" vertical-scroll-proportion="-4.2" vertical-offset="12063" max-vertical-offset="18063">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bower_components/jquery/dist/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2672" column="4" selection-start="73549" selection-end="73549" vertical-scroll-proportion="0.0" vertical-offset="47631" max-vertical-offset="166204">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/ajax.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="576" column="59" selection-start="20449" selection-end="20449" vertical-scroll-proportion="-5.509091" vertical-offset="10065" max-vertical-offset="25857">
+        <state line="22" column="8" selection-start="985" selection-end="985" vertical-scroll-proportion="0.5492372" vertical-offset="0" max-vertical-offset="3007">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="60" selection-start="803" selection-end="803" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4042">
+        <state line="21" column="60" selection-start="803" selection-end="803" vertical-scroll-proportion="0.5053476" vertical-offset="0" max-vertical-offset="4042">
           <folding>
-            <marker date="1425894862300" expanded="false" signature="259:275" placeholder="..." />
-            <marker date="1425894862300" expanded="false" signature="346:362" placeholder="..." />
-            <marker date="1425894862300" expanded="true" signature="1844:1860" placeholder="..." />
-            <marker date="1425894862300" expanded="true" signature="1931:1947" placeholder="..." />
-            <marker date="1425894862300" expanded="true" signature="3438:3454" placeholder="..." />
-            <marker date="1425894862300" expanded="true" signature="3525:3541" placeholder="..." />
-            <marker date="1425894862300" expanded="true" signature="4784:4800" placeholder="..." />
-            <marker date="1425894862300" expanded="true" signature="4871:4887" placeholder="..." />
-            <marker date="1425894862300" expanded="false" signature="5823:5839" placeholder="..." />
-            <marker date="1425894862300" expanded="false" signature="5910:5926" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/edit_task.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="27" selection-start="1866" selection-end="1866" vertical-scroll-proportion="0.0" vertical-offset="543" max-vertical-offset="2980">
-          <folding>
-            <marker date="1425899878076" expanded="true" signature="214:245" placeholder="..." />
-            <marker date="1425899878076" expanded="true" signature="3712:3726" placeholder="..." />
+            <marker date="1425894862300" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1425894862300" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1425894862300" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425894862300" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425894862300" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425894862300" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425894862300" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425894862300" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425894862300" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1425894862300" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/ajax/edit_task_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="199" selection-start="8883" selection-end="8883" vertical-scroll-proportion="0.55755895" vertical-offset="2190" max-vertical-offset="3475">
+        <state line="140" column="199" selection-start="8883" selection-end="8883" vertical-scroll-proportion="1.0069348" vertical-offset="1866" max-vertical-offset="3475">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/admin_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="683" column="20" selection-start="13754" selection-end="13765" vertical-scroll-proportion="0.33333334" vertical-offset="12063" max-vertical-offset="18063">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/ajax.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="576" column="59" selection-start="20449" selection-end="20449" vertical-scroll-proportion="0.54112554" vertical-offset="10065" max-vertical-offset="25857">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="44" selection-start="444" selection-end="444" vertical-scroll-proportion="0.5534759" vertical-offset="0" max-vertical-offset="8758">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/edit_task.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="27" selection-start="1866" selection-end="1866" vertical-scroll-proportion="0.45320857" vertical-offset="543" max-vertical-offset="2980">
           <folding>
-            <element signature="n#style#0;n#label#0;n#div#1;n#div#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#2;n#div#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#div#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#3;n#div#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#div#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <marker date="1425899878076" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425899878076" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower_components/jquery/dist/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2672" column="4" selection-start="73549" selection-end="73549" vertical-scroll-proportion="0.3328877" vertical-offset="47631" max-vertical-offset="166204">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="225" column="7" selection-start="6394" selection-end="6454" vertical-scroll-proportion="0.85714287" vertical-offset="3432" max-vertical-offset="29269">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/external.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="29" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2008">
+          <folding>
+            <marker date="1424943976000" expanded="false" signature="582:611" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app_external.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="484" selection-end="788" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1414">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="151" column="32" selection-start="5080" selection-end="5080" vertical-scroll-proportion="0.0" vertical-offset="2276" max-vertical-offset="24286">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="3" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app_main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="0" selection-start="2320" selection-end="2320" vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="2470">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/templates/head_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="68" selection-start="6053" selection-end="6053" vertical-scroll-proportion="0.67360455" vertical-offset="1034" max-vertical-offset="3343">
+          <folding />
         </state>
       </provider>
     </entry>

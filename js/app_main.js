@@ -9,6 +9,7 @@ requirejs.config({
         "bootstrap_toggle": "/assets/js/bootstrap-toggle",
         "bootstrap_tooltip": "/assets/js/bootstrap-tooltip",
         "bootstrap_confirmation": "/assets/js/bootstrap-confirmation",
+        "bootstrap_autocomplete": "/assets/js/jquery.autocomplete",
         "bootstrap_switch": "/assets/js/bootstrap-switch.min",
         "bootstrap_wizard": "/assets/js/jquery.bootstrap.wizard.min",
         "bootstrap_validate": "/assets/js/jquery.validate.min",
@@ -44,6 +45,10 @@ requirejs.config({
             deps:['bootstrap'],
             exports:"bootstrap"
         },
+        bootstrap_autocomplete: {
+            deps:['bootstrap'],
+            exports:"bootstrap"
+        },
         bootstrap_switch: {
             deps:['bootstrap'],
             exports:"bootstrap"
@@ -70,3 +75,4 @@ require(['jquery', 'bootstrap_toggle'], function ($) {
         size:'mini'
     });
 });
+
