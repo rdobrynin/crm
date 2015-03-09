@@ -988,9 +988,8 @@ class Dashboard extends CI_Controller {
         $cid = $this->input->post('cid');
         if (!empty($cid)) {
             $this->admin_model->delete_client($cid);
-            $data['response'] = 'Removing company ...';
-            $data['result'] = 'clients';
-            $this->load->view('templates/success_view', $data);
+            $this->session->set_flashdata('success_delete_client', '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>'. $this->lang->line('success').'</strong> '. $this->lang->line('you_have_success_delete_client').'</div>');
+            redirect("clients");
         }
         else {
             $this->load->view('custom404_view');
@@ -1099,14 +1098,8 @@ class Dashboard extends CI_Controller {
                 }
                 else {
                     if ($query = $this->admin_model->create_client()) {
-                        $data['response'] = 'Company creating...';
-                        $data['result'] = 'clients';
-                        $this->load->view('templates/head_view',$data);
-                        if ($data['user']->helpblock == 1) {
-                            $this->load->view('templates/help_block_view');
-                        }
-                        $this->load->view('templates/success_view', $data);
-                        $this->load->view('templates/settings_view', $data);
+                        $this->session->set_flashdata('success_create_client', '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>'. $this->lang->line('success').'</strong> '. $this->lang->line('you_have_success_create_client').'</div>');
+                        redirect("clients");
                     }
                 }
             }
@@ -1433,23 +1426,20 @@ class Dashboard extends CI_Controller {
                     if ($query = $this->admin_model->insert_member_phone($id) && $query = $this->admin_model->update_member($id)) {
 
                     }
-                    $data['response'] = 'Profile successfully updated';
-                    $data['result'] = 'profile';
-                    $this->load->view('templates/success_view', $data);
+                    $this->session->set_flashdata('success_update_profile', '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>'. $this->lang->line('success').'</strong> '. $this->lang->line('you_have_success_update_profile').'</div>');
+                    redirect("profile");
                 }
                 elseif (!empty($email_add[0])) {
                     if ($query = $this->admin_model->insert_member_email($id) && $query = $this->admin_model->update_member($id)) {
 
                     }
-                    $data['response'] = 'Profile successfully updated';
-                    $data['result'] = 'profile';
-                    $this->load->view('templates/success_view', $data);
+                    $this->session->set_flashdata('success_update_profile', '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>'. $this->lang->line('success').'</strong> '. $this->lang->line('you_have_success_update_profile').'</div>');
+                    redirect("profile");
                 }
                 else {
                     if ($query = $this->admin_model->update_member($id)) {
-                        $data['response'] = 'Profile updating ...';
-                        $data['result'] = 'profile';
-                        $this->load->view('templates/success_view', $data);
+                            $this->session->set_flashdata('success_update_profile', '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>'. $this->lang->line('success').'</strong> '. $this->lang->line('you_have_success_update_profile').'</div>');
+                        redirect("profile");
                     }
                 }
             }

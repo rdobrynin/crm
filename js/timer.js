@@ -170,7 +170,6 @@ $(function () {
                     data: form_data,
                     dataType: 'json',
                     success: function (msg) {
-                        console.log(msg);
                         if (typeof(Storage) !== "undefined") {
                             clearInterval(timer);
                             localStorage.play = false;

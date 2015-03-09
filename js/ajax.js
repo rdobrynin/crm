@@ -220,7 +220,6 @@ $(function () {
             data: form_data,
             dataType: 'json',
             success: function (msg) {
-                console.log(msg);
                 if (msg.empty == false) {
                     $('#check_empty_project').css('display', 'block');
                 }
@@ -610,6 +609,46 @@ $(function () {
         }
     });
 
+
+    $('.toggle-comment').click(function () {
+        idComment = $(this).attr('data-comment');
+        if ( $('#toggle-comment-'+idComment).is( ":checked" ) ) {
+            var form_data = {
+                id: idComment,
+                check: '1'
+            };
+            $.ajax({
+                url: '/ajax/publishComment',
+                type: 'POST',
+                data: form_data,
+                dataType: 'json',
+                success: function (msg) {
+                    $('#adjust-comment-'+idComment).addClass('disabled');
+                }
+            });
+        }
+        else {
+            var form_data = {
+                id: idComment,
+                check: '0'
+            };
+            $.ajax({
+                url: '/ajax/publishComment',
+                type: 'POST',
+                data: form_data,
+                dataType: 'json',
+                success: function (msg) {
+                    $('#adjust-comment-'+idComment).removeClass('disabled');
+                }
+            });
+
+        }
+    });
+
+
+
+
+
 });
 //  END READY FUNCTION
 
@@ -877,7 +916,6 @@ function SendComment($data) {
             data: form_data_,
             dataType: 'json',
             success: function (msg) {
-                console.log(msg);
                 if (msg.empty == true) {
                     $('#qm-empty-error').fadeIn('slow').css('display', 'block');
                     setTimeout(function () {
@@ -1114,7 +1152,6 @@ function assignUserProject($data, $project) {
         data: form_data,
         dataType: 'json',
         success: function (msg) {
-            console.log(msg);
             if (msg.id != 'false') {
                 console.log(msg);
                 $('#assign-user-li-' + $data).fadeOut('slow');
@@ -1122,7 +1159,7 @@ function assignUserProject($data, $project) {
                     ' </span>&nbsp;');
             }
             else {
-                console.log('Something was with error');
+               alert('Something was with error');
             }
         }
     });

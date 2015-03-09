@@ -7,6 +7,9 @@
         <div class="row-fluid">
             <!--FORM-->
             <div class="col-md-8">
+        <div class="row">
+            <?php echo $this->session->flashdata('success_update_profile'); ?>
+        </div>
                 <form role="form" class="form-horizontal" action="<?php print(base_url()); ?>update_profile" method="POST" autocomplete="on">
                     <div class="row">
                         <div class="address-wrapper" style="height: 100%;">

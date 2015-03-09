@@ -76,53 +76,5 @@
 </div>
 <?php include('logs_view.php'); ?>
 </div>
-
 <?php include('right_float_view.php'); ?>
 <?php include('footer_view.php');?>
-<script>
-
-
-
-
-    $(function () {
-
-        $('#all_comments_table').pageMe({pagerSelector:'#pager_all_comments',showPrevNext:true,hidePageNumbers:false,perPage:20});
-
-        $('.toggle-comment').click(function () {
-            idComment = $(this).attr('data-comment');
-            if ( $('#toggle-comment-'+idComment).is( ":checked" ) ) {
-                var form_data = {
-                    id: idComment,
-                    check: '1'
-                };
-                $.ajax({
-                    url: "<?php echo site_url('ajax/publishComment'); ?>",
-                    type: 'POST',
-                    data: form_data,
-                    dataType: 'json',
-                    success: function (msg) {
-                        $('#adjust-comment-'+idComment).addClass('disabled');
-                    }
-                });
-            }
-            else {
-                var form_data = {
-                    id: idComment,
-                    check: '0'
-                };
-                $.ajax({
-                    url: "<?php echo site_url('ajax/publishComment'); ?>",
-                    type: 'POST',
-                    data: form_data,
-                    dataType: 'json',
-                    success: function (msg) {
-                        $('#adjust-comment-'+idComment).removeClass('disabled');
-                    }
-                });
-
-            }
-        });
-
-    });
-</script>
-

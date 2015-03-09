@@ -4,6 +4,8 @@
  <!-- Keep all page content within the page-content inset div! -->
   <div class="page-content inset">
     <div class="row-fluid">
+        <?php echo $this->session->flashdata('success_delete_client'); ?>
+        <?php echo $this->session->flashdata('success_create_client'); ?>
         <p class="lead"><?php print(lang('client_clients'))?></p>
 <!--      --><?php //if(!empty($client)):?>
         <table class="table">
@@ -63,12 +65,3 @@
 
 </div>
 <?php include('footer_view.php');?>
-<script>
-  $(function () {
-      $('#btn-del-company, #btn-edit-company').click(function () {
-
-          $('#demo_modal').modal('show');
-          return false;
-      });
-  });
-</script>

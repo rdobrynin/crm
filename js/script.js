@@ -28,7 +28,6 @@ $(function() {
         _this = this;
         // Show only matching TR, hide rest of them
         $.each($("#dash-over-table tbody").find("tr"), function() {
-//            console.log($(this).text());
             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                 $(this).hide();
             else
@@ -57,7 +56,6 @@ $(function() {
         _this = this;
         // Show only matching TR, hide rest of them
         $.each($("#dash-process-table tbody").find("tr"), function() {
-//            console.log($(this).text());
             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                 $(this).hide();
             else
@@ -90,7 +88,6 @@ $(function() {
         _this = this;
         // Show only matching TR, hide rest of them
         $.each($("#log-table tbody").find("tr"), function() {
-//            console.log($(this).text());
             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                 $(this).hide();
             else
@@ -123,7 +120,6 @@ $(function() {
         _this = this;
         // Show only matching TR, hide rest of them
         $.each($(".user-float-block"), function() {
-//            console.log($(this).text());
             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                 $(this).hide();
             else
@@ -155,7 +151,7 @@ $(function() {
         _this = this;
         // Show only matching TR, hide rest of them
         $.each($("#table-task-process tbody").find("tr"), function() {
-//            console.log($(this).text());
+
             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                 $(this).hide();
             else
@@ -188,7 +184,6 @@ $(function() {
         _this = this;
         // Show only matching TR, hide rest of them
         $.each($(".table-task tbody").find("tr"), function() {
-//            console.log($(this).text());
             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                 $(this).hide();
             else
@@ -219,7 +214,6 @@ $(function() {
         _this = this;
         // Show only matching TR, hide rest of them
         $.each($("#ready-task-table tbody").find("tr"), function() {
-//            console.log($(this).text());
             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                 $(this).hide();
             else
@@ -227,10 +221,8 @@ $(function() {
         });
     });
 
-    $(document).ready(function () {
         $('.panel-heading span.clickable').click();
         $('.panel div.clickable').click();
-    });
 
     $('.activity-item-comment-link').click(function () {
         $(".activity-item-comment-form").show();
@@ -417,7 +409,11 @@ $('#badge-count-comments-top').html(count_all_comments);
     });
 
 
+    $('#btn-del-company, #btn-edit-company').click(function () {
 
+        $('#demo_modal').modal('show');
+        return false;
+    });
 
 
 });

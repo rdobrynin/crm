@@ -3,8 +3,11 @@
 //system
 $lang['admin_manager_perm'] = 'Только администраторы и менеджеры могут войти в данный раздел ';
 $lang['you_havenot_permissions'] = 'У вас нет прав на данный раздел';
+$lang['you_have_success_update_profile'] = 'Ваш профайл обновлен';
+$lang['you_have_success_delete_client'] = 'Вы успешно удалили компанию';
+$lang['you_have_success_create_client'] = 'Вы успешно создали компанию';
 $lang['warning'] = 'Предупрежедние!';
-
+$lang['success'] = 'Успешно!';
 $lang['menu_dashboard'] = "Панель управления";
 $lang['menu_clients'] = "Клиенты";
 $lang['menu_projects'] = "Проекты";

@@ -4,7 +4,11 @@
 
 $lang['admin_manager_perm'] = 'Only administrators and managers can access this section';
 $lang['you_havenot_permissions'] = 'You do not have permission to access this section';
+$lang['you_have_success_update_profile'] = 'You successfully updated your profile';
+$lang['you_have_success_delete_client'] = 'You successfully deleted company';
+$lang['you_have_success_create_client'] = 'You successfully created company';
 $lang['warning'] = 'Warning!';
+$lang['success'] = 'Success!';
 $lang['menu_dashboard'] = "Dashboard";
 $lang['menu_clients'] = "Clients";
 $lang['menu_projects'] = "Projects";

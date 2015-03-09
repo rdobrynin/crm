@@ -232,7 +232,6 @@ function clearCache() {
 }
 
 function projectToView($data){
-    console.log($data);
     var $panel = $('.filterable .btn-filter').parents('.filterable'),
         $tbody = $panel.find('.table tbody');
     $tbody.find('.no-result').remove();

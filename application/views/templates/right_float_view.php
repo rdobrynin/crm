@@ -1,11 +1,8 @@
 <div class="right-float-sidebar">
 <div class="search-form-sidebar"><input type="text" id="search-sidebar-users" class=" form-control lights" placeholder="<?php print(lang('rfloat_search'))?>"/></div>
     <div class="close-right-sidebar"><a href="javascript:void(0);"><i class="fa fa-times" style="top: -2px !important;position: relative;"></i></a></div>
-
     <?php if ($users !=null): ?>
-
     <?php foreach ($users as $uk => $uv): ?>
-
         <?php if ($uv['id'] !== $user->id): ?>
         <div class="user-float-block">
             <div class="avatar-activity">
@@ -22,7 +19,5 @@
         <?php endif ?>
         <div class="close-right-sidebar"><a href="javascript:void(0);"><span class="icon-remove"></span></a></div>
     <?php endforeach ?>
-
     <?php endif ?>
-
 </div>

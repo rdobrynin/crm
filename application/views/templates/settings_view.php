@@ -1,6 +1,5 @@
 <div class="modal white-modal" id="settings">
   <div class="modal-dialog" id="settings-dialog-modal">
-
     <div class="modal-content" id="settings-content-modal">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -89,7 +88,6 @@
           <button type="button" class="btn btn-success btn-lg" data-dismiss="modal" onclick="window.location = '<?php print(site_url()) ?>';"><?php print(lang('modal_apply_cat'))?></button>
       </div>
     </div>
-
   </div>
 </div>
 

@@ -3,8 +3,11 @@
 //system
 $lang['admin_manager_perm'] = 'Ainult administraatoritel ning haldajatel on ligipääs valitud sektsioonile';
 $lang['you_havenot_permissions'] = 'Teil puudub ligipääs valitud sektsioonile';
+$lang['you_have_success_update_profile'] = 'You successfully updated your profile';
+$lang['you_have_success_delete_client'] = 'You successfully deleted company';
+$lang['you_have_success_create_client'] = 'You successfully created company';
 $lang['warning'] = 'Hoiatus!';
-
+$lang['success'] = 'Success!';
 $lang['menu_dashboard'] = "Töölaud";
 $lang['menu_clients'] = "Kliendid";
 $lang['menu_projects'] = "Projektid";
