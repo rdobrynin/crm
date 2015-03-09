@@ -6,6 +6,7 @@ requirejs.config({
         "bootstrap_select": "/bower_components/bootstrap-select/js/bootstrap-select",
         "bootstrap_datetimepicker": "/assets/js/jquery.datetimepicker",
         "bootstrap_scrollbar": "/assets/js/jquery.mCustomScrollbar",
+        "domReady": "/bower_components/domReady/domReady",
         "bootstrap_toggle": "/assets/js/bootstrap-toggle",
         "bootstrap_tooltip": "/assets/js/bootstrap-tooltip",
         "bootstrap_confirmation": "/assets/js/bootstrap-confirmation",
@@ -20,6 +21,10 @@ requirejs.config({
         bootstrap: {
             deps:['jquery'],
             exports:"bootstrap"
+        },
+        domReady: {
+            deps:['jquery'],
+            exports:"domReady"
         },
         bootstrap_select: {
             deps:['bootstrap'],
