@@ -88,11 +88,11 @@
     <script src="<?php print(base_url()); ?>assets/js/jquery.datetimepicker.js"></script>
     <script src="<?php print(base_url()); ?>assets/js/jquery.autocomplete.js"></script>
     <script src="<?php print(base_url()); ?>assets/js/bootstrap-toggle.js"></script>
+    <script src="<?php print(base_url()); ?>js/script.js"></script>
     <script src="<?php print(base_url()); ?>js/dashboard.js"></script>
     <script src="<?php print(base_url()); ?>js/functions.js"></script>
     <script src="<?php print(base_url()); ?>js/interval.js"></script>
     <script src="<?php print(base_url()); ?>js/timer.js"></script>
-    <script src="<?php print(base_url()); ?>js/script.js"></script>
     <script src="<?php print(base_url()); ?>js/ajax.js"></script>
     <script src="<?php print(base_url()); ?>js/onload.js"></script>
     <script src="<?php print(base_url()); ?>js/profile.js"></script>

@@ -383,10 +383,7 @@
                     data: form_data,
                     dataType: 'json',
                     success: function (msg) {
-//                        $('#tr_current_user_'+currentUser).remove();
-
                         $('[data-toggle=confirmation-unfroze-current-user]').confirmation('hide');
-
                     }
                 });
             },

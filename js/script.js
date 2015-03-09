@@ -422,6 +422,10 @@ $('#badge-count-comments-top').html(count_all_comments);
 
 });
 
+
+
+
+
 $(window).load(function(){
     $(".comment-jsscroll").mCustomScrollbar({
         scrollButtons:{enable:true,scrollType:"stepped"},
@@ -430,3 +434,5 @@ $(window).load(function(){
         snapOffset:65
     });
 });
+
+

@@ -807,7 +807,6 @@ function taskToEdit($data) {
                 });
 
 
-
             }, 700);
 
 
