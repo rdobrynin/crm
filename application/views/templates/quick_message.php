@@ -35,8 +35,6 @@ top: 4px;"><span class="get_old_mail" id="qm-point-name"></span>&nbsp;&nbsp;&nbs
             <a href="javascript:void(0);" id="qm-link-file-btn"><i class="fa fa-link"></i></a>
         </div>
         </div>
-
-
         <?php form_close( );?>
 </div>
 </div>

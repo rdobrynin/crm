@@ -52,7 +52,7 @@
 
               <?php endif ?>
               <?php if ($user->role ==5 OR $user->role==4): ?>
-              <li> <a href="#" data-toggle="modal" data-target="#invite" title="invite"><i class="fa fa-plus"></i><?php print(lang('menu_invite_person')); ?></a></li>
+              <li> <a href="#" id="invite-person"  title="invite"><i class="fa fa-plus"></i><?php print(lang('menu_invite_person')); ?></a></li>
 
                   <li class="add-client"><a href="#" data-toggle="modal" data-target="#addproject_modal" title="create project"><i class="fa fa-plus"></i><?php print(lang('menu_add_project')); ?></a></li>
                   <?php endif ?>

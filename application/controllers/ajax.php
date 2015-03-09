@@ -552,8 +552,12 @@ class Ajax extends CI_Controller {
         $result['owner'] = $this->input->post('owner');
         $result['empty'] = false;
         $name_array =  $this->admin_model->get_user_id($result['owner']);
+
         $full_name = $name_array->first_name.' '.$name_array->last_name;
         $id = $this->input->post('id');
+
+        $task_types = $this->task_model->getTaskTypes();
+
         if ($_POST['title'] == '' OR $_POST['desc'] == '' OR $_POST['project'] == '' OR $_POST['label'] == '' OR $_POST['dueto'] == '' OR $_POST['priority'] == '' OR $_POST['implementor'] == '') {
             $result['empty'] = true;
         }
@@ -563,6 +567,14 @@ class Ajax extends CI_Controller {
             $text = 'edited task';
             if ($this->task_model->updateEditTask($id) == true) {
                 $result['new'] = $this->task_model->getTask($id);
+                $user_imp = $this->admin_model->getUsername($result['new']->implementor);
+                $user_uid = $this->admin_model->getUsername($result['new']->uid);
+                $result['new_label'] = task_type_label($result['new']->label);
+                $result['new_label_type'] = $task_types[$result['new']->label];
+                $result['new_priority_label'] = priority_status_index($result['new']->priority);
+                $result['new_priority'] = $result['new']->priority;
+                $result['new_imp_name'] = short_name($user_imp);
+                $result['new_uid'] = short_name($user_uid);
                 $result['dueto'] = date('jS F Y G:i', $result['new']->due_time);
                 $project_task = $this->project_model->getProject($result['new']->pid);
                 $result['project_task'] = $project_task[0]['title'];

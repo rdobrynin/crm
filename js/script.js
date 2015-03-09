@@ -5,6 +5,17 @@ $('.selectpicker').selectpicker({
 
 $(function() {
 
+
+    $('#invite-person').click(function () {
+
+$('#invite').modal('show');
+
+        $('.selectpicker').selectpicker({
+            style: 'btn-special',
+            size: 14
+        });
+    });
+
     $('#admin-users-tab a').click(function (e) {
         e.preventDefault()
         $(this).tab('show')

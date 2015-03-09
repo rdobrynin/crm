@@ -56,7 +56,6 @@
 
     </div>
 </div>
-
             </div>
             <div class="modal-footer">
                 <div class="pull-left" style="padding-top: 10px;"><input id="dont-show-whats-new" type="checkbox" name="dontshow"><label for="dont-show-whats-new" type="checkbox">&nbsp;Dont'show again. You will still be able to access this dialog through the "Settings" Menu in the application header</div>

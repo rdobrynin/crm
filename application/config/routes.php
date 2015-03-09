@@ -48,7 +48,6 @@ $route['users'] = 'dashboard/users';
 $route['profile'] = 'dashboard/profile';
 $route['charts'] = 'dashboard/charts';
 $route['tasks'] = 'dashboard/tasks';
-$route['froze'] = 'froze';
 $route['comments'] = 'dashboard/comments';
 $route['clients'] = 'dashboard/clients';
 $route['success'] = 'dashboard/success';

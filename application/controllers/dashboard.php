@@ -588,6 +588,9 @@ class Dashboard extends CI_Controller {
             $this->load->view('templates/help_block_view');
         }
         if ($data['user']->role == 5 OR $data['user']->role == 4) {
+            $this->load->view('templates/navtop_view', $data);
+            $this->load->view('templates/sidebar_view', $data);
+            $this->load->view('templates/settings_view', $data);
             $this->load->view('templates/users_view', $data);
             $this->load->view('templates/settings_view', $data);
         }

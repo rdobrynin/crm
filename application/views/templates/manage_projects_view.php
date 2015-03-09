@@ -2,15 +2,15 @@
     <div class="page-content-wrapper">
         <!-- Keep all page content within the page-content inset div! -->
         <div class="page-content inset">
-            <p class="lead">Administer Projects <b>(IN DEVELOPMENT)</b></p>
+            <p class="lead">Administer Projects</p>
             <div class="row manage-project">
                 <?php foreach ($projects as $pk => $pv): ?>
                     <?php if (isset($user_projects[$pv['pid']])): ?>
                 <?php if ($user_projects[$pv['pid']] == $user->id OR $user->role== 5): ?>
-                    <div class="col-md-12 col-sm-12 manage-project-block">
-                        <div class="well well-sm" style="background-color: rgb(231, 231, 231); border-color: #BDBDBD;">
+                    <div class="col-md-4 col-lg-3 col-sm-12 manage-project-block">
+                        <div class="well well-sm" style="background-color: rgb(231, 231, 231); border-color: #BDBDBD; min-height: 500px;">
                             <div class="media" style="margin-bottom: 20px">
-                                <div class="media-body" style="padding-bottom: 20px;border-bottom: 1px solid rgb(208, 208, 208);">
+                                <div class="media-body" style="padding-bottom: 20px;border-bottom: 1px solid rgb(208, 208, 208); min-height: 400px;">
                                     <h4 class="media-heading" style="margin-bottom: 10px;border-bottom: 1px solid rgb(208, 208, 208);padding-bottom: 10px;">#<?php print($pv['pid']); ?>&nbsp;(<?php print($pv['title']); ?>)</h4>
                                     <p>Owner:&nbsp;<a href="javascript:void(0);" onClick="qmSendComment(<?php print($pv['owner']); ?>)"><?php print(short_name($user_name[$pv['owner']])); ?></a></p>
                                     <p>Created:&nbsp;<b><?php print(date('jS F Y', $pv['date_created'])); ?></b></p>
