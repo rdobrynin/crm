@@ -16,7 +16,7 @@
                                 <td style="width: 15%; text-align: left;" class="current-title-project"><?php print($pv['title']); ?></td>
                                 <td style="width: 20%; text-align: left;"><?php print($pv['description']); ?></td>
                                 <td style="width: 20%; text-align: center;"><a href="javascript:void(0);"><span class="badge badge-task" id="route-task">    <?php if (isset($project_tasks[$pv['pid']])): ?><?php print(count($project_tasks[$pv['pid']])); ?><?php else:?>0<?php endif ?></span></a></td>
-                                <td style="width: 20%; text-align: center;"><a href="javascript:void(0);" onClick="qmSendComment(<?php print($pv['owner']); ?>)"><?php print(short_name($user_name[$pv['owner']])); ?></a></td>
+                                <td style="width: 20%; text-align: center;"><a href="javascript:void(0);" class="qm-send-comment" data-uid="<?php print($pv['owner']); ?>"><?php print(short_name($user_name[$pv['owner']])); ?></a></td>
 
                             </tr>
                             <!--TASK-->
@@ -50,8 +50,8 @@
                                                     <td>#<?php print($tv['id']); ?></td>
                                                     <td><span class="muted"><?php print(date('jS F Y G:i', $tv['date_created'])); ?></span></td>
                                                     <td><span class="label <?php print(task_type_label($tv['label'])); ?> label-xs"><?php print($task_types[$tv['label']]); ?></span></td>
-                                                    <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['implementor']); ?>)"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
-                                                    <td><a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($tv['uid']); ?>)"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
+                                                    <td><a href="javascript:void(0);" class="hover-td-name qm-send-comment" data-uid="<?php print($tv['implementor']); ?>"><?php print(short_name($user_name[$tv['implementor']])); ?></a></td>
+                                                    <td><a href="javascript:void(0);" class="hover-td-name qm-send-comment" data-uid="<?php print($tv['uid']); ?>"><?php print(short_name($user_name[$tv['uid']])); ?></a></td>
                                                     <td><?php print($tv['title']); ?></td>
                                                     <td><span class="muted"><?php print(substr($tv['desc'], 0,20)).' '.'...';?></span></td>
                                                     <td>

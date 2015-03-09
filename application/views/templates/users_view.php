@@ -69,7 +69,7 @@
                                                     <td><?php print($uv['id']); ?></td>
                                                     <td><?php print(short_name($user_name[$uv['id']])); ?></td>
                                                     <td>
-                                                        <a href="javascript:void(0);" class="hover-td-name" onClick="qmSendComment(<?php print($uv['id']); ?>)"><?php print($uv['email']); ?></a>
+                                                        <a href="javascript:void(0);" class="hover-td-name qm-send-comment" data-uid="<?php print($uv['id']); ?>"><?php print($uv['email']); ?></a>
                                                     </td>
                                                     <td><?php print(show_role($uv['role'])); ?></td>
                                                     <td><?php print($uv['date_created']); ?></td>

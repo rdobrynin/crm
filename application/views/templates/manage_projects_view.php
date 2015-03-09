@@ -12,7 +12,7 @@
                             <div class="media" style="margin-bottom: 20px">
                                 <div class="media-body" style="padding-bottom: 20px;border-bottom: 1px solid rgb(208, 208, 208); min-height: 400px;">
                                     <h4 class="media-heading" style="margin-bottom: 10px;border-bottom: 1px solid rgb(208, 208, 208);padding-bottom: 10px;">#<?php print($pv['pid']); ?>&nbsp;(<?php print($pv['title']); ?>)</h4>
-                                    <p>Owner:&nbsp;<a href="javascript:void(0);" onClick="qmSendComment(<?php print($pv['owner']); ?>)"><?php print(short_name($user_name[$pv['owner']])); ?></a></p>
+                                    <p>Owner:&nbsp;<a href="javascript:void(0);" class="qm-send-comment" data-uid="<?php print($pv['owner']); ?>"><?php print(short_name($user_name[$pv['owner']])); ?></a></p>
                                     <p>Created:&nbsp;<b><?php print(date('jS F Y', $pv['date_created'])); ?></b></p>
                                     <p>Last edited:&nbsp;<b> <?php if ($pv['date_edited'] == 0): ?>none<?php else: ?><?php print(date('jS F Y', $pv['date_edited'])); ?><?php endif ?></b></p>
 

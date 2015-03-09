@@ -34,7 +34,7 @@
                                                 <tr id="current-tr-<?php print($ev['id']); ?>">
                                                 <td>#<?php print($ev['id']); ?></td>
                                                 <td class="text-left"><?php print(date_format(date_create($ev['time']),"F d H:i")); ?></td>
-                                                <td class="text-left"><a href="javascript:void(0);" onClick="qmSendComment(<?php print($ev['uid']); ?>)"><?php print(short_name($user_name[$ev['uid']])); ?></a></td>
+                                                <td class="text-left"><a href="javascript:void(0);" class="qm-send-comment" data-uid="<?php print($ev['uid']); ?>"><?php print(short_name($user_name[$ev['uid']])); ?></a></td>
                                                 <td class="text-left"> <?php if ($ev['type'] == 0): ?><i class="fa fa-cube"></i>&nbsp;project<?php endif ?>
                                                 <?php if ($ev['type'] == 1 OR $ev['type'] == 3 OR $ev['type'] == 4): ?><i class="fa fa-gavel"></i>&nbsp;Task<?php endif ?>
                                                 <?php if ( $ev['type'] == 5): ?><i class="fa fa-pencil"></i>&nbsp;Task<?php endif ?>

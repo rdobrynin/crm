@@ -627,8 +627,7 @@ class Ajax extends CI_Controller {
      * Get user id
      */
     function getUserbyId() {
-        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
-        $user = $session_uid->id;
+        $user =  $user =  $this->input->post('id');;
         $result['user']= $this->admin_model->get_user_id_array($user);
         echo json_encode($result);
     }

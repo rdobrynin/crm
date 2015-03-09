@@ -32,7 +32,7 @@
       <?php if ($user->id==14): ?>
           <li class="add-client"><a href="#" onClick="clearCache()">Clear cache</a></li>
       <?php endif ?>
-      <li id="li-comments"> <a href="#" onClick="SendComment(<?php print($user->id)?>)" ><span class="icon-comment"></a></li>
+      <li id="li-comments"> <a href="#" class="send-comment" data-uid="<?php print($user->id)?>"><span class="icon-comment"></a></li>
       <li id="float-users"> <a href="#"><span class="icon-users"></span></a></li>
       <li class="dropdown user-dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown"><span class="icon-book"></span></a>

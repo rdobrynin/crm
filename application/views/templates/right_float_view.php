@@ -14,7 +14,7 @@
             </div>
             <div class="sidebar-position"><?php print(show_role($uv['role'])); ?></div>
             <div class="sidebar-position"><a href="mailto:<?php print($uv['email']); ?>"><?php print($uv['email']); ?></a></div>
-            <div class="sidebar-position phone"><?php print($uv['phone']); ?>&nbsp;<span class="label label-xs label-primary sms sms-send-alert">sms</span>&nbsp;<a href="javascript:void(0);" class="pull-right" onClick="qmSendComment(<?php print($uv['id']); ?>)"><i class="fa fa-comment comment-sidebar" id="comm-<?php print($uv['id']); ?>"></i></a></div>
+            <div class="sidebar-position phone"><?php print($uv['phone']); ?>&nbsp;<span class="label label-xs label-primary sms sms-send-alert">sms</span>&nbsp;<a href="javascript:void(0);" class="pull-right qm-send-comment" data-uid="<?php print($uv['id']); ?>"><i class="fa fa-comment comment-sidebar" id="comm-<?php print($uv['id']); ?>"></i></a></div>
         </div>
         <?php endif ?>
         <div class="close-right-sidebar"><a href="javascript:void(0);"><span class="icon-remove"></span></a></div>

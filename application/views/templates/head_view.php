@@ -100,6 +100,7 @@
     <script src="<?php print(base_url()); ?>js/add_client.js"></script>
     <script src="<?php print(base_url()); ?>js/users.js"></script>
     <script src="<?php print(base_url()); ?>js/edit_task.js"></script>
+    <script src="<?php print(base_url()); ?>js/comment.js"></script>
     <!-- Bootstrap core CSS -->
 <!--    <link rel="stylesheet/less" type="text/css" href="--><?php //print(base_url()); ?><!--less/style.less">-->
     <script src="<?php print(base_url()); ?>assets/js/less.min.js" type="text/javascript"></script>

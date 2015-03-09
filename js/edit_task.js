@@ -93,8 +93,8 @@ function taskToUpdate($tid) {
                     $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').html('#'+$tid);
                     $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').html('<span style="color:#5cb85c;">updated now</span>');
                     $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').html('<span class="label '+msg.new_label+' label-xs">'+msg.new_label_type+'</span>');
-                    $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').next('td').html('<a href="#;" class="hover-td-name" onClick="qmSendComment('+msg.new['implementor']+')">'+msg.new_imp_name+'</a>');
-                    $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').next('td').next('td').html('<a href="#;" class="hover-td-name" onClick="qmSendComment('+msg.new['uid']+')">'+msg.new_uid+'</a>');
+                    $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').next('td').html('<a href="#" class="hover-td-name qm-send-comment" data-uid="'+msg.new['implementor']+'">'+msg.new_imp_name+'</a>');
+                    $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').next('td').next('td').html('<a href="#" class="hover-td-name qm-send-comment" data-uid="'+msg.new['implementor']+'">'+msg.new_uid+'</a>');
                     $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').next('td').next('td').next('td').html(msg.new['title']);
                     $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').html(msg.project_task);
                     $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html(msg.new['desc']);

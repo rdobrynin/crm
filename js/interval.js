@@ -33,7 +33,7 @@ $(function () {
                     var idtr =  'current-tr-'+data["id"];
                     $("#log-table").find('tbody:first')
                         .prepend("<tr id='"+idtr+"'><td class='text-left'>"+data['id']+"</td><td class='text-left'>"+data['time']+"</td>+" +
-                            "<td class='text-left'><a href='#' onclick='qmSendComment("+data['uid']+")'>"+data['name']+"</a></td><td class='text-left'><i class='fa fa-cube'></i>&nbsp;project</td>" +
+                            "<td class='text-left'><a href='#' class='qm-send-comment' data-uid='"+data['uid']+"'>"+data['name']+"</a></td><td class='text-left'><i class='fa fa-cube'></i>&nbsp;project</td>" +
                             "<td class='text-left'><i class='fa fa-plus-circle' style='color:#5cb85c;'></i></td>" +
                             "<td class='text-left'>"+data['title']+"</td>+" +
                             "<td class='text-left'>"+data['event']+"</td></tr>");
@@ -51,7 +51,7 @@ $(function () {
                     var idtr =  'current-tr-'+data["id"];
                     $("#log-table").find('tbody:first')
                         .prepend("<tr id='"+idtr+"'><td class='text-left'>"+data['id']+"</td><td class='text-left'>"+data['time']+"</td>+" +
-                            "<td class='text-left'><a href='#' onclick='qmSendComment("+data['uid']+")'>"+data['name']+"</a></td><td class='text-left'><i class='fa fa-gavel'></i>&nbsp;task</td>" +
+                            "<td class='text-left'><a href='#' class='qm-send-comment' data-uid='"+data['uid']+"'>"+data['name']+"</a></td><td class='text-left'><i class='fa fa-gavel'></i>&nbsp;task</td>" +
                             "<td class='text-left'><i class='fa fa-plus-circle' style='color:#5cb85c;'></i></td>" +
                             "<td class='text-left'>"+data['title']+"</td>+" +
                             "<td class='text-left'>"+data['event']+"</td></tr>");
@@ -77,7 +77,7 @@ $(function () {
                     var idtr =  'current-tr-'+data["id"];
                     $("#log-table").find('tbody:first')
                         .prepend("<tr id='"+idtr+"'><td class='text-left'>"+data['id']+"</td><td class='text-left'>"+data['time']+"</td>+" +
-                            "<td class='text-left'><a href='#' onclick='qmSendComment("+data['uid']+")'>"+data['name']+"</a></td><td class='text-left'><i class='fa fa-gavel'></i>&nbsp;task</td>" +
+                            "<td class='text-left'><a href='#' class='qm-send-comment' data-uid='"+data['uid']+"'>"+data['name']+"</a></td><td class='text-left'><i class='fa fa-gavel'></i>&nbsp;task</td>" +
                             "<td class='text-left'><i class='fa fa-times-circle' style='color:#d9534f;'></i></td>" +
                             "<td class='text-left'>"+data['title']+"</td>+" +
                             "<td class='text-left'>"+data['event']+"</td></tr>");
@@ -94,7 +94,7 @@ $(function () {
 
                     $("#log-table").find('tbody:first')
                         .prepend("<tr id='"+idtr+"'><td class='text-left'>"+data['id']+"</td><td class='text-left'>"+data['time']+"</td>+" +
-                            "<td class='text-left'><a href='#' onclick='qmSendComment("+data['uid']+")'>"+data['name']+"</a></td><td class='text-left'><i class='fa fa-gavel'></i>&nbsp;task</td>" +
+                            "<td class='text-left'><a href='#' class='qm-send-comment' data-uid='"+data['uid']+"'>"+data['name']+"</a></td><td class='text-left'><i class='fa fa-gavel'></i>&nbsp;task</td>" +
                             "<td class='text-left'><i class='fa fa-check-circle' style='color:#428BCA;font-size:14px !important;'></i></td>" +
                             "<td class='text-left'>"+data['title']+"</td>+" +
                             "<td class='text-left'>"+data['event']+"</td></tr>");
@@ -110,7 +110,7 @@ $(function () {
                     var idtr =  'current-tr-'+data["id"];
                     $("#log-table").find('tbody:first')
                         .prepend("<tr id='"+idtr+"'><td class='text-left'>"+data['id']+"</td><td class='text-left'>"+data['time']+"</td>+" +
-                            "<td class='text-left'><a href='#' onclick='qmSendComment("+data['uid']+")'>"+data['name']+"</a></td><td class='text-left'><i class='fa fa-pencil'></i>&nbsp;task</td>" +
+                            "<td class='text-left'><a href='#' class='qm-send-comment' data-uid='"+data['uid']+"'>"+data['name']+"</a></td><td class='text-left'><i class='fa fa-pencil'></i>&nbsp;task</td>" +
                             "<td class='text-left'><i class='fa fa-check-circle' style='color:#428BCA;font-size:14px !important;'></i></td>" +
                             "<td class='text-left'>"+data['title']+"</td>+" +
                             "<td class='text-left'>"+data['event']+"</td></tr>");
@@ -127,7 +127,7 @@ $(function () {
 
                     $("#log-table").find('tbody:first')
                         .prepend("<tr id='"+idtr+"'><td class='text-left'>"+data['id']+"</td><td class='text-left'>"+data['time']+"</td>+" +
-                            "<td class='text-left'><a href='#' onclick='qmSendComment("+data['uid']+")'>"+data['name']+"</a></td>+" +
+                            "<td class='text-left'><a href='#' class='qm-send-comment' data-uid='"+data['uid']+"'>"+data['name']+"</a></td>+" +
                             "<td class='text-left'><i class='fa fa-cube'></i>&nbsp;assign user</td>" +
                             "<td class='text-left'><i class='fa fa-plus-circle' style='color:#5cb85c;'></i></td>" +
                             "<td class='text-left'>"+data['title']+"</td>+" +
