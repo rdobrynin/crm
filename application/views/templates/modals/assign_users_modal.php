@@ -5,21 +5,19 @@
             <div class="modal-content">
                 <div class="row">
                     <div class="col-md-12">
-
                         <div class="form-group">
                             <div class="col-lg-12">
                                 <input class="form-control" id="search-assign-users" placeholder="Search by name" type="text">
                             </div>
                         </div>
-                    <div id="assign_users_details">
-                        <div id="response"></div>
+                        <div id="assign_users_details">
+                            <div id="response"></div>
+                        </div>
                     </div>
-                    </div>
-                    </div>
-                <div class="modal-footer">
-                    <a href="#" data-dismiss="modal" class="btn btn-default" style="width: 100%"><?php print(lang('act_close'))?></a>
                 </div>
-
-           </div>
+                <div class="modal-footer">
+                    <a href="#" data-dismiss="modal" class="btn btn-default" style="width: 100%"><?php print(lang('act_close')) ?></a>
+                </div>
+            </div>
     </form>
 </div>

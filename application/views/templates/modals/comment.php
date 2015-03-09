@@ -19,7 +19,6 @@
                             <input type="text" name="name-comment" id="name-comment" class="form-control" placeholder="<?php print(lang('modal_choose_name'))?>">
                         </div>
                     </div>
-
                 </div>
                 <div class="row">
                     <input type="file" name="userfile-comment" id="userfile-comment"/>

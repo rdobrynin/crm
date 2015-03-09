@@ -628,7 +628,7 @@ $(function () {
             });
         }
         else {
-            var form_data = {
+                form_data = {
                 id: idComment,
                 check: '0'
             };
@@ -645,7 +645,53 @@ $(function () {
         }
     });
 
+//      Check if title is already registered
+    $( "#client_title" ).blur(function() {
+        var form_data = {
+            title: $(this).val()
+        };
+        $.ajax({
+            url: '/ajax/check_client',
+            type: 'POST',
+            data: form_data,
+            dataType: 'json',
+            success: function (msg) {
+                if(msg.result!=null) {
+                    $('#create_company').attr('disabled','disabled');
+                    $('#check_client').show();
+                    $("#check_client").empty().append(msg.result);
+                }
+                else {
+                    $('#create_company').removeAttr('disabled');
+                    $('#check_client').hide();
+                }
+            }
+        });
+    });
 
+// Check if email already registered
+    $( "#client_email" ).blur(function() {
+        var form_data = {
+            email: $(this).val()
+        };
+        $.ajax({
+            url: '/ajax/check_emails',
+            type: 'POST',
+            data: form_data,
+            dataType: 'json',
+            success: function (msg) {
+                if(msg.result!=true) {
+                    $('#create_company').attr('disabled','disabled');
+                    $('#check_email').show();
+                    $("#check_email").empty().append(msg.result);
+                }
+                else {
+                    $('#create_company').removeAttr('disabled');
+                    $('#check_email').hide();
+                }
+            }
+        });
+    });
 
 
 

@@ -100,7 +100,6 @@
         <?php form_close( );?>
     </div>
 </div> <!-- #/addproject_moda -->
-
 <!--Create task for project modal window-->
 <div class="modal white-modal" id="addtask_pr_modal" tabindex="-1" role="dialog" aria-labelledby="addtask_pr_formLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -204,10 +203,6 @@
         <?php form_close( );?>
     </div>
 </div> <!-- #/addtask_pr_modal -->
-
-
-
-
 <!--Update task for project modal window-->
 <div class="modal white-modal" id="edit-task-modal" tabindex="-1" role="dialog" aria-labelledby="edit-task-modal-formLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -216,7 +211,6 @@
         </div>
     </div>
 </div> <!-- #/edittask_pr_modal -->
-
 <!--Demo modal window-->
 <div class="modal" id="demo_modal" tabindex="-1" role="dialog" aria-labelledby="demo_modalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -256,7 +250,6 @@
 
     </div>
 </div> <!-- #/froze_modal -->
-
 <!--Unfroze project modal window-->
 <div class="modal white-modal" id="unfroze-project-modal" tabindex="-1" role="dialog" data-toggle="modal" data-backdrop="static"
      aria-labelledby="unfroze-project-modalLabel" aria-hidden="true">
@@ -275,8 +268,6 @@
 
     </div>
 </div> <!-- #/froze_modal -->
-
-
 <!-- Modal -->
 <div class="modal fade white-modal" id="update-user-modal" tabindex="-1" role="dialog"  aria-hidden="true">
     <div class="modal-dialog">
@@ -290,7 +281,6 @@
             <div class="modal-body">
                 <?php $attributes = array('class' => 'form-signin', 'id' => 'update-user-form', 'autocomplete' => 'on'); ?>
                 <?php echo form_open('#', $attributes); ?>
-
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
@@ -311,12 +301,8 @@
         </div>
     </div>
 </div> <!-- #/myModal -->
-
-
 <div class="modal" id="view_task_modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="view_task_modalLabel" aria-hidden="true">
     <div class="modal-dialog" id="modal-ajax-view">
-
-
     </div>
 </div> <!-- #/addproject_moda -->
 

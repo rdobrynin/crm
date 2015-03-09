@@ -75,7 +75,6 @@
                 <input type="submit"  class="btn btn-default pull-right" id="create_company" value="Create company">
           <?php echo form_close(); ?>
             </div>
-
       <div class="col-md-4 jumbotron-resp">
         <div class="jumbotron">
           <h2>Start your productivity here</h2>
@@ -90,100 +89,3 @@
 </div>
 </div>
 <?php include('footer_view.php');?>
-<script>
-  $(function () {
-    $('#add_phone_client').click(function () {
-      $("#items_phone_client").append('<div class="form-group"><div class="col-sm-4"><input type="text" placeholder="Additional phone number" style="margin-bottom:8px; margin-top: 2px;" class="form-control col-md-4" name="client_phone[]"></div><button  class="btn btn-xs btn-danger delete-phone-client">Delete</button></div></div><div>');
-    });
-    $("body").on("click", ".delete-phone-client", function (e) {
-      $(this).parent("div").remove();
-    });
-
-
-    $('#add_manager_client').click(function () {
-      manager_value = $("#select-manager option:selected").val();
-      var manager_title = $("#select-manager option:selected").text();
-      $('#items_manager_client').append('&nbsp;<span><input type="hidden" name="client_manager[]" value="input_manager_'+ manager_value + '"><div class="label label-default label-tag delete-manager-client" id="delete-manager-client' + manager_value + '">' + manager_title + '&nbsp;<i class="fa fa-times"></i></div></span>');
-
-    });
-    $("body").on("click", ".delete-manager-client", function (e) {;
-      $(this).parent("span").remove();
-    });
-
-
-    $('#add_curator_client').click(function () {
-      curator_value = $("#select-curator option:selected").val();
-      var curator_title = $("#select-curator option:selected").text();
-      $('#items_curator_client').append('&nbsp;<span><input type="hidden" name="client_curator[]" value="input_curator_'+ curator_value + '"><div class="label label-default label-tag delete-curator-client" id="delete-curator-client' + curator_value + '">' + curator_title + '&nbsp;<i class="fa fa-times"></i></div></span>');
-
-    });
-    $("body").on("click", ".delete-curator-client", function (e) {
-      $(this).parent("span").remove();
-    });
-
-
-      res = $('.errors').text();
-      if(res.length > 0 ) {
-        $('.errors').show();
-      }
-      else {
-        $('.errors').hide();
-      }
-
-    $('.errors').click(function () {
-      $(this).slideToggle("fast");
-    });
-
-    $('body').click(function () {
-      $('.errors').slideUp( "fast");
-    });
-
-//      Check if title is already registered
-    $( "#client_title" ).blur(function() {
-      var form_data = {
-        title: $(this).val()
-      };
-      $.ajax({
-        url: '/ajax/check_client',
-        type: 'POST',
-        data: form_data,
-        dataType: 'json',
-        success: function (msg) {
-          if(msg.result!=null) {
-            $('#create_company').attr('disabled','disabled');
-            $('#check_client').show();
-            $("#check_client").empty().append(msg.result);
-          }
-          else {
-            $('#create_company').removeAttr('disabled');
-            $('#check_client').hide();
-          }
-        }
-      });
-    });
-
-// Check if email already registered
-      $( "#client_email" ).blur(function() {
-          var form_data = {
-              email: $(this).val()
-          };
-          $.ajax({
-              url: '/ajax/check_emails',
-              type: 'POST',
-              data: form_data,
-              dataType: 'json',
-              success: function (msg) {
-                  if(msg.result!=true) {
-                      $('#create_company').attr('disabled','disabled');
-                      $('#check_email').show();
-                      $("#check_email").empty().append(msg.result);
-                  }
-                  else {
-                      $('#create_company').removeAttr('disabled');
-                      $('#check_email').hide();
-                  }
-              }
-          });
-      });
-  });
-</script>
