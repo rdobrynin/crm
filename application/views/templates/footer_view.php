@@ -21,7 +21,7 @@
 <?php include('modals/modal_view.php');?>
 <?php include('modals/modal_task.php');?>
 <?php include('modals/modal_confirmation.php');?>
-
+<script data-main="<?php print(base_url());?>js/app_main.js" src="<?php print(base_url());?>assets/js/require.js"></script>
 </body>
 
 </html>

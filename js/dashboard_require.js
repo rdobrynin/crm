@@ -1,3 +1,4 @@
+define(function () {
 $.ajax({
     type: 'GET',
     url: '/ajax/calculateTasks',
@@ -19,5 +20,6 @@ $.ajax({
     error: function () {
         alert('Something went with error')
     }
+});
 });
 

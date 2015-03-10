@@ -1,3 +1,5 @@
+define(function () {
+
 $(function () {
     /**
      * Task View
@@ -13,7 +15,6 @@ $(function () {
             beforeSend: function () {
             },
             success: function (data) {
-                console.log(data);
                 $('#view_task_modal').modal('show');
                 $('#modal-ajax-view').html(data);
             },
@@ -74,14 +75,6 @@ $(function () {
             }
         });
     });
-
-    /**
-     * Task to Complete
-     */
-
-    $('.task-complete').click(function () {
-    });
-
 
 
     /**
@@ -319,4 +312,5 @@ $(function () {
             }
         });
     });
+});
 });

@@ -1,4 +1,5 @@
 //convert datetime to timestamp
+define(function () {
 $(function () {
     // Get last record from events du to current timestamp
     setInterval(function(){
@@ -170,4 +171,5 @@ $(function () {
             }
         });
     }, 3000);
+});
 });

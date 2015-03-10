@@ -1,3 +1,5 @@
+define(function () {
+
 $(function () {
     $('.qm-send-comment').on( "click", function() {
         $data =  $(this).attr('data-uid');
@@ -223,4 +225,61 @@ $(function () {
         });
 
     });
+
+    $('.close-qm').click(function () {
+        $('.qm-body').css('display', 'none');
+        $('#li-comments').removeClass('active');
+    });
+
+    $('#qm-clear-form-btn').click(function () {
+        $("#qm-text, #qm-subject-field").val("");
+    });
+
+    $('.sms-send-alert').click(function () {
+        $('#demo_modal').modal('show');
+    });
+
+
+
+    $('#qm-close-point-name').click(function () {
+        $('#qm-autocomplete').show();
+        $('.point-name-tag').hide();
+    });
+
+
+    $('.toggle-comment').click(function () {
+        idComment = $(this).attr('data-comment');
+        if ( $('#toggle-comment-'+idComment).is( ":checked" ) ) {
+            var form_data = {
+                id: idComment,
+                check: '1'
+            };
+            $.ajax({
+                url: '/ajax/publishComment',
+                type: 'POST',
+                data: form_data,
+                dataType: 'json',
+                success: function (msg) {
+                    $('#adjust-comment-'+idComment).addClass('disabled');
+                }
+            });
+        }
+        else {
+            form_data = {
+                id: idComment,
+                check: '0'
+            };
+            $.ajax({
+                url: '/ajax/publishComment',
+                type: 'POST',
+                data: form_data,
+                dataType: 'json',
+                success: function (msg) {
+                    $('#adjust-comment-'+idComment).removeClass('disabled');
+                }
+            });
+
+        }
+    });
+});
 });

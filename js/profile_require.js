@@ -1,3 +1,5 @@
+
+define(function () {
 $(function () {
     $("body").on("click", ".delete-add-phone", function (e) {
         $(this).parent("span").remove();
@@ -68,4 +70,5 @@ $(function () {
     $('body').click(function () {
         $('.errors').slideUp("fast");
     });
+});
 });
