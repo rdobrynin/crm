@@ -66,51 +66,51 @@
         <?php form_close( );?>
     </div>
 </div> <!-- #/addproject_moda -->
-<script type="text/javascript">
-    introduce = <?php print json_encode($introduce);?>;
-
-    if(typeof(Storage) !== "undefined") {
-        var check = localStorage.getItem('dialog');
-    }
-    if(check == 1 && introduce != 1) {
-        $('#introduce_modal').removeClass('show');
-    }
-
-    if(introduce == 1) {
-        if(typeof(Storage) !== "undefined") {
-            localStorage.setItem("dialog", "0");
-        }
-    }
-
-    $(function () {
-        $('#close-introduce').click(function () {
-           var check = $('#dont-show-whats-new').prop('checked');
-            var user = $('#user_introduce_id').val();
-            var form_data_ = {
-                check: check,
-                id: user
-            };
-            $.ajax({
-                url: '/ajax/updateIntroduce',
-                type: 'POST',
-                data: form_data_,
-                dataType: 'json',
-                success: function (msg) {
-           if(msg == true) {
-                 $('#introduce_modal').removeClass('show');
-                 $('#introduce_modal').modal('hide');
-                $('.b-overlay').css('display','none');
-             }
-                }
-            });
-        });
-        var check = localStorage.getItem('dialog');
-        if ( $( "#introduce_modal" ).is( ".show" ) && check !== '1' ) {
-            $('.b-overlay').css('display','block');
-            if(typeof(Storage) !== "undefined") {
-                localStorage.setItem("dialog", "1");
-            }
-
-        }
-    });
-</script>
+<!--<script type="text/javascript">-->
+<!--    introduce = --><?php //print json_encode($introduce);?><!--;-->
+<!---->
+<!--    if(typeof(Storage) !== "undefined") {-->
+<!--        var check = localStorage.getItem('dialog');-->
+<!--    }-->
+<!--    if(check == 1 && introduce != 1) {-->
+<!--        $('#introduce_modal').removeClass('show');-->
+<!--    }-->
+<!---->
+<!--    if(introduce == 1) {-->
+<!--        if(typeof(Storage) !== "undefined") {-->
+<!--            localStorage.setItem("dialog", "0");-->
+<!--        }-->
+<!--    }-->
+<!---->
+<!--    $(function () {-->
+<!--        $('#close-introduce').click(function () {-->
+<!--           var check = $('#dont-show-whats-new').prop('checked');-->
+<!--            var user = $('#user_introduce_id').val();-->
+<!--            var form_data_ = {-->
+<!--                check: check,-->
+<!--                id: user-->
+<!--            };-->
+<!--            $.ajax({-->
+<!--                url: '/ajax/updateIntroduce',-->
+<!--                type: 'POST',-->
+<!--                data: form_data_,-->
+<!--                dataType: 'json',-->
+<!--                success: function (msg) {-->
+<!--           if(msg == true) {-->
+<!--                 $('#introduce_modal').removeClass('show');-->
+<!--                 $('#introduce_modal').modal('hide');-->
+<!--                $('.b-overlay').css('display','none');-->
+<!--             }-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--        var check = localStorage.getItem('dialog');-->
+<!--        if ( $( "#introduce_modal" ).is( ".show" ) && check !== '1' ) {-->
+<!--            $('.b-overlay').css('display','block');-->
+<!--            if(typeof(Storage) !== "undefined") {-->
+<!--                localStorage.setItem("dialog", "1");-->
+<!--            }-->
+<!---->
+<!--        }-->
+<!--    });-->
+<!--</script>-->

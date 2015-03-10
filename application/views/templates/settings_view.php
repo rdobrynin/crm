@@ -23,21 +23,21 @@
              </fieldset>
          </div>
          </form>
-          <form role="form" id="settings_form_introduce">
-              <div class="well">
-                  <fieldset class="scheduler-border">
-                      <legend class="scheduler-border"><?php print(lang('modal_intro'))?></legend>
-                      <div class="row-fluid">
-                          <div class="col-md-12" style="padding-left: 0">
-                              <div class="form-group">
-                                  <input type="hidden" value="<?php print($user->id); ?>" name="user_id_dialog" id="user_id_dialog">
-                                  <div class="toggle-div-dialog">
-                                      <input type="checkbox" id="toggle-dialog-btn" data-off="OFF" data-on="ON"  class="onoff"  <?php if ($user->introduce==0): ?> checked  <?php endif ?> data-onstyle="success" data-offstyle="danger" data-toggle="toggle">
-                                  </div>
-                              </div>
-                  </fieldset>
-              </div>
-          </form>
+<!--          <form role="form" id="settings_form_introduce">-->
+<!--              <div class="well">-->
+<!--                  <fieldset class="scheduler-border">-->
+<!--                      <legend class="scheduler-border">--><?php //print(lang('modal_intro'))?><!--</legend>-->
+<!--                      <div class="row-fluid">-->
+<!--                          <div class="col-md-12" style="padding-left: 0">-->
+<!--                              <div class="form-group">-->
+<!--                                  <input type="hidden" value="--><?php //print($user->id); ?><!--" name="user_id_dialog" id="user_id_dialog">-->
+<!--                                  <div class="toggle-div-dialog">-->
+<!--                                      <input type="checkbox" id="toggle-dialog-btn" data-off="OFF" data-on="ON"  class="onoff"  --><?php //if ($user->introduce==0): ?><!-- checked  --><?php //endif ?><!-- data-onstyle="success" data-offstyle="danger" data-toggle="toggle">-->
+<!--                                  </div>-->
+<!--                              </div>-->
+<!--                  </fieldset>-->
+<!--              </div>-->
+<!--          </form>-->
 
           <form role="form" id="settings_form_message">
               <div class="well">
