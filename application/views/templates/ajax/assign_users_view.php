@@ -15,7 +15,7 @@
                             </span>
                             </div>
                             <span class="assign-name"> <?php print($user_name[$uv->id]); ?></span>
-                            <span class="pull-right"><a href="javascript:void(0)"  onClick="assignUserProject('<?php print($uv->id); ?>','<?php print($id); ?>')" class="btn btn-success">Assign</a></span>
+                            <span class="pull-right"><a href="javascript:void(0)" data-uid="<?php print($uv->id); ?>" data-project="<?php print($id); ?>"  class="btn btn-success assign-user-project">Assign</a></span>
                         </div>
                     </div>
                 </li>

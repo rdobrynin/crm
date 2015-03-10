@@ -106,33 +106,38 @@ $(function () {
     });
 
 
-    $('.assign-user-project').click(function () {
-        var $data,$project;
-        $data= $(this).attr('data-uid');
-        $project= $(this).attr('data-project');
-        var form_data = {
-            id: $data,
-            pid: $project
-        };
-        $.ajax({
-            url: '/ajax/assignUserProject',
-            type: 'POST',
-            data: form_data,
-            dataType: 'json',
-            success: function (msg) {
-                if (msg.id != 'false') {
-                    console.log(msg);
-                    $('#assign-user-li-' + $data).fadeOut('slow');
-                    $('#assign-panel-'+$project).append('&nbsp;<span class="label label-default label-tag" <i class="fa fa-mail"></i>&nbsp;<span class="get_old_mail">'+msg.full_name+
-                        ' </span>&nbsp;');
-                }
-                else {
-                    alert('Something was with error');
-                }
-            }
-        });
-    });
 
+
+    $('#assign_user_modal').on('shown.bs.modal', function (e) {
+
+        $('.assign-user-project').click(function () {
+            var $data,$project;
+            $data= $(this).attr('data-uid');
+            $project= $(this).attr('data-project');
+            var form_data = {
+                id: $data,
+                pid: $project
+            };
+            $.ajax({
+                url: '/ajax/assignUserProject',
+                type: 'POST',
+                data: form_data,
+                dataType: 'json',
+                success: function (msg) {
+                    if (msg.id != 'false') {
+                        console.log(msg);
+                        $('#assign-user-li-' + $data).fadeOut('slow');
+                        $('#assign-panel-'+$project).append('&nbsp;<span class="label label-default label-tag" <i class="fa fa-mail"></i>&nbsp;<span class="get_old_mail">'+msg.full_name+
+                            ' </span>&nbsp;');
+                    }
+                    else {
+                        alert('Something was with error');
+                    }
+                }
+            });
+        });
+
+    })
 
 
 });

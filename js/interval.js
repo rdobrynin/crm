@@ -13,12 +13,11 @@ $(function () {
             if(new_time_int-3.5 < data_time) {
 //Get left sidebar status
                 $.ajax({
-                    url: '/ajax/getUserbyId',
+                    url: '/ajax/getOwnbyId',
                     type: 'GET',
                     dataType: 'json',
                     success: function (msg) {
                         var status = msg.user[0]['sidebar_left'];
-
                         if(status == '1') {
                             $('.mini-inbox').css('display','none');
                         }
