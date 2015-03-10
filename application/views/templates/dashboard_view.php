@@ -113,19 +113,17 @@
                                                     <td><?php print($tv['title']); ?></td>
                                                     <td><?php print($project_title[$tv['pid']]); ?></td>
                                                     <td><span class="muted"><?php print(substr($tv['desc'], 0,20)).' '.'...';?></span></td>
-                                                    <td>
-                                                        <span class="label <?php print(task_status_label($tv['status'])); ?> label-xs"><?php print(task_status($tv['status'])); ?></span>
-                                                    </td>
+                                                    <td><span class="label <?php print(task_status_label($tv['status'])); ?> label-xs"><?php print(task_status($tv['status'])); ?></span></td>
                                                     <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
                                                     <td><?php print(check_cts($tv['cts'])); ?></td>
                                                     <td class="text-left"><?php print(date('jS F Y G:i', $tv['due_time'])); ?></td>
                                                     <?php if($user->role==5 OR $user->role==4):?>
                                                         <td>
                                                             <?php if($user->id==$tv['uid']):?>
-                                                            <a href="javascript:void(0);" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
-                                                            <a href="javascript:void(0);" onClick="taskToEdit(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
+                                                            <a href="javascript:void(0);" class="task-ready" data-id="<?php print($tv['id']); ?>" style="text-decoration: none;"><i class="fa fa-play"></i></a>
+                                                            <a href="javascript:void(0);" class="task-edit" data-id="<?php print($tv['id']); ?>" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
                                                             <?php endif ?>
-                                                            <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)"  style="text-decoration: none;"><i class="fa fa-eye"></i></a>
+                                                            <a href="javascript:void(0);" class="task-view" data-id="<?php print($tv['id']); ?>" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                                         <?php if($user->id==$tv['uid']):?>
                                                             <a href="javascript:void(0);" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv['id']); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>
                                                         <?php endif ?>
@@ -223,11 +221,11 @@
                                                 <td>
                                                     <?php if($user->role!=1):?>
                                                         <?php if ($user->id == $tv['uid'] ): ?>
-                                                            <a href="javascript:void(0);" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
-                                                            <a href="javascript:void(0);" onClick="taskToEdit(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
+                                                            <a href="javascript:void(0);" class="task-ready" data-id="<?php print($tv['id']); ?>" style="text-decoration: none;"><i class="fa fa-play"></i></a>
+                                                            <a href="javascript:void(0);" class="task-edit" data-id="<?php print($tv['id']); ?>"  style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
                                                         <?php endif ?>
                                                     <?php endif ?>
-                                                    <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
+                                                    <a href="javascript:void(0);"  class="task-view" data-id="<?php print($tv['id']); ?>" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                                     <?php if($user->role!=1 AND $user->id == $tv['uid'] ):?>
                                                     <a href="javascript:void(0);" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv['id']); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>
                                                     <?php endif ?>
@@ -287,12 +285,12 @@
                                                     <td><span class="muted"><?php print(substr($tv['desc'], 0,20)).' '.'...';?></span></td>
                                                     <td><span><i class="fa fa-circle circle-priority" style="<?php if ($tv['priority'] ==0): ?> color:#428bca;<?php endif ?><?php if ($tv['priority'] ==1): ?> color:#f89406;<?php endif ?><?php if ($tv['priority'] ==2): ?> color:#d9534f;<?php endif ?>"></i></span><?php echo priority_status_index($tv['priority']) ?></td>
                                                     <td class="text-left"><?php print(date('jS F Y G:i', $tv['due_time'])); ?></td>
-                                                    <td class="text-center"><a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-eye"></i></a></td>
+                                                    <td class="text-center"><a href="javascript:void(0);"  class="task-view" data-id="<?php print($tv['id']); ?>" style="text-decoration: none;"><i class="fa fa-eye"></i></a></td>
                                                     <?php if ($user->id == $tv['implementor']): ?>
                                                     <td class="text-center">
-                                                        <a href="javascript:void(0);" style="color:#5cb85c;" class="btn btn-xs imp-adjust-btn"  onClick="taskToProcess(<?php print($tv['id']); ?>)"  data-toggle="tooltip" data-placement="top" title="process"><i class="fa fa-play-circle"></i></a>
-                                                        <a href="javascript:void(0);"  onClick="impControl(<?php print($tv['id']); ?>,3)" class="btn btn-xs imp-adjust-btn" data-toggle="tooltip" data-placement="top" title="complete"><i class="fa fa-check-circle"></i></a>
-                                                        <a href="javascript:void(0);" style="color:#d9534f;" class="btn btn-xs imp-adjust-btn" onClick="impControl(<?php print($tv['id']); ?>,1)" data-toggle="tooltip" data-placement="top" title="unwant"><i class="fa fa-eye-slash"></i></a>
+                                                        <a href="javascript:void(0);" style="color:#5cb85c;" class="btn btn-xs imp-adjust-btn task-process" data-id="<?php print($tv['id']); ?>" data-toggle="tooltip" data-placement="top" title="process"><i class="fa fa-play-circle"></i></a>
+                                                        <a href="javascript:void(0);" data-id="<?php print($tv['id']); ?>" data-action="3" class="btn btn-xs imp-adjust-btn imp-control" data-toggle="tooltip" data-placement="top" title="complete"><i class="fa fa-check-circle"></i></a>
+                                                        <a href="javascript:void(0);" style="color:#d9534f;" class="btn btn-xs imp-adjust-btn imp-control" data-id="<?php print($tv['id']); ?>" data-action="1" data-toggle="tooltip" data-placement="top" title="unwant"><i class="fa fa-eye-slash"></i></a>
                                                         <?php else: ?>
 <td class="text-center">
     -
@@ -369,10 +367,10 @@
                                                 <td><?php print(check_cts($tv['cts'])); ?></td>
                                                 <td class="text-left"><?php print(date('jS F Y G:i', $tv['due_time'])); ?></td>
                                                 <td>
-                                                    <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
+                                                    <a href="javascript:void(0);"  class="task-view" data-id="<?php print($tv['id']); ?>" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                                     <?php if ($user->id == $tv['implementor'] && $user->role==2): ?>
-                                                        <a href="javascript:void(0);"  onClick="impControlComplete(<?php print($tv['id']); ?>,'<?php print(check_cts($tv['cts'])); ?>')" class="btn btn-xs imp-adjust-btn" data-toggle="tooltip" data-placement="top" title="complete"><i class="fa fa-check-circle"></i></a>
-                                                        <a href="javascript:void(0);" style="color:#d9534f;" class="btn btn-xs imp-adjust-btn" onClick="impControl(<?php print($tv['id']); ?>,1)" data-toggle="tooltip" data-placement="top" title="unwant"><i class="fa fa-eye-slash"></i></a>
+                                                        <a href="javascript:void(0);" data-id="<?php print($tv['id']); ?>" data-cts="<?php print(check_cts($tv['cts'])); ?>"  class="btn btn-xs imp-adjust-btn imp-complete" data-toggle="tooltip" data-placement="top" title="complete"><i class="fa fa-check-circle"></i></a>
+                                                        <a href="javascript:void(0);" style="color:#d9534f;" class="btn btn-xs imp-adjust-btn imp-control" data-id="<?php print($tv['id']); ?>" data-action="1" data-toggle="tooltip" data-placement="top" title="unwant"><i class="fa fa-eye-slash"></i></a>
                                                     <?php endif ?>
                                                 </td>
                                             </tr>

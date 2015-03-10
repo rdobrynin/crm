@@ -29,9 +29,9 @@
   <div class="show-info-online"><div class="show-info-content-online"></div></div>
 
   <ul class="nav navbar-nav navbar-right navbar-user">
-      <?php if ($user->id==14): ?>
-          <li class="add-client"><a href="#" onClick="clearCache()">Clear cache</a></li>
-      <?php endif ?>
+<!--      --><?php //if ($user->id==14): ?>
+<!--          <li class="add-client"><a href="#" class="clear-cache">Clear cache</a></li>-->
+<!--      --><?php //endif ?>
       <li id="li-comments"> <a href="#" class="send-comment" data-uid="<?php print($user->id)?>"><span class="icon-comment"></a></li>
       <li id="float-users"> <a href="#"><span class="icon-users"></span></a></li>
       <li class="dropdown user-dropdown">

@@ -11,7 +11,7 @@
                     <?php if ($pv['froze'] != 1): ?>
                         <table class="table" style="border: 0">
                             <tbody>
-                            <tr onClick="projectToView(<?php print($pv['pid']); ?>)" style="cursor: pointer;">
+                            <tr class="project-view" data-id="<?php print($pv['pid']); ?>"  style="cursor: pointer;">
                                 <td style="width: 5%; text-align: left;">#<?php print($pv['pid']); ?></td>
                                 <td style="width: 15%; text-align: left;" class="current-title-project"><?php print($pv['title']); ?></td>
                                 <td style="width: 20%; text-align: left;"><?php print($pv['description']); ?></td>
@@ -64,11 +64,11 @@
                                                         <?php if($user->role==5 OR $user->role==4):?>
                                                             <?php if ($tv['status']!=3): ?>
                                                                 <?php if($user->role==2):?>
-                                                                    <a href="javascript:void(0);" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
-                                                                    <a href="javascript:void(0);" onClick="taskToEdit(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
+                                                                    <a href="javascript:void(0);" class="task-ready" data-id="<?php print($tv['id']); ?>" style="text-decoration: none;"><i class="fa fa-play"></i></a>
+                                                                    <a href="javascript:void(0);" class="task-edit" data-id="<?php print($tv['id']); ?>" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
                                                                 <?php endif ?>
                                                             <?php endif ?>
-                                                            <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
+                                                            <a href="javascript:void(0);"  class="task-view" data-id="<?php print($tv['id']); ?>" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                                             <?php if ($tv['status']!=2 && $tv['status']!=3): ?>
                                                                 <?php if ($user->id ==$tv['uid']): ?>
 
@@ -77,7 +77,7 @@
                                                             <?php endif ?>
 
                                                         <?php else: ?>
-                                                            <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)"  style="text-decoration: none;"><i class="fa fa-eye"></i></a>
+                                                            <a href="javascript:void(0);" class="task-view" data-id="<?php print($tv['id']); ?>" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                                         <?php endif ?>
                                                     </td>
                                                 </tr>

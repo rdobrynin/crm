@@ -88,6 +88,8 @@
     <script src="<?php print(base_url()); ?>assets/js/jquery.datetimepicker.js"></script>
     <script src="<?php print(base_url()); ?>assets/js/jquery.autocomplete.js"></script>
     <script src="<?php print(base_url()); ?>assets/js/bootstrap-toggle.js"></script>
+    <script src="<?php print(base_url()); ?>js/task_action.js"></script>
+    <script src="<?php print(base_url()); ?>js/project_action.js"></script>
     <script src="<?php print(base_url()); ?>js/script.js"></script>
     <script src="<?php print(base_url()); ?>js/dashboard.js"></script>
     <script src="<?php print(base_url()); ?>js/functions.js"></script>
@@ -101,7 +103,6 @@
     <script src="<?php print(base_url()); ?>js/users.js"></script>
     <script src="<?php print(base_url()); ?>js/edit_task.js"></script>
     <script src="<?php print(base_url()); ?>js/comment.js"></script>
-    <script src="<?php print(base_url()); ?>js/task_action.js"></script>
     <!-- Bootstrap core CSS -->
 <!--    <link rel="stylesheet/less" type="text/css" href="--><?php //print(base_url()); ?><!--less/style.less">-->
     <script src="<?php print(base_url()); ?>assets/js/less.min.js" type="text/javascript"></script>

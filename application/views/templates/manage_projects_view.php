@@ -34,11 +34,11 @@
                             </div>
                             <?php if ($projects[$pv['pid']]['owner'] == $user->id): ?>
                                 <?php if ($projects[$pv['pid']]['froze'] == 0): ?>
-                                    <a href="javascript:void(0);"  onClick="frozeProject('<?php print($pv['pid']); ?>')" class="btn btn-danger">Froze project</a>&nbsp;
+                                    <a href="javascript:void(0);" data-id="<?php print($pv['pid']); ?>" class="btn btn-danger froze-project">Froze project</a>&nbsp;
                                 <?php else: ?>
-                                    <a href="javascript:void(0);"  onClick="unfrozeProject('<?php print($pv['pid']); ?>')" class="btn btn-primary">Unfroze project</a>&nbsp;
+                                    <a href="javascript:void(0);" data-id="<?php print($pv['pid']); ?>" class="btn btn-primary unfroze-project">Unfroze project</a>&nbsp;
                                 <?php endif ?>
-                                    <a href="javascript:void(0);"  onClick="openAssignUsersProject('<?php print($pv['pid']); ?>')" class="btn btn-success test <?php if ($projects[$pv['pid']]['froze'] == 1):  ?><?php print('disabled'); ?><?php endif ?>">Assign member</a>
+                                    <a href="javascript:void(0);" data-id="<?php print($pv['pid']); ?>" class="btn btn-success test assign-user-modal <?php if ($projects[$pv['pid']]['froze'] == 1):  ?><?php print('disabled'); ?><?php endif ?>">Assign member</a>
                             <?php endif ?>
                         </div>
                     </div>

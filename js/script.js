@@ -3,8 +3,13 @@ $('.selectpicker').selectpicker({
     size: 14
 });
 
+
 $(function() {
 
+    $('.show-demo').click(function () {
+        $('#demo_modal').modal('show');
+        return false;
+    });
 
     $('#invite-person').click(function () {
 

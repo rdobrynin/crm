@@ -1,5 +1,34 @@
 
 $(function () {
+    $('.update-user').click(function () {
+        var $data,$role;
+        $data = $(this).attr('data-uid');
+        $('#update-user-modal').modal('show');
+        $('#update-user-send-btn').click(function () {
+            $role = $('#update-role-user-select').val();
+            var form_data_ = {
+                id: $data,
+                role: $role
+            };
+            $.ajax({
+                url: '/ajax/updateUser',
+                type: 'POST',
+                data: form_data_,
+                dataType: 'json',
+                success: function (msg) {
+                    if (msg['user'] == true) {
+                        $('#update-user-notificate').fadeIn('slow').show();
+                        setTimeout(function () {
+                            $('#update-user-modal').modal('hide');
+                            $('#update-user-notificate').hide();
+                        }, 2000);
+                    }
+                }
+            });
+        });
+    });
+
+
 $('[data-toggle=confirmation-activate-user]').confirmation(
     {
         placement: 'left',

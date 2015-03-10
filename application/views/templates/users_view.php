@@ -77,7 +77,7 @@
                                                     <td>
                                                         <?php if ($user->role ==5): ?>
 
-                                                        <a href="javascript:void(0);" data-title="Edit" onClick="updateUser(<?php print($uv['id']); ?>)"><i class="fa fa-pencil"></i></a>
+                                                        <a href="javascript:void(0);" class="update-user" data-title="Edit" data-uid="<?php print($uv['id']); ?>"><i class="fa fa-pencil"></i></a>
                                                         <?php endif ?>
                                                     </td>
                                                     <td>

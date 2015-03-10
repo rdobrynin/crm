@@ -52,10 +52,10 @@
                                         <td><?php print(check_cts($tv['cts'])); ?></td>
                                         <td class="text-left"><?php print(date('jS F Y G:i', $tv['due_time'])); ?></td>
                                             <td>
-                                                <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
+                                                <a href="javascript:void(0);"  class="task-view" data-id="<?php print($tv['id']); ?>" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                                 <?php if ($user->id == $tv['implementor']): ?>
-                                                    <a href="javascript:void(0);"  onClick="impControlComplete(<?php print($tv['id']); ?>,'<?php print(check_cts($tv['cts'])); ?>')" class="btn btn-xs imp-adjust-btn" data-toggle="tooltip" data-placement="top" title="complete"><i class="fa fa-check-circle"></i></a>
-                                                    <a href="javascript:void(0);" style="color:#d9534f;" class="btn btn-xs imp-adjust-btn" onClick="impControl(<?php print($tv['id']); ?>,1)" data-toggle="tooltip" data-placement="top" title="unwant"><i class="fa fa-eye-slash"></i></a>
+                                                    <a href="javascript:void(0);" data-id="(<?php print($tv['id']); ?>" data-cts="<?php print(check_cts($tv['cts'])); ?>" class="btn btn-xs imp-adjust-btn imp-complete" data-toggle="tooltip" data-placement="top" title="complete"><i class="fa fa-check-circle"></i></a>
+                                                    <a href="javascript:void(0);" style="color:#d9534f;" class="btn btn-xs imp-adjust-btn imp-control" data-id="<?php print($tv['id']); ?>" data-action="1" data-toggle="tooltip" data-placement="top" title="unwant"><i class="fa fa-eye-slash"></i></a>
                                                 <?php endif ?>
                                             </td>
                                     </tr>
@@ -130,12 +130,12 @@
                                       <?php if($user->role==5 OR $user->role==4):?>
                                           <td>
                                               <?php if ($tv['status']!=5): ?>
-                                              <a href="javascript:void(0);" onClick="taskToReady(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-play"></i></a>
+                                              <a href="javascript:void(0);" class="task-ready" data-id="<?php print($tv['id']); ?>" style="text-decoration: none;"><i class="fa fa-play"></i></a>
                                               <?php endif ?>
                                               <?php if($user->id==$tv['uid']):?>
-                                                      <a href="javascript:void(0);" onClick="taskToEdit(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
+                                                      <a href="javascript:void(0);" class="task-edit" data-id="<?php print($tv['id']); ?>" style="text-decoration: none;"><i class="fa fa-pencil"></i></a>
                                               <?php endif ?>
-                                              <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
+                                              <a href="javascript:void(0);" class="task-view" data-id="<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                           <?php if ($tv['status']!=2 && $tv['status']!=3): ?>
                                               <?php if($user->id==$tv['uid']):?>
                                               <a href="javascript:void(0);" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="<?php print($tv['id']); ?>" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>
@@ -220,7 +220,7 @@
                                         <td><?php print(check_cts($tv['cts'])); ?></td>
                                         <td class="text-left"><?php print(date('jS F Y G:i', $tv['due_time'])); ?></td>
                                             <td>
-                                                <a href="javascript:void(0);" onMouseDown="taskToView(<?php print($tv['id']); ?>)" style="text-decoration: none;"><i class="fa fa-eye"></i></a>
+                                                <a href="javascript:void(0);" class="task-view" data-id="<?php print($tv['id']); ?>"  style="text-decoration: none;"><i class="fa fa-eye"></i></a>
                                             </td>
                                     </tr>
                                 <?php endif ?>
