@@ -1324,7 +1324,7 @@ class Ajax extends CI_Controller {
             $result['uid'] =  $uid;
             $result['pid'] =  $pid;
 //            todo
-            if($this->project_model->assign_project_update($result['id'], 1)) {
+            if($this->project_model->assign_project_update($result['id'],$pid, 1)) {
                 $result['insert'] =  true;
                 $name_array =  $this->admin_model->get_user_id($uid);
                 $assign_name_array =  $this->admin_model->get_user_id($id);

@@ -69,11 +69,13 @@ class Project_model extends CI_Model {
      * @return mixed
      */
 
-    public function assign_project_update ($uid, $assign) {
+    public function assign_project_update ($uid,$pid, $assign) {
         $data = array (
             'assign' => $assign
         );
-        $this->db->where('uid', $uid);
+        $this->db
+            ->where('uid', $uid)
+            ->where('pid', $pid);
         $update = $this->db->update('projects', $data);
         return $update;
     }
