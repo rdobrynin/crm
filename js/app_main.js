@@ -1,4 +1,3 @@
-
 requirejs.config({
     "paths": {
         "jquery": "/bower_components/jquery/dist/jquery.min",
@@ -75,9 +74,25 @@ requirejs.config({
 });
 
 
-require(['jquery', 'bootstrap_toggle'], function ($) {
-    $('.onoff').bootstrapToggle({
-        size:'mini'
+require(['jquery','domReady'], function ($) {
+    $(function () {
+        console.log('test');
     });
 });
 
+
+require(['jquery','domReady','sidebar'], function ($,sidebar) {
+    return sidebar;
+});
+
+require(['jquery','domReady','bootstrap','bootstrap_select','bootstrap_datetimepicker','modal'], function ($,modal) {
+    return modal;
+});
+
+require(['jquery','domReady','bootstrap','functions'], function ($,functions) {
+    return functions;
+});
+
+require(['jquery','domReady','bootstrap_scrollbar','onload'], function ($,onload) {
+    return onload;
+});
