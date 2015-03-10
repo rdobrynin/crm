@@ -3,7 +3,7 @@ $(function () {
      * Task View
      */
 
-    $('.task-view').click(function () {
+    $( "body" ).delegate( ".task-view", "click", function() {
         var $data;
         $data= $(this).attr('data-id');
         $.ajax({
@@ -27,7 +27,7 @@ $(function () {
      * Task to edit
      */
 
-    $('.task-edit').click(function () {
+    $( "body" ).delegate( ".task-edit", "click", function() {
         var $data;
         $data= $(this).attr('data-id');
         $.ajax({
@@ -88,7 +88,7 @@ $(function () {
      * Task to Process
      */
 
-    $('.task-process').click(function () {
+    $( "body" ).delegate( ".task-process", "click", function() {
         $data= $(this).attr('data-id');
         var form_data = {
             id: $data
@@ -107,7 +107,7 @@ $(function () {
      * Task to Ready
      */
 
-    $('.task-ready').click(function () {
+    $( "body" ).delegate( ".task-ready", "click", function() {
         $data= $(this).attr('data-id');
         var form_data = {
             id: $data,
@@ -124,7 +124,7 @@ $(function () {
         });
     });
 
-    $('.imp-complete').click(function () {
+    $( "body" ).delegate( ".imp-complete", "click", function() {
         var $data,$cts;
         $data= $(this).attr('data-id');
         $cts= $(this).attr('data-cts');
@@ -162,7 +162,7 @@ $(function () {
      * Implement Control action
      */
 
-    $('.imp-control').click(function () {
+    $( "body" ).delegate( ".task-control", "click", function() {
         var $data,$action;
         $data= $(this).attr('data-id');
         $action= $(this).attr('data-action');
@@ -258,7 +258,7 @@ $(function () {
                         $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html(msg.new['desc']);
                         $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html('<span><i class="fa fa-circle circle-priority" style="'+priority_color+'"></i></span>'+msg.new_priority_label);
                         $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html(msg.dueto);
-                        $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html('<a href="#" class="task-edit" data-id="'+$tid+'" style="text-decoration: none;"><i class="fa fa-play"></i></a><a href="#" class="task-edit" data-id="'+$tid+'" style="text-decoration: none;"><i class="fa fa-pencil"></i></a><a href="#" class="task-view" data-id="'+$tid+'" style="text-decoration: none;"><i class="fa fa-eye"></i></a><a href="#;" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="'+$tid+'" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>');
+                        $('#approve_tasks_table').find('#tr-dashboard-task-'+$tid).find('td:first').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').next('td').html('<a href="#" class="task-edit" data-id="'+$tid+'" style="text-decoration: none;"><i class="fa fa-play"></i></a><a href="#" class="task-edit" data-id="'+$tid+'" style="text-decoration: none;"><i class="fa fa-pencil"></i></a><a href="#" class="task-view" data-id="'+$tid+'" style="text-decoration: none;"><i class="fa fa-eye"></i></a><a href="#" data-toggle="confirmation-delete-current-task" data-singleton="true" data-target="'+$tid+'" style="text-decoration: none;cursor: pointer;"><span class="icon-remove"></span></a>');
                         blurRadius = 0;
                         $('#edit-task-modal').hide();
                         $('#tr-dashboard-task-'+$tid).css({

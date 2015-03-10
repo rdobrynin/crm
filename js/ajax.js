@@ -405,8 +405,8 @@ $(function () {
                         $("#approve-task-table").find('tbody:first')
                             .prepend("<tr id='" + idtr + "'><td class='text-left'>#" + msg['newtask']['id'] + "</td><td class='text-left'><span style='color:#5cb85c;'>created now</span></td>+" +
                                 "<td class='text-left'><span class='label label-xs " + getLabelTask(msg['newtask']['label']) + " '>" + msg['text_label']['title'] + "</span></td>+" +
-                                "<td class='text-left'><a href='#' class='hover-td-name' onClick='qmSendComment(" + msg['newtask']['implementor'] + ")'>" + msg['imp_name'] + "</a></td>" +
-                                "<td class='text-left'><a href='#' class='hover-td-name' onClick='qmSendComment(" + msg['newtask']['uid'] + ")'>" + msg['cur_name'] + "</a></td>" +
+                                "<td class='text-left'><a href='#' class='hover-td-name qm-send-comment' data-uid='" + msg['newtask']['implementor'] + "'>" + msg['imp_name'] + "</a></td>" +
+                                "<td class='text-left'><a href='#' class='hover-td-name qm-send-comment' data-uid='" + msg['newtask']['uid'] + "'>" + msg['cur_name'] + "</a></td>" +
                                 "<td class='text-left'>" + msg['newtask']['title'] + "</td>+" +
                                 "<td class='text-left'>" + msg.project_task + "</td>+" +
                                 "<td class='text-left'>" + msg['newtask']['desc'] + "</td>+" +
@@ -421,8 +421,8 @@ $(function () {
                         $("#common-tasks-table").find('tbody:first')
                             .prepend("<tr id='" + idtr + "'><td class='text-left'>#" + msg['newtask']['id'] + "</td><td class='text-left'><span style='color:#5cb85c;'>created now</span></td>+" +
                                 "<td class='text-left'>" + msg['newtask']['label'] + "</td>+" +
-                                "<td class='text-left'><a href='#' class='hover-td-name' onClick='qmSendComment(" + msg['newtask']['implementor'] + ")'>" + msg['imp_name'] + "</a></td>" +
-                                "<td class='text-left'><a href='#' class='hover-td-name' onClick='qmSendComment(" + msg['newtask']['uid'] + ")'>" + msg['cur_name'] + "</a></td>" +
+                                "<td class='text-left'><a href='#' class='hover-td-name qm-send-comment' data-uid='" + msg['newtask']['implementor'] + "'>" + msg['imp_name'] + "</a></td>" +
+                                "<td class='text-left'><a href='#' class='hover-td-name qm-send-comment' data-uid='" + msg['newtask']['uid'] + "'>" + msg['cur_name'] + "</a></td>" +
                                 "<td class='text-left'>" + msg['newtask']['title'] + "</td>+" +
                                 "<td class='text-left'>" + msg['newtask']['pid'] + "</td>+" +
                                 "<td class='text-left'>" + msg['newtask']['desc'] + "</td>+" +
@@ -554,6 +554,7 @@ $(function () {
      * Delete confirmation task
      **/
 
+
     $('[data-toggle=confirmation-delete-current-task]').confirmation({
             placement: 'left',
             animation: false,
@@ -591,8 +592,8 @@ $(function () {
                 $('[data-toggle=confirmation-delete-current-task]').confirmation('hide');
                 return false;
             }
-        }
-    );
+        });
+
 
 
     $.ajax({
