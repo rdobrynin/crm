@@ -694,11 +694,7 @@ $(function () {
             }
         });
     });
-
-
-
 });
 //  END READY FUNCTION
-
 
 

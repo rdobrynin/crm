@@ -144,8 +144,8 @@
         <input type="hidden" name="user_edit_project_id" id="user_edit_project_id" value="<?php print($task->pid)?>">
         <input type="hidden" name="user_edit_key_id" id="user_edit_key_id" value="<?php print($task->key)?>">
         <input type="hidden" name="user_task_edit_id" id="user_task_edit_id" value="<?php print($task->id)?>">
-        <a href="#" class="btn btn-success btn-lg pull-left" onclick="taskToUpdate(<?php print($task->id)?>)" id="edittask_pr_btn">Update task</a>
-        <a href="#" class="btn btn-default btn-lg pull-right" onclick=" $('#edit-task-modal').hide();"  id="close-form-edit-task">Close</a>
-        <a href="#" class="btn btn-primary btn-lg pull-right" onclick="taskToRestore(<?php print($task->id)?>)" id="clear-form-edit-task">Restore</a>
+        <a href="#" class="btn btn-success btn-lg pull-left" data-id="<?php print($task->id)?>" id="edittask_pr_btn">Update task</a>
+        <a href="#" class="btn btn-default btn-lg pull-right" id="close-form-edit-task">Close</a>
+        <a href="#" class="btn btn-primary btn-lg pull-right"  data-id="<?php print($task->id)?>" id="clear-form-edit-task">Restore</a>
     </div>
 </div>
