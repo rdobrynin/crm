@@ -123,14 +123,22 @@ class Dashboard extends CI_Controller {
         else {
             $data['curators']=false;
         }
-
+//        $fr_projects = $this->task_model->getTest();
         $task_array = $this->task_model->countTasks();
         if($task_array) {
+
+
+
             $data['tasks']= $task_array;
         }
         else {
             $data['tasks']=false;
         }
+
+//var_dump($data['tasks']);
+//        exit();
+
+
 
         $comments = $this->message_model->getPublishComments();
         if($comments) {

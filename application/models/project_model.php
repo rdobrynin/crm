@@ -146,6 +146,30 @@ class Project_model extends CI_Model {
 
 
 
+    /**
+     * Get projects
+     * @return mixed
+     */
+
+    public function getProjectFroze() {
+        $return = array();
+        $query = $this->db->where('froze', '1')->get('project');
+        $result = $query->result_array();
+        if ($query->num_rows > 0) {
+            if (!empty($result)) {
+                foreach ($result as $pr) {
+                    $return[$pr["pid"]] = $pr["froze"];
+                }
+            }
+        }
+        else {
+            $return = FALSE;
+        }
+
+        return $return;
+    }
+
+
 //    get by ipd projects
 
     public function getProjectsAssign($pid) {

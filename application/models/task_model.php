@@ -226,14 +226,21 @@ class Task_model extends CI_Model {
 
 
     /**
-     * Count tasks
+     * Count tasks if not frozen
      * @return mixed
      */
 
+
     public function countTasks() {
-        $query = $this->db->get('task');
+        $query = $this->db->select('*')
+            ->from('project')
+            ->join('task', 'project.pid = task.pid')
+            ->where('project.froze', 0)
+            ->get();
+
         return $query->result_array();
     }
+
 
     /**
      * Create Event
