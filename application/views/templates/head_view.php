@@ -45,6 +45,12 @@
         <?php else: ?>
         <link href="<?php print(base_url()); ?>css/sidebar_left.css" rel="stylesheet">
     <?php endif ?>
+    <?php if ($user->sidebar_right == '1'): ?>
+        <link href="<?php print(base_url()); ?>css/sidebar_right_open.css" rel="stylesheet">
+    <?php else: ?>
+        <link href="<?php print(base_url()); ?>css/sidebar_right_close.css" rel="stylesheet">
+    <?php endif ?>
+
     <!-- Bootstrap core CSS -->
 <!--    <link rel="stylesheet/less" type="text/css" href="--><?php //print(base_url()); ?><!--less/style.less">-->
 <!--    <script src="--><?php //print(base_url()); ?><!--assets/js/less.min.js" type="text/javascript"></script>-->
