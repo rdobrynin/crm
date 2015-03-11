@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b5c62b4-a621-4d4d-8746-6975ce18f490" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/elements.css" afterPath="$PROJECT_DIR$/css/elements.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/head_view.php" afterPath="$PROJECT_DIR$/application/views/templates/head_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,10 +26,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="head_view.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="head_view.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/templates/head_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="70" selection-start="388" selection-end="388" vertical-scroll-proportion="-8.0" vertical-offset="0" max-vertical-offset="2575">
+            <state line="17" column="62" selection-start="1401" selection-end="1401" vertical-scroll-proportion="0.27843493" vertical-offset="0" max-vertical-offset="2971">
               <folding />
             </state>
           </provider>
@@ -68,10 +66,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="elements.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="elements.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/elements.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="622" column="0" selection-start="11928" selection-end="11928" vertical-scroll-proportion="0.5230906" vertical-offset="10607" max-vertical-offset="12448">
+            <state line="630" column="1" selection-start="12097" selection-end="12097" vertical-scroll-proportion="0.0" vertical-offset="10607" max-vertical-offset="12448">
               <folding />
             </state>
           </provider>
@@ -191,8 +189,8 @@
         <option value="$PROJECT_DIR$/css/sidebar_right_close.css" />
         <option value="$PROJECT_DIR$/js/ajax_require.js" />
         <option value="$PROJECT_DIR$/js/app_main.js" />
-        <option value="$PROJECT_DIR$/application/views/templates/head_view.php" />
         <option value="$PROJECT_DIR$/css/elements.css" />
+        <option value="$PROJECT_DIR$/application/views/templates/head_view.php" />
       </list>
     </option>
   </component>
@@ -816,16 +814,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/head_view.php">
+    <entry file="file://$PROJECT_DIR$/css/elements.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="70" selection-start="388" selection-end="388" vertical-scroll-proportion="-8.0" vertical-offset="0" max-vertical-offset="2575">
+        <state line="630" column="1" selection-start="12097" selection-end="12097" vertical-scroll-proportion="0.0" vertical-offset="10607" max-vertical-offset="12448">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/elements.css">
+    <entry file="file://$PROJECT_DIR$/application/views/templates/head_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="622" column="0" selection-start="11928" selection-end="11928" vertical-scroll-proportion="0.5230906" vertical-offset="10607" max-vertical-offset="12448">
+        <state line="17" column="62" selection-start="1401" selection-end="1401" vertical-scroll-proportion="0.27843493" vertical-offset="0" max-vertical-offset="2971">
           <folding />
         </state>
       </provider>
