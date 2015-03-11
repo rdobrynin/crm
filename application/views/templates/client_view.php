@@ -22,7 +22,7 @@
           <th style="width: 5%;"><?php print(lang('client_th_country'))?></th>
           <th style="width: 8%;"><?php print(lang('client_th_created'))?></th>
             <?php if ($user->role==5 OR $user->role==4): ?>
-          <th style="width: 7%;"><?php print(lang('client_th_action'))?></th>
+          <th style="width: 15%;"><?php print(lang('client_th_action'))?></th>
            <?php endif?>
         </tr>
         </thead>
@@ -44,7 +44,7 @@
                 <input type="hidden" name="cid" value="<?php print($cv['cid']);?>">
                 <span class="pull-left"><input type="submit" id="btn-del-company" value="delete" class="btn btn-xs btn-danger"></span>
               </form>
-              <span class="pull-right"><button id="btn-edit-company" class="btn btn-xs btn-success">edit</button></span>
+              <span class="pull-left" style="margin-left: 10px;"><button id="btn-edit-company" class="btn btn-xs btn-success">edit</button></span>
             </td>
                     <?php endif?>
           </tr>
