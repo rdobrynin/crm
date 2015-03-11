@@ -612,3 +612,20 @@ span.mini-role.green {
     display: none !important;
 }
 
+.bootstrap-select.btn-group .btn .filter-option {
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    float: left;
+    text-align: left;
+    color: #818181;
+}
+
+.bootstrap-select.btn-group .btn .caret {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    margin-top: -2px;
+    vertical-align: middle;
+    color: #818181;
+}
