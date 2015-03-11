@@ -236,6 +236,9 @@
             <div class="row">
                 <h4 style="text-align:center; padding-bottom: 40px;">Are you sure to froze the project ?!</h4>
             </div>
+
+                <div style="margin-bottom: 10px; float: left; width: 100%; position: relative; top: -43px;" class="label label-danger label-signin" id="hide_return_process"><i class="fa fa-exclamation-circle"></i>&nbsp;<span id="return_process_false">
+                </span></div>
                         <div class="alert alert-danger alert-dismissible fade in" role="alert">
                             <h4>Important!</h4>
                             <p><i class="fa fa-info-circle"></i>When you froze the project, all tasks moves to archive and tasks will be invisible when manager or administrator unfreeze them, and all users is no longer will be assigned to this project</p>

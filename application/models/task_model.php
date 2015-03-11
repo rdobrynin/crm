@@ -242,6 +242,28 @@ class Task_model extends CI_Model {
     }
 
 
+    /**
+     * Get process task for project
+     * @param $pid
+     * @return bool
+     */
+
+
+    public function getProcessTaskProject($pid) {
+        $query = $this
+            ->db
+            ->where('pid', $pid)
+            ->where('status', 2)
+            ->limit('1')
+            ->get('task');
+        if ($query->num_rows > 0) {
+            return TRUE;
+        }
+        else {
+            return FALSE;
+        }
+    }
+
 
     /**
      * Count all tasks

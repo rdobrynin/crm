@@ -1360,6 +1360,8 @@ class Ajax extends CI_Controller {
         echo json_encode ($result);
     }
 
+
+
     function frozeProject() {
         $result = array();
         $pid =  $this->input->post('project');
@@ -1369,27 +1371,39 @@ class Ajax extends CI_Controller {
         $project_id=  $project->pid;
 
         if(isset($_POST['project']) AND isset($_POST['status'])) {
-           if($this->project_model->frozeProject($pid, $status)) {
-               $result['froze'] = $status;
-               $result['status'] = true;
-              $project_array = $this->project_model->getProjectsAssign($pid);
-               if($status == '1') {
-                   $this->load->library('email');
-                   foreach ($project_array as $k => $v) {
-                       $user_object = $this->admin_model->get_user_id($v['uid']);
-                       if ($user_object->message == 1) {
-                           $this->email->clear();
-                           $user_name = $user_object->first_name . ' ' . $user_object->last_name;
-                           $this->email->from('Brilliant Task Management', 'team');
-                           $this->email->to($user_object->email);
-                           $this->email->subject('Frozen project');
-                           $this->email->message("Hello, " . $user_name . "\n" . "\n" . "Project (" . $project_id . ") " . $project_title . " has been frozen");
-                           $this->email->send();
-                       }
-                   }
-               }
-               $result['projects'] = $project_array;
-           }
+
+$checkProcess = $this->task_model->getProcessTaskProject($pid);
+            $result['process'] = $checkProcess;
+            if ($result['process'] == true && $status == '1') {
+                $result['status'] = '3';
+                $result['process_string'] = 'You can not froze project, while at least one task in process';
+            }
+            else {
+
+                if ($this->project_model->frozeProject($pid, $status)) {
+                    $result['froze'] = $status;
+                    $result['status'] = true;
+                    $project_array = $this->project_model->getProjectsAssign($pid);
+                    if ($status == '1') {
+                        $this->load->library('email');
+                        foreach ($project_array as $k => $v) {
+                            $user_object = $this->admin_model->get_user_id($v['uid']);
+                            if ($user_object->message == 1) {
+                                $this->email->clear();
+                                $user_name = $user_object->first_name . ' ' . $user_object->last_name;
+                                $this->email->from('Brilliant Task Management', 'team');
+                                $this->email->to($user_object->email);
+                                $this->email->subject('Frozen project');
+                                $this->email->message("Hello, " . $user_name . "\n" . "\n" . "Project (" . $project_id . ") " . $project_title . " has been frozen");
+                                $this->email->send();
+                            }
+                        }
+                    }
+                    $result['projects'] = $project_array;
+                }
+            }
+
+
         }
         else {
             $result['status'] = false;

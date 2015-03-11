@@ -29,7 +29,7 @@ define(function () {
         $('.froze-project').click(function () {
             var $data;
             $data= $(this).attr('data-id');
-
+            $('#hide_return_process').hide();
             $('#froze-project-modal').modal('show');
             $('.froze-btn-project').click(function () {
                 $.ajax({
@@ -41,9 +41,18 @@ define(function () {
                     },
                     success: function (data) {
                         var $data = JSON.parse(data);
-                        $('.froze-btn-cancel').removeClass('disabled');
-                        $('#froze-project-modal').modal('hide');
-                        window.location.href = '/projects';
+                        console.log($data.status);
+
+                        if($data.status ==3) {
+                            $('#hide_return_process').show();
+                            $('#return_process_false').html($data.process_string);
+                             $('.froze-btn-cancel').removeClass('disabled');
+                        }
+                        else {
+                            $('.froze-btn-cancel').removeClass('disabled');
+                            $('#froze-project-modal').modal('hide');
+                            window.location.href = '/projects';
+                        }
                     },
                     error: function () {
                         alert('Something went with error')
