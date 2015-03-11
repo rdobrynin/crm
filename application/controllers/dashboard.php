@@ -127,17 +127,11 @@ class Dashboard extends CI_Controller {
         $task_array = $this->task_model->countTasks();
         if($task_array) {
 
-
-
             $data['tasks']= $task_array;
         }
         else {
             $data['tasks']=false;
         }
-
-//var_dump($data['tasks']);
-//        exit();
-
 
 
         $comments = $this->message_model->getPublishComments();
@@ -295,6 +289,25 @@ class Dashboard extends CI_Controller {
             $data['tasks']=false;
         }
 
+        $all_tasks = $this->task_model->countAllTasks();
+        if($all_tasks) {
+            $data['all_tasks']= $all_tasks;
+        }
+        else {
+            $data['all_tasks']=false;
+        }
+
+        $project_all_task = array();
+
+        foreach($data['all_tasks'] as $tk=>$tv) {
+            if($tv['pid'] !=false) {
+                $project_all_task[$tv['pid']][] = $tv;
+            }
+            else {
+                $project_all_task[$tv['pid']] = false;
+            }
+        }
+
         $project_task = array();
         foreach($data['tasks'] as $tk=>$tv) {
             if($tv['pid'] !=false) {
@@ -324,6 +337,7 @@ class Dashboard extends CI_Controller {
         }
 
         $data['project_tasks'] = $project_task;
+        $data['project_all_tasks'] = $project_all_task;
         $data['users_title_roles']= $this->admin_model->get_users_title_roles();
         $data['get_users_online'] = $this->admin_model->get_users_online();
         $all_project_array = $this->project_model->get_all_projects();

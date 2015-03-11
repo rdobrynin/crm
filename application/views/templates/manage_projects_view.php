@@ -19,7 +19,7 @@
                                     <p>Description:&nbsp;<b><?php print($pv['description']); ?></b></p>
 
                                     <p>Status:&nbsp;&nbsp;<?php if ($pv['froze'] == 0): ?><span class="label label-primary label-xs">open</span><?php else: ?><span class="label label-danger label-xs">frozen</span><?php endif ?></p>
-                                    <p>Total tasks:&nbsp;&nbsp;<span class="badge badge-task" id="route-task"><?php if (isset($project_tasks[$pv['pid']])): ?><?php print(count($project_tasks[$pv['pid']])); ?><?php else:?>0<?php endif ?></span></p>
+                                    <p>Total tasks:&nbsp;&nbsp;<span class="badge badge-task" id="route-task"><?php if (isset($project_all_tasks[$pv['pid']])): ?><?php print(count($project_all_tasks[$pv['pid']])); ?><?php else:?>0<?php endif ?></span></p>
                                     <p>Assigned users:&nbsp;&nbsp;
                                         <span id="assign-panel-<?php print($pv['pid']); ?>">
                                         <?php foreach ($all_projects as $ak => $av): ?>

@@ -242,6 +242,20 @@ class Task_model extends CI_Model {
     }
 
 
+
+    /**
+     * Count all tasks
+     * @return mixed
+     */
+
+
+    public function countAllTasks() {
+        $query = $this->db->get('task');
+        return $query->result_array();
+    }
+
+
+
     /**
      * Create Event
      * @param $uid
