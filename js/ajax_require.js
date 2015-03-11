@@ -188,100 +188,32 @@ define(function(){
             }
         });
 
-        $(".btn-update-ttp").click(function (event) {
-            var current_id = event.target.id;
-            var input_id = event.target.id + '_input';
-            var input_val = $('#' + input_id).val();
-            var form_data = {
-                title: input_val,
-                id: current_id
-            };
-            $.ajax({
-                url: '/ajax/changeTaskType',
-                type: 'POST',
-                data: form_data,
-                dataType: 'json',
-                success: function (msg) {
-                    if (msg.empty == true) {
-                        $('#check_empty_' + input_id).fadeIn('slow').css('display', 'block');
-                    }
-                    else {
-                        if (msg.check['title'] != input_val) {
-                            $('#' + current_id).html('applied');
-                        }
-                        $('#check_empty_' + input_id).fadeOut('slow').css('display', 'none');
-                    }
-                }
-            });
-        });
 
 
 
-        $(".toggle-div-help").click(function (event) {
-            var check = false;
-            if ($('#toggle-help-btn').is(":checked")) {
-                check = 0;
-            }
-            else {
-                check = 1;
-            }
-            var form_data = {
-                help_block: check,
-                user_id: $('#user_id_help').val()
-            };
-            $.ajax({
-                url: '/ajax/switchHelp',
-                type: 'POST',
-                data: form_data,
-                dataType: 'json',
-                success: function (msg) {
-                }
-            });
-        });
+//        $(".toggle-div-dialog").click(function (event) {
+//            var check = false;
+//            if ($('#toggle-dialog-btn').is(":checked")) {
+//                check = 1;
+//            }
+//            else {
+//                check = 0;
+//            }
+//            var form_data = {
+//                introduce: check,
+//                user_id: $('#user_id_dialog').val()
+//            };
+//            $.ajax({
+//                url: '/ajax/settingsDialog',
+//                type: 'POST',
+//                data: form_data,
+//                dataType: 'json',
+//                success: function (msg) {
+//                }
+//            });
+//        });
 
-        $(".toggle-div-dialog").click(function (event) {
-            var check = false;
-            if ($('#toggle-dialog-btn').is(":checked")) {
-                check = 1;
-            }
-            else {
-                check = 0;
-            }
-            var form_data = {
-                introduce: check,
-                user_id: $('#user_id_dialog').val()
-            };
-            $.ajax({
-                url: '/ajax/settingsDialog',
-                type: 'POST',
-                data: form_data,
-                dataType: 'json',
-                success: function (msg) {
-                }
-            });
-        });
 
-        $(".toggle-div-message").click(function (event) {
-            var check = false;
-            if ($('#toggle-message-btn').is(":checked")) {
-                check = 0;
-            }
-            else {
-                check = 1;
-            }
-            var form_data = {
-                check: check,
-                id: $('#user_id_message').val()
-            };
-            $.ajax({
-                url: '/ajax/messageToEmail',
-                type: 'POST',
-                data: form_data,
-                dataType: 'json',
-                success: function (msg) {
-                }
-            });
-        });
 
         // Check if email already registered
         $( "#client_email" ).blur(function() {

@@ -608,3 +608,7 @@ span.mini-role.green {
     background-color: #15D2C2;
 }
 
+.selectpicker .check-mark {
+    display: none !important;
+}
+

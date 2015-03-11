@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b5c62b4-a621-4d4d-8746-6975ce18f490" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/confirmation_require.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ajax_require.js" afterPath="$PROJECT_DIR$/js/ajax_require.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app_main.js" afterPath="$PROJECT_DIR$/js/app_main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/elements.css" afterPath="$PROJECT_DIR$/css/elements.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sidebar_right_close.css" afterPath="$PROJECT_DIR$/css/sidebar_right_close.css" />
     </list>
     <ignored path="crm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,21 +41,39 @@
       <file leaf-file-name="app_main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/app_main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="337" column="69" selection-start="13202" selection-end="13202" vertical-scroll-proportion="-0.9981025" vertical-offset="7118" max-vertical-offset="9460">
+            <state line="396" column="0" selection-start="14909" selection-end="14909" vertical-scroll-proportion="0.5047438" vertical-offset="6596" max-vertical-offset="10774">
               <folding>
-                <marker date="1426068800500" expanded="true" signature="4313:4329" placeholder="..." />
-                <marker date="1426068800500" expanded="true" signature="4408:4424" placeholder="..." />
-                <marker date="1426068800500" expanded="true" signature="6194:6210" placeholder="..." />
-                <marker date="1426068800500" expanded="true" signature="6289:6305" placeholder="..." />
-                <marker date="1426068800500" expanded="true" signature="8073:8089" placeholder="..." />
-                <marker date="1426068800500" expanded="true" signature="8168:8184" placeholder="..." />
-                <marker date="1426068800500" expanded="true" signature="9716:9732" placeholder="..." />
-                <marker date="1426068800500" expanded="true" signature="9811:9827" placeholder="..." />
-                <marker date="1426068800500" expanded="true" signature="11002:11018" placeholder="..." />
-                <marker date="1426068800500" expanded="true" signature="11097:11113" placeholder="..." />
-                <marker date="1426068800500" expanded="true" signature="12214:12230" placeholder="..." />
-                <marker date="1426068800500" expanded="true" signature="12306:12322" placeholder="..." />
+                <marker date="1426069582036" expanded="true" signature="4313:4329" placeholder="..." />
+                <marker date="1426069582036" expanded="true" signature="4408:4424" placeholder="..." />
+                <marker date="1426069582036" expanded="true" signature="6194:6210" placeholder="..." />
+                <marker date="1426069582036" expanded="true" signature="6289:6305" placeholder="..." />
+                <marker date="1426069582036" expanded="true" signature="8073:8089" placeholder="..." />
+                <marker date="1426069582036" expanded="true" signature="8168:8184" placeholder="..." />
+                <marker date="1426069582036" expanded="true" signature="9716:9732" placeholder="..." />
+                <marker date="1426069582036" expanded="true" signature="9811:9827" placeholder="..." />
+                <marker date="1426069582036" expanded="true" signature="11002:11018" placeholder="..." />
+                <marker date="1426069582036" expanded="true" signature="11097:11113" placeholder="..." />
+                <marker date="1426069582036" expanded="true" signature="12214:12230" placeholder="..." />
+                <marker date="1426069582036" expanded="true" signature="12306:12322" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="elements.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/elements.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="614" column="0" selection-start="11751" selection-end="11751" vertical-scroll-proportion="0.0" vertical-offset="10607" max-vertical-offset="12160">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sidebar_right_close.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/sidebar_right_close.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="0" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1378">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,10 +94,10 @@
       <file leaf-file-name="ajax_require.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/ajax_require.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="349" column="0" selection-start="15254" selection-end="15254" vertical-scroll-proportion="0.0" vertical-offset="6120" max-vertical-offset="7444">
+            <state line="194" column="32" selection-start="10338" selection-end="10338" vertical-scroll-proportion="0.0" vertical-offset="3087" max-vertical-offset="6220">
               <folding>
-                <marker date="1426068784108" expanded="false" signature="1795:1809" placeholder="..." />
-                <marker date="1426068784108" expanded="false" signature="4019:4033" placeholder="..." />
+                <marker date="1426069576284" expanded="true" signature="1795:1809" placeholder="..." />
+                <marker date="1426069576284" expanded="true" signature="4019:4033" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -116,7 +134,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/views/templates/manage_projects_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/ajax/assign_users_view.php" />
         <option value="$PROJECT_DIR$/js/interval.js" />
         <option value="$PROJECT_DIR$/application/models/project_model.php" />
@@ -160,11 +177,12 @@
         <option value="$PROJECT_DIR$/js/profile_reuqire.js" />
         <option value="$PROJECT_DIR$/js/autocomplete_require.js" />
         <option value="$PROJECT_DIR$/js/ui_require.js" />
-        <option value="$PROJECT_DIR$/css/sidebar_right_close.css" />
         <option value="$PROJECT_DIR$/css/sidebar_right_open.css" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/application/views/templates/head_view.php" />
         <option value="$PROJECT_DIR$/js/confirmation_require.js" />
+        <option value="$PROJECT_DIR$/css/elements.css" />
+        <option value="$PROJECT_DIR$/css/sidebar_right_close.css" />
         <option value="$PROJECT_DIR$/js/ajax_require.js" />
         <option value="$PROJECT_DIR$/js/app_main.js" />
       </list>
@@ -235,6 +253,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -463,18 +495,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/templates/help_block_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="173" column="0" selection-start="7407" selection-end="7407" vertical-scroll-proportion="-23.333334" vertical-offset="2484" max-vertical-offset="3975">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/manage_projects_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="152" selection-start="3867" selection-end="3867" vertical-scroll-proportion="-24.518518" vertical-offset="22" max-vertical-offset="1851" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/ajax.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1328" column="69" selection-start="42842" selection-end="42842" vertical-scroll-proportion="-7.672727" vertical-offset="23482" max-vertical-offset="25905" />
@@ -762,32 +782,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/elements.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="614" column="0" selection-start="11751" selection-end="11751" vertical-scroll-proportion="0.0" vertical-offset="10607" max-vertical-offset="12160">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/sidebar_right_close.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1378">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/ajax_require.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="349" column="0" selection-start="15254" selection-end="15254" vertical-scroll-proportion="0.0" vertical-offset="6120" max-vertical-offset="7444">
+        <state line="194" column="32" selection-start="10338" selection-end="10338" vertical-scroll-proportion="0.0" vertical-offset="3087" max-vertical-offset="6220">
           <folding>
-            <marker date="1426068784108" expanded="false" signature="1795:1809" placeholder="..." />
-            <marker date="1426068784108" expanded="false" signature="4019:4033" placeholder="..." />
+            <marker date="1426069576284" expanded="true" signature="1795:1809" placeholder="..." />
+            <marker date="1426069576284" expanded="true" signature="4019:4033" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app_main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="337" column="69" selection-start="13202" selection-end="13202" vertical-scroll-proportion="-0.9981025" vertical-offset="7118" max-vertical-offset="9460">
+        <state line="396" column="0" selection-start="14909" selection-end="14909" vertical-scroll-proportion="0.5047438" vertical-offset="6596" max-vertical-offset="10774">
           <folding>
-            <marker date="1426068800500" expanded="true" signature="4313:4329" placeholder="..." />
-            <marker date="1426068800500" expanded="true" signature="4408:4424" placeholder="..." />
-            <marker date="1426068800500" expanded="true" signature="6194:6210" placeholder="..." />
-            <marker date="1426068800500" expanded="true" signature="6289:6305" placeholder="..." />
-            <marker date="1426068800500" expanded="true" signature="8073:8089" placeholder="..." />
-            <marker date="1426068800500" expanded="true" signature="8168:8184" placeholder="..." />
-            <marker date="1426068800500" expanded="true" signature="9716:9732" placeholder="..." />
-            <marker date="1426068800500" expanded="true" signature="9811:9827" placeholder="..." />
-            <marker date="1426068800500" expanded="true" signature="11002:11018" placeholder="..." />
-            <marker date="1426068800500" expanded="true" signature="11097:11113" placeholder="..." />
-            <marker date="1426068800500" expanded="true" signature="12214:12230" placeholder="..." />
-            <marker date="1426068800500" expanded="true" signature="12306:12322" placeholder="..." />
+            <marker date="1426069582036" expanded="true" signature="4313:4329" placeholder="..." />
+            <marker date="1426069582036" expanded="true" signature="4408:4424" placeholder="..." />
+            <marker date="1426069582036" expanded="true" signature="6194:6210" placeholder="..." />
+            <marker date="1426069582036" expanded="true" signature="6289:6305" placeholder="..." />
+            <marker date="1426069582036" expanded="true" signature="8073:8089" placeholder="..." />
+            <marker date="1426069582036" expanded="true" signature="8168:8184" placeholder="..." />
+            <marker date="1426069582036" expanded="true" signature="9716:9732" placeholder="..." />
+            <marker date="1426069582036" expanded="true" signature="9811:9827" placeholder="..." />
+            <marker date="1426069582036" expanded="true" signature="11002:11018" placeholder="..." />
+            <marker date="1426069582036" expanded="true" signature="11097:11113" placeholder="..." />
+            <marker date="1426069582036" expanded="true" signature="12214:12230" placeholder="..." />
+            <marker date="1426069582036" expanded="true" signature="12306:12322" placeholder="..." />
           </folding>
         </state>
       </provider>
