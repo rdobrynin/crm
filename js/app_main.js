@@ -80,7 +80,7 @@ requirejs.config({
 
 
 
-require(['jquery','domReady','bootstrap_toggle','bootstrap_confirmation'], function ($) {
+require(['jquery','bootstrap_toggle','bootstrap_tooltip','bootstrap_confirmation'], function ($) {
     $('.onoff').bootstrapToggle({
         size:'mini'
     });
@@ -92,8 +92,8 @@ require(['jquery','domReady','bootstrap_toggle','bootstrap_confirmation'], funct
         });
 
         $('#admin-users-tab a').click(function (e) {
-            e.preventDefault()
-            $(this).tab('show')
+            e.preventDefault();
+            $(this).tab('show');
         });
 
     });
@@ -206,6 +206,7 @@ require(['jquery','domReady','bootstrap_toggle','bootstrap_confirmation'], funct
             }
         );
 
+
         $('[data-toggle=confirmation-delete-current-user]').confirmation( {
                 placement: 'left',
                 animation: false,
@@ -239,6 +240,8 @@ require(['jquery','domReady','bootstrap_toggle','bootstrap_confirmation'], funct
                 }
             }
         );
+
+
 
         /**
          * Froze user
@@ -274,7 +277,6 @@ require(['jquery','domReady','bootstrap_toggle','bootstrap_confirmation'], funct
             }
         );
 
-
         /**
          * UnFroze user
          */
@@ -309,9 +311,50 @@ require(['jquery','domReady','bootstrap_toggle','bootstrap_confirmation'], funct
         );
 
 
+        $('[data-toggle=confirmation-delete-current-task]').confirmation({
+            placement: 'left',
+            animation: false,
+            btnOkClass: 'btn-xs',
+            btnCancelClass: 'btn-xs',
+            btnCancelLabel: '<i class="fa fa-times-circle" style="margin-right: 0;"></i> No',
+            btnOkLabel: '<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
+            onConfirm: function () {
+                var currentTask = $(this).attr('target');
+                var form_data = {
+                    id: currentTask
+                };
+                $.ajax({
+                    url: '/ajax/deleteTask',
+                    type: 'POST',
+                    data: form_data,
+                    dataType: 'json',
+                    success: function (msg) {
+                        $('#tr-dashboard-task-' + currentTask).remove();
+                        $('#tr-project-task-' + currentTask).remove();
+                        $('#tr-task-task-' + currentTask).remove();
+                        var rowCount = $('#approve_tasks_table tr').length;
+                        if (rowCount < 1) {
+                            $('#table-new-users').hide();
+                            $('#calc-appr-tasks').css('display', 'none');
+                        }
+                        $('#calc-appr-tasks').html(rowCount);
+                        $('[data-toggle=confirmation-delete-current-task]').confirmation('hide');
+                    }
+                });
+
+                return false;
+            },
+            onCancel: function () {
+                $('[data-toggle=confirmation-delete-current-task]').confirmation('hide');
+                return false;
+            }
+        });
+
+
     });
 
 });
+
 
 
 require(['jquery','domReady','bootstrap_scrollbar'], function ($) {
