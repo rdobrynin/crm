@@ -4,7 +4,7 @@
     <div class="page-content inset">
         <div class="row">
             <div class="col-lg-10 col-md-12">
-        <p class="lead"><?php print(lang('task_tasks_in_process'))?></p>
+                <p class="lead"><?php print(lang('task_tasks_in_process'))?>&nbsp;(<span id="calc-all-pr_tasks" ></span>)</p>
                 </div>
             <div class="col-lg-2 col-md-4 search-form">
                 <input type="text" id="search-task-process-table" class=" form-control lights" placeholder="<?php print(lang('task_search'))?>"/>
@@ -163,7 +163,7 @@
 <div class="page-content inset">
     <div class="row">
         <div class="col-lg-10 col-md-12">
-    <p class="lead"><?php print(lang('task_tasks_completed'))?></p>
+            <p class="lead"><?php print(lang('task_tasks_completed'))?>&nbsp;(<span id="calc-all-comp_tasks" ></span>)</p>
             </div>
         <div class="col-lg-2 col-md-4 search-form">
             <input type="text" id="search-task-complete-table" class=" form-control lights" placeholder="<?php print(lang('task_search'))?>"/>
@@ -229,10 +229,13 @@
                         </table>
                     </div>
                 </div>
+                <div class="col-md-12 text-center">
+                    <ul class="pagination pagination-lg pager" id="pager_all_comp_tasks"></ul>
+                </div>
             </div>
         </div>
     <?php endif ?>
-    <!--                end last tasks-->
+    <!--                end comp tasks-->
 </div>
 </div>
 <!--logs-->

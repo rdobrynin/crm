@@ -319,7 +319,7 @@
 <!--                end last tasks-->
 <div class="row">
     <div class="col-lg-10 col-md-8">
-        <p class="lead"><?php print(lang('dsb_tasks_in_process'))?></p>
+        <p class="lead"><?php print(lang('dsb_tasks_in_process'))?>&nbsp;(<span id="calc-all-dsb_pr_tasks" ></span>)</p>
     </div>
     <div class="col-lg-2 col-md-4  pull-right search-form">
         <input type="text" id="search-dash-process-table" class=" form-control lights" placeholder="<?php print(lang('dsb_search'))?>"/>
