@@ -1432,7 +1432,7 @@ class Ajax extends CI_Controller {
 
         if(isset($_POST['project']) AND isset($_POST['status'])) {
 
-$checkProcess = $this->task_model->getProcessTaskProject($pid);
+            $checkProcess = $this->task_model->getProcessTaskProject($pid);
             $result['process'] = $checkProcess;
             if ($result['process'] == true && $status == '1') {
                 $result['status'] = '3';
