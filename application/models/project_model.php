@@ -181,6 +181,24 @@ class Project_model extends CI_Model {
         return $query->result_array();
     }
 
+    /**
+     * Remove user from project
+     * @param $id
+     * @param $pid
+     * @return mixed
+     */
+
+    public function removeUserProject($id,$pid) {
+        $data = array (
+            'assign' => '0'
+        );
+        $this->db
+            ->where('uid', $id)
+            ->where('pid', $pid);
+        $update = $this->db->update('projects', $data);
+        return $update;
+    }
+
 
     /**
      * Get all projects

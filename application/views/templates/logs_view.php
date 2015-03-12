@@ -39,6 +39,7 @@
                                                 <?php if ($ev['type'] == 1 OR $ev['type'] == 3 OR $ev['type'] == 4): ?><i class="fa fa-gavel"></i>&nbsp;Task<?php endif ?>
                                                 <?php if ( $ev['type'] == 5): ?><i class="fa fa-pencil"></i>&nbsp;Task<?php endif ?>
                                                 <?php if ( $ev['type'] == 6): ?><i class="fa fa-cube"></i>&nbsp;Assign user<?php endif ?>
+                                                    <?php if ( $ev['type'] == 7): ?><i class="fa fa-cube"></i>&nbsp;Unsign user<?php endif ?>
                                                 </td>
 
                                                 <td class="text-left"><?php if ($ev['type'] == 1 OR $ev['type'] == 0): ?><i class="fa fa-plus-circle" style="color:#5cb85c;"></i><?php endif ?>
@@ -46,6 +47,7 @@
                                                     <?php if ($ev['type'] == 4): ?><i class="fa fa-check-circle" style="color:#428BCA;font-size:14px !important;"></i><?php endif ?>
                                                     <?php if ($ev['type'] == 5): ?><i class="fa fa-check-circle" style="color:#428BCA;font-size:14px !important;"></i><?php endif ?>
                                                     <?php if ($ev['type'] == 6): ?><i class="fa fa-plus-circle" style="color:#5cb85c;font-size:14px !important;"></i><?php endif ?>
+                                                    <?php if ($ev['type'] == 7): ?><i class="fa fa-minus-circle" style="color:#d9534f;font-size:14px !important;"></i><?php endif ?>
                                                 </td>
                                                 <td class="text-left"><?php print($ev['title']); ?></td>
                                                 <td class="text-left"><?php print($ev['event']); ?></td>

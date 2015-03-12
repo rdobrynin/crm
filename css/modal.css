@@ -334,4 +334,7 @@ textarea:focus  {
     padding-top: 10px;
 }
 
+#user-remove-project-note {
+    display: none;
+}
 

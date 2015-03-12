@@ -1360,6 +1360,40 @@ class Ajax extends CI_Controller {
         echo json_encode ($result);
     }
 
+    /**
+     * Remove User from project
+     */
+
+    function removeUserProject() {
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        $uid = $session_uid->id;
+        $id =  $this->input->post('id');
+        $pid =  $this->input->post('pid');
+        $result['id'] = $id;
+        $result['pid'] = $pid;
+        $result['result'] = false;
+       if($this->project_model->removeUserProject($id,$pid)) {
+           $result['info'] = 'User successfully removed from the project';
+           $name_array =  $this->admin_model->get_user_id($uid);
+           $assign_name_array =  $this->admin_model->get_user_id($id);
+           $full_name = $name_array->first_name.' '.$name_array->last_name;
+           $assign_full_name = $assign_name_array->first_name.' '.$assign_name_array->last_name;
+           $result['full_name'] = $assign_full_name;
+           $text ='Unsigned from project';
+           $project_arr =$this->project_model->getProject($pid);
+           $desc = $assign_full_name.' removed from project '.$project_arr[0]['title'];
+           $this->project_model->createEvent($uid, $desc, $text, $full_name, $assign_full_name, 7);
+           $result['result'] = true;
+
+       }
+        else {
+            $result['result'] = false;
+            $result['info'] = false;
+        }
+
+        echo json_encode ($result);
+    }
+
 
 
     function frozeProject() {

@@ -271,6 +271,35 @@
 
     </div>
 </div> <!-- #/froze_modal -->
+
+
+<!--Froze project modal window-->
+<div class="modal white-modal" id="remove-user-project-modal" tabindex="-1" role="dialog" data-toggle="modal" data-backdrop="static"  aria-labelledby="remove-user-project-modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <h4 style="text-align:center; padding-bottom: 40px;">Are you sure to unsign user from the project ?!</h4>
+                </div>
+                <div style="margin-bottom: 10px; float: left; width: 100%; position: relative; top: -43px;" class="label label-success label-signin" id="user-remove-project-note"><i class="fa fa-exclamation-circle"></i>&nbsp;<span id="return_process_false">
+                </span></div>
+
+                <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                    <h4>Important!</h4>
+                    <p><i class="fa fa-info-circle"></i>If user will unsigned form the project, all tasks assigned to him get status "Aprrove"</p>
+                    <p style="padding-bottom: 20px;"><i class="fa fa-info-circle"></i>User will get notification by email</p>
+                    <p>
+                        <button type="button" class="btn btn-danger unsign-user-btn-project">Unsign user</button>
+                        <button type="button" class="btn btn-default pull-right unsign-user-btn-project-cancel" data-dismiss="modal">Cancel</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div> <!-- #/froze_modal -->
+
+
 <!-- Modal -->
 <div class="modal fade white-modal" id="update-user-modal" tabindex="-1" role="dialog"  aria-hidden="true">
     <div class="modal-dialog">

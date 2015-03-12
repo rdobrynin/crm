@@ -119,10 +119,45 @@ define(function () {
         });
 
         $( "body" ).delegate( ".unsign-user", "click", function(e) {
-            var $data;
-            $data = e.target.attributes[1].nodeValue;
-//            alert('current user: '+$data);
-//            $(this).parent('span').parent('span').fadeOut();
+            var $id,$pid;
+            $this = $(this).parent('span').parent('span');
+            $pid = e.target.attributes[1].nodeValue;
+            $id = e.target.attributes[2].nodeValue;
+            $('#remove-user-project-modal').modal('show');
+
+            $('.unsign-user-btn-project').click(function () {
+                $.ajax({
+                    type: 'POST',
+                    url: '/ajax/removeUserProject',
+                    data: { id: $id, pid: $pid},
+                    beforeSend: function () {
+                        setTimeout(function () {
+                            $('.unsign-user-btn-project-cancel').addClass('disabled');
+                        }, 1000);
+                    },
+                    success: function (data) {
+                        var $json;
+                        $json = JSON.parse(data);
+                        if ($json.result = true) {
+                            $this.fadeOut();
+                            $('#user-remove-project-note').fadeIn().html($json.info);
+                            setTimeout(function () {
+                                $('.unsign-user-btn-project-cancel').removeClass('disabled');
+                                $('#user-remove-project-note').hide();
+                                $('#remove-user-project-modal').modal('hide');
+                            }, 1000);
+                        }
+                        else {
+                            alert('Something went with error')
+                        }
+
+                    },
+                    error: function () {
+                        alert('Something went with error')
+                    }
+                });
+            });
+
 
 
 
@@ -149,8 +184,7 @@ define(function () {
                         if (msg.id != 'false') {
                             console.log(msg);
                             $('#assign-user-li-' + $data).fadeOut('slow');
-                            $('#assign-panel-'+$project).append('&nbsp;<span class="label label-default label-tag" <i class="fa fa-mail"></i>&nbsp;<span class="get_old_mail">'+msg.full_name+
-                                ' </span>&nbsp;');
+                            $('#assign-panel-'+$project).append('&nbsp;<span class="label label-default label-tag" <i class="fa fa-mail"></i>&nbsp;<span class="get_old_mail">'+msg.full_name+'<i class="fa fa-times unsign-user" data-project="'+$project+'" data-uid="'+$data+'"></i> </span>&nbsp;');
                         }
                         else {
                             alert('Something was with error');
