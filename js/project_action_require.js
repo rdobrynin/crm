@@ -129,7 +129,6 @@ define(function () {
         });
 
 
-
         $('#assign_user_modal').on('shown.bs.modal', function (e) {
 
 
