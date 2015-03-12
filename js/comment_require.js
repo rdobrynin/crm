@@ -18,7 +18,6 @@ $(function () {
             data: form_data,
             dataType: 'json',
             success: function (msg) {
-                console.log(msg);
                 $first_name = msg.user[0]['first_name'];
                 $last_name = msg.user[0]['last_name'];
                 $currentID = msg.user[0]['id'];
@@ -205,7 +204,6 @@ $(function () {
                 data: form_data_,
                 dataType: 'json',
                 success: function (msg) {
-                    console.log(msg);
                     if (msg.empty == true) {
                         $('#qm-empty-error').fadeIn('slow').css('display', 'block');
                         setTimeout(function () {

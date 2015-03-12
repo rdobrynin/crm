@@ -41,8 +41,6 @@ define(function () {
                     },
                     success: function (data) {
                         var $data = JSON.parse(data);
-                        console.log($data.status);
-
                         if($data.status ==3) {
                             $('#hide_return_process').show();
                             $('#return_process_false').html($data.process_string);

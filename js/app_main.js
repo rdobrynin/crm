@@ -74,18 +74,42 @@ requirejs.config({
 });
 
 
-//require(['jquery','domReady','bootstrap_confirmation','users_require'], function ($,users) {
-//    return users;
+//require(['jquery','domReady','autocomplete','autocomplete_require'], function ($,autocomplete) {
+//    return autocomplete;
 //});
 
 
-
-require(['jquery','bootstrap_toggle','bootstrap_tooltip','bootstrap_confirmation'], function ($) {
+require(['jquery','bootstrap_toggle','bootstrap_tooltip','bootstrap_confirmation','autocomplete'], function ($) {
     $('.onoff').bootstrapToggle({
         size:'mini'
     });
 
     $(function () {
+
+
+        //      Autocomplete names
+        $.ajax({
+            url: '/ajax/getUserNames',
+            type: 'GET',
+            dataType: 'json',
+            success: function (msg) {
+                names = msg.users_names;
+
+                var full_names = [];
+                var full_names_id = [];
+                $.each(names, function (index, value) {
+                    full_names.push(value);
+                    full_names_id.push(index);
+                });
+                $('#qm-autocomplete').autocomplete(full_names, {
+                    autoFill: true,
+                    selectFirst: true,
+                    width: '240px'
+                });
+
+            }
+        });
+
         $('.show-demo').click(function () {
             $('#demo_modal').modal('show');
             return false;
@@ -421,9 +445,6 @@ require(['jquery','bootstrap_toggle','bootstrap_tooltip','bootstrap_confirmation
                 }
             });
         });
-
-
-
     });
 
 });
@@ -440,7 +461,7 @@ require(['jquery','domReady','bootstrap_scrollbar'], function ($) {
         });
 
         $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
+            $('[data-toggle="tooltip"]').tooltip();
         });
     });
 });
@@ -458,10 +479,6 @@ require(['jquery','domReady','status_online_require'], function ($,online) {
 
 require(['jquery','domReady','ajax_file_upload','fileupload_require'], function ($,upload) {
     return upload;
-});
-
-require(['jquery','domReady','autocomplete','autocomplete_require'], function ($,autocomplete) {
-    return autocomplete;
 });
 
 require(['jquery','domReady','project_action_require'], function ($,project) {
