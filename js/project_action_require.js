@@ -118,10 +118,20 @@ define(function () {
             });
         });
 
+        $( "body" ).delegate( ".unsign-user", "click", function(e) {
+            var $data;
+            $data = e.target.attributes[1].nodeValue;
+//            alert('current user: '+$data);
+//            $(this).parent('span').parent('span').fadeOut();
+
+
+
+        });
 
 
 
         $('#assign_user_modal').on('shown.bs.modal', function (e) {
+
 
             $('.assign-user-project').click(function () {
                 var $data,$project;

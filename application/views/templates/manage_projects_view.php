@@ -24,7 +24,7 @@
                                         <span id="assign-panel-<?php print($pv['pid']); ?>">
                                         <?php foreach ($all_projects as $ak => $av): ?>
                                             <?php if ($av['pid'] ==$pv['pid'] AND $users_title_roles[$av['uid']] !=5 AND $av['uid'] != $pv['owner'] AND $av['assign'] !=0): ?>
-<span class="label label-default label-tag"><i class="fa fa-mail"></i>&nbsp;<span class="get_old_mail"><?php print(short_name($user_name[$av['uid']])); ?>&nbsp;(<?php print(show_role_abbr($users_title_roles[$av['uid']])); ?>)</span>
+<span class="label label-default label-tag" style="cursor: default"><i class="fa fa-mail"></i>&nbsp;<span class="get_old_mail"><?php print(short_name($user_name[$av['uid']])); ?>&nbsp;(<?php print(show_role_abbr($users_title_roles[$av['uid']])); ?>)&nbsp;<i class="fa fa-times unsign-user" data-uid="<?php print($av['uid']); ?>"></i></span>
                             &nbsp;&nbsp;&nbsp;</span>
                                             <?php endif ?>
                                         <?php endforeach ?>

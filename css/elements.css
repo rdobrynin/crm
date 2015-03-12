@@ -629,3 +629,8 @@ span.mini-role.green {
     vertical-align: middle;
     color: #818181;
 }
+
+.unsign-user {
+    margin-right: 0 !important;
+    padding-left: 10px;
+}
