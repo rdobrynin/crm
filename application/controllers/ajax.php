@@ -516,6 +516,15 @@ class Ajax extends CI_Controller {
                 $result['empty'] = false;
                 $text = 'added task';
             if ($this->task_model->insertTask() == true) {
+
+
+
+               $this->project_model->assign_update_project($result['project'],$result['implementor']);
+
+
+
+
+
                 $result['result'] = true;
                 $result['newtask'] = $this->task_model->getLastTask();
                 $result['dueto'] = date('jS F Y G:i', $result['newtask']->due_time);
@@ -566,6 +575,11 @@ class Ajax extends CI_Controller {
             $result['empty'] = false;
             $text = 'edited task';
             if ($this->task_model->updateEditTask($id) == true) {
+
+                $this->project_model->assign_update_project($result['project'],$result['implementor']);
+
+
+
                 $result['new'] = $this->task_model->getTask($id);
                 $user_imp = $this->admin_model->getUsername($result['new']->implementor);
                 $user_uid = $this->admin_model->getUsername($result['new']->uid);

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6b5c62b4-a621-4d4d-8746-6975ce18f490" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ajax.php" afterPath="$PROJECT_DIR$/application/controllers/ajax.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/task_model.php" afterPath="$PROJECT_DIR$/application/models/task_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/project_model.php" afterPath="$PROJECT_DIR$/application/models/project_model.php" />
     </list>
     <ignored path="crm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,23 +29,35 @@
     <splitter split-orientation="vertical" split-proportion="0.6195652">
       <split-first>
         <leaf>
-          <file leaf-file-name="elements.css" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/css/elements.css">
+          <file leaf-file-name="task_action_require.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/task_action_require.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="635" column="1" selection-start="12171" selection-end="12171" vertical-scroll-proportion="0.0" vertical-offset="11430" max-vertical-offset="11466">
+                <state line="219" column="17" selection-start="6781" selection-end="6781" vertical-scroll-proportion="0.0" vertical-offset="3597" max-vertical-offset="6490">
+                  <folding>
+                    <marker date="1426150798754" expanded="false" signature="1041:1072" placeholder="..." />
+                    <marker date="1426150798754" expanded="false" signature="8174:8188" placeholder="..." />
+                    <marker date="1426150798754" expanded="false" signature="11772:11803" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="edit_task_view.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/views/templates/ajax/edit_task_view.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="146" column="100" selection-start="9469" selection-end="9469" vertical-scroll-proportion="-6.4444447" vertical-offset="2454" max-vertical-offset="3349">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="task_action_require.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/task_action_require.js">
+          <file leaf-file-name="ajax_require.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/ajax_require.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="0" selection-start="72" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="5742">
+                <state line="21" column="37" selection-start="836" selection-end="836" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5914">
                   <folding>
-                    <marker date="1426150798754" expanded="false" signature="1041:1072" placeholder="..." />
-                    <marker date="1426150798754" expanded="false" signature="8174:8188" placeholder="..." />
-                    <marker date="1426150798754" expanded="false" signature="11772:11803" placeholder="..." />
+                    <marker date="1426069576284" expanded="false" signature="1795:1809" placeholder="..." />
+                    <marker date="1426069576284" expanded="false" signature="4019:4033" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -69,10 +81,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ajax.php" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="ajax.php" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/application/controllers/ajax.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="1382" column="74" selection-start="45354" selection-end="45354" vertical-scroll-proportion="-16.0" vertical-offset="24444" max-vertical-offset="27028">
+                <state line="575" column="34" selection-start="19807" selection-end="19807" vertical-scroll-proportion="0.69154227" vertical-offset="9969" max-vertical-offset="27225">
                   <folding />
                 </state>
               </provider>
@@ -111,25 +123,16 @@
           <file leaf-file-name="project_model.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/models/project_model.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="198" column="23" selection-start="4008" selection-end="4228" vertical-scroll-proportion="-10.0" vertical-offset="3294" max-vertical-offset="7714">
+                <state line="80" column="55" selection-start="1721" selection-end="1721" vertical-scroll-proportion="-16.037037" vertical-offset="1007" max-vertical-offset="8047">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="task_model.php" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="task_model.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/models/task_model.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="341" column="33" selection-start="7094" selection-end="7094" vertical-scroll-proportion="0.50759876" vertical-offset="5804" max-vertical-offset="11530">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="modal.css" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/css/modal.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="339" column="0" selection-start="6458" selection-end="6458" vertical-scroll-proportion="0.0" vertical-offset="6102" max-vertical-offset="6156">
+                <state line="347" column="23" selection-start="7272" selection-end="7272" vertical-scroll-proportion="-13.37037" vertical-offset="5885" max-vertical-offset="11503">
                   <folding />
                 </state>
               </provider>
@@ -164,7 +167,7 @@
           <file leaf-file-name="modal_view.php" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/application/views/templates/modals/modal_view.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="299" column="29" selection-start="19299" selection-end="19299" vertical-scroll-proportion="0.4774536" vertical-offset="5238" max-vertical-offset="6533">
+                <state line="299" column="29" selection-start="19299" selection-end="19299" vertical-scroll-proportion="0.5" vertical-offset="5238" max-vertical-offset="6516">
                   <folding />
                 </state>
               </provider>
@@ -228,14 +231,14 @@
         <option value="$PROJECT_DIR$/application/views/templates/modals/assign_users_modal.php" />
         <option value="$PROJECT_DIR$/css/elements.css" />
         <option value="$PROJECT_DIR$/application/views/templates/manage_projects_view.php" />
-        <option value="$PROJECT_DIR$/application/models/project_model.php" />
         <option value="$PROJECT_DIR$/css/modal.css" />
         <option value="$PROJECT_DIR$/application/views/templates/modals/modal_view.php" />
         <option value="$PROJECT_DIR$/js/project_action_require.js" />
         <option value="$PROJECT_DIR$/js/interval_require.js" />
         <option value="$PROJECT_DIR$/application/views/templates/logs_view.php" />
-        <option value="$PROJECT_DIR$/application/controllers/ajax.php" />
         <option value="$PROJECT_DIR$/application/models/task_model.php" />
+        <option value="$PROJECT_DIR$/application/models/project_model.php" />
+        <option value="$PROJECT_DIR$/application/controllers/ajax.php" />
       </list>
     </option>
   </component>
@@ -609,8 +612,8 @@
     <layout>
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16012084" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12839879" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16163142" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12839879" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16163142" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969698" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12727273" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -651,11 +654,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/status_online_require.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="58" selection-start="765" selection-end="765" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1641" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/dashboard_require.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="6" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1299" />
@@ -796,11 +794,6 @@
         <state line="70" column="9" selection-start="2313" selection-end="2313" vertical-scroll-proportion="0.41740674" vertical-offset="790" max-vertical-offset="11152" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/ajax_require.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="75" selection-start="3067" selection-end="3067" vertical-scroll-proportion="0.3117229" vertical-offset="477" max-vertical-offset="6382" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="386" column="119" selection-start="11092" selection-end="11104" vertical-scroll-proportion="0.0" vertical-offset="6948" max-vertical-offset="28764" />
@@ -869,17 +862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/task_action_require.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="72" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6538">
-          <folding>
-            <marker date="1426150798754" expanded="false" signature="1041:1072" placeholder="..." />
-            <marker date="1426150798754" expanded="false" signature="8174:8188" placeholder="..." />
-            <marker date="1426150798754" expanded="false" signature="11772:11803" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/modals/assign_users_modal.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="66" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="450">
@@ -896,7 +878,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/modals/modal_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="299" column="29" selection-start="19299" selection-end="19299" vertical-scroll-proportion="0.4774536" vertical-offset="5238" max-vertical-offset="6533">
+        <state line="299" column="29" selection-start="19299" selection-end="19299" vertical-scroll-proportion="0.5" vertical-offset="5238" max-vertical-offset="6516">
           <folding />
         </state>
       </provider>
@@ -941,23 +923,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/ajax_require.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="37" selection-start="836" selection-end="836" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5914">
+          <folding>
+            <marker date="1426069576284" expanded="false" signature="1795:1809" placeholder="..." />
+            <marker date="1426069576284" expanded="false" signature="4019:4033" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/task_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="347" column="23" selection-start="7272" selection-end="7272" vertical-scroll-proportion="-13.37037" vertical-offset="5885" max-vertical-offset="11503">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/templates/ajax/edit_task_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="146" column="100" selection-start="9469" selection-end="9469" vertical-scroll-proportion="-6.4444447" vertical-offset="2454" max-vertical-offset="3349">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/task_action_require.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="219" column="17" selection-start="6781" selection-end="6781" vertical-scroll-proportion="0.0" vertical-offset="3597" max-vertical-offset="6490">
+          <folding>
+            <marker date="1426150798754" expanded="false" signature="1041:1072" placeholder="..." />
+            <marker date="1426150798754" expanded="false" signature="8174:8188" placeholder="..." />
+            <marker date="1426150798754" expanded="false" signature="11772:11803" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/project_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="198" column="23" selection-start="4008" selection-end="4228" vertical-scroll-proportion="-10.0" vertical-offset="3294" max-vertical-offset="7714">
+        <state line="80" column="55" selection-start="1721" selection-end="1721" vertical-scroll-proportion="-16.037037" vertical-offset="1007" max-vertical-offset="8047">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/ajax.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1382" column="74" selection-start="45354" selection-end="45354" vertical-scroll-proportion="-16.0" vertical-offset="24444" max-vertical-offset="27028">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/task_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="341" column="33" selection-start="7094" selection-end="7094" vertical-scroll-proportion="0.50759876" vertical-offset="5804" max-vertical-offset="11530">
+        <state line="575" column="34" selection-start="19807" selection-end="19807" vertical-scroll-proportion="0.69154227" vertical-offset="9969" max-vertical-offset="27225">
           <folding />
         </state>
       </provider>

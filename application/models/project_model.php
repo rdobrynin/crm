@@ -62,6 +62,26 @@ class Project_model extends CI_Model {
         return $insert;
     }
 
+
+    /**
+     * Update user to project
+     * @param $title
+     * @param $desc
+     * @param $owner_id
+     * @return mixed
+     */
+
+    public function assign_update_project($pid,$uid) {
+        $data = array (
+            'assign' => 1
+        );
+        $this->db
+            ->where('uid', $uid)
+            ->where('pid', $pid);
+        $update = $this->db->update('projects', $data);
+        return $update;
+    }
+
     /**
      * Update assigned user to the project
      * @param $uid
