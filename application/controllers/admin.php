@@ -27,15 +27,12 @@ class Admin extends CI_Controller {
          $this->input->post('email'),
          $this->input->post('password'));
 
-
-        if($res->froze == 1) {
-            $this->session->set_flashdata('froze', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>We\'re sorry, Your account has been frozen. Contact with administrator</strong></div>');
-            redirect("froze");
-
-        }
-
-
       if($res !== FALSE) {
+          if($res->froze == 1) {
+              $this->session->set_flashdata('froze', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>We\'re sorry, Your account has been frozen. Contact with administrator</strong></div>');
+              redirect("froze");
+
+          }
         $this->admin_model->online_status($res->id);
         //person has account
         $_SESSION['username'] = $res->id;
