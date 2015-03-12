@@ -9,11 +9,11 @@
       <div style="margin-top:20px;"><button type="submit" class="btn btn-lg btn-primary btn-block" id="login_btn">Email new password</button></div>
 <div style="padding-bottom: 20px;">
   <small class="pull-left">
-    <center><br><a href="signup" id="show_activate_form">Sign up</a>
+    <center><br><a href="<?php echo base_url();?>signup" id="show_activate_form">Sign up</a>
     </center>
   </small>
   <small class="pull-right">
-    <center><br><a href="admin" id="show_activate_form_login">Login</a>
+    <center><br><a href="<?php echo base_url();?>logout" id="show_activate_form_login">Login</a>
     </center>
   </small>
 </div>

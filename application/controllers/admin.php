@@ -59,7 +59,7 @@ class Admin extends CI_Controller {
     $user=$this->admin_model->get_user_id($_SESSION['username']);
     $this->admin_model->offline_status($user->id);
     session_destroy();
-    redirect(base_url());
+    redirect('login');
   }
 
   function signup() {

@@ -23,11 +23,11 @@
       <button class="btn btn-lg btn-primary btn-block" id="login_btn"> <i class="fa fa-check"></i></button>
       <div style="padding-bottom: 20px;">
         <small class="pull-left">
-          <center><br><a href="<?php echo base_url();?>" id="show_activate_form">Log in</a>
+          <center><br><a href="<?php echo base_url();?>logout" id="show_activate_form">Log in</a>
           </center>
         </small>
         <small class="pull-right">
-          <center><br><a href="<?php echo base_url();?>/forgot" id="show_activate_form_login">Forgot password ?</a>
+          <center><br><a href="<?php echo base_url();?>forgot" id="show_activate_form_login">Forgot password ?</a>
           </center>
         </small>
 
