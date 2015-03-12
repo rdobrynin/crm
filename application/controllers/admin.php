@@ -19,7 +19,6 @@ class Admin extends CI_Controller {
     $this->load->library('form_validation');
     $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
     $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]');
-
     if ($this->form_validation->run() !== false) {
      $res = $this
        ->admin_model
@@ -39,18 +38,21 @@ class Admin extends CI_Controller {
         redirect('dashboard');
       }
       else {
-          $this->load->view('login/head_view');
-          $this->load->view('login/error_view');
-          $this->load->view('login/login_view');
-          $this->load->view('login/footer_view');
+          $this->session->set_flashdata('auth_false', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Login or password is invalid</div>');
+          redirect('login');
       }
     }
       else {
-          $this->load->view('login/head_view');
-          $this->load->view('login/login_view');
-          $this->load->view('login/footer_view');
+          $this->session->set_flashdata('validation', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Password is too short!</div>');
+          redirect('login');
       }
   }
+
+    function login() {
+        $this->load->view('login/head_view');
+        $this->load->view('login/login_view');
+        $this->load->view('login/footer_view');
+    }
 
 // logout and session destroy
   function logout() {

@@ -2,8 +2,10 @@
   <div class="container" id="main_login" style="display: block;">
       <?php $attributes = array('class' => 'form-signin', 'id' => 'myform', 'autocomplete'=>'on'); ?>
       <?php  echo form_open('admin', $attributes);?>
-      <div class="errors ">
-        <?php echo validation_errors();?></div>
+      <?php echo $this->session->flashdata('auth_false'); ?>
+      <?php echo $this->session->flashdata('validation'); ?>
+<!--      <div class="errors ">-->
+<!--        --><?php //echo validation_errors();?><!--</div>-->
       <h2 class="text-muted">Brilliant Management</h2><small class="text-muted center">user athorization</small><br>
 <div id="avatar-login"> <img src="<?php print(base_url());?>img/ProfilePlaceholderSuit1.png" alt="Smiley face" height="100"></div>
         <div id="avatar-login-original"> <img src="<?php print(base_url());?>img/ProfilePlaceholderSuit1.png" alt="Smiley face" height="100"></div>
