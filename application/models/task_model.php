@@ -317,6 +317,39 @@ class Task_model extends CI_Model {
         }
     }
 
+    /**
+     * Get user tasks
+     * @return mixed
+     */
+
+
+    public function getUserTasks($uid) {
+        $query = $this
+            ->db
+            ->where('implementor',$uid)
+            ->get('task');
+        if ($query->num_rows > 0) {
+            return $query->result_array();
+        }
+        else {
+            return FALSE;
+        }
+    }
+
+    function updateUserTasks($id,$tid,$uid) {
+        $data = array (
+            'status' => '0',
+            'implementor' => $uid
+        );
+        $this->db
+            ->where('implementor', $id)
+            ->where('id', $tid);
+        $update = $this->db->update('task', $data);
+        return $update;
+
+    }
+
+
 
     /**
      * Get tasks

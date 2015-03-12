@@ -1373,6 +1373,18 @@ class Ajax extends CI_Controller {
         $result['pid'] = $pid;
         $result['result'] = false;
        if($this->project_model->removeUserProject($id,$pid)) {
+
+
+
+          $user_tasks = $this->task_model->getUserTasks($id);
+           if($user_tasks != false) {
+
+               foreach($user_tasks as $uk=>$uv) {
+                   $this->task_model->updateUserTasks($id,$uv['id'],$uid);
+               }
+           }
+
+
            $result['info'] = 'User successfully removed from the project';
            $name_array =  $this->admin_model->get_user_id($uid);
            $assign_name_array =  $this->admin_model->get_user_id($id);
