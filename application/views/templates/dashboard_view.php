@@ -336,7 +336,7 @@
                                             <th width="5%" class="text-left"><?php print(lang('dsb_th_article'))?></th>
                                             <th width="8%" class="text-left"  style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_created'))?></th>
                                             <th width="4%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_label'))?></th>
-                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_implementor'))?></th>
+                                            <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_implementer'))?></th>
                                             <th width="5%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_creator'))?></th>
                                             <th width="8%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_title'))?></th>
                                             <th width="4%" class="text-left" style="border-left: 1px solid #ddd;"><?php print(lang('dsb_th_project'))?></th>

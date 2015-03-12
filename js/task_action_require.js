@@ -113,6 +113,8 @@ $(function () {
             dataType: 'json',
             success: function (msg) {
                 $('#tr-dashboard-task-' + $data).remove();
+                $('#tr-task-task-' + $data).remove();
+                $('#tr-project-task-' + $data).remove();
             }
         });
     });
