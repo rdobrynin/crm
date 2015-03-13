@@ -1,5 +1,84 @@
 define(function(){
 
+    /**
+     * Get Label Task
+     * @param $status
+     * @returns {number|*}
+     */
+
+
+    function getLabelTask($status) {
+        $result=0;
+        if($status == 1) {
+            $result = 'label-danger';
+        }
+        else if($status == 2) {
+            $result = 'label-success';
+        }
+        else if($status == 3) {
+            $result = 'label-warning';
+        }
+        else if($status == 4) {
+            $result = 'label-primary';
+        }
+        else if($status == 5) {
+            $result = 'label-info';
+        }
+        else if($status == 6) {
+            $result = 'label-primary';
+        }
+        else if($status == 7) {
+            $result = 'label-danger';
+        }
+        else if($status == 8) {
+            $result = 'label-info';
+        }
+        return $result;
+    }
+
+    /**
+     * Priority task status shows
+     * @param $status
+     * @returns {number|*}
+     */
+
+    function getPriorityTask($status) {
+        $result=0;
+        if($status == 0) {
+            $result = 'minor';
+        }
+        else if($status == 1) {
+            $result = 'major';
+        }
+        else if($status == 2) {
+            $result = 'critical';
+        }
+        return $result;
+    }
+
+    /**
+     * Priority color task
+     * @param $status
+     * @returns {number|*}
+     */
+
+
+    function getPriorityTaskClass($status) {
+        $result=0;
+        if($status == 0) {
+            $result = 'color:#428bca';
+        }
+        else if($status == 1) {
+            $result = ' color:#f89406';
+        }
+        else if($status == 2) {
+            $result = ' color:#d9534f';
+        }
+        return $result;
+    }
+
+
+
     $("#addtask_pr_btn").click(function (event) {
         var myString = $.trim($('#choose_project_modal').text().toUpperCase());
         var newABB = myString.substr(0, myString.length - 3);
@@ -135,149 +214,7 @@ define(function(){
         }
     });
 
-    /**
-     * INVITATION AJAX
-     *
-     **/
 
-    $("#invite-ajax-btn").click(function () {
-        var form_data = {
-            email: $('#email_invite').val(),
-            first_name: $('#first_name_invite').val(),
-            last_name: $('#last_name_invite').val(),
-            role: $('#role_invite').val(),
-            user_id: $('#user_invite_id').val()
-
-        };
-        $.ajax({
-            url: '/ajax/invitation',
-            type: 'POST',
-            data: form_data,
-            dataType: 'json',
-            success: function (msg) {
-                if (msg.email == false) {
-                    $('#check_email').css('display', 'block');
-                    $('#check_email').html('<i class="fa fa-exclamation-circle"></i>&nbsp;This email is already registered');
-                }
-                else {
-                    $('#check_email').css('display', 'none');
-                }
-
-                if (msg.empty == false) {
-                    $('#check_empty').css('display', 'block');
-                }
-                if (msg.empty == true) {
-                    $('#check_empty').css('display', 'none');
-                }
-                if (msg.check_email == false) {
-                    $('#check_email_f').css('display', 'block');
-                    $('#check_email_f').html('<i class="fa fa-exclamation-circle"></i>&nbsp;email address is invalid');
-                }
-                else {
-                    $('#check_email_f').css('display', 'none');
-                }
-
-                if (msg.send == true) {
-                    $('#send_mail').css('display', 'block');
-                    setTimeout(function () {
-                        $('#check_email_f, #check_email').css('display', 'none');
-                        $("input[type=text], textarea").val("");
-                        $('#invite').modal('hide');
-                    }, 2000);
-                }
-            }
-        });
-
-
-
-
-//        $(".toggle-div-dialog").click(function (event) {
-//            var check = false;
-//            if ($('#toggle-dialog-btn').is(":checked")) {
-//                check = 1;
-//            }
-//            else {
-//                check = 0;
-//            }
-//            var form_data = {
-//                introduce: check,
-//                user_id: $('#user_id_dialog').val()
-//            };
-//            $.ajax({
-//                url: '/ajax/settingsDialog',
-//                type: 'POST',
-//                data: form_data,
-//                dataType: 'json',
-//                success: function (msg) {
-//                }
-//            });
-//        });
-
-
-
-        // Check if email already registered
-        $( "#client_email" ).blur(function() {
-            var form_data = {
-                email: $(this).val()
-            };
-            $.ajax({
-                url: '/ajax/check_emails',
-                type: 'POST',
-                data: form_data,
-                dataType: 'json',
-                success: function (msg) {
-                    if(msg.result!=true) {
-                        $('#create_company').attr('disabled','disabled');
-                        $('#check_email').show();
-                        $("#check_email").empty().append(msg.result);
-                    }
-                    else {
-                        $('#create_company').removeAttr('disabled');
-                        $('#check_email').hide();
-                    }
-                }
-            });
-        });
-
-        //      Check if title is already registered
-        $( "#client_title" ).blur(function() {
-            var form_data = {
-                title: $(this).val()
-            };
-            $.ajax({
-                url: '/ajax/check_client',
-                type: 'POST',
-                data: form_data,
-                dataType: 'json',
-                success: function (msg) {
-                    if(msg.result!=null) {
-                        $('#create_company').attr('disabled','disabled');
-                        $('#check_client').show();
-                        $("#check_client").empty().append(msg.result);
-                    }
-                    else {
-                        $('#create_company').removeAttr('disabled');
-                        $('#check_client').hide();
-                    }
-                }
-            });
-        });
-
-        $.ajax({
-            url: '/ajax/getCurrentTime',
-            type: 'GET',
-            dataType: 'json',
-            success: function (time) {
-                $('#dueto_modal').datetimepicker({
-                    theme:'light',
-                    format:'d.m.Y H:i',
-                    minDate: time,
-                    minTime:0
-                });
-
-            }
-        });
-    });
 
 
 });

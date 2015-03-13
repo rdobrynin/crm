@@ -78,6 +78,38 @@ requirejs.config({
 //    return autocomplete;
 //});
 
+require(['jquery','domReady','functions_require'], function ($,functions) {
+
+
+    $(function () {
+        return functions.plz;
+    });
+    $(function () {
+        return functions.count;
+    });
+    $(function () {
+        return functions.startCount;
+    });
+    $(function () {
+        return functions.goTo;
+    });
+    $(function () {
+        return functions.next;
+    });
+    $(function () {
+        return functions.getPriorityTaskClass;
+    });
+    $(function () {
+        return functions.getPriorityTask;
+    });
+    $(function () {
+        return functions.getLabelTask;
+    });
+    $(function () {
+        return functions.previous;
+    });
+});
+
 
 require(['jquery','bootstrap_toggle','bootstrap_tooltip','bootstrap_confirmation','autocomplete'], function ($) {
     $('.onoff').bootstrapToggle({
@@ -514,11 +546,6 @@ require(['jquery','domReady','bootstrap_tooltip','ui_require'], function ($,side
 require(['jquery','domReady','bootstrap','bootstrap_select','bootstrap_datetimepicker','modal_require'], function ($,modal) {
     return modal;
 });
-
-require(['jquery','domReady','bootstrap','bootstrap_tooltip','functions_require'], function ($,functions) {
-    return functions;
-});
-
 require(['jquery','domReady','bootstrap','bootstrap_confirmation','ajax_require'], function ($,ajax) {
     return ajax;
 });

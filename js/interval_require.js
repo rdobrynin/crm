@@ -1,9 +1,21 @@
 //convert datetime to timestamp
 define(function () {
 $(function () {
+    /**
+     * Convert date to timestamp
+     * @param strDate
+     * @returns {number}
+     */
+
+    function toTimestamp(strDate){
+        var datum = Date.parse(strDate);
+        return datum/1000;
+    }
+
     // Get last record from events du to current timestamp
     setInterval(function(){
         $.get( '/ajax/readEvent', function( data ) {
+            console.log(data);
             var data_time = toTimestamp(data.time);
             var dt = new Date().getTime();
             var n = dt.toString();
@@ -189,5 +201,6 @@ $(function () {
             }
         });
     }, 3000);
+
 });
 });
