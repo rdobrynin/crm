@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b5c62b4-a621-4d4d-8746-6975ce18f490" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/templates/ajax/choose_implementer_view.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/modal_require.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ajax.php" afterPath="$PROJECT_DIR$/application/controllers/ajax.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ajax_require.js" afterPath="$PROJECT_DIR$/js/ajax_require.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/modal_require.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app_main.js" afterPath="$PROJECT_DIR$/js/app_main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/dashboard.php" afterPath="$PROJECT_DIR$/application/controllers/dashboard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/functions_require.js" afterPath="$PROJECT_DIR$/js/functions_require.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/modals/modal_view.php" afterPath="$PROJECT_DIR$/application/views/templates/modals/modal_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/project_model.php" afterPath="$PROJECT_DIR$/application/models/project_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/task_action_require.js" afterPath="$PROJECT_DIR$/js/task_action_require.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/task_model.php" afterPath="$PROJECT_DIR$/application/models/task_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crm.iws" />
@@ -36,7 +28,7 @@
     <favorites_list name="crm" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.38468468">
+    <splitter split-orientation="vertical" split-proportion="0.65337956">
       <split-first>
         <leaf>
           <file leaf-file-name="ajax_require.js" pinned="false" current="false" current-in-tab="false">
@@ -75,7 +67,7 @@
           <file leaf-file-name="ajax.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/controllers/ajax.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="1251" column="54" selection-start="40459" selection-end="40459" vertical-scroll-proportion="-9.935484" vertical-offset="27214" max-vertical-offset="33373">
+                <state line="943" column="30" selection-start="31687" selection-end="31687" vertical-scroll-proportion="-1.6271186" vertical-offset="20650" max-vertical-offset="33114">
                   <folding />
                 </state>
               </provider>
@@ -90,32 +82,32 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="functions_require.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="functions_require.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/functions_require.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="221" column="21" selection-start="4793" selection-end="4793" vertical-scroll-proportion="0.5477387" vertical-offset="3760" max-vertical-offset="4592">
+                <state line="221" column="21" selection-start="4793" selection-end="4793" vertical-scroll-proportion="0.0" vertical-offset="3760" max-vertical-offset="4608">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="app_main.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="app_main.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/app_main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="525" column="0" selection-start="18479" selection-end="18479" vertical-scroll-proportion="0.0" vertical-offset="8989" max-vertical-offset="10370">
+                <state line="522" column="16" selection-start="18501" selection-end="18501" vertical-scroll-proportion="0.63586205" vertical-offset="8935" max-vertical-offset="10751">
                   <folding>
-                    <marker date="1426241847080" expanded="false" signature="5033:5049" placeholder="..." />
-                    <marker date="1426241847080" expanded="false" signature="5128:5144" placeholder="..." />
-                    <marker date="1426241847080" expanded="false" signature="6914:6930" placeholder="..." />
-                    <marker date="1426241847080" expanded="false" signature="7009:7025" placeholder="..." />
-                    <marker date="1426241847080" expanded="false" signature="8793:8809" placeholder="..." />
-                    <marker date="1426241847080" expanded="false" signature="8888:8904" placeholder="..." />
-                    <marker date="1426241847080" expanded="false" signature="10436:10452" placeholder="..." />
-                    <marker date="1426241847080" expanded="false" signature="10531:10547" placeholder="..." />
-                    <marker date="1426241847080" expanded="false" signature="11722:11738" placeholder="..." />
-                    <marker date="1426241847080" expanded="false" signature="11817:11833" placeholder="..." />
-                    <marker date="1426241847080" expanded="false" signature="12934:12950" placeholder="..." />
-                    <marker date="1426241847080" expanded="false" signature="13026:13042" placeholder="..." />
+                    <marker date="1426242694356" expanded="false" signature="5033:5049" placeholder="..." />
+                    <marker date="1426242694356" expanded="false" signature="5128:5144" placeholder="..." />
+                    <marker date="1426242694356" expanded="false" signature="6914:6930" placeholder="..." />
+                    <marker date="1426242694356" expanded="false" signature="7009:7025" placeholder="..." />
+                    <marker date="1426242694356" expanded="false" signature="8793:8809" placeholder="..." />
+                    <marker date="1426242694356" expanded="false" signature="8888:8904" placeholder="..." />
+                    <marker date="1426242694356" expanded="false" signature="10436:10452" placeholder="..." />
+                    <marker date="1426242694356" expanded="false" signature="10531:10547" placeholder="..." />
+                    <marker date="1426242694356" expanded="false" signature="11722:11738" placeholder="..." />
+                    <marker date="1426242694356" expanded="false" signature="11817:11833" placeholder="..." />
+                    <marker date="1426242694356" expanded="false" signature="12934:12950" placeholder="..." />
+                    <marker date="1426242694356" expanded="false" signature="13026:13042" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -146,12 +138,21 @@
           <file leaf-file-name="task_action_require.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/task_action_require.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="169" column="38" selection-start="5266" selection-end="5266" vertical-scroll-proportion="0.44444445" vertical-offset="2754" max-vertical-offset="8838">
+                <state line="28" column="7" selection-start="666" selection-end="666" vertical-scroll-proportion="0.32054794" vertical-offset="387" max-vertical-offset="6161">
                   <folding>
-                    <marker date="1426241922956" expanded="false" signature="1041:1072" placeholder="..." />
-                    <marker date="1426241922956" expanded="false" signature="11915:11929" placeholder="..." />
-                    <marker date="1426241922956" expanded="false" signature="15513:15544" placeholder="..." />
+                    <marker date="1426242559164" expanded="true" signature="1041:1072" placeholder="..." />
+                    <marker date="1426242559164" expanded="false" signature="8181:8195" placeholder="..." />
+                    <marker date="1426242559164" expanded="false" signature="11779:11810" placeholder="..." />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="modal_require.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/modal_require.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="110" column="33" selection-start="3362" selection-end="3362" vertical-scroll-proportion="0.0" vertical-offset="1431" max-vertical-offset="2560">
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -248,10 +249,10 @@
         <option value="$PROJECT_DIR$/application/views/templates/modals/modal_view.php" />
         <option value="$PROJECT_DIR$/application/views/templates/ajax/choose_implementer_view.php" />
         <option value="$PROJECT_DIR$/application/controllers/dashboard.php" />
+        <option value="$PROJECT_DIR$/js/functions_require.js" />
+        <option value="$PROJECT_DIR$/js/task_action_require.js" />
         <option value="$PROJECT_DIR$/js/modal_require.js" />
         <option value="$PROJECT_DIR$/js/app_main.js" />
-        <option value="$PROJECT_DIR$/js/task_action_require.js" />
-        <option value="$PROJECT_DIR$/js/functions_require.js" />
       </list>
     </option>
   </component>
@@ -652,8 +653,8 @@
     <layout>
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16012084" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12839879" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16163142" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12839879" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16163142" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969698" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12727273" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -914,13 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/ajax.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1251" column="54" selection-start="40459" selection-end="40459" vertical-scroll-proportion="-9.935484" vertical-offset="27214" max-vertical-offset="33373">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/modals/modal_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="169" column="107" selection-start="10827" selection-end="10827" vertical-scroll-proportion="-2.6181817" vertical-offset="2898" max-vertical-offset="6249">
@@ -976,41 +970,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app_main.js">
+    <entry file="file://$PROJECT_DIR$/js/functions_require.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="525" column="0" selection-start="18479" selection-end="18479" vertical-scroll-proportion="0.0" vertical-offset="8989" max-vertical-offset="10370">
-          <folding>
-            <marker date="1426241847080" expanded="false" signature="5033:5049" placeholder="..." />
-            <marker date="1426241847080" expanded="false" signature="5128:5144" placeholder="..." />
-            <marker date="1426241847080" expanded="false" signature="6914:6930" placeholder="..." />
-            <marker date="1426241847080" expanded="false" signature="7009:7025" placeholder="..." />
-            <marker date="1426241847080" expanded="false" signature="8793:8809" placeholder="..." />
-            <marker date="1426241847080" expanded="false" signature="8888:8904" placeholder="..." />
-            <marker date="1426241847080" expanded="false" signature="10436:10452" placeholder="..." />
-            <marker date="1426241847080" expanded="false" signature="10531:10547" placeholder="..." />
-            <marker date="1426241847080" expanded="false" signature="11722:11738" placeholder="..." />
-            <marker date="1426241847080" expanded="false" signature="11817:11833" placeholder="..." />
-            <marker date="1426241847080" expanded="false" signature="12934:12950" placeholder="..." />
-            <marker date="1426241847080" expanded="false" signature="13026:13042" placeholder="..." />
-          </folding>
+        <state line="221" column="21" selection-start="4793" selection-end="4793" vertical-scroll-proportion="0.0" vertical-offset="3760" max-vertical-offset="4608">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/ajax.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="943" column="30" selection-start="31687" selection-end="31687" vertical-scroll-proportion="-1.6271186" vertical-offset="20650" max-vertical-offset="33114">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/modal_require.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="110" column="33" selection-start="3362" selection-end="3362" vertical-scroll-proportion="0.0" vertical-offset="1431" max-vertical-offset="2560">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/task_action_require.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="169" column="38" selection-start="5266" selection-end="5266" vertical-scroll-proportion="0.44444445" vertical-offset="2754" max-vertical-offset="8838">
+        <state line="28" column="7" selection-start="666" selection-end="666" vertical-scroll-proportion="0.32054794" vertical-offset="387" max-vertical-offset="6161">
           <folding>
-            <marker date="1426241922956" expanded="false" signature="1041:1072" placeholder="..." />
-            <marker date="1426241922956" expanded="false" signature="11915:11929" placeholder="..." />
-            <marker date="1426241922956" expanded="false" signature="15513:15544" placeholder="..." />
+            <marker date="1426242559164" expanded="true" signature="1041:1072" placeholder="..." />
+            <marker date="1426242559164" expanded="false" signature="8181:8195" placeholder="..." />
+            <marker date="1426242559164" expanded="false" signature="11779:11810" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/functions_require.js">
+    <entry file="file://$PROJECT_DIR$/js/app_main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="221" column="21" selection-start="4793" selection-end="4793" vertical-scroll-proportion="0.5477387" vertical-offset="3760" max-vertical-offset="4592">
-          <folding />
+        <state line="522" column="16" selection-start="18501" selection-end="18501" vertical-scroll-proportion="0.63586205" vertical-offset="8935" max-vertical-offset="10751">
+          <folding>
+            <marker date="1426242694356" expanded="false" signature="5033:5049" placeholder="..." />
+            <marker date="1426242694356" expanded="false" signature="5128:5144" placeholder="..." />
+            <marker date="1426242694356" expanded="false" signature="6914:6930" placeholder="..." />
+            <marker date="1426242694356" expanded="false" signature="7009:7025" placeholder="..." />
+            <marker date="1426242694356" expanded="false" signature="8793:8809" placeholder="..." />
+            <marker date="1426242694356" expanded="false" signature="8888:8904" placeholder="..." />
+            <marker date="1426242694356" expanded="false" signature="10436:10452" placeholder="..." />
+            <marker date="1426242694356" expanded="false" signature="10531:10547" placeholder="..." />
+            <marker date="1426242694356" expanded="false" signature="11722:11738" placeholder="..." />
+            <marker date="1426242694356" expanded="false" signature="11817:11833" placeholder="..." />
+            <marker date="1426242694356" expanded="false" signature="12934:12950" placeholder="..." />
+            <marker date="1426242694356" expanded="false" signature="13026:13042" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

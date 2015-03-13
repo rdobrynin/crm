@@ -511,6 +511,9 @@ require(['jquery','domReady','bootstrap_tooltip','ui_require'], function ($,side
     return sidebar;
 });
 
+require(['jquery','domReady','bootstrap','bootstrap_select','bootstrap_datetimepicker','modal_require'], function ($,modal) {
+    return modal;
+});
 
 require(['jquery','domReady','bootstrap','bootstrap_tooltip','functions_require'], function ($,functions) {
     return functions;
@@ -520,7 +523,7 @@ require(['jquery','domReady','bootstrap','bootstrap_confirmation','ajax_require'
     return ajax;
 });
 
-require(['jquery','domReady','bootstrap','task_action_require'], function ($,task_action) {
+require(['jquery','domReady','bootstrap','bootstrap_select','bootstrap_datetimepicker','task_action_require'], function ($,task_action) {
     return task_action;
 });
 
@@ -528,9 +531,9 @@ require(['jquery','domReady', 'bootstrap_toggle','comment_require'], function ($
     return comment;
 });
 
-require(['jquery','domReady','demo_modal_require'], function ($,demo) {
-    return demo;
-});
+//require(['jquery','domReady','demo_modal_require'], function ($,demo) {
+//    return demo;
+//});
 
 require(['jquery','domReady','search_require'], function ($,search) {
     return search;
