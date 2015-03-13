@@ -511,9 +511,6 @@ require(['jquery','domReady','bootstrap_tooltip','ui_require'], function ($,side
     return sidebar;
 });
 
-require(['jquery','domReady','bootstrap','bootstrap_select','bootstrap_datetimepicker','modal_require'], function ($,modal) {
-    return modal;
-});
 
 require(['jquery','domReady','bootstrap','bootstrap_tooltip','functions_require'], function ($,functions) {
     return functions;

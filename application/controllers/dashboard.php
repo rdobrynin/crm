@@ -165,18 +165,20 @@ class Dashboard extends CI_Controller {
 
         if($comptasks) {
             $data['comp_tasks']= $comptasks;
+            $totalTimeCompleteTask = 0;
+            foreach($comptasks as $ck => $cv) {
+                $totalTimeCompleteTask+=$cv['tts'];
+            }
+            //            in hours
+            $data['total_task_done']=$totalTimeCompleteTask/60;
         }
         else {
             $data['comp_tasks']=false;
+            $data['total_task_done']=0;
         }
 
 //      Calculate total time of completed tasks
-        $totalTimeCompleteTask = 0;
-        foreach($comptasks as $ck => $cv) {
-            $totalTimeCompleteTask+=$cv['tts'];
-        }
-        //            in hours
-        $data['total_task_done']=$totalTimeCompleteTask/60;
+
         $processtasks = $this->task_model->getprocessTasks();
 
         if($processtasks) {

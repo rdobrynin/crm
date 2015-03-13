@@ -199,6 +199,39 @@ class Project_model extends CI_Model {
              ->where('assign', '1')
             ->get('projects');
         return $query->result_array();
+
+//
+//
+//        $data = array();
+//        $query = $this->db->select('*')
+//            ->from('projects')
+//            ->join('users', 'projects.uid = users.id')
+//            ->where('projects.assign', 1)
+//            ->where('projects.pid', $pid)
+//            ->get();
+//        if ($query->num_rows() > 0)
+//        {
+//            foreach ($query->result() as $row) {
+//                $data[] = $row;
+//            }
+//        }
+//        else {
+//            $data = false;
+//        }
+//
+//        $query->free_result();
+//        return $data;
+
+
+    }
+
+    public function GetImpTask($id) {
+        $query = $this
+            ->db
+            ->where('id',$id)
+            ->where('role', '2')
+            ->get('users');
+        return $query->result_array();
     }
 
     /**

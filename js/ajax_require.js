@@ -268,7 +268,6 @@ define(function(){
             type: 'GET',
             dataType: 'json',
             success: function (time) {
-
                 $('#dueto_modal').datetimepicker({
                     theme:'light',
                     format:'d.m.Y H:i',
@@ -278,10 +277,6 @@ define(function(){
 
             }
         });
-
-
-
-
     });
 
 

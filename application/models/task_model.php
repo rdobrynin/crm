@@ -139,6 +139,36 @@ class Task_model extends CI_Model {
     }
 
 
+    /**
+     * get implementors assigned to project();
+     * @return mixed
+     */
+
+    public function get_imps_assign($pid) {
+        $data = array();
+        $query = $this->db->select('*')
+            ->from('projects')
+            ->join('users', 'projects.uid = users.id')
+            ->where('projects.assign', 1)
+            ->where('users.role', 2)
+            ->where('projects.pid', $pid)
+            ->get();
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+        }
+        else {
+            $data = false;
+        }
+
+        $query->free_result();
+        return $data;
+    }
+
+
+
+
 
     /**
      * get curators by role of curator or master();

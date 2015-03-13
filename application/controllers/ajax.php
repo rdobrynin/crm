@@ -1247,6 +1247,14 @@ class Ajax extends CI_Controller {
     }
 
 
+    function GetImpTask() {
+        $id =  $this->input->get('id');
+        $imps = $this->task_model->get_imps_assign($id);
+        $data['imps'] = $imps;
+        $this->load->view('templates/ajax/choose_implementer_view',$data);
+    }
+
+
     /**
      * Publish or unpublish comment
      */
