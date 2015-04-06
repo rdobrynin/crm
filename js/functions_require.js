@@ -90,44 +90,37 @@ function getPriorityTaskClass($status) {
     return $result;
 }
 
-
-function startCount() {
-    timer = setInterval(count,1000);
-}
-
-function count() {
-    var time_shown = $("#task-timer").text();
-    var time_chunks = time_shown.split(":");
-    var  mins, secs;
-    mins=Number(time_chunks[0]);
-    secs=Number(time_chunks[1]);
-    secs++;
-    if (secs==60){
-        secs = 0;
-        mins=mins + 1;
-    }
-
-    $("#task-timer").text(plz(mins) + ":" + plz(secs));
-    if (typeof(Storage) !== "undefined") {
-        localStorage.ctime= $('#task-timer').text();
-    }
-    else {
-        localStorage.ctime= '00:00';
-    }
-}
+//
+//function startCount() {
+//    timer = setInterval(count,1000);
+//}
+//
+//function count() {
+//    var time_shown = $("#task-timer").text();
+//    var time_chunks = time_shown.split(":");
+//    var  mins, secs;
+//    mins=Number(time_chunks[0]);
+//    secs=Number(time_chunks[1]);
+//    secs++;
+//    if (secs==60){
+//        secs = 0;
+//        mins=mins + 1;
+//    }
+//
+//    $("#task-timer").text(plz(mins) + ":" + plz(secs));
+//    if (typeof(Storage) !== "undefined") {
+//        localStorage.ctime= $('#task-timer').text();
+//    }
+//    else {
+//        localStorage.ctime= '00:00';
+//    }
+//}
 
     function previous(){
         var goToPage = parseInt(pager.data("curr")) - 1;
         goTo(goToPage);
     }
 
-function plz(digit) {
-    var zpad = digit + '';
-    if (digit < 10) {
-        zpad = "0" + zpad;
-    }
-    return zpad;
-}
 
     function next(){
         goToPage = parseInt(pager.data("curr")) + 1;
@@ -162,9 +155,6 @@ function plz(digit) {
 
     return {
         toTimestamp: toTimestamp,
-        plz: plz,
-        count: count,
-        startCount: startCount,
         next:next,
         goTo: goTo,
         getPriorityTaskClass:  getPriorityTaskClass,

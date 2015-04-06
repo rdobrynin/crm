@@ -5,7 +5,7 @@
             <p class="lead">Administer Projects</p>
             <div class="row manage-project">
                 <?php foreach ($projects as $pk => $pv): ?>
-                    <?php if (isset($user_projects[$pv['pid']])): ?>
+                    <?php if (isset($user_projects[$pv['pid']]) AND $projects[$pv['pid']]['owner'] == $user->id): ?>
                 <?php if ($user_projects[$pv['pid']] == $user->id OR $user->role== 5): ?>
                     <div class="col-md-4 col-lg-3 col-sm-12 manage-project-block">
                         <div class="well well-sm" style="background-color: rgb(231, 231, 231); border-color: #BDBDBD; min-height: 500px;">
@@ -43,6 +43,8 @@
                         </div>
                     </div>
                     <?php endif ?>
+                    <?php else: ?>
+                        <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;<?php print(lang('project_no_projects'))?></div></div>
                     <?php endif ?>
                 <?php endforeach ?>
             </div>

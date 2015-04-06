@@ -26,7 +26,7 @@ $(function () {
             var name = data.name.slice(0, -5);
             name = name + '...';
             var new_time_int = parseInt(new_time);
-            if (new_time_int - 3.5 < data_time) {
+            if (new_time_int - 4.5 < data_time) {
 //Get left sidebar status
                 $.ajax({
                     url: '/ajax/getOwnbyId',

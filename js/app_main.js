@@ -98,15 +98,6 @@ require(['jquery','domReady','functions_require'], function ($,functions) {
 
 
     $(function () {
-        return functions.plz;
-    });
-    $(function () {
-        return functions.count;
-    });
-    $(function () {
-        return functions.startCount;
-    });
-    $(function () {
         return functions.goTo;
     });
     $(function () {

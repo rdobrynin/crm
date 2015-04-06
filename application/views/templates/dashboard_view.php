@@ -392,7 +392,7 @@
                    </div>
                    <?php endif ?>
                    </div>
-               </div>
+
 <!--                start ajax-->
                 <?php if ($comments !=false): ?>
                 <div class="panel panel-primary">
@@ -433,14 +433,14 @@
                         <?php endforeach ?>
                     </div>
                 </div>
-                <?php else: ?>
-                    <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No comments found</div></div>
                 <?php endif ?>
+            </div>
 <!--                end ajax-->
             </div>
+
     </div>
         <!-- ./row-->
-    </div>
+
 </div>
 <!--logs-->
 <!--test-->

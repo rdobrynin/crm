@@ -37,11 +37,33 @@ class Dashboard extends CI_Controller {
     public function index() {
         $project_array = $this->project_model->get_projects();
         if($project_array) {
-            $data['projects']= $project_array;
+            $projects = $project_array;
         }
         else {
-            $data['projects']=false;
+            $projects =false;
         }
+
+
+
+
+        $projects_key = array();
+
+
+
+        if($projects !== FALSE) {
+
+            foreach( $projects as $dk=>$dv) {
+                $user = $this->admin_model->get_user_id($_SESSION['username']);
+                $assign = $this->project_model->getProjectsAssignUser($dv['pid'],$user->id);
+                if($assign !=false) {
+                    $projects_key[$dv['pid']] = $dv;
+                }
+
+            }
+        }
+        $data['projects'] = $projects_key;
+
+
 
         $projects_froze = $this->project_model->checkProjectFroze();
         if($projects_froze) {
@@ -277,13 +299,17 @@ class Dashboard extends CI_Controller {
 
         $projects_key = array();
 
-        if($projects !== FALSE) {
 
-        }
 
        if($projects !== FALSE) {
+
            foreach( $projects as $dk=>$dv) {
-               $projects_key[$dv['pid']] = $dv;
+               $user = $this->admin_model->get_user_id($_SESSION['username']);
+               $assign = $this->project_model->getProjectsAssignUser($dv['pid'],$user->id);
+               if($assign !=false) {
+                   $projects_key[$dv['pid']] = $dv;
+               }
+
            }
        }
         $data['projects'] = $projects_key;
@@ -439,11 +465,24 @@ class Dashboard extends CI_Controller {
 
         $project_array = $this->project_model->get_projects();
         if($project_array) {
-            $data['projects']= $project_array;
+            $projects= $project_array;
         }
         else {
-            $data['projects']=false;
+            $projects=false;
         }
+        $projects_key = array();
+        if($projects !== FALSE) {
+
+            foreach( $projects as $dk=>$dv) {
+                $user = $this->admin_model->get_user_id($_SESSION['username']);
+                $assign = $this->project_model->getProjectsAssignUser($dv['pid'],$user->id);
+                if($assign !=false) {
+                    $projects_key[$dv['pid']] = $dv;
+                }
+
+            }
+        }
+        $data['projects'] = $projects_key;
 
         $task_array = $this->task_model->countTasks();
         if($task_array) {
@@ -571,11 +610,24 @@ class Dashboard extends CI_Controller {
 
         $project_array = $this->project_model->get_projects();
         if($project_array) {
-            $data['projects']= $project_array;
+            $projects= $project_array;
         }
         else {
-            $data['projects']=false;
+            $projects=false;
         }
+        $projects_key = array();
+        if($projects !== FALSE) {
+
+            foreach( $projects as $dk=>$dv) {
+                $user = $this->admin_model->get_user_id($_SESSION['username']);
+                $assign = $this->project_model->getProjectsAssignUser($dv['pid'],$user->id);
+                if($assign !=false) {
+                    $projects_key[$dv['pid']] = $dv;
+                }
+
+            }
+        }
+        $data['projects'] = $projects_key;
 
         $comments = $this->message_model->getComments();
         if($comments) {
@@ -652,12 +704,24 @@ class Dashboard extends CI_Controller {
         }
         $project_array = $this->project_model->get_projects();
         if($project_array) {
-            $data['projects']= $project_array;
+            $projects= $project_array;
         }
         else {
-            $data['projects']=false;
+            $projects=false;
         }
+        $projects_key = array();
+        if($projects !== FALSE) {
 
+            foreach( $projects as $dk=>$dv) {
+                $user = $this->admin_model->get_user_id($_SESSION['username']);
+                $assign = $this->project_model->getProjectsAssignUser($dv['pid'],$user->id);
+                if($assign !=false) {
+                    $projects_key[$dv['pid']] = $dv;
+                }
+
+            }
+        }
+        $data['projects'] = $projects_key;
         $task_array = $this->task_model->countTasks();
         if($task_array) {
             $data['tasks']= $task_array;
@@ -851,11 +915,24 @@ class Dashboard extends CI_Controller {
 
         $project_array = $this->project_model->get_projects();
         if($project_array) {
-            $data['projects']= $project_array;
+            $projects= $project_array;
         }
         else {
-            $data['projects']=false;
+            $projects=false;
         }
+        $projects_key = array();
+        if($projects !== FALSE) {
+
+            foreach( $projects as $dk=>$dv) {
+                $user = $this->admin_model->get_user_id($_SESSION['username']);
+                $assign = $this->project_model->getProjectsAssignUser($dv['pid'],$user->id);
+                if($assign !=false) {
+                    $projects_key[$dv['pid']] = $dv;
+                }
+
+            }
+        }
+        $data['projects'] = $projects_key;
 
         $task_types = $this->task_model->getTaskTypes();
         if($task_types) {
@@ -1265,11 +1342,24 @@ class Dashboard extends CI_Controller {
         }
         $project_array = $this->project_model->get_projects();
         if($project_array) {
-            $data['projects']= $project_array;
+            $projects= $project_array;
         }
         else {
-            $data['projects']=false;
+            $projects=false;
         }
+        $projects_key = array();
+        if($projects !== FALSE) {
+
+            foreach( $projects as $dk=>$dv) {
+                $user = $this->admin_model->get_user_id($_SESSION['username']);
+                $assign = $this->project_model->getProjectsAssignUser($dv['pid'],$user->id);
+                if($assign !=false) {
+                    $projects_key[$dv['pid']] = $dv;
+                }
+
+            }
+        }
+        $data['projects'] = $projects_key;
 
         $imps = $this->task_model->get_imps();
 
