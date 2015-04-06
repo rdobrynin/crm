@@ -1,5 +1,5 @@
 
-define(function () {
+define(['jquery'], function ($) {
 $(function () {
     $("body").on("click", ".delete-add-phone", function (e) {
         $(this).parent("span").remove();

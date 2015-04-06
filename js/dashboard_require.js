@@ -1,4 +1,4 @@
-define(function () {
+define(['jquery'], function ($) {
 $.ajax({
     type: 'GET',
     url: '/ajax/calculateTasks',

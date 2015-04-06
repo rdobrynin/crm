@@ -1,4 +1,4 @@
-define(function () {
+define(['jquery'], function ($) {
     $(function () {
 
         $('#close-project-create').click(function () {

@@ -1,4 +1,4 @@
-define(function(){
+define(['jquery'], function ($) {
 
     /**
      * Get Label Task
@@ -76,6 +76,84 @@ define(function(){
         }
         return $result;
     }
+
+
+    $(".toggle-div-message").click(function (event) {
+        var check = false;
+        if ($('#toggle-message-btn').is(":checked")) {
+            check = 0;
+        }
+        else {
+            check = 1;
+        }
+        var form_data = {
+            check: check,
+            id: $('#user_id_message').val()
+        };
+        $.ajax({
+            url: '/ajax/messageToEmail',
+            type: 'POST',
+            data: form_data,
+            dataType: 'json',
+            success: function (msg) {
+            }
+        });
+    });
+
+    $(".btn-update-ttp").click(function (event) {
+        var current_id = event.target.id;
+        var input_id = event.target.id + '_input';
+        var input_val = $('#' + input_id).val();
+        var form_data = {
+            title: input_val,
+            id: current_id
+        };
+        $.ajax({
+            url: '/ajax/changeTaskType',
+            type: 'POST',
+            data: form_data,
+            dataType: 'json',
+            success: function (msg) {
+                if (msg.empty == true) {
+                    $('#check_empty_' + input_id).fadeIn('slow').css('display', 'block');
+                }
+                else {
+                    if (msg.check['title'] != input_val) {
+                        $('#' + current_id).html('applied');
+                    }
+                    $('#check_empty_' + input_id).fadeOut('slow').css('display', 'none');
+                }
+            }
+        });
+    });
+
+    $('.update-user').click(function () {
+        var $data,$role;
+        $data = $(this).attr('data-uid');
+        $('#update-user-modal').modal('show');
+        $('#update-user-send-btn').click(function () {
+            $role = $('#update-role-user-select').val();
+            var form_data_ = {
+                id: $data,
+                role: $role
+            };
+            $.ajax({
+                url: '/ajax/updateUser',
+                type: 'POST',
+                data: form_data_,
+                dataType: 'json',
+                success: function (msg) {
+                    if (msg['user'] == true) {
+                        $('#update-user-notificate').fadeIn('slow').show();
+                        setTimeout(function () {
+                            $('#update-user-modal').modal('hide');
+                            $('#update-user-notificate').hide();
+                        }, 2000);
+                    }
+                }
+            });
+        });
+    });
 
 
 

@@ -1,4 +1,4 @@
-define(function () {
+define(['jquery'], function ($) {
     $(function () {
         /**
          * Live search in dashboard page over tasks

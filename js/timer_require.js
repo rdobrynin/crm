@@ -1,4 +1,4 @@
-define(function () {
+define(['jquery'], function ($) {
     $(function () {
         var findTime = localStorage.getItem('ctime');
         if (typeof(Storage) !== "undefined") {

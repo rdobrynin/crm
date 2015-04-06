@@ -1,5 +1,5 @@
 //convert datetime to timestamp
-define(function () {
+define(['jquery'], function ($) {
 $(function () {
     /**
      * Convert date to timestamp

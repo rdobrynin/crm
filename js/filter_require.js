@@ -1,4 +1,4 @@
-define(function () {
+define(['jquery'], function ($) {
     $(function () {
 
         $('.filterable .filters input').keyup(function(e){

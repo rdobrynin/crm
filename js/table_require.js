@@ -1,4 +1,4 @@
-define(function () {
+define(['jquery'], function ($) {
     $(function () {
         //add class "highlight" when hover over the row
         $('#approve_tasks_table tr, #all_task_table tr, #all_comments_table tr, #log-table tr, #comp_task_table tr, #tbody-new-users tr, #tbody-current-users tr, #proccess_task_table tr, #ready_tasks_table tr').hover(function () {

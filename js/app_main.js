@@ -74,9 +74,9 @@ requirejs.config({
 });
 
 
-//require(['jquery','domReady','autocomplete','autocomplete_require'], function ($,autocomplete) {
-//    return autocomplete;
-//});
+require(['jquery','domReady','autocomplete','autocomplete_require'], function ($,autocomplete) {
+    return autocomplete;
+});
 
 require(['jquery','domReady','functions_require'], function ($,functions) {
 
@@ -111,393 +111,29 @@ require(['jquery','domReady','functions_require'], function ($,functions) {
 });
 
 
-require(['jquery','bootstrap_toggle','bootstrap_tooltip','bootstrap_confirmation','autocomplete'], function ($) {
-    $('.onoff').bootstrapToggle({
-        size:'mini'
-    });
+require(['jquery','bootstrap_toggle','bootstrap_tooltip','bootstrap_confirmation'], function ($, confirm) {
 
-    $(function () {
-
-
-        //      Autocomplete names
-        $.ajax({
-            url: '/ajax/getUserNames',
-            type: 'GET',
-            dataType: 'json',
-            success: function (msg) {
-                names = msg.users_names;
-
-                var full_names = [];
-                var full_names_id = [];
-                $.each(names, function (index, value) {
-                    full_names.push(value);
-                    full_names_id.push(index);
-                });
-                $('#qm-autocomplete').autocomplete(full_names, {
-                    autoFill: true,
-                    selectFirst: true,
-                    width: '240px'
-                });
-
-            }
-        });
-
-        $('.show-demo').click(function () {
-            $('#demo_modal').modal('show');
-            return false;
-        });
-
-        $('#admin-users-tab a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        });
-
-    });
-
-    $(function () {
-        $('.update-user').click(function () {
-            var $data,$role;
-            $data = $(this).attr('data-uid');
-            $('#update-user-modal').modal('show');
-            $('#update-user-send-btn').click(function () {
-                $role = $('#update-role-user-select').val();
-                var form_data_ = {
-                    id: $data,
-                    role: $role
-                };
-                $.ajax({
-                    url: '/ajax/updateUser',
-                    type: 'POST',
-                    data: form_data_,
-                    dataType: 'json',
-                    success: function (msg) {
-                        if (msg['user'] == true) {
-                            $('#update-user-notificate').fadeIn('slow').show();
-                            setTimeout(function () {
-                                $('#update-user-modal').modal('hide');
-                                $('#update-user-notificate').hide();
-                            }, 2000);
-                        }
-                    }
-                });
-            });
-        });
-
-
-        $('[data-toggle=confirmation-activate-user]').confirmation(
-            {
-                placement: 'left',
-                animation: false,
-                btnOkClass:'btn-xs',
-                btnCancelClass:'btn-xs',
-                btnCancelLabel:'<i class="fa fa-times-circle" style="margin-right: 0;"></i> No',
-                btnOkLabel:'<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
-                onConfirm: function () {
-                    var currentUser = $(this).attr('target');
-                    var form_data = {
-                        user: currentUser
-                    };
-                    $.ajax({
-                        url: '/ajax/activateUser',
-                        type: 'POST',
-                        data: form_data,
-                        dataType: 'json',
-                        success: function (msg) {
-                            $('#tr_new_user_'+currentUser).remove();
-
-                            $('[data-toggle=confirmation-activate-user]').confirmation('hide');
-                            var rowCount = $('#tbody-new-users tr').length;
-                            if(rowCount <1) {
-                                $('#new-users').remove();
-                                $('#table-new-users').hide();
-                                $('#info-new-users').html('<div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of new users found</div>')
-                                $('#calc-new-users').css('display','none');
-                            }
-                            $('#calc-new-users').html(rowCount);
-                        }
-                    });
-                },
-                onCancel: function () {
-                    $('[data-toggle=confirmation-activate-user]').confirmation('hide');
-                }
-            }
-        );
-
-        $('[data-toggle=confirmation-delete-new-user]').confirmation(
-            {
-                placement: 'left',
-                animation: false,
-                btnOkClass:'btn-xs',
-                btnCancelClass:'btn-xs',
-                btnCancelLabel:'<i class="fa fa-times-circle" style="margin-right: 0;"></i> No',
-                btnOkLabel:'<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
-                onConfirm: function () {
-                    var currentUser = $(this).attr('target');
-                    var form_data = {
-                        user: currentUser
-                    };
-                    $.ajax({
-                        url: '/ajax/deleteNewUser',
-                        type: 'POST',
-                        data: form_data,
-                        dataType: 'json',
-                        success: function (msg) {
-                            $('#tr_new_user_'+currentUser).remove();
-
-                            $('[data-toggle=confirmation-delete-new-user]').confirmation('hide');
-                            var rowCount = $('#tbody-new-users tr').length;
-                            if(rowCount <1) {
-                                $('#new-users').remove();
-                                $('#table-new-users').hide();
-                                $('#info-new-users').html('<div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of new users found</div>')
-                                $('#calc-new-users').css('display','none');
-                            }
-                            $('#calc-new-users').html(rowCount);
-                        }
-                    });
-                },
-                onCancel: function () {
-                    $('[data-toggle=confirmation-delete-new-user]').confirmation('hide');
-                }
-            }
-        );
-
-
-        $('[data-toggle=confirmation-delete-current-user]').confirmation( {
-                placement: 'left',
-                animation: false,
-                btnOkClass:'btn-xs',
-                btnCancelClass:'btn-xs',
-                btnCancelLabel:'<i class="fa fa-times-circle" style="margin-right: 0;"></i> No',
-                btnOkLabel:'<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
-                onConfirm: function () {
-                    var currentUser = $(this).attr('target');
-                    var form_data = {
-                        user: currentUser
-                    };
-                    $.ajax({
-                        url: '/ajax/deleteCurrentUser',
-                        type: 'POST',
-                        data: form_data,
-                        dataType: 'json',
-                        success: function (msg) {
-                            $('#tr_current_user_'+currentUser).remove();
-                            $('[data-toggle=confirmation-delete-current-user]').confirmation('hide');
-                            var rowCount = $('#tbody-current-users tr').length;
-                            if(rowCount <1) {
-                                $('#current-users').remove();
-                                $('#table-current-users').hide();
-                            }
-                        }
-                    });
-                },
-                onCancel: function () {
-                    $('[data-toggle=confirmation-delete-current-user]').confirmation('hide');
-                }
-            }
-        );
-
-
-
-        /**
-         * Froze user
-         */
-
-        $('[data-toggle=confirmation-froze-current-user]').confirmation(
-            {
-                placement: 'left',
-                animation: false,
-                btnOkClass:'btn-xs',
-                btnCancelClass:'btn-xs',
-                btnCancelLabel:'<i class="fa fa-times-circle" style="margin-right: 0;"></i> No',
-                btnOkLabel:'<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
-                onConfirm: function () {
-                    var currentUser = $(this).attr('target');
-                    var form_data = {
-                        user: currentUser
-                    };
-
-                    $.ajax({
-                        url: '/ajax/frozeCurrentUser',
-                        type: 'POST',
-                        data: form_data,
-                        dataType: 'json',
-                        success: function (msg) {
-                            $('[data-toggle=confirmation-froze-current-user]').confirmation('hide');
-                        }
-                    });
-                },
-                onCancel: function () {
-                    $('[data-toggle=confirmation-froze-current-user]').confirmation('hide');
-                }
-            }
-        );
-
-        /**
-         * UnFroze user
-         */
-
-        $('[data-toggle=confirmation-unfroze-current-user]').confirmation(
-            {
-                placement: 'left',
-                animation: false,
-                btnOkClass:'btn-xs',
-                btnCancelClass:'btn-xs',
-                btnCancelLabel:'<i class="fa fa-times-circle" style="margin-right: 0;"></i> No',
-                btnOkLabel:'<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
-                onConfirm: function () {
-                    var currentUser = $(this).attr('target');
-                    var form_data = {
-                        user: currentUser
-                    };
-                    $.ajax({
-                        url: '/ajax/unfrozeCurrentUser',
-                        type: 'POST',
-                        data: form_data,
-                        dataType: 'json',
-                        success: function (msg) {
-                            $('[data-toggle=confirmation-unfroze-current-user]').confirmation('hide');
-                        }
-                    });
-                },
-                onCancel: function () {
-                    $('[data-toggle=confirmation-unfroze-current-user]').confirmation('hide');
-                }
-            }
-        );
-
-
-        $('[data-toggle=confirmation-delete-current-task]').confirmation({
-            placement: 'left',
-            animation: false,
-            btnOkClass: 'btn-xs',
-            btnCancelClass: 'btn-xs',
-            btnCancelLabel: '<i class="fa fa-times-circle" style="margin-right: 0;"></i> No',
-            btnOkLabel: '<i class="fa fa-check-circle-o" style="margin-right: 0;"></i> Ok',
-            onConfirm: function () {
-                var currentTask = $(this).attr('target');
-                var form_data = {
-                    id: currentTask
-                };
-                $.ajax({
-                    url: '/ajax/deleteTask',
-                    type: 'POST',
-                    data: form_data,
-                    dataType: 'json',
-                    success: function (msg) {
-                        $('#tr-dashboard-task-' + currentTask).remove();
-                        $('#tr-project-task-' + currentTask).remove();
-                        $('#tr-task-task-' + currentTask).remove();
-                        var rowCount = $('#approve_tasks_table tr').length;
-                        if (rowCount < 1) {
-                            $('#table-new-users').hide();
-                            $('#calc-appr-tasks').css('display', 'none');
-                        }
-                        $('#calc-appr-tasks').html(rowCount);
-                        $('[data-toggle=confirmation-delete-current-task]').confirmation('hide');
-                    }
-                });
-
-                return false;
-            },
-            onCancel: function () {
-                $('[data-toggle=confirmation-delete-current-task]').confirmation('hide');
-                return false;
-            }
-        });
-
-
-        $(".toggle-div-help").click(function (event) {
-            var check = false;
-            if ($('#toggle-help-btn').is(":checked")) {
-                check = 0;
-            }
-            else {
-                check = 1;
-            }
-            var form_data = {
-                help_block: check,
-                user_id: $('#user_id_help').val()
-            };
-            $.ajax({
-                url: '/ajax/switchHelp',
-                type: 'POST',
-                data: form_data,
-                dataType: 'json',
-                success: function (msg) {
-                }
-            });
-        });
-
-        $(".toggle-div-message").click(function (event) {
-            var check = false;
-            if ($('#toggle-message-btn').is(":checked")) {
-                check = 0;
-            }
-            else {
-                check = 1;
-            }
-            var form_data = {
-                check: check,
-                id: $('#user_id_message').val()
-            };
-            $.ajax({
-                url: '/ajax/messageToEmail',
-                type: 'POST',
-                data: form_data,
-                dataType: 'json',
-                success: function (msg) {
-                }
-            });
-        });
-
-        $(".btn-update-ttp").click(function (event) {
-            var current_id = event.target.id;
-            var input_id = event.target.id + '_input';
-            var input_val = $('#' + input_id).val();
-            var form_data = {
-                title: input_val,
-                id: current_id
-            };
-            $.ajax({
-                url: '/ajax/changeTaskType',
-                type: 'POST',
-                data: form_data,
-                dataType: 'json',
-                success: function (msg) {
-                    if (msg.empty == true) {
-                        $('#check_empty_' + input_id).fadeIn('slow').css('display', 'block');
-                    }
-                    else {
-                        if (msg.check['title'] != input_val) {
-                            $('#' + current_id).html('applied');
-                        }
-                        $('#check_empty_' + input_id).fadeOut('slow').css('display', 'none');
-                    }
-                }
-            });
-        });
-    });
-
+    return confirm;
 });
 
 
 
 require(['jquery','domReady','bootstrap_scrollbar'], function ($) {
-    $(function() {
+    $(function () {
         $(".comment-jsscroll").mCustomScrollbar({
             scrollButtons: {enable: true, scrollType: "stepped"},
             theme: "rounded-dark",
             autoExpandScrollbar: true,
             snapOffset: 65
         });
-
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
     });
 });
 
+require(['jquery','domReady','bootstrap_tooltip'], function ($) {
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+});
 
 
 require(['jquery','domReady','interval_require'], function ($,interval) {
@@ -558,9 +194,9 @@ require(['jquery','domReady', 'bootstrap_toggle','comment_require'], function ($
     return comment;
 });
 
-//require(['jquery','domReady','demo_modal_require'], function ($,demo) {
-//    return demo;
-//});
+require(['jquery','domReady','demo_modal_require'], function ($,demo) {
+    return demo;
+});
 
 require(['jquery','domReady','search_require'], function ($,search) {
     return search;

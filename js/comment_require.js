@@ -1,4 +1,4 @@
-define(function () {
+define(['jquery'], function ($) {
 
 $(function () {
     $('.qm-send-comment').on( "click", function() {

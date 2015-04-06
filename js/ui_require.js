@@ -1,4 +1,4 @@
-define(function(){
+define(['jquery'], function ($) {
     $(function () {
 
         $("#switch-left-bar").click(function () {

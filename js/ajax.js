@@ -1,7 +1,7 @@
 
 
 
-$(function () {
+define(['jquery'], function ($) {
 
 // clear fields after close modal
 
