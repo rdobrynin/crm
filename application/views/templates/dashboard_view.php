@@ -143,7 +143,7 @@
 <!--                        </div>-->
                     </div>
                     <?php else: ?>
-                    <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;<?php print(lang('dsb_no_poverdue_tasks'))?></div></div>
+                    <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;<?php print(lang('dsb_no_overdue_tasks'))?></div></div>
                     </div>
                 <?php endif ?>
 <!--                End overdue-->
@@ -162,8 +162,7 @@
                 </div>
 
                         <?php endif ?>
-                        <?php if ($user->role
-                        ==2 ): ?>
+                        <?php if ($user->role == 2 ): ?>
                 <div class="row">
                     <div class="col-lg-10 col-md-12">
                             <p class="lead"><?php print(lang('dsb_tasks_ready_togo'))?>&nbsp;(<span id="calc-ready-tasks"><?php if ($ready_tasks != false): ?><?php print($ready_tasks); ?><?php else:?>0<?php endif ?></span>)<p>
@@ -243,9 +242,6 @@
                             <?php else: ?>
                                 <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;<?php print(lang('dsb_no_approve_tasks'))?></div></div>
                             <?php endif ?>
-<!--                        <div class="text-center">-->
-<!--                            <ul class="pagination pagination-lg pager" id="pager_approve_tasks"></ul>-->
-<!--                        </div>-->
                         <?php endif ?>
 <!-- END APPROVE-->
 <!--STARTS READY-->
@@ -310,9 +306,6 @@
                             <?php endif ?>
                         </div>
                         <?php endif ?>
-<!--                        <div class="text-center">-->
-<!--                            <ul class="pagination pagination-lg pager" id="pager_ready_tasks"></ul>-->
-<!--                        </div>-->
                         <!--                        END READY-->
                 <?php endif ?>
                     </div>
@@ -321,9 +314,11 @@
     <div class="col-lg-10 col-md-8">
         <p class="lead"><?php print(lang('dsb_tasks_in_process'))?>&nbsp;(<span id="calc-all-dsb_pr_tasks" ></span>)</p>
     </div>
+    <?php if ($process_tasks != FALSE): ?>
     <div class="col-lg-2 col-md-4  pull-right search-form">
         <input type="text" id="search-dash-process-table" class=" form-control lights" placeholder="<?php print(lang('dsb_search'))?>"/>
     </div>
+    <?php endif ?>
 </div>
                 <?php if ($process_tasks != FALSE): ?>
                     <div class="row-fluid">

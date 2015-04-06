@@ -6,9 +6,11 @@
             <div class="col-lg-10 col-md-12">
                 <p class="lead"><?php print(lang('task_tasks_in_process'))?>&nbsp;(<span id="calc-all-pr_tasks" ></span>)</p>
                 </div>
+            <?php if ($process_tasks != FALSE): ?>
             <div class="col-lg-2 col-md-4 search-form">
                 <input type="text" id="search-task-process-table" class=" form-control lights" placeholder="<?php print(lang('task_search'))?>"/>
             </div>
+            <?php endif ?>
             </div>
         <?php if ($process_tasks != FALSE): ?>
             <div class="row-fluid">
@@ -68,7 +70,7 @@
             </div>
 
         <?php else: ?>
-            <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of process tasks found</div></div>
+            <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one of process task not found</div></div>
         <?php endif ?>
         <!--                end last tasks-->
     </div>
@@ -157,6 +159,9 @@
 <!--          <div class="col-md-12 text-center">-->
 <!--              <ul class="pagination pagination-lg pager" id="pager_all_tasks"></ul>-->
 <!--          </div>-->
+      <?php else: ?>
+          <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one task not found</div></div>
+
       <?php endif ?>
       <!--                end last tasks-->
   </div>
@@ -238,6 +243,8 @@
                 </div>
             </div>
         </div>
+    <?php else: ?>
+        <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one completed task not found</div></div>
     <?php endif ?>
     <!--                end comp tasks-->
 </div>

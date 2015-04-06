@@ -33,7 +33,9 @@
 <!--          <li class="add-client"><a href="#" class="clear-cache">Clear cache</a></li>-->
 <!--      --><?php //endif ?>
       <li id="li-comments"> <a href="#" class="send-comment" data-uid="<?php print($user->id)?>"><span class="icon-comment"></a></li>
+      <?php if (count($users) >1 ): ?>
       <li id="float-users"> <a href="#"><span class="icon-users"></span></a></li>
+      <?php endif ?>
       <li class="dropdown user-dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown"><span class="icon-book"></span></a>
           <ul class="dropdown-menu dropdown-user">

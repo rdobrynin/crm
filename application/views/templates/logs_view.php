@@ -4,9 +4,11 @@
             <div class="col-lg-10 col-md-8">
                 <p class="lead"><?php print(lang('logs_activity'))?></p>
             </div>
+            <?php if ($all_events !== FALSE): ?>
             <div class="col-lg-2 col-md-4  pull-right search-form">
                 <input type="text" id="search-logs-table" class=" form-control lights" placeholder="<?php print(lang('logs_search'))?>"/>
             </div>
+            <?php endif ?>
             </div>
                 <div class="container-fluid">
                     <div class="row">
@@ -14,6 +16,8 @@
                             <div class="panel">
                                 <div class="panel-body-table">
                                     <div class="table-responsive">
+                                        <?php if ($all_events !== FALSE): ?>
+
                                         <table class="table table-condensed" id="log-table">
                                             <thead>
                                             <tr>
@@ -56,6 +60,9 @@
                                             <?php endforeach ?>
                                             </tbody>
                                         </table>
+                                        <?php else: ?>
+                                            <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one log found</div></div>
+                                        <?php endif ?>
                                     </div>
                                 </div>
                                 <div class="col-md-12 text-center">

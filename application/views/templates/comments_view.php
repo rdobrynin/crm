@@ -69,6 +69,8 @@
             <div class="col-md-12 text-center">
                 <ul class="pagination pagination-lg pager" id="pager_all_comments"></ul>
             </div>
+        <?php else: ?>
+            <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No one comments not found</div></div>
         <?php endif ?>
         <!--                end comments-->
     </div>

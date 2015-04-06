@@ -276,9 +276,16 @@ class Dashboard extends CI_Controller {
         }
 
         $projects_key = array();
-        foreach( $projects as $dk=>$dv) {
-            $projects_key[$dv['pid']] = $dv;
+
+        if($projects !== FALSE) {
+
         }
+
+       if($projects !== FALSE) {
+           foreach( $projects as $dk=>$dv) {
+               $projects_key[$dv['pid']] = $dv;
+           }
+       }
         $data['projects'] = $projects_key;
 
 
@@ -300,24 +307,28 @@ class Dashboard extends CI_Controller {
         }
 
         $project_all_task = array();
-
-        foreach($data['all_tasks'] as $tk=>$tv) {
-            if($tv['pid'] !=false) {
-                $project_all_task[$tv['pid']][] = $tv;
-            }
-            else {
-                $project_all_task[$tv['pid']] = false;
+        if($data['all_tasks'] !== FALSE) {
+            foreach ($data['all_tasks'] as $tk => $tv) {
+                if ($tv['pid'] != false) {
+                    $project_all_task[$tv['pid']][] = $tv;
+                }
+                else {
+                    $project_all_task[$tv['pid']] = false;
+                }
             }
         }
 
         $project_task = array();
-        foreach($data['tasks'] as $tk=>$tv) {
-            if($tv['pid'] !=false) {
-                $project_task[$tv['pid']][] = $tv;
+        if($data['tasks'] !== FALSE) {
+            foreach($data['tasks'] as $tk=>$tv) {
+                if($tv['pid'] !=false) {
+                    $project_task[$tv['pid']][] = $tv;
+                }
+                else {
+                    $project_task[$tv['pid']] = false;
+                }
             }
-            else {
-                $project_task[$tv['pid']] = false;
-            }
+
         }
 
 
