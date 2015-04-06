@@ -1,4 +1,4 @@
-define(['jquery'], function ($) {
+define(['jquery','bootstrap_toggle'], function ($) {
     $(function () {
 
         $("#switch-left-bar").click(function () {
@@ -111,7 +111,6 @@ define(['jquery'], function ($) {
             });
         });
 
-//        $('#back-to-top').tooltip('show');
 
         $('.panel-heading span.clickable').click();
         $('.panel div.clickable').click();
@@ -150,13 +149,13 @@ define(['jquery'], function ($) {
             }
         });
 //        // scroll body to 0px on click
-//        $('#back-to-top').click(function () {
-//            $('#back-to-top').tooltip('hide');
-//            $('body,html').animate({
-//                scrollTop: 0
-//            }, 800);
-//            return false;
-//        });
+        $('#back-to-top').click(function () {
+            $('#back-to-top').tooltip('hide');
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
 
 
 
