@@ -258,7 +258,7 @@ class Ajax extends CI_Controller {
         $user_array = $this->admin_model->get_user_id($user_id);
 //        get curator data
         $curator_fname = $user_array->first_name;
-        $curator_lname = $user_array->lasst_name;
+        $curator_lname = $user_array->last_name;
         $curator_name = $curator_fname. ' '.$curator_lname;
         $curator_email = $user_array->email;
         $query= $this->admin_model->emails_users($email);

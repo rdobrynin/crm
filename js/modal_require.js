@@ -89,7 +89,6 @@ define(function(){
                 data: form_data,
                 dataType: 'json',
                 success: function (msg) {
-                    console.log(msg);
                     if (msg.email == false) {
                         $('#check_email').css('display', 'block');
                         $('#check_email').html('<i class="fa fa-exclamation-circle"></i>&nbsp;This email is already registered');
@@ -121,8 +120,8 @@ define(function(){
                         }, 2000);
                     }
                 },
-                error: function () {
-                    alert('Something went with error');
+                error: function (msg) {
+                 console.log(msg);
                 }
             });
 
