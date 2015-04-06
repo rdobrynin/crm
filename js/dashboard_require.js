@@ -3,8 +3,6 @@ $.ajax({
     type: 'GET',
     url: '/ajax/calculateTasks',
     dataType: 'json',
-//            beforeSend: function () {
-//            },
     success: function (data) {
         var total_tasks = data.tasks;
         var completed_tasks = data.comp_tasks;

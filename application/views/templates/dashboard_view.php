@@ -29,7 +29,7 @@
                                     </div>
                                 </div>
                                 <div class="progress transparent progress-small no-radius m-t-20" style="width:90%">
-                                    <div class="progress-bar progress-bar-white animate-progress-bar"  data-percentage="43%" style="width: 64.8%;"></div>
+                                    <div class="progress-bar progress-bar-white animate-progress-bar" id="complete-projects"  data-percentage="0%" style="width: 0%;"></div>
                                 </div>
                                 <div class="description"> <span class="text-white mini-description "><?php print(lang('dsb_projects_completed_1'))?><span class="blend">&nbsp;<?php print(lang('dsb_projects_completed_2'))?></span></span></div>
                             </div>
@@ -76,7 +76,6 @@
                          <?php endif ?>
                      </div>
                         <?php if ($over_tasks != false): ?>
-
                             <div class="panel-body-table">
                                 <div class="table-responsive">
                                     <table class="table table-condensed" id="dash-over-table">
@@ -137,10 +136,6 @@
                                     </table>
                                 </div>
                             </div>
-
-<!--                        <div class="text-center">-->
-<!--                            <ul class="pagination pagination-lg pager" id="pager_over_tasks"></ul>-->
-<!--                        </div>-->
                     </div>
                     <?php else: ?>
                     <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;<?php print(lang('dsb_no_overdue_tasks'))?></div></div>
@@ -381,19 +376,25 @@
                 <?php endif ?>
                 <!--   end last tasks-->
         </div>
-        <?php if ($comments !=false): ?>
+
+
+
             <div class="col-md-3">
                <div class="row">
                    <div class="col-md-8">
                        <p class="lead" style="float: left;"><?php print(lang('dsb_activity_stream'))?></p>
                    </div>
                    <div class="col-md-4">
+                       <?php if ($comments !=false): ?>
                 <span class="search-form">
                     <input type="text" id="search-dash-comment" class=" form-control lights" placeholder="<?php print(lang('dsb_search'))?>"/>
                 </span>
                    </div>
+                   <?php endif ?>
+                   </div>
                </div>
 <!--                start ajax-->
+                <?php if ($comments !=false): ?>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title"><?php print(lang('dsb_comments'))?></h3>
@@ -432,9 +433,11 @@
                         <?php endforeach ?>
                     </div>
                 </div>
+                <?php else: ?>
+                    <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;No comments found</div></div>
+                <?php endif ?>
 <!--                end ajax-->
             </div>
-        <?php endif ?>
     </div>
         <!-- ./row-->
     </div>
