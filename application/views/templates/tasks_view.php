@@ -79,9 +79,11 @@
           <div class="col-lg-10 col-md-12">
       <p class="lead"><?php print(lang('task_tasks'))?>&nbsp;(<span id="calc-all-tasks" ></span>)</p>
               </div>
+          <?php if ($tasks != FALSE): ?>
           <div class="col-lg-2 col-md-4 search-form">
               <input type="text" id="search-task-common-table" class=" form-control lights" placeholder="<?php print(lang('task_search'))?>"/>
           </div>
+          <?php endif ?>
           </div>
       <?php if ($tasks != FALSE): ?>
           <div class="row-fluid">
@@ -165,11 +167,13 @@
         <div class="col-lg-10 col-md-12">
             <p class="lead"><?php print(lang('task_tasks_completed'))?>&nbsp;(<span id="calc-all-comp_tasks" ></span>)</p>
             </div>
+        <?php if ($c_tasks != FALSE): ?>
         <div class="col-lg-2 col-md-4 search-form">
             <input type="text" id="search-task-complete-table" class=" form-control lights" placeholder="<?php print(lang('task_search'))?>"/>
         </div>
+        <?php endif ?>
         </div>
-    <?php if ($tasks != FALSE): ?>
+    <?php if ($c_tasks != FALSE): ?>
         <div class="row-fluid">
             <div class="panel">
                 <div class="panel-body-table">

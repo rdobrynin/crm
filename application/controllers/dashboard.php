@@ -483,6 +483,9 @@ class Dashboard extends CI_Controller {
             $data['all_events']=false;
         }
 
+        $data['c_tasks'] = $this->task_model->countCompleteTasks();
+
+
         $processtasks = $this->task_model->getprocessTasks();
 
         if($processtasks) {

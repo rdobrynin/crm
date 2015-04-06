@@ -273,6 +273,30 @@ class Task_model extends CI_Model {
 
 
     /**
+     * Count tasks if not frozen
+     * @return mixed
+     */
+
+
+    public function countCompleteTasks() {
+        $query = $this->db->select('*')
+            ->from('project')
+            ->join('task', 'project.pid = task.pid')
+            ->where('project.froze', 0)
+            ->where('task.status', 3)
+            ->get();
+
+        if ($query->num_rows > 0) {
+            return TRUE;
+        }
+        else {
+            return FALSE;
+        }
+    }
+
+
+
+    /**
      * Get process task for project
      * @param $pid
      * @return bool
