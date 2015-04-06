@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b5c62b4-a621-4d4d-8746-6975ce18f490" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dashboard_require.js" afterPath="$PROJECT_DIR$/js/dashboard_require.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/dashboard_view.php" afterPath="$PROJECT_DIR$/application/views/templates/dashboard_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/interval_require.js" afterPath="$PROJECT_DIR$/js/interval_require.js" />
     </list>
     <ignored path="crm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,18 +27,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tooltip_require.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/tooltip_require.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1136">
-              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-              <folding>
-                <marker date="1428309152303" expanded="true" signature="50:129" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="toggle_require.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/toggle_require.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -83,14 +70,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard_view.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dashboard_view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/templates/dashboard_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43469787" vertical-offset="292" max-vertical-offset="9774">
-              <caret line="37" column="61" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
+            <state vertical-scroll-proportion="-9.571428" vertical-offset="292" max-vertical-offset="9774">
+              <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="interval_require.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/interval_require.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.56561923" vertical-offset="0" max-vertical-offset="4862">
+              <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+              <folding>
+                <marker date="1428316115123" expanded="true" signature="2093:2107" placeholder="..." />
+                <marker date="1428316115123" expanded="true" signature="3372:3386" placeholder="..." />
+                <marker date="1428316115123" expanded="true" signature="5149:5163" placeholder="..." />
+                <marker date="1428316115123" expanded="true" signature="6444:6484" placeholder="..." />
+                <marker date="1428316115123" expanded="true" signature="7772:7812" placeholder="..." />
+                <marker date="1428316115123" expanded="true" signature="9120:9134" placeholder="..." />
+                <marker date="1428316115123" expanded="true" signature="10438:10452" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -167,7 +172,6 @@
         <option value="$PROJECT_DIR$/js/client_require.js" />
         <option value="$PROJECT_DIR$/js/fileupload_require.js" />
         <option value="$PROJECT_DIR$/js/filter_require.js" />
-        <option value="$PROJECT_DIR$/js/interval_require.js" />
         <option value="$PROJECT_DIR$/js/localstorage_require.js" />
         <option value="$PROJECT_DIR$/js/modal_require.js" />
         <option value="$PROJECT_DIR$/js/pager_require.js" />
@@ -198,6 +202,7 @@
         <option value="$PROJECT_DIR$/application/views/templates/navtop_view.php" />
         <option value="$PROJECT_DIR$/js/dashboard_require.js" />
         <option value="$PROJECT_DIR$/application/views/templates/dashboard_view.php" />
+        <option value="$PROJECT_DIR$/js/interval_require.js" />
       </list>
     </option>
   </component>
@@ -691,14 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/interval_require.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4780">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/localstorage_require.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1252">
@@ -892,7 +889,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1136">
           <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
           <folding>
-            <marker date="1428309152303" expanded="true" signature="50:129" placeholder="{...}" />
+            <marker date="1428309152303" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -976,11 +973,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/dashboard_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43469787" vertical-offset="292" max-vertical-offset="9774">
-          <caret line="37" column="61" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
+        <state vertical-scroll-proportion="-9.571428" vertical-offset="292" max-vertical-offset="9774">
+          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/interval_require.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56561923" vertical-offset="0" max-vertical-offset="4862">
+          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+          <folding>
+            <marker date="1428316115123" expanded="true" signature="2093:2107" placeholder="..." />
+            <marker date="1428316115123" expanded="true" signature="3372:3386" placeholder="..." />
+            <marker date="1428316115123" expanded="true" signature="5149:5163" placeholder="..." />
+            <marker date="1428316115123" expanded="true" signature="6444:6484" placeholder="..." />
+            <marker date="1428316115123" expanded="true" signature="7772:7812" placeholder="..." />
+            <marker date="1428316115123" expanded="true" signature="9120:9134" placeholder="..." />
+            <marker date="1428316115123" expanded="true" signature="10438:10452" placeholder="..." />
           </folding>
         </state>
       </provider>
