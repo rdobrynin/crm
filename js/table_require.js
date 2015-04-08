@@ -21,6 +21,14 @@ define(['jquery'], function ($) {
         $('#calc-appr-tasks').html(count_approve_tasks);
 
         $('#calc-all-tasks').html(count_all_tasks);
+
+        if(count_all_tasks == 0) {
+           $('#common-tasks-table').hide();
+        }
+        else {
+            $('#common-tasks-table').show();
+        }
+
         $('#calc-all-comp_tasks').html(count_all_comp_tasks);
         $('#calc-all-comments').html(count_all_comments);
         $('#calc-all-pr_tasks').html(count_all_pr_tasks);
