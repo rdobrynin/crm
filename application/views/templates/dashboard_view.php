@@ -144,7 +144,7 @@
 <!--                End overdue-->
                 <div style="padding-top: 20px;">
                 <?php if ($tasks != FALSE): ?>
-                        <?php if ($user->role==5 OR $user->role==4 OR $user->role==1 OR $user->role==3): ?>
+                        <?php if ($user->role!=2): ?>
                 <div class="row">
                     <div class="col-lg-10 col-md-12">
                         <p class="lead"><?php print(lang('dsb_tasks_for_approval'))?>&nbsp;(<span id="calc-appr-tasks" ><?php if ($approve_tasks != false): ?><?php print(count($approve_tasks)); ?><?php else:?>0<?php endif ?></span>)</p>
@@ -172,8 +172,8 @@
                         <?php endif ?>
 <!--                 START APPROVE  TASK      -->
                         <?php if ($user->role!=2): ?>
-                        <?php if ($approve_tasks != false): ?>
                         <div class="panel">
+                        <?php if ($approve_tasks != false): ?>
                             <div class="panel-body-table">
                                 <div class="table-responsive">
                                     <table class="table table-condensed" id="approve-task-table">
@@ -233,10 +233,11 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
+
                             <?php else: ?>
                                 <div class="info-new-users"><div class="alert alert-info text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;<?php print(lang('dsb_no_approve_tasks'))?></div></div>
                             <?php endif ?>
+                        </div>
                         <?php endif ?>
 <!-- END APPROVE-->
 <!--STARTS READY-->

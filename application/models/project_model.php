@@ -193,7 +193,10 @@ class Project_model extends CI_Model {
 //    get by ipd projects
 
     public function getProjectsAssign($pid) {
-        $query = $this->db->where('pid', $pid)->where('assign', '1')->get('projects');
+        $query = $this->db
+            ->where('pid', $pid)
+            ->where('assign', '1')
+            ->get('projects');
         return $query->result_array();
 
     }

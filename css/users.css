@@ -31,3 +31,9 @@
     display:inline-block;
     margin-bottom: 20px;
 }
+
+#assign_users_details {
+    position: relative;
+    float: left;
+    width: 100%;
+}

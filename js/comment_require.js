@@ -74,7 +74,6 @@ $(function () {
 
     $('.send-comment').on( "click", function() {
         $data =  $(this).attr('data-uid');
-        console.log($data);
 
         $('.qm-body').hide();
         $('.qm-body').show();

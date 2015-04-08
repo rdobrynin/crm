@@ -105,8 +105,10 @@ class Dashboard extends CI_Controller {
         else {
             $data['task_types']=false;
         }
+        $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
 
-        $tasks = $this->task_model->getTasks();
+        $tasks = $this->task_model->getTasks($data['user']->id);
+
         if($tasks) {
             $data_task= $tasks;
         }
@@ -145,8 +147,8 @@ class Dashboard extends CI_Controller {
         else {
             $data['curators']=false;
         }
-//        $fr_projects = $this->task_model->getTest();
-        $task_array = $this->task_model->countTasks();
+        $user = $this->admin_model->get_user_id($_SESSION['username']);
+        $task_array = $this->task_model->countTasks($user->id);
         if($task_array) {
 
             $data['tasks']= $task_array;
@@ -163,9 +165,9 @@ class Dashboard extends CI_Controller {
         else {
             $data['comments']=false;
         }
-        $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
 
-        $overtasks = $this->task_model->getOverdueTasks();
+
+        $overtasks = $this->task_model->getOverdueTasks($data['user']->id);
 
         if($overtasks) {
             $data['over_tasks']= $overtasks;
@@ -174,7 +176,7 @@ class Dashboard extends CI_Controller {
             $data['over_tasks']=false;
         }
 
-        $readytasks = $this->task_model->getReadyTasks();
+        $readytasks = $this->task_model->getReadyTasks($data['user']->id);
 
         if($readytasks) {
             $data['ready_tasks']= count($readytasks);
@@ -183,7 +185,7 @@ class Dashboard extends CI_Controller {
             $data['ready_tasks']=0;
         }
 
-        $comptasks = $this->task_model->getCompTasks();
+        $comptasks = $this->task_model->getCompTasks($user->id);
 
         if($comptasks) {
             $data['comp_tasks']= $comptasks;
@@ -201,7 +203,7 @@ class Dashboard extends CI_Controller {
 
 //      Calculate total time of completed tasks
 
-        $processtasks = $this->task_model->getprocessTasks();
+        $processtasks = $this->task_model->getprocessTasks($user->id);
 
         if($processtasks) {
             $data['process_tasks']= $processtasks;
@@ -210,7 +212,7 @@ class Dashboard extends CI_Controller {
             $data['process_tasks']=false;
         }
 
-        $approvetasks = $this->task_model->getApproveTasks();
+        $approvetasks = $this->task_model->getApproveTasks($user->id);
 
         if($approvetasks) {
             $data['approve_tasks']= $approvetasks;
@@ -300,11 +302,11 @@ class Dashboard extends CI_Controller {
         $projects_key = array();
 
 
-
+        $user = $this->admin_model->get_user_id($_SESSION['username']);
        if($projects !== FALSE) {
 
            foreach( $projects as $dk=>$dv) {
-               $user = $this->admin_model->get_user_id($_SESSION['username']);
+
                $assign = $this->project_model->getProjectsAssignUser($dv['pid'],$user->id);
                if($assign !=false) {
                    $projects_key[$dv['pid']] = $dv;
@@ -316,7 +318,7 @@ class Dashboard extends CI_Controller {
 
 
 
-        $task_array = $this->task_model->countTasks();
+        $task_array = $this->task_model->countTasks($user->id);
         if($task_array) {
             $data['tasks']= $task_array;
         }
@@ -324,7 +326,7 @@ class Dashboard extends CI_Controller {
             $data['tasks']=false;
         }
 
-        $all_tasks = $this->task_model->countAllTasks();
+        $all_tasks = $this->task_model->countAllTasks($user->id);
         if($all_tasks) {
             $data['all_tasks']= $all_tasks;
         }
@@ -471,10 +473,10 @@ class Dashboard extends CI_Controller {
             $projects=false;
         }
         $projects_key = array();
+        $user = $this->admin_model->get_user_id($_SESSION['username']);
         if($projects !== FALSE) {
 
             foreach( $projects as $dk=>$dv) {
-                $user = $this->admin_model->get_user_id($_SESSION['username']);
                 $assign = $this->project_model->getProjectsAssignUser($dv['pid'],$user->id);
                 if($assign !=false) {
                     $projects_key[$dv['pid']] = $dv;
@@ -484,7 +486,7 @@ class Dashboard extends CI_Controller {
         }
         $data['projects'] = $projects_key;
 
-        $task_array = $this->task_model->countTasks();
+        $task_array = $this->task_model->countTasks($user->id);
         if($task_array) {
             $data['tasks']= $task_array;
         }
@@ -535,8 +537,8 @@ class Dashboard extends CI_Controller {
 
         $data['c_tasks'] = $this->task_model->countCompleteTasks();
 
-
-        $processtasks = $this->task_model->getprocessTasks();
+        $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
+        $processtasks = $this->task_model->getprocessTasks($data['user']->id);
 
         if($processtasks) {
             $data['process_tasks']= $processtasks;
@@ -548,7 +550,6 @@ class Dashboard extends CI_Controller {
         $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
-        $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
         $data['client'] = $this->admin_model->get_own_client($_SESSION['username']);
         $data['users'] = $this->admin_model->get_users();
         $data['user_name'] = $this->admin_model->get_users_names();
@@ -582,8 +583,8 @@ class Dashboard extends CI_Controller {
         else {
             $data['task_types']=false;
         }
-
-        $task_array = $this->task_model->countTasks();
+        $user = $this->admin_model->get_user_id($_SESSION['username']);
+        $task_array = $this->task_model->countTasks($user->id);
         if($task_array) {
             $data['tasks']= $task_array;
         }
@@ -619,7 +620,6 @@ class Dashboard extends CI_Controller {
         if($projects !== FALSE) {
 
             foreach( $projects as $dk=>$dv) {
-                $user = $this->admin_model->get_user_id($_SESSION['username']);
                 $assign = $this->project_model->getProjectsAssignUser($dv['pid'],$user->id);
                 if($assign !=false) {
                     $projects_key[$dv['pid']] = $dv;
@@ -656,7 +656,7 @@ class Dashboard extends CI_Controller {
         $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
-        $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
+        $data['user'] = $user;
         $data['client'] = $this->admin_model->get_own_client($_SESSION['username']);
         $data['users'] = $this->admin_model->get_users();
         $new_users = $this->admin_model->get_new_users();
@@ -722,7 +722,8 @@ class Dashboard extends CI_Controller {
             }
         }
         $data['projects'] = $projects_key;
-        $task_array = $this->task_model->countTasks();
+        $user = $this->admin_model->get_user_id($_SESSION['username']);
+        $task_array = $this->task_model->countTasks($user->id);
         if($task_array) {
             $data['tasks']= $task_array;
         }
@@ -812,8 +813,8 @@ class Dashboard extends CI_Controller {
         else {
             $data['imps']=false;
         }
-
-        $task_array = $this->task_model->countTasks();
+        $user = $this->admin_model->get_user_id($_SESSION['username']);
+        $task_array = $this->task_model->countTasks($user->id);
         if($task_array) {
             $data['tasks']= $task_array;
         }
@@ -904,8 +905,8 @@ class Dashboard extends CI_Controller {
         else {
             $data['imps']=false;
         }
-
-        $task_array = $this->task_model->countTasks();
+        $user = $this->admin_model->get_user_id($_SESSION['username']);
+        $task_array = $this->task_model->countTasks($user->id);
         if($task_array) {
             $data['tasks']= $task_array;
         }
@@ -1023,8 +1024,8 @@ class Dashboard extends CI_Controller {
         else {
             $data['imps']=false;
         }
-
-        $task_array = $this->task_model->countTasks();
+        $user = $this->admin_model->get_user_id($_SESSION['username']);
+        $task_array = $this->task_model->countTasks($user->id);
         if($task_array) {
             $data['tasks']= $task_array;
         }
@@ -1148,8 +1149,8 @@ class Dashboard extends CI_Controller {
         else {
             $data['task_types']=false;
         }
-
-        $task_array = $this->task_model->countTasks();
+        $user = $this->admin_model->get_user_id($_SESSION['username']);
+        $task_array = $this->task_model->countTasks($user->id);
         if($task_array) {
             $data['tasks']= $task_array;
         }
@@ -1255,8 +1256,8 @@ class Dashboard extends CI_Controller {
         else {
             $data['task_types']=false;
         }
-
-        $task_array = $this->task_model->countTasks();
+        $user = $this->admin_model->get_user_id($_SESSION['username']);
+        $task_array = $this->task_model->countTasks($user->id);
         if($task_array) {
             $data['tasks']= $task_array;
         }
@@ -1369,8 +1370,8 @@ class Dashboard extends CI_Controller {
         else {
             $data['imps']=false;
         }
-
-        $task_array = $this->task_model->countTasks();
+        $user = $this->admin_model->get_user_id($_SESSION['username']);
+        $task_array = $this->task_model->countTasks($user->id);
         if($task_array) {
             $data['tasks']= $task_array;
         }
@@ -1460,8 +1461,8 @@ class Dashboard extends CI_Controller {
         else {
             $data['imps']=false;
         }
-
-        $task_array = $this->task_model->countTasks();
+        $user = $this->admin_model->get_user_id($_SESSION['username']);
+        $task_array = $this->task_model->countTasks($user->id);
         if($task_array) {
             $data['tasks']= $task_array;
         }
@@ -1619,8 +1620,8 @@ class Dashboard extends CI_Controller {
         else {
             $data['task_types']=false;
         }
-
-        $task_array = $this->task_model->countTasks();
+        $user = $this->admin_model->get_user_id($_SESSION['username']);
+        $task_array = $this->task_model->countTasks($user->id);
         if($task_array) {
             $data['tasks']= $task_array;
         }

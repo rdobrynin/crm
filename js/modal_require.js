@@ -82,7 +82,6 @@ define(['jquery'], function ($) {
                 user_id: $('#user_invite_id').val()
 
             };
-            console.log(form_data );
             $.ajax({
                 url: '/ajax/invitation',
                 type: 'POST',

@@ -400,13 +400,15 @@ class Ajax extends CI_Controller {
      */
 
     function countTasks() {
-        $result = $this->task_model->countTasks();
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        $result = $this->task_model->countTasks($session_uid->id);
         echo json_encode ($result);
     }
 
     function calculateTasks() {
-        $r= $this->task_model->countTasks();
-        $c= $this->task_model->getCompTasks();
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        $r= $this->task_model->countTasks($session_uid->id);
+        $c= $this->task_model->getCompTasks($session_uid->id);
         if($r !=false) {
             $result['tasks'] = count($r);
         }
@@ -867,7 +869,8 @@ class Ajax extends CI_Controller {
 
 
     function getTasks() {
-        $result['tasks'] = $this->task_model->getTasks();
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        $result['tasks'] = $this->task_model->getTasks($session_uid->id);
         echo json_encode($result);
     }
 
@@ -1177,7 +1180,8 @@ class Ajax extends CI_Controller {
      */
 
     function countProcessTasks() {
-        if($querty = $this->task_model->getProcessTasks()) {
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        if($querty = $this->task_model->getProcessTasks($session_uid->id)) {
             $result = count($querty);
         }
         else {
@@ -1192,7 +1196,8 @@ class Ajax extends CI_Controller {
      */
 
     function countOverdueTasks() {
-        if($querty = $this->task_model->getOverdueTasks()) {
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        if($querty = $this->task_model->getOverdueTasks($session_uid->id)) {
             $result = count($querty);
         }
         else {
@@ -1207,7 +1212,8 @@ class Ajax extends CI_Controller {
      */
 
     function countApproveTasks() {
-        if($querty = $this->task_model->getApproveTasks()) {
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        if($querty = $this->task_model->getApproveTasks($session_uid->id)) {
             $result = count($querty);
         }
         else {
@@ -1222,7 +1228,8 @@ class Ajax extends CI_Controller {
      */
 
     function countCompTasks() {
-        if($querty = $this->task_model->getCompTasks()) {
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        if($querty = $this->task_model->getCompTasks($session_uid->id)) {
             $result = count($querty);
         }
         else {
@@ -1237,7 +1244,8 @@ class Ajax extends CI_Controller {
      */
 
     function countReadyTasks() {
-        if($querty = $this->task_model->getReadyTasks()) {
+        $session_uid = $this->admin_model->get_user_id($_SESSION['username']);
+        if($querty = $this->task_model->getReadyTasks($session_uid->id)) {
             $result = count($querty);
         }
         else {

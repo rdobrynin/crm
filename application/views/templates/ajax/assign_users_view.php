@@ -1,5 +1,5 @@
 <!--AJAX HTML GET METHODS-->
-<ul class="assign-users-jsscroll">
+<ul class="">
     <?php if ($assign_users != false OR !empty($assign_users)): ?>
     <?php foreach ($assign_users as $uk=>$uv): ?>
         <?php if ($uv->role !=5 AND $uv->pid ==$id): ?>

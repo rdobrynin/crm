@@ -261,13 +261,13 @@ class Task_model extends CI_Model {
      */
 
 
-    public function countTasks() {
+    public function countTasks($uid) {
         $query = $this->db->select('*')
             ->from('project')
             ->join('task', 'project.pid = task.pid')
+            ->where("(task.uid = '$uid' OR task.implementor = '$uid')")
             ->where('project.froze', 0)
             ->get();
-
         return $query->result_array();
     }
 
@@ -325,8 +325,10 @@ class Task_model extends CI_Model {
      */
 
 
-    public function countAllTasks() {
-        $query = $this->db->get('task');
+    public function countAllTasks($uid) {
+        $query = $this->db
+            ->where("(uid = '$uid' OR implementor = '$uid')")
+            ->get('task');
         return $query->result_array();
     }
 
@@ -359,9 +361,10 @@ class Task_model extends CI_Model {
      * @return mixed
      */
 
-    public function getTasks() {
+    public function getTasks($uid) {
         $query = $this
             ->db
+            ->where("(uid = '$uid' OR implementor = '$uid')")
             ->get('task');
         if ($query->num_rows > 0) {
             return $query->result_array();
@@ -380,7 +383,7 @@ class Task_model extends CI_Model {
     public function getUserTasks($uid) {
         $query = $this
             ->db
-            ->where('implementor',$uid)
+            ->where("(uid = '$uid' OR implementor = '$uid')")
             ->get('task');
         if ($query->num_rows > 0) {
             return $query->result_array();
@@ -428,10 +431,11 @@ class Task_model extends CI_Model {
      * @return mixed
      */
 
-    public function getOverdueTasks() {
+    public function getOverdueTasks($uid) {
         $query = $this
             ->db
             ->where('overdue', '1')
+            ->where("(uid = '$uid' OR implementor = '$uid')")
             ->get('task');
         if ($query->num_rows > 0) {
             return $query->result_array();
@@ -447,10 +451,11 @@ class Task_model extends CI_Model {
      * @return mixed
      */
 
-    public function getApproveTasks() {
+    public function getApproveTasks($uid) {
         $query = $this
             ->db
             ->where('status', '0')
+            ->where("(uid = '$uid' OR implementor = '$uid')")
             ->get('task');
         if ($query->num_rows > 0) {
             return $query->result_array();
@@ -466,10 +471,11 @@ class Task_model extends CI_Model {
      * @return mixed
      */
 
-    public function getReadyTasks() {
+    public function getReadyTasks($uid) {
         $query = $this
             ->db
             ->where('status', '5')
+            ->where("(uid = '$uid' OR implementor = '$uid')")
             ->get('task');
         if ($query->num_rows > 0) {
             return $query->result_array();
@@ -487,10 +493,11 @@ class Task_model extends CI_Model {
      * @return mixed
      */
 
-    public function getProcessTasks() {
+    public function getProcessTasks($uid) {
         $query = $this
             ->db
             ->where('status', '2')
+            ->where("(uid = '$uid' OR implementor = '$uid')")
             ->get('task');
         if ($query->num_rows > 0) {
             return $query->result_array();
@@ -508,10 +515,11 @@ class Task_model extends CI_Model {
      * @return mixed
      */
 
-    public function getCompTasks() {
+    public function getCompTasks($uid) {
         $query = $this
             ->db
             ->where('status', '3')
+            ->where("(uid = '$uid' OR implementor = '$uid')")
             ->get('task');
         if ($query->num_rows > 0) {
             return $query->result_array();

@@ -17,7 +17,6 @@ $(function () {
     setInterval(function(){
         $.get( '/ajax/readEvent', function( data ) {
             if (data.length !== 0) {
-                console.log(data);
 
             var data_time = toTimestamp(data.time);
             var dt = new Date().getTime();

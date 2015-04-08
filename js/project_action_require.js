@@ -7,6 +7,10 @@ define(['jquery'], function ($) {
         });
 
 
+        /**
+         * Project view
+         */
+
         $('.project-view').click(function () {
             var $data;
             $data= $(this).attr('data-id');
@@ -24,6 +28,10 @@ define(['jquery'], function ($) {
                 $('.btn-filter').removeAttr('disabled');
             }
         });
+
+        /**
+         * Froze project
+         */
 
 
         $('.froze-project').click(function () {
@@ -59,6 +67,10 @@ define(['jquery'], function ($) {
             });
         });
 
+        /**
+         * Unfroze project
+         */
+
         $('.unfroze-project').click(function () {
             var $data;
             $data= $(this).attr('data-id');
@@ -83,6 +95,10 @@ define(['jquery'], function ($) {
                 });
             });
         });
+
+        /**
+         * Assign user via modal
+         */
 
         $('.assign-user-modal').click(function () {
             var $data;
@@ -117,6 +133,10 @@ define(['jquery'], function ($) {
                 }
             });
         });
+
+        /**
+         * Unsign user
+         */
 
         $( "body" ).delegate( ".unsign-user", "click", function(e) {
             var $id,$pid;
@@ -157,16 +177,16 @@ define(['jquery'], function ($) {
                     }
                 });
             });
-
-
-
-
         });
 
 
+
+
+        /**
+         * If modal shown
+         */
+
         $('#assign_user_modal').on('shown.bs.modal', function (e) {
-
-
             $('.assign-user-project').click(function () {
                 var $data,$project;
                 $data= $(this).attr('data-uid');
@@ -182,7 +202,6 @@ define(['jquery'], function ($) {
                     dataType: 'json',
                     success: function (msg) {
                         if (msg.id != 'false') {
-                            console.log(msg);
                             $('#assign-user-li-' + $data).fadeOut('slow');
                             $('#assign-panel-'+$project).append('&nbsp;<span class="label label-default label-tag" <i class="fa fa-mail"></i>&nbsp;<span class="get_old_mail">'+msg.full_name+'<i class="fa fa-times unsign-user" data-project="'+$project+'" data-uid="'+$data+'"></i> </span>&nbsp;');
                         }
@@ -192,9 +211,6 @@ define(['jquery'], function ($) {
                     }
                 });
             });
-
         })
-
-
     });
 });
