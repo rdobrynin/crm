@@ -42,14 +42,7 @@ class Dashboard extends CI_Controller {
         else {
             $projects =false;
         }
-
-
-
-
         $projects_key = array();
-
-
-
         if($projects !== FALSE) {
 
             foreach( $projects as $dk=>$dv) {
@@ -62,9 +55,6 @@ class Dashboard extends CI_Controller {
             }
         }
         $data['projects'] = $projects_key;
-
-
-
         $projects_froze = $this->project_model->checkProjectFroze();
         if($projects_froze) {
             $data['projects_froze']= $projects_froze;
@@ -397,7 +387,7 @@ class Dashboard extends CI_Controller {
             $data['imps']=false;
         }
 
-        $comments = $this->message_model->getComments();
+        $comments = $this->message_model->getComments($user->id);
         if($comments) {
             $data['comments']= $comments;
         }
@@ -511,7 +501,7 @@ class Dashboard extends CI_Controller {
             $data['project_title']=false;
         }
 
-        $comments = $this->message_model->getComments();
+        $comments = $this->message_model->getComments($user->id);
         if($comments) {
             $data['comments']= $comments;
         }
@@ -629,7 +619,7 @@ class Dashboard extends CI_Controller {
         }
         $data['projects'] = $projects_key;
 
-        $comments = $this->message_model->getComments();
+        $comments = $this->message_model->getComments($user->id);
         if($comments) {
             $data['comments']= $comments;
         }
@@ -697,6 +687,7 @@ class Dashboard extends CI_Controller {
      */
 
     function comments() {
+        $user = $this->admin_model->get_user_id($_SESSION['username']);
         $roles_array = $this->admin_model->get_roles();
         $roles = array();
         foreach ($roles_array as $rk => $rv) {
@@ -764,7 +755,7 @@ class Dashboard extends CI_Controller {
             $data['project_title']=false;
         }
 
-        $comments = $this->message_model->getComments();
+        $comments = $this->message_model->getComments($user->id);
         if($comments) {
             $data['comments']= $comments;
         }
@@ -784,7 +775,7 @@ class Dashboard extends CI_Controller {
         $data['users_names']= $this->admin_model->get_users_names();
         $data['roles'] = $roles;
         $data['current_language'] = $this->session->userdata('site_lang');
-        $data['user'] = $this->admin_model->get_user_id($_SESSION['username']);
+        $data['user'] = $user;
         $data['client'] = $this->admin_model->get_own_client($_SESSION['username']);
         $data['avatar'] = $this->admin_model->get_avatar($_SESSION['username']);
         $data['users'] = $this->admin_model->get_users();
@@ -854,7 +845,7 @@ class Dashboard extends CI_Controller {
             $data['project_title']=false;
         }
 
-        $comments = $this->message_model->getComments();
+        $comments = $this->message_model->getComments($user->id);
         if($comments) {
             $data['comments']= $comments;
         }
@@ -951,7 +942,7 @@ class Dashboard extends CI_Controller {
             $data['project_title']=false;
         }
 
-        $comments = $this->message_model->getComments();
+        $comments = $this->message_model->getComments($user->id);
         if($comments) {
             $data['comments']= $comments;
         }
@@ -1057,7 +1048,7 @@ class Dashboard extends CI_Controller {
             $data['project_title']=false;
         }
 
-        $comments = $this->message_model->getComments();
+        $comments = $this->message_model->getComments($user->id);
         if($comments) {
             $data['comments']= $comments;
         }
@@ -1158,7 +1149,7 @@ class Dashboard extends CI_Controller {
             $data['tasks']=false;
         }
 
-        $comments = $this->message_model->getComments();
+        $comments = $this->message_model->getComments($user->id);
         if($comments) {
             $data['comments']= $comments;
         }
@@ -1298,7 +1289,7 @@ class Dashboard extends CI_Controller {
             $data['projects']=false;
         }
 
-        $comments = $this->message_model->getComments();
+        $comments = $this->message_model->getComments($user->id);
         if($comments) {
             $data['comments']= $comments;
         }
@@ -1387,7 +1378,7 @@ class Dashboard extends CI_Controller {
             $data['task_types']=false;
         }
 
-        $comments = $this->message_model->getComments();
+        $comments = $this->message_model->getComments($user->id);
         if($comments) {
             $data['comments']= $comments;
         }
@@ -1486,7 +1477,7 @@ class Dashboard extends CI_Controller {
             $data['project_title']=false;
         }
 
-        $comments = $this->message_model->getComments();
+        $comments = $this->message_model->getComments($user->id);
         if($comments) {
             $data['comments']= $comments;
         }
@@ -1662,7 +1653,7 @@ class Dashboard extends CI_Controller {
             $data['projects']=false;
         }
 
-        $comments = $this->message_model->getComments();
+        $comments = $this->message_model->getComments($user->id);
         if($comments) {
             $data['comments']= $comments;
         }

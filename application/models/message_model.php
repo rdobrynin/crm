@@ -39,9 +39,10 @@ class Message_model extends CI_Model {
      * @return mixed
      */
 
-    public function getComments() {
+    public function getComments($uid) {
         $query = $this
             ->db
+            ->where('uid', $uid)
             ->get('comment');
         $insert = $query->result_array();
         if(!empty($insert)){
