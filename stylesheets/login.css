@@ -1,0 +1,153 @@
+/* line 1, ../sass/login.scss */
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #333;
+}
+
+/* line 9, ../sass/login.scss */
+.form-signin {
+  max-width: 360px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+/* line 23, ../sass/login.scss */
+.form-signin .form-signin-heading, .form-signin .checkbox {
+  margin-bottom: 10px;
+}
+/* line 27, ../sass/login.scss */
+.form-signin input[type="password"], .form-signin input[type="text"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+/* line 38, ../sass/login.scss */
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+}
+/* line 42, ../sass/login.scss */
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+}
+/* line 47, ../sass/login.scss */
+.form-signin .checkbox {
+  font-weight: normal;
+}
+/* line 51, ../sass/login.scss */
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 59, ../sass/login.scss */
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+/* line 66, ../sass/login.scss */
+.errors {
+  color: red;
+}
+
+/* line 70, ../sass/login.scss */
+#avatar-login {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: transparent;
+  box-shadow: inset 0px 0px 7px #999999;
+}
+
+/* line 84, ../sass/login.scss */
+#avatar-login-original {
+  position: relative;
+  display: none;
+  margin: 0 auto;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: #e4e4e4;
+}
+
+/* line 99, ../sass/login.scss */
+#avatar-login-forgot {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: transparent;
+}
+
+/* line 113, ../sass/login.scss */
+.label-signin {
+  margin-top: 11px;
+  margin-bottom: 10px !important;
+  display: none;
+  padding: 10px;
+  font-size: 15px;
+}
+
+/*SUCCESS NOTIFICATION*/
+/* line 124, ../sass/login.scss */
+.center-strip {
+  background-color: #fff;
+  height: 300px;
+  margin-top: 200px;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 132, ../sass/login.scss */
+.lead {
+  margin-bottom: 20px;
+  font-size: 36px;
+  line-height: 1.4;
+  font-family: "Lato",sans-serif;
+  font-weight: 300;
+  text-align: center;
+  color: #7a7a7a;
+  padding-top: 95px;
+}
+
+/* line 143, ../sass/login.scss */
+.log-success {
+  width: 10%;
+  font-size: 16px;
+  font-family: "Lato",sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+/* line 151, ../sass/login.scss */
+.glyphicon-ok:before {
+  content: "";
+}
